@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-08)
 
 ## Corpus Check
-- 52 files · ~36,818 words
+- 61 files · ~39,474 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 201 nodes · 240 edges · 24 communities (15 shown, 9 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
+- 273 nodes · 308 edges · 34 communities (23 shown, 11 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d63411be`
+- Built from commit: `6e9b992d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,6 +21,7 @@
 - Agent Context Extension
 - Feature Specification & Clarification
 - Constitution & Templates Skill
+- Feature Specification: Design System Primitive Components
 - Feature Branch Creation Script
 - Agent Context Update Pipeline
 - GitHub Issue Conversion
@@ -37,18 +38,24 @@
 - Checklist Template
 - Constitution Template
 - Component Contract: Badge
+- devDependencies
+- audit-tokens.mjs
+- compilerOptions
+- check-contrast.mjs
+- a11y-helper.ts
+- playwright.config.ts
 
 ## God Nodes (most connected - your core abstractions)
 1. `speckit-tasks Skill` - 15 edges
 2. `speckit-plan Skill` - 14 edges
 3. `Tasks: Design System Primitive Components` - 13 edges
 4. `speckit-implement Skill` - 13 edges
-5. `speckit-specify Skill` - 11 edges
-6. `speckit-analyze Skill` - 10 edges
-7. `.specify/extensions.yml (Extension Hooks Config)` - 10 edges
-8. `.specify/memory/constitution.md (Project Constitution)` - 10 edges
-9. `speckit-converge Skill` - 10 edges
-10. `Core Principles` - 8 edges
+5. `compilerOptions` - 12 edges
+6. `speckit-specify Skill` - 11 edges
+7. `speckit-analyze Skill` - 10 edges
+8. `.specify/extensions.yml (Extension Hooks Config)` - 10 edges
+9. `.specify/memory/constitution.md (Project Constitution)` - 10 edges
+10. `speckit-converge Skill` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `speckit-plan Skill` --references--> `CLAUDE.md (Coding Agent Context File)`  [EXTRACTED]
@@ -72,15 +79,15 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (24 total, 9 thin omitted)
+## Communities (34 total, 11 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
 Nodes (5): get_feature_paths(), get_repo_root(), _persist_feature_json(), resolve_specify_init_dir(), common.sh script
 
 ### Community 1 - "Implementation & Planning Artifacts"
-Cohesion: 0.09
-Nodes (20): Specification Quality Checklist: Design System Primitive Components, Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Design System Primitive Components, Project Structure, Source Code (repository root), Summary (+12 more)
+Cohesion: 0.22
+Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Design System Primitive Components, Project Structure, Source Code (repository root), Summary, Technical Context
 
 ### Community 2 - "Spec Quality & Convergence"
 Cohesion: 0.16
@@ -97,6 +104,10 @@ Nodes (10): Agent Context Config (context_file / context_markers), speckit.agent
 ### Community 5 - "Constitution & Templates Skill"
 Cohesion: 0.08
 Nodes (25): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+17 more)
+
+### Community 6 - "Feature Specification: Design System Primitive Components"
+Cohesion: 0.11
+Nodes (16): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Design System Primitive Components, Assumptions, Edge Cases, Feature Specification: Design System Primitive Components (+8 more)
 
 ### Community 9 - "GitHub Issue Conversion"
 Cohesion: 0.22
@@ -119,28 +130,48 @@ Cohesion: 0.29
 Nodes (6): Badge, Button, Checkbox, Cross-cutting invariants (all four components), Phase 1 Data Model: Design System Primitive Components, Text Input
 
 ### Community 21 - "Autonomous Skill Acquisition Protocol"
-Cohesion: 0.29
-Nodes (6): Decision: Custom Node scripts for token-discipline and contrast gates, Decision: Playwright for visual regression + accessibility, Decision: Tailwind CSS 3.4.x (config-file based), not Tailwind 4, Decision: Vite as the dev/build tool, Phase 0 Research: Design System Primitive Components, Resolved unknowns
+Cohesion: 0.25
+Nodes (7): Decision: Custom Node scripts for token-discipline and contrast gates, Decision: Playwright for visual regression + accessibility, Decision: Tailwind CSS 3.4.x (config-file based), not Tailwind 4, Decision: Vite 8.x as the dev/build tool (not 5.x), Decision: Vite as the dev/build tool, Phase 0 Research: Design System Primitive Components, Resolved unknowns
 
 ### Community 24 - "Component Contract: Badge"
 Cohesion: 0.33
 Nodes (5): Acceptance mapping, Component Contract: Badge, Long-label handling (Edge Case), Markup contract (one per variant), Required variant → token mapping (FR-003, exactly four variants)
 
+### Community 25 - "devDependencies"
+Cohesion: 0.08
+Nodes (23): description, devDependencies, autoprefixer, @axe-core/playwright, @playwright/test, postcss, tailwindcss, @types/node (+15 more)
+
+### Community 26 - "audit-tokens.mjs"
+Cohesion: 0.17
+Nodes (14): allowedColorNames, allowedRadiusClasses, checkClass(), COLOR_PREFIXES, configSource, extractBalancedBlock(), isStructuralSuffix(), NON_COLOR_SUFFIXES (+6 more)
+
+### Community 27 - "compilerOptions"
+Cohesion: 0.14
+Nodes (13): compilerOptions, esModuleInterop, isolatedModules, lib, module, moduleResolution, noEmit, resolveJsonModule (+5 more)
+
+### Community 28 - "check-contrast.mjs"
+Cohesion: 0.50
+Nodes (3): failures, PAIRINGS, TOKENS
+
 ## Knowledge Gaps
-- **103 isolated node(s):** `Format: `[ID] [P?] [Story] Description``, `Path Conventions`, `Phase 1: Setup (Shared Infrastructure)`, `Phase 2: Foundational (Blocking Prerequisites)`, `Tests for User Story 1` (+98 more)
+- **151 isolated node(s):** `name`, `version`, `private`, `description`, `type` (+146 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `Format: `[ID] [P?] [Story] Description``, `Path Conventions`, `Phase 1: Setup (Shared Infrastructure)` to the rest of the system?**
-  _103 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `name`, `version`, `private` to the rest of the system?**
+  _151 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
-- **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
+- **Should `Feature Specification: Design System Primitive Components` be split into smaller, more focused modules?**
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+- **Should `devDependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._

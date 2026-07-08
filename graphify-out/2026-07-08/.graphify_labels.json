@@ -5,6 +5,7 @@
   "3": "Agent Context Extension",
   "4": "Feature Specification & Clarification",
   "5": "Constitution & Templates Skill",
+  "6": "Feature Specification: Design System Primitive Components",
   "7": "Feature Branch Creation Script",
   "8": "Agent Context Update Pipeline",
   "9": "GitHub Issue Conversion",
@@ -22,5 +23,14 @@
   "21": "Autonomous Skill Acquisition Protocol",
   "22": "Checklist Template",
   "23": "Constitution Template",
-  "24": "Component Contract: Badge"
+  "24": "Component Contract: Badge",
+  "25": "devDependencies",
+  "26": "audit-tokens.mjs",
+  "27": "compilerOptions",
+  "28": "check-contrast.mjs",
+  "29": "a11y-helper.ts",
+  "30": "playwright.config.ts",
+  "31": "postcss.config.js",
+  "32": "tailwind.config.ts",
+  "33": "vite.config.ts"
 }

@@ -95,394 +95,564 @@
   },
   "nodes": [
     {
-      "label": "constitution.md",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
+      "label": "button.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/button.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specify_memory_constitution",
-      "community": 3,
-      "norm_label": "constitution.md"
+      "id": "tests_e2e_button_spec",
+      "community": 34,
+      "norm_label": "button.spec.ts"
     },
     {
-      "label": "Professional Design System Constitution",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L83",
+      "label": "tabUntilFocused()",
+      "file_type": "code",
+      "source_file": "tests/e2e/button.spec.ts",
+      "source_location": "L10",
       "_origin": "ast",
-      "id": "specify_memory_constitution_professional_design_system_constitution",
-      "community": 3,
-      "norm_label": "professional design system constitution"
+      "id": "tests_e2e_button_spec_tabuntilfocused",
+      "community": 34,
+      "norm_label": "tabuntilfocused()"
     },
     {
-      "label": "Core Principles",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L86",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_core_principles",
-      "community": 3,
-      "norm_label": "core principles"
-    },
-    {
-      "label": "I. Cognitive Ergonomics & Visual Hierarchy",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L88",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy",
-      "community": 3,
-      "norm_label": "i. cognitive ergonomics & visual hierarchy"
-    },
-    {
-      "label": "II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L104",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable",
-      "community": 3,
-      "norm_label": "ii. absolute semantic accessibility (wcag 2.2 aaa) (non-negotiable)"
-    },
-    {
-      "label": "III. Tailwind-Only Architecture (Zero Parallel CSS)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L120",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css",
-      "community": 3,
-      "norm_label": "iii. tailwind-only architecture (zero parallel css)"
-    },
-    {
-      "label": "IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L131",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable",
-      "community": 3,
-      "norm_label": "iv. design token discipline (zero hardcoding) (non-negotiable)"
-    },
-    {
-      "label": "V. Interactive State Completeness (NON-NEGOTIABLE)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L143",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable",
-      "community": 3,
-      "norm_label": "v. interactive state completeness (non-negotiable)"
-    },
-    {
-      "label": "VI. Project Language Policy (NON-NEGOTIABLE)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L155",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_vi_project_language_policy_non_negotiable",
-      "community": 3,
-      "norm_label": "vi. project language policy (non-negotiable)"
-    },
-    {
-      "label": "VII. Autonomous Skill Acquisition Protocol (NON-NEGOTIABLE)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L171",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable",
-      "community": 3,
-      "norm_label": "vii. autonomous skill acquisition protocol (non-negotiable)"
-    },
-    {
-      "label": "Design Foundations: Tokens, Typography & Grid",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L202",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "community": 3,
-      "norm_label": "design foundations: tokens, typography & grid"
-    },
-    {
-      "label": "Base Semantic Palette",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L204",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_base_semantic_palette",
-      "community": 3,
-      "norm_label": "base semantic palette"
-    },
-    {
-      "label": "Typography & Text Scale",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L230",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_typography_text_scale",
-      "community": 3,
-      "norm_label": "typography & text scale"
-    },
-    {
-      "label": "Alignment Grid & Spacing",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L242",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_alignment_grid_spacing",
-      "community": 3,
-      "norm_label": "alignment grid & spacing"
-    },
-    {
-      "label": "Component Catalog & Tailwind UI Patterns",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L252",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "community": 3,
-      "norm_label": "component catalog & tailwind ui patterns"
-    },
-    {
-      "label": "Application & Navigation",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L258",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_application_navigation",
-      "community": 3,
-      "norm_label": "application & navigation"
-    },
-    {
-      "label": "Forms, Validation & Inputs",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L269",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_forms_validation_inputs",
-      "community": 3,
-      "norm_label": "forms, validation & inputs"
-    },
-    {
-      "label": "Data Display & Listings",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L284",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_data_display_listings",
-      "community": 3,
-      "norm_label": "data display & listings"
-    },
-    {
-      "label": "Overlays, Modals & Feedback",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L300",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_overlays_modals_feedback",
-      "community": 3,
-      "norm_label": "overlays, modals & feedback"
-    },
-    {
-      "label": "Governance",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L309",
-      "_origin": "ast",
-      "id": "specify_memory_constitution_governance",
-      "community": 3,
-      "norm_label": "governance"
-    },
-    {
-      "label": "requirements.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_checklists_requirements",
-      "community": 1,
-      "norm_label": "requirements.md"
+      "community": 25,
+      "norm_label": "package.json",
+      "id": "package"
     },
     {
-      "label": "Specification Quality Checklist: Design System Primitive Components",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L1",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
-      "community": 1,
-      "norm_label": "specification quality checklist: design system primitive components"
+      "community": 25,
+      "norm_label": "name",
+      "id": "package_name"
     },
     {
-      "label": "Content Quality",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_checklists_requirements_content_quality",
-      "community": 1,
-      "norm_label": "content quality"
-    },
-    {
-      "label": "Requirement Completeness",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L14",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_checklists_requirements_requirement_completeness",
-      "community": 1,
-      "norm_label": "requirement completeness"
-    },
-    {
-      "label": "Feature Readiness",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_checklists_requirements_feature_readiness",
-      "community": 1,
-      "norm_label": "feature readiness"
-    },
-    {
-      "label": "Notes",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_checklists_requirements_notes",
-      "community": 1,
-      "norm_label": "notes"
-    },
-    {
-      "label": "badge.contract.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_badge_contract",
-      "community": 24,
-      "norm_label": "badge.contract.md"
-    },
-    {
-      "label": "Component Contract: Badge",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
-      "community": 24,
-      "norm_label": "component contract: badge"
-    },
-    {
-      "label": "Markup contract (one per variant)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_badge_contract_markup_contract_one_per_variant",
-      "community": 24,
-      "norm_label": "markup contract (one per variant)"
+      "community": 25,
+      "norm_label": "version",
+      "id": "package_version"
     },
     {
-      "label": "Required variant \u2192 token mapping (FR-003, exactly four variants)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L27",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_badge_contract_required_variant_token_mapping_fr_003_exactly_four_variants",
-      "community": 24,
-      "norm_label": "required variant \u2192 token mapping (fr-003, exactly four variants)"
+      "community": 25,
+      "norm_label": "private",
+      "id": "package_private"
     },
     {
-      "label": "Long-label handling (Edge Case)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L55",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_badge_contract_long_label_handling_edge_case",
-      "community": 24,
-      "norm_label": "long-label handling (edge case)"
+      "community": 25,
+      "norm_label": "description",
+      "id": "package_description"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "type",
+      "id": "package_type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "scripts",
+      "id": "package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "dev",
+      "id": "package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "build",
+      "id": "package_scripts_build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "preview",
+      "id": "package_scripts_preview"
+    },
+    {
+      "label": "test:e2e",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "test:e2e",
+      "id": "package_scripts_test_e2e"
+    },
+    {
+      "label": "audit:tokens",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "audit:tokens",
+      "id": "package_scripts_audit_tokens"
+    },
+    {
+      "label": "audit:contrast",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "audit:contrast",
+      "id": "package_scripts_audit_contrast"
+    },
+    {
+      "label": "typecheck",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "typecheck",
+      "id": "package_scripts_typecheck"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "devdependencies",
+      "id": "package_devdependencies"
+    },
+    {
+      "label": "@axe-core/playwright",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "@axe-core/playwright",
+      "id": "package_devdependencies_axe_core_playwright"
+    },
+    {
+      "label": "@playwright/test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "@playwright/test",
+      "id": "package_devdependencies_playwright_test"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "@types/node",
+      "id": "package_devdependencies_types_node"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "autoprefixer",
+      "id": "package_devdependencies_autoprefixer"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "postcss",
+      "id": "package_devdependencies_postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "tailwindcss",
+      "id": "package_devdependencies_tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "typescript",
+      "id": "package_devdependencies_typescript"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "vite",
+      "id": "package_devdependencies_vite"
+    },
+    {
+      "label": "wcag-contrast",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "wcag-contrast",
+      "id": "package_devdependencies_wcag_contrast"
+    },
+    {
+      "label": "playwright.config.ts",
+      "file_type": "code",
+      "source_file": "playwright.config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 30,
+      "norm_label": "playwright.config.ts",
+      "id": "playwright_config"
+    },
+    {
+      "label": "breakpoints",
+      "file_type": "code",
+      "source_file": "playwright.config.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 30,
+      "norm_label": "breakpoints",
+      "id": "playwright_config_breakpoints"
+    },
+    {
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "postcss.config.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "postcss.config.js",
+      "id": "postcss_config"
+    },
+    {
+      "label": "audit-tokens.mjs",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "audit-tokens.mjs",
+      "id": "scripts_audit_tokens"
+    },
+    {
+      "label": "rootDir",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "rootdir",
+      "id": "scripts_audit_tokens_rootdir"
+    },
+    {
+      "label": "extractBalancedBlock()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "extractbalancedblock()",
+      "id": "scripts_audit_tokens_extractbalancedblock"
+    },
+    {
+      "label": "parseColorAllowlist()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "parsecolorallowlist()",
+      "id": "scripts_audit_tokens_parsecolorallowlist"
+    },
+    {
+      "label": "parseRadiusAllowlist()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L62",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "parseradiusallowlist()",
+      "id": "scripts_audit_tokens_parseradiusallowlist"
+    },
+    {
+      "label": "configSource",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L76",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "configsource",
+      "id": "scripts_audit_tokens_configsource"
+    },
+    {
+      "label": "allowedColorNames",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L77",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "allowedcolornames",
+      "id": "scripts_audit_tokens_allowedcolornames"
+    },
+    {
+      "label": "allowedRadiusClasses",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L78",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "allowedradiusclasses",
+      "id": "scripts_audit_tokens_allowedradiusclasses"
+    },
+    {
+      "label": "collectHtmlFiles()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "collecthtmlfiles()",
+      "id": "scripts_audit_tokens_collecthtmlfiles"
+    },
+    {
+      "label": "targets",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L97",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "targets",
+      "id": "scripts_audit_tokens_targets"
+    },
+    {
+      "label": "COLOR_PREFIXES",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L106",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "color_prefixes",
+      "id": "scripts_audit_tokens_color_prefixes"
+    },
+    {
+      "label": "NON_COLOR_SUFFIXES",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L126",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "non_color_suffixes",
+      "id": "scripts_audit_tokens_non_color_suffixes"
+    },
+    {
+      "label": "isStructuralSuffix()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L144",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "isstructuralsuffix()",
+      "id": "scripts_audit_tokens_isstructuralsuffix"
+    },
+    {
+      "label": "stripVariants()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L154",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "stripvariants()",
+      "id": "scripts_audit_tokens_stripvariants"
+    },
+    {
+      "label": "checkClass()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L160",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "checkclass()",
+      "id": "scripts_audit_tokens_checkclass"
+    },
+    {
+      "label": "violations",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L186",
+      "_origin": "ast",
+      "community": 26,
+      "norm_label": "violations",
+      "id": "scripts_audit_tokens_violations"
+    },
+    {
+      "label": "check-contrast.mjs",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 28,
+      "norm_label": "check-contrast.mjs",
+      "id": "scripts_check_contrast"
+    },
+    {
+      "label": "TOKENS",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 28,
+      "norm_label": "tokens",
+      "id": "scripts_check_contrast_tokens"
+    },
+    {
+      "label": "PAIRINGS",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 28,
+      "norm_label": "pairings",
+      "id": "scripts_check_contrast_pairings"
+    },
+    {
+      "label": "failures",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L104",
+      "_origin": "ast",
+      "community": 28,
+      "norm_label": "failures",
+      "id": "scripts_check_contrast_failures"
+    },
+    {
+      "label": "checkbox.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "checkbox.contract.md",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract"
+    },
+    {
+      "label": "Component Contract: Checkbox",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "component contract: checkbox",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
+    },
+    {
+      "label": "Markup contract",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "markup contract",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
+    },
+    {
+      "label": "Required attributes (Principle II + V gates)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "required attributes (principle ii + v gates)",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
+    },
+    {
+      "label": "Keyboard behavior (FR-006)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "keyboard behavior (fr-006)",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
+    },
+    {
+      "label": "Token allowlist used",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "token allowlist used",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
     },
     {
       "label": "Acceptance mapping",
       "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L62",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L40",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_badge_contract_acceptance_mapping",
-      "community": 24,
-      "norm_label": "acceptance mapping"
-    },
-    {
-      "label": "data-model.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model",
-      "community": 20,
-      "norm_label": "data-model.md"
-    },
-    {
-      "label": "Phase 1 Data Model: Design System Primitive Components",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "community": 20,
-      "norm_label": "phase 1 data model: design system primitive components"
-    },
-    {
-      "label": "Button",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model_button",
-      "community": 20,
-      "norm_label": "button"
-    },
-    {
-      "label": "Text Input",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model_text_input",
-      "community": 20,
-      "norm_label": "text input"
-    },
-    {
-      "label": "Badge",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model_badge",
-      "community": 20,
-      "norm_label": "badge"
-    },
-    {
-      "label": "Checkbox",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L44",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model_checkbox",
-      "community": 20,
-      "norm_label": "checkbox"
-    },
-    {
-      "label": "Cross-cutting invariants (all four components)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L55",
-      "_origin": "ast",
-      "id": "specs_001_primitive_components_data_model_cross_cutting_invariants_all_four_components",
-      "community": 20,
-      "norm_label": "cross-cutting invariants (all four components)"
+      "community": 18,
+      "norm_label": "acceptance mapping",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
     },
     {
       "label": "plan.md",
@@ -490,9 +660,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan",
       "community": 1,
-      "norm_label": "plan.md"
+      "norm_label": "plan.md",
+      "id": "specs_001_primitive_components_plan"
     },
     {
       "label": "Implementation Plan: Design System Primitive Components",
@@ -500,9 +670,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
       "community": 1,
-      "norm_label": "implementation plan: design system primitive components"
+      "norm_label": "implementation plan: design system primitive components",
+      "id": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components"
     },
     {
       "label": "Summary",
@@ -510,9 +680,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_summary",
       "community": 1,
-      "norm_label": "summary"
+      "norm_label": "summary",
+      "id": "specs_001_primitive_components_plan_summary"
     },
     {
       "label": "Technical Context",
@@ -520,9 +690,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_technical_context",
       "community": 1,
-      "norm_label": "technical context"
+      "norm_label": "technical context",
+      "id": "specs_001_primitive_components_plan_technical_context"
     },
     {
       "label": "Constitution Check",
@@ -530,9 +700,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L66",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_constitution_check",
       "community": 1,
-      "norm_label": "constitution check"
+      "norm_label": "constitution check",
+      "id": "specs_001_primitive_components_plan_constitution_check"
     },
     {
       "label": "Project Structure",
@@ -540,9 +710,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_project_structure",
       "community": 1,
-      "norm_label": "project structure"
+      "norm_label": "project structure",
+      "id": "specs_001_primitive_components_plan_project_structure"
     },
     {
       "label": "Documentation (this feature)",
@@ -550,9 +720,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L83",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_documentation_this_feature",
       "community": 1,
-      "norm_label": "documentation (this feature)"
+      "norm_label": "documentation (this feature)",
+      "id": "specs_001_primitive_components_plan_documentation_this_feature"
     },
     {
       "label": "Source Code (repository root)",
@@ -560,9 +730,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L99",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_source_code_repository_root",
       "community": 1,
-      "norm_label": "source code (repository root)"
+      "norm_label": "source code (repository root)",
+      "id": "specs_001_primitive_components_plan_source_code_repository_root"
     },
     {
       "label": "Complexity Tracking",
@@ -570,9 +740,669 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L139",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_complexity_tracking",
       "community": 1,
-      "norm_label": "complexity tracking"
+      "norm_label": "complexity tracking",
+      "id": "specs_001_primitive_components_plan_complexity_tracking"
+    },
+    {
+      "label": "research.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "research.md",
+      "id": "specs_001_primitive_components_research"
+    },
+    {
+      "label": "Phase 0 Research: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "phase 0 research: design system primitive components",
+      "id": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
+    },
+    {
+      "label": "Decision: Tailwind CSS 3.4.x (config-file based), not Tailwind 4",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: tailwind css 3.4.x (config-file based), not tailwind 4",
+      "id": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
+    },
+    {
+      "label": "Decision: Vite 8.x as the dev/build tool (not 5.x)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: vite 8.x as the dev/build tool (not 5.x)",
+      "id": "specs_001_primitive_components_research_decision_vite_8_x_as_the_dev_build_tool_not_5_x"
+    },
+    {
+      "label": "Decision: Vite as the dev/build tool",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: vite as the dev/build tool",
+      "id": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
+    },
+    {
+      "label": "Decision: Playwright for visual regression + accessibility",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L46",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: playwright for visual regression + accessibility",
+      "id": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
+    },
+    {
+      "label": "Decision: Custom Node scripts for token-discipline and contrast gates",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L59",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: custom node scripts for token-discipline and contrast gates",
+      "id": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
+    },
+    {
+      "label": "Resolved unknowns",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L80",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "resolved unknowns",
+      "id": "specs_001_primitive_components_research_resolved_unknowns"
+    },
+    {
+      "label": "tailwind.config.ts",
+      "file_type": "code",
+      "source_file": "tailwind.config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "tailwind.config.ts",
+      "id": "tailwind_config"
+    },
+    {
+      "label": "a11y-helper.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/a11y-helper.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "a11y-helper.ts",
+      "id": "tests_e2e_a11y_helper"
+    },
+    {
+      "label": "expectNoA11yViolations()",
+      "file_type": "code",
+      "source_file": "tests/e2e/a11y-helper.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "expectnoa11yviolations()",
+      "id": "tests_e2e_a11y_helper_expectnoa11yviolations"
+    },
+    {
+      "label": "formatViolations()",
+      "file_type": "code",
+      "source_file": "tests/e2e/a11y-helper.ts",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "formatviolations()",
+      "id": "tests_e2e_a11y_helper_formatviolations"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "tsconfig.json",
+      "id": "tsconfig"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "compileroptions",
+      "id": "tsconfig_compileroptions"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "target",
+      "id": "tsconfig_compileroptions_target"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "module",
+      "id": "tsconfig_compileroptions_module"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "moduleresolution",
+      "id": "tsconfig_compileroptions_moduleresolution"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "lib",
+      "id": "tsconfig_compileroptions_lib"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "strict",
+      "id": "tsconfig_compileroptions_strict"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "noemit",
+      "id": "tsconfig_compileroptions_noemit"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "skiplibcheck",
+      "id": "tsconfig_compileroptions_skiplibcheck"
+    },
+    {
+      "label": "esModuleInterop",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "esmoduleinterop",
+      "id": "tsconfig_compileroptions_esmoduleinterop"
+    },
+    {
+      "label": "resolveJsonModule",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "resolvejsonmodule",
+      "id": "tsconfig_compileroptions_resolvejsonmodule"
+    },
+    {
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "isolatedmodules",
+      "id": "tsconfig_compileroptions_isolatedmodules"
+    },
+    {
+      "label": "types",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "types",
+      "id": "tsconfig_compileroptions_types"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 27,
+      "norm_label": "include",
+      "id": "tsconfig_include"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "vite.config.ts",
+      "id": "vite_config"
+    },
+    {
+      "label": "constitution.md",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "constitution.md",
+      "id": "specify_memory_constitution"
+    },
+    {
+      "label": "Professional Design System Constitution",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "professional design system constitution",
+      "id": "specify_memory_constitution_professional_design_system_constitution"
+    },
+    {
+      "label": "Core Principles",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L86",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "core principles",
+      "id": "specify_memory_constitution_core_principles"
+    },
+    {
+      "label": "I. Cognitive Ergonomics & Visual Hierarchy",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L88",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "i. cognitive ergonomics & visual hierarchy",
+      "id": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy"
+    },
+    {
+      "label": "II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L104",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "ii. absolute semantic accessibility (wcag 2.2 aaa) (non-negotiable)",
+      "id": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable"
+    },
+    {
+      "label": "III. Tailwind-Only Architecture (Zero Parallel CSS)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L120",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "iii. tailwind-only architecture (zero parallel css)",
+      "id": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css"
+    },
+    {
+      "label": "IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L131",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "iv. design token discipline (zero hardcoding) (non-negotiable)",
+      "id": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable"
+    },
+    {
+      "label": "V. Interactive State Completeness (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "v. interactive state completeness (non-negotiable)",
+      "id": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable"
+    },
+    {
+      "label": "VI. Project Language Policy (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L155",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "vi. project language policy (non-negotiable)",
+      "id": "specify_memory_constitution_vi_project_language_policy_non_negotiable"
+    },
+    {
+      "label": "VII. Autonomous Skill Acquisition Protocol (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L171",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "vii. autonomous skill acquisition protocol (non-negotiable)",
+      "id": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable"
+    },
+    {
+      "label": "Design Foundations: Tokens, Typography & Grid",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L202",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "design foundations: tokens, typography & grid",
+      "id": "specify_memory_constitution_design_foundations_tokens_typography_grid"
+    },
+    {
+      "label": "Base Semantic Palette",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L204",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "base semantic palette",
+      "id": "specify_memory_constitution_base_semantic_palette"
+    },
+    {
+      "label": "Typography & Text Scale",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L230",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "typography & text scale",
+      "id": "specify_memory_constitution_typography_text_scale"
+    },
+    {
+      "label": "Alignment Grid & Spacing",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L242",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "alignment grid & spacing",
+      "id": "specify_memory_constitution_alignment_grid_spacing"
+    },
+    {
+      "label": "Component Catalog & Tailwind UI Patterns",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L252",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "component catalog & tailwind ui patterns",
+      "id": "specify_memory_constitution_component_catalog_tailwind_ui_patterns"
+    },
+    {
+      "label": "Application & Navigation",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L258",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "application & navigation",
+      "id": "specify_memory_constitution_application_navigation"
+    },
+    {
+      "label": "Forms, Validation & Inputs",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L269",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "forms, validation & inputs",
+      "id": "specify_memory_constitution_forms_validation_inputs"
+    },
+    {
+      "label": "Data Display & Listings",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L284",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "data display & listings",
+      "id": "specify_memory_constitution_data_display_listings"
+    },
+    {
+      "label": "Overlays, Modals & Feedback",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L300",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "overlays, modals & feedback",
+      "id": "specify_memory_constitution_overlays_modals_feedback"
+    },
+    {
+      "label": "Governance",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L309",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "governance",
+      "id": "specify_memory_constitution_governance"
+    },
+    {
+      "label": "requirements.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "requirements.md",
+      "id": "specs_001_primitive_components_checklists_requirements"
+    },
+    {
+      "label": "Specification Quality Checklist: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "specification quality checklist: design system primitive components",
+      "id": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components"
+    },
+    {
+      "label": "Content Quality",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "content quality",
+      "id": "specs_001_primitive_components_checklists_requirements_content_quality"
+    },
+    {
+      "label": "Requirement Completeness",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "requirement completeness",
+      "id": "specs_001_primitive_components_checklists_requirements_requirement_completeness"
+    },
+    {
+      "label": "Feature Readiness",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "feature readiness",
+      "id": "specs_001_primitive_components_checklists_requirements_feature_readiness"
+    },
+    {
+      "label": "Notes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "notes",
+      "id": "specs_001_primitive_components_checklists_requirements_notes"
+    },
+    {
+      "label": "badge.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "badge.contract.md",
+      "id": "specs_001_primitive_components_contracts_badge_contract"
+    },
+    {
+      "label": "Component Contract: Badge",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "component contract: badge",
+      "id": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge"
+    },
+    {
+      "label": "Markup contract (one per variant)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "markup contract (one per variant)",
+      "id": "specs_001_primitive_components_contracts_badge_contract_markup_contract_one_per_variant"
+    },
+    {
+      "label": "Required variant \u2192 token mapping (FR-003, exactly four variants)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "required variant \u2192 token mapping (fr-003, exactly four variants)",
+      "id": "specs_001_primitive_components_contracts_badge_contract_required_variant_token_mapping_fr_003_exactly_four_variants"
+    },
+    {
+      "label": "Long-label handling (Edge Case)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "long-label handling (edge case)",
+      "id": "specs_001_primitive_components_contracts_badge_contract_long_label_handling_edge_case"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "acceptance mapping",
+      "id": "specs_001_primitive_components_contracts_badge_contract_acceptance_mapping"
+    },
+    {
+      "label": "data-model.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "data-model.md",
+      "id": "specs_001_primitive_components_data_model"
+    },
+    {
+      "label": "Phase 1 Data Model: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "phase 1 data model: design system primitive components",
+      "id": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components"
+    },
+    {
+      "label": "Button",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "button",
+      "id": "specs_001_primitive_components_data_model_button"
+    },
+    {
+      "label": "Text Input",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "text input",
+      "id": "specs_001_primitive_components_data_model_text_input"
+    },
+    {
+      "label": "Badge",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "badge",
+      "id": "specs_001_primitive_components_data_model_badge"
+    },
+    {
+      "label": "Checkbox",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "checkbox",
+      "id": "specs_001_primitive_components_data_model_checkbox"
+    },
+    {
+      "label": "Cross-cutting invariants (all four components)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "cross-cutting invariants (all four components)",
+      "id": "specs_001_primitive_components_data_model_cross_cutting_invariants_all_four_components"
     },
     {
       "label": "spec.md",
@@ -580,9 +1410,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec",
-      "community": 1,
-      "norm_label": "spec.md"
+      "community": 6,
+      "norm_label": "spec.md",
+      "id": "specs_001_primitive_components_spec"
     },
     {
       "label": "Feature Specification: Design System Primitive Components",
@@ -590,9 +1420,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
       "community": 6,
-      "norm_label": "feature specification: design system primitive components"
+      "norm_label": "feature specification: design system primitive components",
+      "id": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components"
     },
     {
       "label": "User Scenarios & Testing *(mandatory)*",
@@ -600,9 +1430,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
       "community": 6,
-      "norm_label": "user scenarios & testing *(mandatory)*"
+      "norm_label": "user scenarios & testing *(mandatory)*",
+      "id": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory"
     },
     {
       "label": "User Story 1 - Drop-in Accessible Button (Priority: P1)",
@@ -610,9 +1440,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_user_story_1_drop_in_accessible_button_priority_p1",
       "community": 6,
-      "norm_label": "user story 1 - drop-in accessible button (priority: p1)"
+      "norm_label": "user story 1 - drop-in accessible button (priority: p1)",
+      "id": "specs_001_primitive_components_spec_user_story_1_drop_in_accessible_button_priority_p1"
     },
     {
       "label": "User Story 2 - Drop-in Accessible Text Input (Priority: P2)",
@@ -620,9 +1450,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_user_story_2_drop_in_accessible_text_input_priority_p2",
       "community": 6,
-      "norm_label": "user story 2 - drop-in accessible text input (priority: p2)"
+      "norm_label": "user story 2 - drop-in accessible text input (priority: p2)",
+      "id": "specs_001_primitive_components_spec_user_story_2_drop_in_accessible_text_input_priority_p2"
     },
     {
       "label": "User Story 3 - Drop-in Badge & Checkbox (Priority: P3)",
@@ -630,9 +1460,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L66",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_user_story_3_drop_in_badge_checkbox_priority_p3",
       "community": 6,
-      "norm_label": "user story 3 - drop-in badge & checkbox (priority: p3)"
+      "norm_label": "user story 3 - drop-in badge & checkbox (priority: p3)",
+      "id": "specs_001_primitive_components_spec_user_story_3_drop_in_badge_checkbox_priority_p3"
     },
     {
       "label": "Edge Cases",
@@ -640,9 +1470,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L96",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_edge_cases",
       "community": 6,
-      "norm_label": "edge cases"
+      "norm_label": "edge cases",
+      "id": "specs_001_primitive_components_spec_edge_cases"
     },
     {
       "label": "Requirements *(mandatory)*",
@@ -650,9 +1480,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L109",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_requirements_mandatory",
       "community": 6,
-      "norm_label": "requirements *(mandatory)*"
+      "norm_label": "requirements *(mandatory)*",
+      "id": "specs_001_primitive_components_spec_requirements_mandatory"
     },
     {
       "label": "Functional Requirements",
@@ -660,9 +1490,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L111",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_functional_requirements",
       "community": 6,
-      "norm_label": "functional requirements"
+      "norm_label": "functional requirements",
+      "id": "specs_001_primitive_components_spec_functional_requirements"
     },
     {
       "label": "Success Criteria *(mandatory)*",
@@ -670,9 +1500,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L141",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_success_criteria_mandatory",
       "community": 6,
-      "norm_label": "success criteria *(mandatory)*"
+      "norm_label": "success criteria *(mandatory)*",
+      "id": "specs_001_primitive_components_spec_success_criteria_mandatory"
     },
     {
       "label": "Measurable Outcomes",
@@ -680,9 +1510,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L143",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_measurable_outcomes",
       "community": 6,
-      "norm_label": "measurable outcomes"
+      "norm_label": "measurable outcomes",
+      "id": "specs_001_primitive_components_spec_measurable_outcomes"
     },
     {
       "label": "Assumptions",
@@ -690,9 +1520,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L157",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_spec_assumptions",
       "community": 6,
-      "norm_label": "assumptions"
+      "norm_label": "assumptions",
+      "id": "specs_001_primitive_components_spec_assumptions"
     },
     {
       "label": "tasks.md",
@@ -700,9 +1530,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks",
       "community": 5,
-      "norm_label": "tasks.md"
+      "norm_label": "tasks.md",
+      "id": "specs_001_primitive_components_tasks"
     },
     {
       "label": "Tasks: Design System Primitive Components",
@@ -710,9 +1540,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
       "community": 5,
-      "norm_label": "tasks: design system primitive components"
+      "norm_label": "tasks: design system primitive components",
+      "id": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components"
     },
     {
       "label": "Format: `[ID] [P?] [Story] Description`",
@@ -720,9 +1550,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_format_id_p_story_description",
       "community": 5,
-      "norm_label": "format: `[id] [p?] [story] description`"
+      "norm_label": "format: `[id] [p?] [story] description`",
+      "id": "specs_001_primitive_components_tasks_format_id_p_story_description"
     },
     {
       "label": "Path Conventions",
@@ -730,9 +1560,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_path_conventions",
       "community": 5,
-      "norm_label": "path conventions"
+      "norm_label": "path conventions",
+      "id": "specs_001_primitive_components_tasks_path_conventions"
     },
     {
       "label": "Phase 1: Setup (Shared Infrastructure)",
@@ -740,9 +1570,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure",
       "community": 5,
-      "norm_label": "phase 1: setup (shared infrastructure)"
+      "norm_label": "phase 1: setup (shared infrastructure)",
+      "id": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure"
     },
     {
       "label": "Phase 2: Foundational (Blocking Prerequisites)",
@@ -750,9 +1580,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites",
       "community": 5,
-      "norm_label": "phase 2: foundational (blocking prerequisites)"
+      "norm_label": "phase 2: foundational (blocking prerequisites)",
+      "id": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites"
     },
     {
       "label": "Phase 3: User Story 1 - Drop-in Accessible Button (Priority: P1) \ud83c\udfaf MVP",
@@ -760,9 +1590,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L71",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
       "community": 5,
-      "norm_label": "phase 3: user story 1 - drop-in accessible button (priority: p1) \ud83c\udfaf mvp"
+      "norm_label": "phase 3: user story 1 - drop-in accessible button (priority: p1) \ud83c\udfaf mvp",
+      "id": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp"
     },
     {
       "label": "Tests for User Story 1",
@@ -770,9 +1600,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L79",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_tests_for_user_story_1",
       "community": 5,
-      "norm_label": "tests for user story 1"
+      "norm_label": "tests for user story 1",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_1"
     },
     {
       "label": "Implementation for User Story 1",
@@ -780,9 +1610,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L94",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_1",
       "community": 5,
-      "norm_label": "implementation for user story 1"
+      "norm_label": "implementation for user story 1",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_1"
     },
     {
       "label": "Phase 4: User Story 2 - Drop-in Accessible Text Input (Priority: P2)",
@@ -790,9 +1620,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L108",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
       "community": 5,
-      "norm_label": "phase 4: user story 2 - drop-in accessible text input (priority: p2)"
+      "norm_label": "phase 4: user story 2 - drop-in accessible text input (priority: p2)",
+      "id": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2"
     },
     {
       "label": "Tests for User Story 2",
@@ -800,9 +1630,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L116",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_tests_for_user_story_2",
       "community": 5,
-      "norm_label": "tests for user story 2"
+      "norm_label": "tests for user story 2",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_2"
     },
     {
       "label": "Implementation for User Story 2",
@@ -810,9 +1640,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L123",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_2",
       "community": 5,
-      "norm_label": "implementation for user story 2"
+      "norm_label": "implementation for user story 2",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_2"
     },
     {
       "label": "Phase 5: User Story 3 - Drop-in Badge & Checkbox (Priority: P3)",
@@ -820,9 +1650,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L138",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
       "community": 5,
-      "norm_label": "phase 5: user story 3 - drop-in badge & checkbox (priority: p3)"
+      "norm_label": "phase 5: user story 3 - drop-in badge & checkbox (priority: p3)",
+      "id": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3"
     },
     {
       "label": "Tests for User Story 3",
@@ -830,9 +1660,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L147",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_tests_for_user_story_3",
       "community": 5,
-      "norm_label": "tests for user story 3"
+      "norm_label": "tests for user story 3",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_3"
     },
     {
       "label": "Implementation for User Story 3",
@@ -840,9 +1670,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L155",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_3",
       "community": 5,
-      "norm_label": "implementation for user story 3"
+      "norm_label": "implementation for user story 3",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_3"
     },
     {
       "label": "Phase 6: Polish & Cross-Cutting Concerns",
@@ -850,9 +1680,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L173",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns",
       "community": 5,
-      "norm_label": "phase 6: polish & cross-cutting concerns"
+      "norm_label": "phase 6: polish & cross-cutting concerns",
+      "id": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns"
     },
     {
       "label": "Dependencies & Execution Order",
@@ -860,9 +1690,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L193",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_dependencies_execution_order",
       "community": 5,
-      "norm_label": "dependencies & execution order"
+      "norm_label": "dependencies & execution order",
+      "id": "specs_001_primitive_components_tasks_dependencies_execution_order"
     },
     {
       "label": "Phase Dependencies",
@@ -870,9 +1700,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L195",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_phase_dependencies",
       "community": 5,
-      "norm_label": "phase dependencies"
+      "norm_label": "phase dependencies",
+      "id": "specs_001_primitive_components_tasks_phase_dependencies"
     },
     {
       "label": "User Story Dependencies",
@@ -880,9 +1710,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L205",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_user_story_dependencies",
       "community": 5,
-      "norm_label": "user story dependencies"
+      "norm_label": "user story dependencies",
+      "id": "specs_001_primitive_components_tasks_user_story_dependencies"
     },
     {
       "label": "Within Each User Story",
@@ -890,9 +1720,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L212",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_within_each_user_story",
       "community": 5,
-      "norm_label": "within each user story"
+      "norm_label": "within each user story",
+      "id": "specs_001_primitive_components_tasks_within_each_user_story"
     },
     {
       "label": "Parallel Opportunities",
@@ -900,9 +1730,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L219",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_parallel_opportunities",
       "community": 5,
-      "norm_label": "parallel opportunities"
+      "norm_label": "parallel opportunities",
+      "id": "specs_001_primitive_components_tasks_parallel_opportunities"
     },
     {
       "label": "Parallel Example: Setup Phase",
@@ -910,9 +1740,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L230",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_parallel_example_setup_phase",
       "community": 5,
-      "norm_label": "parallel example: setup phase"
+      "norm_label": "parallel example: setup phase",
+      "id": "specs_001_primitive_components_tasks_parallel_example_setup_phase"
     },
     {
       "label": "Implementation Strategy",
@@ -920,9 +1750,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L241",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_implementation_strategy",
       "community": 5,
-      "norm_label": "implementation strategy"
+      "norm_label": "implementation strategy",
+      "id": "specs_001_primitive_components_tasks_implementation_strategy"
     },
     {
       "label": "MVP First (User Story 1 Only)",
@@ -930,9 +1760,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L243",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only",
       "community": 5,
-      "norm_label": "mvp first (user story 1 only)"
+      "norm_label": "mvp first (user story 1 only)",
+      "id": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only"
     },
     {
       "label": "Incremental Delivery (the order this session follows)",
@@ -940,9 +1770,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L251",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows",
       "community": 5,
-      "norm_label": "incremental delivery (the order this session follows)"
+      "norm_label": "incremental delivery (the order this session follows)",
+      "id": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows"
     },
     {
       "label": "Notes",
@@ -950,9 +1780,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L261",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_tasks_notes",
       "community": 5,
-      "norm_label": "notes"
+      "norm_label": "notes",
+      "id": "specs_001_primitive_components_tasks_notes"
     },
     {
       "label": "CLAUDE.md",
@@ -1043,76 +1873,6 @@
       "community": 10,
       "norm_label": "acceptance mapping",
       "id": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping"
-    },
-    {
-      "label": "checkbox.contract.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "checkbox.contract.md",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract"
-    },
-    {
-      "label": "Component Contract: Checkbox",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "component contract: checkbox",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
-    },
-    {
-      "label": "Markup contract",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "markup contract",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
-    },
-    {
-      "label": "Required attributes (Principle II + V gates)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "required attributes (principle ii + v gates)",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
-    },
-    {
-      "label": "Keyboard behavior (FR-006)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "keyboard behavior (fr-006)",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
-    },
-    {
-      "label": "Token allowlist used",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "token allowlist used",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
-    },
-    {
-      "label": "Acceptance mapping",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "acceptance mapping",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
     },
     {
       "label": "text-input.contract.md",
@@ -1273,76 +2033,6 @@
       "community": 9,
       "norm_label": "discoverability check (sc-001)",
       "id": "specs_001_primitive_components_quickstart_discoverability_check_sc_001"
-    },
-    {
-      "label": "research.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "research.md",
-      "id": "specs_001_primitive_components_research"
-    },
-    {
-      "label": "Phase 0 Research: Design System Primitive Components",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "phase 0 research: design system primitive components",
-      "id": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
-    },
-    {
-      "label": "Decision: Tailwind CSS 3.4.x (config-file based), not Tailwind 4",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "decision: tailwind css 3.4.x (config-file based), not tailwind 4",
-      "id": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
-    },
-    {
-      "label": "Decision: Vite as the dev/build tool",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "decision: vite as the dev/build tool",
-      "id": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
-    },
-    {
-      "label": "Decision: Playwright for visual regression + accessibility",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "decision: playwright for visual regression + accessibility",
-      "id": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
-    },
-    {
-      "label": "Decision: Custom Node scripts for token-discipline and contrast gates",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "decision: custom node scripts for token-discipline and contrast gates",
-      "id": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
-    },
-    {
-      "label": "Resolved unknowns",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L69",
-      "_origin": "ast",
-      "community": 21,
-      "norm_label": "resolved unknowns",
-      "id": "specs_001_primitive_components_research_resolved_unknowns"
     },
     {
       "label": "update-agent-context.sh",
@@ -2415,382 +3105,557 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L83",
+      "source_file": "tests/e2e/button.spec.ts",
+      "source_location": "L10",
       "weight": 1.0,
-      "source": "specify_memory_constitution",
-      "target": "specify_memory_constitution_professional_design_system_constitution",
+      "source": "tests_e2e_button_spec",
+      "target": "tests_e2e_button_spec_tabuntilfocused",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L252",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L86",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_core_principles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L202",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L309",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_governance",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L88",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L104",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L120",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L131",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L143",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L155",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_vi_project_language_policy_non_negotiable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L171",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L242",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "target": "specify_memory_constitution_alignment_grid_spacing",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L204",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "target": "specify_memory_constitution_base_semantic_palette",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L230",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "target": "specify_memory_constitution_typography_text_scale",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L258",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_application_navigation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L284",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_data_display_listings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L269",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_forms_validation_inputs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": "L300",
-      "weight": 1.0,
-      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_overlays_modals_feedback",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "specs_001_primitive_components_checklists_requirements",
-      "target": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_file": "package.json",
       "source_location": "L5",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_checklists_requirements",
-      "target": "specs_001_primitive_components_spec",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_description"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L7",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
-      "target": "specs_001_primitive_components_checklists_requirements_content_quality",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_scripts"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L25",
+      "source_file": "package.json",
+      "source_location": "L6",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
-      "target": "specs_001_primitive_components_checklists_requirements_feature_readiness",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_type"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
-      "target": "specs_001_primitive_components_checklists_requirements_notes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
-      "target": "specs_001_primitive_components_checklists_requirements_requirement_completeness",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "specs_001_primitive_components_contracts_badge_contract",
-      "target": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L62",
-      "weight": 1.0,
-      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
-      "target": "specs_001_primitive_components_contracts_badge_contract_acceptance_mapping",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
-      "target": "specs_001_primitive_components_contracts_badge_contract_long_label_handling_edge_case",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_file": "package.json",
       "source_location": "L3",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
-      "target": "specs_001_primitive_components_contracts_badge_contract_markup_contract_one_per_variant",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_version"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
-      "source_location": "L27",
+      "source_file": "package.json",
+      "source_location": "L13",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
-      "target": "specs_001_primitive_components_contracts_badge_contract_required_variant_token_mapping_fr_003_exactly_four_variants",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_audit_contrast"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L1",
+      "source_file": "package.json",
+      "source_location": "L12",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_data_model",
-      "target": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_audit_tokens"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L32",
+      "source_file": "package.json",
+      "source_location": "L9",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "target": "specs_001_primitive_components_data_model_badge",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_file": "package.json",
       "source_location": "L8",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "target": "specs_001_primitive_components_data_model_button",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L44",
+      "source_file": "package.json",
+      "source_location": "L10",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "target": "specs_001_primitive_components_data_model_checkbox",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_preview"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/data-model.md",
-      "source_location": "L55",
+      "source_file": "package.json",
+      "source_location": "L11",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "target": "specs_001_primitive_components_data_model_cross_cutting_invariants_all_four_components",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_typecheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_autoprefixer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_axe_core_playwright"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_playwright_test"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
-      "target": "specs_001_primitive_components_data_model_text_input",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/plan.md",
-      "source_location": "L1",
+      "source_file": "package.json",
+      "source_location": "L23",
       "weight": 1.0,
-      "source": "specs_001_primitive_components_plan",
-      "target": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_wcag_contrast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "playwright.config.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "playwright_config",
+      "target": "playwright_config_breakpoints"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_allowedcolornames"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_allowedradiusclasses"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L160",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_checkclass"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_collecthtmlfiles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L106",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_color_prefixes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_configsource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_extractbalancedblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L144",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_isstructuralsuffix"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_non_color_suffixes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_parsecolorallowlist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_parseradiusallowlist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_rootdir"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L154",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_stripvariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_targets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L186",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_violations"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens_parsecolorallowlist",
+      "target": "scripts_audit_tokens_extractbalancedblock"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens_parseradiusallowlist",
+      "target": "scripts_audit_tokens_extractbalancedblock"
     },
     {
       "relation": "references",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/plan.md",
+      "confidence_score": 1.0,
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens_isstructuralsuffix",
+      "target": "scripts_audit_tokens_non_color_suffixes"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L176",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens_checkclass",
+      "target": "scripts_audit_tokens_isstructuralsuffix"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L161",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_audit_tokens_checkclass",
+      "target": "scripts_audit_tokens_stripvariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_failures"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_pairings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_tokens"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan",
-      "target": "specs_001_primitive_components_spec",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components"
     },
     {
       "relation": "contains",
@@ -2798,9 +3663,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_complexity_tracking",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_complexity_tracking"
     },
     {
       "relation": "contains",
@@ -2808,9 +3673,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_constitution_check",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_constitution_check"
     },
     {
       "relation": "contains",
@@ -2818,9 +3683,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_project_structure",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_project_structure"
     },
     {
       "relation": "contains",
@@ -2828,9 +3693,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_summary",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_summary"
     },
     {
       "relation": "contains",
@@ -2838,9 +3703,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_technical_context",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_technical_context"
     },
     {
       "relation": "contains",
@@ -2848,9 +3713,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_project_structure",
-      "target": "specs_001_primitive_components_plan_documentation_this_feature",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_documentation_this_feature"
     },
     {
       "relation": "contains",
@@ -2858,9 +3723,600 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_project_structure",
-      "target": "specs_001_primitive_components_plan_source_code_repository_root",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_source_code_repository_root"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research",
+      "target": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_vite_8_x_as_the_dev_build_tool_not_5_x"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_resolved_unknowns"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/e2e/a11y-helper.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_e2e_a11y_helper",
+      "target": "tests_e2e_a11y_helper_expectnoa11yviolations"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/e2e/a11y-helper.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_e2e_a11y_helper",
+      "target": "tests_e2e_a11y_helper_formatviolations"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/e2e/a11y-helper.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_e2e_a11y_helper_expectnoa11yviolations",
+      "target": "tests_e2e_a11y_helper_formatviolations"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_esmoduleinterop"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_isolatedmodules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_resolvejsonmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_strict"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution",
+      "target": "specify_memory_constitution_professional_design_system_constitution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L252",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_component_catalog_tailwind_ui_patterns"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L86",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_core_principles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L202",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_design_foundations_tokens_typography_grid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L309",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_governance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L88",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_vi_project_language_policy_non_negotiable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L171",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L242",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "target": "specify_memory_constitution_alignment_grid_spacing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "target": "specify_memory_constitution_base_semantic_palette"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "target": "specify_memory_constitution_typography_text_scale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L258",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_application_navigation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L284",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_data_display_listings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L269",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_forms_validation_inputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L300",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_overlays_modals_feedback"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements",
+      "target": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements",
+      "target": "specs_001_primitive_components_spec"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_content_quality"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_feature_readiness"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_notes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_requirement_completeness"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract",
+      "target": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_acceptance_mapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_long_label_handling_edge_case"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_markup_contract_one_per_variant"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_required_variant_token_mapping_fr_003_exactly_four_variants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_data_model",
+      "target": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_badge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_button"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_checkbox"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_cross_cutting_invariants_all_four_components"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_text_input"
     },
     {
       "relation": "contains",
@@ -2868,9 +4324,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec",
-      "target": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components"
     },
     {
       "relation": "contains",
@@ -2878,9 +4334,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
-      "target": "specs_001_primitive_components_spec_assumptions",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_assumptions"
     },
     {
       "relation": "contains",
@@ -2888,9 +4344,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
-      "target": "specs_001_primitive_components_spec_requirements_mandatory",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_requirements_mandatory"
     },
     {
       "relation": "contains",
@@ -2898,9 +4354,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
-      "target": "specs_001_primitive_components_spec_success_criteria_mandatory",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_success_criteria_mandatory"
     },
     {
       "relation": "contains",
@@ -2908,9 +4364,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
-      "target": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory"
     },
     {
       "relation": "contains",
@@ -2918,9 +4374,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
-      "target": "specs_001_primitive_components_spec_edge_cases",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_edge_cases"
     },
     {
       "relation": "contains",
@@ -2928,9 +4384,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
-      "target": "specs_001_primitive_components_spec_user_story_1_drop_in_accessible_button_priority_p1",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_user_story_1_drop_in_accessible_button_priority_p1"
     },
     {
       "relation": "contains",
@@ -2938,9 +4394,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
-      "target": "specs_001_primitive_components_spec_user_story_2_drop_in_accessible_text_input_priority_p2",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_user_story_2_drop_in_accessible_text_input_priority_p2"
     },
     {
       "relation": "contains",
@@ -2948,9 +4404,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
-      "target": "specs_001_primitive_components_spec_user_story_3_drop_in_badge_checkbox_priority_p3",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_user_story_3_drop_in_badge_checkbox_priority_p3"
     },
     {
       "relation": "contains",
@@ -2958,9 +4414,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_requirements_mandatory",
-      "target": "specs_001_primitive_components_spec_functional_requirements",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_functional_requirements"
     },
     {
       "relation": "contains",
@@ -2968,9 +4424,9 @@
       "source_file": "specs/001-primitive-components/spec.md",
       "source_location": "L143",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_spec_success_criteria_mandatory",
-      "target": "specs_001_primitive_components_spec_measurable_outcomes",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_spec_measurable_outcomes"
     },
     {
       "relation": "contains",
@@ -2978,9 +4434,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks",
-      "target": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components"
     },
     {
       "relation": "contains",
@@ -2988,9 +4444,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L193",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_dependencies_execution_order"
     },
     {
       "relation": "contains",
@@ -2998,9 +4454,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_format_id_p_story_description",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_format_id_p_story_description"
     },
     {
       "relation": "contains",
@@ -3008,9 +4464,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L241",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_implementation_strategy",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_implementation_strategy"
     },
     {
       "relation": "contains",
@@ -3018,9 +4474,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L261",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_notes",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_notes"
     },
     {
       "relation": "contains",
@@ -3028,9 +4484,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_parallel_example_setup_phase",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_parallel_example_setup_phase"
     },
     {
       "relation": "contains",
@@ -3038,9 +4494,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_path_conventions",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_path_conventions"
     },
     {
       "relation": "contains",
@@ -3048,9 +4504,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure"
     },
     {
       "relation": "contains",
@@ -3058,9 +4514,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites"
     },
     {
       "relation": "contains",
@@ -3068,9 +4524,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp"
     },
     {
       "relation": "contains",
@@ -3078,9 +4534,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2"
     },
     {
       "relation": "contains",
@@ -3088,9 +4544,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3"
     },
     {
       "relation": "contains",
@@ -3098,9 +4554,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns"
     },
     {
       "relation": "contains",
@@ -3108,9 +4564,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
-      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_1",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_1"
     },
     {
       "relation": "contains",
@@ -3118,9 +4574,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
-      "target": "specs_001_primitive_components_tasks_tests_for_user_story_1",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_1"
     },
     {
       "relation": "contains",
@@ -3128,9 +4584,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
-      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_2",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_2"
     },
     {
       "relation": "contains",
@@ -3138,9 +4594,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
-      "target": "specs_001_primitive_components_tasks_tests_for_user_story_2",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_2"
     },
     {
       "relation": "contains",
@@ -3148,9 +4604,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
-      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_3",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_3"
     },
     {
       "relation": "contains",
@@ -3158,9 +4614,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
-      "target": "specs_001_primitive_components_tasks_tests_for_user_story_3",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_3"
     },
     {
       "relation": "contains",
@@ -3168,9 +4624,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_parallel_opportunities",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_parallel_opportunities"
     },
     {
       "relation": "contains",
@@ -3178,9 +4634,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L195",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_phase_dependencies",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_phase_dependencies"
     },
     {
       "relation": "contains",
@@ -3188,9 +4644,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L205",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_user_story_dependencies",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_user_story_dependencies"
     },
     {
       "relation": "contains",
@@ -3198,9 +4654,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_within_each_user_story",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_within_each_user_story"
     },
     {
       "relation": "contains",
@@ -3208,9 +4664,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L251",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_implementation_strategy",
-      "target": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows"
     },
     {
       "relation": "contains",
@@ -3218,9 +4674,9 @@
       "source_file": "specs/001-primitive-components/tasks.md",
       "source_location": "L243",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_tasks_implementation_strategy",
-      "target": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only"
     },
     {
       "relation": "contains",
@@ -3291,66 +4747,6 @@
       "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
       "target": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
     },
     {
       "relation": "contains",
@@ -3491,66 +4887,6 @@
       "confidence_score": 1.0,
       "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
       "target": "specs_001_primitive_components_quickstart_validate_token_discipline_principle_iv_gate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_research",
-      "target": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/research.md",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_resolved_unknowns"
     },
     {
       "relation": "contains",
@@ -4955,5 +6291,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "37cb09d9e8a06c1bdb6f5b0ab30cb0d3e350b764"
+  "built_at_commit": "60f97d79d71f24339707901665140d4beba33f3a"
 }

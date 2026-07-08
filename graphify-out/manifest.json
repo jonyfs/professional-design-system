@@ -245,8 +245,8 @@
     "semantic_hash": ""
   },
   "specs/001-primitive-components/contracts/checkbox.contract.md": {
-    "mtime": 1783523993.8566136,
-    "ast_hash": "73fda48d09d43fb0172caa241d300c5a",
+    "mtime": 1783525880.8791528,
+    "ast_hash": "e5b5904aff7a16e4c5beace72ea7140c",
     "semantic_hash": ""
   },
   "specs/001-primitive-components/contracts/text-input.contract.md": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "specs/001-primitive-components/plan.md": {
-    "mtime": 1783525280.969377,
-    "ast_hash": "1c023fbe6b7fbc21a91691d617ab9b5b",
+    "mtime": 1783525803.3079906,
+    "ast_hash": "bcd1a76efcc09b175ced3817f8bbcbc3",
     "semantic_hash": ""
   },
   "specs/001-primitive-components/quickstart.md": {
@@ -270,13 +270,238 @@
     "semantic_hash": ""
   },
   "specs/001-primitive-components/research.md": {
-    "mtime": 1783523931.6976125,
-    "ast_hash": "084f480d0c2d6301a8753d8d9059f598",
+    "mtime": 1783525810.7705426,
+    "ast_hash": "7376908100e311b64326e518e0e5f840",
     "semantic_hash": ""
   },
   "specs/001-primitive-components/tasks.md": {
     "mtime": 1783525553.1327507,
     "ast_hash": "6e2c4a6827014cc22cdcbc73f6afd081",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1783526046.803505,
+    "ast_hash": "c09d39da75e5526239080c76bbb16cf1",
+    "semantic_hash": ""
+  },
+  "playwright.config.ts": {
+    "mtime": 1783525684.7832224,
+    "ast_hash": "0fdfd770fe1a3d73a6584169ce128582",
+    "semantic_hash": ""
+  },
+  "postcss.config.js": {
+    "mtime": 1783525631.0358133,
+    "ast_hash": "c735540bb63936a123bc867d950c9f69",
+    "semantic_hash": ""
+  },
+  "scripts/audit-tokens.mjs": {
+    "mtime": 1783525972.3204522,
+    "ast_hash": "2bcafb9ceddf8413b5ce5592b83efbfd",
+    "semantic_hash": ""
+  },
+  "scripts/check-contrast.mjs": {
+    "mtime": 1783526014.147862,
+    "ast_hash": "8aeb0bf21525887b39135f12a836891c",
+    "semantic_hash": ""
+  },
+  "tailwind.config.ts": {
+    "mtime": 1783525622.5445871,
+    "ast_hash": "d76b581f7dcda88c7598fe65655aed1f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/a11y-helper.ts": {
+    "mtime": 1783526034.8943958,
+    "ast_hash": "bf7c3c28b34154733d4131aa580f4783",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1783526051.7859707,
+    "ast_hash": "df20815ee1c44fe0ec97efb4e26efe7e",
+    "semantic_hash": ""
+  },
+  "vite.config.ts": {
+    "mtime": 1783525661.6248105,
+    "ast_hash": "0ee120b0882781ba516f103c1540ea6b",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1783525675.6679263,
+    "ast_hash": "7b2fe7ac112cb49203d2f3507dde4e47",
+    "semantic_hash": ""
+  },
+  "src/components/badge/badge.html": {
+    "mtime": 1783525992.9428444,
+    "ast_hash": "5293e4c5cba18dccd28513bfd7ffbdcc",
+    "semantic_hash": ""
+  },
+  "src/components/button/button.html": {
+    "mtime": 1783526274.9207854,
+    "ast_hash": "9fc764877ff96fedd5e0d97e949bea90",
+    "semantic_hash": ""
+  },
+  "src/components/checkbox/checkbox.html": {
+    "mtime": 1783525820.7810123,
+    "ast_hash": "0be23d39df8ac2afaf621ceaf9c39681",
+    "semantic_hash": ""
+  },
+  "src/components/text-input/text-input.html": {
+    "mtime": 1783525820.7804792,
+    "ast_hash": "31dc78de01620b0a94b0c8678930ad02",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts": {
+    "mtime": 1783526614.077068,
+    "ast_hash": "a482d4b9d91e320a072966da6db40c46",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-1024-darwin.png": {
+    "mtime": 1783526640.0342312,
+    "ast_hash": "f73ec4797c4c83a2e77467a6aebe3853",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-1440-darwin.png": {
+    "mtime": 1783526644.451385,
+    "ast_hash": "f73ec4797c4c83a2e77467a6aebe3853",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-320-darwin.png": {
+    "mtime": 1783526631.587183,
+    "ast_hash": "f73ec4797c4c83a2e77467a6aebe3853",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-768-darwin.png": {
+    "mtime": 1783526635.5964093,
+    "ast_hash": "f73ec4797c4c83a2e77467a6aebe3853",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-default-firefox-1440-darwin.png": {
+    "mtime": 1783526659.5648856,
+    "ast_hash": "91ea92cccc04b106b2fbb6a091317374",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-default-webkit-1440-darwin.png": {
+    "mtime": 1783526660.6243308,
+    "ast_hash": "4879672801fa6b32689262fb0e5d6d7a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-1024-darwin.png": {
+    "mtime": 1783526640.0207405,
+    "ast_hash": "4904118d6c71cebaef0b31b419271c36",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-1440-darwin.png": {
+    "mtime": 1783526644.4492044,
+    "ast_hash": "4904118d6c71cebaef0b31b419271c36",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-320-darwin.png": {
+    "mtime": 1783526631.6010659,
+    "ast_hash": "4904118d6c71cebaef0b31b419271c36",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-768-darwin.png": {
+    "mtime": 1783526635.5831656,
+    "ast_hash": "4904118d6c71cebaef0b31b419271c36",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-firefox-1440-darwin.png": {
+    "mtime": 1783526656.8794239,
+    "ast_hash": "fef9f308af2e27f63a2bbd45af279fa4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-webkit-1440-darwin.png": {
+    "mtime": 1783526664.6080885,
+    "ast_hash": "5c8fdd4cbdba7cb6fd5217e2c547ce19",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-1024-darwin.png": {
+    "mtime": 1783526640.2800274,
+    "ast_hash": "abff1428bb5afbba08b2b256f21a5201",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-1440-darwin.png": {
+    "mtime": 1783526644.5409317,
+    "ast_hash": "abff1428bb5afbba08b2b256f21a5201",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-320-darwin.png": {
+    "mtime": 1783526631.84226,
+    "ast_hash": "abff1428bb5afbba08b2b256f21a5201",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-768-darwin.png": {
+    "mtime": 1783526635.688688,
+    "ast_hash": "abff1428bb5afbba08b2b256f21a5201",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-firefox-1440-darwin.png": {
+    "mtime": 1783526653.594188,
+    "ast_hash": "91ea92cccc04b106b2fbb6a091317374",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-webkit-1440-darwin.png": {
+    "mtime": 1783526662.2043326,
+    "ast_hash": "597f550163865615c2bd8548f2154931",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-1024-darwin.png": {
+    "mtime": 1783526640.167048,
+    "ast_hash": "291eb4d858d51e749b03c4e34e9d9d24",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-1440-darwin.png": {
+    "mtime": 1783526644.5346677,
+    "ast_hash": "291eb4d858d51e749b03c4e34e9d9d24",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-320-darwin.png": {
+    "mtime": 1783526631.7108843,
+    "ast_hash": "291eb4d858d51e749b03c4e34e9d9d24",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-768-darwin.png": {
+    "mtime": 1783526635.6656108,
+    "ast_hash": "291eb4d858d51e749b03c4e34e9d9d24",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-hover-firefox-1440-darwin.png": {
+    "mtime": 1783526659.2369032,
+    "ast_hash": "36a4505a3d32f76f43fb171bb3b72fff",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-primary-hover-webkit-1440-darwin.png": {
+    "mtime": 1783526661.2250688,
+    "ast_hash": "fc173965524e5cd92137c3b0d8824c44",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-1024-darwin.png": {
+    "mtime": 1783526640.058161,
+    "ast_hash": "b1e7357522cd1dcb19d50c4a78c99d76",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-1440-darwin.png": {
+    "mtime": 1783526644.4328048,
+    "ast_hash": "b1e7357522cd1dcb19d50c4a78c99d76",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-320-darwin.png": {
+    "mtime": 1783526631.5884566,
+    "ast_hash": "b1e7357522cd1dcb19d50c4a78c99d76",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-768-darwin.png": {
+    "mtime": 1783526636.0672846,
+    "ast_hash": "b1e7357522cd1dcb19d50c4a78c99d76",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-secondary-default-firefox-1440-darwin.png": {
+    "mtime": 1783526655.0386064,
+    "ast_hash": "a0db10c0508b51cf123f4395bb68e300",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button.spec.ts-snapshots/button-secondary-default-webkit-1440-darwin.png": {
+    "mtime": 1783526664.9101167,
+    "ast_hash": "46bd4d5848d650dd41c05c4576eb3ca9",
     "semantic_hash": ""
   }
 }
