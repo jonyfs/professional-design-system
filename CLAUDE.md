@@ -1,8 +1,10 @@
 <!-- SPECKIT START -->
-Active feature: `001-primitive-components`. For technologies, project
+Active feature: `002-form-primitives-round-2`. For technologies, project
 structure, shell commands, and other implementation context, read
-`specs/001-primitive-components/plan.md` (and its `research.md`,
-`data-model.md`, `contracts/`, `quickstart.md` siblings).
+`specs/002-form-primitives-round-2/plan.md` (and its `research.md`,
+`data-model.md`, `contracts/`, `quickstart.md` siblings). Feature
+`001-primitive-components` is complete and shipped — see its own
+`plan.md` for that feature's context.
 <!-- SPECKIT END -->
 
 ## graphify
