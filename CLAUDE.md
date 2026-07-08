@@ -1,6 +1,8 @@
 <!-- SPECKIT START -->
-For additional context about technologies to be used, project structure,
-shell commands, and other important information, read the current plan
+Active feature: `001-primitive-components`. For technologies, project
+structure, shell commands, and other implementation context, read
+`specs/001-primitive-components/plan.md` (and its `research.md`,
+`data-model.md`, `contracts/`, `quickstart.md` siblings).
 <!-- SPECKIT END -->
 
 ## graphify

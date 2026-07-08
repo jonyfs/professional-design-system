@@ -6,7 +6,7 @@
 
 **Status**: Draft
 
-**Input**: User description: "Implement the design system's primitive components — Button, Text Input, Badge, and Checkbox — in HTML using Tailwind CSS, built exclusively on the semantic design tokens already ratified in the project constitution (v1.2.0)."
+**Input**: User description: "Implement the design system's primitive components — Button, Text Input, Badge, and Checkbox — in HTML using Tailwind CSS, built exclusively on the semantic design tokens already ratified in the project constitution (v1.3.0)."
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -40,7 +40,7 @@ disabled) is visually distinct and keyboard-operable.
 ### User Story 2 - Drop-in Accessible Text Input (Priority: P2)
 
 A frontend developer building a form needs a text input control with label,
-placeholder, focus, and inline-error states that already match the design
+placeholder, focus, and error states that already match the design
 system's token and accessibility rules.
 
 **Why this priority**: Forms are the second most common surface after buttons,
@@ -86,8 +86,10 @@ variants render with correct tokens, and the Checkbox exposes correct
    token combination (e.g., success = `bg-green-50 text-success
    ring-green-600/20`) and no other Badge uses a raw palette class.
 2. **Given** a Checkbox is toggled via keyboard (Space key) while focused,
-   **When** the state changes, **Then** `aria-checked` updates accordingly and
-   the visual checked state uses the brand token (`text-brand`).
+   **When** the state changes, **Then** the native checked state updates
+   accordingly (correctly exposed to assistive technology without any
+   redundant ARIA attribute) and the visual checked state uses the brand
+   token (`text-brand`).
 
 ---
 
@@ -111,8 +113,8 @@ variants render with correct tokens, and the Checkbox exposes correct
 - **FR-001**: The design system MUST provide a Button component with visually
   distinct default, hover, active, focus-visible, and disabled states.
 - **FR-002**: The design system MUST provide a Text Input component with
-  visually distinct default, focus, and inline-error states, including an error
-  message slot positioned directly below the input.
+  visually distinct default, focus, error, and disabled states, including an
+  error message slot positioned directly below the input.
 - **FR-003**: The design system MUST provide a Badge component with exactly four
   semantic variants: success, error, warning, and neutral.
 - **FR-004**: The design system MUST provide a Checkbox component with visually
@@ -124,10 +126,13 @@ variants render with correct tokens, and the Checkbox exposes correct
 - **FR-006**: Every interactive component (Button, Text Input, Checkbox) MUST be
   fully operable using the keyboard alone (Tab to focus, Enter/Space to
   activate/toggle).
-- **FR-007**: Every interactive component MUST expose the appropriate ARIA
-  state attributes where applicable (`aria-invalid` on the Text Input error
-  state, `aria-checked` on the Checkbox, `aria-disabled` or the native
-  `disabled` attribute where the element is disabled).
+- **FR-007**: Every interactive component MUST expose its current state to
+  assistive technology, either via an explicit ARIA attribute where no native
+  equivalent exists (`aria-invalid` on the Text Input error state) or via
+  correct native semantics where one does (the Checkbox's checked state via
+  its native `checked` property/attribute; disabled state via the native
+  `disabled` attribute on all interactive components). Redundant ARIA
+  attributes duplicating already-correct native semantics MUST NOT be added.
 - **FR-008**: Every text/background color combination in all four components
   MUST pass WCAG 2.2 AAA contrast.
 

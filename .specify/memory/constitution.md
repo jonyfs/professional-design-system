@@ -1,28 +1,58 @@
 <!--
 SYNC IMPACT REPORT
-Version change: 1.2.0 → 1.2.1
-Modified principles:
-  - No principle content changed. Governance section received a non-semantic
-    clarification (canonical repository reference) tied to the pre-existing
-    Amendment Procedure clause.
-Added sections: None (clarification only, no new principle/section)
+Version change: 1.2.1 → 1.3.0
+Modified principles: None (no principle text changed)
+Added sections:
+  - Base Semantic Palette: three new tokens under `status` —
+    `success-strong` (#065F46), `error-strong` (#991B1B),
+    `warning-strong` (#78350F) — calibrated text-safe variants of the
+    existing success/error/warning tokens.
+Corrected sections (existing content fixed, not newly added):
+  - Component Catalog → Data Display & Listings → Badges: text color
+    switched from `text-success`/`text-error`/`text-warning` to the new
+    `-strong` tokens; ring color switched from raw Tailwind palette
+    classes (`ring-green-600/20`, `ring-red-600/10`, `ring-amber-600/10`)
+    to the ratified `ring-success/20`, `ring-error/10`, `ring-warning/10`.
+  - Component Catalog → Forms, Validation & Inputs → Inline errors:
+    text color switched from `text-error` to `text-error-strong`.
 Removed sections: None
+Rationale for this amendment: `/speckit-analyze` on feature
+001-primitive-components (2026-07-08) found that the ratified
+success/error/warning tokens, as prescribed for text-over-tint use in the
+Badge and inline-error patterns, fail the Principle II AAA contrast gate
+(7:1) — measured via the WCAG relative-luminance formula at 2.42:1
+(success on green-50), 3.44:1 (error on red-50), 2.07:1 (warning on
+amber-50), and 3.76:1 (error text on white). The three new `-strong`
+tokens pass AAA in every context measured (7.34–9.72:1 range). The
+existing DEFAULT success/error/warning values are unchanged and remain
+valid for non-text uses (icons, dots, rings via opacity modifier). The
+Badge ring-color correction additionally resolves a pre-existing
+Principle IV tension: the raw `ring-green-600/20`-style classes used a
+different hue calibration than this project's own status tokens and were
+never added to the ratified palette.
 Templates requiring updates:
   ✅ .specify/templates/plan-template.md — no edit required
   ✅ .specify/templates/spec-template.md — no edit required
   ✅ .specify/templates/tasks-template.md — no edit required
   ✅ .specify/templates/checklist-template.md — no edit required
   ✅ .claude/skills/speckit-*/SKILL.md (11 files) — no edit required
+  ✅ specs/001-primitive-components/contracts/badge.contract.md — updated
+    to reference the new `-strong`/ring tokens
+  ✅ specs/001-primitive-components/contracts/text-input.contract.md —
+    updated to reference `text-error-strong`
+  ✅ specs/001-primitive-components/contracts/button.contract.md — updated
+    to `bg-brand-dark` (unrelated AAA fix, same remediation pass)
+  ✅ specs/001-primitive-components/spec.md — FR-002 (added disabled state),
+    FR-007/US3-AC2 (removed incorrect `aria-checked` requirement for the
+    native Checkbox), version reference updated to v1.3.0
+  ✅ specs/001-primitive-components/plan.md — Constitution Check gate table
+    corrected (G1/G3 remediation noted, G4 re-scoped to FR-004)
 Follow-up TODOs:
-  - RESOLVED (partially, carried from v1.2.0): the `find-skills` gap is formally
-    defined as Principle VII's behavior protocol.
-  - TODO(SKILL_REFS): `frontend-design`, referenced in the original v1.0.0 request,
-    remains unresolved — still not present under that exact name.
-  - Context for this amendment: the project's git repository was initialized
-    locally (`main` branch) and `origin` was set to
-    https://github.com/jonyfs/professional-design-system.git in this same
-    session. The remote exists and is reachable but has no commits yet — this
-    amendment does not assume any push/commit has happened.
+  - RESOLVED (carried from v1.2.0/v1.2.1): the `find-skills` gap is
+    formally defined as Principle VII's behavior protocol.
+  - TODO(SKILL_REFS): `frontend-design`, referenced in the original
+    v1.0.0 request, remains unresolved — still not present under that
+    exact name.
 -->
 
 # Professional Design System Constitution
@@ -156,12 +186,21 @@ extend its own capability without compromising trust or project hygiene.
     "800": "#1F2937", "900": "#111827"
   },
   "status": {
-    "success": "#10B981", "warning": "#F59E0B", "error": "#EF4444", "info": "#3B82F6"
+    "success": "#10B981", "warning": "#F59E0B", "error": "#EF4444", "info": "#3B82F6",
+    "success-strong": "#065F46", "warning-strong": "#78350F", "error-strong": "#991B1B"
   }
 }
 ```
 This table is the single source of truth for color. Any new color token MUST be
 added here before being used in components.
+
+The `-strong` status variants exist specifically for text rendered directly on
+a light tint background (e.g. Badge labels, inline error messages) — the base
+success/warning/error values are calibrated for non-text uses (icons, dots,
+rings) and do not pass WCAG 2.2 AAA contrast as text in that context. Any
+component rendering status-colored text over a light background MUST use the
+`-strong` variant; the base variant remains correct for rings, icon fills, and
+other non-text decoration.
 
 ### Typography & Text Scale
 - Family: `font-sans` (Inter, system-ui, sans-serif), with `antialiased` always
@@ -212,18 +251,22 @@ catalog.
 - **Toggles/switches**: `transition-colors duration-200 ease-in-out` between
   `bg-neutral-200` and `bg-brand`; inner dot `h-5 w-5 transform rounded-full
   bg-white shadow ring-0 transition duration-200 ease-in-out`.
-- **Inline errors**: `text-xs text-error mt-1 font-medium` directly below the
-  input; the parent input additionally receives `ring-error focus:ring-error`.
+- **Inline errors**: `text-xs text-error-strong mt-1 font-medium` directly
+  below the input (AAA-safe text variant); the parent input additionally
+  receives `ring-error focus:ring-error` (non-text use — base token is
+  correct here).
 
 ### Data Display & Listings
 - **Tables**: header `bg-neutral-50 text-left text-xs font-semibold
   text-neutral-600 uppercase tracking-wider`; rows with optional zebra striping
   (`even:bg-neutral-50`) and `divide-y divide-neutral-200`; cells `px-6 py-4`.
-- **Badges**: success `bg-green-50 text-success ring-1 ring-inset
-  ring-green-600/20`; error `bg-red-50 text-error ring-1 ring-inset
-  ring-red-600/10`; warning `bg-amber-50 text-warning ring-1 ring-inset
-  ring-amber-600/10`; neutral `bg-neutral-50 text-neutral-600 ring-1 ring-inset
-  ring-neutral-500/10`.
+- **Badges**: success `bg-green-50 text-success-strong ring-1 ring-inset
+  ring-success/20`; error `bg-red-50 text-error-strong ring-1 ring-inset
+  ring-error/10`; warning `bg-amber-50 text-warning-strong ring-1 ring-inset
+  ring-warning/10`; neutral `bg-neutral-50 text-neutral-600 ring-1 ring-inset
+  ring-neutral-500/10`. Text uses the AAA-safe `-strong` variant; rings use the
+  base status token via Tailwind's opacity modifier (both already ratified,
+  no raw palette classes).
 - **Lists**: avatars `rounded-full h-10 w-10`; title `text-sm font-semibold
   text-neutral-900`; metadata `text-xs text-neutral-500`; interactive item
   `hover:bg-neutral-50`.
@@ -284,4 +327,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.2.1 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-07
+**Version**: 1.3.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
