@@ -32,5 +32,7 @@
   "30": "playwright.config.ts",
   "31": "postcss.config.js",
   "32": "tailwind.config.ts",
-  "33": "vite.config.ts"
+  "33": "vite.config.ts",
+  "34": "button.spec.ts",
+  "35": "text-input.spec.ts"
 }

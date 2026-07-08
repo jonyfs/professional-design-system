@@ -95,14 +95,44 @@
   },
   "nodes": [
     {
+      "label": "text-input.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/text-input.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_e2e_text_input_spec",
+      "community": 35,
+      "norm_label": "text-input.spec.ts"
+    },
+    {
+      "label": "button.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/button.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 34,
+      "norm_label": "button.spec.ts",
+      "id": "tests_e2e_button_spec"
+    },
+    {
+      "label": "tabUntilFocused()",
+      "file_type": "code",
+      "source_file": "tests/e2e/button.spec.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 34,
+      "norm_label": "tabuntilfocused()",
+      "id": "tests_e2e_button_spec_tabuntilfocused"
+    },
+    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "package",
       "community": 25,
-      "norm_label": "package.json"
+      "norm_label": "package.json",
+      "id": "package"
     },
     {
       "label": "name",
@@ -110,9 +140,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "package_name",
       "community": 25,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "package_name"
     },
     {
       "label": "version",
@@ -120,9 +150,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "package_version",
       "community": 25,
-      "norm_label": "version"
+      "norm_label": "version",
+      "id": "package_version"
     },
     {
       "label": "private",
@@ -130,9 +160,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "package_private",
       "community": 25,
-      "norm_label": "private"
+      "norm_label": "private",
+      "id": "package_private"
     },
     {
       "label": "description",
@@ -140,9 +170,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "package_description",
       "community": 25,
-      "norm_label": "description"
+      "norm_label": "description",
+      "id": "package_description"
     },
     {
       "label": "type",
@@ -150,9 +180,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "package_type",
       "community": 25,
-      "norm_label": "type"
+      "norm_label": "type",
+      "id": "package_type"
     },
     {
       "label": "scripts",
@@ -160,9 +190,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "package_scripts",
       "community": 25,
-      "norm_label": "scripts"
+      "norm_label": "scripts",
+      "id": "package_scripts"
     },
     {
       "label": "dev",
@@ -170,9 +200,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "package_scripts_dev",
       "community": 25,
-      "norm_label": "dev"
+      "norm_label": "dev",
+      "id": "package_scripts_dev"
     },
     {
       "label": "build",
@@ -180,9 +210,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "package_scripts_build",
       "community": 25,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "package_scripts_build"
     },
     {
       "label": "preview",
@@ -190,9 +220,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "package_scripts_preview",
       "community": 25,
-      "norm_label": "preview"
+      "norm_label": "preview",
+      "id": "package_scripts_preview"
     },
     {
       "label": "test:e2e",
@@ -200,9 +230,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "package_scripts_test_e2e",
       "community": 25,
-      "norm_label": "test:e2e"
+      "norm_label": "test:e2e",
+      "id": "package_scripts_test_e2e"
     },
     {
       "label": "audit:tokens",
@@ -210,9 +240,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "package_scripts_audit_tokens",
       "community": 25,
-      "norm_label": "audit:tokens"
+      "norm_label": "audit:tokens",
+      "id": "package_scripts_audit_tokens"
     },
     {
       "label": "audit:contrast",
@@ -220,9 +250,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "package_scripts_audit_contrast",
       "community": 25,
-      "norm_label": "audit:contrast"
+      "norm_label": "audit:contrast",
+      "id": "package_scripts_audit_contrast"
     },
     {
       "label": "typecheck",
@@ -230,9 +260,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "package_scripts_typecheck",
       "community": 25,
-      "norm_label": "typecheck"
+      "norm_label": "typecheck",
+      "id": "package_scripts_typecheck"
     },
     {
       "label": "devDependencies",
@@ -240,9 +270,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "package_devdependencies",
       "community": 25,
-      "norm_label": "devdependencies"
+      "norm_label": "devdependencies",
+      "id": "package_devdependencies"
     },
     {
       "label": "@axe-core/playwright",
@@ -250,9 +280,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "package_devdependencies_axe_core_playwright",
       "community": 25,
-      "norm_label": "@axe-core/playwright"
+      "norm_label": "@axe-core/playwright",
+      "id": "package_devdependencies_axe_core_playwright"
     },
     {
       "label": "@playwright/test",
@@ -260,9 +290,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "package_devdependencies_playwright_test",
       "community": 25,
-      "norm_label": "@playwright/test"
+      "norm_label": "@playwright/test",
+      "id": "package_devdependencies_playwright_test"
     },
     {
       "label": "@types/node",
@@ -270,9 +300,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "package_devdependencies_types_node",
       "community": 25,
-      "norm_label": "@types/node"
+      "norm_label": "@types/node",
+      "id": "package_devdependencies_types_node"
     },
     {
       "label": "autoprefixer",
@@ -280,9 +310,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "package_devdependencies_autoprefixer",
       "community": 25,
-      "norm_label": "autoprefixer"
+      "norm_label": "autoprefixer",
+      "id": "package_devdependencies_autoprefixer"
     },
     {
       "label": "postcss",
@@ -290,9 +320,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "package_devdependencies_postcss",
       "community": 25,
-      "norm_label": "postcss"
+      "norm_label": "postcss",
+      "id": "package_devdependencies_postcss"
     },
     {
       "label": "tailwindcss",
@@ -300,9 +330,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "package_devdependencies_tailwindcss",
       "community": 25,
-      "norm_label": "tailwindcss"
+      "norm_label": "tailwindcss",
+      "id": "package_devdependencies_tailwindcss"
     },
     {
       "label": "typescript",
@@ -310,9 +340,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "package_devdependencies_typescript",
       "community": 25,
-      "norm_label": "typescript"
+      "norm_label": "typescript",
+      "id": "package_devdependencies_typescript"
     },
     {
       "label": "vite",
@@ -320,9 +350,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "package_devdependencies_vite",
       "community": 25,
-      "norm_label": "vite"
+      "norm_label": "vite",
+      "id": "package_devdependencies_vite"
     },
     {
       "label": "wcag-contrast",
@@ -330,9 +360,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "package_devdependencies_wcag_contrast",
       "community": 25,
-      "norm_label": "wcag-contrast"
+      "norm_label": "wcag-contrast",
+      "id": "package_devdependencies_wcag_contrast"
     },
     {
       "label": "playwright.config.ts",
@@ -340,9 +370,9 @@
       "source_file": "playwright.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "playwright_config",
       "community": 30,
-      "norm_label": "playwright.config.ts"
+      "norm_label": "playwright.config.ts",
+      "id": "playwright_config"
     },
     {
       "label": "breakpoints",
@@ -350,9 +380,9 @@
       "source_file": "playwright.config.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "playwright_config_breakpoints",
       "community": 30,
-      "norm_label": "breakpoints"
+      "norm_label": "breakpoints",
+      "id": "playwright_config_breakpoints"
     },
     {
       "label": "postcss.config.js",
@@ -360,9 +390,9 @@
       "source_file": "postcss.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "postcss_config",
       "community": 31,
-      "norm_label": "postcss.config.js"
+      "norm_label": "postcss.config.js",
+      "id": "postcss_config"
     },
     {
       "label": "audit-tokens.mjs",
@@ -370,9 +400,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scripts_audit_tokens",
       "community": 26,
-      "norm_label": "audit-tokens.mjs"
+      "norm_label": "audit-tokens.mjs",
+      "id": "scripts_audit_tokens"
     },
     {
       "label": "rootDir",
@@ -380,9 +410,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_rootdir",
       "community": 26,
-      "norm_label": "rootdir"
+      "norm_label": "rootdir",
+      "id": "scripts_audit_tokens_rootdir"
     },
     {
       "label": "extractBalancedBlock()",
@@ -390,9 +420,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_extractbalancedblock",
       "community": 26,
-      "norm_label": "extractbalancedblock()"
+      "norm_label": "extractbalancedblock()",
+      "id": "scripts_audit_tokens_extractbalancedblock"
     },
     {
       "label": "parseColorAllowlist()",
@@ -400,9 +430,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_parsecolorallowlist",
       "community": 26,
-      "norm_label": "parsecolorallowlist()"
+      "norm_label": "parsecolorallowlist()",
+      "id": "scripts_audit_tokens_parsecolorallowlist"
     },
     {
       "label": "parseRadiusAllowlist()",
@@ -410,9 +440,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L62",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_parseradiusallowlist",
       "community": 26,
-      "norm_label": "parseradiusallowlist()"
+      "norm_label": "parseradiusallowlist()",
+      "id": "scripts_audit_tokens_parseradiusallowlist"
     },
     {
       "label": "configSource",
@@ -420,9 +450,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L76",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_configsource",
       "community": 26,
-      "norm_label": "configsource"
+      "norm_label": "configsource",
+      "id": "scripts_audit_tokens_configsource"
     },
     {
       "label": "allowedColorNames",
@@ -430,9 +460,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_allowedcolornames",
       "community": 26,
-      "norm_label": "allowedcolornames"
+      "norm_label": "allowedcolornames",
+      "id": "scripts_audit_tokens_allowedcolornames"
     },
     {
       "label": "allowedRadiusClasses",
@@ -440,9 +470,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_allowedradiusclasses",
       "community": 26,
-      "norm_label": "allowedradiusclasses"
+      "norm_label": "allowedradiusclasses",
+      "id": "scripts_audit_tokens_allowedradiusclasses"
     },
     {
       "label": "collectHtmlFiles()",
@@ -450,9 +480,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L82",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_collecthtmlfiles",
       "community": 26,
-      "norm_label": "collecthtmlfiles()"
+      "norm_label": "collecthtmlfiles()",
+      "id": "scripts_audit_tokens_collecthtmlfiles"
     },
     {
       "label": "targets",
@@ -460,9 +490,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L97",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_targets",
       "community": 26,
-      "norm_label": "targets"
+      "norm_label": "targets",
+      "id": "scripts_audit_tokens_targets"
     },
     {
       "label": "COLOR_PREFIXES",
@@ -470,9 +500,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L106",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_color_prefixes",
       "community": 26,
-      "norm_label": "color_prefixes"
+      "norm_label": "color_prefixes",
+      "id": "scripts_audit_tokens_color_prefixes"
     },
     {
       "label": "NON_COLOR_SUFFIXES",
@@ -480,9 +510,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L126",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_non_color_suffixes",
       "community": 26,
-      "norm_label": "non_color_suffixes"
+      "norm_label": "non_color_suffixes",
+      "id": "scripts_audit_tokens_non_color_suffixes"
     },
     {
       "label": "isStructuralSuffix()",
@@ -490,9 +520,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L144",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_isstructuralsuffix",
       "community": 26,
-      "norm_label": "isstructuralsuffix()"
+      "norm_label": "isstructuralsuffix()",
+      "id": "scripts_audit_tokens_isstructuralsuffix"
     },
     {
       "label": "stripVariants()",
@@ -500,9 +530,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L154",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_stripvariants",
       "community": 26,
-      "norm_label": "stripvariants()"
+      "norm_label": "stripvariants()",
+      "id": "scripts_audit_tokens_stripvariants"
     },
     {
       "label": "checkClass()",
@@ -510,9 +540,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L160",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_checkclass",
       "community": 26,
-      "norm_label": "checkclass()"
+      "norm_label": "checkclass()",
+      "id": "scripts_audit_tokens_checkclass"
     },
     {
       "label": "violations",
@@ -520,9 +550,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L186",
       "_origin": "ast",
-      "id": "scripts_audit_tokens_violations",
       "community": 26,
-      "norm_label": "violations"
+      "norm_label": "violations",
+      "id": "scripts_audit_tokens_violations"
     },
     {
       "label": "check-contrast.mjs",
@@ -530,9 +560,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scripts_check_contrast",
       "community": 28,
-      "norm_label": "check-contrast.mjs"
+      "norm_label": "check-contrast.mjs",
+      "id": "scripts_check_contrast"
     },
     {
       "label": "TOKENS",
@@ -540,9 +570,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "scripts_check_contrast_tokens",
       "community": 28,
-      "norm_label": "tokens"
+      "norm_label": "tokens",
+      "id": "scripts_check_contrast_tokens"
     },
     {
       "label": "PAIRINGS",
@@ -550,9 +580,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "scripts_check_contrast_pairings",
       "community": 28,
-      "norm_label": "pairings"
+      "norm_label": "pairings",
+      "id": "scripts_check_contrast_pairings"
     },
     {
       "label": "failures",
@@ -560,9 +590,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L104",
       "_origin": "ast",
-      "id": "scripts_check_contrast_failures",
       "community": 28,
-      "norm_label": "failures"
+      "norm_label": "failures",
+      "id": "scripts_check_contrast_failures"
     },
     {
       "label": "checkbox.contract.md",
@@ -570,9 +600,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract",
       "community": 18,
-      "norm_label": "checkbox.contract.md"
+      "norm_label": "checkbox.contract.md",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract"
     },
     {
       "label": "Component Contract: Checkbox",
@@ -580,9 +610,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
       "community": 18,
-      "norm_label": "component contract: checkbox"
+      "norm_label": "component contract: checkbox",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
     },
     {
       "label": "Markup contract",
@@ -590,9 +620,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract",
       "community": 18,
-      "norm_label": "markup contract"
+      "norm_label": "markup contract",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
     },
     {
       "label": "Required attributes (Principle II + V gates)",
@@ -600,9 +630,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates",
       "community": 18,
-      "norm_label": "required attributes (principle ii + v gates)"
+      "norm_label": "required attributes (principle ii + v gates)",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
     },
     {
       "label": "Keyboard behavior (FR-006)",
@@ -610,9 +640,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006",
       "community": 18,
-      "norm_label": "keyboard behavior (fr-006)"
+      "norm_label": "keyboard behavior (fr-006)",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
     },
     {
       "label": "Token allowlist used",
@@ -620,9 +650,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used",
       "community": 18,
-      "norm_label": "token allowlist used"
+      "norm_label": "token allowlist used",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
     },
     {
       "label": "Acceptance mapping",
@@ -630,9 +660,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping",
       "community": 18,
-      "norm_label": "acceptance mapping"
+      "norm_label": "acceptance mapping",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
     },
     {
       "label": "plan.md",
@@ -640,9 +670,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan",
       "community": 1,
-      "norm_label": "plan.md"
+      "norm_label": "plan.md",
+      "id": "specs_001_primitive_components_plan"
     },
     {
       "label": "Implementation Plan: Design System Primitive Components",
@@ -650,9 +680,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
       "community": 1,
-      "norm_label": "implementation plan: design system primitive components"
+      "norm_label": "implementation plan: design system primitive components",
+      "id": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components"
     },
     {
       "label": "Summary",
@@ -660,9 +690,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_summary",
       "community": 1,
-      "norm_label": "summary"
+      "norm_label": "summary",
+      "id": "specs_001_primitive_components_plan_summary"
     },
     {
       "label": "Technical Context",
@@ -670,9 +700,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_technical_context",
       "community": 1,
-      "norm_label": "technical context"
+      "norm_label": "technical context",
+      "id": "specs_001_primitive_components_plan_technical_context"
     },
     {
       "label": "Constitution Check",
@@ -680,9 +710,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L66",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_constitution_check",
       "community": 1,
-      "norm_label": "constitution check"
+      "norm_label": "constitution check",
+      "id": "specs_001_primitive_components_plan_constitution_check"
     },
     {
       "label": "Project Structure",
@@ -690,9 +720,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_project_structure",
       "community": 1,
-      "norm_label": "project structure"
+      "norm_label": "project structure",
+      "id": "specs_001_primitive_components_plan_project_structure"
     },
     {
       "label": "Documentation (this feature)",
@@ -700,9 +730,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L83",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_documentation_this_feature",
       "community": 1,
-      "norm_label": "documentation (this feature)"
+      "norm_label": "documentation (this feature)",
+      "id": "specs_001_primitive_components_plan_documentation_this_feature"
     },
     {
       "label": "Source Code (repository root)",
@@ -710,9 +740,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L99",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_source_code_repository_root",
       "community": 1,
-      "norm_label": "source code (repository root)"
+      "norm_label": "source code (repository root)",
+      "id": "specs_001_primitive_components_plan_source_code_repository_root"
     },
     {
       "label": "Complexity Tracking",
@@ -720,9 +750,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L139",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_plan_complexity_tracking",
       "community": 1,
-      "norm_label": "complexity tracking"
+      "norm_label": "complexity tracking",
+      "id": "specs_001_primitive_components_plan_complexity_tracking"
     },
     {
       "label": "research.md",
@@ -730,9 +760,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research",
       "community": 21,
-      "norm_label": "research.md"
+      "norm_label": "research.md",
+      "id": "specs_001_primitive_components_research"
     },
     {
       "label": "Phase 0 Research: Design System Primitive Components",
@@ -740,9 +770,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
       "community": 21,
-      "norm_label": "phase 0 research: design system primitive components"
+      "norm_label": "phase 0 research: design system primitive components",
+      "id": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
     },
     {
       "label": "Decision: Tailwind CSS 3.4.x (config-file based), not Tailwind 4",
@@ -750,9 +780,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4",
       "community": 21,
-      "norm_label": "decision: tailwind css 3.4.x (config-file based), not tailwind 4"
+      "norm_label": "decision: tailwind css 3.4.x (config-file based), not tailwind 4",
+      "id": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
     },
     {
       "label": "Decision: Vite 8.x as the dev/build tool (not 5.x)",
@@ -760,9 +790,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_decision_vite_8_x_as_the_dev_build_tool_not_5_x",
       "community": 21,
-      "norm_label": "decision: vite 8.x as the dev/build tool (not 5.x)"
+      "norm_label": "decision: vite 8.x as the dev/build tool (not 5.x)",
+      "id": "specs_001_primitive_components_research_decision_vite_8_x_as_the_dev_build_tool_not_5_x"
     },
     {
       "label": "Decision: Vite as the dev/build tool",
@@ -770,9 +800,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool",
       "community": 21,
-      "norm_label": "decision: vite as the dev/build tool"
+      "norm_label": "decision: vite as the dev/build tool",
+      "id": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
     },
     {
       "label": "Decision: Playwright for visual regression + accessibility",
@@ -780,9 +810,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L46",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility",
       "community": 21,
-      "norm_label": "decision: playwright for visual regression + accessibility"
+      "norm_label": "decision: playwright for visual regression + accessibility",
+      "id": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
     },
     {
       "label": "Decision: Custom Node scripts for token-discipline and contrast gates",
@@ -790,9 +820,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates",
       "community": 21,
-      "norm_label": "decision: custom node scripts for token-discipline and contrast gates"
+      "norm_label": "decision: custom node scripts for token-discipline and contrast gates",
+      "id": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
     },
     {
       "label": "Resolved unknowns",
@@ -800,9 +830,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L80",
       "_origin": "ast",
-      "id": "specs_001_primitive_components_research_resolved_unknowns",
       "community": 21,
-      "norm_label": "resolved unknowns"
+      "norm_label": "resolved unknowns",
+      "id": "specs_001_primitive_components_research_resolved_unknowns"
     },
     {
       "label": "tailwind.config.ts",
@@ -810,9 +840,9 @@
       "source_file": "tailwind.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tailwind_config",
       "community": 32,
-      "norm_label": "tailwind.config.ts"
+      "norm_label": "tailwind.config.ts",
+      "id": "tailwind_config"
     },
     {
       "label": "a11y-helper.ts",
@@ -820,9 +850,9 @@
       "source_file": "tests/e2e/a11y-helper.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_e2e_a11y_helper",
       "community": 29,
-      "norm_label": "a11y-helper.ts"
+      "norm_label": "a11y-helper.ts",
+      "id": "tests_e2e_a11y_helper"
     },
     {
       "label": "expectNoA11yViolations()",
@@ -830,9 +860,9 @@
       "source_file": "tests/e2e/a11y-helper.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "tests_e2e_a11y_helper_expectnoa11yviolations",
       "community": 29,
-      "norm_label": "expectnoa11yviolations()"
+      "norm_label": "expectnoa11yviolations()",
+      "id": "tests_e2e_a11y_helper_expectnoa11yviolations"
     },
     {
       "label": "formatViolations()",
@@ -840,9 +870,9 @@
       "source_file": "tests/e2e/a11y-helper.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "tests_e2e_a11y_helper_formatviolations",
       "community": 29,
-      "norm_label": "formatviolations()"
+      "norm_label": "formatviolations()",
+      "id": "tests_e2e_a11y_helper_formatviolations"
     },
     {
       "label": "tsconfig.json",
@@ -850,9 +880,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tsconfig",
       "community": 27,
-      "norm_label": "tsconfig.json"
+      "norm_label": "tsconfig.json",
+      "id": "tsconfig"
     },
     {
       "label": "compilerOptions",
@@ -860,9 +890,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions",
       "community": 27,
-      "norm_label": "compileroptions"
+      "norm_label": "compileroptions",
+      "id": "tsconfig_compileroptions"
     },
     {
       "label": "target",
@@ -870,9 +900,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_target",
       "community": 27,
-      "norm_label": "target"
+      "norm_label": "target",
+      "id": "tsconfig_compileroptions_target"
     },
     {
       "label": "module",
@@ -880,9 +910,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_module",
       "community": 27,
-      "norm_label": "module"
+      "norm_label": "module",
+      "id": "tsconfig_compileroptions_module"
     },
     {
       "label": "moduleResolution",
@@ -890,9 +920,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_moduleresolution",
       "community": 27,
-      "norm_label": "moduleresolution"
+      "norm_label": "moduleresolution",
+      "id": "tsconfig_compileroptions_moduleresolution"
     },
     {
       "label": "lib",
@@ -900,9 +930,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_lib",
       "community": 27,
-      "norm_label": "lib"
+      "norm_label": "lib",
+      "id": "tsconfig_compileroptions_lib"
     },
     {
       "label": "strict",
@@ -910,9 +940,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_strict",
       "community": 27,
-      "norm_label": "strict"
+      "norm_label": "strict",
+      "id": "tsconfig_compileroptions_strict"
     },
     {
       "label": "noEmit",
@@ -920,9 +950,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_noemit",
       "community": 27,
-      "norm_label": "noemit"
+      "norm_label": "noemit",
+      "id": "tsconfig_compileroptions_noemit"
     },
     {
       "label": "skipLibCheck",
@@ -930,9 +960,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_skiplibcheck",
       "community": 27,
-      "norm_label": "skiplibcheck"
+      "norm_label": "skiplibcheck",
+      "id": "tsconfig_compileroptions_skiplibcheck"
     },
     {
       "label": "esModuleInterop",
@@ -940,9 +970,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_esmoduleinterop",
       "community": 27,
-      "norm_label": "esmoduleinterop"
+      "norm_label": "esmoduleinterop",
+      "id": "tsconfig_compileroptions_esmoduleinterop"
     },
     {
       "label": "resolveJsonModule",
@@ -950,9 +980,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_resolvejsonmodule",
       "community": 27,
-      "norm_label": "resolvejsonmodule"
+      "norm_label": "resolvejsonmodule",
+      "id": "tsconfig_compileroptions_resolvejsonmodule"
     },
     {
       "label": "isolatedModules",
@@ -960,9 +990,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_isolatedmodules",
       "community": 27,
-      "norm_label": "isolatedmodules"
+      "norm_label": "isolatedmodules",
+      "id": "tsconfig_compileroptions_isolatedmodules"
     },
     {
       "label": "types",
@@ -970,9 +1000,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "tsconfig_compileroptions_types",
       "community": 27,
-      "norm_label": "types"
+      "norm_label": "types",
+      "id": "tsconfig_compileroptions_types"
     },
     {
       "label": "include",
@@ -980,9 +1010,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "tsconfig_include",
       "community": 27,
-      "norm_label": "include"
+      "norm_label": "include",
+      "id": "tsconfig_include"
     },
     {
       "label": "vite.config.ts",
@@ -990,9 +1020,9 @@
       "source_file": "vite.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "vite_config",
       "community": 33,
-      "norm_label": "vite.config.ts"
+      "norm_label": "vite.config.ts",
+      "id": "vite_config"
     },
     {
       "label": "constitution.md",
@@ -3085,12 +3115,22 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/e2e/button.spec.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_e2e_button_spec",
+      "target": "tests_e2e_button_spec_tabuntilfocused"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "package.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_description",
-      "confidence_score": 1.0
+      "target": "package_description"
     },
     {
       "relation": "contains",
@@ -3098,9 +3138,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_devdependencies",
-      "confidence_score": 1.0
+      "target": "package_devdependencies"
     },
     {
       "relation": "contains",
@@ -3108,9 +3148,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_name",
-      "confidence_score": 1.0
+      "target": "package_name"
     },
     {
       "relation": "contains",
@@ -3118,9 +3158,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_private",
-      "confidence_score": 1.0
+      "target": "package_private"
     },
     {
       "relation": "contains",
@@ -3128,9 +3168,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_scripts",
-      "confidence_score": 1.0
+      "target": "package_scripts"
     },
     {
       "relation": "contains",
@@ -3138,9 +3178,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_type",
-      "confidence_score": 1.0
+      "target": "package_type"
     },
     {
       "relation": "contains",
@@ -3148,9 +3188,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_version",
-      "confidence_score": 1.0
+      "target": "package_version"
     },
     {
       "relation": "contains",
@@ -3158,9 +3198,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_audit_contrast",
-      "confidence_score": 1.0
+      "target": "package_scripts_audit_contrast"
     },
     {
       "relation": "contains",
@@ -3168,9 +3208,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_audit_tokens",
-      "confidence_score": 1.0
+      "target": "package_scripts_audit_tokens"
     },
     {
       "relation": "contains",
@@ -3178,9 +3218,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_build",
-      "confidence_score": 1.0
+      "target": "package_scripts_build"
     },
     {
       "relation": "contains",
@@ -3188,9 +3228,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_dev",
-      "confidence_score": 1.0
+      "target": "package_scripts_dev"
     },
     {
       "relation": "contains",
@@ -3198,9 +3238,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_preview",
-      "confidence_score": 1.0
+      "target": "package_scripts_preview"
     },
     {
       "relation": "contains",
@@ -3208,9 +3248,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_test_e2e",
-      "confidence_score": 1.0
+      "target": "package_scripts_test_e2e"
     },
     {
       "relation": "contains",
@@ -3218,9 +3258,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_typecheck",
-      "confidence_score": 1.0
+      "target": "package_scripts_typecheck"
     },
     {
       "relation": "contains",
@@ -3228,9 +3268,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_autoprefixer",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_autoprefixer"
     },
     {
       "relation": "contains",
@@ -3238,9 +3278,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_axe_core_playwright",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_axe_core_playwright"
     },
     {
       "relation": "contains",
@@ -3248,9 +3288,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_playwright_test",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_playwright_test"
     },
     {
       "relation": "contains",
@@ -3258,9 +3298,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_postcss",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_postcss"
     },
     {
       "relation": "contains",
@@ -3268,9 +3308,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_tailwindcss"
     },
     {
       "relation": "contains",
@@ -3278,9 +3318,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_types_node"
     },
     {
       "relation": "contains",
@@ -3288,9 +3328,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_typescript"
     },
     {
       "relation": "contains",
@@ -3298,9 +3338,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vite",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_vite"
     },
     {
       "relation": "contains",
@@ -3308,9 +3348,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_wcag_contrast",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_wcag_contrast"
     },
     {
       "relation": "contains",
@@ -3318,9 +3358,9 @@
       "source_file": "playwright.config.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "playwright_config",
-      "target": "playwright_config_breakpoints",
-      "confidence_score": 1.0
+      "target": "playwright_config_breakpoints"
     },
     {
       "relation": "contains",
@@ -3328,9 +3368,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_allowedcolornames",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_allowedcolornames"
     },
     {
       "relation": "contains",
@@ -3338,9 +3378,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_allowedradiusclasses",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_allowedradiusclasses"
     },
     {
       "relation": "contains",
@@ -3348,9 +3388,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_checkclass",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_checkclass"
     },
     {
       "relation": "contains",
@@ -3358,9 +3398,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_collecthtmlfiles",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_collecthtmlfiles"
     },
     {
       "relation": "contains",
@@ -3368,9 +3408,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_color_prefixes",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_color_prefixes"
     },
     {
       "relation": "contains",
@@ -3378,9 +3418,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_configsource",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_configsource"
     },
     {
       "relation": "contains",
@@ -3388,9 +3428,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_extractbalancedblock",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_extractbalancedblock"
     },
     {
       "relation": "contains",
@@ -3398,9 +3438,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_isstructuralsuffix",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_isstructuralsuffix"
     },
     {
       "relation": "contains",
@@ -3408,9 +3448,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_non_color_suffixes",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_non_color_suffixes"
     },
     {
       "relation": "contains",
@@ -3418,9 +3458,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_parsecolorallowlist",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_parsecolorallowlist"
     },
     {
       "relation": "contains",
@@ -3428,9 +3468,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_parseradiusallowlist",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_parseradiusallowlist"
     },
     {
       "relation": "contains",
@@ -3438,9 +3478,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_rootdir",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_rootdir"
     },
     {
       "relation": "contains",
@@ -3448,9 +3488,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_stripvariants",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_stripvariants"
     },
     {
       "relation": "contains",
@@ -3458,9 +3498,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_targets",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_targets"
     },
     {
       "relation": "contains",
@@ -3468,9 +3508,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_violations",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_violations"
     },
     {
       "relation": "calls",
@@ -3479,9 +3519,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens_parsecolorallowlist",
-      "target": "scripts_audit_tokens_extractbalancedblock",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_extractbalancedblock"
     },
     {
       "relation": "calls",
@@ -3490,9 +3530,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens_parseradiusallowlist",
-      "target": "scripts_audit_tokens_extractbalancedblock",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_extractbalancedblock"
     },
     {
       "relation": "references",
@@ -3512,9 +3552,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens_checkclass",
-      "target": "scripts_audit_tokens_isstructuralsuffix",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_isstructuralsuffix"
     },
     {
       "relation": "calls",
@@ -3523,9 +3563,9 @@
       "source_file": "scripts/audit-tokens.mjs",
       "source_location": "L161",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_audit_tokens_checkclass",
-      "target": "scripts_audit_tokens_stripvariants",
-      "confidence_score": 1.0
+      "target": "scripts_audit_tokens_stripvariants"
     },
     {
       "relation": "contains",
@@ -3533,9 +3573,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_check_contrast",
-      "target": "scripts_check_contrast_failures",
-      "confidence_score": 1.0
+      "target": "scripts_check_contrast_failures"
     },
     {
       "relation": "contains",
@@ -3543,9 +3583,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_check_contrast",
-      "target": "scripts_check_contrast_pairings",
-      "confidence_score": 1.0
+      "target": "scripts_check_contrast_pairings"
     },
     {
       "relation": "contains",
@@ -3553,9 +3593,9 @@
       "source_file": "scripts/check-contrast.mjs",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_check_contrast",
-      "target": "scripts_check_contrast_tokens",
-      "confidence_score": 1.0
+      "target": "scripts_check_contrast_tokens"
     },
     {
       "relation": "contains",
@@ -3563,9 +3603,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_checkbox_contract",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
     },
     {
       "relation": "contains",
@@ -3573,9 +3613,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
     },
     {
       "relation": "contains",
@@ -3583,9 +3623,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
     },
     {
       "relation": "contains",
@@ -3593,9 +3633,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
     },
     {
       "relation": "contains",
@@ -3603,9 +3643,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
     },
     {
       "relation": "contains",
@@ -3613,9 +3653,9 @@
       "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
     },
     {
       "relation": "contains",
@@ -3623,9 +3663,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan",
-      "target": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components"
     },
     {
       "relation": "contains",
@@ -3633,9 +3673,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_complexity_tracking",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_complexity_tracking"
     },
     {
       "relation": "contains",
@@ -3643,9 +3683,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_constitution_check",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_constitution_check"
     },
     {
       "relation": "contains",
@@ -3653,9 +3693,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_project_structure",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_project_structure"
     },
     {
       "relation": "contains",
@@ -3663,9 +3703,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_summary",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_summary"
     },
     {
       "relation": "contains",
@@ -3673,9 +3713,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
-      "target": "specs_001_primitive_components_plan_technical_context",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_technical_context"
     },
     {
       "relation": "contains",
@@ -3683,9 +3723,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_project_structure",
-      "target": "specs_001_primitive_components_plan_documentation_this_feature",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_documentation_this_feature"
     },
     {
       "relation": "contains",
@@ -3693,9 +3733,9 @@
       "source_file": "specs/001-primitive-components/plan.md",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_plan_project_structure",
-      "target": "specs_001_primitive_components_plan_source_code_repository_root",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_plan_source_code_repository_root"
     },
     {
       "relation": "contains",
@@ -3703,9 +3743,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research",
-      "target": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
     },
     {
       "relation": "contains",
@@ -3713,9 +3753,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
     },
     {
       "relation": "contains",
@@ -3723,9 +3763,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
     },
     {
       "relation": "contains",
@@ -3733,9 +3773,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
     },
     {
       "relation": "contains",
@@ -3743,9 +3783,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_vite_8_x_as_the_dev_build_tool_not_5_x",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_decision_vite_8_x_as_the_dev_build_tool_not_5_x"
     },
     {
       "relation": "contains",
@@ -3753,9 +3793,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
     },
     {
       "relation": "contains",
@@ -3763,9 +3803,9 @@
       "source_file": "specs/001-primitive-components/research.md",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
-      "target": "specs_001_primitive_components_research_resolved_unknowns",
-      "confidence_score": 1.0
+      "target": "specs_001_primitive_components_research_resolved_unknowns"
     },
     {
       "relation": "contains",
@@ -3773,9 +3813,9 @@
       "source_file": "tests/e2e/a11y-helper.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_a11y_helper",
-      "target": "tests_e2e_a11y_helper_expectnoa11yviolations",
-      "confidence_score": 1.0
+      "target": "tests_e2e_a11y_helper_expectnoa11yviolations"
     },
     {
       "relation": "contains",
@@ -3783,9 +3823,9 @@
       "source_file": "tests/e2e/a11y-helper.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_a11y_helper",
-      "target": "tests_e2e_a11y_helper_formatviolations",
-      "confidence_score": 1.0
+      "target": "tests_e2e_a11y_helper_formatviolations"
     },
     {
       "relation": "calls",
@@ -3794,9 +3834,9 @@
       "source_file": "tests/e2e/a11y-helper.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_a11y_helper_expectnoa11yviolations",
-      "target": "tests_e2e_a11y_helper_formatviolations",
-      "confidence_score": 1.0
+      "target": "tests_e2e_a11y_helper_formatviolations"
     },
     {
       "relation": "contains",
@@ -3804,9 +3844,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig",
-      "target": "tsconfig_compileroptions",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions"
     },
     {
       "relation": "contains",
@@ -3814,9 +3854,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig",
-      "target": "tsconfig_include",
-      "confidence_score": 1.0
+      "target": "tsconfig_include"
     },
     {
       "relation": "contains",
@@ -3824,9 +3864,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_esmoduleinterop",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_esmoduleinterop"
     },
     {
       "relation": "contains",
@@ -3834,9 +3874,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_isolatedmodules",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_isolatedmodules"
     },
     {
       "relation": "contains",
@@ -3844,9 +3884,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_lib",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_lib"
     },
     {
       "relation": "contains",
@@ -3854,9 +3894,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_module",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_module"
     },
     {
       "relation": "contains",
@@ -3864,9 +3904,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_moduleresolution",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_moduleresolution"
     },
     {
       "relation": "contains",
@@ -3874,9 +3914,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_noemit",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_noemit"
     },
     {
       "relation": "contains",
@@ -3884,9 +3924,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_resolvejsonmodule",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_resolvejsonmodule"
     },
     {
       "relation": "contains",
@@ -3894,9 +3934,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_skiplibcheck",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_skiplibcheck"
     },
     {
       "relation": "contains",
@@ -3904,9 +3944,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_strict",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_strict"
     },
     {
       "relation": "contains",
@@ -3914,9 +3954,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_target",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_target"
     },
     {
       "relation": "contains",
@@ -3924,9 +3964,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_types",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_types"
     },
     {
       "relation": "contains",
@@ -6261,5 +6301,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "6e9b992dbbab017ab7ca86e473179e2b92749518"
+  "built_at_commit": "070540bf6287e6c66b86ce06a9862542f42a461f"
 }

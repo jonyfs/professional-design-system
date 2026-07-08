@@ -95,14 +95,44 @@
   },
   "nodes": [
     {
+      "label": "badge.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/badge.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_e2e_badge_spec",
+      "community": 36,
+      "norm_label": "badge.spec.ts"
+    },
+    {
+      "label": "checkbox.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/checkbox.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_e2e_checkbox_spec",
+      "community": 37,
+      "norm_label": "checkbox.spec.ts"
+    },
+    {
+      "label": "text-input.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/text-input.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 35,
+      "norm_label": "text-input.spec.ts",
+      "id": "tests_e2e_text_input_spec"
+    },
+    {
       "label": "button.spec.ts",
       "file_type": "code",
       "source_file": "tests/e2e/button.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_e2e_button_spec",
       "community": 34,
-      "norm_label": "button.spec.ts"
+      "norm_label": "button.spec.ts",
+      "id": "tests_e2e_button_spec"
     },
     {
       "label": "tabUntilFocused()",
@@ -110,9 +140,9 @@
       "source_file": "tests/e2e/button.spec.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "tests_e2e_button_spec_tabuntilfocused",
       "community": 34,
-      "norm_label": "tabuntilfocused()"
+      "norm_label": "tabuntilfocused()",
+      "id": "tests_e2e_button_spec_tabuntilfocused"
     },
     {
       "label": "package.json",
@@ -3108,9 +3138,9 @@
       "source_file": "tests/e2e/button.spec.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_e2e_button_spec",
-      "target": "tests_e2e_button_spec_tabuntilfocused",
-      "confidence_score": 1.0
+      "target": "tests_e2e_button_spec_tabuntilfocused"
     },
     {
       "relation": "contains",
@@ -6291,5 +6321,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "60f97d79d71f24339707901665140d4beba33f3a"
+  "built_at_commit": "7c468361cc36a8eed779cd5e65a699acc0b80173"
 }
