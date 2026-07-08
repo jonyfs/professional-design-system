@@ -56,10 +56,17 @@
 | focus | `focus:ring-2 focus:ring-inset focus:ring-brand` (or `focus:ring-error` in error state) |
 | disabled | native `disabled` attribute + `disabled:opacity-50 disabled:cursor-not-allowed` |
 
-This is byte-for-byte Text Input's contract (`text-input.contract.md`) with
-`<input type="text">` swapped for `<select>` — same tokens, same states,
-same AAA numbers already verified in feature 001 (no new contrast check
-needed, per research.md).
+This matches Text Input's contract (`text-input.contract.md`) with
+`<input type="text">` swapped for `<select>` and no `placeholder:*` utility
+(native `<select>` has no `::placeholder` pseudo-element) — same tokens,
+same states otherwise. The **text** pairings (`text-neutral-900`,
+`text-error-strong`) were already AAA-verified for Text Input in feature
+001. The **ring** boundaries (`ring-brand`, `ring-error`) were not
+previously checked by tooling at all — feature 001 never added ring-token
+entries to `check-contrast.mjs` — and are now covered by dedicated
+`RING_PAIRINGS` entries added during this feature's code review (a real
+gap the review found: this line previously, incorrectly, claimed they
+needed "no new contrast check").
 
 ## Token allowlist used
 

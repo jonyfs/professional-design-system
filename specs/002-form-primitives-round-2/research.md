@@ -22,11 +22,22 @@ native-semantics-first precedent (FR-005/FR-006).
 ## Decision: Select reuses Text Input's exact token vocabulary — verified
 
 **Rationale**: Select's rendered content is the option text
-(`text-neutral-900` on white — already AAA-verified), the ring boundary
-(`ring-neutral-300`/`ring-brand`/`ring-error` — non-text, same as Text
-Input), and the error message (`text-error-strong` on white — already
-AAA-verified at 8.31:1 in `check-contrast.mjs`). **No new PAIRINGS entry
-required for Select.**
+(`text-neutral-900` on white — already AAA-verified) and the error message
+(`text-error-strong` on white — already AAA-verified at 8.31:1 in
+`check-contrast.mjs`). **No new text `PAIRINGS` entry required for
+Select.**
+
+**Correction (found during this feature's code review, not caught at plan
+time)**: this section originally also claimed the ring boundary
+(`ring-neutral-300`/`ring-brand`/`ring-error`) was "non-text, same as Text
+Input" in a way that implied it was already tooling-verified — it was not.
+`check-contrast.mjs` had zero ring-token entries before this feature (its
+`RING_PAIRINGS` mechanism was added for Toggle, later in this same
+document). `ring-brand` and `ring-error` are real, distinct boundaries that
+needed their own `RING_PAIRINGS` entries (added during code review:
+4.83:1 and 3.76:1 against white respectively, both clear 3:1).
+`ring-neutral-300` remains the deliberately out-of-scope gap discussed
+below for Toggle.
 
 **Alternatives considered**: A custom-styled dropdown (div-based listbox
 with JS) for more visual control over the option list — rejected; native

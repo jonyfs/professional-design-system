@@ -16,14 +16,7 @@
       <label for="select-default" class="text-sm font-medium text-neutral-900">
         Country
       </label>
-      <select
-        id="select-default"
-        data-testid="select-default"
-        class="block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
-               ring-1 ring-inset ring-neutral-300
-               focus:ring-2 focus:ring-inset focus:ring-brand
-               sm:text-sm sm:leading-6"
-      >
+      <select id="select-default" data-testid="select-default" class="form-select">
         <option value="">Select a country…</option>
         <option value="br">Brazil</option>
         <option value="us">United States</option>
@@ -41,9 +34,7 @@
         data-testid="select-error"
         aria-invalid="true"
         aria-describedby="select-error-message"
-        class="block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
-               ring-1 ring-inset ring-error focus:ring-2 focus:ring-inset
-               focus:ring-error sm:text-sm sm:leading-6"
+        class="form-select ring-error focus:ring-error"
       >
         <option value="" selected>Select a country…</option>
         <option value="br">Brazil</option>
@@ -60,16 +51,7 @@
       <label for="select-disabled" class="text-sm font-medium text-neutral-900">
         Country
       </label>
-      <select
-        id="select-disabled"
-        data-testid="select-disabled"
-        disabled
-        class="block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
-               ring-1 ring-inset ring-neutral-300
-               focus:ring-2 focus:ring-inset focus:ring-brand
-               disabled:opacity-50 disabled:cursor-not-allowed
-               sm:text-sm sm:leading-6"
-      >
+      <select id="select-disabled" data-testid="select-disabled" disabled class="form-select">
         <option value="br" selected>Brazil</option>
         <option value="us">United States</option>
       </select>

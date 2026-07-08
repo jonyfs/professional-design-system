@@ -144,11 +144,27 @@ const PAIRINGS = [
 // Non-text UI component boundaries (WCAG 1.4.11, 3:1) — e.g. a control's
 // ring/border against the page background. Deliberately does NOT include
 // feature 001's pre-existing `ring-neutral-300` boundaries (Text Input,
-// Checkbox, Badge — measured 1.47:1, below 3:1): that gap was found and
-// explicitly left out of scope in feature 002's research.md as a
-// cross-cutting change to already-shipped, CI-green components, not
-// something to silently start failing here. Only checks the boundaries a
-// component's contract actually claims meet this bar.
+// Checkbox, Badge — measured 1.47:1, below 3:1), nor Badge's decorative,
+// opacity-modified accent rings (`ring-success/20` etc. — a different,
+// non-boundary use): both gaps were found and explicitly left out of scope
+// in feature 002's research.md as a cross-cutting change to already-
+// shipped, CI-green components, not something to silently start failing
+// here. Only checks the boundaries a component's contract actually claims
+// meet this bar.
+//
+// KNOWN LIMITATION (unlike PAIRINGS' text-* scan below): this list is
+// manually curated, not auto-scanned against markup. A code review on
+// feature 002 found that Select's `ring-brand`/`ring-error` focus/error
+// boundaries had shipped with no entry here, while research.md/
+// select.contract.md incorrectly claimed "no new check needed — already
+// verified in feature 001" (feature 001 never added ring-token entries at
+// all). Distinguishing a functional boundary ring (this list) from a
+// decorative accent ring (Badge, out of scope) isn't reliably automatable
+// from class names alone, so — unlike text coverage — a missing entry
+// here is NOT currently a hard CI failure. Treat this list as a checklist
+// requiring the same discipline as PAIRINGS: any new functional boundary
+// ring MUST add an entry here during code review, not "verified by
+// inspection" prose.
 const RING_PAIRINGS = [
   {
     name: "Toggle track ring, off state (ring-neutral-500 vs white page)",
@@ -157,8 +173,28 @@ const RING_PAIRINGS = [
     threshold: NON_TEXT_UI_AA,
   },
   {
+    // Mathematically identical to the off-state entry above (same fg/bg) —
+    // kept as a distinct, named entry rather than removed because the two
+    // states are conceptually different checks: the ring's *outer* edge
+    // against the page is state-invariant and is what both entries verify.
+    // The ring's *inner* edge against bg-brand in the on state (~1:1,
+    // effectively invisible — see toggle.contract.md's Verification note)
+    // is deliberately NOT checked here, since only the outer/page boundary
+    // is the one WCAG 1.4.11 cares about for this control.
     name: "Toggle track ring, on state (ring-neutral-500 vs white page — outer edge, state-invariant)",
     fg: "neutral-500",
+    bg: "white",
+    threshold: NON_TEXT_UI_AA,
+  },
+  {
+    name: "Text Input / Select focus ring (ring-brand vs white page)",
+    fg: "brand",
+    bg: "white",
+    threshold: NON_TEXT_UI_AA,
+  },
+  {
+    name: "Text Input / Select error ring (ring-error vs white page)",
+    fg: "error",
     bg: "white",
     threshold: NON_TEXT_UI_AA,
   },

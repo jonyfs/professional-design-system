@@ -3,7 +3,7 @@
 ## Markup contract
 
 ```html
-<label class="inline-flex cursor-pointer items-center gap-2">
+<label class="group inline-flex cursor-pointer items-center gap-2">
   <span class="relative inline-flex h-6 w-11 items-center">
     <input
       type="checkbox"
@@ -23,9 +23,22 @@
              peer-checked:translate-x-5 peer-disabled:opacity-50"
     ></span>
   </span>
-  <span class="text-sm text-neutral-900">Enable notifications</span>
+  <span class="text-sm text-neutral-900 group-has-[:disabled]:opacity-50">Enable notifications</span>
 </label>
 ```
+
+**Disabled label dimming (found in code review, same defect class as
+feature 001's Checkbox)**: the trailing text label is a sibling of the
+icon-wrapper `<span>`, not of the `peer` input itself (it's nested one
+level differently), so `peer-disabled:*` does not apply to it — Tailwind's
+sibling-combinator-based `peer` variant only reaches true siblings.
+Verified this would silently fail to compile/apply before landing on the
+fix. Uses `group` on the `<label>` (an ancestor of both the input and the
+text) with Tailwind 3.4's `has-*` variant instead:
+`group-has-[:disabled]:opacity-50` — `:has()` matches by descendant
+relationship, not sibling adjacency, so it reaches the text label
+correctly regardless of nesting depth. Confirmed compiled correctly by
+inspecting the built CSS output.
 
 **AAA/contrast note**: the ratified Component Catalog pattern for Toggles
 (`bg-neutral-200`/`bg-brand` track, shadow-only dot) measures 1.24:1 for
@@ -57,7 +70,7 @@ feature ever places the track against a non-white surface.
 | off | `bg-neutral-200` (track); `ring-1 ring-inset ring-neutral-500` is state-invariant — present on the track in every state, not just off (see contrast note above) |
 | on | `peer-checked:bg-brand` (track); `peer-checked:translate-x-5` (dot) |
 | focus-visible | `peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand` |
-| disabled | `peer-disabled:opacity-50 peer-disabled:cursor-not-allowed` on the track AND `peer-disabled:opacity-50` on the dot (both must dim together — a sibling-only fix on the track alone leaves the dot full-opacity), combinable with either off or on |
+| disabled | `peer-disabled:opacity-50 peer-disabled:cursor-not-allowed` on the track AND `peer-disabled:opacity-50` on the dot (both must dim together — a sibling-only fix on the track alone leaves the dot full-opacity) AND `group-has-[:disabled]:opacity-50` on the trailing text label (`peer-disabled` cannot reach it — not a true sibling of the input; see the note above), combinable with either off or on |
 
 ## Required attributes
 

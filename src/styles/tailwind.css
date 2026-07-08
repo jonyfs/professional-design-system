@@ -43,4 +43,36 @@
       focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50
       disabled:cursor-not-allowed transition-[background-color,transform] duration-150;
   }
+
+  /* Select primitive (contracts/select.contract.md) — same treatment as
+     Text Input. Error state overrides via plain utilities in the HTML
+     (ring-error, focus:ring-error), which win over this class's defaults:
+     utilities always sit in a later cascade layer than @layer components. */
+  .form-select {
+    @apply block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+      ring-1 ring-inset ring-neutral-300 focus:ring-2 focus:ring-inset focus:ring-brand
+      disabled:opacity-50 disabled:cursor-not-allowed sm:text-sm sm:leading-6;
+  }
+
+  /* Radio primitive (contracts/radio.contract.md) */
+  .radio-input {
+    @apply h-4 w-4 border-neutral-300 text-brand focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Toggle/Switch primitive (contracts/toggle.contract.md) */
+  .toggle-track {
+    @apply absolute inset-0 rounded-full ring-1 ring-inset ring-neutral-500 bg-neutral-200
+      transition-colors duration-200 ease-in-out peer-checked:bg-brand
+      peer-focus-visible:outline peer-focus-visible:outline-2
+      peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand
+      peer-disabled:opacity-50 peer-disabled:cursor-not-allowed;
+  }
+
+  .toggle-dot {
+    @apply pointer-events-none absolute left-0.5 h-5 w-5 translate-x-0 transform
+      rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out
+      peer-checked:translate-x-5 peer-disabled:opacity-50;
+  }
 }
