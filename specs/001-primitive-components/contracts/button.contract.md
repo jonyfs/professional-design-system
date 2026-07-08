@@ -33,6 +33,13 @@ treatment (`border border-neutral-300 bg-white text-neutral-900
 hover:bg-neutral-50`) — same state suffix set applies unchanged (already AAA:
 `text-neutral-900` on white/neutral-50 measures 17.7:1/17.0:1).
 
+**Implementation note**: the shipped markup uses `.btn-primary`/
+`.btn-secondary` component classes (`src/styles/tailwind.css`, `@layer
+components`), which `@apply` this exact utility composition — Principle III
+names `@layer`/`@apply` as the sanctioned reuse mechanism precisely to avoid
+hand-copying this string across every Button instance. The full utility list
+above remains the source of truth for what those classes must expand to.
+
 ## Required classes (Principle V gate)
 
 | State | Required utility |

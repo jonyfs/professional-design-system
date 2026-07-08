@@ -7,16 +7,25 @@
   <input
     id="example-checkbox"
     type="checkbox"
-    class="h-4 w-4 rounded-sm border-neutral-300 text-brand
+    class="peer h-4 w-4 rounded-sm border-neutral-300 text-brand
            focus-visible:outline focus-visible:outline-2
            focus-visible:outline-offset-2 focus-visible:outline-brand
            disabled:opacity-50 disabled:cursor-not-allowed"
   />
-  <label for="example-checkbox" class="text-sm text-neutral-900 cursor-pointer">
+  <label
+    for="example-checkbox"
+    class="text-sm text-neutral-900 cursor-pointer peer-disabled:opacity-50"
+  >
     Checkbox label
   </label>
 </div>
 ```
+
+The input carries `peer` and the label carries `peer-disabled:opacity-50` so
+the label visually dims in lockstep with the disabled input — otherwise a
+sighted user sees a faded checkbox next to full-contrast label text, which
+reads as an unfinished disabled state even though native `disabled` already
+covers assistive tech correctly.
 
 ## Required attributes (Principle II + V gates)
 

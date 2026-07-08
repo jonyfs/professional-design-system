@@ -118,6 +118,7 @@ const COLOR_PREFIXES = [
   "to",
   "accent",
   "caret",
+  "shadow",
 ];
 
 // Suffixes that are structural/sizing keywords, not color names, for the
@@ -126,11 +127,11 @@ const COLOR_PREFIXES = [
 const NON_COLOR_SUFFIXES = new Set([
   // font-size scale (text-*)
   "xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl",
-  // text alignment / decoration / transform / whitespace keywords
+  // text alignment / decoration / transform / whitespace / wrap keywords
   "left", "center", "right", "justify", "start", "end",
   "nowrap", "ellipsis", "clip", "underline", "overline", "line-through",
   "no-underline", "uppercase", "lowercase", "capitalize", "normal-case",
-  "italic", "not-italic", "wavy",
+  "italic", "not-italic", "wavy", "balance", "wrap", "pretty",
   // border/divide/ring sides, styles, and structural keywords
   "t", "r", "b", "l", "x", "y", "tl", "tr", "bl", "br", "s", "e",
   "x-reverse", "y-reverse",
@@ -139,13 +140,17 @@ const NON_COLOR_SUFFIXES = new Set([
   // background positioning/repeat/attachment/blend keywords (bg-*)
   "top", "bottom", "auto", "cover", "contain", "repeat", "no-repeat",
   "fixed", "local", "scroll",
+  // shadow size scale (shadow-*) — Tailwind 3 has no default colored-shadow
+  // utility, so every shadow-* suffix is a size keyword, not a color
+  "inner",
 ]);
 
 function isStructuralSuffix(suffix) {
   if (NON_COLOR_SUFFIXES.has(suffix)) return true;
   if (/^\d+$/.test(suffix)) return true; // widths/thickness: ring-2, border-4, decoration-8
   if (/^\d+%$/.test(suffix)) return true; // gradient stop position: from-50%
-  if (/^offset-/.test(suffix)) return true; // outline-offset-2, ring-offset-2
+  if (/^offset-\d+$/.test(suffix)) return true; // outline-offset-2, ring-offset-2 (numeric only —
+  // does NOT match ring-offset-<color>, which is a real color utility)
   if (/^(t|r|b|l|x|y|tl|tr|bl|br|s|e)-\d+$/.test(suffix)) return true; // border-t-2
   if (/^(origin|clip|blend)-/.test(suffix)) return true; // bg-origin-*, bg-clip-*, bg-blend-*
   return false;

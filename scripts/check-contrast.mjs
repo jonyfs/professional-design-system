@@ -6,30 +6,58 @@
 //
 // Pairings are declared explicitly below, one entry per real usage in
 // contracts/*.md — this is not a generic linter, it is a checklist of the
-// exact combinations this design system ships, so a new component MUST add
-// its pairing here before being considered compliant.
+// exact combinations this design system ships. Because a hand-maintained
+// checklist can silently drift from the real markup, this script also scans
+// the shipped component HTML for every `text-<token>` color class in use
+// and fails loudly if any of them has no PAIRING entry — a new component (or
+// a changed one) MUST add its pairing here before being considered
+// compliant, and this check makes "forgot to" a hard failure instead of a
+// silent gap.
 
 import { hex } from "wcag-contrast";
+import { readFileSync, readdirSync, statSync } from "node:fs";
+import { join, extname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const AAA_NORMAL = 7;
 const AAA_LARGE_OR_UI = 4.5;
+const rootDir = fileURLToPath(new URL("..", import.meta.url));
 
 // Resolved from tailwind.config.ts (v1.3.1 constitution palette).
-const TOKENS = {
+const BASE_TOKENS = {
   "brand-dark": "#004BB3",
   brand: "#0066FF",
   white: "#FFFFFF",
   "neutral-900": "#111827",
   "neutral-50": "#F9FAFB",
   "neutral-600": "#4B5563",
+  success: "#10B981",
+  warning: "#F59E0B",
+  error: "#EF4444",
   "success-strong": "#065F46",
   "error-strong": "#991B1B",
   "warning-strong": "#78350F",
-  // Backgrounds expressed as opacity-composited-over-white approximations,
-  // matching what `bg-success/5` etc. render as against a white page.
-  "success/5-on-white": "#F3FCF9",
-  "error/5-on-white": "#FEF6F6",
-  "warning/5-on-white": "#FEF9F0",
+};
+
+// Backgrounds computed by alpha-compositing a base token over white, matching
+// what Tailwind's opacity modifier (`bg-success/5`) renders as against a
+// white page — computed here instead of hand-typed so they can't drift from
+// BASE_TOKENS if a token's hex ever changes.
+function compositeOverWhite(baseHex, alphaPercent) {
+  const alpha = alphaPercent / 100;
+  const clean = baseHex.replace("#", "");
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  const blend = (channel) => Math.round(alpha * channel + (1 - alpha) * 255);
+  return `#${[blend(r), blend(g), blend(b)].map((c) => c.toString(16).padStart(2, "0")).join("").toUpperCase()}`;
+}
+
+const TOKENS = {
+  ...BASE_TOKENS,
+  "success/5-on-white": compositeOverWhite(BASE_TOKENS.success, 5),
+  "error/5-on-white": compositeOverWhite(BASE_TOKENS.error, 5),
+  "warning/5-on-white": compositeOverWhite(BASE_TOKENS.warning, 5),
 };
 
 const PAIRINGS = [
@@ -118,6 +146,71 @@ for (const { name, fg, bg, threshold } of PAIRINGS) {
   }
 }
 
+// --- Coverage check: every text-<token> color class actually shipped must
+// have at least one PAIRING entry, or a real combination could ship with
+// zero contrast verification. ---
+
+function collectHtmlFiles(dir) {
+  const files = [];
+  for (const entry of readdirSync(dir)) {
+    if (entry === "node_modules" || entry === "dist") continue;
+    const fullPath = join(dir, entry);
+    const stats = statSync(fullPath);
+    if (stats.isDirectory()) {
+      files.push(...collectHtmlFiles(fullPath));
+    } else if (extname(entry) === ".html") {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+const NON_COLOR_TEXT_SUFFIXES = new Set([
+  "xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl",
+  "left", "center", "right", "justify", "start", "end",
+  "nowrap", "ellipsis", "clip", "underline", "overline", "line-through",
+  "no-underline", "uppercase", "lowercase", "capitalize", "normal-case",
+  "italic", "not-italic", "wavy", "balance", "wrap", "pretty",
+]);
+
+// The exact set of tokens this project's PAIRINGS above already cover as a
+// foreground color, so a token used only as a background/ring elsewhere
+// (e.g. "brand-dark" as bg, not fg) doesn't false-positive here.
+const COVERED_FG_TOKENS = new Set(PAIRINGS.map((p) => p.fg));
+
+const htmlFiles = [
+  join(rootDir, "index.html"),
+  ...collectHtmlFiles(join(rootDir, "src", "components")),
+];
+
+const uncoveredTextTokens = new Set();
+
+for (const file of htmlFiles) {
+  const html = readFileSync(file, "utf8");
+  const classAttrPattern = /class="([^"]*)"/g;
+  let match;
+  while ((match = classAttrPattern.exec(html)) !== null) {
+    for (const cls of match[1].split(/\s+/).filter(Boolean)) {
+      const base = cls.split(":").pop(); // strip hover:/focus:/etc.
+      if (!base.startsWith("text-")) continue;
+      const suffix = base.slice("text-".length).split("/")[0]; // strip opacity modifier
+      if (NON_COLOR_TEXT_SUFFIXES.has(suffix)) continue;
+      if (!(suffix in BASE_TOKENS)) continue; // not a project color token (e.g. arbitrary value) — out of scope here
+      if (!COVERED_FG_TOKENS.has(suffix)) {
+        uncoveredTextTokens.add(`${suffix} (seen in ${file.replace(rootDir, "")})`);
+      }
+    }
+  }
+}
+
+if (uncoveredTextTokens.size > 0) {
+  failures.push(
+    `Coverage gap: the following text color token(s) are used in shipped markup with ` +
+      `no PAIRINGS entry checking their contrast — add one before considering this compliant:\n` +
+      [...uncoveredTextTokens].map((t) => `    - ${t}`).join("\n"),
+  );
+}
+
 if (failures.length > 0) {
   console.error(`\nContrast audit FAILED (Principle II, AAA) — ${failures.length} failure(s):\n`);
   for (const failure of failures) {
@@ -127,4 +220,7 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Contrast audit passed — ${PAIRINGS.length} pairing(s) checked, all ≥ AAA threshold.`);
+console.log(
+  `Contrast audit passed — ${PAIRINGS.length} pairing(s) checked, all ≥ AAA threshold; ` +
+    `markup coverage verified against ${htmlFiles.length} file(s).`,
+);

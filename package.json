@@ -6,12 +6,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run audit:tokens && npm run audit:contrast",
     "build": "vite build",
     "preview": "vite preview",
+    "pretest:e2e": "npm run audit:tokens && npm run audit:contrast",
     "test:e2e": "playwright test",
     "audit:tokens": "node scripts/audit-tokens.mjs",
     "audit:contrast": "node scripts/check-contrast.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm run audit:tokens && npm run audit:contrast && npm run build && npm run test:e2e"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",

@@ -6,8 +6,8 @@
   <title>Checkbox — Professional Design System</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
 </head>
-<body class="min-h-screen bg-white p-8 font-sans antialiased">
-  <a href="/index.html" class="text-sm text-brand-dark hover:underline">← Back to gallery</a>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
   <h1 class="mt-4 text-2xl font-bold text-neutral-900">Checkbox</h1>
 
   <div class="mt-8 grid max-w-sm gap-6">
@@ -49,12 +49,12 @@
           data-testid="checkbox-disabled"
           type="checkbox"
           disabled
-          class="h-4 w-4 rounded-sm border-neutral-300 text-brand
+          class="peer h-4 w-4 rounded-sm border-neutral-300 text-brand
                  focus-visible:outline focus-visible:outline-2
                  focus-visible:outline-offset-2 focus-visible:outline-brand
                  disabled:opacity-50 disabled:cursor-not-allowed"
         />
-        <label for="checkbox-disabled" class="text-sm text-neutral-900">
+        <label for="checkbox-disabled" class="text-sm text-neutral-900 peer-disabled:opacity-50">
           Disabled
         </label>
       </div>
@@ -66,12 +66,15 @@
           type="checkbox"
           checked
           disabled
-          class="h-4 w-4 rounded-sm border-neutral-300 text-brand
+          class="peer h-4 w-4 rounded-sm border-neutral-300 text-brand
                  focus-visible:outline focus-visible:outline-2
                  focus-visible:outline-offset-2 focus-visible:outline-brand
                  disabled:opacity-50 disabled:cursor-not-allowed"
         />
-        <label for="checkbox-disabled-checked" class="text-sm text-neutral-900">
+        <label
+          for="checkbox-disabled-checked"
+          class="text-sm text-neutral-900 peer-disabled:opacity-50"
+        >
           Disabled + checked (Edge Case)
         </label>
       </div>

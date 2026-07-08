@@ -6,41 +6,18 @@
   <title>Button — Professional Design System</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
 </head>
-<body class="min-h-screen bg-white p-8 font-sans antialiased">
-  <a href="/index.html" class="text-sm text-brand-dark hover:underline">← Back to gallery</a>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
   <h1 class="mt-4 text-2xl font-bold text-neutral-900">Button</h1>
 
   <section class="mt-8 space-y-4">
     <h2 class="text-lg font-semibold text-neutral-900">Primary</h2>
     <div class="flex flex-wrap items-center gap-4">
-      <button
-        type="button"
-        data-testid="button-primary"
-        class="inline-flex items-center justify-center rounded-md bg-brand-dark px-4 py-2
-               text-sm font-semibold text-white shadow-sm
-               hover:shadow-md
-               active:scale-[0.98]
-               focus-visible:outline focus-visible:outline-2
-               focus-visible:outline-offset-2 focus-visible:outline-brand
-               disabled:opacity-50 disabled:cursor-not-allowed
-               transition-[box-shadow,transform] duration-150"
-      >
+      <button type="button" data-testid="button-primary" class="btn-primary">
         Primary action
       </button>
 
-      <button
-        type="button"
-        data-testid="button-primary-disabled"
-        disabled
-        class="inline-flex items-center justify-center rounded-md bg-brand-dark px-4 py-2
-               text-sm font-semibold text-white shadow-sm
-               hover:shadow-md
-               active:scale-[0.98]
-               focus-visible:outline focus-visible:outline-2
-               focus-visible:outline-offset-2 focus-visible:outline-brand
-               disabled:opacity-50 disabled:cursor-not-allowed
-               transition-[box-shadow,transform] duration-150"
-      >
+      <button type="button" data-testid="button-primary-disabled" disabled class="btn-primary">
         Disabled
       </button>
     </div>
@@ -49,18 +26,7 @@
   <section class="mt-8 space-y-4">
     <h2 class="text-lg font-semibold text-neutral-900">Secondary</h2>
     <div class="flex flex-wrap items-center gap-4">
-      <button
-        type="button"
-        data-testid="button-secondary"
-        class="inline-flex items-center justify-center rounded-md border border-neutral-300
-               bg-white px-4 py-2 text-sm font-semibold text-neutral-900 shadow-sm
-               hover:bg-neutral-50
-               active:scale-[0.98]
-               focus-visible:outline focus-visible:outline-2
-               focus-visible:outline-offset-2 focus-visible:outline-brand
-               disabled:opacity-50 disabled:cursor-not-allowed
-               transition-[background-color,transform] duration-150"
-      >
+      <button type="button" data-testid="button-secondary" class="btn-secondary">
         Secondary action
       </button>
 
@@ -68,14 +34,7 @@
         type="button"
         data-testid="button-secondary-disabled"
         disabled
-        class="inline-flex items-center justify-center rounded-md border border-neutral-300
-               bg-white px-4 py-2 text-sm font-semibold text-neutral-900 shadow-sm
-               hover:bg-neutral-50
-               active:scale-[0.98]
-               focus-visible:outline focus-visible:outline-2
-               focus-visible:outline-offset-2 focus-visible:outline-brand
-               disabled:opacity-50 disabled:cursor-not-allowed
-               transition-[background-color,transform] duration-150"
+        class="btn-secondary"
       >
         Disabled
       </button>
@@ -85,18 +44,7 @@
   <section class="mt-8 space-y-4">
     <h2 class="text-lg font-semibold text-neutral-900">Edge case — long label</h2>
     <div data-testid="button-long-label-wrapper" class="max-w-xs">
-      <button
-        type="button"
-        data-testid="button-long-label"
-        class="inline-flex w-full items-center justify-center rounded-md bg-brand-dark px-4 py-2
-               text-sm font-semibold text-white shadow-sm
-               hover:shadow-md
-               active:scale-[0.98]
-               focus-visible:outline focus-visible:outline-2
-               focus-visible:outline-offset-2 focus-visible:outline-brand
-               disabled:opacity-50 disabled:cursor-not-allowed
-               transition-[box-shadow,transform] duration-150"
-      >
+      <button type="button" data-testid="button-long-label" class="btn-primary w-full">
         This is a significantly longer status label than usual
       </button>
     </div>
