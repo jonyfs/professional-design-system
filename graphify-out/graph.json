@@ -4,37 +4,6 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "core_principles_group",
-        "label": "Design System Core Principles",
-        "nodes": [
-          "specify_memory_constitution_principle_1",
-          "specify_memory_constitution_principle_2",
-          "specify_memory_constitution_principle_3",
-          "specify_memory_constitution_principle_4",
-          "specify_memory_constitution_principle_5",
-          "specify_memory_constitution_principle_6",
-          "specify_memory_constitution_principle_7"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": ".specify/memory/constitution.md"
-      },
-      {
-        "id": "primitive_components_group",
-        "label": "Primitive Components Set",
-        "nodes": [
-          "component_button",
-          "component_input",
-          "component_badge",
-          "component_checkbox"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "specs/001-primitive-components/spec.md"
-      },
-      {
         "id": "extension_hooks_pattern",
         "label": "Extension Hooks Pre/Post-Execution Pattern",
         "nodes": [
@@ -126,24 +95,1254 @@
   },
   "nodes": [
     {
+      "label": "constitution.md",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specify_memory_constitution",
+      "community": 3,
+      "norm_label": "constitution.md"
+    },
+    {
+      "label": "Professional Design System Constitution",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_professional_design_system_constitution",
+      "community": 3,
+      "norm_label": "professional design system constitution"
+    },
+    {
+      "label": "Core Principles",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_core_principles",
+      "community": 3,
+      "norm_label": "core principles"
+    },
+    {
+      "label": "I. Cognitive Ergonomics & Visual Hierarchy",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy",
+      "community": 3,
+      "norm_label": "i. cognitive ergonomics & visual hierarchy"
+    },
+    {
+      "label": "II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable",
+      "community": 3,
+      "norm_label": "ii. absolute semantic accessibility (wcag 2.2 aaa) (non-negotiable)"
+    },
+    {
+      "label": "III. Tailwind-Only Architecture (Zero Parallel CSS)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L120",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css",
+      "community": 3,
+      "norm_label": "iii. tailwind-only architecture (zero parallel css)"
+    },
+    {
+      "label": "IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable",
+      "community": 3,
+      "norm_label": "iv. design token discipline (zero hardcoding) (non-negotiable)"
+    },
+    {
+      "label": "V. Interactive State Completeness (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable",
+      "community": 3,
+      "norm_label": "v. interactive state completeness (non-negotiable)"
+    },
+    {
+      "label": "VI. Project Language Policy (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_vi_project_language_policy_non_negotiable",
+      "community": 3,
+      "norm_label": "vi. project language policy (non-negotiable)"
+    },
+    {
+      "label": "VII. Autonomous Skill Acquisition Protocol (NON-NEGOTIABLE)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L171",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable",
+      "community": 3,
+      "norm_label": "vii. autonomous skill acquisition protocol (non-negotiable)"
+    },
+    {
+      "label": "Design Foundations: Tokens, Typography & Grid",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L202",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "community": 3,
+      "norm_label": "design foundations: tokens, typography & grid"
+    },
+    {
+      "label": "Base Semantic Palette",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L204",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_base_semantic_palette",
+      "community": 3,
+      "norm_label": "base semantic palette"
+    },
+    {
+      "label": "Typography & Text Scale",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L230",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_typography_text_scale",
+      "community": 3,
+      "norm_label": "typography & text scale"
+    },
+    {
+      "label": "Alignment Grid & Spacing",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L242",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_alignment_grid_spacing",
+      "community": 3,
+      "norm_label": "alignment grid & spacing"
+    },
+    {
+      "label": "Component Catalog & Tailwind UI Patterns",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L252",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "community": 3,
+      "norm_label": "component catalog & tailwind ui patterns"
+    },
+    {
+      "label": "Application & Navigation",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L258",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_application_navigation",
+      "community": 3,
+      "norm_label": "application & navigation"
+    },
+    {
+      "label": "Forms, Validation & Inputs",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L269",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_forms_validation_inputs",
+      "community": 3,
+      "norm_label": "forms, validation & inputs"
+    },
+    {
+      "label": "Data Display & Listings",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L284",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_data_display_listings",
+      "community": 3,
+      "norm_label": "data display & listings"
+    },
+    {
+      "label": "Overlays, Modals & Feedback",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L300",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_overlays_modals_feedback",
+      "community": 3,
+      "norm_label": "overlays, modals & feedback"
+    },
+    {
+      "label": "Governance",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L309",
+      "_origin": "ast",
+      "id": "specify_memory_constitution_governance",
+      "community": 3,
+      "norm_label": "governance"
+    },
+    {
+      "label": "requirements.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_checklists_requirements",
+      "community": 1,
+      "norm_label": "requirements.md"
+    },
+    {
+      "label": "Specification Quality Checklist: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "community": 1,
+      "norm_label": "specification quality checklist: design system primitive components"
+    },
+    {
+      "label": "Content Quality",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_checklists_requirements_content_quality",
+      "community": 1,
+      "norm_label": "content quality"
+    },
+    {
+      "label": "Requirement Completeness",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_checklists_requirements_requirement_completeness",
+      "community": 1,
+      "norm_label": "requirement completeness"
+    },
+    {
+      "label": "Feature Readiness",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_checklists_requirements_feature_readiness",
+      "community": 1,
+      "norm_label": "feature readiness"
+    },
+    {
+      "label": "Notes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_checklists_requirements_notes",
+      "community": 1,
+      "norm_label": "notes"
+    },
+    {
+      "label": "badge.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_badge_contract",
+      "community": 24,
+      "norm_label": "badge.contract.md"
+    },
+    {
+      "label": "Component Contract: Badge",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "community": 24,
+      "norm_label": "component contract: badge"
+    },
+    {
+      "label": "Markup contract (one per variant)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_badge_contract_markup_contract_one_per_variant",
+      "community": 24,
+      "norm_label": "markup contract (one per variant)"
+    },
+    {
+      "label": "Required variant \u2192 token mapping (FR-003, exactly four variants)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_badge_contract_required_variant_token_mapping_fr_003_exactly_four_variants",
+      "community": 24,
+      "norm_label": "required variant \u2192 token mapping (fr-003, exactly four variants)"
+    },
+    {
+      "label": "Long-label handling (Edge Case)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_badge_contract_long_label_handling_edge_case",
+      "community": 24,
+      "norm_label": "long-label handling (edge case)"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_badge_contract_acceptance_mapping",
+      "community": 24,
+      "norm_label": "acceptance mapping"
+    },
+    {
+      "label": "data-model.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model",
+      "community": 20,
+      "norm_label": "data-model.md"
+    },
+    {
+      "label": "Phase 1 Data Model: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "community": 20,
+      "norm_label": "phase 1 data model: design system primitive components"
+    },
+    {
+      "label": "Button",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model_button",
+      "community": 20,
+      "norm_label": "button"
+    },
+    {
+      "label": "Text Input",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model_text_input",
+      "community": 20,
+      "norm_label": "text input"
+    },
+    {
+      "label": "Badge",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model_badge",
+      "community": 20,
+      "norm_label": "badge"
+    },
+    {
+      "label": "Checkbox",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model_checkbox",
+      "community": 20,
+      "norm_label": "checkbox"
+    },
+    {
+      "label": "Cross-cutting invariants (all four components)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_data_model_cross_cutting_invariants_all_four_components",
+      "community": 20,
+      "norm_label": "cross-cutting invariants (all four components)"
+    },
+    {
+      "label": "plan.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan",
+      "community": 1,
+      "norm_label": "plan.md"
+    },
+    {
+      "label": "Implementation Plan: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "community": 1,
+      "norm_label": "implementation plan: design system primitive components"
+    },
+    {
+      "label": "Summary",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_summary",
+      "community": 1,
+      "norm_label": "summary"
+    },
+    {
+      "label": "Technical Context",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_technical_context",
+      "community": 1,
+      "norm_label": "technical context"
+    },
+    {
+      "label": "Constitution Check",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_constitution_check",
+      "community": 1,
+      "norm_label": "constitution check"
+    },
+    {
+      "label": "Project Structure",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_project_structure",
+      "community": 1,
+      "norm_label": "project structure"
+    },
+    {
+      "label": "Documentation (this feature)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_documentation_this_feature",
+      "community": 1,
+      "norm_label": "documentation (this feature)"
+    },
+    {
+      "label": "Source Code (repository root)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_source_code_repository_root",
+      "community": 1,
+      "norm_label": "source code (repository root)"
+    },
+    {
+      "label": "Complexity Tracking",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_plan_complexity_tracking",
+      "community": 1,
+      "norm_label": "complexity tracking"
+    },
+    {
+      "label": "spec.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec",
+      "community": 1,
+      "norm_label": "spec.md"
+    },
+    {
+      "label": "Feature Specification: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
+      "community": 6,
+      "norm_label": "feature specification: design system primitive components"
+    },
+    {
+      "label": "User Scenarios & Testing *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
+      "community": 6,
+      "norm_label": "user scenarios & testing *(mandatory)*"
+    },
+    {
+      "label": "User Story 1 - Drop-in Accessible Button (Priority: P1)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_user_story_1_drop_in_accessible_button_priority_p1",
+      "community": 6,
+      "norm_label": "user story 1 - drop-in accessible button (priority: p1)"
+    },
+    {
+      "label": "User Story 2 - Drop-in Accessible Text Input (Priority: P2)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "community": 6,
+      "norm_label": "user story 2 - drop-in accessible text input (priority: p2)"
+    },
+    {
+      "label": "User Story 3 - Drop-in Badge & Checkbox (Priority: P3)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "community": 6,
+      "norm_label": "user story 3 - drop-in badge & checkbox (priority: p3)"
+    },
+    {
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L96",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_edge_cases",
+      "community": 6,
+      "norm_label": "edge cases"
+    },
+    {
+      "label": "Requirements *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L109",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_requirements_mandatory",
+      "community": 6,
+      "norm_label": "requirements *(mandatory)*"
+    },
+    {
+      "label": "Functional Requirements",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_functional_requirements",
+      "community": 6,
+      "norm_label": "functional requirements"
+    },
+    {
+      "label": "Success Criteria *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L141",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_success_criteria_mandatory",
+      "community": 6,
+      "norm_label": "success criteria *(mandatory)*"
+    },
+    {
+      "label": "Measurable Outcomes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_measurable_outcomes",
+      "community": 6,
+      "norm_label": "measurable outcomes"
+    },
+    {
+      "label": "Assumptions",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_spec_assumptions",
+      "community": 6,
+      "norm_label": "assumptions"
+    },
+    {
+      "label": "tasks.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks",
+      "community": 5,
+      "norm_label": "tasks.md"
+    },
+    {
+      "label": "Tasks: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "community": 5,
+      "norm_label": "tasks: design system primitive components"
+    },
+    {
+      "label": "Format: `[ID] [P?] [Story] Description`",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_format_id_p_story_description",
+      "community": 5,
+      "norm_label": "format: `[id] [p?] [story] description`"
+    },
+    {
+      "label": "Path Conventions",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_path_conventions",
+      "community": 5,
+      "norm_label": "path conventions"
+    },
+    {
+      "label": "Phase 1: Setup (Shared Infrastructure)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure",
+      "community": 5,
+      "norm_label": "phase 1: setup (shared infrastructure)"
+    },
+    {
+      "label": "Phase 2: Foundational (Blocking Prerequisites)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites",
+      "community": 5,
+      "norm_label": "phase 2: foundational (blocking prerequisites)"
+    },
+    {
+      "label": "Phase 3: User Story 1 - Drop-in Accessible Button (Priority: P1) \ud83c\udfaf MVP",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "community": 5,
+      "norm_label": "phase 3: user story 1 - drop-in accessible button (priority: p1) \ud83c\udfaf mvp"
+    },
+    {
+      "label": "Tests for User Story 1",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_1",
+      "community": 5,
+      "norm_label": "tests for user story 1"
+    },
+    {
+      "label": "Implementation for User Story 1",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_1",
+      "community": 5,
+      "norm_label": "implementation for user story 1"
+    },
+    {
+      "label": "Phase 4: User Story 2 - Drop-in Accessible Text Input (Priority: P2)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "community": 5,
+      "norm_label": "phase 4: user story 2 - drop-in accessible text input (priority: p2)"
+    },
+    {
+      "label": "Tests for User Story 2",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L116",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_2",
+      "community": 5,
+      "norm_label": "tests for user story 2"
+    },
+    {
+      "label": "Implementation for User Story 2",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_2",
+      "community": 5,
+      "norm_label": "implementation for user story 2"
+    },
+    {
+      "label": "Phase 5: User Story 3 - Drop-in Badge & Checkbox (Priority: P3)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L138",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "community": 5,
+      "norm_label": "phase 5: user story 3 - drop-in badge & checkbox (priority: p3)"
+    },
+    {
+      "label": "Tests for User Story 3",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L147",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_3",
+      "community": 5,
+      "norm_label": "tests for user story 3"
+    },
+    {
+      "label": "Implementation for User Story 3",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_3",
+      "community": 5,
+      "norm_label": "implementation for user story 3"
+    },
+    {
+      "label": "Phase 6: Polish & Cross-Cutting Concerns",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L173",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns",
+      "community": 5,
+      "norm_label": "phase 6: polish & cross-cutting concerns"
+    },
+    {
+      "label": "Dependencies & Execution Order",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L193",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "community": 5,
+      "norm_label": "dependencies & execution order"
+    },
+    {
+      "label": "Phase Dependencies",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L195",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_dependencies",
+      "community": 5,
+      "norm_label": "phase dependencies"
+    },
+    {
+      "label": "User Story Dependencies",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L205",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_user_story_dependencies",
+      "community": 5,
+      "norm_label": "user story dependencies"
+    },
+    {
+      "label": "Within Each User Story",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L212",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_within_each_user_story",
+      "community": 5,
+      "norm_label": "within each user story"
+    },
+    {
+      "label": "Parallel Opportunities",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L219",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_parallel_opportunities",
+      "community": 5,
+      "norm_label": "parallel opportunities"
+    },
+    {
+      "label": "Parallel Example: Setup Phase",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L230",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_parallel_example_setup_phase",
+      "community": 5,
+      "norm_label": "parallel example: setup phase"
+    },
+    {
+      "label": "Implementation Strategy",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L241",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_strategy",
+      "community": 5,
+      "norm_label": "implementation strategy"
+    },
+    {
+      "label": "MVP First (User Story 1 Only)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L243",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only",
+      "community": 5,
+      "norm_label": "mvp first (user story 1 only)"
+    },
+    {
+      "label": "Incremental Delivery (the order this session follows)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L251",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows",
+      "community": 5,
+      "norm_label": "incremental delivery (the order this session follows)"
+    },
+    {
+      "label": "Notes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L261",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_notes",
+      "community": 5,
+      "norm_label": "notes"
+    },
+    {
       "label": "CLAUDE.md",
       "file_type": "document",
       "source_file": "CLAUDE.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "claude",
       "community": 8,
-      "norm_label": "claude.md"
+      "norm_label": "claude.md",
+      "id": "claude"
     },
     {
       "label": "graphify",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L6",
+      "source_location": "L8",
       "_origin": "ast",
-      "id": "claude_graphify",
       "community": 8,
-      "norm_label": "graphify"
+      "norm_label": "graphify",
+      "id": "claude_graphify"
+    },
+    {
+      "label": "button.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "button.contract.md",
+      "id": "specs_001_primitive_components_contracts_button_contract"
+    },
+    {
+      "label": "Component Contract: Button",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "component contract: button",
+      "id": "specs_001_primitive_components_contracts_button_contract_component_contract_button"
+    },
+    {
+      "label": "Markup contract",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "markup contract",
+      "id": "specs_001_primitive_components_contracts_button_contract_markup_contract"
+    },
+    {
+      "label": "Required classes (Principle V gate)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "required classes (principle v gate)",
+      "id": "specs_001_primitive_components_contracts_button_contract_required_classes_principle_v_gate"
+    },
+    {
+      "label": "Required attributes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "required attributes",
+      "id": "specs_001_primitive_components_contracts_button_contract_required_attributes"
+    },
+    {
+      "label": "Token allowlist used",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "token allowlist used",
+      "id": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L57",
+      "_origin": "ast",
+      "community": 10,
+      "norm_label": "acceptance mapping",
+      "id": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping"
+    },
+    {
+      "label": "checkbox.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "checkbox.contract.md",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract"
+    },
+    {
+      "label": "Component Contract: Checkbox",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "component contract: checkbox",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
+    },
+    {
+      "label": "Markup contract",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "markup contract",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
+    },
+    {
+      "label": "Required attributes (Principle II + V gates)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "required attributes (principle ii + v gates)",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
+    },
+    {
+      "label": "Keyboard behavior (FR-006)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "keyboard behavior (fr-006)",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
+    },
+    {
+      "label": "Token allowlist used",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "token allowlist used",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L40",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "acceptance mapping",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
+    },
+    {
+      "label": "text-input.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "text-input.contract.md",
+      "id": "specs_001_primitive_components_contracts_text_input_contract"
+    },
+    {
+      "label": "Component Contract: Text Input",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "component contract: text input",
+      "id": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input"
+    },
+    {
+      "label": "Markup contract (default/focus)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "markup contract (default/focus)",
+      "id": "specs_001_primitive_components_contracts_text_input_contract_markup_contract_default_focus"
+    },
+    {
+      "label": "Markup contract (error state)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "markup contract (error state)",
+      "id": "specs_001_primitive_components_contracts_text_input_contract_markup_contract_error_state"
+    },
+    {
+      "label": "Required attributes (Principle II gate)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "required attributes (principle ii gate)",
+      "id": "specs_001_primitive_components_contracts_text_input_contract_required_attributes_principle_ii_gate"
+    },
+    {
+      "label": "Token allowlist used",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L58",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "token allowlist used",
+      "id": "specs_001_primitive_components_contracts_text_input_contract_token_allowlist_used"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "acceptance mapping",
+      "id": "specs_001_primitive_components_contracts_text_input_contract_acceptance_mapping"
+    },
+    {
+      "label": "quickstart.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "quickstart.md",
+      "id": "specs_001_primitive_components_quickstart"
+    },
+    {
+      "label": "Quickstart: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "quickstart: design system primitive components",
+      "id": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components"
+    },
+    {
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "prerequisites",
+      "id": "specs_001_primitive_components_quickstart_prerequisites"
+    },
+    {
+      "label": "Run the component gallery",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "run the component gallery",
+      "id": "specs_001_primitive_components_quickstart_run_the_component_gallery"
+    },
+    {
+      "label": "Validate token discipline (Principle IV gate)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "validate token discipline (principle iv gate)",
+      "id": "specs_001_primitive_components_quickstart_validate_token_discipline_principle_iv_gate"
+    },
+    {
+      "label": "Validate AAA contrast (Principle II gate)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "validate aaa contrast (principle ii gate)",
+      "id": "specs_001_primitive_components_quickstart_validate_aaa_contrast_principle_ii_gate"
+    },
+    {
+      "label": "Run the full test suite",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "run the full test suite",
+      "id": "specs_001_primitive_components_quickstart_run_the_full_test_suite"
+    },
+    {
+      "label": "Manual validation scenarios (traceable to spec.md)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "manual validation scenarios (traceable to spec.md)",
+      "id": "specs_001_primitive_components_quickstart_manual_validation_scenarios_traceable_to_spec_md"
+    },
+    {
+      "label": "Discoverability check (SC-001)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "discoverability check (sc-001)",
+      "id": "specs_001_primitive_components_quickstart_discoverability_check_sc_001"
+    },
+    {
+      "label": "research.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "research.md",
+      "id": "specs_001_primitive_components_research"
+    },
+    {
+      "label": "Phase 0 Research: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "phase 0 research: design system primitive components",
+      "id": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
+    },
+    {
+      "label": "Decision: Tailwind CSS 3.4.x (config-file based), not Tailwind 4",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: tailwind css 3.4.x (config-file based), not tailwind 4",
+      "id": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
+    },
+    {
+      "label": "Decision: Vite as the dev/build tool",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: vite as the dev/build tool",
+      "id": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
+    },
+    {
+      "label": "Decision: Playwright for visual regression + accessibility",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: playwright for visual regression + accessibility",
+      "id": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
+    },
+    {
+      "label": "Decision: Custom Node scripts for token-discipline and contrast gates",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "decision: custom node scripts for token-discipline and contrast gates",
+      "id": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
+    },
+    {
+      "label": "Resolved unknowns",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "community": 21,
+      "norm_label": "resolved unknowns",
+      "id": "specs_001_primitive_components_research_resolved_unknowns"
     },
     {
       "label": "update-agent-context.sh",
@@ -604,7 +1803,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 9,
+      "community": 2,
       "norm_label": "speckit-agent-context-update skill",
       "id": "claude_skills_speckit_agent_context_update_skill"
     },
@@ -617,7 +1816,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 2,
       "norm_label": "claude.md (coding agent context file)",
       "id": "concept_claude_md"
     },
@@ -630,7 +1829,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 2,
       "norm_label": ".specify/extensions/agent-context/agent-context-config.yml",
       "id": "concept_agent_context_config"
     },
@@ -643,7 +1842,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "speckit-analyze skill",
       "id": "claude_skills_speckit_analyze_skill"
     },
@@ -656,7 +1855,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 10,
+      "community": 2,
       "norm_label": ".specify/extensions.yml (extension hooks config)",
       "id": "concept_extensions_yml"
     },
@@ -669,7 +1868,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": ".specify/scripts/bash/check-prerequisites.sh",
       "id": "concept_check_prerequisites_script"
     },
@@ -682,7 +1881,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "speckit-checklist skill",
       "id": "claude_skills_speckit_checklist_skill"
     },
@@ -708,7 +1907,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": ".specify/templates/checklist-template.md",
       "id": "concept_checklist_template"
     },
@@ -721,7 +1920,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": "speckit-clarify skill",
       "id": "claude_skills_speckit_clarify_skill"
     },
@@ -734,7 +1933,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 6,
+      "community": 2,
       "norm_label": "speckit-constitution skill",
       "id": "claude_skills_speckit_constitution_skill"
     },
@@ -747,7 +1946,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": ".specify/memory/constitution.md (project constitution)",
       "id": "concept_constitution_md"
     },
@@ -760,7 +1959,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 2,
       "norm_label": ".specify/templates/constitution-template.md",
       "id": "concept_constitution_template"
     },
@@ -773,7 +1972,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 2,
       "norm_label": ".specify/templates/plan-template.md",
       "id": "concept_plan_template"
     },
@@ -786,7 +1985,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 2,
       "norm_label": ".specify/templates/tasks-template.md",
       "id": "concept_tasks_template"
     },
@@ -799,7 +1998,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 2,
       "norm_label": ".specify/templates/commands/*.md",
       "id": "concept_command_templates_dir"
     },
@@ -812,7 +2011,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "speckit-converge skill",
       "id": "claude_skills_speckit_converge_skill"
     },
@@ -851,7 +2050,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "plan.md (implementation plan)",
       "id": "concept_plan_md"
     },
@@ -929,7 +2128,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": "speckit-specify skill",
       "id": "claude_skills_speckit_specify_skill"
     },
@@ -942,7 +2141,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "spec.md (feature specification)",
       "id": "concept_spec_md"
     },
@@ -955,7 +2154,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": "checklists/requirements.md (spec quality checklist)",
       "id": "concept_requirements_checklist"
     },
@@ -968,7 +2167,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": ".specify/init-options.json",
       "id": "concept_init_options"
     },
@@ -981,7 +2180,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": ".specify/feature.json",
       "id": "concept_feature_json"
     },
@@ -1007,7 +2206,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "tasks.md (task list)",
       "id": "concept_tasks_md"
     },
@@ -1020,7 +2219,7 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "community": 10,
+      "community": 2,
       "norm_label": "speckit-taskstoissues skill",
       "id": "claude_skills_speckit_taskstoissues_skill"
     },
@@ -1033,7 +2232,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 10,
+      "community": 2,
       "norm_label": "github mcp server (list_issues / create issue tools)",
       "id": "concept_github_mcp_server"
     },
@@ -1210,130 +2409,1148 @@
       "community": 16,
       "norm_label": "now",
       "id": "remember_now"
-    },
-    {
-      "label": "Professional Design System Constitution",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 1,
-      "norm_label": "professional design system constitution",
-      "id": "specify_memory_constitution"
-    },
-    {
-      "label": "Feature Specification: Design System Primitive Components",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/spec.md",
-      "community": 1,
-      "norm_label": "feature specification: design system primitive components",
-      "id": "specs_001_primitive_components_spec"
-    },
-    {
-      "label": "Specification Quality Checklist: Design System Primitive Components",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "community": 1,
-      "norm_label": "specification quality checklist: design system primitive components",
-      "id": "specs_001_primitive_components_checklists_requirements"
-    },
-    {
-      "label": "Cognitive Ergonomics & Visual Hierarchy",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 18,
-      "norm_label": "cognitive ergonomics & visual hierarchy",
-      "id": "specify_memory_constitution_principle_1"
-    },
-    {
-      "label": "Absolute Semantic Accessibility (WCAG 2.2 AAA)",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 1,
-      "norm_label": "absolute semantic accessibility (wcag 2.2 aaa)",
-      "id": "specify_memory_constitution_principle_2"
-    },
-    {
-      "label": "Tailwind-Only Architecture",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 19,
-      "norm_label": "tailwind-only architecture",
-      "id": "specify_memory_constitution_principle_3"
-    },
-    {
-      "label": "Design Token Discipline",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 1,
-      "norm_label": "design token discipline",
-      "id": "specify_memory_constitution_principle_4"
-    },
-    {
-      "label": "Interactive State Completeness",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 1,
-      "norm_label": "interactive state completeness",
-      "id": "specify_memory_constitution_principle_5"
-    },
-    {
-      "label": "Project Language Policy",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 20,
-      "norm_label": "project language policy",
-      "id": "specify_memory_constitution_principle_6"
-    },
-    {
-      "label": "Autonomous Skill Acquisition Protocol",
-      "file_type": "concept",
-      "source_file": ".specify/memory/constitution.md",
-      "community": 21,
-      "norm_label": "autonomous skill acquisition protocol",
-      "id": "specify_memory_constitution_principle_7"
-    },
-    {
-      "label": "Button Primitive",
-      "file_type": "concept",
-      "source_file": "specs/001-primitive-components/spec.md",
-      "community": 1,
-      "norm_label": "button primitive",
-      "id": "component_button"
-    },
-    {
-      "label": "Text Input Primitive",
-      "file_type": "concept",
-      "source_file": "specs/001-primitive-components/spec.md",
-      "community": 1,
-      "norm_label": "text input primitive",
-      "id": "component_input"
-    },
-    {
-      "label": "Badge Primitive",
-      "file_type": "concept",
-      "source_file": "specs/001-primitive-components/spec.md",
-      "community": 1,
-      "norm_label": "badge primitive",
-      "id": "component_badge"
-    },
-    {
-      "label": "Checkbox Primitive",
-      "file_type": "concept",
-      "source_file": "specs/001-primitive-components/spec.md",
-      "community": 1,
-      "norm_label": "checkbox primitive",
-      "id": "component_checkbox"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "CLAUDE.md",
-      "source_location": "L6",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L83",
       "weight": 1.0,
-      "source": "claude",
-      "target": "claude_graphify",
+      "source": "specify_memory_constitution",
+      "target": "specify_memory_constitution_professional_design_system_constitution",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L252",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_core_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L309",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_professional_design_system_constitution",
+      "target": "specify_memory_constitution_governance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_vi_project_language_policy_non_negotiable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_core_principles",
+      "target": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L242",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "target": "specify_memory_constitution_alignment_grid_spacing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "target": "specify_memory_constitution_base_semantic_palette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
+      "target": "specify_memory_constitution_typography_text_scale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L258",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_application_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L284",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_data_display_listings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L269",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_forms_validation_inputs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": "L300",
+      "weight": 1.0,
+      "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
+      "target": "specify_memory_constitution_overlays_modals_feedback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements",
+      "target": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements",
+      "target": "specs_001_primitive_components_spec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_content_quality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_feature_readiness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_checklists_requirements_specification_quality_checklist_design_system_primitive_components",
+      "target": "specs_001_primitive_components_checklists_requirements_requirement_completeness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract",
+      "target": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_acceptance_mapping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_long_label_handling_edge_case",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_markup_contract_one_per_variant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/badge.contract.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_badge_contract_component_contract_badge",
+      "target": "specs_001_primitive_components_contracts_badge_contract_required_variant_token_mapping_fr_003_exactly_four_variants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_data_model",
+      "target": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_checkbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_cross_cutting_invariants_all_four_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/data-model.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_data_model_phase_1_data_model_design_system_primitive_components",
+      "target": "specs_001_primitive_components_data_model_text_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan",
+      "target": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan",
+      "target": "specs_001_primitive_components_spec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "target": "specs_001_primitive_components_plan_complexity_tracking",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "target": "specs_001_primitive_components_plan_constitution_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "target": "specs_001_primitive_components_plan_project_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "target": "specs_001_primitive_components_plan_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_implementation_plan_design_system_primitive_components",
+      "target": "specs_001_primitive_components_plan_technical_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_project_structure",
+      "target": "specs_001_primitive_components_plan_documentation_this_feature",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/plan.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_plan_project_structure",
+      "target": "specs_001_primitive_components_plan_source_code_repository_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec",
+      "target": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
+      "target": "specs_001_primitive_components_spec_assumptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
+      "target": "specs_001_primitive_components_spec_requirements_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
+      "target": "specs_001_primitive_components_spec_success_criteria_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_feature_specification_design_system_primitive_components",
+      "target": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
+      "target": "specs_001_primitive_components_spec_edge_cases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
+      "target": "specs_001_primitive_components_spec_user_story_1_drop_in_accessible_button_priority_p1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
+      "target": "specs_001_primitive_components_spec_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_user_scenarios_testing_mandatory",
+      "target": "specs_001_primitive_components_spec_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_requirements_mandatory",
+      "target": "specs_001_primitive_components_spec_functional_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_spec_success_criteria_mandatory",
+      "target": "specs_001_primitive_components_spec_measurable_outcomes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks",
+      "target": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_format_id_p_story_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L241",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_implementation_strategy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L261",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_parallel_example_setup_phase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_path_conventions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_parallel_opportunities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_phase_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_user_story_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_within_each_user_story",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L251",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_implementation_strategy",
+      "target": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_implementation_strategy",
+      "target": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude",
+      "target": "claude_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract",
+      "target": "specs_001_primitive_components_contracts_button_contract_component_contract_button"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_markup_contract"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_required_attributes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_required_classes_principle_v_gate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_text_input_contract",
+      "target": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input",
+      "target": "specs_001_primitive_components_contracts_text_input_contract_acceptance_mapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input",
+      "target": "specs_001_primitive_components_contracts_text_input_contract_markup_contract_default_focus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input",
+      "target": "specs_001_primitive_components_contracts_text_input_contract_markup_contract_error_state"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input",
+      "target": "specs_001_primitive_components_contracts_text_input_contract_required_attributes_principle_ii_gate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/text-input.contract.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_contracts_text_input_contract_component_contract_text_input",
+      "target": "specs_001_primitive_components_contracts_text_input_contract_token_allowlist_used"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart",
+      "target": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_discoverability_check_sc_001"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_manual_validation_scenarios_traceable_to_spec_md"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_prerequisites"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_run_the_component_gallery"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_run_the_full_test_suite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_validate_aaa_contrast_principle_ii_gate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/quickstart.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_quickstart_quickstart_design_system_primitive_components",
+      "target": "specs_001_primitive_components_quickstart_validate_token_discipline_principle_iv_gate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research",
+      "target": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_custom_node_scripts_for_token_discipline_and_contrast_gates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_playwright_for_visual_regression_accessibility"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_tailwind_css_3_4_x_config_file_based_not_tailwind_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_decision_vite_as_the_dev_build_tool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/research.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "specs_001_primitive_components_research_phase_0_research_design_system_primitive_components",
+      "target": "specs_001_primitive_components_research_resolved_unknowns"
     },
     {
       "relation": "contains",
@@ -2646,112 +4863,9 @@
       "weight": 1.0,
       "source": "specify_workflows_speckit_workflow_workflow",
       "target": "specify_templates_tasks_template_document"
-    },
-    {
-      "relation": "cites",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "specs_001_primitive_components_spec",
-      "target": "specify_memory_constitution"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/checklists/requirements.md",
-      "source": "specs_001_primitive_components_checklists_requirements",
-      "target": "specs_001_primitive_components_spec"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "specs_001_primitive_components_spec",
-      "target": "component_badge"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "specs_001_primitive_components_spec",
-      "target": "component_button"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "specs_001_primitive_components_spec",
-      "target": "component_checkbox"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "specs_001_primitive_components_spec",
-      "target": "component_input"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "component_button",
-      "target": "specify_memory_constitution_principle_2"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "component_button",
-      "target": "specify_memory_constitution_principle_4"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "specs/001-primitive-components/spec.md",
-      "source": "component_button",
-      "target": "specify_memory_constitution_principle_5"
     }
   ],
   "hyperedges": [
-    {
-      "id": "core_principles_group",
-      "label": "Design System Core Principles",
-      "nodes": [
-        "specify_memory_constitution_principle_1",
-        "specify_memory_constitution_principle_2",
-        "specify_memory_constitution_principle_3",
-        "specify_memory_constitution_principle_4",
-        "specify_memory_constitution_principle_5",
-        "specify_memory_constitution_principle_6",
-        "specify_memory_constitution_principle_7"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".specify/memory/constitution.md"
-    },
-    {
-      "id": "primitive_components_group",
-      "label": "Primitive Components Set",
-      "nodes": [
-        "component_button",
-        "component_input",
-        "component_badge",
-        "component_checkbox"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "specs/001-primitive-components/spec.md"
-    },
     {
       "id": "extension_hooks_pattern",
       "label": "Extension Hooks Pre/Post-Execution Pattern",
@@ -2841,5 +4955,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "ed6f3941562abfe7aa3cde4ccc06eeb79f1520c8"
+  "built_at_commit": "37cb09d9e8a06c1bdb6f5b0ab30cb0d3e350b764"
 }
