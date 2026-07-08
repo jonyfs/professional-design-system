@@ -27,8 +27,12 @@ npm run audit:contrast
 ```
 
 **Expected outcome**: both pass with 0 violations. No new entries were
-needed in either script's allowlist/pairings for this feature (research.md
-verified Radio/Select reuse feature 001's exact tokens, and Toggle's new
+needed in `audit-tokens.mjs`'s allowlist for this feature (research.md
+verified Radio/Select reuse feature 001's exact tokens). `check-contrast.mjs`
+gained a new `RING_PAIRINGS` list (distinct from its text `PAIRINGS`) to
+actually verify Toggle's `ring-neutral-500` boundary claim against the real
+3:1 WCAG 1.4.11 threshold, rather than leaving it as an unverified prose
+claim — a gap `/speckit-analyze` caught before implementation. Toggle's new
 `ring-neutral-500` boundary is a non-text use already covered by
 `audit-tokens.mjs`'s color allowlist).
 
@@ -75,9 +79,16 @@ gh run download <run-id> -n updated-snapshots -D /tmp/updated-snapshots
    while focused switches the track color and slides the dot.
 7. **Toggle disabled + on** (Edge Case): the disabled-and-on Toggle visually
    combines both states and does not respond to interaction.
-8. **Toggle track visibility** (research.md finding): the off-state track's
-   `ring-neutral-500` boundary is visibly perceivable against the white
-   page background, unlike the ratified catalog pattern's shadow-only dot.
+8. **Toggle track visibility, off state** (research.md finding): the
+   off-state track's `ring-neutral-500` boundary is visibly perceivable
+   against the white page background, unlike the ratified catalog
+   pattern's shadow-only dot — this is the state the fix actually targets
+   (`bg-neutral-200` alone is nearly invisible there).
+9. **Toggle track visibility, on state**: the on-state track (`bg-brand`)
+   is already clearly visible against white on its own; the ring's inner
+   edge blends into the brand fill there (expected — see toggle.contract.md's
+   verification note — the ring's outer edge against the page is what's
+   being checked, and that stays consistent in both states).
 
 ## Discoverability check (SC-001)
 

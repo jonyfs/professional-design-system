@@ -180,7 +180,7 @@ correctly, and that Space/click toggles the state when focused.
 - Components target both desktop and mobile viewports using Tailwind's
   responsive utilities; no dedicated native-app variant is in scope.
 - The color, typography, and spacing tokens ratified in the project
-  constitution (v1.3.2) are final for this feature; no new design tokens
+  constitution (v1.3.3) are final for this feature; no new design tokens
   are anticipated, but any AAA-contrast gap discovered during
   `/speckit-analyze` will be remediated the same way feature 001's was
   (constitution amendment before implementation), not worked around in

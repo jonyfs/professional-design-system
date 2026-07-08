@@ -1,4 +1,31 @@
 <!--
+SYNC IMPACT REPORT (v1.3.3 — see below for the v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.3.2 → 1.3.3
+Modified principles: None
+Added sections: None (no new tokens)
+Corrected sections:
+  - Component Catalog → Forms, Validation & Inputs → Checkboxes/radios:
+    updated from stale `rounded` (raw, non-ratified radius) to
+    `rounded-sm` (the actual ratified token feature 001's Checkbox
+    ships), added the full focus-visible/disabled state set and the
+    peer/peer-disabled label-dimming pattern that shipped but was never
+    reflected back into the catalog, and documented Radio's native-shape/
+    shared-`name` grouping for feature 002.
+  - Component Catalog → Forms, Validation & Inputs → Toggles/switches:
+    added the `ring-1 ring-inset ring-neutral-500` boundary and
+    disabled-dimming pattern from feature 002's Toggle contract, with the
+    contrast rationale (1.24:1 fill alone vs. 4.83:1 with the ring).
+Rationale: `/speckit-analyze` on feature 002-form-primitives-round-2
+found the ratified catalog entries for Checkboxes/radios and Toggles/
+switches had drifted from what actually shipped (feature 001's Checkbox)
+or was about to ship (feature 002's Toggle) — the catalog is meant to be
+the single source of truth, and letting contracts silently diverge from
+it defeats that purpose even when, as here, no principle is violated
+(WCAG 1.4.11 is AA, not part of Principle II's AAA mandate). This is a
+PATCH bump: documentation-only corrections to already-ratified tokens,
+no principle or token change.
+Templates requiring updates: None (governance/catalog text only).
+
 SYNC IMPACT REPORT (v1.3.2 — see below for the v1.3.1/v1.3.0 reports this extends)
 Version change: 1.3.1 → 1.3.2
 Modified principles: None
@@ -290,11 +317,21 @@ catalog.
   text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300
   placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-brand
   sm:text-sm sm:leading-6`.
-- **Checkboxes/radios**: `h-4 w-4 rounded border-neutral-300 text-brand
-  focus:ring-brand`; adjacent text uses `cursor-pointer`.
+- **Checkboxes/radios**: `h-4 w-4 rounded-sm border-neutral-300 text-brand
+  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+  focus-visible:outline-brand disabled:opacity-50 disabled:cursor-not-allowed`;
+  adjacent label uses `cursor-pointer` and, when the input may be disabled,
+  `peer`/`peer-disabled:opacity-50` so the label dims with it. Radio uses
+  the native circular shape of `type="radio"` (no `rounded-*` class needed
+  or applied). Grouped radios share a `name` attribute for native mutual
+  exclusivity.
 - **Toggles/switches**: `transition-colors duration-200 ease-in-out` between
-  `bg-neutral-200` and `bg-brand`; inner dot `h-5 w-5 transform rounded-full
-  bg-white shadow ring-0 transition duration-200 ease-in-out`.
+  `bg-neutral-200` and `bg-brand` on the track, plus a state-invariant
+  `ring-1 ring-inset ring-neutral-500` boundary (the fill alone measures
+  1.24:1 against a white page — below the 3:1 WCAG 1.4.11 non-text
+  threshold; the ring clears 4.83:1); inner dot `h-5 w-5 transform
+  rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out`,
+  dimming together with the track via `peer-disabled:opacity-50` on both.
 - **Inline errors**: `text-xs text-error-strong mt-1 font-medium` directly
   below the input (AAA-safe text variant); the parent input additionally
   receives `ring-error focus:ring-error` (non-text use — base token is
@@ -382,4 +419,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.3.2 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
+**Version**: 1.3.3 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08

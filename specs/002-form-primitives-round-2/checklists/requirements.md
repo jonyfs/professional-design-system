@@ -34,7 +34,7 @@
 - Tailwind class names (e.g., `bg-brand`, `focus:ring-brand`) appear in
   acceptance scenarios and functional requirements. As with feature 001,
   these are **not** treated as implementation-detail violations because
-  they are the project's ratified design *tokens* (constitution v1.3.2),
+  they are the project's ratified design *tokens* (constitution v1.3.3),
   not framework/API choices — the spec still avoids naming languages,
   frameworks, or backend architecture.
 - This feature explicitly reuses feature 001's precedents (native-semantics-

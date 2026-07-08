@@ -3,6 +3,10 @@
 // verifies every text/background token pairing this project's components
 // actually use against the WCAG 2.2 AAA thresholds (7:1 normal text,
 // 4.5:1 large text / UI components), using the `wcag-contrast` package.
+// Also checks non-text UI component boundaries (WCAG 1.4.11, 3:1 — an
+// AA-level criterion, not itself part of Principle II's AAA mandate, but
+// checked here so a documented claim like "this ring clears 3:1" is
+// verified by tooling, not just prose) via a separate RING_PAIRINGS list.
 //
 // Pairings are declared explicitly below, one entry per real usage in
 // contracts/*.md — this is not a generic linter, it is a checklist of the
@@ -12,7 +16,8 @@
 // and fails loudly if any of them has no PAIRING entry — a new component (or
 // a changed one) MUST add its pairing here before being considered
 // compliant, and this check makes "forgot to" a hard failure instead of a
-// silent gap.
+// silent gap. (The RING_PAIRINGS list is not similarly auto-scanned against
+// markup — see its own comment for why.)
 
 import { hex } from "wcag-contrast";
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -21,6 +26,12 @@ import { fileURLToPath } from "node:url";
 
 const AAA_NORMAL = 7;
 const AAA_LARGE_OR_UI = 4.5;
+// WCAG 1.4.11 Non-text Contrast — an AA-level criterion (no AAA tier
+// exists for it), required for meaningful UI-component boundaries (e.g. a
+// toggle track's edge against its page background). Kept distinct from
+// AAA_LARGE_OR_UI (4.5) because it is a different, real WCAG number, not
+// a stricter self-imposed bar.
+const NON_TEXT_UI_AA = 3;
 const rootDir = fileURLToPath(new URL("..", import.meta.url));
 
 // Resolved from tailwind.config.ts (v1.3.1 constitution palette).
@@ -29,6 +40,7 @@ const BASE_TOKENS = {
   brand: "#0066FF",
   white: "#FFFFFF",
   "neutral-900": "#111827",
+  "neutral-500": "#6B7280",
   "neutral-50": "#F9FAFB",
   "neutral-600": "#4B5563",
   success: "#10B981",
@@ -129,9 +141,32 @@ const PAIRINGS = [
   },
 ];
 
+// Non-text UI component boundaries (WCAG 1.4.11, 3:1) — e.g. a control's
+// ring/border against the page background. Deliberately does NOT include
+// feature 001's pre-existing `ring-neutral-300` boundaries (Text Input,
+// Checkbox, Badge — measured 1.47:1, below 3:1): that gap was found and
+// explicitly left out of scope in feature 002's research.md as a
+// cross-cutting change to already-shipped, CI-green components, not
+// something to silently start failing here. Only checks the boundaries a
+// component's contract actually claims meet this bar.
+const RING_PAIRINGS = [
+  {
+    name: "Toggle track ring, off state (ring-neutral-500 vs white page)",
+    fg: "neutral-500",
+    bg: "white",
+    threshold: NON_TEXT_UI_AA,
+  },
+  {
+    name: "Toggle track ring, on state (ring-neutral-500 vs white page — outer edge, state-invariant)",
+    fg: "neutral-500",
+    bg: "white",
+    threshold: NON_TEXT_UI_AA,
+  },
+];
+
 let failures = [];
 
-for (const { name, fg, bg, threshold } of PAIRINGS) {
+for (const { name, fg, bg, threshold } of [...PAIRINGS, ...RING_PAIRINGS]) {
   const fgHex = TOKENS[fg];
   const bgHex = TOKENS[bg];
   if (!fgHex || !bgHex) {
@@ -221,6 +256,7 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Contrast audit passed — ${PAIRINGS.length} pairing(s) checked, all ≥ AAA threshold; ` +
+  `Contrast audit passed — ${PAIRINGS.length} text pairing(s) (AAA) + ${RING_PAIRINGS.length} ` +
+    `non-text UI pairing(s) (WCAG 1.4.11, 3:1) checked, all above threshold; ` +
     `markup coverage verified against ${htmlFiles.length} file(s).`,
 );
