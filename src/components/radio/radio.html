@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radio — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Radio</h1>
+
+  <section class="mt-8">
+    <h2 class="text-sm font-semibold text-neutral-600">Shipping method</h2>
+    <fieldset data-testid="radio-group" class="mt-2 space-y-2 p-1">
+      <legend class="sr-only">Shipping method</legend>
+
+      <div class="flex items-center gap-2">
+        <input
+          id="radio-standard"
+          data-testid="radio-standard"
+          type="radio"
+          name="shipping-method"
+          checked
+          class="h-4 w-4 border-neutral-300 text-brand
+                 focus-visible:outline focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-brand
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+        />
+        <label for="radio-standard" class="text-sm text-neutral-900 cursor-pointer">
+          Standard (5-7 days)
+        </label>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <input
+          id="radio-express"
+          data-testid="radio-express"
+          type="radio"
+          name="shipping-method"
+          class="h-4 w-4 border-neutral-300 text-brand
+                 focus-visible:outline focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-brand
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+        />
+        <label for="radio-express" class="text-sm text-neutral-900 cursor-pointer">
+          Express (1-2 days)
+        </label>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <input
+          id="radio-disabled"
+          data-testid="radio-disabled"
+          type="radio"
+          name="shipping-method"
+          disabled
+          class="peer h-4 w-4 border-neutral-300 text-brand
+                 focus-visible:outline focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-brand
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+        />
+        <label
+          for="radio-disabled"
+          class="text-sm text-neutral-900 peer-disabled:opacity-50"
+        >
+          Same-day (unavailable)
+        </label>
+      </div>
+    </fieldset>
+  </section>
+
+  <section class="mt-8">
+    <h2 class="text-sm font-semibold text-neutral-600">Edge case — long label</h2>
+    <div data-testid="radio-long-label-wrapper" class="mt-2 max-w-xs">
+      <div class="flex items-start gap-2">
+        <input
+          id="radio-long-label"
+          data-testid="radio-long-label-input"
+          type="radio"
+          name="long-label-demo"
+          class="mt-0.5 h-4 w-4 shrink-0 border-neutral-300 text-brand
+                 focus-visible:outline focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-brand"
+        />
+        <label for="radio-long-label" class="text-sm text-neutral-900 cursor-pointer">
+          This is a significantly longer option label than usual, long enough to wrap
+          across multiple lines in a narrow container
+        </label>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
