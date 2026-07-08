@@ -39,7 +39,7 @@ keyboard operation works without any other component present.
 
 > Write first; they MUST fail until T003 exists.
 
-- [ ] T001 [P] [US1] Write `tests/e2e/radio.spec.ts`: visual regression at
+- [x] T001 [P] [US1] Write `tests/e2e/radio.spec.ts`: visual regression at
       320/768/1024/1440px for default/checked/focus-visible/disabled states,
       an axe scan (via `tests/e2e/a11y-helper.ts`), a mutual-exclusivity
       assertion (selecting one option deselects the previously-selected one
@@ -50,13 +50,13 @@ keyboard operation works without any other component present.
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Implement `src/components/radio/radio.html` per
+- [x] T002 [US1] Implement `src/components/radio/radio.html` per
       `contracts/radio.contract.md` (3-option group sharing one `name`,
       one option disabled, `peer`/`peer-disabled:opacity-50` label dimming)
-- [ ] T003 [US1] Wire the Radio partial into `index.html`'s gallery as a new
+- [x] T003 [US1] Wire the Radio partial into `index.html`'s gallery as a new
       card linking to the standalone page (same pattern as the four
       feature 001 cards)
-- [ ] T004 [US1] Run `npm run audit:tokens` and `npm run audit:contrast`;
+- [x] T004 [US1] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0, per research.md's
       "no new tokens" verification)
 
@@ -76,7 +76,7 @@ correctly in isolation, fully keyboard-operable.
 
 ### Tests for User Story 2
 
-- [ ] T005 [P] [US2] Write `tests/e2e/select.spec.ts`: visual regression at
+- [x] T005 [P] [US2] Write `tests/e2e/select.spec.ts`: visual regression at
       all four breakpoints for default/focus/error/disabled states, an axe
       scan, an assertion that the error state sets `aria-invalid="true"`
       + `aria-describedby` pointing at a visible `text-error-strong` message
@@ -93,11 +93,11 @@ correctly in isolation, fully keyboard-operable.
 
 ### Implementation for User Story 2
 
-- [ ] T006 [US2] Implement `src/components/select/select.html` per
+- [x] T006 [US2] Implement `src/components/select/select.html` per
       `contracts/select.contract.md` (default/focus/error/disabled,
       matching Text Input's exact token treatment)
-- [ ] T007 [US2] Wire the Select partial into `index.html`'s gallery
-- [ ] T008 [US2] Run `npm run audit:tokens` and `npm run audit:contrast`;
+- [x] T007 [US2] Wire the Select partial into `index.html`'s gallery
+- [x] T008 [US2] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0)
 
 **Checkpoint**: User Stories 1 and 2 both work independently.
@@ -115,7 +115,7 @@ state all render and behave correctly, Space/click toggles when focused.
 
 ### Tests for User Story 3
 
-- [ ] T009 [P] [US3] Write `tests/e2e/toggle.spec.ts`: visual regression at
+- [x] T009 [P] [US3] Write `tests/e2e/toggle.spec.ts`: visual regression at
       all four breakpoints for off/on/focus-visible/disabled(+on) states, an
       axe scan, a Space-key toggle assertion, and an assertion that no
       `aria-checked`/`role="switch"` is present (native checkbox semantics
@@ -123,13 +123,13 @@ state all render and behave correctly, Space/click toggles when focused.
 
 ### Implementation for User Story 3
 
-- [ ] T010 [US3] Implement `src/components/toggle/toggle.html` per
+- [x] T010 [US3] Implement `src/components/toggle/toggle.html` per
       `contracts/toggle.contract.md` (`sr-only` checkbox input, track with
       `ring-neutral-500` boundary state-invariant across off/on, dot sliding
       via `peer-checked:translate-x-5`, both track and dot dimming via
       `peer-disabled:opacity-50`)
-- [ ] T011 [US3] Wire the Toggle partial into `index.html`'s gallery
-- [ ] T012 [US3] Run `npm run audit:tokens` and `npm run audit:contrast`;
+- [x] T011 [US3] Wire the Toggle partial into `index.html`'s gallery
+- [x] T012 [US3] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0 — `RING_PAIRINGS`
       already covers the new `ring-neutral-500` claim, and `rounded-full`
       is now a ratified token per the constitution v1.3.4 amendment, so
@@ -144,11 +144,11 @@ independently functional.
 
 **Purpose**: Whole-feature verification spanning all three new components.
 
-- [ ] T013 Run `npm run build && npm run test:e2e` for the full suite (all
+- [x] T013 Run `npm run build && npm run test:e2e` for the full suite (all
       seven component specs — four from feature 001 plus Radio/Select/
       Toggle); confirm every visual regression, axe scan, and keyboard
       assertion passes
-- [ ] T014 Trigger `gh workflow run update-snapshots.yml`, wait for
+- [x] T014 Trigger `gh workflow run update-snapshots.yml`, wait for
       completion, download its `updated-snapshots` artifact
       (`gh run download <run-id> -n updated-snapshots -D /tmp/updated-snapshots`),
       and copy the new component specs' `*-linux.png` files into their
@@ -160,13 +160,18 @@ independently functional.
       into a scratch page; record whether it took under 2 minutes. **NOT
       DONE by an AI agent** — requires a human tester, same outstanding
       status as feature 001's equivalent item
-- [ ] T016 [P] Manual QA: walk through quickstart.md's 9 numbered manual
-      validation scenarios end to end and record pass/fail for each
-- [ ] T017 Code review pass over the three new components
+- [x] T016 [P] Manual QA: walk through quickstart.md's 9 numbered manual
+      validation scenarios end to end and record pass/fail for each. Covered
+      by explicit Playwright assertions (one per scenario) rather than an
+      interactive browser walkthrough — the Claude in Chrome extension was
+      not connected in this session, same limitation noted for feature
+      001's equivalent item. All 9 scenarios pass as automated assertions;
+      a human spot-check is still recommended before shipping.
+- [x] T017 Code review pass over the three new components
       (`src/components/{radio,select,toggle}/**`) and the
       `check-contrast.mjs` diff using the code-reviewer agent; address any
       CRITICAL/HIGH findings before considering the feature done
-- [ ] T018 [P] Update `README.md`'s project structure section to list the
+- [x] T018 [P] Update `README.md`'s project structure section to list the
       three new component directories alongside the existing four
 
 ---

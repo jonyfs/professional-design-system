@@ -1,8 +1,9 @@
 # Professional Design System
 
 Accessible HTML + Tailwind CSS primitive components (Button, Text Input, Badge,
-Checkbox), built exclusively on the semantic design tokens ratified in
-[`.specify/memory/constitution.md`](.specify/memory/constitution.md) (v1.3.3).
+Checkbox, Radio, Select, Toggle/Switch), built exclusively on the semantic
+design tokens ratified in
+[`.specify/memory/constitution.md`](.specify/memory/constitution.md) (v1.3.4).
 
 ## Requirements
 
@@ -59,22 +60,26 @@ feature's "Independent Test" requirement.
 
 ```text
 src/
-├── styles/tailwind.css       # @tailwind directives only — no custom CSS
+├── styles/tailwind.css       # @tailwind directives + shared @layer components
 └── components/
     ├── button/button.html
     ├── text-input/text-input.html
     ├── badge/badge.html
-    └── checkbox/checkbox.html
+    ├── checkbox/checkbox.html
+    ├── radio/radio.html
+    ├── select/select.html
+    └── toggle/toggle.html
 scripts/
-├── audit-tokens.mjs           # Principle IV gate
-└── check-contrast.mjs         # Principle II gate
+├── audit-tokens.mjs           # Principle IV gate (color + border-radius)
+└── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings)
 tests/e2e/                     # Playwright specs, one per component
-specs/001-primitive-components/  # spec/plan/tasks/contracts for this feature
+specs/001-primitive-components/    # spec/plan/tasks/contracts (Button, Text Input, Badge, Checkbox)
+specs/002-form-primitives-round-2/ # spec/plan/tasks/contracts (Radio, Select, Toggle)
 ```
 
 ## Governance
 
 Every component must comply with the project constitution's Core Principles
 (accessibility, token discipline, interactive state completeness, Tailwind-only
-styling). See `specs/001-primitive-components/contracts/*.md` for the exact
-markup contract each component implements.
+styling). See each feature's `specs/*/contracts/*.md` for the exact markup
+contract each component implements.
