@@ -1,0 +1,8 @@
+# graphify build artifacts (regenerable knowledge graph, cache, cost tracker)
+graphify-out/
+
+# Claude Code local runtime/session state
+.claude/scheduled_tasks.lock
+
+# OS
+.DS_Store
