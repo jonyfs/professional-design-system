@@ -2,7 +2,7 @@
 
 Accessible HTML + Tailwind CSS primitive components (Button, Text Input, Badge,
 Checkbox), built exclusively on the semantic design tokens ratified in
-[`.specify/memory/constitution.md`](.specify/memory/constitution.md) (v1.3.1).
+[`.specify/memory/constitution.md`](.specify/memory/constitution.md) (v1.3.2).
 
 ## Requirements
 

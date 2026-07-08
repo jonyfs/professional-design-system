@@ -1,4 +1,23 @@
 <!--
+SYNC IMPACT REPORT (v1.3.2 — see below for the v1.3.1/v1.3.0 reports this extends)
+Version change: 1.3.1 → 1.3.2
+Modified principles: None
+Added sections:
+  - Governance → Adopted External Skills: records `frontend-design`
+    (Anthropic, official `claude-plugins-official` marketplace, Apache 2.0)
+    as vetted under Principle VII and available for use.
+Rationale: closes the TODO(SKILL_REFS) follow-up carried since v1.0.0 —
+the original request referenced a `frontend-design` skill that did not
+exist under that exact name at the time. It is now available (enabled in
+this environment's `.claude/settings.json`), and was verified against all
+four Principle VII criteria before being recorded as adopted: official
+Anthropic publisher and marketplace (trustworthy, actively maintained),
+plain-instruction skill content with no scripts or obfuscated behavior
+(safe), directly serves this project's stated goal of avoiding templated
+UI defaults (relevant), Apache License 2.0 (compatible). This is a PATCH
+bump: documentation-only, no principle or token changed.
+Templates requiring updates: None (governance note only).
+
 SYNC IMPACT REPORT (v1.3.1 — see below for the v1.3.0 report this extends)
 Version change: 1.3.0 → 1.3.1
 Modified principles: None
@@ -328,6 +347,16 @@ generating HTML code that violates:
    skill adopted without passing the trustworthiness/safety/relevance/license
    checks, or installed without informing the user, MUST be rejected/reverted.
 
+**Adopted External Skills** (Principle VII): skills vetted and available for
+use in this project —
+- `frontend-design` (Anthropic, `claude-plugins-official` marketplace,
+  Apache License 2.0) — distinctive visual/UX design guidance (palette,
+  typography, layout choices that avoid templated defaults). Resolves the
+  TODO(SKILL_REFS) carried since v1.0.0. Verified 2026-07-08: official
+  publisher and marketplace, plain-instruction content with no
+  scripts/obfuscation, directly relevant to this project's anti-templated-UI
+  goal, Apache 2.0 license compatible.
+
 **Repository**: this project's canonical remote is
 https://github.com/jonyfs/professional-design-system — constitution amendments,
 component contributions, and issue tracking are expected to flow through this
@@ -353,4 +382,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.3.1 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
+**Version**: 1.3.2 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
