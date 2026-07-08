@@ -27,6 +27,27 @@ npx playwright install --with-deps   # one-time browser download for tests
 | `npm run audit:contrast` | Fail if any documented text/background pairing is below WCAG 2.2 AAA (Principle II) |
 | `npm run typecheck` | Type-check the project's `.ts` config/test files |
 
+## Visual regression baselines (cross-platform)
+
+CI runs on `ubuntu-latest`. Playwright names snapshot files by OS
+(`*-linux.png`, `*-darwin.png`, ...), so a baseline generated on macOS never
+satisfies a Linux CI run, and vice versa — **always regenerate baselines
+inside the official Playwright Docker image**, matching CI, not with a bare
+`npx playwright test --update-snapshots` on your host OS:
+
+```bash
+docker run --rm -v "$(pwd)":/work -w /work \
+  mcr.microsoft.com/playwright:v1.61.1-noble \
+  bash -c "npm ci && npx playwright test --update-snapshots"
+```
+
+(Bump the image tag to match this repo's installed `@playwright/test`
+version.) Commit both the `-darwin.png` and `-linux.png` sets that result —
+local `npm run test:e2e` on a Mac still needs the `-darwin.png` files, CI
+needs the `-linux.png` files. After running the container, reinstall
+`node_modules` for your host OS (`rm -rf node_modules && npm install`) —
+the bind mount leaves Linux-native binaries behind otherwise.
+
 ## Component gallery
 
 Run `npm run dev` and open the printed local URL. The gallery links out to
