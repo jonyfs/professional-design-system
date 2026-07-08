@@ -109,6 +109,19 @@
         "source_file": ".specify/extensions/agent-context/extension.yml"
       },
       {
+        "id": "constitution_governance_mechanism",
+        "label": "Constitution Governance Mechanism",
+        "nodes": [
+          "specify_memory_constitution_document",
+          "specify_templates_constitution_template_document",
+          "specify_templates_plan_template_document"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.75,
+        "source_file": ".specify/templates/plan-template.md"
+      },
+      {
         "id": "sdd_document_pipeline",
         "label": "Spec-Driven Development Template Pipeline",
         "nodes": [
@@ -125,26 +138,6 @@
     ]
   },
   "nodes": [
-    {
-      "label": "CLAUDE.md",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "claude",
-      "community": 8,
-      "norm_label": "claude.md"
-    },
-    {
-      "label": "graphify",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "claude_graphify",
-      "community": 8,
-      "norm_label": "graphify"
-    },
     {
       "label": "update-agent-context.sh",
       "file_type": "code",
@@ -1150,7 +1143,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 8,
       "norm_label": "implementation plan template",
       "id": "specify_templates_plan_template_document"
     },
@@ -1163,7 +1156,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 8,
       "norm_label": "feature specification template",
       "id": "specify_templates_spec_template_document"
     },
@@ -1176,7 +1169,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 8,
       "norm_label": "tasks template",
       "id": "specify_templates_tasks_template_document"
     },
@@ -1189,9 +1182,22 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 8,
       "norm_label": "full sdd cycle workflow (speckit)",
       "id": "specify_workflows_speckit_workflow_workflow"
+    },
+    {
+      "label": "CLAUDE.md (Managed Coding Agent Context File)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "claude.md (managed coding agent context file)",
+      "id": "claude_document"
     },
     {
       "label": "last-ndc.ts",
@@ -1199,142 +1205,140 @@
       "source_file": ".remember/tmp/last-ndc.ts",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "remember_tmp_last_ndc",
       "community": 17,
-      "norm_label": "last-ndc.ts",
-      "id": "remember_tmp_last_ndc"
+      "norm_label": "last-ndc.ts"
     },
     {
       "label": "Now",
       "file_type": "document",
       "source_file": ".remember/now.md",
+      "id": "remember_now",
       "community": 16,
-      "norm_label": "now",
-      "id": "remember_now"
+      "norm_label": "now"
+    },
+    {
+      "label": "Today 2026-07-07",
+      "file_type": "document",
+      "source_file": ".remember/today-2026-07-07.md",
+      "id": "remember_today_2026_07_07",
+      "community": 1,
+      "norm_label": "today 2026-07-07"
     },
     {
       "label": "Professional Design System Constitution",
       "file_type": "document",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution",
       "community": 1,
-      "norm_label": "professional design system constitution",
-      "id": "specify_memory_constitution"
+      "norm_label": "professional design system constitution"
     },
     {
       "label": "Feature Specification: Design System Primitive Components",
       "file_type": "document",
       "source_file": "specs/001-primitive-components/spec.md",
+      "id": "specs_001_primitive_components_spec",
       "community": 1,
-      "norm_label": "feature specification: design system primitive components",
-      "id": "specs_001_primitive_components_spec"
+      "norm_label": "feature specification: design system primitive components"
     },
     {
       "label": "Specification Quality Checklist: Design System Primitive Components",
       "file_type": "document",
       "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "id": "specs_001_primitive_components_checklists_requirements",
       "community": 1,
-      "norm_label": "specification quality checklist: design system primitive components",
-      "id": "specs_001_primitive_components_checklists_requirements"
+      "norm_label": "specification quality checklist: design system primitive components"
     },
     {
       "label": "Cognitive Ergonomics & Visual Hierarchy",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_1",
       "community": 18,
-      "norm_label": "cognitive ergonomics & visual hierarchy",
-      "id": "specify_memory_constitution_principle_1"
+      "norm_label": "cognitive ergonomics & visual hierarchy"
     },
     {
       "label": "Absolute Semantic Accessibility (WCAG 2.2 AAA)",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_2",
       "community": 1,
-      "norm_label": "absolute semantic accessibility (wcag 2.2 aaa)",
-      "id": "specify_memory_constitution_principle_2"
+      "norm_label": "absolute semantic accessibility (wcag 2.2 aaa)"
     },
     {
       "label": "Tailwind-Only Architecture",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_3",
       "community": 19,
-      "norm_label": "tailwind-only architecture",
-      "id": "specify_memory_constitution_principle_3"
+      "norm_label": "tailwind-only architecture"
     },
     {
       "label": "Design Token Discipline",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_4",
       "community": 1,
-      "norm_label": "design token discipline",
-      "id": "specify_memory_constitution_principle_4"
+      "norm_label": "design token discipline"
     },
     {
       "label": "Interactive State Completeness",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_5",
       "community": 1,
-      "norm_label": "interactive state completeness",
-      "id": "specify_memory_constitution_principle_5"
+      "norm_label": "interactive state completeness"
     },
     {
       "label": "Project Language Policy",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_6",
       "community": 20,
-      "norm_label": "project language policy",
-      "id": "specify_memory_constitution_principle_6"
+      "norm_label": "project language policy"
     },
     {
       "label": "Autonomous Skill Acquisition Protocol",
       "file_type": "concept",
       "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_7",
       "community": 21,
-      "norm_label": "autonomous skill acquisition protocol",
-      "id": "specify_memory_constitution_principle_7"
+      "norm_label": "autonomous skill acquisition protocol"
     },
     {
       "label": "Button Primitive",
       "file_type": "concept",
       "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_button",
       "community": 1,
-      "norm_label": "button primitive",
-      "id": "component_button"
+      "norm_label": "button primitive"
     },
     {
       "label": "Text Input Primitive",
       "file_type": "concept",
       "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_input",
       "community": 1,
-      "norm_label": "text input primitive",
-      "id": "component_input"
+      "norm_label": "text input primitive"
     },
     {
       "label": "Badge Primitive",
       "file_type": "concept",
       "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_badge",
       "community": 1,
-      "norm_label": "badge primitive",
-      "id": "component_badge"
+      "norm_label": "badge primitive"
     },
     {
       "label": "Checkbox Primitive",
       "file_type": "concept",
       "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_checkbox",
       "community": 1,
-      "norm_label": "checkbox primitive",
-      "id": "component_checkbox"
+      "norm_label": "checkbox primitive"
     }
   ],
   "links": [
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CLAUDE.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "claude",
-      "target": "claude_graphify",
-      "confidence_score": 1.0
-    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -2568,6 +2572,26 @@
       "target": "specify_extensions_agent_context_readme_context_section_lifecycle"
     },
     {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_readme_context_section_lifecycle",
+      "target": "claude_document"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/agent-context-config.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_agent_context_config_config",
+      "target": "claude_document"
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -2576,6 +2600,16 @@
       "weight": 1.0,
       "source": "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
       "target": "specify_extensions_agent_context_agent_context_config_config"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/commands/speckit.agent-context.update.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
+      "target": "claude_document"
     },
     {
       "relation": "references",
@@ -2646,6 +2680,22 @@
       "weight": 1.0,
       "source": "specify_workflows_speckit_workflow_workflow",
       "target": "specify_templates_tasks_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".remember/today-2026-07-07.md",
+      "source": "remember_today_2026_07_07",
+      "target": "specify_memory_constitution"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".remember/today-2026-07-07.md",
+      "source": "remember_today_2026_07_07",
+      "target": "specs_001_primitive_components_spec"
     },
     {
       "relation": "cites",
@@ -2827,6 +2877,19 @@
       "source_file": ".specify/extensions/agent-context/extension.yml"
     },
     {
+      "id": "constitution_governance_mechanism",
+      "label": "Constitution Governance Mechanism",
+      "nodes": [
+        "specify_memory_constitution_document",
+        "specify_templates_constitution_template_document",
+        "specify_templates_plan_template_document"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": ".specify/templates/plan-template.md"
+    },
+    {
       "id": "sdd_document_pipeline",
       "label": "Spec-Driven Development Template Pipeline",
       "nodes": [
@@ -2841,5 +2904,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "ed6f3941562abfe7aa3cde4ccc06eeb79f1520c8"
+  "built_at_commit": "6e5f2f2a609f0d4682f0854678d08ac84c4de83e"
 }

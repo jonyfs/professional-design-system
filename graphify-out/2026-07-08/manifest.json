@@ -175,9 +175,9 @@
     "semantic_hash": "eba6943b2a2f6407162ae12e0218bdac"
   },
   "CLAUDE.md": {
-    "mtime": 1783523213.1962557,
-    "ast_hash": "c61c61adec04c11e46a2d4c2660bea14",
-    "semantic_hash": ""
+    "mtime": 1783446244.9287665,
+    "ast_hash": "af2a4aa2afc255f108b61414df63a311",
+    "semantic_hash": "af2a4aa2afc255f108b61414df63a311"
   },
   ".remember/tmp/last-ndc.ts": {
     "mtime": 1783474342.164099,
@@ -208,25 +208,5 @@
     "mtime": 1783474058.4786594,
     "ast_hash": "3fbc6d979e46a117fe0346b728e4106d",
     "semantic_hash": "3fbc6d979e46a117fe0346b728e4106d"
-  },
-  ".claude/settings.json": {
-    "mtime": 1783523213.1966572,
-    "ast_hash": "fef3e38648095f809578c22db3fc68bb",
-    "semantic_hash": ""
-  },
-  ".remember/archive.md": {
-    "mtime": 1783522971.98697,
-    "ast_hash": "f547aaec7ca05f7ba8679eeea84733fb",
-    "semantic_hash": ""
-  },
-  ".remember/recent.md": {
-    "mtime": 1783522971.983725,
-    "ast_hash": "490305633cc89d54ceca3769adf670f9",
-    "semantic_hash": ""
-  },
-  ".remember/today-2026-07-07.done.md": {
-    "mtime": 1783474366.4173517,
-    "ast_hash": "bba6d09e9fee45175e77cbd782c08264",
-    "semantic_hash": ""
   }
 }
