@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-08)
 
 ## Corpus Check
-- 77 files · ~82,437 words
+- 79 files · ~92,689 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 396 nodes · 417 edges · 47 communities (36 shown, 11 thin omitted)
+- 399 nodes · 418 edges · 49 communities (38 shown, 11 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d70d792e`
+- Built from commit: `2dc7dd67`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -87,7 +87,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (47 total, 11 thin omitted)
+## Communities (49 total, 11 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -194,14 +194,14 @@ Cohesion: 0.09
 Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+14 more)
 
 ## Knowledge Gaps
-- **236 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+231 more)
+- **236 isolated node(s):** `Format: `[ID] [P?] [Story] Description``, `Path Conventions`, `Tests for User Story 1`, `Implementation for User Story 1`, `Tests for User Story 2` (+231 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
+- **What connects `Format: `[ID] [P?] [Story] Description``, `Path Conventions`, `Tests for User Story 1` to the rest of the system?**
   _236 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._

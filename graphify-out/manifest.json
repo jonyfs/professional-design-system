@@ -1270,8 +1270,8 @@
     "semantic_hash": ""
   },
   "specs/002-form-primitives-round-2/tasks.md": {
-    "mtime": 1783546023.463045,
-    "ast_hash": "64952759da8e2dab4f098cc8e7ffab3d",
+    "mtime": 1783546624.0821786,
+    "ast_hash": "4d7812785bae228b0692a8b1786ea9b8",
     "semantic_hash": ""
   },
   "tests/e2e/radio.spec.ts": {
@@ -1285,13 +1285,13 @@
     "semantic_hash": ""
   },
   "src/components/select/select.html": {
-    "mtime": 1783546132.3060524,
-    "ast_hash": "5f2d3d775c4108ca1bb8ec6aec188798",
+    "mtime": 1783546481.564529,
+    "ast_hash": "ddf1a076825d4594d3449c54bfbef33e",
     "semantic_hash": ""
   },
   "src/components/toggle/toggle.html": {
-    "mtime": 1783546132.306209,
-    "ast_hash": "fb234bc2912f0c6637c65d604628ef37",
+    "mtime": 1783546870.5832214,
+    "ast_hash": "adcbabd6f7e540ea9c7921abc7606435",
     "semantic_hash": ""
   },
   "tests/e2e/radio.spec.ts-snapshots/radio-checked-chromium-1024-darwin.png": {
@@ -1412,6 +1412,256 @@
   "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-webkit-1440-darwin.png": {
     "mtime": 1783546265.8868244,
     "ast_hash": "ba74c7d109a83b4a2c96cacef4127afb",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts": {
+    "mtime": 1783546607.4681165,
+    "ast_hash": "aa48768ae94ea42dbf33031117fb0483",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-1024-darwin.png": {
+    "mtime": 1783546640.500926,
+    "ast_hash": "8dc845cff5092eda1a44e0a4dc027dd8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-1440-darwin.png": {
+    "mtime": 1783546499.7649937,
+    "ast_hash": "8dc845cff5092eda1a44e0a4dc027dd8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-320-darwin.png": {
+    "mtime": 1783546633.8585165,
+    "ast_hash": "72472649545b8ea7f85756e29ed7eee5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-768-darwin.png": {
+    "mtime": 1783546637.190195,
+    "ast_hash": "8dc845cff5092eda1a44e0a4dc027dd8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-firefox-1440-darwin.png": {
+    "mtime": 1783546653.5526316,
+    "ast_hash": "7e887d666369e3d30a8bd7b7889b28a8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-webkit-1440-darwin.png": {
+    "mtime": 1783546656.253281,
+    "ast_hash": "7e33dda30d66e1985fcabcafa322cdbf",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-1024-darwin.png": {
+    "mtime": 1783546642.3176315,
+    "ast_hash": "68e32139f3fc70a6f0ddf782b62808bd",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-1440-darwin.png": {
+    "mtime": 1783546499.7760162,
+    "ast_hash": "68e32139f3fc70a6f0ddf782b62808bd",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-320-darwin.png": {
+    "mtime": 1783546633.8688643,
+    "ast_hash": "624b6d0b9d11fb4052e4e17c035fe545",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-768-darwin.png": {
+    "mtime": 1783546637.9318976,
+    "ast_hash": "68e32139f3fc70a6f0ddf782b62808bd",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-firefox-1440-darwin.png": {
+    "mtime": 1783546655.1339896,
+    "ast_hash": "0e7c7bb97b5681c8303e11d0a54b7807",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-webkit-1440-darwin.png": {
+    "mtime": 1783546657.4248893,
+    "ast_hash": "534a8adfb32c105e45c4b008eb4675bf",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-1024-darwin.png": {
+    "mtime": 1783546640.5370698,
+    "ast_hash": "fac743d432f9b72327c86249500a4b47",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-1440-darwin.png": {
+    "mtime": 1783546499.814737,
+    "ast_hash": "fac743d432f9b72327c86249500a4b47",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-320-darwin.png": {
+    "mtime": 1783546633.923175,
+    "ast_hash": "f14d8aacd0ec3643196ceda7b2f00ddb",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-768-darwin.png": {
+    "mtime": 1783546636.588379,
+    "ast_hash": "fac743d432f9b72327c86249500a4b47",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-firefox-1440-darwin.png": {
+    "mtime": 1783546649.4379737,
+    "ast_hash": "93ea46d05ae0b550237629f003404c84",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-webkit-1440-darwin.png": {
+    "mtime": 1783546658.5771477,
+    "ast_hash": "faa72fb600c6d94af3df71cf51e8240c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-1024-darwin.png": {
+    "mtime": 1783546639.9849322,
+    "ast_hash": "076b4fc9060cd94fa38b274e38fbf4ad",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-1440-darwin.png": {
+    "mtime": 1783546499.7934165,
+    "ast_hash": "076b4fc9060cd94fa38b274e38fbf4ad",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-320-darwin.png": {
+    "mtime": 1783546633.91731,
+    "ast_hash": "d4ad71ff75e4f4f9bb31dc697d4eea9c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-768-darwin.png": {
+    "mtime": 1783546636.617121,
+    "ast_hash": "076b4fc9060cd94fa38b274e38fbf4ad",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-firefox-1440-darwin.png": {
+    "mtime": 1783546656.7964263,
+    "ast_hash": "a75bf1d13339c2f214f843e3dff120a3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-webkit-1440-darwin.png": {
+    "mtime": 1783546656.30226,
+    "ast_hash": "2620fb501fb6a6759d70a7f84e3b2d98",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts": {
+    "mtime": 1783546770.385548,
+    "ast_hash": "d0c3a68193141ecd60453e446e7d3065",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0537598,
+    "ast_hash": "a3d0a7d2c9c66db0745e4585487aa947",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-1440-darwin.png": {
+    "mtime": 1783546898.6484835,
+    "ast_hash": "a3d0a7d2c9c66db0745e4585487aa947",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-320-darwin.png": {
+    "mtime": 1783546889.0461962,
+    "ast_hash": "73efff69097ebb80a09f77c43f6b704c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-768-darwin.png": {
+    "mtime": 1783546891.9889343,
+    "ast_hash": "a3d0a7d2c9c66db0745e4585487aa947",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-firefox-1440-darwin.png": {
+    "mtime": 1783546908.585255,
+    "ast_hash": "b4b868c91a85428dccaf1e4537056e5a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-webkit-1440-darwin.png": {
+    "mtime": 1783546913.4028122,
+    "ast_hash": "e4dec110df667330d54a3c99119ecdf7",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0839581,
+    "ast_hash": "43fbe046ce13024935d43596ddfc3aae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-1440-darwin.png": {
+    "mtime": 1783546899.5823705,
+    "ast_hash": "43fbe046ce13024935d43596ddfc3aae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-320-darwin.png": {
+    "mtime": 1783546889.0423186,
+    "ast_hash": "c9a4b0046041a5f7770ffdcf05755591",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-768-darwin.png": {
+    "mtime": 1783546892.0158198,
+    "ast_hash": "43fbe046ce13024935d43596ddfc3aae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-firefox-1440-darwin.png": {
+    "mtime": 1783546906.9802585,
+    "ast_hash": "89e408e7b2446475dfba6a918c025da3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-webkit-1440-darwin.png": {
+    "mtime": 1783546912.7523215,
+    "ast_hash": "0e057ae75728499cad123b09cbaeea2b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0346997,
+    "ast_hash": "072c3dc6ffb8b150cd66c74dce93aa2e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-1440-darwin.png": {
+    "mtime": 1783546897.9788618,
+    "ast_hash": "072c3dc6ffb8b150cd66c74dce93aa2e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-320-darwin.png": {
+    "mtime": 1783546888.9860604,
+    "ast_hash": "84a18a4286fd302e548d09ead7798a23",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-768-darwin.png": {
+    "mtime": 1783546891.965425,
+    "ast_hash": "072c3dc6ffb8b150cd66c74dce93aa2e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-firefox-1440-darwin.png": {
+    "mtime": 1783546910.8100085,
+    "ast_hash": "14fdac98f957b34863c3a4791ffe83cc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-webkit-1440-darwin.png": {
+    "mtime": 1783546911.91182,
+    "ast_hash": "5b620acdb88f369ff68e847e57793992",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0331159,
+    "ast_hash": "fca40229ab0f59a64e66a0212760ade5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-1440-darwin.png": {
+    "mtime": 1783546897.9709117,
+    "ast_hash": "fca40229ab0f59a64e66a0212760ade5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-320-darwin.png": {
+    "mtime": 1783546888.9712873,
+    "ast_hash": "15f9e9ea70fe5b6242f403cb0041e12b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-768-darwin.png": {
+    "mtime": 1783546891.9823437,
+    "ast_hash": "fca40229ab0f59a64e66a0212760ade5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-firefox-1440-darwin.png": {
+    "mtime": 1783546905.358049,
+    "ast_hash": "25b9a458d31ad1ffbd39d5bddd9b1463",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-webkit-1440-darwin.png": {
+    "mtime": 1783546911.9153721,
+    "ast_hash": "d06cd7b9bd1a6350f335ff61dae12e23",
     "semantic_hash": ""
   }
 }

@@ -38,11 +38,13 @@
   "36": "badge.spec.ts",
   "37": "checkbox.spec.ts",
   "38": "Specification Quality Checklist: Form Primitives — Round 2",
+  "39": "radio.spec.ts",
   "40": "Quickstart: Form Primitives — Round 2",
   "41": "Component Contract: Toggle / Switch",
   "42": "Component Contract: Radio",
   "43": "Component Contract: Select",
   "44": "Phase 0 Research: Form Primitives — Round 2",
   "45": "Phase 1 Data Model: Form Primitives — Round 2",
-  "46": "Tasks: Form Primitives — Round 2"
+  "46": "Tasks: Form Primitives — Round 2",
+  "47": "select.spec.ts"
 }
