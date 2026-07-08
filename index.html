@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Design System — Component Gallery</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="min-h-screen bg-white font-sans antialiased">
+  <header class="border-b border-neutral-200 px-6 py-8">
+    <h1 class="text-2xl font-bold text-neutral-900">Professional Design System</h1>
+    <p class="mt-2 max-w-2xl text-sm text-neutral-500">
+      Primitive components built exclusively on the semantic tokens ratified in
+      <code class="text-neutral-700">.specify/memory/constitution.md</code> (v1.3.1).
+      Every component below is also a standalone, independently testable page —
+      open it directly to copy its markup.
+    </p>
+  </header>
+
+  <main class="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 py-10 sm:grid-cols-2">
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Button</h2>
+      <p class="mt-1 text-sm text-neutral-500">
+        Primary and secondary actions with full interactive state coverage.
+      </p>
+      <a
+        href="/src/components/button/button.html"
+        class="mt-4 inline-flex text-sm font-semibold text-brand-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        View full demo →
+      </a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Text Input</h2>
+      <p class="mt-1 text-sm text-neutral-500">
+        Label, placeholder, focus, and inline-error states.
+      </p>
+      <a
+        href="/src/components/text-input/text-input.html"
+        class="mt-4 inline-flex text-sm font-semibold text-brand-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        View full demo →
+      </a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Badge</h2>
+      <p class="mt-1 text-sm text-neutral-500">
+        Success, error, warning, and neutral status indicators.
+      </p>
+      <a
+        href="/src/components/badge/badge.html"
+        class="mt-4 inline-flex text-sm font-semibold text-brand-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        View full demo →
+      </a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Checkbox</h2>
+      <p class="mt-1 text-sm text-neutral-500">
+        Native, keyboard-operable checked/unchecked/disabled states.
+      </p>
+      <a
+        href="/src/components/checkbox/checkbox.html"
+        class="mt-4 inline-flex text-sm font-semibold text-brand-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        View full demo →
+      </a>
+    </section>
+  </main>
+</body>
+</html>

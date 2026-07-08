@@ -3,3 +3,11 @@
 
 # OS
 .DS_Store
+
+# Node / frontend build
+node_modules/
+dist/
+playwright-report/
+test-results/
+# NOTE: tests/e2e/__screenshots__/ (visual regression baselines) is
+# intentionally NOT ignored — it must be committed as the comparison source.

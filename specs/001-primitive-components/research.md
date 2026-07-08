@@ -18,6 +18,17 @@ and is a materially different authoring model than what the constitution
 documents; revisit in a future major-version migration feature, not silently
 inside a primitives feature.
 
+## Decision: Vite 8.x as the dev/build tool (not 5.x)
+
+**Note (scaffold time)**: `npm install` resolved Vite 5.x's latest release
+(5.4.21) as still falling inside the `<=6.4.2` vulnerable range for a known
+dev-server-only advisory (arbitrary-origin CORS + path traversal in
+`server.fs.deny` handling); only Vite 7/8 carry the fix. Since this was a
+from-scratch scaffold with no prior Vite-5-specific code to migrate, the
+project adopted Vite 8.1.x directly rather than starting on a version with a
+known, already-fixed vulnerability. The multi-page config API used here
+(`defineConfig`, `rollupOptions.input`) is unchanged between majors.
+
 ## Decision: Vite as the dev/build tool
 
 **Rationale**: Needed a lightweight way to serve multiple standalone HTML

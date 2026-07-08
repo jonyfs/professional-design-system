@@ -7,7 +7,7 @@
   <input
     id="example-checkbox"
     type="checkbox"
-    class="h-4 w-4 rounded border-neutral-300 text-brand
+    class="h-4 w-4 rounded-sm border-neutral-300 text-brand
            focus-visible:outline focus-visible:outline-2
            focus-visible:outline-offset-2 focus-visible:outline-brand
            disabled:opacity-50 disabled:cursor-not-allowed"

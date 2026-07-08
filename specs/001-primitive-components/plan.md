@@ -27,7 +27,7 @@ where native HTML/CSS cannot express a state (none required for this slice —
 all four components use native pseudo-classes: `:hover`, `:active`,
 `:focus-visible`, `:disabled`, `:checked`)
 
-**Primary Dependencies**: `tailwindcss@^3.4`, `vite@^5` (dev server + static
+**Primary Dependencies**: `tailwindcss@^3.4`, `vite@^8` (dev server + static
 build), `@playwright/test`, `@axe-core/playwright` (automated a11y), `wcag-contrast`
 (programmatic AAA contrast verification of the token table)
 
