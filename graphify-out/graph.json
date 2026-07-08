@@ -4,6 +4,37 @@
   "graph": {
     "hyperedges": [
       {
+        "id": "core_principles_group",
+        "label": "Design System Core Principles",
+        "nodes": [
+          "specify_memory_constitution_principle_1",
+          "specify_memory_constitution_principle_2",
+          "specify_memory_constitution_principle_3",
+          "specify_memory_constitution_principle_4",
+          "specify_memory_constitution_principle_5",
+          "specify_memory_constitution_principle_6",
+          "specify_memory_constitution_principle_7"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": ".specify/memory/constitution.md"
+      },
+      {
+        "id": "primitive_components_group",
+        "label": "Primitive Components Set",
+        "nodes": [
+          "component_button",
+          "component_input",
+          "component_badge",
+          "component_checkbox"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "specs/001-primitive-components/spec.md"
+      },
+      {
         "id": "extension_hooks_pattern",
         "label": "Extension Hooks Pre/Post-Execution Pattern",
         "nodes": [
@@ -117,9 +148,9 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "id": "specify_extensions_agent_context_scripts_bash_update_agent_context",
-      "community": 11,
-      "norm_label": "update-agent-context.sh"
+      "community": 12,
+      "norm_label": "update-agent-context.sh",
+      "id": "specify_extensions_agent_context_scripts_bash_update_agent_context"
     },
     {
       "label": "update-agent-context.sh script",
@@ -131,9 +162,9 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "id": "specify_extensions_agent_context_scripts_bash_update_agent_context_sh__entry",
-      "community": 11,
-      "norm_label": "update-agent-context.sh script"
+      "community": 12,
+      "norm_label": "update-agent-context.sh script",
+      "id": "specify_extensions_agent_context_scripts_bash_update_agent_context_sh__entry"
     },
     {
       "label": "update-agent-context.ps1",
@@ -141,9 +172,9 @@
       "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context",
-      "community": 10,
-      "norm_label": "update-agent-context.ps1"
+      "community": 11,
+      "norm_label": "update-agent-context.ps1",
+      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context"
     },
     {
       "label": "Get-ConfigValue()",
@@ -151,9 +182,9 @@
       "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context_get_configvalue",
-      "community": 10,
-      "norm_label": "get-configvalue()"
+      "community": 11,
+      "norm_label": "get-configvalue()",
+      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context_get_configvalue"
     },
     {
       "label": "Test-ConfigObject()",
@@ -161,9 +192,9 @@
       "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context_test_configobject",
-      "community": 10,
-      "norm_label": "test-configobject()"
+      "community": 11,
+      "norm_label": "test-configobject()",
+      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context_test_configobject"
     },
     {
       "label": "check-prerequisites.sh",
@@ -175,9 +206,9 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_check_prerequisites",
-      "community": 12,
-      "norm_label": "check-prerequisites.sh"
+      "community": 13,
+      "norm_label": "check-prerequisites.sh",
+      "id": "specify_scripts_bash_check_prerequisites"
     },
     {
       "label": "check-prerequisites.sh script",
@@ -189,9 +220,9 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_check_prerequisites_sh__entry",
-      "community": 12,
-      "norm_label": "check-prerequisites.sh script"
+      "community": 13,
+      "norm_label": "check-prerequisites.sh script",
+      "id": "specify_scripts_bash_check_prerequisites_sh__entry"
     },
     {
       "label": "common.sh",
@@ -203,9 +234,9 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common",
       "community": 0,
-      "norm_label": "common.sh"
+      "norm_label": "common.sh",
+      "id": "specify_scripts_bash_common"
     },
     {
       "label": "common.sh script",
@@ -217,9 +248,9 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_sh__entry",
       "community": 0,
-      "norm_label": "common.sh script"
+      "norm_label": "common.sh script",
+      "id": "specify_scripts_bash_common_sh__entry"
     },
     {
       "label": "find_specify_root()",
@@ -231,9 +262,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_find_specify_root",
       "community": 0,
-      "norm_label": "find_specify_root()"
+      "norm_label": "find_specify_root()",
+      "id": "specify_scripts_bash_common_find_specify_root"
     },
     {
       "label": "resolve_specify_init_dir()",
@@ -245,9 +276,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_resolve_specify_init_dir",
       "community": 0,
-      "norm_label": "resolve_specify_init_dir()"
+      "norm_label": "resolve_specify_init_dir()",
+      "id": "specify_scripts_bash_common_resolve_specify_init_dir"
     },
     {
       "label": "get_repo_root()",
@@ -259,9 +290,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_get_repo_root",
       "community": 0,
-      "norm_label": "get_repo_root()"
+      "norm_label": "get_repo_root()",
+      "id": "specify_scripts_bash_common_get_repo_root"
     },
     {
       "label": "get_current_branch()",
@@ -273,9 +304,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_get_current_branch",
       "community": 0,
-      "norm_label": "get_current_branch()"
+      "norm_label": "get_current_branch()",
+      "id": "specify_scripts_bash_common_get_current_branch"
     },
     {
       "label": "read_feature_json_feature_directory()",
@@ -287,9 +318,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_read_feature_json_feature_directory",
       "community": 0,
-      "norm_label": "read_feature_json_feature_directory()"
+      "norm_label": "read_feature_json_feature_directory()",
+      "id": "specify_scripts_bash_common_read_feature_json_feature_directory"
     },
     {
       "label": "_persist_feature_json()",
@@ -301,9 +332,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_persist_feature_json",
       "community": 0,
-      "norm_label": "_persist_feature_json()"
+      "norm_label": "_persist_feature_json()",
+      "id": "specify_scripts_bash_common_persist_feature_json"
     },
     {
       "label": "get_feature_paths()",
@@ -315,9 +346,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_get_feature_paths",
       "community": 0,
-      "norm_label": "get_feature_paths()"
+      "norm_label": "get_feature_paths()",
+      "id": "specify_scripts_bash_common_get_feature_paths"
     },
     {
       "label": "has_jq()",
@@ -329,9 +360,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_has_jq",
       "community": 0,
-      "norm_label": "has_jq()"
+      "norm_label": "has_jq()",
+      "id": "specify_scripts_bash_common_has_jq"
     },
     {
       "label": "get_invoke_separator()",
@@ -343,9 +374,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_get_invoke_separator",
       "community": 0,
-      "norm_label": "get_invoke_separator()"
+      "norm_label": "get_invoke_separator()",
+      "id": "specify_scripts_bash_common_get_invoke_separator"
     },
     {
       "label": "format_speckit_command()",
@@ -357,9 +388,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_format_speckit_command",
       "community": 0,
-      "norm_label": "format_speckit_command()"
+      "norm_label": "format_speckit_command()",
+      "id": "specify_scripts_bash_common_format_speckit_command"
     },
     {
       "label": "json_escape()",
@@ -371,9 +402,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_json_escape",
       "community": 0,
-      "norm_label": "json_escape()"
+      "norm_label": "json_escape()",
+      "id": "specify_scripts_bash_common_json_escape"
     },
     {
       "label": "check_file()",
@@ -385,9 +416,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_check_file",
       "community": 0,
-      "norm_label": "check_file()"
+      "norm_label": "check_file()",
+      "id": "specify_scripts_bash_common_check_file"
     },
     {
       "label": "check_dir()",
@@ -399,9 +430,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_check_dir",
       "community": 0,
-      "norm_label": "check_dir()"
+      "norm_label": "check_dir()",
+      "id": "specify_scripts_bash_common_check_dir"
     },
     {
       "label": "resolve_template()",
@@ -413,9 +444,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_resolve_template",
       "community": 0,
-      "norm_label": "resolve_template()"
+      "norm_label": "resolve_template()",
+      "id": "specify_scripts_bash_common_resolve_template"
     },
     {
       "label": "resolve_template_content()",
@@ -427,9 +458,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_common_resolve_template_content",
       "community": 0,
-      "norm_label": "resolve_template_content()"
+      "norm_label": "resolve_template_content()",
+      "id": "specify_scripts_bash_common_resolve_template_content"
     },
     {
       "label": "create-new-feature.sh",
@@ -441,9 +472,9 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_create_new_feature",
       "community": 7,
-      "norm_label": "create-new-feature.sh"
+      "norm_label": "create-new-feature.sh",
+      "id": "specify_scripts_bash_create_new_feature"
     },
     {
       "label": "create-new-feature.sh script",
@@ -455,9 +486,9 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_create_new_feature_sh__entry",
       "community": 7,
-      "norm_label": "create-new-feature.sh script"
+      "norm_label": "create-new-feature.sh script",
+      "id": "specify_scripts_bash_create_new_feature_sh__entry"
     },
     {
       "label": "get_highest_from_specs()",
@@ -469,9 +500,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_create_new_feature_get_highest_from_specs",
       "community": 7,
-      "norm_label": "get_highest_from_specs()"
+      "norm_label": "get_highest_from_specs()",
+      "id": "specify_scripts_bash_create_new_feature_get_highest_from_specs"
     },
     {
       "label": "clean_branch_name()",
@@ -483,9 +514,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_create_new_feature_clean_branch_name",
       "community": 7,
-      "norm_label": "clean_branch_name()"
+      "norm_label": "clean_branch_name()",
+      "id": "specify_scripts_bash_create_new_feature_clean_branch_name"
     },
     {
       "label": "generate_branch_name()",
@@ -497,9 +528,9 @@
         "kind": "bash_function"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_create_new_feature_generate_branch_name",
       "community": 7,
-      "norm_label": "generate_branch_name()"
+      "norm_label": "generate_branch_name()",
+      "id": "specify_scripts_bash_create_new_feature_generate_branch_name"
     },
     {
       "label": "setup-plan.sh",
@@ -511,9 +542,9 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_setup_plan",
-      "community": 13,
-      "norm_label": "setup-plan.sh"
+      "community": 14,
+      "norm_label": "setup-plan.sh",
+      "id": "specify_scripts_bash_setup_plan"
     },
     {
       "label": "setup-plan.sh script",
@@ -525,9 +556,9 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_setup_plan_sh__entry",
-      "community": 13,
-      "norm_label": "setup-plan.sh script"
+      "community": 14,
+      "norm_label": "setup-plan.sh script",
+      "id": "specify_scripts_bash_setup_plan_sh__entry"
     },
     {
       "label": "setup-tasks.sh",
@@ -539,9 +570,9 @@
         "kind": "file"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_setup_tasks",
-      "community": 14,
-      "norm_label": "setup-tasks.sh"
+      "community": 15,
+      "norm_label": "setup-tasks.sh",
+      "id": "specify_scripts_bash_setup_tasks"
     },
     {
       "label": "setup-tasks.sh script",
@@ -553,9 +584,9 @@
         "kind": "bash_entrypoint"
       },
       "_origin": "ast",
-      "id": "specify_scripts_bash_setup_tasks_sh__entry",
-      "community": 14,
-      "norm_label": "setup-tasks.sh script"
+      "community": 15,
+      "norm_label": "setup-tasks.sh script",
+      "id": "specify_scripts_bash_setup_tasks_sh__entry"
     },
     {
       "label": "speckit-agent-context-update Skill",
@@ -566,9 +597,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_agent_context_update_skill",
-      "community": 8,
-      "norm_label": "speckit-agent-context-update skill"
+      "community": 9,
+      "norm_label": "speckit-agent-context-update skill",
+      "id": "claude_skills_speckit_agent_context_update_skill"
     },
     {
       "label": "CLAUDE.md (Coding Agent Context File)",
@@ -579,9 +610,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_claude_md",
-      "community": 8,
-      "norm_label": "claude.md (coding agent context file)"
+      "community": 9,
+      "norm_label": "claude.md (coding agent context file)",
+      "id": "concept_claude_md"
     },
     {
       "label": ".specify/extensions/agent-context/agent-context-config.yml",
@@ -592,9 +623,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_agent_context_config",
-      "community": 8,
-      "norm_label": ".specify/extensions/agent-context/agent-context-config.yml"
+      "community": 9,
+      "norm_label": ".specify/extensions/agent-context/agent-context-config.yml",
+      "id": "concept_agent_context_config"
     },
     {
       "label": "speckit-analyze Skill",
@@ -605,9 +636,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_analyze_skill",
-      "community": 2,
-      "norm_label": "speckit-analyze skill"
+      "community": 3,
+      "norm_label": "speckit-analyze skill",
+      "id": "claude_skills_speckit_analyze_skill"
     },
     {
       "label": ".specify/extensions.yml (Extension Hooks Config)",
@@ -618,9 +649,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_extensions_yml",
-      "community": 9,
-      "norm_label": ".specify/extensions.yml (extension hooks config)"
+      "community": 10,
+      "norm_label": ".specify/extensions.yml (extension hooks config)",
+      "id": "concept_extensions_yml"
     },
     {
       "label": ".specify/scripts/bash/check-prerequisites.sh",
@@ -631,9 +662,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_check_prerequisites_script",
-      "community": 2,
-      "norm_label": ".specify/scripts/bash/check-prerequisites.sh"
+      "community": 3,
+      "norm_label": ".specify/scripts/bash/check-prerequisites.sh",
+      "id": "concept_check_prerequisites_script"
     },
     {
       "label": "speckit-checklist Skill",
@@ -644,9 +675,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_checklist_skill",
-      "community": 2,
-      "norm_label": "speckit-checklist skill"
+      "community": 3,
+      "norm_label": "speckit-checklist skill",
+      "id": "claude_skills_speckit_checklist_skill"
     },
     {
       "label": "checklists/ (Requirement Checklists Directory)",
@@ -657,9 +688,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_checklists_dir",
-      "community": 1,
-      "norm_label": "checklists/ (requirement checklists directory)"
+      "community": 2,
+      "norm_label": "checklists/ (requirement checklists directory)",
+      "id": "concept_checklists_dir"
     },
     {
       "label": ".specify/templates/checklist-template.md",
@@ -670,9 +701,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_checklist_template",
-      "community": 2,
-      "norm_label": ".specify/templates/checklist-template.md"
+      "community": 3,
+      "norm_label": ".specify/templates/checklist-template.md",
+      "id": "concept_checklist_template"
     },
     {
       "label": "speckit-clarify Skill",
@@ -683,9 +714,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_clarify_skill",
-      "community": 4,
-      "norm_label": "speckit-clarify skill"
+      "community": 5,
+      "norm_label": "speckit-clarify skill",
+      "id": "claude_skills_speckit_clarify_skill"
     },
     {
       "label": "speckit-constitution Skill",
@@ -696,9 +727,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_constitution_skill",
-      "community": 5,
-      "norm_label": "speckit-constitution skill"
+      "community": 6,
+      "norm_label": "speckit-constitution skill",
+      "id": "claude_skills_speckit_constitution_skill"
     },
     {
       "label": ".specify/memory/constitution.md (Project Constitution)",
@@ -709,9 +740,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_constitution_md",
-      "community": 4,
-      "norm_label": ".specify/memory/constitution.md (project constitution)"
+      "community": 5,
+      "norm_label": ".specify/memory/constitution.md (project constitution)",
+      "id": "concept_constitution_md"
     },
     {
       "label": ".specify/templates/constitution-template.md",
@@ -722,9 +753,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_constitution_template",
-      "community": 5,
-      "norm_label": ".specify/templates/constitution-template.md"
+      "community": 6,
+      "norm_label": ".specify/templates/constitution-template.md",
+      "id": "concept_constitution_template"
     },
     {
       "label": ".specify/templates/plan-template.md",
@@ -735,22 +766,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_plan_template",
-      "community": 5,
-      "norm_label": ".specify/templates/plan-template.md"
-    },
-    {
-      "label": ".specify/templates/spec-template.md",
-      "file_type": "concept",
-      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "concept_spec_template",
-      "community": 5,
-      "norm_label": ".specify/templates/spec-template.md"
+      "community": 6,
+      "norm_label": ".specify/templates/plan-template.md",
+      "id": "concept_plan_template"
     },
     {
       "label": ".specify/templates/tasks-template.md",
@@ -761,9 +779,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_tasks_template",
-      "community": 5,
-      "norm_label": ".specify/templates/tasks-template.md"
+      "community": 6,
+      "norm_label": ".specify/templates/tasks-template.md",
+      "id": "concept_tasks_template"
     },
     {
       "label": ".specify/templates/commands/*.md",
@@ -774,9 +792,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_command_templates_dir",
-      "community": 5,
-      "norm_label": ".specify/templates/commands/*.md"
+      "community": 6,
+      "norm_label": ".specify/templates/commands/*.md",
+      "id": "concept_command_templates_dir"
     },
     {
       "label": "speckit-converge Skill",
@@ -787,9 +805,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_converge_skill",
-      "community": 2,
-      "norm_label": "speckit-converge skill"
+      "community": 3,
+      "norm_label": "speckit-converge skill",
+      "id": "claude_skills_speckit_converge_skill"
     },
     {
       "label": "speckit-implement Skill",
@@ -800,9 +818,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_implement_skill",
-      "community": 1,
-      "norm_label": "speckit-implement skill"
+      "community": 2,
+      "norm_label": "speckit-implement skill",
+      "id": "claude_skills_speckit_implement_skill"
     },
     {
       "label": "speckit-plan Skill",
@@ -813,9 +831,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_plan_skill",
-      "community": 1,
-      "norm_label": "speckit-plan skill"
+      "community": 2,
+      "norm_label": "speckit-plan skill",
+      "id": "claude_skills_speckit_plan_skill"
     },
     {
       "label": "plan.md (Implementation Plan)",
@@ -826,9 +844,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_plan_md",
-      "community": 2,
-      "norm_label": "plan.md (implementation plan)"
+      "community": 3,
+      "norm_label": "plan.md (implementation plan)",
+      "id": "concept_plan_md"
     },
     {
       "label": "data-model.md",
@@ -839,9 +857,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_data_model_md",
-      "community": 1,
-      "norm_label": "data-model.md"
+      "community": 2,
+      "norm_label": "data-model.md",
+      "id": "concept_data_model_md"
     },
     {
       "label": "research.md",
@@ -852,9 +870,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_research_md",
-      "community": 1,
-      "norm_label": "research.md"
+      "community": 2,
+      "norm_label": "research.md",
+      "id": "concept_research_md"
     },
     {
       "label": "quickstart.md",
@@ -865,9 +883,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_quickstart_md",
-      "community": 1,
-      "norm_label": "quickstart.md"
+      "community": 2,
+      "norm_label": "quickstart.md",
+      "id": "concept_quickstart_md"
     },
     {
       "label": "contracts/ (Interface Contracts)",
@@ -878,9 +896,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_contracts_dir",
-      "community": 1,
-      "norm_label": "contracts/ (interface contracts)"
+      "community": 2,
+      "norm_label": "contracts/ (interface contracts)",
+      "id": "concept_contracts_dir"
     },
     {
       "label": ".specify/scripts/bash/setup-plan.sh",
@@ -891,9 +909,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_setup_plan_script",
-      "community": 1,
-      "norm_label": ".specify/scripts/bash/setup-plan.sh"
+      "community": 2,
+      "norm_label": ".specify/scripts/bash/setup-plan.sh",
+      "id": "concept_setup_plan_script"
     },
     {
       "label": "speckit-specify Skill",
@@ -904,9 +922,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_specify_skill",
-      "community": 4,
-      "norm_label": "speckit-specify skill"
+      "community": 5,
+      "norm_label": "speckit-specify skill",
+      "id": "claude_skills_speckit_specify_skill"
     },
     {
       "label": "spec.md (Feature Specification)",
@@ -917,9 +935,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_spec_md",
-      "community": 2,
-      "norm_label": "spec.md (feature specification)"
+      "community": 3,
+      "norm_label": "spec.md (feature specification)",
+      "id": "concept_spec_md"
     },
     {
       "label": "checklists/requirements.md (Spec Quality Checklist)",
@@ -930,9 +948,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_requirements_checklist",
-      "community": 4,
-      "norm_label": "checklists/requirements.md (spec quality checklist)"
+      "community": 5,
+      "norm_label": "checklists/requirements.md (spec quality checklist)",
+      "id": "concept_requirements_checklist"
     },
     {
       "label": ".specify/init-options.json",
@@ -943,9 +961,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_init_options",
-      "community": 4,
-      "norm_label": ".specify/init-options.json"
+      "community": 5,
+      "norm_label": ".specify/init-options.json",
+      "id": "concept_init_options"
     },
     {
       "label": ".specify/feature.json",
@@ -956,9 +974,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_feature_json",
-      "community": 4,
-      "norm_label": ".specify/feature.json"
+      "community": 5,
+      "norm_label": ".specify/feature.json",
+      "id": "concept_feature_json"
     },
     {
       "label": "speckit-tasks Skill",
@@ -969,9 +987,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_tasks_skill",
-      "community": 1,
-      "norm_label": "speckit-tasks skill"
+      "community": 2,
+      "norm_label": "speckit-tasks skill",
+      "id": "claude_skills_speckit_tasks_skill"
     },
     {
       "label": "tasks.md (Task List)",
@@ -982,22 +1000,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_tasks_md",
-      "community": 2,
-      "norm_label": "tasks.md (task list)"
-    },
-    {
-      "label": ".specify/scripts/bash/setup-tasks.sh",
-      "file_type": "concept",
-      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "concept_setup_tasks_script",
-      "community": 1,
-      "norm_label": ".specify/scripts/bash/setup-tasks.sh"
+      "community": 3,
+      "norm_label": "tasks.md (task list)",
+      "id": "concept_tasks_md"
     },
     {
       "label": "speckit-taskstoissues Skill",
@@ -1008,9 +1013,9 @@
       "captured_at": null,
       "author": "github-spec-kit",
       "contributor": null,
-      "id": "claude_skills_speckit_taskstoissues_skill",
-      "community": 9,
-      "norm_label": "speckit-taskstoissues skill"
+      "community": 10,
+      "norm_label": "speckit-taskstoissues skill",
+      "id": "claude_skills_speckit_taskstoissues_skill"
     },
     {
       "label": "GitHub MCP Server (list_issues / create issue tools)",
@@ -1021,9 +1026,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_github_mcp_server",
-      "community": 9,
-      "norm_label": "github mcp server (list_issues / create issue tools)"
+      "community": 10,
+      "norm_label": "github mcp server (list_issues / create issue tools)",
+      "id": "concept_github_mcp_server"
     },
     {
       "label": "Spec Kit Extensions Registration Config",
@@ -1034,9 +1039,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_extensions_config",
-      "community": 3,
-      "norm_label": "spec kit extensions registration config"
+      "community": 4,
+      "norm_label": "spec kit extensions registration config",
+      "id": "specify_extensions_config"
     },
     {
       "label": "Coding Agent Context Extension README",
@@ -1047,9 +1052,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_extensions_agent_context_readme_doc",
-      "community": 3,
-      "norm_label": "coding agent context extension readme"
+      "community": 4,
+      "norm_label": "coding agent context extension readme",
+      "id": "specify_extensions_agent_context_readme_doc"
     },
     {
       "label": "Context Section Upsert/Remove Gate Mechanism",
@@ -1060,9 +1065,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_extensions_agent_context_readme_context_section_lifecycle",
-      "community": 3,
-      "norm_label": "context section upsert/remove gate mechanism"
+      "community": 4,
+      "norm_label": "context section upsert/remove gate mechanism",
+      "id": "specify_extensions_agent_context_readme_context_section_lifecycle"
     },
     {
       "label": "Agent Context Config (context_file / context_markers)",
@@ -1073,9 +1078,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_extensions_agent_context_agent_context_config_config",
-      "community": 3,
-      "norm_label": "agent context config (context_file / context_markers)"
+      "community": 4,
+      "norm_label": "agent context config (context_file / context_markers)",
+      "id": "specify_extensions_agent_context_agent_context_config_config"
     },
     {
       "label": "speckit.agent-context.update Command",
@@ -1086,9 +1091,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
-      "community": 3,
-      "norm_label": "speckit.agent-context.update command"
+      "community": 4,
+      "norm_label": "speckit.agent-context.update command",
+      "id": "specify_extensions_agent_context_commands_speckit_agent_context_update_command"
     },
     {
       "label": "Agent Context Extension Manifest",
@@ -1099,22 +1104,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_extensions_agent_context_extension_manifest",
-      "community": 3,
-      "norm_label": "agent context extension manifest"
-    },
-    {
-      "label": "Project Constitution (memory/constitution.md)",
-      "file_type": "document",
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "specify_memory_constitution_document",
-      "community": 6,
-      "norm_label": "project constitution (memory/constitution.md)"
+      "community": 4,
+      "norm_label": "agent context extension manifest",
+      "id": "specify_extensions_agent_context_extension_manifest"
     },
     {
       "label": "Checklist Template",
@@ -1125,9 +1117,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_templates_checklist_template_document",
-      "community": 15,
-      "norm_label": "checklist template"
+      "community": 22,
+      "norm_label": "checklist template",
+      "id": "specify_templates_checklist_template_document"
     },
     {
       "label": "Constitution Template",
@@ -1138,9 +1130,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_templates_constitution_template_document",
-      "community": 6,
-      "norm_label": "constitution template"
+      "community": 23,
+      "norm_label": "constitution template",
+      "id": "specify_templates_constitution_template_document"
     },
     {
       "label": "Implementation Plan Template",
@@ -1151,9 +1143,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_templates_plan_template_document",
-      "community": 6,
-      "norm_label": "implementation plan template"
+      "community": 8,
+      "norm_label": "implementation plan template",
+      "id": "specify_templates_plan_template_document"
     },
     {
       "label": "Feature Specification Template",
@@ -1164,9 +1156,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_templates_spec_template_document",
-      "community": 6,
-      "norm_label": "feature specification template"
+      "community": 8,
+      "norm_label": "feature specification template",
+      "id": "specify_templates_spec_template_document"
     },
     {
       "label": "Tasks Template",
@@ -1177,9 +1169,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_templates_tasks_template_document",
-      "community": 6,
-      "norm_label": "tasks template"
+      "community": 8,
+      "norm_label": "tasks template",
+      "id": "specify_templates_tasks_template_document"
     },
     {
       "label": "Full SDD Cycle Workflow (speckit)",
@@ -1190,9 +1182,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "specify_workflows_speckit_workflow_workflow",
-      "community": 6,
-      "norm_label": "full sdd cycle workflow (speckit)"
+      "community": 8,
+      "norm_label": "full sdd cycle workflow (speckit)",
+      "id": "specify_workflows_speckit_workflow_workflow"
     },
     {
       "label": "CLAUDE.md (Managed Coding Agent Context File)",
@@ -1203,9 +1195,147 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_document",
-      "community": 3,
-      "norm_label": "claude.md (managed coding agent context file)"
+      "community": 4,
+      "norm_label": "claude.md (managed coding agent context file)",
+      "id": "claude_document"
+    },
+    {
+      "label": "last-ndc.ts",
+      "file_type": "code",
+      "source_file": ".remember/tmp/last-ndc.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "remember_tmp_last_ndc",
+      "community": 17,
+      "norm_label": "last-ndc.ts"
+    },
+    {
+      "label": "Now",
+      "file_type": "document",
+      "source_file": ".remember/now.md",
+      "id": "remember_now",
+      "community": 16,
+      "norm_label": "now"
+    },
+    {
+      "label": "Today 2026-07-07",
+      "file_type": "document",
+      "source_file": ".remember/today-2026-07-07.md",
+      "id": "remember_today_2026_07_07",
+      "community": 1,
+      "norm_label": "today 2026-07-07"
+    },
+    {
+      "label": "Professional Design System Constitution",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution",
+      "community": 1,
+      "norm_label": "professional design system constitution"
+    },
+    {
+      "label": "Feature Specification: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "id": "specs_001_primitive_components_spec",
+      "community": 1,
+      "norm_label": "feature specification: design system primitive components"
+    },
+    {
+      "label": "Specification Quality Checklist: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "id": "specs_001_primitive_components_checklists_requirements",
+      "community": 1,
+      "norm_label": "specification quality checklist: design system primitive components"
+    },
+    {
+      "label": "Cognitive Ergonomics & Visual Hierarchy",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_1",
+      "community": 18,
+      "norm_label": "cognitive ergonomics & visual hierarchy"
+    },
+    {
+      "label": "Absolute Semantic Accessibility (WCAG 2.2 AAA)",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_2",
+      "community": 1,
+      "norm_label": "absolute semantic accessibility (wcag 2.2 aaa)"
+    },
+    {
+      "label": "Tailwind-Only Architecture",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_3",
+      "community": 19,
+      "norm_label": "tailwind-only architecture"
+    },
+    {
+      "label": "Design Token Discipline",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_4",
+      "community": 1,
+      "norm_label": "design token discipline"
+    },
+    {
+      "label": "Interactive State Completeness",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_5",
+      "community": 1,
+      "norm_label": "interactive state completeness"
+    },
+    {
+      "label": "Project Language Policy",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_6",
+      "community": 20,
+      "norm_label": "project language policy"
+    },
+    {
+      "label": "Autonomous Skill Acquisition Protocol",
+      "file_type": "concept",
+      "source_file": ".specify/memory/constitution.md",
+      "id": "specify_memory_constitution_principle_7",
+      "community": 21,
+      "norm_label": "autonomous skill acquisition protocol"
+    },
+    {
+      "label": "Button Primitive",
+      "file_type": "concept",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_button",
+      "community": 1,
+      "norm_label": "button primitive"
+    },
+    {
+      "label": "Text Input Primitive",
+      "file_type": "concept",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_input",
+      "community": 1,
+      "norm_label": "text input primitive"
+    },
+    {
+      "label": "Badge Primitive",
+      "file_type": "concept",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_badge",
+      "community": 1,
+      "norm_label": "badge primitive"
+    },
+    {
+      "label": "Checkbox Primitive",
+      "file_type": "concept",
+      "source_file": "specs/001-primitive-components/spec.md",
+      "id": "component_checkbox",
+      "community": 1,
+      "norm_label": "checkbox primitive"
     }
   ],
   "links": [
@@ -1215,9 +1345,9 @@
       "source_file": ".specify/extensions/agent-context/scripts/bash/update-agent-context.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_extensions_agent_context_scripts_bash_update_agent_context",
-      "target": "specify_extensions_agent_context_scripts_bash_update_agent_context_sh__entry",
-      "confidence_score": 1.0
+      "target": "specify_extensions_agent_context_scripts_bash_update_agent_context_sh__entry"
     },
     {
       "relation": "contains",
@@ -1225,9 +1355,9 @@
       "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_extensions_agent_context_scripts_powershell_update_agent_context",
-      "target": "specify_extensions_agent_context_scripts_powershell_update_agent_context_get_configvalue",
-      "confidence_score": 1.0
+      "target": "specify_extensions_agent_context_scripts_powershell_update_agent_context_get_configvalue"
     },
     {
       "relation": "contains",
@@ -1235,9 +1365,9 @@
       "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_extensions_agent_context_scripts_powershell_update_agent_context",
-      "target": "specify_extensions_agent_context_scripts_powershell_update_agent_context_test_configobject",
-      "confidence_score": 1.0
+      "target": "specify_extensions_agent_context_scripts_powershell_update_agent_context_test_configobject"
     },
     {
       "relation": "contains",
@@ -1245,9 +1375,9 @@
       "source_file": ".specify/scripts/bash/check-prerequisites.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_check_prerequisites",
-      "target": "specify_scripts_bash_check_prerequisites_sh__entry",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_check_prerequisites_sh__entry"
     },
     {
       "relation": "defines",
@@ -1255,9 +1385,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L314",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_check_dir",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_check_dir"
     },
     {
       "relation": "defines",
@@ -1265,9 +1395,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L313",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_check_file",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_check_file"
     },
     {
       "relation": "defines",
@@ -1275,9 +1405,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_find_specify_root",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_find_specify_root"
     },
     {
       "relation": "defines",
@@ -1285,9 +1415,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L265",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_format_speckit_command",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_format_speckit_command"
     },
     {
       "relation": "defines",
@@ -1295,9 +1425,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_get_current_branch",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_get_current_branch"
     },
     {
       "relation": "defines",
@@ -1305,9 +1435,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_get_feature_paths",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_get_feature_paths"
     },
     {
       "relation": "defines",
@@ -1315,9 +1445,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_get_invoke_separator",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_get_invoke_separator"
     },
     {
       "relation": "defines",
@@ -1325,9 +1455,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_get_repo_root",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_get_repo_root"
     },
     {
       "relation": "defines",
@@ -1335,9 +1465,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_has_jq",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_has_jq"
     },
     {
       "relation": "defines",
@@ -1345,9 +1475,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L287",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_json_escape",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_json_escape"
     },
     {
       "relation": "defines",
@@ -1355,9 +1485,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_persist_feature_json",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_persist_feature_json"
     },
     {
       "relation": "defines",
@@ -1365,9 +1495,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_read_feature_json_feature_directory",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_read_feature_json_feature_directory"
     },
     {
       "relation": "defines",
@@ -1375,9 +1505,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_resolve_specify_init_dir",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_resolve_specify_init_dir"
     },
     {
       "relation": "defines",
@@ -1385,9 +1515,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L321",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_resolve_template",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_resolve_template"
     },
     {
       "relation": "defines",
@@ -1395,9 +1525,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L405",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_resolve_template_content",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_resolve_template_content"
     },
     {
       "relation": "contains",
@@ -1405,9 +1535,9 @@
       "source_file": ".specify/scripts/bash/common.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common",
-      "target": "specify_scripts_bash_common_sh__entry",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_sh__entry"
     },
     {
       "relation": "calls",
@@ -1416,9 +1546,9 @@
       "source_location": "L59",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common_get_repo_root",
-      "target": "specify_scripts_bash_common_resolve_specify_init_dir",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_resolve_specify_init_dir"
     },
     {
       "relation": "calls",
@@ -1427,9 +1557,9 @@
       "source_location": "L172",
       "weight": 1.0,
       "context": "call",
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_common_get_feature_paths",
-      "target": "specify_scripts_bash_common_persist_feature_json",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_common_persist_feature_json"
     },
     {
       "relation": "defines",
@@ -1437,9 +1567,9 @@
       "source_file": ".specify/scripts/bash/create-new-feature.sh",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_create_new_feature",
-      "target": "specify_scripts_bash_create_new_feature_clean_branch_name",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_create_new_feature_clean_branch_name"
     },
     {
       "relation": "defines",
@@ -1447,9 +1577,9 @@
       "source_file": ".specify/scripts/bash/create-new-feature.sh",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_create_new_feature",
-      "target": "specify_scripts_bash_create_new_feature_generate_branch_name",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_create_new_feature_generate_branch_name"
     },
     {
       "relation": "defines",
@@ -1457,9 +1587,9 @@
       "source_file": ".specify/scripts/bash/create-new-feature.sh",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_create_new_feature",
-      "target": "specify_scripts_bash_create_new_feature_get_highest_from_specs",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_create_new_feature_get_highest_from_specs"
     },
     {
       "relation": "contains",
@@ -1467,9 +1597,9 @@
       "source_file": ".specify/scripts/bash/create-new-feature.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_create_new_feature",
-      "target": "specify_scripts_bash_create_new_feature_sh__entry",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_create_new_feature_sh__entry"
     },
     {
       "relation": "contains",
@@ -1477,9 +1607,9 @@
       "source_file": ".specify/scripts/bash/setup-plan.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_setup_plan",
-      "target": "specify_scripts_bash_setup_plan_sh__entry",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_setup_plan_sh__entry"
     },
     {
       "relation": "contains",
@@ -1487,9 +1617,9 @@
       "source_file": ".specify/scripts/bash/setup-tasks.sh",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_scripts_bash_setup_tasks",
-      "target": "specify_scripts_bash_setup_tasks_sh__entry",
-      "confidence_score": 1.0
+      "target": "specify_scripts_bash_setup_tasks_sh__entry"
     },
     {
       "relation": "references",
@@ -1939,16 +2069,6 @@
       "source_location": null,
       "weight": 1.0,
       "source": "claude_skills_speckit_constitution_skill",
-      "target": "concept_spec_template"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "claude_skills_speckit_constitution_skill",
       "target": "concept_tasks_template"
     },
     {
@@ -2019,7 +2139,7 @@
       "source_location": null,
       "weight": 1.0,
       "source": "claude_skills_speckit_specify_skill",
-      "target": "concept_spec_template"
+      "target": "concept_plan_template"
     },
     {
       "relation": "references",
@@ -2295,6 +2415,16 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_setup_plan_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": ".claude/skills/speckit-specify/SKILL.md",
       "source_location": null,
       "weight": 1.0,
@@ -2340,16 +2470,6 @@
       "weight": 1.0,
       "source": "claude_skills_speckit_tasks_skill",
       "target": "concept_spec_md"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "claude_skills_speckit_tasks_skill",
-      "target": "concept_setup_tasks_script"
     },
     {
       "relation": "references",
@@ -2502,26 +2622,6 @@
       "target": "specify_extensions_agent_context_commands_speckit_agent_context_update_command"
     },
     {
-      "relation": "shares_data_with",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": ".specify/memory/constitution.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "specify_memory_constitution_document",
-      "target": "specify_templates_constitution_template_document"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".specify/templates/plan-template.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "specify_templates_plan_template_document",
-      "target": "specify_memory_constitution_document"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -2580,9 +2680,128 @@
       "weight": 1.0,
       "source": "specify_workflows_speckit_workflow_workflow",
       "target": "specify_templates_tasks_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".remember/today-2026-07-07.md",
+      "source": "remember_today_2026_07_07",
+      "target": "specify_memory_constitution"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".remember/today-2026-07-07.md",
+      "source": "remember_today_2026_07_07",
+      "target": "specs_001_primitive_components_spec"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "specs_001_primitive_components_spec",
+      "target": "specify_memory_constitution"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/checklists/requirements.md",
+      "source": "specs_001_primitive_components_checklists_requirements",
+      "target": "specs_001_primitive_components_spec"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "specs_001_primitive_components_spec",
+      "target": "component_badge"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "specs_001_primitive_components_spec",
+      "target": "component_button"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "specs_001_primitive_components_spec",
+      "target": "component_checkbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "specs_001_primitive_components_spec",
+      "target": "component_input"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "component_button",
+      "target": "specify_memory_constitution_principle_2"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "component_button",
+      "target": "specify_memory_constitution_principle_4"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "specs/001-primitive-components/spec.md",
+      "source": "component_button",
+      "target": "specify_memory_constitution_principle_5"
     }
   ],
   "hyperedges": [
+    {
+      "id": "core_principles_group",
+      "label": "Design System Core Principles",
+      "nodes": [
+        "specify_memory_constitution_principle_1",
+        "specify_memory_constitution_principle_2",
+        "specify_memory_constitution_principle_3",
+        "specify_memory_constitution_principle_4",
+        "specify_memory_constitution_principle_5",
+        "specify_memory_constitution_principle_6",
+        "specify_memory_constitution_principle_7"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/memory/constitution.md"
+    },
+    {
+      "id": "primitive_components_group",
+      "label": "Primitive Components Set",
+      "nodes": [
+        "component_button",
+        "component_input",
+        "component_badge",
+        "component_checkbox"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "specs/001-primitive-components/spec.md"
+    },
     {
       "id": "extension_hooks_pattern",
       "label": "Extension Hooks Pre/Post-Execution Pattern",
@@ -2684,5 +2903,6 @@
       "confidence_score": 0.85,
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
-  ]
+  ],
+  "built_at_commit": "6e5f2f2a609f0d4682f0854678d08ac84c4de83e"
 }
