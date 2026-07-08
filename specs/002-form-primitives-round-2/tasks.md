@@ -81,10 +81,15 @@ correctly in isolation, fully keyboard-operable.
       scan, an assertion that the error state sets `aria-invalid="true"`
       + `aria-describedby` pointing at a visible `text-error-strong` message
       that remains present even with no option selected (Edge Case), and a
-      keyboard assertion for AC3 (Tab-focus the select, press ArrowDown,
-      confirm `.value` changes to the next `<option>` — native `<select>`
-      behavior, asserted rather than assumed, per this feature's "verify,
-      don't assume" precedent)
+      keyboard-reachability + selection-change assertion for AC3. **Found
+      during implementation**: raw `ArrowDown`/`Enter` synthetic key events
+      to a native `<select>` do not reliably drive the browser's OS-level
+      option list in headless Playwright automation (reproduced directly —
+      the value never changes) — a documented tooling limitation, not a
+      component defect (real browsers do support this). The test instead
+      verifies Tab-reachability plus `selectOption()` (Playwright's
+      supported API for driving a `<select>`, firing the same `change`
+      event a real selection would)
 
 ### Implementation for User Story 2
 

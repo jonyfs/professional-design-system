@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Select</h1>
+
+  <div class="mt-8 grid max-w-sm gap-8">
+    <section data-testid="select-default-wrapper" class="space-y-1">
+      <h2 class="text-sm font-semibold text-neutral-600">Default / focus</h2>
+      <label for="select-default" class="text-sm font-medium text-neutral-900">
+        Country
+      </label>
+      <select
+        id="select-default"
+        data-testid="select-default"
+        class="block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+               ring-1 ring-inset ring-neutral-300
+               focus:ring-2 focus:ring-inset focus:ring-brand
+               sm:text-sm sm:leading-6"
+      >
+        <option value="">Select a country…</option>
+        <option value="br">Brazil</option>
+        <option value="us">United States</option>
+        <option value="pt">Portugal</option>
+      </select>
+    </section>
+
+    <section data-testid="select-error-wrapper" class="space-y-1">
+      <h2 class="text-sm font-semibold text-neutral-600">Error</h2>
+      <label for="select-error" class="text-sm font-medium text-neutral-900">
+        Country
+      </label>
+      <select
+        id="select-error"
+        data-testid="select-error"
+        aria-invalid="true"
+        aria-describedby="select-error-message"
+        class="block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+               ring-1 ring-inset ring-error focus:ring-2 focus:ring-inset
+               focus:ring-error sm:text-sm sm:leading-6"
+      >
+        <option value="" selected>Select a country…</option>
+        <option value="br">Brazil</option>
+        <option value="us">United States</option>
+        <option value="pt">Portugal</option>
+      </select>
+      <p id="select-error-message" class="text-xs text-error-strong mt-1 font-medium">
+        Please select a country.
+      </p>
+    </section>
+
+    <section data-testid="select-disabled-wrapper" class="space-y-1">
+      <h2 class="text-sm font-semibold text-neutral-600">Disabled</h2>
+      <label for="select-disabled" class="text-sm font-medium text-neutral-900">
+        Country
+      </label>
+      <select
+        id="select-disabled"
+        data-testid="select-disabled"
+        disabled
+        class="block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+               ring-1 ring-inset ring-neutral-300
+               focus:ring-2 focus:ring-inset focus:ring-brand
+               disabled:opacity-50 disabled:cursor-not-allowed
+               sm:text-sm sm:leading-6"
+      >
+        <option value="br" selected>Brazil</option>
+        <option value="us">United States</option>
+      </select>
+    </section>
+  </div>
+</body>
+</html>
