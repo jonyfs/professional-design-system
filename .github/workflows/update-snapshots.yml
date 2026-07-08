@@ -1,0 +1,37 @@
+name: Update visual regression snapshots
+
+# Manual-only. Playwright namespaces baselines by OS, and even two Linux
+# environments (e.g. a local Docker VM vs. this runner's actual ubuntu-latest
+# image) can render fonts/antialiasing subtly differently. This workflow
+# generates baselines on the exact machine CI verifies against, so they are
+# always correct for CI even when a locally-generated Linux baseline isn't.
+on:
+  workflow_dispatch:
+
+jobs:
+  update-snapshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Update snapshots
+        run: npx playwright test --update-snapshots
+        continue-on-error: true
+
+      - name: Upload updated snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-snapshots
+          path: tests/e2e/**/*-linux.png
+          retention-days: 7
