@@ -3,7 +3,7 @@
 **Input**: Design documents from `/specs/001-primitive-components/`
 
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/, quickstart.md,
-constitution.md (v1.3.0)
+constitution.md (v1.3.1)
 
 **Tests**: Included — Playwright visual regression + `@axe-core/playwright` accessibility
 scans per component, per the testing strategy in plan.md/research.md.
@@ -32,7 +32,7 @@ Single-project static frontend, per plan.md's Project Structure: `src/components
       `@axe-core/playwright`, `wcag-contrast`, and npm scripts `dev`, `build`,
       `test:e2e`, `audit:tokens`, `audit:contrast`
 - [ ] T002 [P] Create `tailwind.config.ts` with `theme.extend` mapping the constitution
-      v1.3.0 semantic palette verbatim: `brand` (light/DEFAULT/dark), `neutral` (50-900),
+      v1.3.1 semantic palette verbatim: `brand` (light/DEFAULT/dark), `neutral` (50-900),
       and `status` (success/warning/error/info + success-strong/warning-strong/error-strong)
 - [ ] T003 [P] Create `postcss.config.js` wiring `tailwindcss` + `autoprefixer`
 - [ ] T004 [P] Create `src/styles/tailwind.css` containing only the three `@tailwind`
@@ -82,8 +82,14 @@ distinct and keyboard-operable without any other component present.
 
 - [ ] T011 [P] [US1] Write `tests/e2e/button.spec.ts`: visual regression screenshots at
       320/768/1024/1440px for default/hover/active/focus-visible/disabled states, an
-      axe scan (via T010's helper) asserting zero violations, and a keyboard-focus
-      assertion (Tab reveals the brand-token focus ring, no browser default outline)
+      axe scan (via T010's helper) asserting zero violations, a keyboard-focus
+      assertion (Tab reveals the brand-token focus ring, no browser default outline),
+      and a keyboard-activation assertion (Enter fires the Button's action when
+      focused, per FR-006) — implement this by having the test itself attach a
+      `click` listener via `page.evaluate` before pressing Enter (native
+      `<button>` elements dispatch `click` on Enter with zero JS in the
+      shipped markup); no `onclick`/instrumentation hook belongs in
+      button.html itself
 
 ### Implementation for User Story 1
 
@@ -224,7 +230,7 @@ functional.
 ## Parallel Example: Setup Phase
 
 ```bash
-Task: "Create tailwind.config.ts with the v1.3.0 semantic palette"
+Task: "Create tailwind.config.ts with the v1.3.1 semantic palette"
 Task: "Create postcss.config.js wiring tailwindcss + autoprefixer"
 Task: "Create src/styles/tailwind.css with @tailwind directives only"
 Task: "Create playwright.config.ts with breakpoint projects"
@@ -257,7 +263,7 @@ Task: "Create playwright.config.ts with breakpoint projects"
 - [P] tasks touch different files with no unmet dependencies.
 - Every implementation task cites its `contracts/*.md` file — do not deviate from the
   documented markup contract without updating the contract first (and, if a token is
-  involved, the constitution — see the v1.3.0 amendment precedent from this session).
+  involved, the constitution — see the v1.3.1 amendment precedent from this session).
 - Commit after each checkpoint (end of Phase 1, Phase 2, and each user story), not
   after every single task — matches this session's git-workflow cadence.
 - SC-001 (T026) is a manual UX timing outcome, not a scripted assertion — do not attempt

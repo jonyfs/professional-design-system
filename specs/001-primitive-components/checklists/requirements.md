@@ -34,7 +34,7 @@
 - Tailwind class names (e.g., `bg-brand`, `focus:ring-brand`) appear in acceptance
   scenarios and functional requirements. These are **not** treated as
   implementation-detail violations here because they are the project's ratified
-  design *tokens* (constitution v1.2.0), not framework/API choices — the spec
+  design *tokens* (constitution v1.3.1), not framework/API choices — the spec
   still avoids naming languages, frameworks, or backend architecture.
 - `Key Entities` section was omitted per template guidance ("include if feature
   involves data") — this feature is purely presentational UI markup with no data

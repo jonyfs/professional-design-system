@@ -1,5 +1,30 @@
 <!--
-SYNC IMPACT REPORT
+SYNC IMPACT REPORT (v1.3.1 — see below for the v1.3.0 report this extends)
+Version change: 1.3.0 → 1.3.1
+Modified principles: None
+Added sections: None (no new tokens)
+Corrected sections:
+  - Component Catalog → Data Display & Listings → Badges: background color
+    switched from raw Tailwind default-palette classes (`bg-green-50`,
+    `bg-red-50`, `bg-amber-50` — never part of the ratified palette) to
+    `bg-success/5`, `bg-error/5`, `bg-warning/5` (existing status tokens via
+    Tailwind's opacity modifier).
+Rationale: a second `/speckit-analyze` pass (post-v1.3.0, pre-implementation)
+on feature 001-primitive-components found that the v1.3.0 fix corrected the
+Badge's text/ring colors but missed that the background colors were also raw
+palette classes never added to this constitution — a Principle IV violation.
+Verified via the WCAG relative-luminance formula that `bg-success/5` /
+`bg-error/5` / `bg-warning/5` (composited over white) still pass AAA with the
+`-strong` text tokens on top (7.11–8.72:1, comfortable margin above 7:1).
+This is a PATCH bump: no new token, no principle change, only a corrected
+Tailwind class reference to already-ratified tokens.
+Templates requiring updates (this PATCH):
+  ✅ specs/001-primitive-components/contracts/badge.contract.md
+  ✅ specs/001-primitive-components/spec.md (User Story 3 AC1 stale example)
+  ✅ specs/001-primitive-components/data-model.md (Badge validation rules stale example)
+  ✅ specs/001-primitive-components/plan.md (Constitution Check G3 note)
+
+SYNC IMPACT REPORT (v1.3.0)
 Version change: 1.2.1 → 1.3.0
 Modified principles: None (no principle text changed)
 Added sections:
@@ -260,13 +285,14 @@ catalog.
 - **Tables**: header `bg-neutral-50 text-left text-xs font-semibold
   text-neutral-600 uppercase tracking-wider`; rows with optional zebra striping
   (`even:bg-neutral-50`) and `divide-y divide-neutral-200`; cells `px-6 py-4`.
-- **Badges**: success `bg-green-50 text-success-strong ring-1 ring-inset
-  ring-success/20`; error `bg-red-50 text-error-strong ring-1 ring-inset
-  ring-error/10`; warning `bg-amber-50 text-warning-strong ring-1 ring-inset
+- **Badges**: success `bg-success/5 text-success-strong ring-1 ring-inset
+  ring-success/20`; error `bg-error/5 text-error-strong ring-1 ring-inset
+  ring-error/10`; warning `bg-warning/5 text-warning-strong ring-1 ring-inset
   ring-warning/10`; neutral `bg-neutral-50 text-neutral-600 ring-1 ring-inset
-  ring-neutral-500/10`. Text uses the AAA-safe `-strong` variant; rings use the
-  base status token via Tailwind's opacity modifier (both already ratified,
-  no raw palette classes).
+  ring-neutral-500/10`. Background and ring both use the base status token via
+  Tailwind's opacity modifier (`/5` background, `/20` or `/10` ring); text uses
+  the AAA-safe `-strong` variant. All three are already-ratified tokens — no
+  raw palette classes anywhere in the pattern.
 - **Lists**: avatars `rounded-full h-10 w-10`; title `text-sm font-semibold
   text-neutral-900`; metadata `text-xs text-neutral-500`; interactive item
   `hover:bg-neutral-50`.
@@ -327,4 +353,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.3.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
+**Version**: 1.3.1 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08

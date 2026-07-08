@@ -83,8 +83,8 @@ variants render with correct tokens, and the Checkbox exposes correct
 
 1. **Given** the four Badge variants (success, error, warning, neutral),
    **When** rendered side by side, **Then** each uses its designated semantic
-   token combination (e.g., success = `bg-green-50 text-success
-   ring-green-600/20`) and no other Badge uses a raw palette class.
+   token combination (e.g., success = `bg-success/5 text-success-strong
+   ring-success/20`) and no other Badge uses a raw palette class.
 2. **Given** a Checkbox is toggled via keyboard (Space key) while focused,
    **When** the state changes, **Then** the native checked state updates
    accordingly (correctly exposed to assistive technology without any
@@ -121,8 +121,10 @@ variants render with correct tokens, and the Checkbox exposes correct
   distinct unchecked, checked, focus-visible, and disabled states.
 - **FR-005**: Every component MUST use only the semantic tokens defined in the
   project constitution's color table (`bg-brand`, `text-neutral-*`,
-  `text-success`, `text-error`, `text-warning`, etc.) — no raw Tailwind palette
-  classes (e.g., `bg-blue-600`) are permitted in shipped markup.
+  `text-success`, `text-error`, `text-warning`, etc. — use the `-strong`
+  variant, e.g. `text-error-strong`, for text rendered over a light tint
+  background, per the constitution's AAA requirement) — no raw Tailwind
+  palette classes (e.g., `bg-blue-600`) are permitted in shipped markup.
 - **FR-006**: Every interactive component (Button, Text Input, Checkbox) MUST be
   fully operable using the keyboard alone (Tab to focus, Enter/Space to
   activate/toggle).
@@ -162,7 +164,12 @@ variants render with correct tokens, and the Checkbox exposes correct
   responsive utilities; no dedicated native-app variant is in scope for this
   feature.
 - The color, typography, and spacing tokens ratified in the project constitution
-  (v1.2.0) are final for this feature; no new design tokens are introduced as
-  part of this work.
+  are the foundation for this feature's components. Three text-safe status
+  tokens (`success-strong`, `error-strong`, `warning-strong`) were added to the
+  constitution (now v1.3.1) during this feature's own `/speckit-analyze`
+  remediation passes, to fix a pre-existing AAA-contrast gap in the ratified
+  Badge/inline-error patterns — this is a correction of existing tokens'
+  text-safe usage, not a new design decision introduced by this feature's
+  requirements. No other new tokens are introduced.
 - No specific browser support matrix was provided; the components target the
   current stable versions of evergreen browsers (Chrome, Firefox, Safari, Edge).

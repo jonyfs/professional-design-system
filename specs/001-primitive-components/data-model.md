@@ -38,7 +38,7 @@ remain visible even if a placeholder is also set (Edge Case).
 
 **Validation rules**: each variant MUST use its designated token combination
 from the constitution's Data Display section (e.g., `success` =
-`bg-green-50 text-success ring-green-600/20`) — no raw palette class
+`bg-success/5 text-success-strong ring-success/20`) — no raw palette class
 substitution (FR-005, SC-004).
 
 ## Checkbox
