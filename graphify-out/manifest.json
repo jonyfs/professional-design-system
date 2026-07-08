@@ -1,0 +1,182 @@
+{
+  ".specify/extensions/agent-context/scripts/bash/update-agent-context.sh": {
+    "mtime": 1782012605.6759639,
+    "ast_hash": "b1168bb9cffc02061aa72530000b76ef",
+    "semantic_hash": "b1168bb9cffc02061aa72530000b76ef"
+  },
+  ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1": {
+    "mtime": 1782012605.6595495,
+    "ast_hash": "490a5c678c46baf04f36b571861a1045",
+    "semantic_hash": "490a5c678c46baf04f36b571861a1045"
+  },
+  ".specify/init-options.json": {
+    "mtime": 1783446244.99752,
+    "ast_hash": "d0eb193dd1bd7e8349c8cc51734424a3",
+    "semantic_hash": "d0eb193dd1bd7e8349c8cc51734424a3"
+  },
+  ".specify/integration.json": {
+    "mtime": 1783446244.932763,
+    "ast_hash": "a65d1b43e59cc484f020e130035f355c",
+    "semantic_hash": "a65d1b43e59cc484f020e130035f355c"
+  },
+  ".specify/integrations/claude.manifest.json": {
+    "mtime": 1783446244.9314375,
+    "ast_hash": "376894999e949d3f200f38c08f26e297",
+    "semantic_hash": "376894999e949d3f200f38c08f26e297"
+  },
+  ".specify/integrations/speckit.manifest.json": {
+    "mtime": 1783446244.9724882,
+    "ast_hash": "b201c243a843fdd82089d74bc664a58d",
+    "semantic_hash": "b201c243a843fdd82089d74bc664a58d"
+  },
+  ".specify/scripts/bash/check-prerequisites.sh": {
+    "mtime": 1783446244.9566686,
+    "ast_hash": "b91b66599d9e9e3b1713674bc42d0524",
+    "semantic_hash": "b91b66599d9e9e3b1713674bc42d0524"
+  },
+  ".specify/scripts/bash/common.sh": {
+    "mtime": 1783446244.947028,
+    "ast_hash": "eda4c81694719220aa1f115053cbcddc",
+    "semantic_hash": "eda4c81694719220aa1f115053cbcddc"
+  },
+  ".specify/scripts/bash/create-new-feature.sh": {
+    "mtime": 1783446244.9600236,
+    "ast_hash": "e61cae6d9125f1f765586ecca62a0b3b",
+    "semantic_hash": "e61cae6d9125f1f765586ecca62a0b3b"
+  },
+  ".specify/scripts/bash/setup-plan.sh": {
+    "mtime": 1783446244.9501002,
+    "ast_hash": "39835c6d789d2e385e7e71461dfc9340",
+    "semantic_hash": "39835c6d789d2e385e7e71461dfc9340"
+  },
+  ".specify/scripts/bash/setup-tasks.sh": {
+    "mtime": 1783446244.9533348,
+    "ast_hash": "f658662656684d96aaabfa13bb73f5fb",
+    "semantic_hash": "f658662656684d96aaabfa13bb73f5fb"
+  },
+  ".specify/workflows/workflow-registry.json": {
+    "mtime": 1783446244.9966538,
+    "ast_hash": "135b4a46bc1cbbbbf1bb406b62aac11c",
+    "semantic_hash": "135b4a46bc1cbbbbf1bb406b62aac11c"
+  },
+  ".claude/skills/speckit-agent-context-update/SKILL.md": {
+    "mtime": 1783446245.0156739,
+    "ast_hash": "72928dcbb13ab3fe26730bcc282a6383",
+    "semantic_hash": "72928dcbb13ab3fe26730bcc282a6383"
+  },
+  ".claude/skills/speckit-analyze/SKILL.md": {
+    "mtime": 1783446244.8800697,
+    "ast_hash": "c7143d05a510670c790e1aaa10deb7a6",
+    "semantic_hash": "c7143d05a510670c790e1aaa10deb7a6"
+  },
+  ".claude/skills/speckit-checklist/SKILL.md": {
+    "mtime": 1783446244.908145,
+    "ast_hash": "2d3535f2f15a5500e7354f923860de4e",
+    "semantic_hash": "2d3535f2f15a5500e7354f923860de4e"
+  },
+  ".claude/skills/speckit-clarify/SKILL.md": {
+    "mtime": 1783446244.8855593,
+    "ast_hash": "34b0b61eb75c833628cfc351d3bb9086",
+    "semantic_hash": "34b0b61eb75c833628cfc351d3bb9086"
+  },
+  ".claude/skills/speckit-constitution/SKILL.md": {
+    "mtime": 1783446244.8891704,
+    "ast_hash": "c9a285e099a64fea9cd80a9b937dffae",
+    "semantic_hash": "c9a285e099a64fea9cd80a9b937dffae"
+  },
+  ".claude/skills/speckit-converge/SKILL.md": {
+    "mtime": 1783446244.898099,
+    "ast_hash": "1aed927238f35a27903fe927c1ffb0bb",
+    "semantic_hash": "1aed927238f35a27903fe927c1ffb0bb"
+  },
+  ".claude/skills/speckit-implement/SKILL.md": {
+    "mtime": 1783446244.894336,
+    "ast_hash": "9f845a9f433d184cf3f5cfc37dca5516",
+    "semantic_hash": "9f845a9f433d184cf3f5cfc37dca5516"
+  },
+  ".claude/skills/speckit-plan/SKILL.md": {
+    "mtime": 1783446244.9023926,
+    "ast_hash": "95984771833637d49f5e998727b51bce",
+    "semantic_hash": "95984771833637d49f5e998727b51bce"
+  },
+  ".claude/skills/speckit-specify/SKILL.md": {
+    "mtime": 1783446244.9151247,
+    "ast_hash": "5a3dead5f9ccc88a026fdb02763ead79",
+    "semantic_hash": "5a3dead5f9ccc88a026fdb02763ead79"
+  },
+  ".claude/skills/speckit-tasks/SKILL.md": {
+    "mtime": 1783446244.920364,
+    "ast_hash": "94bef053488a48b3238c592ad2a1969e",
+    "semantic_hash": "94bef053488a48b3238c592ad2a1969e"
+  },
+  ".claude/skills/speckit-taskstoissues/SKILL.md": {
+    "mtime": 1783446244.9246542,
+    "ast_hash": "83397cb26dca68dbefbcf2d71eef523b",
+    "semantic_hash": "83397cb26dca68dbefbcf2d71eef523b"
+  },
+  ".specify/extensions.yml": {
+    "mtime": 1783446245.0214481,
+    "ast_hash": "41da053e53301452b823a35e2ff15dd1",
+    "semantic_hash": "41da053e53301452b823a35e2ff15dd1"
+  },
+  ".specify/extensions/agent-context/README.md": {
+    "mtime": 1782012605.632995,
+    "ast_hash": "1aa8a439be548ec0da2e3387a4925e4f",
+    "semantic_hash": "1aa8a439be548ec0da2e3387a4925e4f"
+  },
+  ".specify/extensions/agent-context/agent-context-config.yml": {
+    "mtime": 1783446245.0253472,
+    "ast_hash": "1bcd2cd4858ba88295f40310ff13cd60",
+    "semantic_hash": "1bcd2cd4858ba88295f40310ff13cd60"
+  },
+  ".specify/extensions/agent-context/commands/speckit.agent-context.update.md": {
+    "mtime": 1782012605.6552148,
+    "ast_hash": "7eecbfbef236c6af3e4003b32c6ffd2a",
+    "semantic_hash": "7eecbfbef236c6af3e4003b32c6ffd2a"
+  },
+  ".specify/extensions/agent-context/extension.yml": {
+    "mtime": 1782012605.649681,
+    "ast_hash": "c09cdcdf8b86381d5955182b5eac0caf",
+    "semantic_hash": "c09cdcdf8b86381d5955182b5eac0caf"
+  },
+  ".specify/memory/constitution.md": {
+    "mtime": 1783446244.9627366,
+    "ast_hash": "dcefb6b60e7cb3db2e966977b6f02f18",
+    "semantic_hash": "dcefb6b60e7cb3db2e966977b6f02f18"
+  },
+  ".specify/templates/checklist-template.md": {
+    "mtime": 1783446244.965055,
+    "ast_hash": "af4274efb13cbb2263029402deb14f6b",
+    "semantic_hash": "af4274efb13cbb2263029402deb14f6b"
+  },
+  ".specify/templates/constitution-template.md": {
+    "mtime": 1783446244.9627366,
+    "ast_hash": "dcefb6b60e7cb3db2e966977b6f02f18",
+    "semantic_hash": "dcefb6b60e7cb3db2e966977b6f02f18"
+  },
+  ".specify/templates/plan-template.md": {
+    "mtime": 1783446244.9690976,
+    "ast_hash": "fea2e21a1d9cf3470186abc1dfb6e9fb",
+    "semantic_hash": "fea2e21a1d9cf3470186abc1dfb6e9fb"
+  },
+  ".specify/templates/spec-template.md": {
+    "mtime": 1783446244.9678469,
+    "ast_hash": "45ac8538bc1220324c9f0d610145b53f",
+    "semantic_hash": "45ac8538bc1220324c9f0d610145b53f"
+  },
+  ".specify/templates/tasks-template.md": {
+    "mtime": 1783446244.9665027,
+    "ast_hash": "f8b4f62d384defa0a559bdbbaacb0540",
+    "semantic_hash": "f8b4f62d384defa0a559bdbbaacb0540"
+  },
+  ".specify/workflows/speckit/workflow.yml": {
+    "mtime": 1782012605.620187,
+    "ast_hash": "eba6943b2a2f6407162ae12e0218bdac",
+    "semantic_hash": "eba6943b2a2f6407162ae12e0218bdac"
+  },
+  "CLAUDE.md": {
+    "mtime": 1783446244.9287665,
+    "ast_hash": "af2a4aa2afc255f108b61414df63a311",
+    "semantic_hash": "af2a4aa2afc255f108b61414df63a311"
+  }
+}

@@ -1,0 +1,2688 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "extension_hooks_pattern",
+        "label": "Extension Hooks Pre/Post-Execution Pattern",
+        "nodes": [
+          "claude_skills_speckit_agent_context_update_skill",
+          "claude_skills_speckit_analyze_skill",
+          "claude_skills_speckit_checklist_skill",
+          "claude_skills_speckit_clarify_skill",
+          "claude_skills_speckit_constitution_skill",
+          "claude_skills_speckit_converge_skill",
+          "claude_skills_speckit_implement_skill",
+          "claude_skills_speckit_plan_skill",
+          "claude_skills_speckit_specify_skill",
+          "claude_skills_speckit_tasks_skill",
+          "claude_skills_speckit_taskstoissues_skill",
+          "concept_extensions_yml"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": ".claude/skills/speckit-analyze/SKILL.md"
+      },
+      {
+        "id": "constitution_authority_governance",
+        "label": "Constitution Authority Enforcement Across Commands",
+        "nodes": [
+          "concept_constitution_md",
+          "claude_skills_speckit_specify_skill",
+          "claude_skills_speckit_clarify_skill",
+          "claude_skills_speckit_plan_skill",
+          "claude_skills_speckit_tasks_skill",
+          "claude_skills_speckit_analyze_skill",
+          "claude_skills_speckit_checklist_skill",
+          "claude_skills_speckit_converge_skill",
+          "claude_skills_speckit_implement_skill"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": ".claude/skills/speckit-analyze/SKILL.md"
+      },
+      {
+        "id": "speckit_core_workflow_pipeline",
+        "label": "Spec-Driven Development Workflow Pipeline",
+        "nodes": [
+          "claude_skills_speckit_specify_skill",
+          "claude_skills_speckit_clarify_skill",
+          "claude_skills_speckit_plan_skill",
+          "claude_skills_speckit_tasks_skill",
+          "claude_skills_speckit_analyze_skill",
+          "claude_skills_speckit_checklist_skill",
+          "claude_skills_speckit_implement_skill",
+          "claude_skills_speckit_converge_skill"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": ".claude/skills/speckit-specify/SKILL.md"
+      },
+      {
+        "id": "agent_context_extension_bundle",
+        "label": "Agent Context Extension Bundle",
+        "nodes": [
+          "specify_extensions_config",
+          "specify_extensions_agent_context_extension_manifest",
+          "specify_extensions_agent_context_agent_context_config_config",
+          "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
+          "specify_extensions_agent_context_readme_doc"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": ".specify/extensions/agent-context/extension.yml"
+      },
+      {
+        "id": "constitution_governance_mechanism",
+        "label": "Constitution Governance Mechanism",
+        "nodes": [
+          "specify_memory_constitution_document",
+          "specify_templates_constitution_template_document",
+          "specify_templates_plan_template_document"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.75,
+        "source_file": ".specify/templates/plan-template.md"
+      },
+      {
+        "id": "sdd_document_pipeline",
+        "label": "Spec-Driven Development Template Pipeline",
+        "nodes": [
+          "specify_templates_spec_template_document",
+          "specify_templates_plan_template_document",
+          "specify_templates_tasks_template_document",
+          "specify_templates_checklist_template_document"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": ".specify/workflows/speckit/workflow.yml"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "update-agent-context.sh",
+      "file_type": "code",
+      "source_file": ".specify/extensions/agent-context/scripts/bash/update-agent-context.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "specify_extensions_agent_context_scripts_bash_update_agent_context",
+      "community": 11,
+      "norm_label": "update-agent-context.sh"
+    },
+    {
+      "label": "update-agent-context.sh script",
+      "file_type": "code",
+      "source_file": ".specify/extensions/agent-context/scripts/bash/update-agent-context.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "specify_extensions_agent_context_scripts_bash_update_agent_context_sh__entry",
+      "community": 11,
+      "norm_label": "update-agent-context.sh script"
+    },
+    {
+      "label": "update-agent-context.ps1",
+      "file_type": "code",
+      "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context",
+      "community": 10,
+      "norm_label": "update-agent-context.ps1"
+    },
+    {
+      "label": "Get-ConfigValue()",
+      "file_type": "code",
+      "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context_get_configvalue",
+      "community": 10,
+      "norm_label": "get-configvalue()"
+    },
+    {
+      "label": "Test-ConfigObject()",
+      "file_type": "code",
+      "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "specify_extensions_agent_context_scripts_powershell_update_agent_context_test_configobject",
+      "community": 10,
+      "norm_label": "test-configobject()"
+    },
+    {
+      "label": "check-prerequisites.sh",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/check-prerequisites.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_check_prerequisites",
+      "community": 12,
+      "norm_label": "check-prerequisites.sh"
+    },
+    {
+      "label": "check-prerequisites.sh script",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/check-prerequisites.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_check_prerequisites_sh__entry",
+      "community": 12,
+      "norm_label": "check-prerequisites.sh script"
+    },
+    {
+      "label": "common.sh",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common",
+      "community": 0,
+      "norm_label": "common.sh"
+    },
+    {
+      "label": "common.sh script",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_sh__entry",
+      "community": 0,
+      "norm_label": "common.sh script"
+    },
+    {
+      "label": "find_specify_root()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L6",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_find_specify_root",
+      "community": 0,
+      "norm_label": "find_specify_root()"
+    },
+    {
+      "label": "resolve_specify_init_dir()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L38",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_resolve_specify_init_dir",
+      "community": 0,
+      "norm_label": "resolve_specify_init_dir()"
+    },
+    {
+      "label": "get_repo_root()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L56",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_get_repo_root",
+      "community": 0,
+      "norm_label": "get_repo_root()"
+    },
+    {
+      "label": "get_current_branch()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L79",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_get_current_branch",
+      "community": 0,
+      "norm_label": "get_current_branch()"
+    },
+    {
+      "label": "read_feature_json_feature_directory()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L95",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_read_feature_json_feature_directory",
+      "community": 0,
+      "norm_label": "read_feature_json_feature_directory()"
+    },
+    {
+      "label": "_persist_feature_json()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L126",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_persist_feature_json",
+      "community": 0,
+      "norm_label": "_persist_feature_json()"
+    },
+    {
+      "label": "get_feature_paths()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L154",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_get_feature_paths",
+      "community": 0,
+      "norm_label": "get_feature_paths()"
+    },
+    {
+      "label": "has_jq()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L204",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_has_jq",
+      "community": 0,
+      "norm_label": "has_jq()"
+    },
+    {
+      "label": "get_invoke_separator()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L208",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_get_invoke_separator",
+      "community": 0,
+      "norm_label": "get_invoke_separator()"
+    },
+    {
+      "label": "format_speckit_command()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L265",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_format_speckit_command",
+      "community": 0,
+      "norm_label": "format_speckit_command()"
+    },
+    {
+      "label": "json_escape()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L287",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_json_escape",
+      "community": 0,
+      "norm_label": "json_escape()"
+    },
+    {
+      "label": "check_file()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L313",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_check_file",
+      "community": 0,
+      "norm_label": "check_file()"
+    },
+    {
+      "label": "check_dir()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L314",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_check_dir",
+      "community": 0,
+      "norm_label": "check_dir()"
+    },
+    {
+      "label": "resolve_template()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L321",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_resolve_template",
+      "community": 0,
+      "norm_label": "resolve_template()"
+    },
+    {
+      "label": "resolve_template_content()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L405",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_common_resolve_template_content",
+      "community": 0,
+      "norm_label": "resolve_template_content()"
+    },
+    {
+      "label": "create-new-feature.sh",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_create_new_feature",
+      "community": 7,
+      "norm_label": "create-new-feature.sh"
+    },
+    {
+      "label": "create-new-feature.sh script",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_create_new_feature_sh__entry",
+      "community": 7,
+      "norm_label": "create-new-feature.sh script"
+    },
+    {
+      "label": "get_highest_from_specs()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L94",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_create_new_feature_get_highest_from_specs",
+      "community": 7,
+      "norm_label": "get_highest_from_specs()"
+    },
+    {
+      "label": "clean_branch_name()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L117",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_create_new_feature_clean_branch_name",
+      "community": 7,
+      "norm_label": "clean_branch_name()"
+    },
+    {
+      "label": "generate_branch_name()",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L136",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_create_new_feature_generate_branch_name",
+      "community": 7,
+      "norm_label": "generate_branch_name()"
+    },
+    {
+      "label": "setup-plan.sh",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/setup-plan.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_setup_plan",
+      "community": 13,
+      "norm_label": "setup-plan.sh"
+    },
+    {
+      "label": "setup-plan.sh script",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/setup-plan.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_setup_plan_sh__entry",
+      "community": 13,
+      "norm_label": "setup-plan.sh script"
+    },
+    {
+      "label": "setup-tasks.sh",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/setup-tasks.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_setup_tasks",
+      "community": 14,
+      "norm_label": "setup-tasks.sh"
+    },
+    {
+      "label": "setup-tasks.sh script",
+      "file_type": "code",
+      "source_file": ".specify/scripts/bash/setup-tasks.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "specify_scripts_bash_setup_tasks_sh__entry",
+      "community": 14,
+      "norm_label": "setup-tasks.sh script"
+    },
+    {
+      "label": "speckit-agent-context-update Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-agent-context-update/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_agent_context_update_skill",
+      "community": 8,
+      "norm_label": "speckit-agent-context-update skill"
+    },
+    {
+      "label": "CLAUDE.md (Coding Agent Context File)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-agent-context-update/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_claude_md",
+      "community": 8,
+      "norm_label": "claude.md (coding agent context file)"
+    },
+    {
+      "label": ".specify/extensions/agent-context/agent-context-config.yml",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-agent-context-update/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_agent_context_config",
+      "community": 8,
+      "norm_label": ".specify/extensions/agent-context/agent-context-config.yml"
+    },
+    {
+      "label": "speckit-analyze Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_analyze_skill",
+      "community": 2,
+      "norm_label": "speckit-analyze skill"
+    },
+    {
+      "label": ".specify/extensions.yml (Extension Hooks Config)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_extensions_yml",
+      "community": 9,
+      "norm_label": ".specify/extensions.yml (extension hooks config)"
+    },
+    {
+      "label": ".specify/scripts/bash/check-prerequisites.sh",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_check_prerequisites_script",
+      "community": 2,
+      "norm_label": ".specify/scripts/bash/check-prerequisites.sh"
+    },
+    {
+      "label": "speckit-checklist Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_checklist_skill",
+      "community": 2,
+      "norm_label": "speckit-checklist skill"
+    },
+    {
+      "label": "checklists/ (Requirement Checklists Directory)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_checklists_dir",
+      "community": 1,
+      "norm_label": "checklists/ (requirement checklists directory)"
+    },
+    {
+      "label": ".specify/templates/checklist-template.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_checklist_template",
+      "community": 2,
+      "norm_label": ".specify/templates/checklist-template.md"
+    },
+    {
+      "label": "speckit-clarify Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_clarify_skill",
+      "community": 4,
+      "norm_label": "speckit-clarify skill"
+    },
+    {
+      "label": "speckit-constitution Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_constitution_skill",
+      "community": 5,
+      "norm_label": "speckit-constitution skill"
+    },
+    {
+      "label": ".specify/memory/constitution.md (Project Constitution)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_constitution_md",
+      "community": 4,
+      "norm_label": ".specify/memory/constitution.md (project constitution)"
+    },
+    {
+      "label": ".specify/templates/constitution-template.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_constitution_template",
+      "community": 5,
+      "norm_label": ".specify/templates/constitution-template.md"
+    },
+    {
+      "label": ".specify/templates/plan-template.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_plan_template",
+      "community": 5,
+      "norm_label": ".specify/templates/plan-template.md"
+    },
+    {
+      "label": ".specify/templates/spec-template.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_spec_template",
+      "community": 5,
+      "norm_label": ".specify/templates/spec-template.md"
+    },
+    {
+      "label": ".specify/templates/tasks-template.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_tasks_template",
+      "community": 5,
+      "norm_label": ".specify/templates/tasks-template.md"
+    },
+    {
+      "label": ".specify/templates/commands/*.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_command_templates_dir",
+      "community": 5,
+      "norm_label": ".specify/templates/commands/*.md"
+    },
+    {
+      "label": "speckit-converge Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_converge_skill",
+      "community": 2,
+      "norm_label": "speckit-converge skill"
+    },
+    {
+      "label": "speckit-implement Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_implement_skill",
+      "community": 1,
+      "norm_label": "speckit-implement skill"
+    },
+    {
+      "label": "speckit-plan Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_plan_skill",
+      "community": 1,
+      "norm_label": "speckit-plan skill"
+    },
+    {
+      "label": "plan.md (Implementation Plan)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_plan_md",
+      "community": 2,
+      "norm_label": "plan.md (implementation plan)"
+    },
+    {
+      "label": "data-model.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_data_model_md",
+      "community": 1,
+      "norm_label": "data-model.md"
+    },
+    {
+      "label": "research.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_research_md",
+      "community": 1,
+      "norm_label": "research.md"
+    },
+    {
+      "label": "quickstart.md",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_quickstart_md",
+      "community": 1,
+      "norm_label": "quickstart.md"
+    },
+    {
+      "label": "contracts/ (Interface Contracts)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_contracts_dir",
+      "community": 1,
+      "norm_label": "contracts/ (interface contracts)"
+    },
+    {
+      "label": ".specify/scripts/bash/setup-plan.sh",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_setup_plan_script",
+      "community": 1,
+      "norm_label": ".specify/scripts/bash/setup-plan.sh"
+    },
+    {
+      "label": "speckit-specify Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_specify_skill",
+      "community": 4,
+      "norm_label": "speckit-specify skill"
+    },
+    {
+      "label": "spec.md (Feature Specification)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_spec_md",
+      "community": 2,
+      "norm_label": "spec.md (feature specification)"
+    },
+    {
+      "label": "checklists/requirements.md (Spec Quality Checklist)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_requirements_checklist",
+      "community": 4,
+      "norm_label": "checklists/requirements.md (spec quality checklist)"
+    },
+    {
+      "label": ".specify/init-options.json",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_init_options",
+      "community": 4,
+      "norm_label": ".specify/init-options.json"
+    },
+    {
+      "label": ".specify/feature.json",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_feature_json",
+      "community": 4,
+      "norm_label": ".specify/feature.json"
+    },
+    {
+      "label": "speckit-tasks Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_tasks_skill",
+      "community": 1,
+      "norm_label": "speckit-tasks skill"
+    },
+    {
+      "label": "tasks.md (Task List)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_tasks_md",
+      "community": 2,
+      "norm_label": "tasks.md (task list)"
+    },
+    {
+      "label": ".specify/scripts/bash/setup-tasks.sh",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_setup_tasks_script",
+      "community": 1,
+      "norm_label": ".specify/scripts/bash/setup-tasks.sh"
+    },
+    {
+      "label": "speckit-taskstoissues Skill",
+      "file_type": "document",
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "github-spec-kit",
+      "contributor": null,
+      "id": "claude_skills_speckit_taskstoissues_skill",
+      "community": 9,
+      "norm_label": "speckit-taskstoissues skill"
+    },
+    {
+      "label": "GitHub MCP Server (list_issues / create issue tools)",
+      "file_type": "concept",
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_github_mcp_server",
+      "community": 9,
+      "norm_label": "github mcp server (list_issues / create issue tools)"
+    },
+    {
+      "label": "Spec Kit Extensions Registration Config",
+      "file_type": "document",
+      "source_file": ".specify/extensions.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_extensions_config",
+      "community": 3,
+      "norm_label": "spec kit extensions registration config"
+    },
+    {
+      "label": "Coding Agent Context Extension README",
+      "file_type": "document",
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_extensions_agent_context_readme_doc",
+      "community": 3,
+      "norm_label": "coding agent context extension readme"
+    },
+    {
+      "label": "Context Section Upsert/Remove Gate Mechanism",
+      "file_type": "concept",
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_extensions_agent_context_readme_context_section_lifecycle",
+      "community": 3,
+      "norm_label": "context section upsert/remove gate mechanism"
+    },
+    {
+      "label": "Agent Context Config (context_file / context_markers)",
+      "file_type": "document",
+      "source_file": ".specify/extensions/agent-context/agent-context-config.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_extensions_agent_context_agent_context_config_config",
+      "community": 3,
+      "norm_label": "agent context config (context_file / context_markers)"
+    },
+    {
+      "label": "speckit.agent-context.update Command",
+      "file_type": "document",
+      "source_file": ".specify/extensions/agent-context/commands/speckit.agent-context.update.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
+      "community": 3,
+      "norm_label": "speckit.agent-context.update command"
+    },
+    {
+      "label": "Agent Context Extension Manifest",
+      "file_type": "document",
+      "source_file": ".specify/extensions/agent-context/extension.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_extensions_agent_context_extension_manifest",
+      "community": 3,
+      "norm_label": "agent context extension manifest"
+    },
+    {
+      "label": "Project Constitution (memory/constitution.md)",
+      "file_type": "document",
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_memory_constitution_document",
+      "community": 6,
+      "norm_label": "project constitution (memory/constitution.md)"
+    },
+    {
+      "label": "Checklist Template",
+      "file_type": "document",
+      "source_file": ".specify/templates/checklist-template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_templates_checklist_template_document",
+      "community": 15,
+      "norm_label": "checklist template"
+    },
+    {
+      "label": "Constitution Template",
+      "file_type": "document",
+      "source_file": ".specify/templates/constitution-template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_templates_constitution_template_document",
+      "community": 6,
+      "norm_label": "constitution template"
+    },
+    {
+      "label": "Implementation Plan Template",
+      "file_type": "document",
+      "source_file": ".specify/templates/plan-template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_templates_plan_template_document",
+      "community": 6,
+      "norm_label": "implementation plan template"
+    },
+    {
+      "label": "Feature Specification Template",
+      "file_type": "document",
+      "source_file": ".specify/templates/spec-template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_templates_spec_template_document",
+      "community": 6,
+      "norm_label": "feature specification template"
+    },
+    {
+      "label": "Tasks Template",
+      "file_type": "document",
+      "source_file": ".specify/templates/tasks-template.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_templates_tasks_template_document",
+      "community": 6,
+      "norm_label": "tasks template"
+    },
+    {
+      "label": "Full SDD Cycle Workflow (speckit)",
+      "file_type": "document",
+      "source_file": ".specify/workflows/speckit/workflow.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "specify_workflows_speckit_workflow_workflow",
+      "community": 6,
+      "norm_label": "full sdd cycle workflow (speckit)"
+    },
+    {
+      "label": "CLAUDE.md (Managed Coding Agent Context File)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claude_document",
+      "community": 3,
+      "norm_label": "claude.md (managed coding agent context file)"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/extensions/agent-context/scripts/bash/update-agent-context.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_scripts_bash_update_agent_context",
+      "target": "specify_extensions_agent_context_scripts_bash_update_agent_context_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_scripts_powershell_update_agent_context",
+      "target": "specify_extensions_agent_context_scripts_powershell_update_agent_context_get_configvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/extensions/agent-context/scripts/powershell/update-agent-context.ps1",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_scripts_powershell_update_agent_context",
+      "target": "specify_extensions_agent_context_scripts_powershell_update_agent_context_test_configobject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/check-prerequisites.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_check_prerequisites",
+      "target": "specify_scripts_bash_check_prerequisites_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_check_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L313",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_check_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_find_specify_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L265",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_format_speckit_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_get_current_branch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_get_feature_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_get_invoke_separator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_get_repo_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_has_jq",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L287",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_json_escape",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_persist_feature_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_read_feature_json_feature_directory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_resolve_specify_init_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L321",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_resolve_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L405",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_resolve_template_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_common",
+      "target": "specify_scripts_bash_common_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "call",
+      "source": "specify_scripts_bash_common_get_repo_root",
+      "target": "specify_scripts_bash_common_resolve_specify_init_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/common.sh",
+      "source_location": "L172",
+      "weight": 1.0,
+      "context": "call",
+      "source": "specify_scripts_bash_common_get_feature_paths",
+      "target": "specify_scripts_bash_common_persist_feature_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_create_new_feature",
+      "target": "specify_scripts_bash_create_new_feature_clean_branch_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_create_new_feature",
+      "target": "specify_scripts_bash_create_new_feature_generate_branch_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_create_new_feature",
+      "target": "specify_scripts_bash_create_new_feature_get_highest_from_specs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/create-new-feature.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_create_new_feature",
+      "target": "specify_scripts_bash_create_new_feature_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/setup-plan.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_setup_plan",
+      "target": "specify_scripts_bash_setup_plan_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".specify/scripts/bash/setup-tasks.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specify_scripts_bash_setup_tasks",
+      "target": "specify_scripts_bash_setup_tasks_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-agent-context-update/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_agent_context_update_skill",
+      "target": "concept_agent_context_config"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-agent-context-update/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_agent_context_update_skill",
+      "target": "concept_claude_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-agent-context-update/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_agent_context_update_skill",
+      "target": "concept_plan_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "claude_skills_speckit_agent_context_update_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_claude_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "claude_skills_speckit_implement_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "claude_skills_speckit_plan_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "claude_skills_speckit_specify_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "claude_skills_speckit_tasks_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "concept_check_prerequisites_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "concept_plan_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "concept_spec_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_analyze_skill",
+      "target": "concept_tasks_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_taskstoissues_skill",
+      "target": "concept_extensions_yml"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_check_prerequisites_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "concept_check_prerequisites_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "concept_check_prerequisites_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_check_prerequisites_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_taskstoissues_skill",
+      "target": "concept_check_prerequisites_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_checklist_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_plan_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_spec_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-checklist/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_checklist_skill",
+      "target": "concept_tasks_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_checklists_dir"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "claude_skills_speckit_plan_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "claude_skills_speckit_specify_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "concept_requirements_checklist"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-clarify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_clarify_skill",
+      "target": "concept_spec_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_command_templates_dir"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_constitution_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_plan_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_spec_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-constitution/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_constitution_skill",
+      "target": "concept_tasks_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_taskstoissues_skill",
+      "target": "concept_constitution_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "concept_spec_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_tasks_template"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "claude_skills_speckit_implement_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "claude_skills_speckit_plan_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "claude_skills_speckit_specify_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "claude_skills_speckit_tasks_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "concept_plan_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "concept_spec_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-converge/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_converge_skill",
+      "target": "concept_tasks_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "claude_skills_speckit_tasks_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_contracts_dir"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_data_model_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_plan_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_quickstart_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_research_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-implement/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_implement_skill",
+      "target": "concept_tasks_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_contracts_dir"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_data_model_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_quickstart_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_research_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_setup_plan_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-plan/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_plan_skill",
+      "target": "concept_spec_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "claude_skills_speckit_plan_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_plan_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_data_model_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_research_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_quickstart_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_contracts_dir"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "claude_skills_speckit_tasks_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "concept_feature_json"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "concept_init_options"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_specify_skill",
+      "target": "concept_requirements_checklist"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_spec_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_setup_tasks_script"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-tasks/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_tasks_skill",
+      "target": "concept_tasks_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_taskstoissues_skill",
+      "target": "concept_tasks_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/speckit-taskstoissues/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "claude_skills_speckit_taskstoissues_skill",
+      "target": "concept_github_mcp_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_config",
+      "target": "specify_extensions_agent_context_commands_speckit_agent_context_update_command"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_config",
+      "target": "specify_extensions_agent_context_extension_manifest"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/workflows/speckit/workflow.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_workflows_speckit_workflow_workflow",
+      "target": "specify_extensions_config"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_readme_doc",
+      "target": "specify_extensions_agent_context_agent_context_config_config"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_readme_doc",
+      "target": "specify_extensions_agent_context_commands_speckit_agent_context_update_command"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_readme_doc",
+      "target": "specify_extensions_agent_context_extension_manifest"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_readme_doc",
+      "target": "specify_extensions_agent_context_readme_context_section_lifecycle"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/extensions/agent-context/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_readme_context_section_lifecycle",
+      "target": "claude_document"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/agent-context-config.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_agent_context_config_config",
+      "target": "claude_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/commands/speckit.agent-context.update.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
+      "target": "specify_extensions_agent_context_agent_context_config_config"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/commands/speckit.agent-context.update.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
+      "target": "claude_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/extension.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_extensions_agent_context_extension_manifest",
+      "target": "specify_extensions_agent_context_commands_speckit_agent_context_update_command"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".specify/memory/constitution.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_memory_constitution_document",
+      "target": "specify_templates_constitution_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/templates/plan-template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_templates_plan_template_document",
+      "target": "specify_memory_constitution_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/templates/plan-template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_templates_plan_template_document",
+      "target": "specify_templates_spec_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/templates/tasks-template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_templates_tasks_template_document",
+      "target": "specify_templates_plan_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/workflows/speckit/workflow.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_workflows_speckit_workflow_workflow",
+      "target": "specify_templates_plan_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/templates/tasks-template.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_templates_tasks_template_document",
+      "target": "specify_templates_spec_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/workflows/speckit/workflow.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_workflows_speckit_workflow_workflow",
+      "target": "specify_templates_spec_template_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/workflows/speckit/workflow.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "specify_workflows_speckit_workflow_workflow",
+      "target": "specify_templates_tasks_template_document"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "extension_hooks_pattern",
+      "label": "Extension Hooks Pre/Post-Execution Pattern",
+      "nodes": [
+        "claude_skills_speckit_agent_context_update_skill",
+        "claude_skills_speckit_analyze_skill",
+        "claude_skills_speckit_checklist_skill",
+        "claude_skills_speckit_clarify_skill",
+        "claude_skills_speckit_constitution_skill",
+        "claude_skills_speckit_converge_skill",
+        "claude_skills_speckit_implement_skill",
+        "claude_skills_speckit_plan_skill",
+        "claude_skills_speckit_specify_skill",
+        "claude_skills_speckit_tasks_skill",
+        "claude_skills_speckit_taskstoissues_skill",
+        "concept_extensions_yml"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md"
+    },
+    {
+      "id": "constitution_authority_governance",
+      "label": "Constitution Authority Enforcement Across Commands",
+      "nodes": [
+        "concept_constitution_md",
+        "claude_skills_speckit_specify_skill",
+        "claude_skills_speckit_clarify_skill",
+        "claude_skills_speckit_plan_skill",
+        "claude_skills_speckit_tasks_skill",
+        "claude_skills_speckit_analyze_skill",
+        "claude_skills_speckit_checklist_skill",
+        "claude_skills_speckit_converge_skill",
+        "claude_skills_speckit_implement_skill"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".claude/skills/speckit-analyze/SKILL.md"
+    },
+    {
+      "id": "speckit_core_workflow_pipeline",
+      "label": "Spec-Driven Development Workflow Pipeline",
+      "nodes": [
+        "claude_skills_speckit_specify_skill",
+        "claude_skills_speckit_clarify_skill",
+        "claude_skills_speckit_plan_skill",
+        "claude_skills_speckit_tasks_skill",
+        "claude_skills_speckit_analyze_skill",
+        "claude_skills_speckit_checklist_skill",
+        "claude_skills_speckit_implement_skill",
+        "claude_skills_speckit_converge_skill"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".claude/skills/speckit-specify/SKILL.md"
+    },
+    {
+      "id": "agent_context_extension_bundle",
+      "label": "Agent Context Extension Bundle",
+      "nodes": [
+        "specify_extensions_config",
+        "specify_extensions_agent_context_extension_manifest",
+        "specify_extensions_agent_context_agent_context_config_config",
+        "specify_extensions_agent_context_commands_speckit_agent_context_update_command",
+        "specify_extensions_agent_context_readme_doc"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".specify/extensions/agent-context/extension.yml"
+    },
+    {
+      "id": "constitution_governance_mechanism",
+      "label": "Constitution Governance Mechanism",
+      "nodes": [
+        "specify_memory_constitution_document",
+        "specify_templates_constitution_template_document",
+        "specify_templates_plan_template_document"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": ".specify/templates/plan-template.md"
+    },
+    {
+      "id": "sdd_document_pipeline",
+      "label": "Spec-Driven Development Template Pipeline",
+      "nodes": [
+        "specify_templates_spec_template_document",
+        "specify_templates_plan_template_document",
+        "specify_templates_tasks_template_document",
+        "specify_templates_checklist_template_document"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".specify/workflows/speckit/workflow.yml"
+    }
+  ]
+}
