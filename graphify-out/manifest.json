@@ -240,13 +240,13 @@
     "semantic_hash": ""
   },
   "specs/001-primitive-components/contracts/button.contract.md": {
-    "mtime": 1783524668.194329,
-    "ast_hash": "80af3f682cd8240002b9599096edc3e9",
+    "mtime": 1783528100.9889398,
+    "ast_hash": "34f38a87eba129116998f8139f570ef2",
     "semantic_hash": ""
   },
   "specs/001-primitive-components/contracts/checkbox.contract.md": {
-    "mtime": 1783525880.8791528,
-    "ast_hash": "e5b5904aff7a16e4c5beace72ea7140c",
+    "mtime": 1783528170.6309164,
+    "ast_hash": "649edf773d4e8dd78b9c1e554c2a9b86",
     "semantic_hash": ""
   },
   "specs/001-primitive-components/contracts/text-input.contract.md": {
@@ -275,13 +275,13 @@
     "semantic_hash": ""
   },
   "specs/001-primitive-components/tasks.md": {
-    "mtime": 1783525553.1327507,
-    "ast_hash": "6e2c4a6827014cc22cdcbc73f6afd081",
+    "mtime": 1783528585.160971,
+    "ast_hash": "32a6786f59c7498b5aee49133a977dac",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1783526046.803505,
-    "ast_hash": "c09d39da75e5526239080c76bbb16cf1",
+    "mtime": 1783528311.876227,
+    "ast_hash": "1e96d310d4936419232d1bd0c50ef791",
     "semantic_hash": ""
   },
   "playwright.config.ts": {
@@ -295,13 +295,13 @@
     "semantic_hash": ""
   },
   "scripts/audit-tokens.mjs": {
-    "mtime": 1783525972.3204522,
-    "ast_hash": "2bcafb9ceddf8413b5ce5592b83efbfd",
+    "mtime": 1783528195.5248463,
+    "ast_hash": "a7c82f91e6e2f54ac0ab4978bfc5835f",
     "semantic_hash": ""
   },
   "scripts/check-contrast.mjs": {
-    "mtime": 1783526014.147862,
-    "ast_hash": "8aeb0bf21525887b39135f12a836891c",
+    "mtime": 1783528271.7761521,
+    "ast_hash": "b02c59d469203d73f7d416b519d0dcfe",
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
@@ -325,28 +325,28 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783527022.5304,
-    "ast_hash": "a3b9ec06e4fd9ed07a845c8e6c23276d",
+    "mtime": 1783528134.8872235,
+    "ast_hash": "d3e4d5801e2949d50852fdb57452b764",
     "semantic_hash": ""
   },
   "src/components/badge/badge.html": {
-    "mtime": 1783527248.0818186,
-    "ast_hash": "353b7563548413be242f5502e15db69d",
+    "mtime": 1783528294.880185,
+    "ast_hash": "3a20e227b878f77501fa0887c2315198",
     "semantic_hash": ""
   },
   "src/components/button/button.html": {
-    "mtime": 1783526274.9207854,
-    "ast_hash": "9fc764877ff96fedd5e0d97e949bea90",
+    "mtime": 1783528117.3730001,
+    "ast_hash": "3661bfe3c85f8335e633f341d290bc48",
     "semantic_hash": ""
   },
   "src/components/checkbox/checkbox.html": {
-    "mtime": 1783527367.4821239,
-    "ast_hash": "177e4f487a5deed2e14e3e5332335337",
+    "mtime": 1783528154.6641676,
+    "ast_hash": "7936c47cd93ab967be931cca9475ba01",
     "semantic_hash": ""
   },
   "src/components/text-input/text-input.html": {
-    "mtime": 1783527022.531827,
-    "ast_hash": "0ca170c7f8042ccbfca49ce3f9f8f83c",
+    "mtime": 1783528073.1258695,
+    "ast_hash": "debd932e7fe69a4387f4646184aeeaf7",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts": {
@@ -700,33 +700,33 @@
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-1024-darwin.png": {
-    "mtime": 1783527392.7108355,
-    "ast_hash": "9e098878a2647c8e7799b5a4cb8307e1",
+    "mtime": 1783528409.9939198,
+    "ast_hash": "9d5a0a05da405a6df895b32b087034e3",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-1440-darwin.png": {
-    "mtime": 1783527395.720517,
-    "ast_hash": "9e098878a2647c8e7799b5a4cb8307e1",
+    "mtime": 1783528409.9942932,
+    "ast_hash": "9d5a0a05da405a6df895b32b087034e3",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-320-darwin.png": {
-    "mtime": 1783527385.0906832,
-    "ast_hash": "9329f7f43ea62bb55ecb36219680b701",
+    "mtime": 1783528409.9451184,
+    "ast_hash": "280ee1c648ae1778dd76e0247192b10f",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-768-darwin.png": {
-    "mtime": 1783527388.755456,
-    "ast_hash": "9e098878a2647c8e7799b5a4cb8307e1",
+    "mtime": 1783528409.957027,
+    "ast_hash": "9d5a0a05da405a6df895b32b087034e3",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-firefox-1440-darwin.png": {
-    "mtime": 1783527404.1574333,
-    "ast_hash": "3eb7b0135379233902dafda87ec48f68",
+    "mtime": 1783528412.99855,
+    "ast_hash": "5cdcc7aca66d353e4e71fdfabae7211a",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-webkit-1440-darwin.png": {
-    "mtime": 1783527414.2997694,
-    "ast_hash": "c670f8edbf569869a70adefd25c9f8a0",
+    "mtime": 1783528410.8241885,
+    "ast_hash": "8d92d32d0d7df6aadfcd81d238fc0c21",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-chromium-1024-darwin.png": {
@@ -787,6 +787,16 @@
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-webkit-1440-darwin.png": {
     "mtime": 1783527409.7935057,
     "ast_hash": "98da104b7ea5690d0a24414c96d22fa2",
+    "semantic_hash": ""
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1783528323.1097305,
+    "ast_hash": "9d11fbc5bc31f9d437689ca6b98f2442",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783527651.3441305,
+    "ast_hash": "53de249cfc766a302795ed0abb9f3e4c",
     "semantic_hash": ""
   }
 }

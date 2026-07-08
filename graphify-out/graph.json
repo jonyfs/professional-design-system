@@ -95,14 +95,1044 @@
   },
   "nodes": [
     {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 38,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Professional Design System",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_professional_design_system",
+      "community": 38,
+      "norm_label": "professional design system"
+    },
+    {
+      "label": "Requirements",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "readme_requirements",
+      "community": 38,
+      "norm_label": "requirements"
+    },
+    {
+      "label": "Setup",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "readme_setup",
+      "community": 38,
+      "norm_label": "setup"
+    },
+    {
+      "label": "Scripts",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "readme_scripts",
+      "community": 38,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "Component gallery",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "readme_component_gallery",
+      "community": 38,
+      "norm_label": "component gallery"
+    },
+    {
+      "label": "Project structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "readme_project_structure",
+      "community": 38,
+      "norm_label": "project structure"
+    },
+    {
+      "label": "Governance",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "readme_governance",
+      "community": 38,
+      "norm_label": "governance"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "package",
+      "community": 25,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "package_name",
+      "community": 25,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "package_version",
+      "community": 25,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "package_private",
+      "community": 25,
+      "norm_label": "private"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "package_description",
+      "community": 25,
+      "norm_label": "description"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "package_type",
+      "community": 25,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "package_scripts",
+      "community": 25,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "package_scripts_dev",
+      "community": 25,
+      "norm_label": "dev"
+    },
+    {
+      "label": "prebuild",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "package_scripts_prebuild",
+      "community": 25,
+      "norm_label": "prebuild"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "package_scripts_build",
+      "community": 25,
+      "norm_label": "build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "package_scripts_preview",
+      "community": 25,
+      "norm_label": "preview"
+    },
+    {
+      "label": "pretest:e2e",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "package_scripts_pretest_e2e",
+      "community": 25,
+      "norm_label": "pretest:e2e"
+    },
+    {
+      "label": "test:e2e",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "package_scripts_test_e2e",
+      "community": 25,
+      "norm_label": "test:e2e"
+    },
+    {
+      "label": "audit:tokens",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "package_scripts_audit_tokens",
+      "community": 25,
+      "norm_label": "audit:tokens"
+    },
+    {
+      "label": "audit:contrast",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "package_scripts_audit_contrast",
+      "community": 25,
+      "norm_label": "audit:contrast"
+    },
+    {
+      "label": "typecheck",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "package_scripts_typecheck",
+      "community": 25,
+      "norm_label": "typecheck"
+    },
+    {
+      "label": "verify",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "package_scripts_verify",
+      "community": 25,
+      "norm_label": "verify"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "package_devdependencies",
+      "community": 25,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@axe-core/playwright",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "package_devdependencies_axe_core_playwright",
+      "community": 25,
+      "norm_label": "@axe-core/playwright"
+    },
+    {
+      "label": "@playwright/test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "package_devdependencies_playwright_test",
+      "community": 25,
+      "norm_label": "@playwright/test"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "package_devdependencies_types_node",
+      "community": 25,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "package_devdependencies_autoprefixer",
+      "community": 25,
+      "norm_label": "autoprefixer"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "package_devdependencies_postcss",
+      "community": 25,
+      "norm_label": "postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "package_devdependencies_tailwindcss",
+      "community": 25,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "package_devdependencies_typescript",
+      "community": 25,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "package_devdependencies_vite",
+      "community": 25,
+      "norm_label": "vite"
+    },
+    {
+      "label": "wcag-contrast",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "package_devdependencies_wcag_contrast",
+      "community": 25,
+      "norm_label": "wcag-contrast"
+    },
+    {
+      "label": "audit-tokens.mjs",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens",
+      "community": 26,
+      "norm_label": "audit-tokens.mjs"
+    },
+    {
+      "label": "rootDir",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_rootdir",
+      "community": 26,
+      "norm_label": "rootdir"
+    },
+    {
+      "label": "extractBalancedBlock()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_extractbalancedblock",
+      "community": 26,
+      "norm_label": "extractbalancedblock()"
+    },
+    {
+      "label": "parseColorAllowlist()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_parsecolorallowlist",
+      "community": 26,
+      "norm_label": "parsecolorallowlist()"
+    },
+    {
+      "label": "parseRadiusAllowlist()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_parseradiusallowlist",
+      "community": 26,
+      "norm_label": "parseradiusallowlist()"
+    },
+    {
+      "label": "configSource",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_configsource",
+      "community": 26,
+      "norm_label": "configsource"
+    },
+    {
+      "label": "allowedColorNames",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_allowedcolornames",
+      "community": 26,
+      "norm_label": "allowedcolornames"
+    },
+    {
+      "label": "allowedRadiusClasses",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_allowedradiusclasses",
+      "community": 26,
+      "norm_label": "allowedradiusclasses"
+    },
+    {
+      "label": "collectHtmlFiles()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_collecthtmlfiles",
+      "community": 26,
+      "norm_label": "collecthtmlfiles()"
+    },
+    {
+      "label": "targets",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_targets",
+      "community": 26,
+      "norm_label": "targets"
+    },
+    {
+      "label": "COLOR_PREFIXES",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_color_prefixes",
+      "community": 26,
+      "norm_label": "color_prefixes"
+    },
+    {
+      "label": "NON_COLOR_SUFFIXES",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_non_color_suffixes",
+      "community": 26,
+      "norm_label": "non_color_suffixes"
+    },
+    {
+      "label": "isStructuralSuffix()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L148",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_isstructuralsuffix",
+      "community": 26,
+      "norm_label": "isstructuralsuffix()"
+    },
+    {
+      "label": "stripVariants()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L159",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_stripvariants",
+      "community": 26,
+      "norm_label": "stripvariants()"
+    },
+    {
+      "label": "checkClass()",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L165",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_checkclass",
+      "community": 26,
+      "norm_label": "checkclass()"
+    },
+    {
+      "label": "violations",
+      "file_type": "code",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L191",
+      "_origin": "ast",
+      "id": "scripts_audit_tokens_violations",
+      "community": 26,
+      "norm_label": "violations"
+    },
+    {
+      "label": "check-contrast.mjs",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_check_contrast",
+      "community": 28,
+      "norm_label": "check-contrast.mjs"
+    },
+    {
+      "label": "rootDir",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_rootdir",
+      "community": 28,
+      "norm_label": "rootdir"
+    },
+    {
+      "label": "BASE_TOKENS",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_base_tokens",
+      "community": 28,
+      "norm_label": "base_tokens"
+    },
+    {
+      "label": "compositeOverWhite()",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_compositeoverwhite",
+      "community": 28,
+      "norm_label": "compositeoverwhite()"
+    },
+    {
+      "label": "TOKENS",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_tokens",
+      "community": 28,
+      "norm_label": "tokens"
+    },
+    {
+      "label": "PAIRINGS",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_pairings",
+      "community": 28,
+      "norm_label": "pairings"
+    },
+    {
+      "label": "failures",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_failures",
+      "community": 28,
+      "norm_label": "failures"
+    },
+    {
+      "label": "collectHtmlFiles()",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L153",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_collecthtmlfiles",
+      "community": 28,
+      "norm_label": "collecthtmlfiles()"
+    },
+    {
+      "label": "NON_COLOR_TEXT_SUFFIXES",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L168",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_non_color_text_suffixes",
+      "community": 28,
+      "norm_label": "non_color_text_suffixes"
+    },
+    {
+      "label": "COVERED_FG_TOKENS",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L179",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_covered_fg_tokens",
+      "community": 28,
+      "norm_label": "covered_fg_tokens"
+    },
+    {
+      "label": "htmlFiles",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_htmlfiles",
+      "community": 28,
+      "norm_label": "htmlfiles"
+    },
+    {
+      "label": "uncoveredTextTokens",
+      "file_type": "code",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L186",
+      "_origin": "ast",
+      "id": "scripts_check_contrast_uncoveredtexttokens",
+      "community": 28,
+      "norm_label": "uncoveredtexttokens"
+    },
+    {
+      "label": "button.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract",
+      "community": 10,
+      "norm_label": "button.contract.md"
+    },
+    {
+      "label": "Component Contract: Button",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "community": 10,
+      "norm_label": "component contract: button"
+    },
+    {
+      "label": "Markup contract",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract_markup_contract",
+      "community": 10,
+      "norm_label": "markup contract"
+    },
+    {
+      "label": "Required classes (Principle V gate)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract_required_classes_principle_v_gate",
+      "community": 10,
+      "norm_label": "required classes (principle v gate)"
+    },
+    {
+      "label": "Required attributes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract_required_attributes",
+      "community": 10,
+      "norm_label": "required attributes"
+    },
+    {
+      "label": "Token allowlist used",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used",
+      "community": 10,
+      "norm_label": "token allowlist used"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping",
+      "community": 10,
+      "norm_label": "acceptance mapping"
+    },
+    {
+      "label": "checkbox.contract.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract",
+      "community": 18,
+      "norm_label": "checkbox.contract.md"
+    },
+    {
+      "label": "Component Contract: Checkbox",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "community": 18,
+      "norm_label": "component contract: checkbox"
+    },
+    {
+      "label": "Markup contract",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract",
+      "community": 18,
+      "norm_label": "markup contract"
+    },
+    {
+      "label": "Required attributes (Principle II + V gates)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates",
+      "community": 18,
+      "norm_label": "required attributes (principle ii + v gates)"
+    },
+    {
+      "label": "Keyboard behavior (FR-006)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006",
+      "community": 18,
+      "norm_label": "keyboard behavior (fr-006)"
+    },
+    {
+      "label": "Token allowlist used",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used",
+      "community": 18,
+      "norm_label": "token allowlist used"
+    },
+    {
+      "label": "Acceptance mapping",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping",
+      "community": 18,
+      "norm_label": "acceptance mapping"
+    },
+    {
+      "label": "tasks.md",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks",
+      "community": 5,
+      "norm_label": "tasks.md"
+    },
+    {
+      "label": "Tasks: Design System Primitive Components",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "community": 5,
+      "norm_label": "tasks: design system primitive components"
+    },
+    {
+      "label": "Format: `[ID] [P?] [Story] Description`",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_format_id_p_story_description",
+      "community": 5,
+      "norm_label": "format: `[id] [p?] [story] description`"
+    },
+    {
+      "label": "Path Conventions",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_path_conventions",
+      "community": 5,
+      "norm_label": "path conventions"
+    },
+    {
+      "label": "Phase 1: Setup (Shared Infrastructure)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure",
+      "community": 5,
+      "norm_label": "phase 1: setup (shared infrastructure)"
+    },
+    {
+      "label": "Phase 2: Foundational (Blocking Prerequisites)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites",
+      "community": 5,
+      "norm_label": "phase 2: foundational (blocking prerequisites)"
+    },
+    {
+      "label": "Phase 3: User Story 1 - Drop-in Accessible Button (Priority: P1) \ud83c\udfaf MVP",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "community": 5,
+      "norm_label": "phase 3: user story 1 - drop-in accessible button (priority: p1) \ud83c\udfaf mvp"
+    },
+    {
+      "label": "Tests for User Story 1",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_1",
+      "community": 5,
+      "norm_label": "tests for user story 1"
+    },
+    {
+      "label": "Implementation for User Story 1",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_1",
+      "community": 5,
+      "norm_label": "implementation for user story 1"
+    },
+    {
+      "label": "Phase 4: User Story 2 - Drop-in Accessible Text Input (Priority: P2)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "community": 5,
+      "norm_label": "phase 4: user story 2 - drop-in accessible text input (priority: p2)"
+    },
+    {
+      "label": "Tests for User Story 2",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L116",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_2",
+      "community": 5,
+      "norm_label": "tests for user story 2"
+    },
+    {
+      "label": "Implementation for User Story 2",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_2",
+      "community": 5,
+      "norm_label": "implementation for user story 2"
+    },
+    {
+      "label": "Phase 5: User Story 3 - Drop-in Badge & Checkbox (Priority: P3)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L138",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "community": 5,
+      "norm_label": "phase 5: user story 3 - drop-in badge & checkbox (priority: p3)"
+    },
+    {
+      "label": "Tests for User Story 3",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L147",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_tests_for_user_story_3",
+      "community": 5,
+      "norm_label": "tests for user story 3"
+    },
+    {
+      "label": "Implementation for User Story 3",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_3",
+      "community": 5,
+      "norm_label": "implementation for user story 3"
+    },
+    {
+      "label": "Phase 6: Polish & Cross-Cutting Concerns",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L173",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns",
+      "community": 5,
+      "norm_label": "phase 6: polish & cross-cutting concerns"
+    },
+    {
+      "label": "Dependencies & Execution Order",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "community": 5,
+      "norm_label": "dependencies & execution order"
+    },
+    {
+      "label": "Phase Dependencies",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L200",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_phase_dependencies",
+      "community": 5,
+      "norm_label": "phase dependencies"
+    },
+    {
+      "label": "User Story Dependencies",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L210",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_user_story_dependencies",
+      "community": 5,
+      "norm_label": "user story dependencies"
+    },
+    {
+      "label": "Within Each User Story",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_within_each_user_story",
+      "community": 5,
+      "norm_label": "within each user story"
+    },
+    {
+      "label": "Parallel Opportunities",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L224",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_parallel_opportunities",
+      "community": 5,
+      "norm_label": "parallel opportunities"
+    },
+    {
+      "label": "Parallel Example: Setup Phase",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L235",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_parallel_example_setup_phase",
+      "community": 5,
+      "norm_label": "parallel example: setup phase"
+    },
+    {
+      "label": "Implementation Strategy",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L246",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_implementation_strategy",
+      "community": 5,
+      "norm_label": "implementation strategy"
+    },
+    {
+      "label": "MVP First (User Story 1 Only)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L248",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only",
+      "community": 5,
+      "norm_label": "mvp first (user story 1 only)"
+    },
+    {
+      "label": "Incremental Delivery (the order this session follows)",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L256",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows",
+      "community": 5,
+      "norm_label": "incremental delivery (the order this session follows)"
+    },
+    {
+      "label": "Notes",
+      "file_type": "document",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L266",
+      "_origin": "ast",
+      "id": "specs_001_primitive_components_tasks_notes",
+      "community": 5,
+      "norm_label": "notes"
+    },
+    {
       "label": "badge.spec.ts",
       "file_type": "code",
       "source_file": "tests/e2e/badge.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_e2e_badge_spec",
       "community": 36,
-      "norm_label": "badge.spec.ts"
+      "norm_label": "badge.spec.ts",
+      "id": "tests_e2e_badge_spec"
     },
     {
       "label": "checkbox.spec.ts",
@@ -110,9 +1140,9 @@
       "source_file": "tests/e2e/checkbox.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_e2e_checkbox_spec",
       "community": 37,
-      "norm_label": "checkbox.spec.ts"
+      "norm_label": "checkbox.spec.ts",
+      "id": "tests_e2e_checkbox_spec"
     },
     {
       "label": "text-input.spec.ts",
@@ -145,246 +1175,6 @@
       "id": "tests_e2e_button_spec_tabuntilfocused"
     },
     {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "package.json",
-      "id": "package"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "name",
-      "id": "package_name"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "version",
-      "id": "package_version"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "private",
-      "id": "package_private"
-    },
-    {
-      "label": "description",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "description",
-      "id": "package_description"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "type",
-      "id": "package_type"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "scripts",
-      "id": "package_scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "dev",
-      "id": "package_scripts_dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "build",
-      "id": "package_scripts_build"
-    },
-    {
-      "label": "preview",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "preview",
-      "id": "package_scripts_preview"
-    },
-    {
-      "label": "test:e2e",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "test:e2e",
-      "id": "package_scripts_test_e2e"
-    },
-    {
-      "label": "audit:tokens",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "audit:tokens",
-      "id": "package_scripts_audit_tokens"
-    },
-    {
-      "label": "audit:contrast",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "audit:contrast",
-      "id": "package_scripts_audit_contrast"
-    },
-    {
-      "label": "typecheck",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "typecheck",
-      "id": "package_scripts_typecheck"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "devdependencies",
-      "id": "package_devdependencies"
-    },
-    {
-      "label": "@axe-core/playwright",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "@axe-core/playwright",
-      "id": "package_devdependencies_axe_core_playwright"
-    },
-    {
-      "label": "@playwright/test",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "@playwright/test",
-      "id": "package_devdependencies_playwright_test"
-    },
-    {
-      "label": "@types/node",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "@types/node",
-      "id": "package_devdependencies_types_node"
-    },
-    {
-      "label": "autoprefixer",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "autoprefixer",
-      "id": "package_devdependencies_autoprefixer"
-    },
-    {
-      "label": "postcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "postcss",
-      "id": "package_devdependencies_postcss"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "tailwindcss",
-      "id": "package_devdependencies_tailwindcss"
-    },
-    {
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "typescript",
-      "id": "package_devdependencies_typescript"
-    },
-    {
-      "label": "vite",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "vite",
-      "id": "package_devdependencies_vite"
-    },
-    {
-      "label": "wcag-contrast",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "wcag-contrast",
-      "id": "package_devdependencies_wcag_contrast"
-    },
-    {
       "label": "playwright.config.ts",
       "file_type": "code",
       "source_file": "playwright.config.ts",
@@ -413,276 +1203,6 @@
       "community": 31,
       "norm_label": "postcss.config.js",
       "id": "postcss_config"
-    },
-    {
-      "label": "audit-tokens.mjs",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "audit-tokens.mjs",
-      "id": "scripts_audit_tokens"
-    },
-    {
-      "label": "rootDir",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "rootdir",
-      "id": "scripts_audit_tokens_rootdir"
-    },
-    {
-      "label": "extractBalancedBlock()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "extractbalancedblock()",
-      "id": "scripts_audit_tokens_extractbalancedblock"
-    },
-    {
-      "label": "parseColorAllowlist()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "parsecolorallowlist()",
-      "id": "scripts_audit_tokens_parsecolorallowlist"
-    },
-    {
-      "label": "parseRadiusAllowlist()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L62",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "parseradiusallowlist()",
-      "id": "scripts_audit_tokens_parseradiusallowlist"
-    },
-    {
-      "label": "configSource",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L76",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "configsource",
-      "id": "scripts_audit_tokens_configsource"
-    },
-    {
-      "label": "allowedColorNames",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "allowedcolornames",
-      "id": "scripts_audit_tokens_allowedcolornames"
-    },
-    {
-      "label": "allowedRadiusClasses",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L78",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "allowedradiusclasses",
-      "id": "scripts_audit_tokens_allowedradiusclasses"
-    },
-    {
-      "label": "collectHtmlFiles()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L82",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "collecthtmlfiles()",
-      "id": "scripts_audit_tokens_collecthtmlfiles"
-    },
-    {
-      "label": "targets",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L97",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "targets",
-      "id": "scripts_audit_tokens_targets"
-    },
-    {
-      "label": "COLOR_PREFIXES",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L106",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "color_prefixes",
-      "id": "scripts_audit_tokens_color_prefixes"
-    },
-    {
-      "label": "NON_COLOR_SUFFIXES",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L126",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "non_color_suffixes",
-      "id": "scripts_audit_tokens_non_color_suffixes"
-    },
-    {
-      "label": "isStructuralSuffix()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L144",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "isstructuralsuffix()",
-      "id": "scripts_audit_tokens_isstructuralsuffix"
-    },
-    {
-      "label": "stripVariants()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L154",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "stripvariants()",
-      "id": "scripts_audit_tokens_stripvariants"
-    },
-    {
-      "label": "checkClass()",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L160",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "checkclass()",
-      "id": "scripts_audit_tokens_checkclass"
-    },
-    {
-      "label": "violations",
-      "file_type": "code",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L186",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "violations",
-      "id": "scripts_audit_tokens_violations"
-    },
-    {
-      "label": "check-contrast.mjs",
-      "file_type": "code",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 28,
-      "norm_label": "check-contrast.mjs",
-      "id": "scripts_check_contrast"
-    },
-    {
-      "label": "TOKENS",
-      "file_type": "code",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 28,
-      "norm_label": "tokens",
-      "id": "scripts_check_contrast_tokens"
-    },
-    {
-      "label": "PAIRINGS",
-      "file_type": "code",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 28,
-      "norm_label": "pairings",
-      "id": "scripts_check_contrast_pairings"
-    },
-    {
-      "label": "failures",
-      "file_type": "code",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L104",
-      "_origin": "ast",
-      "community": 28,
-      "norm_label": "failures",
-      "id": "scripts_check_contrast_failures"
-    },
-    {
-      "label": "checkbox.contract.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "checkbox.contract.md",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract"
-    },
-    {
-      "label": "Component Contract: Checkbox",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "component contract: checkbox",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
-    },
-    {
-      "label": "Markup contract",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "markup contract",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
-    },
-    {
-      "label": "Required attributes (Principle II + V gates)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "required attributes (principle ii + v gates)",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
-    },
-    {
-      "label": "Keyboard behavior (FR-006)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "keyboard behavior (fr-006)",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
-    },
-    {
-      "label": "Token allowlist used",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "token allowlist used",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
-    },
-    {
-      "label": "Acceptance mapping",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 18,
-      "norm_label": "acceptance mapping",
-      "id": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
     },
     {
       "label": "plan.md",
@@ -1555,266 +2075,6 @@
       "id": "specs_001_primitive_components_spec_assumptions"
     },
     {
-      "label": "tasks.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tasks.md",
-      "id": "specs_001_primitive_components_tasks"
-    },
-    {
-      "label": "Tasks: Design System Primitive Components",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tasks: design system primitive components",
-      "id": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components"
-    },
-    {
-      "label": "Format: `[ID] [P?] [Story] Description`",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "format: `[id] [p?] [story] description`",
-      "id": "specs_001_primitive_components_tasks_format_id_p_story_description"
-    },
-    {
-      "label": "Path Conventions",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "path conventions",
-      "id": "specs_001_primitive_components_tasks_path_conventions"
-    },
-    {
-      "label": "Phase 1: Setup (Shared Infrastructure)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase 1: setup (shared infrastructure)",
-      "id": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure"
-    },
-    {
-      "label": "Phase 2: Foundational (Blocking Prerequisites)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L50",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase 2: foundational (blocking prerequisites)",
-      "id": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites"
-    },
-    {
-      "label": "Phase 3: User Story 1 - Drop-in Accessible Button (Priority: P1) \ud83c\udfaf MVP",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L71",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase 3: user story 1 - drop-in accessible button (priority: p1) \ud83c\udfaf mvp",
-      "id": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp"
-    },
-    {
-      "label": "Tests for User Story 1",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L79",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tests for user story 1",
-      "id": "specs_001_primitive_components_tasks_tests_for_user_story_1"
-    },
-    {
-      "label": "Implementation for User Story 1",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L94",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "implementation for user story 1",
-      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_1"
-    },
-    {
-      "label": "Phase 4: User Story 2 - Drop-in Accessible Text Input (Priority: P2)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L108",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase 4: user story 2 - drop-in accessible text input (priority: p2)",
-      "id": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2"
-    },
-    {
-      "label": "Tests for User Story 2",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L116",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tests for user story 2",
-      "id": "specs_001_primitive_components_tasks_tests_for_user_story_2"
-    },
-    {
-      "label": "Implementation for User Story 2",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L123",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "implementation for user story 2",
-      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_2"
-    },
-    {
-      "label": "Phase 5: User Story 3 - Drop-in Badge & Checkbox (Priority: P3)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L138",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase 5: user story 3 - drop-in badge & checkbox (priority: p3)",
-      "id": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3"
-    },
-    {
-      "label": "Tests for User Story 3",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L147",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "tests for user story 3",
-      "id": "specs_001_primitive_components_tasks_tests_for_user_story_3"
-    },
-    {
-      "label": "Implementation for User Story 3",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L155",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "implementation for user story 3",
-      "id": "specs_001_primitive_components_tasks_implementation_for_user_story_3"
-    },
-    {
-      "label": "Phase 6: Polish & Cross-Cutting Concerns",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L173",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase 6: polish & cross-cutting concerns",
-      "id": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns"
-    },
-    {
-      "label": "Dependencies & Execution Order",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L193",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "dependencies & execution order",
-      "id": "specs_001_primitive_components_tasks_dependencies_execution_order"
-    },
-    {
-      "label": "Phase Dependencies",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L195",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "phase dependencies",
-      "id": "specs_001_primitive_components_tasks_phase_dependencies"
-    },
-    {
-      "label": "User Story Dependencies",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L205",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "user story dependencies",
-      "id": "specs_001_primitive_components_tasks_user_story_dependencies"
-    },
-    {
-      "label": "Within Each User Story",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L212",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "within each user story",
-      "id": "specs_001_primitive_components_tasks_within_each_user_story"
-    },
-    {
-      "label": "Parallel Opportunities",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L219",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "parallel opportunities",
-      "id": "specs_001_primitive_components_tasks_parallel_opportunities"
-    },
-    {
-      "label": "Parallel Example: Setup Phase",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L230",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "parallel example: setup phase",
-      "id": "specs_001_primitive_components_tasks_parallel_example_setup_phase"
-    },
-    {
-      "label": "Implementation Strategy",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L241",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "implementation strategy",
-      "id": "specs_001_primitive_components_tasks_implementation_strategy"
-    },
-    {
-      "label": "MVP First (User Story 1 Only)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L243",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "mvp first (user story 1 only)",
-      "id": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only"
-    },
-    {
-      "label": "Incremental Delivery (the order this session follows)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L251",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "incremental delivery (the order this session follows)",
-      "id": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows"
-    },
-    {
-      "label": "Notes",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L261",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "notes",
-      "id": "specs_001_primitive_components_tasks_notes"
-    },
-    {
       "label": "CLAUDE.md",
       "file_type": "document",
       "source_file": "CLAUDE.md",
@@ -1833,76 +2093,6 @@
       "community": 8,
       "norm_label": "graphify",
       "id": "claude_graphify"
-    },
-    {
-      "label": "button.contract.md",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "button.contract.md",
-      "id": "specs_001_primitive_components_contracts_button_contract"
-    },
-    {
-      "label": "Component Contract: Button",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "component contract: button",
-      "id": "specs_001_primitive_components_contracts_button_contract_component_contract_button"
-    },
-    {
-      "label": "Markup contract",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "markup contract",
-      "id": "specs_001_primitive_components_contracts_button_contract_markup_contract"
-    },
-    {
-      "label": "Required classes (Principle V gate)",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "required classes (principle v gate)",
-      "id": "specs_001_primitive_components_contracts_button_contract_required_classes_principle_v_gate"
-    },
-    {
-      "label": "Required attributes",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L45",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "required attributes",
-      "id": "specs_001_primitive_components_contracts_button_contract_required_attributes"
-    },
-    {
-      "label": "Token allowlist used",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L51",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "token allowlist used",
-      "id": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used"
-    },
-    {
-      "label": "Acceptance mapping",
-      "file_type": "document",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "acceptance mapping",
-      "id": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping"
     },
     {
       "label": "text-input.contract.md",
@@ -3135,6 +3325,1010 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_professional_design_system",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "readme_professional_design_system",
+      "target": "readme_component_gallery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "readme_professional_design_system",
+      "target": "readme_governance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "readme_professional_design_system",
+      "target": "readme_project_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "readme_professional_design_system",
+      "target": "readme_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "readme_professional_design_system",
+      "target": "readme_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "readme_professional_design_system",
+      "target": "readme_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_audit_contrast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_audit_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_prebuild",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_pretest_e2e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_preview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_typecheck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_verify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_autoprefixer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_axe_core_playwright",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_playwright_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_wcag_contrast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_allowedcolornames",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_allowedradiusclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_checkclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_collecthtmlfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_color_prefixes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_configsource",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_extractbalancedblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L148",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_isstructuralsuffix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_non_color_suffixes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_parsecolorallowlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_parseradiusallowlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_rootdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_stripvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_targets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens",
+      "target": "scripts_audit_tokens_violations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens_parsecolorallowlist",
+      "target": "scripts_audit_tokens_extractbalancedblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens_parseradiusallowlist",
+      "target": "scripts_audit_tokens_extractbalancedblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens_checkclass",
+      "target": "scripts_audit_tokens_isstructuralsuffix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/audit-tokens.mjs",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "scripts_audit_tokens_checkclass",
+      "target": "scripts_audit_tokens_stripvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_base_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_collecthtmlfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_compositeoverwhite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_covered_fg_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_failures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_htmlfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L168",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_non_color_text_suffixes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_pairings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_rootdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/check-contrast.mjs",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "scripts_check_contrast",
+      "target": "scripts_check_contrast_uncoveredtexttokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract",
+      "target": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_markup_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_required_attributes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_required_classes_principle_v_gate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
+      "target": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
+      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks",
+      "target": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_format_id_p_story_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_implementation_strategy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L266",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L235",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_parallel_example_setup_phase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_path_conventions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
+      "target": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
+      "target": "specs_001_primitive_components_tasks_tests_for_user_story_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_parallel_opportunities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_phase_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_user_story_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
+      "target": "specs_001_primitive_components_tasks_within_each_user_story",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L256",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_implementation_strategy",
+      "target": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/001-primitive-components/tasks.md",
+      "source_location": "L248",
+      "weight": 1.0,
+      "source": "specs_001_primitive_components_tasks_implementation_strategy",
+      "target": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/e2e/button.spec.ts",
       "source_location": "L10",
       "weight": 1.0,
@@ -3145,537 +4339,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_description"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_devdependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_private"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_scripts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_type"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_version"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_audit_contrast"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_audit_tokens"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_build"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_preview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_test_e2e"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_typecheck"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_autoprefixer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_axe_core_playwright"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_playwright_test"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_postcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vite"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_wcag_contrast"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "playwright.config.ts",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "playwright_config",
       "target": "playwright_config_breakpoints"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_allowedcolornames"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L78",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_allowedradiusclasses"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L160",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_checkclass"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_collecthtmlfiles"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L106",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_color_prefixes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_configsource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_extractbalancedblock"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L144",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_isstructuralsuffix"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L126",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_non_color_suffixes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_parsecolorallowlist"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_parseradiusallowlist"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_rootdir"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L154",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_stripvariants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L97",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_targets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L186",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens",
-      "target": "scripts_audit_tokens_violations"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens_parsecolorallowlist",
-      "target": "scripts_audit_tokens_extractbalancedblock"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L66",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens_parseradiusallowlist",
-      "target": "scripts_audit_tokens_extractbalancedblock"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L145",
-      "weight": 1.0,
-      "source": "scripts_audit_tokens_isstructuralsuffix",
-      "target": "scripts_audit_tokens_non_color_suffixes"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L176",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens_checkclass",
-      "target": "scripts_audit_tokens_isstructuralsuffix"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/audit-tokens.mjs",
-      "source_location": "L161",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_audit_tokens_checkclass",
-      "target": "scripts_audit_tokens_stripvariants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L104",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_check_contrast",
-      "target": "scripts_check_contrast_failures"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_check_contrast",
-      "target": "scripts_check_contrast_pairings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/check-contrast.mjs",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_check_contrast",
-      "target": "scripts_check_contrast_tokens"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_acceptance_mapping"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_keyboard_behavior_fr_006"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_markup_contract"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_required_attributes_principle_ii_v_gates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/checkbox.contract.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_checkbox_contract_component_contract_checkbox",
-      "target": "specs_001_primitive_components_contracts_checkbox_contract_token_allowlist_used"
     },
     {
       "relation": "contains",
@@ -4461,322 +5130,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks",
-      "target": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L193",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_dependencies_execution_order"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_format_id_p_story_description"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L241",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_implementation_strategy"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L261",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_notes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L230",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_parallel_example_setup_phase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_path_conventions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_1_setup_shared_infrastructure"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_2_foundational_blocking_prerequisites"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L138",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L173",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_tasks_design_system_primitive_components",
-      "target": "specs_001_primitive_components_tasks_phase_6_polish_cross_cutting_concerns"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L94",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
-      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_1"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_phase_3_user_story_1_drop_in_accessible_button_priority_p1_mvp",
-      "target": "specs_001_primitive_components_tasks_tests_for_user_story_1"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L123",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
-      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_2"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L116",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_phase_4_user_story_2_drop_in_accessible_text_input_priority_p2",
-      "target": "specs_001_primitive_components_tasks_tests_for_user_story_2"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L155",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
-      "target": "specs_001_primitive_components_tasks_implementation_for_user_story_3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L147",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_phase_5_user_story_3_drop_in_badge_checkbox_priority_p3",
-      "target": "specs_001_primitive_components_tasks_tests_for_user_story_3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L219",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_parallel_opportunities"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L195",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_phase_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L205",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_user_story_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L212",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_dependencies_execution_order",
-      "target": "specs_001_primitive_components_tasks_within_each_user_story"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L251",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_implementation_strategy",
-      "target": "specs_001_primitive_components_tasks_incremental_delivery_the_order_this_session_follows"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/tasks.md",
-      "source_location": "L243",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_tasks_implementation_strategy",
-      "target": "specs_001_primitive_components_tasks_mvp_first_user_story_1_only"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "claude",
       "target": "claude_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_button_contract",
-      "target": "specs_001_primitive_components_contracts_button_contract_component_contract_button"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
-      "target": "specs_001_primitive_components_contracts_button_contract_acceptance_mapping"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
-      "target": "specs_001_primitive_components_contracts_button_contract_markup_contract"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
-      "target": "specs_001_primitive_components_contracts_button_contract_required_attributes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
-      "target": "specs_001_primitive_components_contracts_button_contract_required_classes_principle_v_gate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "specs/001-primitive-components/contracts/button.contract.md",
-      "source_location": "L51",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "specs_001_primitive_components_contracts_button_contract_component_contract_button",
-      "target": "specs_001_primitive_components_contracts_button_contract_token_allowlist_used"
     },
     {
       "relation": "contains",
@@ -6321,5 +6680,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "7c468361cc36a8eed779cd5e65a699acc0b80173"
+  "built_at_commit": "26e3fe53f3693f03f02663851bde518aeb7fecc8"
 }

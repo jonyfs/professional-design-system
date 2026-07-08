@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-08)
 
 ## Corpus Check
-- 63 files · ~49,238 words
+- 65 files · ~53,479 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 276 nodes · 309 edges · 36 communities (25 shown, 11 thin omitted)
+- 278 nodes · 309 edges · 38 communities (27 shown, 11 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `070540bf`
+- Built from commit: `7c468361`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -79,7 +79,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (36 total, 11 thin omitted)
+## Communities (38 total, 11 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13

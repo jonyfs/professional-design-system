@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-08)
 
 ## Corpus Check
-- 65 files · ~53,479 words
+- 66 files · ~54,427 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 278 nodes · 309 edges · 38 communities (27 shown, 11 thin omitted)
+- 297 nodes · 326 edges · 39 communities (28 shown, 11 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7c468361`
+- Built from commit: `26e3fe53`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,6 +44,7 @@
 - check-contrast.mjs
 - a11y-helper.ts
 - playwright.config.ts
+- Professional Design System
 
 ## God Nodes (most connected - your core abstractions)
 1. `speckit-tasks Skill` - 15 edges
@@ -51,11 +52,11 @@
 3. `Tasks: Design System Primitive Components` - 13 edges
 4. `speckit-implement Skill` - 13 edges
 5. `compilerOptions` - 12 edges
-6. `speckit-specify Skill` - 11 edges
-7. `speckit-analyze Skill` - 10 edges
-8. `.specify/extensions.yml (Extension Hooks Config)` - 10 edges
-9. `.specify/memory/constitution.md (Project Constitution)` - 10 edges
-10. `speckit-converge Skill` - 10 edges
+6. `scripts` - 11 edges
+7. `speckit-specify Skill` - 11 edges
+8. `speckit-analyze Skill` - 10 edges
+9. `.specify/extensions.yml (Extension Hooks Config)` - 10 edges
+10. `.specify/memory/constitution.md (Project Constitution)` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `speckit-plan Skill` --references--> `CLAUDE.md (Coding Agent Context File)`  [EXTRACTED]
@@ -79,7 +80,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (38 total, 11 thin omitted)
+## Communities (39 total, 11 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -138,11 +139,11 @@ Cohesion: 0.33
 Nodes (5): Acceptance mapping, Component Contract: Badge, Long-label handling (Edge Case), Markup contract (one per variant), Required variant → token mapping (FR-003, exactly four variants)
 
 ### Community 25 - "devDependencies"
-Cohesion: 0.08
-Nodes (23): description, devDependencies, autoprefixer, @axe-core/playwright, @playwright/test, postcss, tailwindcss, @types/node (+15 more)
+Cohesion: 0.07
+Nodes (26): description, devDependencies, autoprefixer, @axe-core/playwright, @playwright/test, postcss, tailwindcss, @types/node (+18 more)
 
 ### Community 26 - "audit-tokens.mjs"
-Cohesion: 0.17
+Cohesion: 0.16
 Nodes (14): allowedColorNames, allowedRadiusClasses, checkClass(), COLOR_PREFIXES, configSource, extractBalancedBlock(), isStructuralSuffix(), NON_COLOR_SUFFIXES (+6 more)
 
 ### Community 27 - "compilerOptions"
@@ -150,19 +151,23 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, isolatedModules, lib, module, moduleResolution, noEmit, resolveJsonModule (+5 more)
 
 ### Community 28 - "check-contrast.mjs"
-Cohesion: 0.50
-Nodes (3): failures, PAIRINGS, TOKENS
+Cohesion: 0.17
+Nodes (9): BASE_TOKENS, COVERED_FG_TOKENS, failures, htmlFiles, NON_COLOR_TEXT_SUFFIXES, PAIRINGS, rootDir, TOKENS (+1 more)
+
+### Community 38 - "Professional Design System"
+Cohesion: 0.25
+Nodes (7): Component gallery, Governance, Professional Design System, Project structure, Requirements, Scripts, Setup
 
 ## Knowledge Gaps
-- **151 isolated node(s):** `name`, `version`, `private`, `description`, `type` (+146 more)
+- **167 isolated node(s):** `Requirements`, `Setup`, `Scripts`, `Component gallery`, `Project structure` (+162 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _151 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Requirements`, `Setup`, `Scripts` to the rest of the system?**
+  _167 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
@@ -172,6 +177,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Feature Specification: Design System Primitive Components` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
