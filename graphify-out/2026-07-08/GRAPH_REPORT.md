@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-08)
 
 ## Corpus Check
-- 65 files · ~53,479 words
+- 76 files · ~74,242 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 278 nodes · 309 edges · 38 communities (27 shown, 11 thin omitted)
+- 395 nodes · 417 edges · 46 communities (35 shown, 11 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7c468361`
+- Built from commit: `f4b9aa46`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,6 +44,14 @@
 - check-contrast.mjs
 - a11y-helper.ts
 - playwright.config.ts
+- Specification Quality Checklist: Form Primitives — Round 2
+- Quickstart: Form Primitives — Round 2
+- Component Contract: Toggle / Switch
+- Component Contract: Radio
+- Component Contract: Select
+- Phase 0 Research: Form Primitives — Round 2
+- Phase 1 Data Model: Form Primitives — Round 2
+- Tasks: Form Primitives — Round 2
 
 ## God Nodes (most connected - your core abstractions)
 1. `speckit-tasks Skill` - 15 edges
@@ -51,11 +59,11 @@
 3. `Tasks: Design System Primitive Components` - 13 edges
 4. `speckit-implement Skill` - 13 edges
 5. `compilerOptions` - 12 edges
-6. `speckit-specify Skill` - 11 edges
-7. `speckit-analyze Skill` - 10 edges
-8. `.specify/extensions.yml (Extension Hooks Config)` - 10 edges
-9. `.specify/memory/constitution.md (Project Constitution)` - 10 edges
-10. `speckit-converge Skill` - 10 edges
+6. `scripts` - 11 edges
+7. `speckit-specify Skill` - 11 edges
+8. `Tasks: Form Primitives — Round 2` - 10 edges
+9. `speckit-analyze Skill` - 10 edges
+10. `.specify/extensions.yml (Extension Hooks Config)` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `speckit-plan Skill` --references--> `CLAUDE.md (Coding Agent Context File)`  [EXTRACTED]
@@ -79,7 +87,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (38 total, 11 thin omitted)
+## Communities (46 total, 11 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -94,8 +102,8 @@ Cohesion: 0.16
 Nodes (34): speckit-agent-context-update Skill, speckit-analyze Skill, speckit-checklist Skill, speckit-clarify Skill, speckit-constitution Skill, speckit-converge Skill, speckit-implement Skill, speckit-plan Skill (+26 more)
 
 ### Community 3 - "Agent Context Extension"
-Cohesion: 0.10
-Nodes (19): Alignment Grid & Spacing, Application & Navigation, Base Semantic Palette, Component Catalog & Tailwind UI Patterns, Core Principles, Data Display & Listings, Design Foundations: Tokens, Typography & Grid, Forms, Validation & Inputs (+11 more)
+Cohesion: 0.07
+Nodes (27): Component gallery, Governance, Professional Design System, Project structure, Requirements, Scripts, Setup, Visual regression baselines (cross-platform) (+19 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -138,11 +146,11 @@ Cohesion: 0.33
 Nodes (5): Acceptance mapping, Component Contract: Badge, Long-label handling (Edge Case), Markup contract (one per variant), Required variant → token mapping (FR-003, exactly four variants)
 
 ### Community 25 - "devDependencies"
-Cohesion: 0.08
-Nodes (23): description, devDependencies, autoprefixer, @axe-core/playwright, @playwright/test, postcss, tailwindcss, @types/node (+15 more)
+Cohesion: 0.07
+Nodes (26): description, devDependencies, autoprefixer, @axe-core/playwright, @playwright/test, postcss, tailwindcss, @types/node (+18 more)
 
 ### Community 26 - "audit-tokens.mjs"
-Cohesion: 0.17
+Cohesion: 0.16
 Nodes (14): allowedColorNames, allowedRadiusClasses, checkClass(), COLOR_PREFIXES, configSource, extractBalancedBlock(), isStructuralSuffix(), NON_COLOR_SUFFIXES (+6 more)
 
 ### Community 27 - "compilerOptions"
@@ -150,28 +158,60 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, isolatedModules, lib, module, moduleResolution, noEmit, resolveJsonModule (+5 more)
 
 ### Community 28 - "check-contrast.mjs"
-Cohesion: 0.50
-Nodes (3): failures, PAIRINGS, TOKENS
+Cohesion: 0.15
+Nodes (10): BASE_TOKENS, COVERED_FG_TOKENS, failures, htmlFiles, NON_COLOR_TEXT_SUFFIXES, PAIRINGS, RING_PAIRINGS, rootDir (+2 more)
+
+### Community 38 - "Specification Quality Checklist: Form Primitives — Round 2"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Form Primitives — Round 2, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 40 - "Quickstart: Form Primitives — Round 2"
+Cohesion: 0.22
+Nodes (8): Discoverability check (SC-001), Generating new visual regression baselines (read this before running --update-snapshots), Manual validation scenarios (traceable to spec.md), Prerequisites, Quickstart: Form Primitives — Round 2, Run the component gallery, Run the full test suite, Validate token discipline and AAA contrast (Principle IV / II gates)
+
+### Community 41 - "Component Contract: Toggle / Switch"
+Cohesion: 0.25
+Nodes (7): Acceptance mapping, Component Contract: Toggle / Switch, Keyboard behavior (FR-005), Markup contract, Required attributes, Required classes (state coverage, FR-003), Token allowlist used
+
+### Community 42 - "Component Contract: Radio"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Radio, Keyboard behavior (FR-005), Markup contract (group of 3), Required attributes (Principle II + V gates, FR-001), Token allowlist used
+
+### Community 43 - "Component Contract: Select"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Select, Markup contract (default/focus), Markup contract (error state), Required attributes (Principle II gate), Token allowlist used
+
+### Community 44 - "Phase 0 Research: Form Primitives — Round 2"
+Cohesion: 0.25
+Nodes (7): Decision: Radio reuses Checkbox's exact token vocabulary — verified, not assumed, Decision: `rounded-full` ratified as a border-radius token (constitution v1.3.4), Decision: Select reuses Text Input's exact token vocabulary — verified, Decision: Toggle gets a `ring-neutral-500` boundary — a real gap found, not silently reproduced, Decision: Visual regression baselines generated only via CI, never locally, Phase 0 Research: Form Primitives — Round 2, Resolved unknowns
+
+### Community 45 - "Phase 1 Data Model: Form Primitives — Round 2"
+Cohesion: 0.33
+Nodes (5): Cross-cutting invariants (all three components), Phase 1 Data Model: Form Primitives — Round 2, Radio Group, Select, Toggle
+
+### Community 46 - "Tasks: Form Primitives — Round 2"
+Cohesion: 0.09
+Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+14 more)
 
 ## Knowledge Gaps
-- **151 isolated node(s):** `name`, `version`, `private`, `description`, `type` (+146 more)
+- **236 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+231 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `name`, `version`, `private` to the rest of the system?**
-  _151 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
+  _236 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Feature Specification: Design System Primitive Components` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
