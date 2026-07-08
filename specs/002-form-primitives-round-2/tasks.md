@@ -3,7 +3,7 @@
 **Input**: Design documents from `/specs/002-form-primitives-round-2/`
 
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/,
-quickstart.md, constitution.md (v1.3.3)
+quickstart.md, constitution.md (v1.3.4)
 
 **Tests**: Included — Playwright visual regression + `@axe-core/playwright`
 accessibility scans per component, same pattern as feature 001.
@@ -43,7 +43,10 @@ keyboard operation works without any other component present.
       320/768/1024/1440px for default/checked/focus-visible/disabled states,
       an axe scan (via `tests/e2e/a11y-helper.ts`), a mutual-exclusivity
       assertion (selecting one option deselects the previously-selected one
-      in the same `name` group), and a long-label wrap assertion (Edge Case)
+      in the same `name` group), an arrow-key navigation assertion (pressing
+      Down/Right from a focused option moves focus AND selection to the next
+      option in the group, per AC2 — native `<input type="radio">` grouped
+      behavior), and a long-label wrap assertion (Edge Case)
 
 ### Implementation for User Story 1
 
@@ -75,9 +78,13 @@ correctly in isolation, fully keyboard-operable.
 
 - [ ] T005 [P] [US2] Write `tests/e2e/select.spec.ts`: visual regression at
       all four breakpoints for default/focus/error/disabled states, an axe
-      scan, and an assertion that the error state sets `aria-invalid="true"`
+      scan, an assertion that the error state sets `aria-invalid="true"`
       + `aria-describedby` pointing at a visible `text-error-strong` message
-      that remains present even with no option selected (Edge Case)
+      that remains present even with no option selected (Edge Case), and a
+      keyboard assertion for AC3 (Tab-focus the select, press ArrowDown,
+      confirm `.value` changes to the next `<option>` — native `<select>`
+      behavior, asserted rather than assumed, per this feature's "verify,
+      don't assume" precedent)
 
 ### Implementation for User Story 2
 
@@ -119,7 +126,9 @@ state all render and behave correctly, Space/click toggles when focused.
 - [ ] T011 [US3] Wire the Toggle partial into `index.html`'s gallery
 - [ ] T012 [US3] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0 — `RING_PAIRINGS`
-      already covers the new `ring-neutral-500` claim)
+      already covers the new `ring-neutral-500` claim, and `rounded-full`
+      is now a ratified token per the constitution v1.3.4 amendment, so
+      `audit-tokens.mjs` accepts it)
 
 **Checkpoint**: All three user stories (Radio, Select, Toggle) are
 independently functional.

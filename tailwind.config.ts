@@ -44,6 +44,7 @@ export default {
         sm: "0.25rem", // 4px — inputs/checkboxes/small tags
         md: "0.5rem", // 8px — buttons/dropdowns/secondary navigation
         lg: "0.75rem", // 12px — cards/modals/panels/primary containers
+        full: "9999px", // pills/circles — toggle tracks/dots, avatars (constitution v1.3.4)
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],

@@ -180,11 +180,12 @@ correctly, and that Space/click toggles the state when focused.
 - Components target both desktop and mobile viewports using Tailwind's
   responsive utilities; no dedicated native-app variant is in scope.
 - The color, typography, and spacing tokens ratified in the project
-  constitution (v1.3.3) are final for this feature; no new design tokens
-  are anticipated, but any AAA-contrast gap discovered during
-  `/speckit-analyze` will be remediated the same way feature 001's was
-  (constitution amendment before implementation), not worked around in
-  component markup.
+  constitution (v1.3.4) are final for this feature; no new design tokens
+  are anticipated, but any ratified-token gap discovered during
+  `/speckit-analyze` — color/AAA-contrast, border-radius, or otherwise —
+  will be remediated the same way feature 001's Button/Badge fixes and
+  this feature's own `rounded-full` addition were (constitution amendment
+  before implementation), not worked around in component markup.
 - No specific browser support matrix was provided; the components target
   the current stable versions of evergreen browsers (Chrome, Firefox,
   Safari, Edge).

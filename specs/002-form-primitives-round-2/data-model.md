@@ -25,6 +25,7 @@ be `checked` at a time — enforced natively, not by application logic
 | `options` | list of strings | any | Native `<option>` elements |
 | `errorMessage` | string \| null | any | Rendered directly below the select when `state === 'error'` |
 | `ariaInvalid` | boolean | derived from `state === 'error'` | FR-006 |
+| `ariaDescribedBy` | string \| null | the error message element's `id` | Required alongside `ariaInvalid` — links the select to its error text for assistive tech, per `select.contract.md`'s Required Attributes table |
 
 **Validation rules**: when `errorMessage` is present, `aria-invalid="true"`
 and an error-token ring MUST both be present (FR-002, FR-006). The
@@ -44,9 +45,12 @@ combine both states and remain non-interactive (Edge Case).
 
 ## Cross-cutting invariants (all three components)
 
-- Every token referenced MUST exist in the constitution's Base Semantic
-  Palette table — no new tokens are introduced by this feature (verified in
-  research.md, not assumed).
+- Every color token referenced MUST exist in the constitution's Base
+  Semantic Palette table — no new *color* tokens are introduced by this
+  feature (verified in research.md, not assumed). One new *radius* token
+  (`rounded-full`, for Toggle's pill track/dot) was needed and ratified via
+  constitution amendment to v1.3.4 before implementation — caught by a
+  third `/speckit-analyze` pass, not assumed away either.
 - Every text/background pairing MUST pass WCAG 2.2 AAA contrast (FR-007,
   SC-003) — already covered by `scripts/check-contrast.mjs`'s existing
   `PAIRINGS` (no new entries needed; see research.md).

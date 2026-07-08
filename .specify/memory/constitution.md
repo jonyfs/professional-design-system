@@ -1,4 +1,34 @@
 <!--
+SYNC IMPACT REPORT (v1.3.4 — see below for the v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.3.3 → 1.3.4
+Modified principles: None
+Added sections:
+  - Alignment Grid & Spacing → Border radius: adds `rounded-full` (9999px)
+    as a ratified token for pills/circles (toggle tracks/dots, avatars),
+    alongside the existing sm/md/lg scale.
+  - tailwind.config.ts: `borderRadius.full = "9999px"`, so
+    `scripts/audit-tokens.mjs`'s dynamically-derived allowlist accepts it.
+Rationale: a third `/speckit-analyze` pass on feature
+002-form-primitives-round-2 (with tasks.md now present) found that
+contracts/toggle.contract.md's `rounded-full` track/dot styling had no
+ratified radius token backing it — the constitution's border-radius scale
+and tailwind.config.ts's borderRadius block only defined sm/md/lg. This
+would have failed scripts/audit-tokens.mjs (Principle IV) the moment the
+contract was implemented, contradicting plan.md's G3 "PASS" claim and
+tasks.md's T012 "expected: 0" note — caught before any component code was
+written. `rounded-full` is a categorically different, well-understood
+Tailwind keyword (fully rounded, not a step on the 4/8/12px scale) already
+implied by the existing "avatars" prose in the Data Display section, so
+ratifying it formally is a natural completion of the existing scale, not a
+new design direction. This is a PATCH bump: one new token value, no
+principle changed, no existing token altered.
+Templates requiring updates (this PATCH):
+  ✅ tailwind.config.ts — borderRadius.full added
+  ⚠ specs/002-form-primitives-round-2/plan.md — G3 row should note this
+    amendment once applied
+  ⚠ specs/002-form-primitives-round-2/tasks.md — T012 note should
+    reference the resolved gap
+
 SYNC IMPACT REPORT (v1.3.3 — see below for the v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.3.2 → 1.3.3
 Modified principles: None
@@ -293,7 +323,9 @@ other non-text decoration.
   internal padding of small badges).
 - Border radius: `rounded-sm` (4px, inputs/checkboxes/small tags), `rounded-md`
   (8px, buttons/dropdowns/secondary navigation), `rounded-lg` (12px, cards/
-  modals/panels/primary containers).
+  modals/panels/primary containers), `rounded-full` (9999px, pills/circles —
+  toggle tracks and dots, avatars; any fully-rounded element, not a step on
+  the 4/8/12px scale above).
 
 ## Component Catalog & Tailwind UI Patterns
 
@@ -419,4 +451,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.3.3 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
+**Version**: 1.3.4 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08

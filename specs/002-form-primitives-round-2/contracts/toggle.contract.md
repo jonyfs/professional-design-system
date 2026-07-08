@@ -77,9 +77,12 @@ wrapping `<label>` — no custom JS required.
 ## Token allowlist used
 
 `bg-neutral-200`, `bg-brand`, `ring-neutral-500`, `bg-white`,
-`text-neutral-900`. No raw palette classes permitted (FR-004). No new
-tokens — `neutral-500` and `brand` are both part of the existing ratified
-palette.
+`text-neutral-900`, `rounded-full`. No raw palette classes permitted
+(FR-004). All *color* tokens used here were already ratified (no new color
+token). `rounded-full` was **not** ratified when this contract was first
+drafted — `/speckit-analyze` caught the gap before implementation and it
+was added to the border-radius scale via constitution amendment to v1.3.4
+(see research.md).
 
 ## Acceptance mapping
 

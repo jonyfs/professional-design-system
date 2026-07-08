@@ -83,6 +83,33 @@ catalog pattern) — rejected per the measurement above; shadows have no
 WCAG-measurable contrast guarantee and render inconsistently across
 browsers/OS-level shadow rendering.
 
+## Decision: `rounded-full` ratified as a border-radius token (constitution v1.3.4)
+
+**Rationale**: A third `/speckit-analyze` pass (after `tasks.md` existed)
+found that `toggle.contract.md`'s pill-shaped track and circular dot both
+require `rounded-full`, but the constitution's ratified border-radius scale
+— and `tailwind.config.ts`'s `borderRadius` extend block, which
+`scripts/audit-tokens.mjs` derives its allowlist from — only defined
+`sm`/`md`/`lg`. This would have failed the Principle IV gate the moment the
+contract was implemented, contradicting this plan's own G3 "PASS" claim.
+This is a genuinely different gap from the color-token verification earlier
+in this document — that covered color allowlist entries, not radius.
+
+**Decision**: Amend the constitution to v1.3.4, adding `rounded-full`
+(9999px) to the ratified radius scale alongside sm/md/lg, and add
+`borderRadius.full = "9999px"` to `tailwind.config.ts`. `rounded-full` is a
+categorically different, universally-understood Tailwind keyword (fully
+rounded, not a step on the 4/8/12px scale) already implied by the existing
+"avatars" prose in the Data Display section — ratifying it formally
+completes the existing scale rather than introducing a new design
+direction.
+
+**Alternatives considered**: Restyling Toggle to avoid `rounded-full` (e.g.
+a large but finite `rounded-lg` track) — rejected; a pill-shaped switch is
+the universally-recognized pattern for this control, and approximating it
+with a finite radius would look visibly wrong at the track's rounded ends
+for no real benefit, given the token addition is low-risk and reusable.
+
 ## Decision: Visual regression baselines generated only via CI, never locally
 
 **Rationale**: Feature 001's CI run failed twice before succeeding — first
