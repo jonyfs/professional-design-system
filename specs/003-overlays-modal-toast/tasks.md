@@ -47,7 +47,7 @@ returns to the trigger — all without any other component present.
 
 > Write first; they MUST fail until T002-T004 exist.
 
-- [ ] T001 [P] [US1] Write `tests/e2e/modal.spec.ts`: visual regression at
+- [x] T001 [P] [US1] Write `tests/e2e/modal.spec.ts`: visual regression at
       320/768/1024/1440px for closed/open/empty-content states, an axe scan,
       a Tab-cycle-containment assertion (Tab repeatedly from the last
       focusable element inside the open dialog never reaches the trigger
@@ -64,7 +64,7 @@ returns to the trigger — all without any other component present.
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Add `.modal-dialog`, `.modal-panel`, `.close-icon-btn` to
+- [x] T002 [US1] Add `.modal-dialog`, `.modal-panel`, `.close-icon-btn` to
       `src/styles/tailwind.css`'s `@layer components` per
       `modal.contract.md` and `data-model.md`'s "Full utility composition"
       section (including the
@@ -72,19 +72,19 @@ returns to the trigger — all without any other component present.
       rule — matching the constitution's ratified Modals pattern exactly)
       and `close-icon-btn`'s full resting/hover/active/focus-visible/
       disabled state table
-- [ ] T003 [US1] Create `src/scripts/overlay.js` exporting
+- [x] T003 [US1] Create `src/scripts/overlay.js` exporting
       `initDialogTriggers()` per `modal.contract.md`'s Behavior wiring
       section (open via `showModal()` on `[data-dialog-trigger]` click,
       close on backdrop click via `event.target === dialog`)
-- [ ] T004 [US1] Implement `src/components/modal/modal.html` per
+- [x] T004 [US1] Implement `src/components/modal/modal.html` per
       `modal.contract.md` (primary interactive demo with Cancel/Delete
       buttons and close icon) plus the `tabindex="-1"` empty-content demo
       variant from the contract's Edge Case section; import
       `overlay.js` as a module and call `initDialogTriggers()` on load
-- [ ] T005 [US1] Wire the Modal partial into `index.html`'s gallery as a
+- [x] T005 [US1] Wire the Modal partial into `index.html`'s gallery as a
       new card linking to the standalone page (same pattern as prior
       features' cards)
-- [ ] T006 [US1] Run `npm run audit:tokens` and `npm run audit:contrast`;
+- [x] T006 [US1] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0 — `close-icon-btn`'s
       `text-neutral-500`/`text-neutral-600` are covered via the
       `ICON_FILL_TEXT_TOKENS`/`RING_PAIRINGS` mechanism added during
@@ -108,7 +108,7 @@ button removes it entirely from the DOM.
 
 ### Tests for User Story 2
 
-- [ ] T007 [P] [US2] Write `tests/e2e/toast.spec.ts`: visual regression at
+- [x] T007 [P] [US2] Write `tests/e2e/toast.spec.ts`: visual regression at
       all four breakpoints for the success/error/info variants, an axe
       scan, a `role="status"`/`aria-live="polite"` presence assertion, a
       focus-not-stolen assertion (focus a form-like element, trigger/render
@@ -118,7 +118,7 @@ button removes it entirely from the DOM.
 
 ### Implementation for User Story 2
 
-- [ ] T008 [US2] Add `.toast`, `.toast-stack` to `src/styles/tailwind.css`'s
+- [x] T008 [US2] Add `.toast`, `.toast-stack` to `src/styles/tailwind.css`'s
       `@layer components` per `toast.contract.md` and `data-model.md`
       (`bg-white shadow-lg ring-1 ring-neutral-900/5` surface; variant
       icon colors — `text-success-strong`/`text-error-strong`/
@@ -126,17 +126,17 @@ button removes it entirely from the DOM.
       baked into `.toast` itself, since they vary per instance); reuse the
       existing `close-icon-btn` class for the dismiss button (no new
       `toast-close-btn` class — consolidated per `/speckit-analyze`)
-- [ ] T009 [US2] Create `src/scripts/toast.js` exporting
+- [x] T009 [US2] Create `src/scripts/toast.js` exporting
       `initToastDismissal()` per `toast.contract.md`'s Behavior wiring
       section (a `click` listener per `[data-testid='toast-close']`
       removing its closest `[role="status"]` ancestor)
-- [ ] T010 [US2] Implement `src/components/toast/toast.html` per
+- [x] T010 [US2] Implement `src/components/toast/toast.html` per
       `toast.contract.md` (success/error/info variants stacked in a
       `.toast-stack` container per the Edge Case — multiple simultaneous
       toasts); import `toast.js` as a module and call
       `initToastDismissal()` on load
-- [ ] T011 [US2] Wire the Toast partial into `index.html`'s gallery
-- [ ] T012 [US2] Run `npm run audit:tokens` and `npm run audit:contrast`;
+- [x] T011 [US2] Wire the Toast partial into `index.html`'s gallery
+- [x] T012 [US2] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0)
 
 **Checkpoint**: User Stories 1 and 2 both work independently.
@@ -156,7 +156,7 @@ focus-return behavior as Modal, with a slide-in-from-edge animation.
 
 ### Tests for User Story 3
 
-- [ ] T013 [P] [US3] Write `tests/e2e/slide-over.spec.ts`: visual
+- [x] T013 [P] [US3] Write `tests/e2e/slide-over.spec.ts`: visual
       regression at all four breakpoints for closed/open/empty-content
       states, an axe scan, the same Tab-cycle-containment, Shift+Tab-wrap,
       Escape-closes-with-focus-return, backdrop-click-closes-with-
@@ -168,22 +168,22 @@ focus-return behavior as Modal, with a slide-in-from-edge animation.
 
 ### Implementation for User Story 3
 
-- [ ] T014 [US3] Add `.slide-over-dialog`, `.slide-over-panel` to
+- [x] T014 [US3] Add `.slide-over-dialog`, `.slide-over-panel` to
       `src/styles/tailwind.css`'s `@layer components` per
       `slide-over.contract.md` and `data-model.md`'s "Full utility
       composition" section (right-edge anchored positioning, `translate-x`
       slide-in transition, plus the `.slide-over-dialog::backdrop`
       `theme()` rule matching Modal's exactly — `neutral-500/75%`); the
       close button reuses `close-icon-btn` verbatim
-- [ ] T015 [US3] Implement `src/components/slide-over/slide-over.html` per
+- [x] T015 [US3] Implement `src/components/slide-over/slide-over.html` per
       `slide-over.contract.md` (primary interactive demo) plus the
       `tabindex="-1"` empty-content demo variant from the contract's Edge
       Case section; import `overlay.js` and call `initDialogTriggers()` —
       no new script needed, `overlay.js` is already generic over any
       `[data-dialog-trigger]`/`<dialog>` pair (research.md: "no second
       focus-trap mechanism, no code duplication beyond CSS")
-- [ ] T016 [US3] Wire the Slide-over partial into `index.html`'s gallery
-- [ ] T017 [US3] Run `npm run audit:tokens` and `npm run audit:contrast`;
+- [x] T016 [US3] Wire the Slide-over partial into `index.html`'s gallery
+- [x] T017 [US3] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0 — no new tokens)
 
 **Checkpoint**: All three user stories (Modal, Toast, Slide-over) are
@@ -197,7 +197,7 @@ independently functional.
 plus the project-wide CSP addition this feature's first `<script>` tags
 trigger (research.md's I1 correction).
 
-- [ ] T018 Add a `<meta http-equiv="Content-Security-Policy" content=
+- [x] T018 Add a `<meta http-equiv="Content-Security-Policy" content=
       "default-src 'self'; script-src 'self'; style-src 'self';
       object-src 'none'; base-uri 'self';">` tag to every HTML page's
       `<head>` — `index.html` and all ten component pages (the seven from
@@ -206,7 +206,7 @@ trigger (research.md's I1 correction).
       so `style-src 'self'` needs no `'unsafe-inline'` exception; confirm
       `npm run dev`/`npm run build` output still loads and functions
       correctly (module scripts are same-origin, satisfying `script-src 'self'`)
-- [ ] T019 Run `npm run build && npm run test:e2e` for the full suite (all
+- [x] T019 Run `npm run build && npm run test:e2e` for the full suite (all
       ten component specs — seven from features 001/002 plus Modal/Toast/
       Slide-over); confirm every visual regression, axe scan, and
       keyboard-navigation assertion passes, including with the new CSP
@@ -224,7 +224,7 @@ trigger (research.md's I1 correction).
       a scratch page; record whether it took under 2 minutes. **NOT DONE
       by an AI agent** — requires a human tester, same outstanding status
       as features 001/002's equivalent items
-- [ ] T022 [P] Manual QA: walk through quickstart.md's 9 numbered manual
+- [x] T022 [P] Manual QA: walk through quickstart.md's 9 numbered manual
       validation scenarios end to end and record pass/fail for each. If no
       interactive browser session is available in this session (as with
       features 001/002), substitute with explicit confirmation that each
@@ -237,7 +237,7 @@ trigger (research.md's I1 correction).
       `audit-tokens.mjs`/`check-contrast.mjs` diffs using the
       code-reviewer agent; address any CRITICAL/HIGH findings before
       considering the feature done
-- [ ] T024 [P] Update `README.md`'s project structure section and
+- [x] T024 [P] Update `README.md`'s project structure section and
       component list to include Modal/Slide-over/Toast, `src/scripts/`,
       and `specs/003-overlays-modal-toast/`, and bump any stale version/
       component-count references — verify with `grep`, not assumption,

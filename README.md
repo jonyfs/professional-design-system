@@ -1,9 +1,13 @@
 # Professional Design System
 
 Accessible HTML + Tailwind CSS primitive components (Button, Text Input, Badge,
-Checkbox, Radio, Select, Toggle/Switch), built exclusively on the semantic
-design tokens ratified in
+Checkbox, Radio, Select, Toggle/Switch, Modal, Toast, Slide-over), built
+exclusively on the semantic design tokens ratified in
 [`.specify/memory/constitution.md`](.specify/memory/constitution.md) (v1.3.4).
+Modal/Slide-over use native `<dialog>` for focus-trapped overlays; Toast
+and Modal/Slide-over's dismiss wiring are this project's only JavaScript
+(`src/scripts/`), everything else is pure HTML + Tailwind. A minimal
+project-wide Content-Security-Policy is set via `<meta>` tag on every page.
 
 ## Requirements
 
@@ -61,6 +65,9 @@ feature's "Independent Test" requirement.
 ```text
 src/
 ├── styles/tailwind.css       # @tailwind directives + shared @layer components
+├── scripts/
+│   ├── overlay.js            # Modal/Slide-over: showModal()/backdrop-click/focus-return wiring
+│   └── toast.js               # Toast: dismiss-button wiring (no dialog/focus-trap semantics)
 └── components/
     ├── button/button.html
     ├── text-input/text-input.html
@@ -68,13 +75,17 @@ src/
     ├── checkbox/checkbox.html
     ├── radio/radio.html
     ├── select/select.html
-    └── toggle/toggle.html
+    ├── toggle/toggle.html
+    ├── modal/modal.html
+    ├── toast/toast.html
+    └── slide-over/slide-over.html
 scripts/
-├── audit-tokens.mjs           # Principle IV gate (color + border-radius)
-└── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings)
+├── audit-tokens.mjs           # Principle IV gate (color + border-radius; scans HTML + tailwind.css @apply blocks)
+└── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings; same dual-source scan)
 tests/e2e/                     # Playwright specs, one per component
 specs/001-primitive-components/    # spec/plan/tasks/contracts (Button, Text Input, Badge, Checkbox)
 specs/002-form-primitives-round-2/ # spec/plan/tasks/contracts (Radio, Select, Toggle)
+specs/003-overlays-modal-toast/    # spec/plan/tasks/contracts (Modal, Toast, Slide-over)
 ```
 
 ## Governance
