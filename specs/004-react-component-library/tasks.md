@@ -125,35 +125,35 @@ existing HTML reference.
 
 ### Tests for User Story 2
 
-- [ ] T015 [P] [US2] Write `tests/e2e/react-text-input.spec.ts`,
+- [x] T015 [P] [US2] Write `tests/e2e/react-text-input.spec.ts`,
       `react-badge.spec.ts`, `react-checkbox.spec.ts`, `react-radio.spec.ts`,
       `react-select.spec.ts`, `react-toggle.spec.ts` — each mirroring its
       existing static-HTML spec's assertions exactly
 
 ### Implementation for User Story 2
 
-- [ ] T016 [P] [US2] Implement `packages/react/src/TextInput/TextInput.tsx`
+- [x] T016 [P] [US2] Implement `packages/react/src/TextInput/TextInput.tsx`
       per `data-model.md`'s prop table and `001/contracts/text-input.contract.md`
       (port the error-state/`aria-invalid`/`aria-describedby` logic exactly)
-- [ ] T017 [P] [US2] Implement `packages/react/src/Badge/Badge.tsx` per
+- [x] T017 [P] [US2] Implement `packages/react/src/Badge/Badge.tsx` per
       `001/contracts/badge.contract.md`'s four variants
-- [ ] T018 [P] [US2] Implement `packages/react/src/Checkbox/Checkbox.tsx` per
+- [x] T018 [P] [US2] Implement `packages/react/src/Checkbox/Checkbox.tsx` per
       `001/contracts/checkbox.contract.md`
-- [ ] T019 [P] [US2] Implement `packages/react/src/Radio/Radio.tsx` per
+- [x] T019 [P] [US2] Implement `packages/react/src/Radio/Radio.tsx` per
       `002/contracts/radio.contract.md` (native `name`-based mutual
       exclusivity — no custom JS)
-- [ ] T020 [P] [US2] Implement `packages/react/src/Select/Select.tsx` per
+- [x] T020 [P] [US2] Implement `packages/react/src/Select/Select.tsx` per
       `002/contracts/select.contract.md`
-- [ ] T021 [P] [US2] Implement `packages/react/src/Toggle/Toggle.tsx` per
+- [x] T021 [P] [US2] Implement `packages/react/src/Toggle/Toggle.tsx` per
       `002/contracts/toggle.contract.md` (including the
       `group-has-[:disabled]` label-dimming fix from feature 002's code
       review)
-- [ ] T022 [US2] Port all six components' `@apply` component classes
+- [x] T022 [US2] Port all six components' `@apply` component classes
       into `packages/react/src/styles.css`; add each to
       `packages/react/src/index.ts`'s barrel export
-- [ ] T023 [US2] Add a harness demo page per component in
+- [x] T023 [US2] Add a harness demo page per component in
       `tests/react-harness/`
-- [ ] T024 [US2] Run `npm run build --workspace packages/react`; run
+- [x] T024 [US2] Run `npm run build --workspace packages/react`; run
       `audit:tokens`/`audit:contrast` (expect 0 violations); run all six
       new Playwright specs, confirm visual parity against each existing
       HTML baseline; **also inspect `dist/index.d.ts`** for all six new

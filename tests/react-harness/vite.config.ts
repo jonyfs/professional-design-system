@@ -15,6 +15,12 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         button: resolve(__dirname, "button.html"),
+        textInput: resolve(__dirname, "text-input.html"),
+        badge: resolve(__dirname, "badge.html"),
+        checkbox: resolve(__dirname, "checkbox.html"),
+        radio: resolve(__dirname, "radio.html"),
+        select: resolve(__dirname, "select.html"),
+        toggle: resolve(__dirname, "toggle.html"),
       },
     },
   },

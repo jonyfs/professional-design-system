@@ -28,4 +28,76 @@
       focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50
       disabled:cursor-not-allowed transition-[background-color,transform] duration-150;
   }
+
+  /* Text Input primitive (contracts/001-primitive-components/text-input.contract.md)
+     — the static HTML version repeats this string inline rather than using a
+     shared class; extracted here since the React component needs one class
+     name to apply across default/error/disabled instances (same visual
+     output either way — @apply expands to the identical utility list). */
+  .text-input {
+    @apply block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400
+      focus:ring-2 focus:ring-inset focus:ring-brand disabled:opacity-50
+      disabled:cursor-not-allowed sm:text-sm sm:leading-6;
+  }
+
+  /* Badge primitive (contracts/001-primitive-components/badge.contract.md)
+     — same extraction rationale as .text-input above. */
+  .badge {
+    @apply inline-flex items-center rounded-md px-2 py-1 text-xs font-medium
+      ring-1 ring-inset;
+  }
+  .badge-success {
+    @apply badge bg-success/5 text-success-strong ring-success/20;
+  }
+  .badge-error {
+    @apply badge bg-error/5 text-error-strong ring-error/10;
+  }
+  .badge-warning {
+    @apply badge bg-warning/5 text-warning-strong ring-warning/10;
+  }
+  .badge-neutral {
+    @apply badge bg-neutral-50 text-neutral-600 ring-neutral-500/10;
+  }
+
+  /* Select primitive (contracts/002-form-primitives-round-2/select.contract.md)
+     — same class as the static site's .form-select (same @apply rules). */
+  .form-select {
+    @apply block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+      ring-1 ring-inset ring-neutral-300 focus:ring-2 focus:ring-inset focus:ring-brand
+      disabled:opacity-50 disabled:cursor-not-allowed sm:text-sm sm:leading-6;
+  }
+
+  /* Checkbox primitive (contracts/001-primitive-components/checkbox.contract.md)
+     — same extraction rationale as .text-input above (static site repeats
+     this string inline; React component needs one class name). */
+  .checkbox-input {
+    @apply h-4 w-4 rounded-sm border-neutral-300 text-brand focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Radio primitive (contracts/002-form-primitives-round-2/radio.contract.md)
+     — same class as the static site's .radio-input. */
+  .radio-input {
+    @apply h-4 w-4 border-neutral-300 text-brand focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Toggle/Switch primitive (contracts/002-form-primitives-round-2/toggle.contract.md)
+     — same classes as the static site's .toggle-track/.toggle-dot. */
+  .toggle-track {
+    @apply absolute inset-0 rounded-full ring-1 ring-inset ring-neutral-500 bg-neutral-200
+      transition-colors duration-200 ease-in-out peer-checked:bg-brand
+      peer-focus-visible:outline peer-focus-visible:outline-2
+      peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand
+      peer-disabled:opacity-50 peer-disabled:cursor-not-allowed;
+  }
+
+  .toggle-dot {
+    @apply pointer-events-none absolute left-0.5 h-5 w-5 translate-x-0 transform
+      rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out
+      peer-checked:translate-x-5 peer-disabled:opacity-50;
+  }
 }
