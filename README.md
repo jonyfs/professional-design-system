@@ -9,6 +9,14 @@ and Modal/Slide-over's dismiss wiring are this project's only JavaScript
 (`src/scripts/`), everything else is pure HTML + Tailwind. A minimal
 project-wide Content-Security-Policy is set via `<meta>` tag on every page.
 
+The same 10 components are also published as a React + TypeScript package
+at [`packages/react/`](packages/react/) — see
+[React package](#react-package) below. **Both are maintained in
+parallel**: the static HTML gallery remains the ratified reference
+implementation, and the React package is a port that must stay visually
+and behaviorally identical to it, verified by pixel-parity Playwright
+tests seeded from the static gallery's own approved baselines.
+
 ## Requirements
 
 - Node.js 18+
@@ -82,11 +90,57 @@ src/
 scripts/
 ├── audit-tokens.mjs           # Principle IV gate (color + border-radius; scans HTML + tailwind.css @apply blocks)
 └── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings; same dual-source scan)
-tests/e2e/                     # Playwright specs, one per component
+tests/e2e/                     # Playwright specs, one per component (react-*.spec.ts for the React port)
+packages/react/                # @professional-design-system/react — React + TypeScript port of all 10 components
+shared/design-tokens.ts        # Single source of truth for colors/radius/font, imported by every Tailwind config
+tests/react-harness/           # Dev-only Vite app rendering the React package for Playwright (never published)
 specs/001-primitive-components/    # spec/plan/tasks/contracts (Button, Text Input, Badge, Checkbox)
 specs/002-form-primitives-round-2/ # spec/plan/tasks/contracts (Radio, Select, Toggle)
 specs/003-overlays-modal-toast/    # spec/plan/tasks/contracts (Modal, Toast, Slide-over)
+specs/004-react-component-library/ # spec/plan/tasks/contracts (React + TypeScript package migration)
 ```
+
+## React package
+
+[`packages/react/`](packages/react/) publishes the same 10 components as
+`@professional-design-system/react`, a React + TypeScript package built
+with `tsup` (ESM + CJS + `.d.ts`) and Tailwind CSS compiled to a
+self-contained `dist/styles.css`. It exists so the design system can be
+consumed by React tooling — including
+[Claude Design](https://claude.ai/design), which ingests a compiled
+`dist/`, extractable prop types, and self-contained CSS.
+
+```bash
+npm install @professional-design-system/react
+```
+
+```tsx
+import { Button, Modal } from "@professional-design-system/react";
+import "@professional-design-system/react/styles.css";
+
+function Example() {
+  return <Button variant="primary">Save</Button>;
+}
+```
+
+Every component's props are typed and exported (`ButtonProps`,
+`ModalProps`, etc.) — see `packages/react/src/index.ts` for the full
+barrel export, or each component's own `.tsx` file for its prop
+JSDoc. `Modal`/`SlideOver` accept a `triggerRef` prop (recommended when
+the trigger is a `<Button>`) so focus reliably returns to the trigger on
+close across browsers, including WebKit, which does not focus a
+`<button>` on mouse click the way Chromium/Firefox do.
+
+Build from source:
+
+```bash
+npm run build --workspace packages/react
+npm run typecheck --workspace packages/react
+```
+
+`tests/react-harness/` is a dev-only Vite app (not published) used
+exclusively to exercise the React components under Playwright; it has
+no bearing on the published package's runtime behavior.
 
 ## Governance
 

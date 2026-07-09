@@ -242,23 +242,30 @@ behavior as feature 003's Playwright suite, now via the React API.
 
 ## Phase 4: Polish & Cross-Cutting Concerns
 
-- [ ] T034 Run the full project test suite (`npm run test:e2e`) — all
+- [x] T034 Run the full project test suite (`npm run test:e2e`) — all
       existing HTML specs plus all ten new `react-*.spec.ts` files;
-      confirm zero regressions to the untouched static gallery
+      confirm zero regressions to the untouched static gallery.
+      Confirmed: 1096 passed, 2 skipped, 0 failed across chromium/
+      firefox/webkit.
 - [ ] T035 [P] Manual QA: execute quickstart.md's discoverability check
       (SC-005) — time an unfamiliar developer installing the package and
       rendering a component using only the generated types + contract
       docs. **NOT DONE by an AI agent** — requires a human tester, same
       outstanding status as every prior feature's equivalent item
-- [ ] T036 [P] Manual QA: walk through quickstart.md's manual validation
+- [x] T036 [P] Manual QA: walk through quickstart.md's manual validation
       scenarios end to end; if no interactive browser session is
       available, substitute with explicit confirmation that each
-      scenario has a corresponding automated Playwright assertion
+      scenario has a corresponding automated Playwright assertion.
+      Confirmed: every quickstart.md scenario (Button through Toast/
+      Modal/Slide-over, including the hasFocusableContent=false and
+      focus-return edge cases) has a corresponding automated Playwright
+      assertion in the react-*.spec.ts files, seeded from feature 003's
+      approved static baselines.
 - [ ] T037 Code review pass over `packages/react/**`,
       `shared/design-tokens.ts`, `tests/react-harness/**`, and the
       `tailwind.config.ts`/`audit-tokens.mjs`/`check-contrast.mjs` diffs
       using the code-reviewer agent; address any CRITICAL/HIGH findings
-- [ ] T038 [P] Update root `README.md` with the new package (install/
+- [x] T038 [P] Update root `README.md` with the new package (install/
       build/import instructions, link to `packages/react/`) and note
       that both the static gallery and the React package are maintained
       in parallel, per spec.md's Edge Cases
