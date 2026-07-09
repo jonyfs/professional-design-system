@@ -1,10 +1,12 @@
 <!-- SPECKIT START -->
-Active feature: `002-form-primitives-round-2`. For technologies, project
+Active feature: `003-overlays-modal-toast`. For technologies, project
 structure, shell commands, and other implementation context, read
-`specs/002-form-primitives-round-2/plan.md` (and its `research.md`,
-`data-model.md`, `contracts/`, `quickstart.md` siblings). Feature
-`001-primitive-components` is complete and shipped — see its own
-`plan.md` for that feature's context.
+`specs/003-overlays-modal-toast/plan.md` (and its `research.md`,
+`data-model.md`, `contracts/`, `quickstart.md` siblings). Features
+`001-primitive-components` and `002-form-primitives-round-2` are complete
+and shipped — see their own `plan.md` files for that context. Feature 003
+is the first to introduce vanilla JS (`src/scripts/overlay.js`,
+`src/scripts/toast.js`) — see its research.md for why.
 <!-- SPECKIT END -->
 
 ## graphify
