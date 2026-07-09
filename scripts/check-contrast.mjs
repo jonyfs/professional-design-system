@@ -40,15 +40,19 @@ const BASE_TOKENS = {
   brand: "#0066FF",
   white: "#FFFFFF",
   "neutral-900": "#111827",
-  "neutral-500": "#6B7280",
-  "neutral-50": "#F9FAFB",
+  "neutral-700": "#374151",
   "neutral-600": "#4B5563",
+  "neutral-500": "#6B7280",
+  "neutral-100": "#F3F4F6",
+  "neutral-50": "#F9FAFB",
   success: "#10B981",
   warning: "#F59E0B",
   error: "#EF4444",
+  info: "#3B82F6",
   "success-strong": "#065F46",
   "error-strong": "#991B1B",
   "warning-strong": "#78350F",
+  "info-strong": "#1E40AF",
 };
 
 // Backgrounds computed by alpha-compositing a base token over white, matching
@@ -70,6 +74,7 @@ const TOKENS = {
   "success/5-on-white": compositeOverWhite(BASE_TOKENS.success, 5),
   "error/5-on-white": compositeOverWhite(BASE_TOKENS.error, 5),
   "warning/5-on-white": compositeOverWhite(BASE_TOKENS.warning, 5),
+  "info/5-on-white": compositeOverWhite(BASE_TOKENS.info, 5),
 };
 
 const PAIRINGS = [
@@ -147,6 +152,23 @@ const PAIRINGS = [
     name: "Back-link / demo-link text (text-brand-dark on white)",
     fg: "brand-dark",
     bg: "white",
+    threshold: AAA_NORMAL,
+  },
+  {
+    // Feature 006 — real value corrected by /speckit-analyze during
+    // planning (an earlier draft cited an unverified 11.58:1 figure; the
+    // actual computed ratio is 9.37:1, still comfortably AAA).
+    name: "Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+    fg: "neutral-700",
+    bg: "neutral-100",
+    threshold: AAA_NORMAL,
+  },
+  {
+    // Feature 006 — info-strong added alongside success/error/warning-
+    // strong (previously info had no text-safe -strong variant).
+    name: "Alert info icon (text-info-strong on bg-info/5)",
+    fg: "info-strong",
+    bg: "info/5-on-white",
     threshold: AAA_NORMAL,
   },
 ];

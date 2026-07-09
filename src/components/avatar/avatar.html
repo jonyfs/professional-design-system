@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self';" />
+  <title>Avatar — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Avatar</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Zero-JavaScript circular avatar — image variant with required alt text,
+    initials fallback when no image is available.
+  </p>
+
+  <div class="mt-8 flex flex-wrap items-center gap-6">
+    <img
+      src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2280%22%20height%3D%2280%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%239CA3AF%22/%3E%3C/svg%3E"
+      alt="Jane Cooper"
+      data-testid="avatar-image-lg"
+      class="avatar-img avatar-lg"
+    />
+    <span data-testid="avatar-fallback-lg" class="avatar-fallback avatar-lg" aria-label="Alex Morgan">
+      AM
+    </span>
+    <img
+      src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2264%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%239CA3AF%22/%3E%3C/svg%3E"
+      alt="Sam Rivera"
+      data-testid="avatar-image-sm"
+      class="avatar-img avatar-sm"
+    />
+    <span data-testid="avatar-fallback-sm" class="avatar-fallback avatar-sm" aria-label="Priya Singh">
+      PS
+    </span>
+    <span data-testid="avatar-fallback-single" class="avatar-fallback avatar-lg" aria-label="Madonna">
+      M
+    </span>
+  </div>
+</body>
+</html>

@@ -38,7 +38,10 @@ export const colors = {
     DEFAULT: "#EF4444",
     strong: "#991B1B",
   },
-  info: "#3B82F6",
+  info: {
+    DEFAULT: "#3B82F6",
+    strong: "#1E40AF",
+  },
 };
 
 export const borderRadius = {

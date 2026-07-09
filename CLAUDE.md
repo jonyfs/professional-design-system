@@ -1,18 +1,13 @@
 <!-- SPECKIT START -->
-Active feature: `005-navigation-disclosure-primitives`. For technologies,
-project structure, shell commands, and other implementation context, read
-`specs/005-navigation-disclosure-primitives/plan.md` (and its
-`research.md`, `data-model.md`, `contracts/`, `quickstart.md` siblings).
-Features `001-primitive-components`, `002-form-primitives-round-2`,
-`003-overlays-modal-toast` (static HTML + Tailwind gallery), and
-`004-react-component-library` (the `packages/react/` React+TypeScript
-port, for Claude Design compatibility) are all complete and shipped — see
-their own `plan.md` files for that context. Feature 005 adds four new
-static HTML + Tailwind components (Breadcrumbs, Accordion/Disclosure,
-Tabs, Dropdown Menu) opening the Navigation & Disclosure Component Catalog
-section; a React port is explicitly out of scope for this feature (see
-its research.md/plan.md for the native-element-first decisions: `<details>`
-for Accordion, the Popover API for Dropdown Menu).
+Active feature: `006-data-display-primitives`. For technologies, project
+structure, shell commands, and other implementation context, read
+`specs/006-data-display-primitives/plan.md` (and its `research.md`,
+`data-model.md`, `contracts/`, `quickstart.md` siblings). Features
+001-005 are all complete and shipped — see their own `plan.md` files for
+that context. Feature 006 adds three static HTML + Tailwind components
+(Avatar, Card, Alert/Banner) expanding the Data Display & Listings
+Component Catalog section; a React port is explicitly out of scope for
+this feature.
 <!-- SPECKIT END -->
 
 ## graphify
