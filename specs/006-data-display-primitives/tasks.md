@@ -187,7 +187,7 @@ it from the DOM.
       never via local Docker. Confirm via `cmp` that pre-existing
       baselines this run regenerates are byte-identical to what's already
       committed before committing only the genuinely new files
-- [ ] T024 Run `/speckit-constitution` to ratify the new Avatar/Card/
+- [x] T024 Run `/speckit-constitution` to ratify the new Avatar/Card/
       Alert patterns into the Data Display & Listings Component Catalog
       section (MINOR version bump), per `quickstart.md`'s reminder — do
       not skip once implementation is verified stable

@@ -1,4 +1,56 @@
 <!--
+SYNC IMPACT REPORT (v1.5.0 — see below for the v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.4.0 → 1.5.0
+Modified principles: None
+Added sections:
+  - Base Semantic Palette: one new token, `status.info-strong` (#1E40AF,
+    8.72:1 against white) — `status.info` existed since v1.0.0 but had no
+    text-safe `-strong` companion, unlike success/warning/error.
+  - Component Catalog → Data Display & Listings → Avatar, Card, Alert/Banner
+    (NEW entries), reflecting feature 006-data-display-primitives's shipped
+    patterns. Avatar's fallback reuses the existing ratified Lists avatar
+    size for its "large" variant. Card has no native-element precedent (a
+    proposed pattern, like Accordion/Tabs/Dropdown Menu in v1.4.0) reusing
+    the Modals panel's `rounded-lg`/`border-neutral-200` pair and
+    `.btn-primary`'s `hover:shadow-md` transition. Alert/Banner reuses
+    Badge's exact severity formula for success/error/warning and extends
+    it to `info` via the new `info-strong` token; explicitly carries no
+    `role="status"`/`aria-live`/`role="alert"`, unlike Toast, since it is
+    static page content, not a transient announcement.
+Corrected sections: None this bump (see the "KNOWN GAP" note added under
+  Lists below, which documents rather than fixes a discovered issue).
+Known gaps documented (not corrected — out of scope for this feature):
+  - Component Catalog → Data Display & Listings → Lists: the ratified
+    `metadata` pattern (`text-xs text-neutral-500`) failed a real
+    axe-core AAA scan (4.83:1) the first time it was actually used
+    (feature 006's Card composed demo) — Lists itself has never shipped
+    as its own component, so this entry is left uncorrected here and
+    flagged as a required fix for whichever future feature ships Lists,
+    the same "ratified but never empirically verified" pattern Breadcrumbs
+    had before v1.4.0/feature 005.
+Rationale: feature 006 (Avatar, Card, Alert/Banner) was implemented
+against these patterns as proposed Phase 1 design docs
+(specs/006-data-display-primitives/data-model.md, contracts/*.md), per
+the same "propose in Phase 1, ratify what shipped" sequence used for
+v1.4.0's Navigation & Disclosure section. Two `/speckit-analyze` passes
+plus a code-reviewer agent pass caught and fixed real gaps before and
+during implementation: an unverified "11.58:1" Avatar-contrast figure
+that was actually 9.37:1 (still AAA-compliant, but the wrong number would
+have been ratified verbatim if uncaught); a missing check-contrast.mjs
+coverage entry for the new neutral-700/neutral-100 pairing; Alert's
+`info` severity initially bypassing the already-ratified `status.info`
+token in favor of an ad-hoc `brand-light`/`brand-dark` treatment,
+corrected to extend the token properly instead. This is a MINOR bump: one
+new token plus new catalog guidance, no principle text changed.
+Templates requiring updates (this MINOR bump):
+  ✅ specs/006-data-display-primitives/data-model.md (already documents
+     these corrections as findings; this amendment folds them back into
+     the ratified source of truth)
+  ✅ specs/006-data-display-primitives/contracts/*.md (already reflect the
+     final, corrected, shipped state)
+  ⚠ Lists' `metadata` token is a known, documented, NOT-yet-corrected gap
+     — tracked above, not silently deferred
+
 SYNC IMPACT REPORT (v1.4.0 — see below for the v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.3.4 → 1.4.0
 Modified principles: None
@@ -343,7 +395,8 @@ extend its own capability without compromising trust or project hygiene.
   },
   "status": {
     "success": "#10B981", "warning": "#F59E0B", "error": "#EF4444", "info": "#3B82F6",
-    "success-strong": "#065F46", "warning-strong": "#78350F", "error-strong": "#991B1B"
+    "success-strong": "#065F46", "warning-strong": "#78350F", "error-strong": "#991B1B",
+    "info-strong": "#1E40AF"
   }
 }
 ```
@@ -356,7 +409,11 @@ success/warning/error values are calibrated for non-text uses (icons, dots,
 rings) and do not pass WCAG 2.2 AAA contrast as text in that context. Any
 component rendering status-colored text over a light background MUST use the
 `-strong` variant; the base variant remains correct for rings, icon fills, and
-other non-text decoration.
+other non-text decoration. `info-strong` (#1E40AF, 8.72:1 against white,
+computed via the WCAG relative-luminance formula — the same method used for
+every other `-strong` token) was added in feature 006 (Alert/Banner's `info`
+severity) — `status.info` itself had existed since v1.0.0 but had no
+text-safe `-strong` companion, unlike success/warning/error.
 
 ### Typography & Text Scale
 - Family: `font-sans` (Inter, system-ui, sans-serif), with `antialiased` always
@@ -446,6 +503,39 @@ catalog.
 - **Lists**: avatars `rounded-full h-10 w-10`; title `text-sm font-semibold
   text-neutral-900`; metadata `text-xs text-neutral-500`; interactive item
   `hover:bg-neutral-50`.
+  **KNOWN GAP** (found by feature 006, not yet fixed at the source): Lists
+  has never been implemented as its own standalone component — when its
+  ratified `metadata` pattern (`text-xs text-neutral-500`) was actually
+  used for the first time (Card's composed demo, feature 006), a real
+  axe-core scan failed it at 4.83:1 (AAA requires 7:1). Feature 006 worked
+  around this locally (`text-neutral-600` in its own markup) without
+  correcting this entry, since Lists itself is still out of scope. Whichever
+  future feature ships Lists as a real component MUST correct this value
+  first (to `text-neutral-600` or verify an alternative) — the same class
+  of "ratified but never empirically verified" gap Breadcrumbs had before
+  feature 005.
+- **Avatar**: `.avatar-img` — `rounded-full object-cover` (image variant).
+  `.avatar-fallback` — `bg-neutral-100 text-neutral-700 font-medium
+  rounded-full` (initials fallback; 9.37:1 AAA, computed via the WCAG
+  relative-luminance formula). Two sizes: `h-8 w-8 text-xs` (small,
+  dense-list contexts) and `h-10 w-10 text-sm` (large — the same size
+  already ratified above for Lists' own avatars, reused verbatim, not
+  reinvented).
+- **Card**: `.card` — `rounded-lg border border-neutral-200 bg-white p-6
+  shadow-sm` (the `rounded-lg`/`border-neutral-200` pair reused verbatim
+  from the Modals panel pattern below). Optional `.card-elevated` —
+  `transition-shadow duration-150 hover:shadow-md` (the exact transition
+  already shipped in `.btn-primary` since feature 001).
+- **Alert/Banner**: `.alert` — `flex items-start gap-3 rounded-md p-4`, no
+  `role="status"`/`aria-live`/`role="alert"` (static page content,
+  distinct from Toast below, which is a transient announcement). Four
+  severities follow one formula, `bg-{status}/5 ring-1 ring-inset
+  ring-{status}/20-or-10 text-{status}-strong`: success/error/warning
+  reuse Badges' exact pattern above verbatim; info — `bg-info/5 ring-1
+  ring-inset ring-info/20 text-info-strong` (the `info-strong` token added
+  above). Message text `text-neutral-900` (matching Toast's message
+  treatment below). Optional dismiss control reuses `close-icon-btn`
+  verbatim (Overlays section below) — no new interactive class.
 
 ### Overlays, Modals & Feedback
 - **Modals**: backdrop `fixed inset-0 bg-neutral-500/75 transition-opacity`;
@@ -545,4 +635,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.4.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09
+**Version**: 1.5.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09
