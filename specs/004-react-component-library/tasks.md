@@ -179,7 +179,7 @@ behavior as feature 003's Playwright suite, now via the React API.
 
 ### Tests for User Story 3
 
-- [ ] T025 [P] [US3] Write `tests/e2e/react-modal.spec.ts`,
+- [x] T025 [P] [US3] Write `tests/e2e/react-modal.spec.ts`,
       `react-slide-over.spec.ts`, `react-toast.spec.ts` — port every
       assertion from `tests/e2e/modal.spec.ts`/`slide-over.spec.ts`/
       `toast.spec.ts` (Tab-cycle containment, Shift+Tab wrap, Escape/
@@ -195,20 +195,20 @@ behavior as feature 003's Playwright suite, now via the React API.
 
 ### Implementation for User Story 3
 
-- [ ] T026 [US3] Implement `packages/react/src/hooks/useDialogTrigger.ts`
+- [x] T026 [US3] Implement `packages/react/src/hooks/useDialogTrigger.ts`
       per `contracts/component-props.contract.md`'s reference
       implementation (the direct React port of `overlay.js`'s
       `initDialogTriggers()`, including the WebKit focus-return
       safeguard)
-- [ ] T027 [US3] Implement `packages/react/src/Modal/Modal.tsx` per
+- [x] T027 [US3] Implement `packages/react/src/Modal/Modal.tsx` per
       `contracts/component-props.contract.md`'s reference implementation
       (using `useId()` for `aria-labelledby`, per the /speckit-analyze
       fix — NOT a hardcoded literal id)
-- [ ] T028 [US3] Implement `packages/react/src/SlideOver/SlideOver.tsx` —
+- [x] T028 [US3] Implement `packages/react/src/SlideOver/SlideOver.tsx` —
       textually identical to `Modal.tsx` except `.slide-over-dialog`/
       `.slide-over-panel` classes, same as the HTML contracts'
       "only the CSS differs" relationship
-- [ ] T029 [US3] Implement `packages/react/src/Toast/Toast.tsx` per
+- [x] T029 [US3] Implement `packages/react/src/Toast/Toast.tsx` per
       `003/contracts/toast.contract.md` (`role="status"`/
       `aria-live="polite"`, `onDismiss` called from the close button's
       `onClick` — no internal DOM removal, unlike `toast.js`, since a
@@ -220,15 +220,15 @@ behavior as feature 003's Playwright suite, now via the React API.
       `/speckit-analyze`: this feature's own data-model.md documented the
       difference, but the cited upstream contract didn't, leaving it as
       the source of truth only in one of the two places that reference it
-- [ ] T030 [US3] Port `.modal-dialog`/`.modal-panel`/`.slide-over-dialog`/
+- [x] T030 [US3] Port `.modal-dialog`/`.modal-panel`/`.slide-over-dialog`/
       `.slide-over-panel`/`.close-icon-btn`/`.toast`/`.toast-stack` `@apply`
       classes (including the `::backdrop` `theme()` rules) into
       `packages/react/src/styles.css`; add Modal/SlideOver/Toast to the
       barrel export
-- [ ] T031 [US3] Add harness demo pages for Modal (default +
+- [x] T031 [US3] Add harness demo pages for Modal (default +
       `hasFocusableContent=false` variant — the case that specifically
       needs `useId()`, not a hardcoded id), Slide-over (same), and Toast
-- [ ] T033 [US3] Run `npm run build --workspace packages/react`; run
+- [x] T033 [US3] Run `npm run build --workspace packages/react`; run
       `audit:tokens`/`audit:contrast`; run all three new Playwright specs,
       confirm 1:1 behavioral parity with feature 003's original
       assertions; **also inspect `dist/index.d.ts`** for `ModalProps`,

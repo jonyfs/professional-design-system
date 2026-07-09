@@ -100,4 +100,48 @@
       rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out
       peer-checked:translate-x-5 peer-disabled:opacity-50;
   }
+
+  /* Modal primitive (contracts/003-overlays-modal-toast/modal.contract.md)
+     — same classes as the static site's .modal-dialog/.modal-panel. */
+  .modal-dialog {
+    @apply p-0 border-0 w-[calc(100vw-2rem)] max-w-lg;
+  }
+  .modal-dialog::backdrop {
+    background-color: theme("colors.neutral.500 / 75%");
+  }
+  .modal-panel {
+    @apply relative w-full transform overflow-hidden rounded-lg bg-white px-4
+      pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:p-6;
+  }
+
+  /* Shared close/dismiss icon button — Modal, Slide-over, Toast. */
+  .close-icon-btn {
+    @apply inline-flex items-center justify-center rounded-md p-1 text-neutral-500
+      hover:text-neutral-600 active:scale-95 focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed transition-transform duration-150;
+  }
+
+  /* Slide-over primitive (contracts/003-overlays-modal-toast/slide-over.contract.md)
+     — same classes as the static site's .slide-over-dialog/.slide-over-panel. */
+  .slide-over-dialog {
+    @apply p-0 border-0 fixed inset-y-0 right-0 h-full w-full max-w-md;
+  }
+  .slide-over-dialog::backdrop {
+    background-color: theme("colors.neutral.500 / 75%");
+  }
+  .slide-over-panel {
+    @apply relative flex h-full w-full flex-col bg-white shadow-xl p-6
+      transform transition ease-in-out duration-500;
+  }
+
+  /* Toast primitive (contracts/003-overlays-modal-toast/toast.contract.md)
+     — same classes as the static site's .toast/.toast-stack. */
+  .toast {
+    @apply flex items-start gap-3 rounded-md bg-white p-4 shadow-lg
+      ring-1 ring-neutral-900/5;
+  }
+  .toast-stack {
+    @apply fixed top-4 right-4 z-50 flex flex-col gap-3;
+  }
 }
