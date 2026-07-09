@@ -1,11 +1,16 @@
-import { useId, type InputHTMLAttributes } from "react";
+import { forwardRef, useId, type InputHTMLAttributes } from "react";
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Visible label text — see contracts/001-primitive-components/checkbox.contract.md */
   label: string;
 }
 
-export function Checkbox({ label, id, className, disabled, ...rest }: CheckboxProps) {
+// forwardRef — same rationale as TextInput: form libraries need a DOM ref
+// on the actual <input>.
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
+  { label, id, className, disabled, ...rest },
+  ref,
+) {
   const generatedId = useId();
   const inputId = id ?? generatedId;
   const inputClasses = ["checkbox-input", disabled ? "peer" : "", className]
@@ -15,6 +20,7 @@ export function Checkbox({ label, id, className, disabled, ...rest }: CheckboxPr
   return (
     <div className="flex items-center gap-2">
       <input
+        ref={ref}
         id={inputId}
         type="checkbox"
         disabled={disabled}
@@ -33,4 +39,4 @@ export function Checkbox({ label, id, className, disabled, ...rest }: CheckboxPr
       </label>
     </div>
   );
-}
+});

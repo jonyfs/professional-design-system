@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "tsup && tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "prepare": "npm run build",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

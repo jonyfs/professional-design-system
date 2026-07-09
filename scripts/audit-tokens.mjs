@@ -281,16 +281,48 @@ for (const { file, blocks } of applyBlocks) {
   }
 }
 
+// Matches literal className="..." strings. Arbitrary template-interpolated
+// classNames (`` `badge-${variant}` ``) are still out of scope — Tailwind's
+// own content scanner can't see those either, which is why this project's
+// components use static per-variant lookup objects (VARIANT_CLASSES,
+// VARIANT_ICON_CLASSES) instead; those tables are covered by
+// lookupTablePattern below, not by this one.
+const classNamePattern = /className="([^"]*)"/g;
+
+// Matches `const X_CLASSES: Record<..., string> = { key: "a b c", ... }`
+// lookup tables (Badge's VARIANT_CLASSES, Toast's VARIANT_ICON_CLASSES):
+// a fixed, enumerable set of static strings — not arbitrary interpolation —
+// so they can and must be audited the same as a literal className.
+const lookupTablePattern = /:\s*Record<[^>]*,\s*string>\s*=\s*\{([^}]*)\}/g;
+const lookupEntryPattern = /"([^"]*)"/g;
+
 for (const file of tsxTargets) {
   const source = readFileSync(file, "utf8");
-  const classNamePattern = /className="([^"]*)"/g;
   let match;
+
+  classNamePattern.lastIndex = 0;
   while ((match = classNamePattern.exec(source)) !== null) {
     const classes = match[1].split(/\s+/).filter(Boolean);
     for (const cls of classes) {
       const violation = checkClass(cls);
       if (violation) {
         violations.push({ file, violation });
+      }
+    }
+  }
+
+  lookupTablePattern.lastIndex = 0;
+  let tableMatch;
+  while ((tableMatch = lookupTablePattern.exec(source)) !== null) {
+    lookupEntryPattern.lastIndex = 0;
+    let entryMatch;
+    while ((entryMatch = lookupEntryPattern.exec(tableMatch[1])) !== null) {
+      const classes = entryMatch[1].split(/\s+/).filter(Boolean);
+      for (const cls of classes) {
+        const violation = checkClass(cls);
+        if (violation) {
+          violations.push({ file, violation: `lookup table ${violation}` });
+        }
       }
     }
   }

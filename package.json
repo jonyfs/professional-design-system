@@ -10,11 +10,11 @@
     "prebuild": "npm run audit:tokens && npm run audit:contrast",
     "build": "vite build",
     "preview": "vite preview",
-    "pretest:e2e": "npm run audit:tokens && npm run audit:contrast",
+    "pretest:e2e": "npm run build --workspace packages/react && npm run audit:tokens && npm run audit:contrast",
     "test:e2e": "playwright test",
     "audit:tokens": "node scripts/audit-tokens.mjs",
     "audit:contrast": "node scripts/check-contrast.mjs",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && npm run typecheck --workspace packages/react",
     "verify": "npm run typecheck && npm run audit:tokens && npm run audit:contrast && npm run build && npm run test:e2e"
   },
   "devDependencies": {

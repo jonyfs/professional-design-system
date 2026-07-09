@@ -1,4 +1,4 @@
-import { useId, type SelectHTMLAttributes } from "react";
+import { forwardRef, useId, type SelectHTMLAttributes } from "react";
 
 export interface SelectOption {
   value: string;
@@ -13,7 +13,12 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   options: SelectOption[];
 }
 
-export function Select({ label, error, options, id, className, ...rest }: SelectProps) {
+// forwardRef — same rationale as TextInput: form libraries need a DOM ref
+// on the actual <select>.
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
+  { label, error, options, id, className, ...rest },
+  ref,
+) {
   const generatedId = useId();
   const selectId = id ?? generatedId;
   const errorId = error ? `${selectId}-error` : undefined;
@@ -34,6 +39,7 @@ export function Select({ label, error, options, id, className, ...rest }: Select
         {label}
       </label>
       <select
+        ref={ref}
         id={selectId}
         aria-invalid={error ? "true" : undefined}
         aria-describedby={errorId}
@@ -53,4 +59,4 @@ export function Select({ label, error, options, id, className, ...rest }: Select
       )}
     </>
   );
-}
+});

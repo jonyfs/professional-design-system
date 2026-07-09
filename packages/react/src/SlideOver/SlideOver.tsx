@@ -1,7 +1,12 @@
 import { useId, type HTMLAttributes, type ReactNode, type RefObject } from "react";
 import { useDialogTrigger } from "../hooks/useDialogTrigger";
 
-export interface SlideOverProps extends Omit<HTMLAttributes<HTMLDialogElement>, "title"> {
+// aria-labelledby and tabIndex are omitted from the passthrough surface —
+// same rationale as ModalProps: the component computes both itself and a
+// consumer-supplied {...rest} value must not be able to silently override
+// either.
+export interface SlideOverProps
+  extends Omit<HTMLAttributes<HTMLDialogElement>, "title" | "aria-labelledby" | "tabIndex"> {
   open: boolean;
   onClose: () => void;
   title: string;

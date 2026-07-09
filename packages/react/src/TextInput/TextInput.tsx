@@ -1,4 +1,4 @@
-import { useId, type InputHTMLAttributes } from "react";
+import { forwardRef, useId, type InputHTMLAttributes } from "react";
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Visible label text — see contracts/001-primitive-components/text-input.contract.md */
@@ -7,7 +7,13 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
-export function TextInput({ label, error, id, className, ...rest }: TextInputProps) {
+// forwardRef: ref-based form libraries (React Hook Form's register(), Formik,
+// or a consumer imperatively calling .focus()) need a DOM ref on the actual
+// <input>. A plain function component silently drops any ref passed to it.
+export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(function TextInput(
+  { label, error, id, className, ...rest },
+  ref,
+) {
   const generatedId = useId();
   const inputId = id ?? generatedId;
   const errorId = error ? `${inputId}-error` : undefined;
@@ -33,6 +39,7 @@ export function TextInput({ label, error, id, className, ...rest }: TextInputPro
         {label}
       </label>
       <input
+        ref={ref}
         id={inputId}
         type="text"
         aria-invalid={error ? "true" : undefined}
@@ -47,4 +54,4 @@ export function TextInput({ label, error, id, className, ...rest }: TextInputPro
       )}
     </>
   );
-}
+});

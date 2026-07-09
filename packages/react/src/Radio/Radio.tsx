@@ -1,4 +1,4 @@
-import { useId, type InputHTMLAttributes } from "react";
+import { forwardRef, useId, type InputHTMLAttributes } from "react";
 
 export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Visible label text — see contracts/002-form-primitives-round-2/radio.contract.md */
@@ -13,15 +13,12 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   wrapperClassName?: string;
 }
 
-export function Radio({
-  label,
-  name,
-  id,
-  className,
-  wrapperClassName,
-  disabled,
-  ...rest
-}: RadioProps) {
+// forwardRef — same rationale as TextInput: form libraries need a DOM ref
+// on the actual <input>.
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
+  { label, name, id, className, wrapperClassName, disabled, ...rest },
+  ref,
+) {
   const generatedId = useId();
   const inputId = id ?? generatedId;
   const inputClasses = ["radio-input", disabled ? "peer" : "", className]
@@ -31,6 +28,7 @@ export function Radio({
   return (
     <div className={wrapperClassName ?? "flex items-center gap-2"}>
       <input
+        ref={ref}
         id={inputId}
         type="radio"
         name={name}
@@ -50,4 +48,4 @@ export function Radio({
       </label>
     </div>
   );
-}
+});

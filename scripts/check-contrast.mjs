@@ -372,12 +372,33 @@ for (const block of reactApplyBlocks) {
   );
 }
 
+// Matches `const X_CLASSES: Record<..., string> = { key: "a b c", ... }`
+// lookup tables (Badge's VARIANT_CLASSES, Toast's VARIANT_ICON_CLASSES):
+// a fixed, enumerable set of static strings — not arbitrary template
+// interpolation — so their text-color tokens must be covered the same as
+// a literal className. Toast's icon color is only ever referenced via
+// this table (`` className={`h-5 w-5 shrink-0 ${VARIANT_ICON_CLASSES[variant]}`} ``),
+// so without this scan its tokens would silently evade coverage checking.
+const lookupTablePattern = /:\s*Record<[^>]*,\s*string>\s*=\s*\{([^}]*)\}/g;
+const lookupEntryPattern = /"([^"]*)"/g;
+
 for (const file of tsxFiles) {
   const source = readFileSync(file, "utf8");
+  const label = file.replace(rootDir, "");
   const classNamePattern = /className="([^"]*)"/g;
   let match;
   while ((match = classNamePattern.exec(source)) !== null) {
-    scanClassesForCoverage(match[1].split(/\s+/).filter(Boolean), file.replace(rootDir, ""));
+    scanClassesForCoverage(match[1].split(/\s+/).filter(Boolean), label);
+  }
+
+  lookupTablePattern.lastIndex = 0;
+  let tableMatch;
+  while ((tableMatch = lookupTablePattern.exec(source)) !== null) {
+    lookupEntryPattern.lastIndex = 0;
+    let entryMatch;
+    while ((entryMatch = lookupEntryPattern.exec(tableMatch[1])) !== null) {
+      scanClassesForCoverage(entryMatch[1].split(/\s+/).filter(Boolean), label);
+    }
   }
 }
 

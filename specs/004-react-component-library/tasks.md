@@ -261,10 +261,18 @@ behavior as feature 003's Playwright suite, now via the React API.
       focus-return edge cases) has a corresponding automated Playwright
       assertion in the react-*.spec.ts files, seeded from feature 003's
       approved static baselines.
-- [ ] T037 Code review pass over `packages/react/**`,
+- [x] T037 Code review pass over `packages/react/**`,
       `shared/design-tokens.ts`, `tests/react-harness/**`, and the
       `tailwind.config.ts`/`audit-tokens.mjs`/`check-contrast.mjs` diffs
-      using the code-reviewer agent; address any CRITICAL/HIGH findings
+      using the code-reviewer agent; address any CRITICAL/HIGH findings.
+      Found 2 HIGH (packages/react was never built or type-checked by CI
+      — fixed via `pretest:e2e`/`typecheck` cascading into the workspace,
+      plus a `prepare` script) and 3 MEDIUM (five form components missing
+      `forwardRef`; Modal/SlideOver's `{...rest}` could silently override
+      computed `aria-labelledby`/`tabIndex`; the `.tsx` audit-script scan
+      missed static per-variant lookup tables like `VARIANT_CLASSES`) —
+      all fixed and reverified (full suite still 1096 passed/2 skipped/
+      0 failed).
 - [x] T038 [P] Update root `README.md` with the new package (install/
       build/import instructions, link to `packages/react/`) and note
       that both the static gallery and the React package are maintained

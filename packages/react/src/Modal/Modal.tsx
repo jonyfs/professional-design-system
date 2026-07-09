@@ -1,7 +1,13 @@
 import { useId, type HTMLAttributes, type ReactNode, type RefObject } from "react";
 import { useDialogTrigger } from "../hooks/useDialogTrigger";
 
-export interface ModalProps extends Omit<HTMLAttributes<HTMLDialogElement>, "title"> {
+// aria-labelledby and tabIndex are omitted from the passthrough surface: the
+// component computes both itself (title's useId(), and the tabindex="-1"
+// empty-content fallback) and must not let a consumer-supplied {...rest}
+// value silently override either — that would break the title association
+// or reopen the empty-content focus bug the tabIndex fallback exists for.
+export interface ModalProps
+  extends Omit<HTMLAttributes<HTMLDialogElement>, "title" | "aria-labelledby" | "tabIndex"> {
   open: boolean;
   onClose: () => void;
   title: string;
