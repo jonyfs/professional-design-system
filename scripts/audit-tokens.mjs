@@ -99,6 +99,26 @@ const targets = [
   ...collectHtmlFiles(join(rootDir, "src", "components")),
 ];
 
+// --- Extract `@apply ...;` blocks from tailwind.css (found by /speckit-analyze
+// on feature 003: every @layer components class — .btn-primary, .form-select,
+// .toggle-track, etc., since feature 001 — was invisible to this audit, since
+// it only ever scanned HTML class="..." attributes. A color/radius token used
+// only inside an @apply rule shipped with zero token-discipline verification. ---
+
+function extractApplyBlocks(cssSource) {
+  const blocks = [];
+  const pattern = /@apply\s+([\s\S]*?);/g;
+  let match;
+  while ((match = pattern.exec(cssSource)) !== null) {
+    blocks.push(match[1]);
+  }
+  return blocks;
+}
+
+const tailwindCssPath = join(rootDir, "src", "styles", "tailwind.css");
+const tailwindCssSource = readFileSync(tailwindCssPath, "utf8");
+const applyBlocks = extractApplyBlocks(tailwindCssSource);
+
 // --- Scan each file's class="..." attributes ---
 
 // Prefixes that carry a color value in Tailwind (as opposed to a size/side/
@@ -141,8 +161,13 @@ const NON_COLOR_SUFFIXES = new Set([
   "top", "bottom", "auto", "cover", "contain", "repeat", "no-repeat",
   "fixed", "local", "scroll",
   // shadow size scale (shadow-*) — Tailwind 3 has no default colored-shadow
-  // utility, so every shadow-* suffix is a size keyword, not a color
-  "inner",
+  // utility, so every shadow-* suffix is a size keyword, not a color.
+  // "md" is shadow-only (the text-size scale above has no "md" step) — a
+  // real gap this comment used to leave uncovered: `hover:shadow-md` shipped
+  // inside tailwind.css's @apply since feature 001 with zero verification,
+  // because this audit never scanned tailwind.css until feature 003 added
+  // that capability and immediately surfaced the missing suffix.
+  "inner", "md",
 ]);
 
 function isStructuralSuffix(suffix) {
@@ -205,6 +230,16 @@ for (const file of targets) {
   }
 }
 
+for (const block of applyBlocks) {
+  const classes = block.split(/\s+/).filter(Boolean);
+  for (const cls of classes) {
+    const violation = checkClass(cls);
+    if (violation) {
+      violations.push({ file: tailwindCssPath, violation: `@apply ${violation}` });
+    }
+  }
+}
+
 if (violations.length > 0) {
   console.error(`\nToken discipline audit FAILED (Principle IV) — ${violations.length} violation(s):\n`);
   for (const { file, violation } of violations) {
@@ -214,4 +249,7 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log(`Token discipline audit passed — ${targets.length} file(s) scanned, 0 violations.`);
+console.log(
+  `Token discipline audit passed — ${targets.length} file(s) + tailwind.css's ` +
+    `${applyBlocks.length} @apply block(s) scanned, 0 violations.`,
+);

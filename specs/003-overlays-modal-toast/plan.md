@@ -65,12 +65,12 @@ slice, reuses all existing styling/testing tooling, adds one small JS file.
 
 | Gate | Principle | Requirement | Status |
 |------|-----------|-------------|--------|
-| G1 | II — Absolute Semantic Accessibility (AAA) | AAA text contrast; **explicit focus-management mandate**: "modals and slide-overs MUST trap keyboard focus within the active element and return it to the original trigger on close" | PASS — resolved via native `<dialog>`/`showModal()` (see research.md), which implements this natively per the HTML spec in every target browser. Verified, not assumed, in Phase 0. |
-| G2 | III — Tailwind-Only Architecture | No parallel `.css`; `@layer components` for shared classes | PASS — Principle III governs styling, not behavior scripting. The new `scripts/overlay.js` (or similar) contains zero CSS; all visual states remain pure Tailwind, consistent with every prior feature. |
-| G3 | IV — Design Token Discipline | Zero raw palette classes | PASS — enforced by the existing `scripts/audit-tokens.mjs`, no changes anticipated (verify in Phase 1 data-model, not assumed, per this project's own precedent of catching exactly this kind of gap late in features 001/002). |
-| G4 | V — Interactive State Completeness (Button/Link scope) | Any `<button>`/`<a>` inside these overlays (triggers, close buttons) still needs the full hover/active/focus-visible/disabled set | PASS — trigger and close buttons reuse the existing `.btn-primary`/`.btn-secondary` classes from feature 001, not a new button style. |
+| G1 | II — Absolute Semantic Accessibility (AAA) | AAA text contrast; **explicit focus-management mandate**: "modals and slide-overs MUST trap keyboard focus within the active element and return it to the original trigger on close" | PASS — resolved via native `<dialog>`/`showModal()` per the HTML Living Standard's dialog-focusing and focus-restoration steps (research.md), confirmed by this feature's real cross-browser Playwright keyboard-navigation suite (Chrome/Firefox/Safari) rather than assumed from spec text alone. |
+| G2 | III — Tailwind-Only Architecture | No parallel `.css`; `@layer components` for shared classes | PASS — Principle III governs styling, not behavior scripting. `scripts/overlay.js`/`scripts/toast.js` contain zero CSS; all visual states remain pure Tailwind, consistent with every prior feature. |
+| G3 | IV — Design Token Discipline | Zero raw palette classes | PASS — `scripts/audit-tokens.mjs` and `scripts/check-contrast.mjs` originally only parsed `.html` files, never `tailwind.css`'s `@apply` rules — a pre-existing blind spot affecting every `@layer components` class since feature 001 (`/speckit-analyze` caught it). **Fixed as part of this feature's Phase 0**, not deferred: both scripts now also scan `tailwind.css`'s `@apply` blocks. Running the extended scripts immediately surfaced two real, previously-unverified gaps predating this feature — `hover:shadow-md` (shipped in `.btn-primary` since feature 001; the `md` shadow-size suffix was missing from the audit's keyword allowlist) and `text-brand-dark` (`.back-link`/`.demo-link`, shipped since feature 001 with no `PAIRINGS` entry, actually 7.90:1 — comfortably AAA-safe, just never checked). Both fixed directly in the scripts/PAIRINGS table; see research.md. |
+| G4 | V — Interactive State Completeness (Button/Link scope) | Any `<button>`/`<a>` inside these overlays (triggers, close buttons) still needs the full hover/active/focus-visible/disabled set | PASS — trigger buttons reuse the existing `.btn-primary`/`.btn-secondary` classes from feature 001. The close/dismiss buttons use a **new** shared class, `close-icon-btn`, which did NOT have its state set specified until `/speckit-analyze` caught the gap — now fully documented in `modal.contract.md` with resting/hover/active/focus-visible/disabled all specified before implementation. |
 | G5 | VI — Project Language Policy | English artifacts, PT-BR agent chat | PASS |
-| G6 | VII — Autonomous Skill Acquisition | No new external skill/library needed — native `<dialog>` requires no dependency | PASS |
+| G6 | (informational — no single principle governs an npm/library choice directly) | Whether to add a focus-trap dependency | Native `<dialog>` needs none — resolved via Principle III's "resolved via configuration... before being considered an exception" spirit (avoid a dependency when the platform already does the job), not Principle VII (which governs adopting external *skills*, not runtime dependencies — an earlier draft of research.md conflated the two, corrected there). |
 
 No violations requiring `Complexity Tracking` justification — introducing
 minimal vanilla JS is a requirement of Principle II itself (focus trapping),
@@ -102,9 +102,17 @@ src/
 │   ├── modal/modal.html          # new
 │   ├── slide-over/slide-over.html # new
 │   └── toast/toast.html          # new
-└── scripts/
-    ├── overlay.js                 # new — showModal()/backdrop-click wiring for Modal/Slide-over
-    └── toast.js                   # new — dismiss-button wiring for Toast (separate: no dialog/focus-trap semantics)
+├── scripts/
+│   ├── overlay.js                 # new — showModal()/backdrop-click wiring for Modal/Slide-over
+│   └── toast.js                   # new — dismiss-button wiring for Toast (separate: no dialog/focus-trap semantics)
+└── styles/tailwind.css            # MODIFIED — new @layer components classes
+                                    # (modal-dialog, modal-panel, slide-over-dialog,
+                                    # slide-over-panel, close-icon-btn, toast,
+                                    # toast-success/error/info, toast-stack)
+index.html + all 9 existing component pages  # MODIFIED — add a CSP <meta> tag
+                                              # (research.md: this feature ships the
+                                              # first <script> tags, and the project
+                                              # currently has no CSP at all)
 tests/e2e/
 ├── modal.spec.ts                  # new
 ├── slide-over.spec.ts             # new

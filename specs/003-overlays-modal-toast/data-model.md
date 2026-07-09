@@ -63,3 +63,26 @@ data field.
 - `src/scripts/overlay.js` (Modal/Slide-over's `showModal()` + backdrop-
   click wiring) contains zero styling decisions — Principle III's
   Tailwind-only mandate governs CSS, not this behavior script.
+- The `::backdrop` pseudo-element (native to `<dialog>`, created by
+  `showModal()`) cannot be reached by a `class="..."` attribute in HTML —
+  it isn't a real DOM node. Styled instead as a plain CSS rule inside
+  `@layer components`, using Tailwind's `theme()` function to resolve the
+  color token rather than hardcoding a hex value:
+  ```css
+  .modal-dialog::backdrop,
+  .slide-over-dialog::backdrop {
+    background-color: theme('colors.neutral.900 / 50%');
+  }
+  ```
+  `theme()` is one of Principle III's explicitly named sanctioned
+  mechanisms (alongside `@apply`/`@layer`), so this isn't a parallel
+  styling system — it's the same ratified `neutral-900` token, just
+  referenced from a context (`::backdrop`) that arbitrary-variant HTML
+  utility classes can't cleanly target. `audit-tokens.mjs`/
+  `check-contrast.mjs` now also scan `tailwind.css`'s `@apply` blocks
+  (research.md), but a `theme()` call inside a plain CSS property value
+  (not an `@apply` rule) is a different syntax the scripts still don't
+  parse — this one line remains manually verified against the allowlist
+  (neutral-900 is already a ratified, AAA-checked token used elsewhere),
+  rather than a scope worth building a CSS-value parser for a single
+  call site.

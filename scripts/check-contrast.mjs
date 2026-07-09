@@ -139,6 +139,16 @@ const PAIRINGS = [
     bg: "white",
     threshold: AAA_LARGE_OR_UI,
   },
+  {
+    // .back-link/.demo-link (tailwind.css, shipped since feature 001) — found
+    // by feature 003's /speckit-analyze extending this coverage scan to also
+    // read tailwind.css's @apply blocks, not just HTML. Passes comfortably
+    // (7.90:1); this was a real verification gap, not a contrast defect.
+    name: "Back-link / demo-link text (text-brand-dark on white)",
+    fg: "brand-dark",
+    bg: "white",
+    threshold: AAA_NORMAL,
+  },
 ];
 
 // Non-text UI component boundaries (WCAG 1.4.11, 3:1) — e.g. a control's
@@ -198,6 +208,18 @@ const RING_PAIRINGS = [
     bg: "white",
     threshold: NON_TEXT_UI_AA,
   },
+  {
+    // Not a literal `ring-*` class — `close-icon-btn`'s SVG icon fill
+    // (`text-neutral-600`, via `fill="currentColor"`, hover state). Listed
+    // here rather than PAIRINGS because an icon fill is a WCAG 1.4.11
+    // non-text boundary (3:1), not literal text (7:1) — see
+    // ICON_FILL_TEXT_TOKENS below, which is what lets the text- coverage
+    // scan accept this entry as sufficient for `text-neutral-600`.
+    name: "close-icon-btn icon fill, hover (text-neutral-600 vs white page)",
+    fg: "neutral-600",
+    bg: "white",
+    threshold: NON_TEXT_UI_AA,
+  },
 ];
 
 let failures = [];
@@ -249,29 +271,71 @@ const NON_COLOR_TEXT_SUFFIXES = new Set([
 // (e.g. "brand-dark" as bg, not fg) doesn't false-positive here.
 const COVERED_FG_TOKENS = new Set(PAIRINGS.map((p) => p.fg));
 
+// `text-*` classes are usually literal rendered text (AAA, 7:1 — PAIRINGS'
+// bar), but a handful drive an SVG icon's `fill="currentColor"` instead
+// (feature 003's `close-icon-btn`: `text-neutral-500`/`text-neutral-600` set
+// the icon's fill, not any character glyph). The correct bar for an icon
+// is WCAG 1.4.11 non-text (3:1, RING_PAIRINGS' bar), which is *lower* than
+// AAA text — forcing these through PAIRINGS' 7:1 check would either fail a
+// perfectly compliant icon color or force adding a misleading "text" pairing
+// entry for something that isn't text. Tokens listed here are known,
+// explicitly-reviewed icon-fill uses; their coverage is satisfied by an
+// existing RING_PAIRINGS entry for the same token instead of PAIRINGS.
+// Add a token here ONLY after confirming (by reading the component's
+// contract) that every `text-<token>` use of it is an icon fill, never
+// literal text — a token used for both would need separate handling.
+const ICON_FILL_TEXT_TOKENS = new Set(["neutral-500", "neutral-600"]);
+const RING_VERIFIED_TOKENS = new Set(RING_PAIRINGS.map((p) => p.fg));
+
 const htmlFiles = [
   join(rootDir, "index.html"),
   ...collectHtmlFiles(join(rootDir, "src", "components")),
 ];
 
+// Also scan tailwind.css's `@apply` blocks — found by /speckit-analyze on
+// feature 003: a `text-*` color class used only inside an @apply rule (e.g.
+// a future `.some-component { @apply text-neutral-400 ...; }`) was invisible
+// to this coverage scan, which only ever read HTML class="..." attributes.
+// Every `@layer components` class since feature 001 had this same blind spot.
+function extractApplyBlocks(cssSource) {
+  const blocks = [];
+  const pattern = /@apply\s+([\s\S]*?);/g;
+  let match;
+  while ((match = pattern.exec(cssSource)) !== null) {
+    blocks.push(match[1]);
+  }
+  return blocks;
+}
+
+const tailwindCssPath = join(rootDir, "src", "styles", "tailwind.css");
+const applyBlocks = extractApplyBlocks(readFileSync(tailwindCssPath, "utf8"));
+
 const uncoveredTextTokens = new Set();
+
+function scanClassesForCoverage(classes, sourceLabel) {
+  for (const cls of classes) {
+    const base = cls.split(":").pop(); // strip hover:/focus:/etc.
+    if (!base.startsWith("text-")) continue;
+    const suffix = base.slice("text-".length).split("/")[0]; // strip opacity modifier
+    if (NON_COLOR_TEXT_SUFFIXES.has(suffix)) continue;
+    if (!(suffix in BASE_TOKENS)) continue; // not a project color token (e.g. arbitrary value) — out of scope here
+    if (COVERED_FG_TOKENS.has(suffix)) continue;
+    if (ICON_FILL_TEXT_TOKENS.has(suffix) && RING_VERIFIED_TOKENS.has(suffix)) continue;
+    uncoveredTextTokens.add(`${suffix} (seen in ${sourceLabel})`);
+  }
+}
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
   const classAttrPattern = /class="([^"]*)"/g;
   let match;
   while ((match = classAttrPattern.exec(html)) !== null) {
-    for (const cls of match[1].split(/\s+/).filter(Boolean)) {
-      const base = cls.split(":").pop(); // strip hover:/focus:/etc.
-      if (!base.startsWith("text-")) continue;
-      const suffix = base.slice("text-".length).split("/")[0]; // strip opacity modifier
-      if (NON_COLOR_TEXT_SUFFIXES.has(suffix)) continue;
-      if (!(suffix in BASE_TOKENS)) continue; // not a project color token (e.g. arbitrary value) — out of scope here
-      if (!COVERED_FG_TOKENS.has(suffix)) {
-        uncoveredTextTokens.add(`${suffix} (seen in ${file.replace(rootDir, "")})`);
-      }
-    }
+    scanClassesForCoverage(match[1].split(/\s+/).filter(Boolean), file.replace(rootDir, ""));
   }
+}
+
+for (const block of applyBlocks) {
+  scanClassesForCoverage(block.split(/\s+/).filter(Boolean), "tailwind.css's @apply blocks");
 }
 
 if (uncoveredTextTokens.size > 0) {
@@ -294,5 +358,6 @@ if (failures.length > 0) {
 console.log(
   `Contrast audit passed — ${PAIRINGS.length} text pairing(s) (AAA) + ${RING_PAIRINGS.length} ` +
     `non-text UI pairing(s) (WCAG 1.4.11, 3:1) checked, all above threshold; ` +
-    `markup coverage verified against ${htmlFiles.length} file(s).`,
+    `markup coverage verified against ${htmlFiles.length} file(s) + tailwind.css's ` +
+    `${applyBlocks.length} @apply block(s).`,
 );

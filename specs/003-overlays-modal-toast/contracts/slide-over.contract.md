@@ -64,12 +64,18 @@ Native `<dialog>` focus-trap behavior already wraps Shift+Tab from the
 first focusable element to the last (and Tab from the last back to the
 first) — verified by test, not assumed, same as Modal.
 
+The close button reuses `close-icon-btn` verbatim — see
+`modal.contract.md`'s "Required classes — `close-icon-btn`" table for the
+full resting/hover/active/focus-visible/disabled state set (not repeated
+here to avoid the two contracts drifting out of sync).
+
 ## Token allowlist used
 
-Same as `modal.contract.md`: `bg-neutral-900` (backdrop),
-`text-neutral-900`, `text-neutral-600`, `text-neutral-500` (close icon,
-same correction as Modal). No raw palette classes permitted (FR-004). No
-new tokens.
+Same as `modal.contract.md`: `neutral-900` (backdrop dimming, via
+`.slide-over-dialog::backdrop`'s `theme()` rule), `text-neutral-900`,
+`text-neutral-600`, `text-neutral-500`/`text-neutral-600` (close icon
+resting/hover, via `close-icon-btn`). No raw palette classes permitted
+(FR-004). No new tokens.
 
 ## Acceptance mapping
 

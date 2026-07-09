@@ -23,7 +23,7 @@
     type="button"
     data-testid="toast-close"
     aria-label="Dismiss notification"
-    class="toast-close-btn"
+    class="close-icon-btn"
   >
     <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true">
       <path
@@ -48,10 +48,12 @@ export function initToastDismissal() {
 
 A separate file from `overlay.js` deliberately — Toast has no dialog/
 focus-trap semantics to wire (research.md), so sharing a file would
-misleadingly imply it does. No inline `onclick` attributes anywhere (would
-require relaxing this project's CSP `script-src` to `unsafe-inline` — see
-`rules/web/security.md` — an unjustified security regression for a trivial
-DOM removal).
+misleadingly imply it does. No inline `onclick` attributes anywhere: this
+project ships no CSP today (research.md corrects an earlier draft that
+claimed otherwise), but this feature adds a real, minimal one precisely
+because it introduces the first `<script>` tags — inline handlers would
+require an `unsafe-inline` `script-src` exception in that new policy for
+no real benefit over a one-line `addEventListener` call.
 
 ## Required attributes (FR-002)
 
@@ -72,12 +74,13 @@ DOM removal).
 ## Token allowlist used
 
 `text-neutral-900` (message text), `text-success-strong`/
-`text-error-strong`/`text-brand-dark` (icon per variant), `text-neutral-500`
-`hover:text-neutral-600` (close icon, same correction as Modal/Slide-over
-— research.md). `bg-white`, `shadow-lg`, `ring-1 ring-neutral-900/5` for
-the toast surface (matching the constitution's existing "Toasts/banners"
-catalog entry, which is not AAA-affected since it's a background/border,
-not text). No raw palette classes permitted (FR-004). No new tokens.
+`text-error-strong`/`text-brand-dark` (icon per variant), `text-neutral-500`/
+`text-neutral-600` (close icon resting/hover, via the shared
+`close-icon-btn` class — see `modal.contract.md`'s state table). `bg-white`,
+`shadow-lg`, `ring-1 ring-neutral-900/5` for the toast surface (matching
+the constitution's existing "Toasts/banners" catalog entry, which is not
+AAA-affected since it's a background/border, not text). No raw palette
+classes permitted (FR-004). No new tokens.
 
 ## Edge case — multiple simultaneous toasts
 

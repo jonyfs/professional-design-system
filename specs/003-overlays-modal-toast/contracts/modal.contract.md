@@ -71,6 +71,26 @@ target dialog's `id`) so `overlay.js` can wire it generically — every
 Modal/Slide-over instance on a page is wired the same way, with zero
 per-instance script.
 
+## Required classes — `close-icon-btn` (Principle V gate)
+
+`close-icon-btn` is a **new** interactive element class (not a reuse of
+`.btn-primary`/`.btn-secondary`), so it needs the full Principle V state
+set spelled out explicitly — a gap the first draft of this contract left
+undocumented (`/speckit-analyze` caught it before any code existed):
+
+| State | Required utility |
+|---|---|
+| resting | `text-neutral-500` (icon color via `fill="currentColor"`, 4.83:1 vs. white — clears the 3:1 non-text threshold; corrected from the ratified catalog's `text-neutral-400`, 2.54:1, per research.md) |
+| hover | `hover:text-neutral-600` (7.56:1) |
+| active | `active:scale-95` (press-down feedback, same idiom as `.btn-primary`'s `active:scale-[0.98]`) |
+| focus-visible | `focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand` |
+| disabled | `disabled:opacity-50 disabled:cursor-not-allowed` |
+
+This single class is shared verbatim by Modal, Slide-over, and Toast's
+close/dismiss buttons — no separate `toast-close-btn` class (an earlier
+draft of `toast.contract.md` had one; consolidated to avoid the exact kind
+of near-duplicate-class drift feature 002's code review flagged).
+
 ## Required attributes (Principle II gate, FR-001/FR-005/FR-007)
 
 | Behavior | Mechanism |
@@ -102,13 +122,14 @@ non-lost target:
 
 ## Token allowlist used
 
-`bg-neutral-900` (backdrop, via `[&::backdrop]:bg-neutral-900/50`),
-`text-neutral-900`, `text-neutral-600`, `text-neutral-500`,
-`text-neutral-600` (close icon, corrected per research.md — was
-`text-neutral-400`/`text-neutral-500` in the ratified catalog, which
-measured 2.54:1, below the 3:1 non-text threshold). Button classes reuse
-feature 001's `.btn-primary`/`.btn-secondary`. No raw palette classes
-permitted (FR-004).
+`neutral-900` (backdrop dimming — via a `.modal-dialog::backdrop` rule in
+`@layer components` using Tailwind's `theme('colors.neutral.900 / 50%')`
+function rather than an arbitrary-variant utility class in HTML, per
+Principle III's own sanctioned-mechanisms list — see data-model.md),
+`text-neutral-900` (heading), `text-neutral-600` (body copy),
+`text-neutral-500`/`text-neutral-600` (close icon resting/hover — see the
+`close-icon-btn` state table above). Action buttons reuse feature 001's
+`.btn-primary`/`.btn-secondary`. No raw palette classes permitted (FR-004).
 
 ## Acceptance mapping
 
