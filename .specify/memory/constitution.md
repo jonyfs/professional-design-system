@@ -1,4 +1,59 @@
 <!--
+SYNC IMPACT REPORT (v1.4.0 — see below for the v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.3.4 → 1.4.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Navigation & Disclosure (NEW section): Accordion/
+    Disclosure, Tabs, and Dropdown Menu, reflecting feature
+    005-navigation-disclosure-primitives's shipped patterns. Accordion
+    uses native <details>/<summary> (zero JS, including the exclusive
+    single-open-at-a-time variant via the native shared `name`
+    attribute). Tabs is this project's second component (after
+    Modal/Slide-over/Toast) requiring custom JavaScript, since no native
+    element covers the WAI-ARIA Tabs pattern's roving-tabindex/arrow-key
+    keyboard model. Dropdown Menu uses the native Popover API
+    (`popover="auto"`) for open/close/light-dismiss/top-layer — the same
+    relationship `<dialog>` has to Modal/Slide-over — with a small JS
+    module for arrow-key roving focus, `aria-expanded` syncing, and
+    Tab-closes-the-menu (WAI-ARIA APG Menu Button convention).
+Corrected sections (existing content fixed, not newly added):
+  - Component Catalog → Application & Navigation → Breadcrumbs: resting/
+    active link color corrected from the originally speculative
+    `text-neutral-500` (never empirically verified since no feature had
+    implemented Breadcrumbs until now) to `text-neutral-600`, plus
+    documents the `active:text-neutral-700` state and notes that
+    `disabled:` is a technical impossibility for `<a>` elements (Tailwind's
+    `disabled:` variant targets the `:disabled` CSS pseudo-class, which
+    never matches an anchor), not a state Principle V exempts Breadcrumbs
+    from needing.
+Rationale: feature 005 (Breadcrumbs, Accordion/Disclosure, Tabs, Dropdown
+Menu) was implemented against these patterns as *proposed* Phase 1 design
+docs (specs/005-navigation-disclosure-primitives/data-model.md,
+contracts/*.md) since — unlike Modal/Slide-over/Toast in feature 003,
+which had a pre-existing ratified Overlays/Modals/Feedback catalog entry
+to build against — Accordion/Tabs/Dropdown Menu had no prior catalog
+section at all, and Breadcrumbs' existing entry (speculatively ratified in
+v1.2.1) had never actually been implemented or tested. Two full
+`/speckit-analyze` passes plus a code-reviewer agent pass caught and fixed
+real gaps before and during implementation (Principle V state-completeness
+hedges, a real WCAG AAA contrast failure in the Breadcrumbs/Tabs resting
+color, a Dropdown Menu focus-visible outline that would have silently
+dropped the mandated outline for a background highlight alone) — this
+amendment ratifies what actually shipped and was verified, per the
+"propose in Phase 1, ratify what shipped" sequence already used for
+genuinely new patterns in prior features (e.g. v1.3.0's `-strong` status
+tokens). This is a MINOR bump: new catalog guidance added (Navigation &
+Disclosure), plus a correction to already-ratified content (Breadcrumbs) —
+no principle text changed.
+Templates requiring updates (this MINOR bump):
+  ✅ specs/005-navigation-disclosure-primitives/data-model.md (already
+     documents these corrections as findings; this amendment folds them
+     back into the ratified source of truth)
+  ✅ specs/005-navigation-disclosure-primitives/contracts/*.md (already
+     reflect the final, corrected, shipped state)
+  ⚠ No other spec/plan/tasks documents reference the stale
+     `text-neutral-500` Breadcrumbs value that need correcting
+
 SYNC IMPACT REPORT (v1.3.4 — see below for the v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.3.3 → 1.3.4
 Modified principles: None
@@ -340,9 +395,16 @@ catalog.
 - **Navbar/Header**: `sticky top-0 z-40`, `backdrop-blur-md bg-white/80`,
   `border-b border-neutral-200`. Hamburger button restricted to `lg:hidden` with
   an expanded touch target.
-- **Breadcrumbs**: `text-sm text-neutral-500`, dividers `text-neutral-300` or a
-  minimum `h-5 w-5` Chevron icon. Current item: `text-neutral-900 font-medium` +
-  `aria-current="page"`.
+- **Breadcrumbs**: `text-sm text-neutral-600` (corrected from the originally
+  speculative `text-neutral-500` — feature 005 was the first to actually
+  implement and test this pattern, and a real axe-core AAA scan measured
+  4.83:1 against the required 7:1; `text-neutral-600` clears it at 7.56:1),
+  `active:text-neutral-700`, dividers `text-neutral-300` or a minimum
+  `h-5 w-5` Chevron icon. Current item: `text-neutral-900 font-medium` +
+  `aria-current="page"` (rendered as non-interactive `<span>`, never a
+  "disabled" `<a>` — Tailwind's `disabled:` variant cannot target an anchor
+  element regardless of utility applied, a technical constraint rather
+  than a state this component is exempt from providing).
 
 ### Forms, Validation & Inputs
 - **Text inputs/selects/textareas**: `block w-full rounded-md border-0 py-1.5
@@ -393,6 +455,38 @@ catalog.
   ease-in-out duration-500`; `h-full` with `max-w-md`.
 - **Toasts/banners**: `fixed top-4 right-4 z-50`, semantic icon on the left,
   explicit close button on the right (`text-neutral-400 hover:text-neutral-500`).
+
+### Navigation & Disclosure
+- **Accordion/Disclosure**: native `<details>`/`<summary>` — zero JavaScript,
+  including the single-open-at-a-time ("exclusive") variant, via the native
+  shared `name` attribute (HTML Living Standard's exclusive accordion group
+  mechanism), not custom JS. Trigger `text-neutral-900`, `hover:text-neutral-700`,
+  `active:text-neutral-600`, standard focus-visible ring. Chevron icon
+  `text-neutral-400`, rotated via `group-open:rotate-180` (the `<details>`
+  element carries `group`). Content `text-neutral-600`. Item divider
+  `border-neutral-200`.
+- **Tabs**: WAI-ARIA Tabs pattern (roving tabindex, Left/Right/Home/End
+  arrow-key navigation) — this project's second component (after
+  Modal/Slide-over/Toast) requiring custom JavaScript, since no native
+  element covers this keyboard model. Unselected `text-neutral-600`,
+  `hover:text-neutral-700 hover:border-neutral-300`, `active:text-neutral-800`,
+  selected `border-brand text-neutral-900`, disabled
+  `disabled:opacity-50 disabled:cursor-not-allowed` (the literal pattern
+  every disabled declaration in this project uses — never a custom color
+  substitute). Tab list `border-b border-neutral-200`, `overflow-x-auto`
+  for narrow-viewport overflow (scrolls rather than wrapping or truncating,
+  preserving the single-row tab metaphor).
+- **Dropdown Menu**: native Popover API (`popover="auto"`) provides
+  open/close/light-dismiss/top-layer for free — the same relationship
+  `<dialog>` has to Modal/Slide-over. A small JS module handles what it
+  doesn't: arrow-key roving focus among items, `aria-expanded` syncing on
+  the trigger, and Tab-closes-the-menu (WAI-ARIA APG Menu Button
+  convention). Panel `bg-white shadow-lg ring-1 ring-neutral-300 rounded-md`.
+  Item `text-neutral-900`, `hover:bg-neutral-50`, `active:bg-neutral-100`,
+  focus-visible layers `bg-neutral-50` together with — never instead of —
+  the standard focus-visible outline (the bg alone does not satisfy this
+  principle's outline mandate), disabled `disabled:opacity-50
+  disabled:cursor-not-allowed`.
 
 ## Governance
 
@@ -451,4 +545,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.3.4 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-08
+**Version**: 1.4.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09

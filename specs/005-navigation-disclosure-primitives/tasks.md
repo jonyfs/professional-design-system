@@ -264,7 +264,7 @@ shippable.
       `src/components/{breadcrumbs,accordion,tabs,dropdown-menu}/**`,
       `src/scripts/{tabs,dropdown-menu}.js`, and the `tailwind.css` diff
       using the code-reviewer agent; address any CRITICAL/HIGH findings
-- [ ] T026 Generate Linux Playwright baselines via
+- [x] T026 Generate Linux Playwright baselines via
       `gh workflow run update-snapshots.yml` → `gh run download` →
       copy the new `*-linux.png` files into each new component's
       `tests/e2e/<name>.spec.ts-snapshots/` directory. Never locally,
@@ -272,7 +272,7 @@ shippable.
       `cmp` that any pre-existing baselines the run regenerates are
       byte-identical to what's already committed, same verification
       feature 004 did, before committing only the genuinely new files
-- [ ] T027 Run `/speckit-constitution` to ratify a new "Navigation &
+- [x] T027 Run `/speckit-constitution` to ratify a new "Navigation &
       Disclosure" Component Catalog section (MINOR version bump — new
       catalog guidance added, not a correction) reflecting the actual
       shipped patterns for Breadcrumbs (already-ratified, now
