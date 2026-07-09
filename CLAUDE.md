@@ -1,12 +1,14 @@
 <!-- SPECKIT START -->
-Active feature: `003-overlays-modal-toast`. For technologies, project
+Active feature: `004-react-component-library`. For technologies, project
 structure, shell commands, and other implementation context, read
-`specs/003-overlays-modal-toast/plan.md` (and its `research.md`,
+`specs/004-react-component-library/plan.md` (and its `research.md`,
 `data-model.md`, `contracts/`, `quickstart.md` siblings). Features
-`001-primitive-components` and `002-form-primitives-round-2` are complete
-and shipped — see their own `plan.md` files for that context. Feature 003
-is the first to introduce vanilla JS (`src/scripts/overlay.js`,
-`src/scripts/toast.js`) — see its research.md for why.
+`001-primitive-components`, `002-form-primitives-round-2`, and
+`003-overlays-modal-toast` are complete and shipped as a static HTML +
+Tailwind gallery — see their own `plan.md` files for that context.
+Feature 004 adds a React + TypeScript package (`packages/react/`) for
+Claude Design compatibility WITHOUT deprecating the static gallery; see
+its research.md for the build-tool/testing-strategy decisions.
 <!-- SPECKIT END -->
 
 ## graphify
