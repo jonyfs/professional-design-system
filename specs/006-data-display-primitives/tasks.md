@@ -180,7 +180,7 @@ it from the DOM.
       `src/components/{avatar,card,alert}/**`, `src/scripts/alert.js`,
       and the `tailwind.css`/`vite.config.ts` diffs using the
       code-reviewer agent; address any CRITICAL/HIGH findings
-- [ ] T023 Generate Linux Playwright baselines via
+- [x] T023 Generate Linux Playwright baselines via
       `gh workflow run update-snapshots.yml` → `gh run download` → copy
       the new `*-linux.png` files into each new component's
       `tests/e2e/<name>.spec.ts-snapshots/` directory. Never locally,
