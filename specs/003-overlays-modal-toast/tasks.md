@@ -55,17 +55,22 @@ returns to the trigger — all without any other component present.
       first focusable element back to the last), an Escape-closes assertion
       with a focus-returned-to-trigger check, a backdrop-click-closes
       assertion (click at a point outside the panel but inside the
-      viewport) with the same focus-return check, and a Tab-lands-on-
+      viewport) with the same focus-return check, a Tab-lands-on-
       dialog-itself assertion for the `tabindex="-1"` empty-content variant
-      (Edge Case, `modal.contract.md`'s "no focusable content" section)
+      (Edge Case, `modal.contract.md`'s "no focusable content" section),
+      and a pointer-inertness assertion (FR-007: attempt to click a
+      background trigger button while the dialog is open, assert no state
+      change — not just the keyboard-side assertions above)
 
 ### Implementation for User Story 1
 
 - [ ] T002 [US1] Add `.modal-dialog`, `.modal-panel`, `.close-icon-btn` to
       `src/styles/tailwind.css`'s `@layer components` per
-      `modal.contract.md` and `data-model.md` (including the
-      `.modal-dialog::backdrop { background-color: theme('colors.neutral.900 / 50%'); }`
-      rule) and `close-icon-btn`'s full resting/hover/active/focus-visible/
+      `modal.contract.md` and `data-model.md`'s "Full utility composition"
+      section (including the
+      `.modal-dialog::backdrop { background-color: theme('colors.neutral.500 / 75%'); }`
+      rule — matching the constitution's ratified Modals pattern exactly)
+      and `close-icon-btn`'s full resting/hover/active/focus-visible/
       disabled state table
 - [ ] T003 [US1] Create `src/scripts/overlay.js` exporting
       `initDialogTriggers()` per `modal.contract.md`'s Behavior wiring
@@ -152,26 +157,31 @@ focus-return behavior as Modal, with a slide-in-from-edge animation.
 ### Tests for User Story 3
 
 - [ ] T013 [P] [US3] Write `tests/e2e/slide-over.spec.ts`: visual
-      regression at all four breakpoints for closed/open states, an axe
-      scan, and the same Tab-cycle-containment, Shift+Tab-wrap,
-      Escape-closes-with-focus-return, and backdrop-click-closes-with-
-      focus-return assertions as `modal.spec.ts` (same underlying
-      mechanism — see research.md)
+      regression at all four breakpoints for closed/open/empty-content
+      states, an axe scan, the same Tab-cycle-containment, Shift+Tab-wrap,
+      Escape-closes-with-focus-return, backdrop-click-closes-with-
+      focus-return, and pointer-inertness assertions as `modal.spec.ts`
+      (same underlying mechanism — see research.md), and a Tab-lands-on-
+      dialog-itself assertion for the `tabindex="-1"` empty-content variant
+      (Edge Case, `slide-over.contract.md`'s "no focusable content" section
+      — added during `/speckit-analyze`, mirroring Modal's)
 
 ### Implementation for User Story 3
 
 - [ ] T014 [US3] Add `.slide-over-dialog`, `.slide-over-panel` to
       `src/styles/tailwind.css`'s `@layer components` per
-      `slide-over.contract.md` and `data-model.md` (right-edge anchored
-      positioning, `translate-x` slide-in transition, plus the
-      `.slide-over-dialog::backdrop` `theme()` rule matching Modal's); the
+      `slide-over.contract.md` and `data-model.md`'s "Full utility
+      composition" section (right-edge anchored positioning, `translate-x`
+      slide-in transition, plus the `.slide-over-dialog::backdrop`
+      `theme()` rule matching Modal's exactly — `neutral-500/75%`); the
       close button reuses `close-icon-btn` verbatim
 - [ ] T015 [US3] Implement `src/components/slide-over/slide-over.html` per
-      `slide-over.contract.md`; import `overlay.js` and call
-      `initDialogTriggers()` — no new script needed, `overlay.js` is
-      already generic over any `[data-dialog-trigger]`/`<dialog>` pair
-      (research.md: "no second focus-trap mechanism, no code duplication
-      beyond CSS")
+      `slide-over.contract.md` (primary interactive demo) plus the
+      `tabindex="-1"` empty-content demo variant from the contract's Edge
+      Case section; import `overlay.js` and call `initDialogTriggers()` —
+      no new script needed, `overlay.js` is already generic over any
+      `[data-dialog-trigger]`/`<dialog>` pair (research.md: "no second
+      focus-trap mechanism, no code duplication beyond CSS")
 - [ ] T016 [US3] Wire the Slide-over partial into `index.html`'s gallery
 - [ ] T017 [US3] Run `npm run audit:tokens` and `npm run audit:contrast`;
       fix any violation before proceeding (expected: 0 — no new tokens)

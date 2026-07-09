@@ -122,11 +122,13 @@ non-lost target:
 
 ## Token allowlist used
 
-`neutral-900` (backdrop dimming — via a `.modal-dialog::backdrop` rule in
-`@layer components` using Tailwind's `theme('colors.neutral.900 / 50%')`
-function rather than an arbitrary-variant utility class in HTML, per
-Principle III's own sanctioned-mechanisms list — see data-model.md),
-`text-neutral-900` (heading), `text-neutral-600` (body copy),
+`neutral-500` (backdrop dimming at 75% opacity — matching the
+constitution's own ratified Modals pattern, `bg-neutral-500/75`, via a
+`.modal-dialog::backdrop` rule in `@layer components` using Tailwind's
+`theme('colors.neutral.500 / 75%')` function rather than an
+arbitrary-variant utility class in HTML, per Principle III's own
+sanctioned-mechanisms list — see data-model.md), `text-neutral-900`
+(heading), `text-neutral-600` (body copy),
 `text-neutral-500`/`text-neutral-600` (close icon resting/hover — see the
 `close-icon-btn` state table above). Action buttons reuse feature 001's
 `.btn-primary`/`.btn-secondary`. No raw palette classes permitted (FR-004).

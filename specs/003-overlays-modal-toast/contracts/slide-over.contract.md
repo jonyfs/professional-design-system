@@ -64,6 +64,27 @@ Native `<dialog>` focus-trap behavior already wraps Shift+Tab from the
 first focusable element to the last (and Tab from the last back to the
 first) — verified by test, not assumed, same as Modal.
 
+## Edge case — no focusable content
+
+Spec.md's Edge Cases section states this requirement for "a Modal **or**
+Slide-over" opened with no focusable descendants — it applies here too,
+not only to Modal (an earlier draft of this contract omitted it;
+`/speckit-analyze` caught the gap before implementation). Same fix as
+`modal.contract.md`: add `tabindex="-1"` to the `<dialog>` element itself
+so focus has a valid, non-lost target instead of falling through to
+`<body>`:
+
+```html
+<dialog tabindex="-1" aria-labelledby="slide-over-info-title" class="slide-over-dialog">
+  <div class="slide-over-panel">
+    <h2 id="slide-over-info-title" class="text-lg font-semibold text-neutral-900">
+      Syncing…
+    </h2>
+    <p class="mt-2 text-sm text-neutral-600">This will only take a moment.</p>
+  </div>
+</dialog>
+```
+
 The close button reuses `close-icon-btn` verbatim — see
 `modal.contract.md`'s "Required classes — `close-icon-btn`" table for the
 full resting/hover/active/focus-visible/disabled state set (not repeated
@@ -71,7 +92,8 @@ here to avoid the two contracts drifting out of sync).
 
 ## Token allowlist used
 
-Same as `modal.contract.md`: `neutral-900` (backdrop dimming, via
+Same as `modal.contract.md`: `neutral-500` (backdrop dimming at 75%
+opacity, matching the constitution's ratified Modals pattern, via
 `.slide-over-dialog::backdrop`'s `theme()` rule), `text-neutral-900`,
 `text-neutral-600`, `text-neutral-500`/`text-neutral-600` (close icon
 resting/hover, via `close-icon-btn`). No raw palette classes permitted

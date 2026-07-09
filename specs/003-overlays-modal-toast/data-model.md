@@ -67,22 +67,57 @@ data field.
   `showModal()`) cannot be reached by a `class="..."` attribute in HTML —
   it isn't a real DOM node. Styled instead as a plain CSS rule inside
   `@layer components`, using Tailwind's `theme()` function to resolve the
-  color token rather than hardcoding a hex value:
+  color token rather than hardcoding a hex value — using the constitution's
+  own already-ratified Modals pattern's exact token/opacity
+  (`bg-neutral-500/75`, `.specify/memory/constitution.md`'s Overlays,
+  Modals & Feedback section), not a different, undocumented choice (an
+  earlier draft of this line used `neutral-900/50%` with no rationale —
+  `/speckit-analyze` caught the silent deviation from the ratified pattern
+  before implementation; corrected here to match it exactly):
   ```css
   .modal-dialog::backdrop,
   .slide-over-dialog::backdrop {
-    background-color: theme('colors.neutral.900 / 50%');
+    background-color: theme('colors.neutral.500 / 75%');
   }
   ```
   `theme()` is one of Principle III's explicitly named sanctioned
   mechanisms (alongside `@apply`/`@layer`), so this isn't a parallel
-  styling system — it's the same ratified `neutral-900` token, just
+  styling system — it's the same ratified `neutral-500` token, just
   referenced from a context (`::backdrop`) that arbitrary-variant HTML
   utility classes can't cleanly target. `audit-tokens.mjs`/
   `check-contrast.mjs` now also scan `tailwind.css`'s `@apply` blocks
   (research.md), but a `theme()` call inside a plain CSS property value
   (not an `@apply` rule) is a different syntax the scripts still don't
   parse — this one line remains manually verified against the allowlist
-  (neutral-900 is already a ratified, AAA-checked token used elsewhere),
+  (neutral-500 is already a ratified, AAA-checked token used elsewhere),
   rather than a scope worth building a CSS-value parser for a single
   call site.
+
+## Full utility composition (from the constitution's ratified Overlays,
+## Modals & Feedback pattern — not previously written out in any Phase 1
+## doc; `/speckit-analyze` flagged this as underspecified, since `.modal-
+## dialog`/`.modal-panel` had only their color-token allowlist documented)
+
+```css
+.modal-dialog {
+  /* dialog element itself: reset UA padding/border, native centering kept */
+  @apply p-0 border-0;
+}
+.modal-panel {
+  @apply relative transform overflow-hidden rounded-lg bg-white px-4 pb-4
+    pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg
+    sm:p-6;
+}
+.slide-over-dialog {
+  @apply p-0 border-0 fixed inset-y-0 right-0 h-full;
+}
+.slide-over-panel {
+  @apply relative flex h-full w-full max-w-md flex-col bg-white shadow-xl
+    p-6 transform transition ease-in-out duration-500;
+}
+```
+
+Sourced directly from the constitution's ratified strings (Modals' dialog
+box utilities; Slide-overs' "right-side entry animation... `h-full` with
+`max-w-md`"), not invented — closing the gap that let the backdrop token
+drift unnoticed in the first draft of this document.
