@@ -39,6 +39,23 @@ Chrome/Firefox/Safari Playwright keyboard-navigation assertions against
 the actual shipped markup, so any engine-specific gap would surface as a
 failing test, not a silent assumption.
 
+**This caution paid off during implementation**: real cross-browser
+testing found that WebKit (the Playwright-bundled version at the time of
+this feature) does **not** restore focus to the previously-focused element
+when a `<dialog>` closes — it leaves focus on `document.body` — while
+Chromium and Firefox both do, exactly as their conformance status implied.
+Since Principle II's focus-return mandate is NON-NEGOTIABLE and this
+project doesn't ship a requirement's correctness as "true in 2 of 3 target
+browsers," `src/scripts/overlay.js` now explicitly calls `trigger.focus()`
+on the dialog's native `close` event — a no-op reinforcement where native
+restoration already worked (Chromium/Firefox), and the actual fix where it
+didn't (WebKit). Chromium's focus-trap containment was also observed to
+transiently rest focus on `document.body` for a single tick while
+wrapping between the last and first focusable elements (verified: no
+further Tab press ever escapes to real page content) — a legitimate
+browser-internal resting point, not a leak, and the test suite's
+assertions were written to accept it as such rather than fail on it.
+
 What `<dialog>` does **not** provide for free, and this feature must add
 with a small script (`src/scripts/overlay.js`):
 

@@ -62,6 +62,12 @@ export function initDialogTriggers() {
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close();
     });
+    // Explicit focus-return safeguard: found during implementation (real
+    // cross-browser testing, not assumed) that WebKit does not restore
+    // focus to the trigger on close natively, unlike Chromium/Firefox —
+    // see research.md. No-op reinforcement where native restoration
+    // already worked; the actual fix where it didn't.
+    dialog.addEventListener("close", () => trigger.focus());
   });
 }
 ```
@@ -96,7 +102,7 @@ of near-duplicate-class drift feature 002's code review flagged).
 | Behavior | Mechanism |
 |---|---|
 | Focus trap while open | Native — `<dialog>` + `showModal()`, enforced by the browser (research.md) |
-| Focus returns to trigger on close | Native — `<dialog>`'s "previously focused element" restoration |
+| Focus returns to trigger on close | Native in Chromium/Firefox (`<dialog>`'s "previously focused element" restoration); explicitly reinforced by `overlay.js`'s `close` listener for WebKit, which does not restore it natively (found by real cross-browser testing) |
 | Escape closes | Native — built into `<dialog>` by default |
 | Backdrop click closes | `overlay.js`'s `click` listener (not native — the one thing `showModal()` doesn't do for free) |
 | Explicit close button | Zero JS — `<form method="dialog"><button type="submit">` closes the nearest ancestor dialog natively |
