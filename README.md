@@ -1,21 +1,27 @@
 # Professional Design System
 
 Accessible HTML + Tailwind CSS primitive components (Button, Text Input, Badge,
-Checkbox, Radio, Select, Toggle/Switch, Modal, Toast, Slide-over), built
-exclusively on the semantic design tokens ratified in
-[`.specify/memory/constitution.md`](.specify/memory/constitution.md) (v1.3.4).
-Modal/Slide-over use native `<dialog>` for focus-trapped overlays; Toast
-and Modal/Slide-over's dismiss wiring are this project's only JavaScript
-(`src/scripts/`), everything else is pure HTML + Tailwind. A minimal
-project-wide Content-Security-Policy is set via `<meta>` tag on every page.
+Checkbox, Radio, Select, Toggle/Switch, Modal, Toast, Slide-over, Breadcrumbs,
+Accordion, Tabs, Dropdown Menu), built exclusively on the semantic design
+tokens ratified in
+[`.specify/memory/constitution.md`](.specify/memory/constitution.md).
+Modal/Slide-over/Dropdown Menu use native `<dialog>`/Popover API for
+focus-trapped or light-dismissable overlays; Accordion uses native
+`<details>`/`<summary>`. Toast, Modal/Slide-over's dismiss wiring, Tabs,
+and Dropdown Menu's keyboard/focus wiring are this project's only
+JavaScript (`src/scripts/`), everything else is pure HTML + Tailwind. A
+minimal project-wide Content-Security-Policy is set via `<meta>` tag on
+every page.
 
-The same 10 components are also published as a React + TypeScript package
-at [`packages/react/`](packages/react/) — see
-[React package](#react-package) below. **Both are maintained in
+The first 10 components (Button through Slide-over) are also published as
+a React + TypeScript package at [`packages/react/`](packages/react/) —
+see [React package](#react-package) below. **Both are maintained in
 parallel**: the static HTML gallery remains the ratified reference
 implementation, and the React package is a port that must stay visually
 and behaviorally identical to it, verified by pixel-parity Playwright
-tests seeded from the static gallery's own approved baselines.
+tests seeded from the static gallery's own approved baselines. Breadcrumbs,
+Accordion, Tabs, and Dropdown Menu (feature 005) are static-only for now —
+a React port is a separate future feature.
 
 ## Requirements
 
@@ -75,7 +81,10 @@ src/
 ├── styles/tailwind.css       # @tailwind directives + shared @layer components
 ├── scripts/
 │   ├── overlay.js            # Modal/Slide-over: showModal()/backdrop-click/focus-return wiring
-│   └── toast.js               # Toast: dismiss-button wiring (no dialog/focus-trap semantics)
+│   ├── toast.js               # Toast: dismiss-button wiring (no dialog/focus-trap semantics)
+│   ├── tabs.js                 # Tabs: roving-tabindex/arrow-key wiring (WAI-ARIA Tabs pattern)
+│   └── dropdown-menu.js        # Dropdown Menu: arrow-key roving focus, aria-expanded sync,
+│                                # Tab-closes-menu (Popover API handles open/close/light-dismiss)
 └── components/
     ├── button/button.html
     ├── text-input/text-input.html
@@ -86,24 +95,31 @@ src/
     ├── toggle/toggle.html
     ├── modal/modal.html
     ├── toast/toast.html
-    └── slide-over/slide-over.html
+    ├── slide-over/slide-over.html
+    ├── breadcrumbs/breadcrumbs.html
+    ├── accordion/accordion.html
+    ├── tabs/tabs.html
+    └── dropdown-menu/dropdown-menu.html
 scripts/
 ├── audit-tokens.mjs           # Principle IV gate (color + border-radius; scans HTML + tailwind.css @apply blocks)
 └── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings; same dual-source scan)
 tests/e2e/                     # Playwright specs, one per component (react-*.spec.ts for the React port)
-packages/react/                # @professional-design-system/react — React + TypeScript port of all 10 components
+packages/react/                # @professional-design-system/react — React + TypeScript port of 10 components
 shared/design-tokens.ts        # Single source of truth for colors/radius/font, imported by every Tailwind config
 tests/react-harness/           # Dev-only Vite app rendering the React package for Playwright (never published)
 specs/001-primitive-components/    # spec/plan/tasks/contracts (Button, Text Input, Badge, Checkbox)
 specs/002-form-primitives-round-2/ # spec/plan/tasks/contracts (Radio, Select, Toggle)
 specs/003-overlays-modal-toast/    # spec/plan/tasks/contracts (Modal, Toast, Slide-over)
 specs/004-react-component-library/ # spec/plan/tasks/contracts (React + TypeScript package migration)
+specs/005-navigation-disclosure-primitives/ # spec/plan/tasks/contracts (Breadcrumbs, Accordion, Tabs, Dropdown Menu)
 ```
 
 ## React package
 
-[`packages/react/`](packages/react/) publishes the same 10 components as
-`@professional-design-system/react`, a React + TypeScript package built
+[`packages/react/`](packages/react/) publishes 10 of the components above
+(Button, Text Input, Badge, Checkbox, Radio, Select, Toggle, Modal, Toast,
+Slide-over) as `@professional-design-system/react`, a React + TypeScript
+package built
 with `tsup` (ESM + CJS + `.d.ts`) and Tailwind CSS compiled to a
 self-contained `dist/styles.css`. It exists so the design system can be
 consumed by React tooling — including

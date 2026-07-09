@@ -44,6 +44,19 @@
       <button
         type="button"
         role="tab"
+        id="tab-warranty"
+        aria-controls="panel-warranty"
+        aria-selected="false"
+        tabindex="-1"
+        disabled
+        class="tab-trigger"
+        data-testid="tab-warranty"
+      >
+        Warranty (disabled)
+      </button>
+      <button
+        type="button"
+        role="tab"
         id="tab-shipping"
         aria-controls="panel-shipping"
         aria-selected="false"
@@ -59,6 +72,9 @@
     </div>
     <div id="panel-reviews" role="tabpanel" aria-labelledby="tab-reviews" tabindex="0" class="tab-panel" hidden data-testid="panel-reviews">
       <p>Customer reviews and ratings.</p>
+    </div>
+    <div id="panel-warranty" role="tabpanel" aria-labelledby="tab-warranty" tabindex="0" class="tab-panel" hidden data-testid="panel-warranty">
+      <p>Warranty information is unavailable for this item.</p>
     </div>
     <div id="panel-shipping" role="tabpanel" aria-labelledby="tab-shipping" tabindex="0" class="tab-panel" hidden data-testid="panel-shipping">
       <p>Shipping options and estimated delivery times.</p>

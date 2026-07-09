@@ -76,4 +76,18 @@ test.describe("Tabs", () => {
     await page.keyboard.press("Home");
     await expect(page.getByTestId("tab-details")).toBeFocused();
   });
+
+  test("disabled tab is skipped during arrow-key navigation (code review finding)", async ({
+    page,
+  }) => {
+    await expect(page.getByTestId("tab-warranty")).toBeDisabled();
+    await page.getByTestId("tab-reviews").focus();
+    await page.keyboard.press("ArrowRight");
+    // Must land on Shipping, not the disabled Warranty tab in between.
+    await expect(page.getByTestId("tab-shipping")).toBeFocused();
+    await expect(page.getByTestId("tab-shipping")).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByTestId("tab-warranty")).toHaveAttribute("aria-selected", "false");
+    await page.keyboard.press("ArrowLeft");
+    await expect(page.getByTestId("tab-reviews")).toBeFocused();
+  });
 });

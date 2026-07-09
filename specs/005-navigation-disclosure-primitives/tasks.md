@@ -260,7 +260,7 @@ shippable.
       reference. **NOT DONE by an AI agent** — requires a human tester,
       same outstanding status as every prior feature's equivalent item
       (SC-001/SC-005 in features 001-004)
-- [ ] T025 Code review pass over
+- [x] T025 Code review pass over
       `src/components/{breadcrumbs,accordion,tabs,dropdown-menu}/**`,
       `src/scripts/{tabs,dropdown-menu}.js`, and the `tailwind.css` diff
       using the code-reviewer agent; address any CRITICAL/HIGH findings
@@ -281,7 +281,7 @@ shippable.
       Phase 1, ratify what shipped" step already used for genuinely new
       patterns in prior features (e.g. v1.3.0's `-strong` status tokens);
       do not skip it once implementation is verified stable
-- [ ] T028 [P] Update root `README.md`'s Project Structure section to
+- [x] T028 [P] Update root `README.md`'s Project Structure section to
       list the four new component directories and `src/scripts/tabs.js`/
       `dropdown-menu.js`, consistent with feature 004's README update
       pattern
