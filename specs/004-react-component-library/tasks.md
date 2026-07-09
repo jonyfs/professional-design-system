@@ -41,15 +41,15 @@ and full TypeScript prop-completion.
 
 ### Foundational (blocks all of Phase 1)
 
-- [ ] T001 Extract `shared/design-tokens.ts` per `data-model.md`'s exact
+- [x] T001 Extract `shared/design-tokens.ts` per `data-model.md`'s exact
       shape (`colors`, `borderRadius`, `fontFamily` — direct extraction
       from the current `tailwind.config.ts`, no new values)
-- [ ] T002 Modify root `tailwind.config.ts` to import `colors`,
+- [x] T002 Modify root `tailwind.config.ts` to import `colors`,
       `borderRadius`, `fontFamily` from `shared/design-tokens.ts` instead
       of declaring them inline; run `npm run build` + `npm run test:e2e`
       to confirm zero visual change to the existing static site (the
       values are identical, only their source moved)
-- [ ] T003 Add `"workspaces": ["packages/*", "tests/react-harness"]` to
+- [x] T003 Add `"workspaces": ["packages/*", "tests/react-harness"]` to
       root `package.json` per `contracts/react-package.contract.md` —
       `tests/react-harness` is listed explicitly since it lives outside
       the `packages/*` glob (an earlier draft omitted it; `/speckit-analyze`
@@ -59,49 +59,52 @@ and full TypeScript prop-completion.
       existing first if run in strict order, though in practice this
       task only edits root `package.json` and can be done any time
       before T006.
-- [ ] T004 Create `packages/react/package.json`, `tsconfig.json`,
+- [x] T004 Create `packages/react/package.json`, `tsconfig.json`,
       `tsup.config.ts`, `tailwind.config.ts` per
       `contracts/react-package.contract.md` (the `tailwind.config.ts`
       imports from `shared/design-tokens.ts`, so T001 MUST exist first)
-- [ ] T005 Create `packages/react/src/styles.css` (`@tailwind` directives
+- [x] T005 Create `packages/react/src/styles.css` (`@tailwind` directives
       + an empty `@layer components` block — populated per-component in
       later tasks, matching `src/styles/tailwind.css`'s structure)
-- [ ] T006 Run `npm install` at the repo root to wire the new workspaces
+- [x] T006 Run `npm install` at the repo root to wire the new workspaces
       (depends on T001, T003, T004 all existing first — installing
       before the workspace manifests exist resolves nothing new)
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Write `tests/e2e/react-button.spec.ts`: same
+- [x] T007 [P] [US1] Write `tests/e2e/react-button.spec.ts`: same
       assertions as `tests/e2e/button.spec.ts` (visual regression, axe
       scan, hover/active/focus-visible/disabled states), pointed at the
       test harness instead of the static HTML page
-- [ ] T008 [US1] Create `tests/react-harness/` (minimal Vite + React app;
-      `package.json` includes `"dependencies": {"@professional-design-system/react": "workspace:*"}`,
+- [x] T008 [US1] Create `tests/react-harness/` (minimal Vite + React app;
+      `package.json` includes `"dependencies": {"@professional-design-system/react": "^0.1.0"}`
+      — a plain semver range, not `"workspace:*"` (that's pnpm/Yarn
+      syntax; npm has no `workspace:` protocol and errors
+      `EUNSUPPORTEDPROTOCOL` on it — found during implementation),
       resolvable only because T003 added `tests/react-harness` itself to
       the root `workspaces` array — one page per component added
       incrementally — this task creates the harness shell + a Button
       demo page only)
-- [ ] T009 [US1] Implement `packages/react/src/Button/Button.tsx` per
+- [x] T009 [US1] Implement `packages/react/src/Button/Button.tsx` per
       `contracts/component-props.contract.md`'s reference implementation
       (port `.btn-primary`/`.btn-secondary` `@apply` rules into
       `packages/react/src/styles.css`'s `@layer components`, verbatim
       from `src/styles/tailwind.css`)
-- [ ] T010 [US1] Export `Button`/`ButtonProps` from
+- [x] T010 [US1] Export `Button`/`ButtonProps` from
       `packages/react/src/index.ts` per
       `contracts/react-package.contract.md`'s barrel-export shape
-- [ ] T011 [US1] Run `npm run build --workspace packages/react`; confirm
+- [x] T011 [US1] Run `npm run build --workspace packages/react`; confirm
       `dist/index.mjs`, `dist/index.js`, `dist/index.d.ts`,
       `dist/styles.css` all exist and are non-empty
-- [ ] T012 [US1] Manually inspect `dist/index.d.ts`'s `ButtonProps` —
+- [x] T012 [US1] Manually inspect `dist/index.d.ts`'s `ButtonProps` —
       confirm it's clean, flattened TypeScript with no hand-written
       override needed (SC-002's per-component bar)
-- [ ] T013 [US1] Extend `scripts/audit-tokens.mjs` and
+- [x] T013 [US1] Extend `scripts/audit-tokens.mjs` and
       `scripts/check-contrast.mjs` to also scan
       `packages/react/src/**/*.tsx` `className` string literals and
       `packages/react/src/styles.css`'s `@apply` blocks (research.md);
       run both against the current state — expect 0 violations
-- [ ] T014 [US1] Run `tests/e2e/react-button.spec.ts`; confirm visual
+- [x] T014 [US1] Run `tests/e2e/react-button.spec.ts`; confirm visual
       parity against the existing `button.spec.ts-snapshots/` baselines
 
 **Checkpoint**: User Story 1 (package foundation + Button) is fully

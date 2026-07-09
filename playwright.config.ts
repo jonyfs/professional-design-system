@@ -18,11 +18,23 @@ export default defineConfig({
     baseURL: "http://localhost:5173",
     trace: "on-first-retry",
   },
-  webServer: {
-    command: "npm run dev",
-    url: "http://localhost:5173",
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: [
+    {
+      command: "npm run dev",
+      url: "http://localhost:5173",
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      // React test harness (feature 004) — a separate Vite dev server on
+      // its own port, since it's an independent workspace package, not
+      // part of the static site's vite.config.ts multi-page build.
+      // react-*.spec.ts files construct absolute http://localhost:5174
+      // URLs rather than relying on the shared `use.baseURL` above.
+      command: "npm run dev --workspace tests/react-harness",
+      url: "http://localhost:5174",
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
   projects: [
     {
       name: "chromium-320",

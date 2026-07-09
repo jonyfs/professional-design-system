@@ -4,10 +4,15 @@
 // border-radius utility that isn't one of this project's ratified semantic
 // tokens (.specify/memory/constitution.md's Base Semantic Palette).
 //
-// The allowlist is derived from tailwind.config.ts's theme.extend, not
-// hand-duplicated, so the two can't silently drift apart.
+// The allowlist is derived from shared/design-tokens.ts (feature 004 —
+// both tailwind.config.ts and packages/react/tailwind.config.ts import
+// their theme.extend.colors/borderRadius from this one file), not
+// hand-duplicated, so the two configs and this audit can't silently drift
+// apart. Parsed as source text (regex over `export const colors = {...}`),
+// not executed — same approach this script has always used, just pointed
+// at the new single-source file instead of tailwind.config.ts directly.
 
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -33,7 +38,7 @@ function extractBalancedBlock(source, startIndex) {
 }
 
 function parseColorAllowlist(configSource) {
-  const colorsKeyIndex = configSource.indexOf("colors:");
+  const colorsKeyIndex = configSource.indexOf("colors = {");
   if (colorsKeyIndex === -1) return new Set();
   const openBraceIndex = configSource.indexOf("{", colorsKeyIndex);
   const block = extractBalancedBlock(configSource, openBraceIndex);
@@ -60,7 +65,7 @@ function parseColorAllowlist(configSource) {
 }
 
 function parseRadiusAllowlist(configSource) {
-  const radiusKeyIndex = configSource.indexOf("borderRadius:");
+  const radiusKeyIndex = configSource.indexOf("borderRadius = {");
   if (radiusKeyIndex === -1) return new Set();
   const openBraceIndex = configSource.indexOf("{", radiusKeyIndex);
   const block = extractBalancedBlock(configSource, openBraceIndex);
@@ -73,7 +78,7 @@ function parseRadiusAllowlist(configSource) {
   return allowed;
 }
 
-const configSource = readFileSync(join(rootDir, "tailwind.config.ts"), "utf8");
+const configSource = readFileSync(join(rootDir, "shared", "design-tokens.ts"), "utf8");
 const allowedColorNames = parseColorAllowlist(configSource);
 const allowedRadiusClasses = parseRadiusAllowlist(configSource);
 
@@ -117,7 +122,41 @@ function extractApplyBlocks(cssSource) {
 
 const tailwindCssPath = join(rootDir, "src", "styles", "tailwind.css");
 const tailwindCssSource = readFileSync(tailwindCssPath, "utf8");
-const applyBlocks = extractApplyBlocks(tailwindCssSource);
+const applyBlocks = [{ file: tailwindCssPath, blocks: extractApplyBlocks(tailwindCssSource) }];
+
+// Same @apply scan, extended to packages/react/src/styles.css (feature 004
+// — research.md's duplication decision: the React package compiles its own
+// stylesheet, so its @layer components block needs the same verification
+// as the static site's, not a free pass because it's a second file).
+const reactStylesPath = join(rootDir, "packages", "react", "src", "styles.css");
+if (existsSync(reactStylesPath)) {
+  const reactStylesSource = readFileSync(reactStylesPath, "utf8");
+  applyBlocks.push({ file: reactStylesPath, blocks: extractApplyBlocks(reactStylesSource) });
+}
+
+// --- Collect .tsx files (feature 004) — same className="..." scan as HTML's
+// class="...", extended to packages/react's React component source. Dynamic/
+// templated classNames (e.g. `` className={`btn ${variant}`} ``) are out of
+// scope — every component in this feature uses static, literal className
+// strings per variant, matching the existing HTML contracts' own pattern. ---
+
+function collectTsxFiles(dir) {
+  const files = [];
+  for (const entry of readdirSync(dir)) {
+    if (entry === "node_modules" || entry === "dist") continue;
+    const fullPath = join(dir, entry);
+    const stats = statSync(fullPath);
+    if (stats.isDirectory()) {
+      files.push(...collectTsxFiles(fullPath));
+    } else if (extname(entry) === ".tsx") {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+const reactSrcDir = join(rootDir, "packages", "react", "src");
+const tsxTargets = existsSync(reactSrcDir) ? collectTsxFiles(reactSrcDir) : [];
 
 // --- Scan each file's class="..." attributes ---
 
@@ -230,12 +269,29 @@ for (const file of targets) {
   }
 }
 
-for (const block of applyBlocks) {
-  const classes = block.split(/\s+/).filter(Boolean);
-  for (const cls of classes) {
-    const violation = checkClass(cls);
-    if (violation) {
-      violations.push({ file: tailwindCssPath, violation: `@apply ${violation}` });
+for (const { file, blocks } of applyBlocks) {
+  for (const block of blocks) {
+    const classes = block.split(/\s+/).filter(Boolean);
+    for (const cls of classes) {
+      const violation = checkClass(cls);
+      if (violation) {
+        violations.push({ file, violation: `@apply ${violation}` });
+      }
+    }
+  }
+}
+
+for (const file of tsxTargets) {
+  const source = readFileSync(file, "utf8");
+  const classNamePattern = /className="([^"]*)"/g;
+  let match;
+  while ((match = classNamePattern.exec(source)) !== null) {
+    const classes = match[1].split(/\s+/).filter(Boolean);
+    for (const cls of classes) {
+      const violation = checkClass(cls);
+      if (violation) {
+        violations.push({ file, violation });
+      }
     }
   }
 }
@@ -249,7 +305,9 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
+const totalApplyBlocks = applyBlocks.reduce((sum, { blocks }) => sum + blocks.length, 0);
 console.log(
-  `Token discipline audit passed — ${targets.length} file(s) + tailwind.css's ` +
-    `${applyBlocks.length} @apply block(s) scanned, 0 violations.`,
+  `Token discipline audit passed — ${targets.length} HTML file(s), ` +
+    `${totalApplyBlocks} @apply block(s) across ${applyBlocks.length} CSS file(s), ` +
+    `and ${tsxTargets.length} .tsx file(s) scanned, 0 violations.`,
 );

@@ -4,6 +4,7 @@
   "private": true,
   "description": "Accessible HTML + Tailwind CSS primitive component library, built on ratified semantic design tokens.",
   "type": "module",
+  "workspaces": ["packages/*", "tests/react-harness"],
   "scripts": {
     "dev": "vite",
     "prebuild": "npm run audit:tokens && npm run audit:contrast",

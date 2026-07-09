@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Shared component classes — direct port of src/styles/tailwind.css's
+ * @layer components block (feature 004's research.md: two independent
+ * Tailwind builds can't @import one another's @layer without adding a
+ * build-time coupling between the static site and this package, so the
+ * class list is duplicated here; each class's correctness is still owned
+ * by its *.contract.md, and both audit-tokens.mjs/check-contrast.mjs scan
+ * this file too, so a token-discipline drift fails CI in either file).
+ */
+@layer components {
+  /* Button primitive (contracts/001-primitive-components/button.contract.md) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-brand-dark px-4 py-2
+      text-sm font-semibold text-white shadow-sm hover:shadow-md active:scale-[0.98]
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand disabled:opacity-50 disabled:cursor-not-allowed
+      transition-[box-shadow,transform] duration-150;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-neutral-300
+      bg-white px-4 py-2 text-sm font-semibold text-neutral-900 shadow-sm
+      hover:bg-neutral-50 active:scale-[0.98] focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50
+      disabled:cursor-not-allowed transition-[background-color,transform] duration-150;
+  }
+}

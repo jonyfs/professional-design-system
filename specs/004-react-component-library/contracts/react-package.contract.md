@@ -8,14 +8,14 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./styles.css": "./dist/styles.css"
   },
@@ -24,7 +24,7 @@
     "react-dom": "^18.0.0"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && tsup",
+    "build": "tsup && tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -38,6 +38,27 @@
   }
 }
 ```
+
+**Two corrections found during implementation** (not caught by planning-
+stage review, since neither is visible without actually running the
+build):
+
+1. **File extension mapping was backwards for a `"type": "module"`
+   package.** With `"type": "module"` set, tsup's default output is `.js`
+   for ESM and `.cjs` for CJS (the reverse of the `"type": "commonjs"`/no-
+   type convention this contract's first draft assumed — `.mjs` for ESM,
+   `.js` for CJS). Corrected `module`/`main`/`exports` to match tsup's
+   actual default output. Also moved the `types` condition to the front of
+   the `exports["."]` object — esbuild warns (and the underlying spec
+   requires) that `types` must be checked before `import`/`require`, not
+   after; a `types` condition listed last is silently never used by
+   TypeScript's resolver.
+2. **Build script ordering destroyed the compiled CSS.** The first draft
+   ran `tailwindcss ... && tsup`. `tsup`'s `clean: true` option (`tsup.
+   config.ts`) wipes the entire `dist/` directory before writing its own
+   output — including the `styles.css` the previous command in the chain
+   had just written. Reordered to `tsup && tailwindcss ...` so the CSS
+   build runs *after* tsup's clean step, not before it.
 
 `"private": false` deliberately — this package IS meant to be
 publishable (even if not actually published to a registry during this
@@ -120,10 +141,17 @@ turn on npm workspaces; no other existing script/field changes.
 `packages/*` glob — it lives under `tests/`, not `packages/`) — found
 missing by `/speckit-analyze`: an earlier draft of this contract only
 declared `["packages/*"]`, which would have made `npm run dev --workspace
-tests/react-harness` (quickstart.md) fail outright, and would have left
-the harness's `dependencies: { "@professional-design-system/react":
-"workspace:*" }` unresolvable — npm workspace-protocol dependency
-resolution only works between declared workspace members.
+tests/react-harness` fail outright.
+
+**Correction (found during implementation, not just planning)**: the
+harness's dependency on the React package is a plain semver range —
+`"dependencies": {"@professional-design-system/react": "^0.1.0"}` — NOT
+`"workspace:*"`. That protocol is pnpm/Yarn syntax; npm has no
+`workspace:` protocol at all and fails with `EUNSUPPORTEDPROTOCOL` if
+used. npm resolves a workspace dependency automatically whenever a
+declared workspace member's `name` + a semver range the local version
+satisfies are both present — no special protocol string needed, just an
+ordinary version range like any other dependency.
 
 ## Acceptance mapping
 

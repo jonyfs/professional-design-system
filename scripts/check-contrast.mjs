@@ -20,7 +20,7 @@
 // markup — see its own comment for why.)
 
 import { hex } from "wcag-contrast";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -310,6 +310,33 @@ function extractApplyBlocks(cssSource) {
 const tailwindCssPath = join(rootDir, "src", "styles", "tailwind.css");
 const applyBlocks = extractApplyBlocks(readFileSync(tailwindCssPath, "utf8"));
 
+// Extended to packages/react/src/styles.css (feature 004 — same rationale
+// as audit-tokens.mjs's extension: the React package compiles its own
+// @layer components block and needs the same coverage scan, not a free
+// pass because it's a second file).
+const reactStylesPath = join(rootDir, "packages", "react", "src", "styles.css");
+const reactApplyBlocks = existsSync(reactStylesPath)
+  ? extractApplyBlocks(readFileSync(reactStylesPath, "utf8"))
+  : [];
+
+function collectTsxFiles(dir) {
+  const files = [];
+  for (const entry of readdirSync(dir)) {
+    if (entry === "node_modules" || entry === "dist") continue;
+    const fullPath = join(dir, entry);
+    const stats = statSync(fullPath);
+    if (stats.isDirectory()) {
+      files.push(...collectTsxFiles(fullPath));
+    } else if (extname(entry) === ".tsx") {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+const reactSrcDir = join(rootDir, "packages", "react", "src");
+const tsxFiles = existsSync(reactSrcDir) ? collectTsxFiles(reactSrcDir) : [];
+
 const uncoveredTextTokens = new Set();
 
 function scanClassesForCoverage(classes, sourceLabel) {
@@ -338,6 +365,22 @@ for (const block of applyBlocks) {
   scanClassesForCoverage(block.split(/\s+/).filter(Boolean), "tailwind.css's @apply blocks");
 }
 
+for (const block of reactApplyBlocks) {
+  scanClassesForCoverage(
+    block.split(/\s+/).filter(Boolean),
+    "packages/react/src/styles.css's @apply blocks",
+  );
+}
+
+for (const file of tsxFiles) {
+  const source = readFileSync(file, "utf8");
+  const classNamePattern = /className="([^"]*)"/g;
+  let match;
+  while ((match = classNamePattern.exec(source)) !== null) {
+    scanClassesForCoverage(match[1].split(/\s+/).filter(Boolean), file.replace(rootDir, ""));
+  }
+}
+
 if (uncoveredTextTokens.size > 0) {
   failures.push(
     `Coverage gap: the following text color token(s) are used in shipped markup with ` +
@@ -358,6 +401,7 @@ if (failures.length > 0) {
 console.log(
   `Contrast audit passed — ${PAIRINGS.length} text pairing(s) (AAA) + ${RING_PAIRINGS.length} ` +
     `non-text UI pairing(s) (WCAG 1.4.11, 3:1) checked, all above threshold; ` +
-    `markup coverage verified against ${htmlFiles.length} file(s) + tailwind.css's ` +
-    `${applyBlocks.length} @apply block(s).`,
+    `markup coverage verified against ${htmlFiles.length} HTML file(s), ` +
+    `${applyBlocks.length + reactApplyBlocks.length} @apply block(s) across 2 CSS files, ` +
+    `and ${tsxFiles.length} .tsx file(s).`,
 );
