@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Tabs — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Tabs</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    WAI-ARIA Tabs pattern — roving tabindex, Left/Right/Home/End arrow-key
+    navigation.
+  </p>
+
+  <div class="mt-8 max-w-lg" data-testid="tabs" data-tabs>
+    <div role="tablist" aria-label="Product information" class="tabs-list">
+      <button
+        type="button"
+        role="tab"
+        id="tab-details"
+        aria-controls="panel-details"
+        aria-selected="true"
+        tabindex="0"
+        class="tab-trigger"
+        data-testid="tab-details"
+      >
+        Details
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="tab-reviews"
+        aria-controls="panel-reviews"
+        aria-selected="false"
+        tabindex="-1"
+        class="tab-trigger"
+        data-testid="tab-reviews"
+      >
+        Reviews
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="tab-shipping"
+        aria-controls="panel-shipping"
+        aria-selected="false"
+        tabindex="-1"
+        class="tab-trigger"
+        data-testid="tab-shipping"
+      >
+        Shipping
+      </button>
+    </div>
+    <div id="panel-details" role="tabpanel" aria-labelledby="tab-details" tabindex="0" class="tab-panel" data-testid="panel-details">
+      <p>Full product specifications and materials.</p>
+    </div>
+    <div id="panel-reviews" role="tabpanel" aria-labelledby="tab-reviews" tabindex="0" class="tab-panel" hidden data-testid="panel-reviews">
+      <p>Customer reviews and ratings.</p>
+    </div>
+    <div id="panel-shipping" role="tabpanel" aria-labelledby="tab-shipping" tabindex="0" class="tab-panel" hidden data-testid="panel-shipping">
+      <p>Shipping options and estimated delivery times.</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initTabs } from "/src/scripts/tabs.js";
+    initTabs();
+  </script>
+</body>
+</html>

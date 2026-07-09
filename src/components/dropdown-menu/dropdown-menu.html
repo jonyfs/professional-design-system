@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Dropdown Menu — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Dropdown Menu</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Native Popover API for open/close/light-dismiss — Escape, outside
+    click, and Tab all close the menu.
+  </p>
+
+  <div class="mt-8 relative inline-block text-left">
+    <button
+      type="button"
+      id="dropdown-trigger"
+      popovertarget="dropdown-menu-panel"
+      aria-expanded="false"
+      class="btn-secondary"
+      data-testid="dropdown-trigger"
+      data-dropdown-trigger
+    >
+      More actions
+    </button>
+
+    <div
+      id="dropdown-menu-panel"
+      popover="auto"
+      role="menu"
+      aria-labelledby="dropdown-trigger"
+      class="dropdown-menu-panel"
+      data-testid="dropdown-menu"
+    >
+      <button type="button" role="menuitem" class="dropdown-menu-item" data-testid="dropdown-item-edit">
+        Edit
+      </button>
+      <button type="button" role="menuitem" class="dropdown-menu-item" data-testid="dropdown-item-duplicate">
+        Duplicate
+      </button>
+      <button type="button" role="menuitem" disabled class="dropdown-menu-item" data-testid="dropdown-item-archive">
+        Archive
+      </button>
+      <button type="button" role="menuitem" class="dropdown-menu-item" data-testid="dropdown-item-delete">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initDropdownMenus } from "/src/scripts/dropdown-menu.js";
+    initDropdownMenus();
+  </script>
+</body>
+</html>

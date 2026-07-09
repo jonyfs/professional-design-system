@@ -130,4 +130,83 @@
   .toast-stack {
     @apply fixed top-4 right-4 z-50 flex flex-col gap-3;
   }
+
+  /* Breadcrumbs primitive (contracts/breadcrumbs.contract.md) — the
+     constitution's pre-existing ratified Application & Navigation pattern,
+     used verbatim, plus the active: state added after /speckit-analyze.
+     Zero JavaScript. */
+  .breadcrumb-nav {
+    @apply flex items-center gap-2 text-sm text-neutral-600;
+  }
+  .breadcrumb-link {
+    @apply text-neutral-600 hover:text-neutral-900 active:text-neutral-700
+      transition-colors duration-150 focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand rounded-sm;
+  }
+  .breadcrumb-divider {
+    @apply text-neutral-300;
+  }
+  .breadcrumb-current {
+    @apply text-neutral-900 font-medium;
+  }
+
+  /* Accordion / Disclosure primitive (contracts/accordion.contract.md) —
+     native <details>/<summary>, zero JavaScript even for the
+     single-open-at-a-time (exclusive) variant (shared name attribute). */
+  .accordion-item {
+    @apply border-b border-neutral-200;
+  }
+  .accordion-trigger {
+    @apply flex w-full items-center justify-between gap-4 py-4 text-left
+      text-sm font-medium text-neutral-900 cursor-pointer list-none
+      hover:text-neutral-700 active:text-neutral-600
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .accordion-chevron {
+    @apply h-5 w-5 shrink-0 text-neutral-400 transition-transform
+      duration-200 group-open:rotate-180;
+  }
+  .accordion-content {
+    @apply pb-4 text-sm text-neutral-600;
+  }
+
+  /* Tabs primitive (contracts/tabs.contract.md) — WAI-ARIA Tabs pattern,
+     roving tabindex + arrow-key navigation via src/scripts/tabs.js. */
+  .tabs-list {
+    @apply flex gap-6 overflow-x-auto border-b border-neutral-200;
+  }
+  .tab-trigger {
+    @apply border-b-2 border-transparent px-1 py-3 text-sm font-medium
+      text-neutral-600 hover:text-neutral-700 hover:border-neutral-300
+      active:text-neutral-800
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:hover:border-transparent;
+  }
+  .tab-trigger[aria-selected="true"] {
+    @apply border-brand text-neutral-900;
+  }
+  .tab-panel {
+    @apply pt-4 text-sm text-neutral-600;
+  }
+
+  /* Dropdown Menu primitive (contracts/dropdown-menu.contract.md) — native
+     Popover API for open/close/light-dismiss/top-layer, arrow-key roving
+     focus + aria-expanded sync via src/scripts/dropdown-menu.js. */
+  .dropdown-menu-panel {
+    @apply absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white
+      shadow-lg ring-1 ring-neutral-300 focus:outline-none;
+  }
+  .dropdown-menu-item {
+    @apply block w-full px-4 py-2 text-left text-sm text-neutral-900
+      hover:bg-neutral-50 active:bg-neutral-100
+      focus-visible:bg-neutral-50 focus-visible:outline
+      focus-visible:outline-2 focus-visible:-outline-offset-2
+      focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:hover:bg-transparent;
+  }
 }
