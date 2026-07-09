@@ -110,12 +110,20 @@ exactly the shape `design-sync`'s converter walks to discover components
 
 ```json
 {
-  "workspaces": ["packages/*"]
+  "workspaces": ["packages/*", "tests/react-harness"]
 }
 ```
 
 Added to the existing root `package.json` — the only change needed to
 turn on npm workspaces; no other existing script/field changes.
+`tests/react-harness` is listed explicitly (not covered by the
+`packages/*` glob — it lives under `tests/`, not `packages/`) — found
+missing by `/speckit-analyze`: an earlier draft of this contract only
+declared `["packages/*"]`, which would have made `npm run dev --workspace
+tests/react-harness` (quickstart.md) fail outright, and would have left
+the harness's `dependencies: { "@professional-design-system/react":
+"workspace:*" }` unresolvable — npm workspace-protocol dependency
+resolution only works between declared workspace members.
 
 ## Acceptance mapping
 

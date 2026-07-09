@@ -49,16 +49,26 @@ and full TypeScript prop-completion.
       of declaring them inline; run `npm run build` + `npm run test:e2e`
       to confirm zero visual change to the existing static site (the
       values are identical, only their source moved)
-- [ ] T003 Add `"workspaces": ["packages/*"]` to root `package.json`
-      per `contracts/react-package.contract.md`
+- [ ] T003 Add `"workspaces": ["packages/*", "tests/react-harness"]` to
+      root `package.json` per `contracts/react-package.contract.md` —
+      `tests/react-harness` is listed explicitly since it lives outside
+      the `packages/*` glob (an earlier draft omitted it; `/speckit-analyze`
+      caught that this would break both `npm run dev --workspace
+      tests/react-harness` and the harness's workspace-protocol
+      dependency on `packages/react`). Depends on: T001, T004 (below)
+      existing first if run in strict order, though in practice this
+      task only edits root `package.json` and can be done any time
+      before T006.
 - [ ] T004 Create `packages/react/package.json`, `tsconfig.json`,
       `tsup.config.ts`, `tailwind.config.ts` per
       `contracts/react-package.contract.md` (the `tailwind.config.ts`
-      imports from `shared/design-tokens.ts`, same as the root config)
+      imports from `shared/design-tokens.ts`, so T001 MUST exist first)
 - [ ] T005 Create `packages/react/src/styles.css` (`@tailwind` directives
       + an empty `@layer components` block — populated per-component in
       later tasks, matching `src/styles/tailwind.css`'s structure)
-- [ ] T006 Run `npm install` at the repo root to wire the new workspace
+- [ ] T006 Run `npm install` at the repo root to wire the new workspaces
+      (depends on T001, T003, T004 all existing first — installing
+      before the workspace manifests exist resolves nothing new)
 
 ### Implementation for User Story 1
 
@@ -66,10 +76,12 @@ and full TypeScript prop-completion.
       assertions as `tests/e2e/button.spec.ts` (visual regression, axe
       scan, hover/active/focus-visible/disabled states), pointed at the
       test harness instead of the static HTML page
-- [ ] T008 [US1] Create `tests/react-harness/` (minimal Vite + React app,
-      `package.json` referencing `packages/react` via the workspace
-      protocol, one page per component added incrementally — this task
-      creates the harness shell + a Button demo page only)
+- [ ] T008 [US1] Create `tests/react-harness/` (minimal Vite + React app;
+      `package.json` includes `"dependencies": {"@professional-design-system/react": "workspace:*"}`,
+      resolvable only because T003 added `tests/react-harness` itself to
+      the root `workspaces` array — one page per component added
+      incrementally — this task creates the harness shell + a Button
+      demo page only)
 - [ ] T009 [US1] Implement `packages/react/src/Button/Button.tsx` per
       `contracts/component-props.contract.md`'s reference implementation
       (port `.btn-primary`/`.btn-secondary` `@apply` rules into
@@ -117,19 +129,19 @@ existing HTML reference.
 
 ### Implementation for User Story 2
 
-- [ ] T016 [US2] Implement `packages/react/src/TextInput/TextInput.tsx`
+- [ ] T016 [P] [US2] Implement `packages/react/src/TextInput/TextInput.tsx`
       per `data-model.md`'s prop table and `001/contracts/text-input.contract.md`
       (port the error-state/`aria-invalid`/`aria-describedby` logic exactly)
-- [ ] T017 [US2] Implement `packages/react/src/Badge/Badge.tsx` per
+- [ ] T017 [P] [US2] Implement `packages/react/src/Badge/Badge.tsx` per
       `001/contracts/badge.contract.md`'s four variants
-- [ ] T018 [US2] Implement `packages/react/src/Checkbox/Checkbox.tsx` per
+- [ ] T018 [P] [US2] Implement `packages/react/src/Checkbox/Checkbox.tsx` per
       `001/contracts/checkbox.contract.md`
-- [ ] T019 [US2] Implement `packages/react/src/Radio/Radio.tsx` per
+- [ ] T019 [P] [US2] Implement `packages/react/src/Radio/Radio.tsx` per
       `002/contracts/radio.contract.md` (native `name`-based mutual
       exclusivity — no custom JS)
-- [ ] T020 [US2] Implement `packages/react/src/Select/Select.tsx` per
+- [ ] T020 [P] [US2] Implement `packages/react/src/Select/Select.tsx` per
       `002/contracts/select.contract.md`
-- [ ] T021 [US2] Implement `packages/react/src/Toggle/Toggle.tsx` per
+- [ ] T021 [P] [US2] Implement `packages/react/src/Toggle/Toggle.tsx` per
       `002/contracts/toggle.contract.md` (including the
       `group-has-[:disabled]` label-dimming fix from feature 002's code
       review)
@@ -141,7 +153,11 @@ existing HTML reference.
 - [ ] T024 [US2] Run `npm run build --workspace packages/react`; run
       `audit:tokens`/`audit:contrast` (expect 0 violations); run all six
       new Playwright specs, confirm visual parity against each existing
-      HTML baseline
+      HTML baseline; **also inspect `dist/index.d.ts`** for all six new
+      `<Name>Props` interfaces (TextInput, Badge, Checkbox, Radio,
+      Select, Toggle) — same clean-extraction bar as T012 checked for
+      Button alone (`/speckit-analyze` caught that SC-002's "10/10
+      components" bar had no task verifying it past Button)
 
 **Checkpoint**: All 7 non-overlay primitives (Button + these 6) are
 ported and independently verified.
@@ -165,8 +181,14 @@ behavior as feature 003's Playwright suite, now via the React API.
       assertion from `tests/e2e/modal.spec.ts`/`slide-over.spec.ts`/
       `toast.spec.ts` (Tab-cycle containment, Shift+Tab wrap, Escape/
       backdrop/close-button dismissal with focus-return, pointer-
-      inertness, `hasFocusableContent=false` edge case, console/CSP-error
-      check) against the harness's React-rendered versions
+      inertness, `hasFocusableContent=false` edge case, no-console-error
+      check via `expectNoConsoleErrors` — no CSP is added to the dev-only
+      harness (`/speckit-analyze` found the CSP task copied from feature
+      003 without re-deriving whether it applies to unpublished dev
+      tooling with no real threat model; dropped rather than risk
+      breaking Vite's dev-server HMR for no actual benefit), the console-
+      error check still catches genuine runtime/render errors) against
+      the harness's React-rendered versions
 
 ### Implementation for User Story 3
 
@@ -187,7 +209,14 @@ behavior as feature 003's Playwright suite, now via the React API.
       `003/contracts/toast.contract.md` (`role="status"`/
       `aria-live="polite"`, `onDismiss` called from the close button's
       `onClick` — no internal DOM removal, unlike `toast.js`, since a
-      React component doesn't remove itself from a list it doesn't own)
+      React component doesn't remove itself from a list it doesn't own).
+      **Also append a short amendment note to
+      `specs/003-overlays-modal-toast/contracts/toast.contract.md`**
+      recording this deviation (React port: consumer-owned removal via
+      `onDismiss`, vs. the original's internal `.remove()`) — found by
+      `/speckit-analyze`: this feature's own data-model.md documented the
+      difference, but the cited upstream contract didn't, leaving it as
+      the source of truth only in one of the two places that reference it
 - [ ] T030 [US3] Port `.modal-dialog`/`.modal-panel`/`.slide-over-dialog`/
       `.slide-over-panel`/`.close-icon-btn`/`.toast`/`.toast-stack` `@apply`
       classes (including the `::backdrop` `theme()` rules) into
@@ -196,13 +225,13 @@ behavior as feature 003's Playwright suite, now via the React API.
 - [ ] T031 [US3] Add harness demo pages for Modal (default +
       `hasFocusableContent=false` variant — the case that specifically
       needs `useId()`, not a hardcoded id), Slide-over (same), and Toast
-- [ ] T032 [US3] Add a project-wide CSP `<meta>` tag to the harness's
-      HTML pages, matching feature 003's policy (the harness is a new
-      set of pages shipping `<script>`-driven React, same reasoning
-      applies)
 - [ ] T033 [US3] Run `npm run build --workspace packages/react`; run
       `audit:tokens`/`audit:contrast`; run all three new Playwright specs,
-      confirm 1:1 behavioral parity with feature 003's original assertions
+      confirm 1:1 behavioral parity with feature 003's original
+      assertions; **also inspect `dist/index.d.ts`** for `ModalProps`,
+      `ToastProps`, `SlideOverProps` — completes SC-002's 10/10 check
+      across all three phases (T012 covered Button, T024 covered the six
+      Phase 2 components, this covers the remaining three)
 
 **Checkpoint**: All 10 components ported; package feature-complete.
 
