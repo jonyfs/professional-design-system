@@ -11,11 +11,25 @@ for the static gallery, so reusing it for the package build was the first
 option considered — but Vite's **library mode** is oriented at bundling
 an app-shaped entry, and generating clean rolled-up `.d.ts` output needs
 an added plugin (`vite-plugin-dts`) with more configuration surface than
-`tsup --dts` for the same result. `design-sync`'s own `non-storybook/
-SKILL.md` lists `tsc|tsup|rollup|vite build|esbuild` as the build-script
-patterns it already knows how to detect and re-run — `tsup` is a
-first-class, expected shape for this exact scenario, not an unusual
-choice this project would need to explain to that tooling later.
+`tsup --dts` for the same result. `design-sync`'s own `non-storybook/SKILL.md` (§2, step 3) names the
+build-script detection pattern verbatim as `scripts.* containing
+tsc|tsup|rollup|vite build|esbuild|swc` — `tsup` is a first-class,
+expected shape for this exact scenario, not an unusual choice this
+project would need to explain to that tooling later. (An earlier draft
+of this paragraph paraphrased the list and dropped `swc` — corrected
+after `/speckit-analyze` checked it against the real file rather than
+trusting the paraphrase.)
+
+**Citation for the underlying dist/`.d.ts`/CSS requirements this whole
+decision serves** (found missing by `/speckit-analyze` — the tsup choice
+itself was cited, but not the requirements it's satisfying): the same
+`SKILL.md` states the converter "needs the built `dist/` entry + its
+`.d.ts` tree" (§2, step 3), that component discovery walks "PascalCase
+`.d.ts` exports" (`[ZERO_MATCH]` troubleshooting row), and that "rendered
+designs receive only `styles.css`'s transitive `@import` closure" (§How
+it works, "Importable bundle" paragraph) — these three lines are the
+direct source of FR-001/FR-002/FR-007, not an inference from spec.md's
+own prose alone.
 
 **Alternatives considered**: Vite library mode (extra plugin surface for
 equivalent output, as above) — rejected as unnecessary complexity;

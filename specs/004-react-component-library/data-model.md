@@ -1,5 +1,51 @@
 # Phase 1 Data Model: React Component Library
 
+## `shared/design-tokens.ts`
+
+The single source of truth both Tailwind configs import from
+(research.md). Its exact shape is a **direct extraction** of the values
+already in the root `tailwind.config.ts` — not new values, not a new
+schema:
+
+```ts
+export const colors = {
+  brand: { light: "#E6F0FF", DEFAULT: "#0066FF", dark: "#004BB3" },
+  neutral: {
+    50: "#F9FAFB", 100: "#F3F4F6", 200: "#E5E7EB", 300: "#D1D5DB",
+    400: "#9CA3AF", 500: "#6B7280", 600: "#4B5563", 700: "#374151",
+    800: "#1F2937", 900: "#111827",
+  },
+  success: { DEFAULT: "#10B981", strong: "#065F46" },
+  warning: { DEFAULT: "#F59E0B", strong: "#78350F" },
+  error: { DEFAULT: "#EF4444", strong: "#991B1B" },
+  info: "#3B82F6",
+};
+
+export const borderRadius = {
+  sm: "0.25rem", md: "0.5rem", lg: "0.75rem", full: "9999px",
+};
+
+export const fontFamily = {
+  sans: ["Inter", "system-ui", "sans-serif"],
+};
+```
+
+**`fontFamily` is included** (found missing by `/speckit-analyze`): the
+static site applies `font-sans` at the body level (`.page-shell` in
+`src/styles/tailwind.css`), which only resolves to Inter because the root
+config's `theme.extend.fontFamily.sans` says so. Omitting `fontFamily`
+from the shared module would have made the React package's `font-sans`
+silently fall back to Tailwind's default sans stack — a real typography
+regression against FR-004/SC-001 that no other artifact would have
+caught until a visual diff flagged it. `shared/design-tokens.ts` is
+therefore exhaustive of colors, radius, **and** font family — everything
+both `theme.extend` blocks need.
+
+**Root `tailwind.config.ts` is modified by this feature** (not just
+`packages/react/tailwind.config.ts`) to import from this file instead of
+declaring the same literals inline — see `plan.md`'s Project Structure
+for the full modified-file list, corrected to include it.
+
 ## Package
 
 | Field | Type | Notes |

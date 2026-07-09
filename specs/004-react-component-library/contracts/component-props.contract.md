@@ -90,6 +90,7 @@ component instance owns its own ref, not a shared DOM query).
 ```tsx
 import type { ReactNode } from "react";
 import { useDialogTrigger } from "../hooks/useDialogTrigger";
+import { useId } from "react";
 
 export interface ModalProps {
   open: boolean;
@@ -101,16 +102,26 @@ export interface ModalProps {
 
 export function Modal({ open, onClose, title, children, hasFocusableContent = true }: ModalProps) {
   const dialogRef = useDialogTrigger(open, onClose);
+  // useId(), not a hardcoded literal: feature 003's static HTML demo used
+  // distinct literal IDs per instance (modal-title vs. modal-info-title)
+  // specifically to avoid collisions with multiple dialogs on one page.
+  // A component meant to be instantiated more than once (the very thing
+  // tests/react-harness does — the default demo and the
+  // hasFocusableContent=false variant both render at once) needs a
+  // generated, per-instance id or aria-labelledby breaks the second
+  // instance onward. Caught by /speckit-analyze before this became the
+  // pattern every other component would have copied.
+  const titleId = useId();
   return (
     <dialog
       ref={dialogRef}
       className="modal-dialog"
-      aria-labelledby="modal-title"
+      aria-labelledby={titleId}
       tabIndex={hasFocusableContent ? undefined : -1}
     >
       <div className="modal-panel">
         <div className="flex items-start justify-between gap-4">
-          <h2 id="modal-title" className="text-lg font-semibold text-neutral-900">
+          <h2 id={titleId} className="text-lg font-semibold text-neutral-900">
             {title}
           </h2>
           <button type="button" aria-label="Close" className="close-icon-btn" onClick={onClose}>

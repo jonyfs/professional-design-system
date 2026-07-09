@@ -136,10 +136,15 @@ of raw HTML + `data-dialog-trigger` attributes.
   containing all ten components as named exports.
 - **FR-002**: Every exported component MUST ship a TypeScript `.d.ts`
   declaration whose props interface is derivable by a type-parsing tool
-  without hand-written overrides, for at least eight of the ten components
-  (Modal/Slide-over's native-`<dialog>`-derived ref props MAY require a
-  documented, hand-written override if TypeScript's structural inference
-  can't flatten them cleanly).
+  without hand-written overrides, for all ten components. (An earlier
+  draft hedged this to "at least eight of ten," anticipating that Modal/
+  Slide-over might need to expose a native-`<dialog>`-derived ref prop —
+  `/speckit-analyze` caught that the actual Phase 1 design, per
+  `component-props.contract.md`'s `useDialogTrigger` hook, keeps the
+  dialog ref entirely internal to the component and exposes no ref-typed
+  prop at all, so no structural-inference difficulty actually exists.
+  Tightened to 10/10 rather than carrying a caveat the design doesn't
+  need.)
 - **FR-003**: Every component's rendered output MUST use only the
   semantic Tailwind tokens already ratified in the project constitution —
   no new colors, no raw palette classes, same Principle IV discipline as
@@ -178,8 +183,9 @@ of raw HTML + `data-dialog-trigger` attributes.
   HTML references (verified by automated visual comparison, not manual
   eyeballing).
 - **SC-002**: A type-parsing tool (matching Claude Design's own ingestion
-  approach) can extract a props interface for at least 8 of the 10
-  components with zero hand-written overrides.
+  approach) can extract a props interface for all 10 components with zero
+  hand-written overrides (tightened from an earlier "at least 8 of 10" —
+  see FR-002's note).
 - **SC-003**: 100% of Modal/Slide-over's focus-trap, dismissal, and
   focus-return behaviors (as covered by feature 003's existing Playwright
   assertions) still pass when re-run against the React component versions.
