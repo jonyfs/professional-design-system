@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { expectNoA11yViolations } from "./a11y-helper";
+import { expectNoA11yViolations, expectNoConsoleErrors } from "./a11y-helper";
 
 test.describe("Toast", () => {
   test.beforeEach(async ({ page }) => {
@@ -8,6 +8,14 @@ test.describe("Toast", () => {
 
   test("has no accessibility violations", async ({ page }, testInfo) => {
     await expectNoA11yViolations(page, testInfo);
+  });
+
+  test("dismissing a toast produces no console/CSP errors", async ({ page }) => {
+    await expectNoConsoleErrors(page, async () => {
+      const toast = page.getByTestId("toast-success");
+      await toast.getByTestId("toast-close").click();
+      await expect(toast).toHaveCount(0);
+    });
   });
 
   test("stack matches visual baseline", async ({ page }) => {

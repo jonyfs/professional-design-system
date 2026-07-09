@@ -28,3 +28,29 @@ function formatViolations(violations: { id: string; help: string; nodes: unknown
     .map((v) => `${v.id}: ${v.help} (${v.nodes.length} node(s))`)
     .join("\n");
 }
+
+/**
+ * Runs `action` while capturing browser console errors and uncaught page
+ * errors, then asserts none occurred. Feature 003 introduced this
+ * project's first <script> tags under a real CSP (script-src 'self' etc.)
+ * — a future inline-script/CSP-incompatible edit would currently only
+ * surface as "the button doesn't work" in manual testing, with no CI
+ * signal (code review). This turns that class of regression into an
+ * explicit, named test failure instead.
+ */
+export async function expectNoConsoleErrors(page: Page, action: () => Promise<void>) {
+  const messages: string[] = [];
+  const onConsole = (msg: { type: () => string; text: () => string }) => {
+    if (msg.type() === "error") messages.push(msg.text());
+  };
+  const onPageError = (error: Error) => messages.push(error.message);
+  page.on("console", onConsole);
+  page.on("pageerror", onPageError);
+  try {
+    await action();
+  } finally {
+    page.off("console", onConsole);
+    page.off("pageerror", onPageError);
+  }
+  expect(messages, messages.join("\n")).toEqual([]);
+}

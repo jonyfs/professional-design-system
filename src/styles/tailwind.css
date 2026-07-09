@@ -78,16 +78,24 @@
 
   /* Modal primitive (contracts/modal.contract.md) — native <dialog> +
      showModal(), styled per the constitution's ratified Modals pattern. */
+  /* Width lives on the dialog itself, not just .modal-panel: a native
+     <dialog> shown via showModal() has no determinate width by default
+     (UA shrink-to-fit sizing), so a child's `w-full` (100%) resolves
+     against an indeterminate containing block and the whole thing
+     shrink-wraps to content length instead of filling to max-w-lg — found
+     by code review, verified empirically (identical classes rendering at
+     234px vs. 406px depending on content). `position: fixed` (set by the
+     UA's own `dialog:modal` stylesheet) makes the viewport the containing
+     block, so a width set here is now determinate. */
   .modal-dialog {
-    @apply p-0 border-0;
+    @apply p-0 border-0 w-[calc(100vw-2rem)] max-w-lg;
   }
   .modal-dialog::backdrop {
     background-color: theme("colors.neutral.500 / 75%");
   }
   .modal-panel {
-    @apply relative transform overflow-hidden rounded-lg bg-white px-4 pb-4
-      pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg
-      sm:p-6;
+    @apply relative w-full transform overflow-hidden rounded-lg bg-white px-4
+      pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:p-6;
   }
 
   /* Shared close/dismiss icon button — Modal, Slide-over, Toast
@@ -103,14 +111,14 @@
      <dialog> mechanism as Modal, anchored to the right edge instead of
      centered. */
   .slide-over-dialog {
-    @apply p-0 border-0 fixed inset-y-0 right-0 h-full;
+    @apply p-0 border-0 fixed inset-y-0 right-0 h-full w-full max-w-md;
   }
   .slide-over-dialog::backdrop {
     background-color: theme("colors.neutral.500 / 75%");
   }
   .slide-over-panel {
-    @apply relative flex h-full w-full max-w-md flex-col bg-white shadow-xl
-      p-6 transform transition ease-in-out duration-500;
+    @apply relative flex h-full w-full flex-col bg-white shadow-xl p-6
+      transform transition ease-in-out duration-500;
   }
 
   /* Toast primitive (contracts/toast.contract.md) — plain positioned

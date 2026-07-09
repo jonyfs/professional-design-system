@@ -1,12 +1,32 @@
 import { test, expect } from "@playwright/test";
-import { expectNoA11yViolations } from "./a11y-helper";
+import { expectNoA11yViolations, expectNoConsoleErrors } from "./a11y-helper";
 
 test.describe("Modal", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/src/components/modal/modal.html");
   });
 
-  test("has no accessibility violations", async ({ page }, testInfo) => {
+  test("has no accessibility violations (closed state)", async ({ page }, testInfo) => {
+    await expectNoA11yViolations(page, testInfo);
+  });
+
+  test("opening and closing produces no console/CSP errors", async ({ page }) => {
+    await expectNoConsoleErrors(page, async () => {
+      await page.getByTestId("modal-trigger").click();
+      await expect(page.getByTestId("modal")).toBeVisible();
+      await page.keyboard.press("Escape");
+      await expect(page.getByTestId("modal")).toBeHidden();
+    });
+  });
+
+  // A closed <dialog> is `display:none` by the UA stylesheet, so axe-core
+  // (like all a11y engines) skips its subtree entirely — the closed-state
+  // scan above never actually looks inside the panel. Found by code review:
+  // without this test, a labelling/contrast regression inside the open
+  // dialog would ship undetected.
+  test("has no accessibility violations (open state)", async ({ page }, testInfo) => {
+    await page.getByTestId("modal-trigger").click();
+    await expect(page.getByTestId("modal")).toBeVisible();
     await expectNoA11yViolations(page, testInfo);
   });
 
@@ -127,5 +147,32 @@ test.describe("Modal", () => {
     await expect(dialog).toBeVisible();
     const dialogIsFocused = await dialog.evaluate((el) => el === document.activeElement);
     expect(dialogIsFocused).toBe(true);
+  });
+
+  // The remaining assertions for the empty-content variant were missing
+  // entirely (code review) — it had no a11y scan, no visual baseline, and
+  // no proof it's actually dismissible. With no visible close control, the
+  // only way to escape a stuck info modal without keyboard shortcuts at all
+  // would be a real usability failure, so these matter more here than on
+  // the button-bearing variant, not less.
+  test("empty-content modal has no accessibility violations", async ({ page }, testInfo) => {
+    await page.getByTestId("modal-info-trigger").click();
+    await expect(page.getByTestId("modal-info")).toBeVisible();
+    await expectNoA11yViolations(page, testInfo);
+  });
+
+  test("empty-content modal matches visual baseline", async ({ page }) => {
+    await page.getByTestId("modal-info-trigger").click();
+    await expect(page.getByTestId("modal-info")).toBeVisible();
+    await expect(page.getByTestId("modal-info")).toHaveScreenshot("modal-info-open.png");
+  });
+
+  test("empty-content modal is dismissible via Escape", async ({ page }) => {
+    const trigger = page.getByTestId("modal-info-trigger");
+    await trigger.click();
+    await expect(page.getByTestId("modal-info")).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.getByTestId("modal-info")).toBeHidden();
+    await expect(trigger).toBeFocused();
   });
 });

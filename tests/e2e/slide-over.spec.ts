@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { expectNoA11yViolations } from "./a11y-helper";
+import { expectNoA11yViolations, expectNoConsoleErrors } from "./a11y-helper";
 
 test.describe("Slide-over", () => {
   test.beforeEach(async ({ page }) => {
@@ -14,7 +14,24 @@ test.describe("Slide-over", () => {
     });
   }
 
-  test("has no accessibility violations", async ({ page }, testInfo) => {
+  test("has no accessibility violations (closed state)", async ({ page }, testInfo) => {
+    await expectNoA11yViolations(page, testInfo);
+  });
+
+  test("opening and closing produces no console/CSP errors", async ({ page }) => {
+    await expectNoConsoleErrors(page, async () => {
+      await page.getByTestId("slide-over-trigger").click();
+      await expect(page.getByTestId("slide-over")).toBeVisible();
+      await page.keyboard.press("Escape");
+      await expect(page.getByTestId("slide-over")).toBeHidden();
+    });
+  });
+
+  // Same gap as Modal's equivalent test (code review): a closed <dialog>
+  // is display:none, so axe never actually scans the open panel otherwise.
+  test("has no accessibility violations (open state)", async ({ page }, testInfo) => {
+    await page.getByTestId("slide-over-trigger").click();
+    await expect(page.getByTestId("slide-over")).toBeVisible();
     await expectNoA11yViolations(page, testInfo);
   });
 
@@ -105,5 +122,29 @@ test.describe("Slide-over", () => {
     await expect(dialog).toBeVisible();
     const dialogIsFocused = await dialog.evaluate((el) => el === document.activeElement);
     expect(dialogIsFocused).toBe(true);
+  });
+
+  // Same gap as Modal's info variant (code review): no a11y scan, no
+  // visual baseline, and no proof of dismissibility for the one variant
+  // with no visible close control at all.
+  test("empty-content variant has no accessibility violations", async ({ page }, testInfo) => {
+    await page.getByTestId("slide-over-info-trigger").click();
+    await expect(page.getByTestId("slide-over-info")).toBeVisible();
+    await expectNoA11yViolations(page, testInfo);
+  });
+
+  test("empty-content variant matches visual baseline", async ({ page }) => {
+    await page.getByTestId("slide-over-info-trigger").click();
+    await expect(page.getByTestId("slide-over-info")).toBeVisible();
+    await expect(page.getByTestId("slide-over-info")).toHaveScreenshot("slide-over-info-open.png");
+  });
+
+  test("empty-content variant is dismissible via Escape", async ({ page }) => {
+    const trigger = page.getByTestId("slide-over-info-trigger");
+    await trigger.click();
+    await expect(page.getByTestId("slide-over-info")).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.getByTestId("slide-over-info")).toBeHidden();
+    await expect(trigger).toBeFocused();
   });
 });
