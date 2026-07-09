@@ -49,7 +49,7 @@
   </p>
   <button
     type="button"
-    data-testid="alert-dismiss"
+    data-testid="alert-dismiss-1"
     aria-label="Dismiss"
     class="close-icon-btn"
   >
@@ -59,6 +59,15 @@
   </button>
 </div>
 ```
+
+**Testid note** (found by code review): dismiss buttons across multiple
+alert instances on the same page must have unique `data-testid`s (e.g.
+`alert-dismiss-1`, `alert-dismiss-2`) — a shared literal `alert-dismiss`
+across siblings is fragile for any test/tooling that queries it
+page-wide rather than scoped to a specific alert. `alert.js` itself does
+not depend on this id at all (see below) — it queries the child
+`<button>` directly, since a testing hook shouldn't gate production
+behavior.
 
 Note: no `role`/`aria-live` attribute anywhere — deliberate (FR-011,
 data-model.md). Unlike Toast, this is static page content, perceivable by
@@ -74,7 +83,10 @@ notification.
 // static page content, not a live-region announcement).
 export function initAlertDismissal() {
   document.querySelectorAll("[data-alert]").forEach((alert) => {
-    const dismissButton = alert.querySelector("[data-testid='alert-dismiss']");
+    // Query the child <button> directly rather than a data-testid — a
+    // testing hook shouldn't gate production behavior, and each
+    // dismissible alert has exactly one dismiss button.
+    const dismissButton = alert.querySelector("button");
     dismissButton?.addEventListener("click", () => alert.remove());
   });
 }
@@ -103,6 +115,18 @@ export function initAlertDismissal() {
 - **Keyboard-only dismissal (spec.md Edge Case)**: the dismiss button is a
   native `<button>`, focusable and activatable via Enter/Space by default,
   with `.close-icon-btn`'s existing `focus-visible:outline` treatment.
+- **Focus after dismissal (code review finding, not spec.md-mandated)**:
+  `alert.remove()` deletes the DOM node currently holding focus (the
+  just-activated dismiss button), so the browser falls back to `<body>` —
+  a keyboard/screen-reader user loses their place in the page, most
+  noticeable when dismissing the first of several stacked alerts. This is
+  an inherited limitation, not a regression: `toast.js`'s dismissal has
+  the identical characteristic (`button.closest('[role="status"]')?.remove()`
+  with no focus-management follow-up either). Accepted as consistent,
+  shared behavior across both components rather than fixed asymmetrically
+  here — a future cross-cutting improvement (e.g. moving focus to the
+  next alert/toast, or to a page landmark, before removal) should address
+  both `alert.js` and `toast.js` together, not just one of them.
 
 ## Token allowlist used
 

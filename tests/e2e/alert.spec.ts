@@ -13,7 +13,7 @@ test.describe("Alert / Banner", () => {
   test("dismissing an alert produces no console/CSP errors", async ({ page }) => {
     await expectNoConsoleErrors(page, async () => {
       const alert = page.getByTestId("alert-dismissible-1");
-      await alert.getByTestId("alert-dismiss").click();
+      await alert.locator("button").click();
       await expect(alert).toHaveCount(0);
     });
   });
@@ -36,13 +36,13 @@ test.describe("Alert / Banner", () => {
   }) => {
     const alert = page.getByTestId("alert-dismissible-1");
     await expect(alert).toBeVisible();
-    await alert.getByTestId("alert-dismiss").click();
+    await alert.locator("button").click();
     await expect(alert).toHaveCount(0);
   });
 
   test("dismiss button is keyboard-activatable via Enter", async ({ page }) => {
     const alert = page.getByTestId("alert-dismissible-1");
-    await alert.getByTestId("alert-dismiss").focus();
+    await alert.locator("button").focus();
     await page.keyboard.press("Enter");
     await expect(alert).toHaveCount(0);
   });
@@ -50,7 +50,7 @@ test.describe("Alert / Banner", () => {
   test("dismissing one alert does not affect another (Edge Case)", async ({ page }) => {
     const alert1 = page.getByTestId("alert-dismissible-1");
     const alert2 = page.getByTestId("alert-dismissible-2");
-    await alert1.getByTestId("alert-dismiss").click();
+    await alert1.locator("button").click();
     await expect(alert1).toHaveCount(0);
     await expect(alert2).toBeVisible();
   });

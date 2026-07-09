@@ -176,7 +176,7 @@ it from the DOM.
       an Avatar and a Badge using only each component's own gallery page.
       **NOT DONE by an AI agent** — requires a human tester, same
       outstanding status as every prior feature's equivalent item
-- [ ] T022 Code review pass over
+- [x] T022 Code review pass over
       `src/components/{avatar,card,alert}/**`, `src/scripts/alert.js`,
       and the `tailwind.css`/`vite.config.ts` diffs using the
       code-reviewer agent; address any CRITICAL/HIGH findings
@@ -191,7 +191,7 @@ it from the DOM.
       Alert patterns into the Data Display & Listings Component Catalog
       section (MINOR version bump), per `quickstart.md`'s reminder — do
       not skip once implementation is verified stable
-- [ ] T025 [P] Update root `README.md`'s Project Structure section to
+- [x] T025 [P] Update root `README.md`'s Project Structure section to
       list the three new component directories and `src/scripts/alert.js`,
       consistent with every prior feature's README update pattern
 
