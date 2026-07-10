@@ -70,28 +70,35 @@ test.describe("Lists", () => {
 
   test("interactive rows are reachable via Tab in document order and show a visible focus ring (AC1)", async ({
     page,
-  }, testInfo) => {
-    // WebKit's default keyboard-access setting excludes plain <a> links
-    // (no tabindex) from the Tab order entirely (confirmed empirically:
-    // a plain <a href> was skipped over while an identical <a
-    // tabindex="0"> was correctly focused, in the same test) — the page's
-    // "Back to gallery" link has no tabindex, so on WebKit it's skipped
-    // and the very first Tab press lands directly on the first list row
-    // (which carries tabindex="0", contracts/list.contract.md). Other
-    // engines include plain links by default, so the back-link IS the
-    // first stop there — the leading Tab press below accounts for that
-    // difference explicitly rather than hardcoding one browser's order.
-    if (testInfo.project.name !== "webkit-1440") {
+  }) => {
+    // How many stops precede the first list row (e.g. the page's "Back
+    // to gallery" link) varies by engine/OS — macOS Playwright's WebKit
+    // excludes plain <a> links without tabindex from the Tab order
+    // entirely, while Linux's WebKit build (a different underlying
+    // port) includes them, same as Chromium/Firefox (confirmed
+    // empirically on both platforms, not assumed from one). Rather than
+    // hardcoding a fixed Tab-press count that only holds on one platform
+    // (a real bug this exact assumption caused once already), Tab
+    // repeatedly until the first row is reached, then assert the
+    // remaining rows follow immediately in sequence — this validates
+    // "reachable, in document order" without caring how many unrelated
+    // stops precede them.
+    const firstRow = page.getByTestId("list-item-interactive-0");
+    let reached = false;
+    for (let attempt = 0; attempt < 15 && !reached; attempt++) {
       await page.keyboard.press("Tab");
+      reached = await firstRow.evaluate((el) => el === document.activeElement);
     }
+    expect(reached).toBe(true);
+
     const rows = ["list-item-interactive-0", "list-item-interactive-1", "list-item-interactive-2"];
     for (const testId of rows) {
-      await page.keyboard.press("Tab");
       await expect(page.getByTestId(testId)).toBeFocused();
       const outline = await page
         .getByTestId(testId)
         .evaluate((el) => getComputedStyle(el).outlineStyle);
       expect(outline).not.toBe("none");
+      await page.keyboard.press("Tab");
     }
   });
 
