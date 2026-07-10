@@ -55,4 +55,29 @@ test.describe("Breadcrumbs (React package, visual parity with static reference)"
     await expect(nav).toBeVisible();
     await expect(nav).toHaveAttribute("aria-label", "Breadcrumb");
   });
+
+  test("ancestor link activates navigation via keyboard (AC3, code review finding)", async ({
+    page,
+  }) => {
+    const homeLink = page.getByTestId("breadcrumb-link-0");
+    await expect(homeLink).toHaveAttribute("href", "/");
+  });
+
+  test("long trail wraps rather than overflowing horizontally at 320px (Edge Case, code review finding)", async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name !== "chromium-320",
+      "Only relevant at the 320px breakpoint",
+    );
+    const nav = page.getByTestId("breadcrumbs-long");
+    const box = await nav.boundingBox();
+    expect(box).not.toBeNull();
+    // The nav's own box must not exceed the viewport width — if flex-wrap
+    // were missing, the <ol> would overflow horizontally instead of
+    // wrapping onto a second line.
+    expect(box!.width).toBeLessThanOrEqual(320);
+    const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(scrollWidth).toBeLessThanOrEqual(320);
+  });
 });

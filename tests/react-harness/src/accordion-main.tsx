@@ -15,6 +15,18 @@ const exclusiveItems = [
   { id: "accordion-exclusive-item-1", trigger: "How long does shipping take?", content: "Standard shipping takes 3-5 business days." },
 ];
 
+// A SECOND exclusive-mode instance — needed to actually exercise the
+// useId()-based group-name isolation (code review finding): a test using
+// only one exclusive instance plus one non-exclusive instance can pass
+// even with a single hardcoded group name shared by every exclusive
+// Accordion on the page, since the non-exclusive instance was never in a
+// native `name` group to begin with. Two exclusive instances are the
+// only way to prove they don't fight over one shared group.
+const exclusiveItems2 = [
+  { id: "accordion-exclusive-2-item-0", trigger: "Do you offer gift wrapping?", content: "Yes, gift wrapping is available at checkout for a small fee." },
+  { id: "accordion-exclusive-2-item-1", trigger: "Can I change my order?", content: "Orders can be changed within 1 hour of placing them." },
+];
+
 function AccordionDemo() {
   return (
     <div className="min-h-screen bg-white p-8 font-sans antialiased">
@@ -29,6 +41,13 @@ function AccordionDemo() {
         <div>
           <h2 className="text-sm font-semibold text-neutral-900">Exclusive (single-open-at-a-time)</h2>
           <Accordion data-testid="accordion-exclusive" className="mt-2" items={exclusiveItems} exclusive />
+        </div>
+
+        <div>
+          <h2 className="text-sm font-semibold text-neutral-900">
+            Exclusive #2 (isolation check — must not share a group with #1)
+          </h2>
+          <Accordion data-testid="accordion-exclusive-2" className="mt-2" items={exclusiveItems2} exclusive />
         </div>
       </div>
     </div>

@@ -113,4 +113,46 @@ test.describe("Dropdown Menu (React package, visual parity with static reference
   }) => {
     await expect(page.getByTestId("dropdown-item-archive")).toBeDisabled();
   });
+
+  test("closing then reopening via repeated trigger activation does not throw (code review finding)", async ({
+    page,
+  }) => {
+    // Regression guard: an earlier draft called showPopover() unconditionally
+    // on every trigger click, which throws InvalidStateError if the popover
+    // is already open — fixed via the native popoverTargetElement/
+    // popoverTargetAction invoker mechanism (see useDropdownMenu.ts).
+    // Exercises open -> close (Escape) -> reopen -> close (click) -> reopen,
+    // watching for any uncaught page error the whole way.
+    //
+    // { force: true } on trigger clicks: a pre-existing, separate issue
+    // (present in the static reference too, not introduced by this port —
+    // verified directly against src/components/dropdown-menu/dropdown-
+    // menu.html, which exhibits the identical behavior) causes the
+    // Popover-API-shown panel to render positioned against the viewport's
+    // initial containing block rather than its DOM ancestor once promoted
+    // to the browser's top layer, which can visually overlap the trigger
+    // at narrow viewports and make Playwright's actionability check see
+    // the panel as "intercepting" the trigger's click. That's an existing
+    // dropdown-menu-panel layout gap orthogonal to what THIS test verifies
+    // (the toggle logic, not on-screen positioning) — forcing the click
+    // targets the trigger element directly regardless.
+    const errors: string[] = [];
+    page.on("pageerror", (err) => errors.push(err.message));
+
+    const trigger = page.getByTestId("dropdown-trigger");
+    await trigger.click({ force: true });
+    await expect(page.getByTestId("dropdown-menu")).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.getByTestId("dropdown-menu")).toBeHidden();
+
+    await trigger.click({ force: true });
+    await expect(page.getByTestId("dropdown-menu")).toBeVisible();
+    await trigger.click({ force: true });
+    await expect(page.getByTestId("dropdown-menu")).toBeHidden();
+
+    await trigger.click({ force: true });
+    await expect(page.getByTestId("dropdown-menu")).toBeVisible();
+
+    expect(errors).toEqual([]);
+  });
 });

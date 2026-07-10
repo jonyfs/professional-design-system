@@ -13,8 +13,8 @@ function BreadcrumbsDemo() {
         <Breadcrumbs
           data-testid="breadcrumbs"
           items={[
-            { label: "Home", href: "/" },
-            { label: "Category", href: "/category" },
+            { label: "Home", href: "/", testId: "breadcrumb-link-0" },
+            { label: "Category", href: "/category", testId: "breadcrumb-link-1" },
           ]}
           currentLabel="Current Page"
         />
@@ -26,6 +26,23 @@ function BreadcrumbsDemo() {
             className="mt-2"
             items={[]}
             currentLabel="Current Page"
+          />
+        </div>
+
+        <div>
+          <h2 className="text-sm font-semibold text-neutral-900">
+            Long trail (Edge Case, wraps at narrow viewports)
+          </h2>
+          <Breadcrumbs
+            data-testid="breadcrumbs-long"
+            className="mt-2"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Products", href: "/products" },
+              { label: "Electronics & Accessories", href: "/products/electronics" },
+              { label: "Audio Equipment", href: "/products/electronics/audio" },
+            ]}
+            currentLabel="Wireless Over-Ear Headphones with Active Noise Cancellation"
           />
         </div>
       </div>

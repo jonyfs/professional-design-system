@@ -72,14 +72,9 @@ test.describe("Accordion (React package, visual parity with static reference)", 
     expect(afterTransform).not.toBe(beforeTransform);
   });
 
-  test("two independent Accordion instances on the same page don't share one exclusive group", async ({
+  test("a non-exclusive instance is unaffected by a separate exclusive group toggling", async ({
     page,
   }) => {
-    // Regression guard for the useId()-based groupName (research.md R1) —
-    // without a stable-but-unique group name per instance, this non-exclusive
-    // "accordion" group could accidentally collapse when the separate
-    // "accordion-exclusive" group's items toggle, if a hardcoded name were
-    // shared across both Accordion instances.
     const independentItem = page.getByTestId("accordion-item-0");
     await independentItem.locator("summary").click();
     await expect(independentItem).toHaveAttribute("open", "");
@@ -88,5 +83,28 @@ test.describe("Accordion (React package, visual parity with static reference)", 
     await exclusiveItem.locator("summary").click();
     await expect(exclusiveItem).toHaveAttribute("open", "");
     await expect(independentItem).toHaveAttribute("open", "");
+  });
+
+  test("two separate exclusive-mode Accordion instances don't share one native group (code review finding)", async ({
+    page,
+  }) => {
+    // The real regression guard for the useId()-based groupName
+    // (research.md R1): a test with only ONE exclusive instance plus a
+    // non-exclusive one (see above) can pass even with a single
+    // hardcoded group name shared by every exclusive Accordion on the
+    // page, since the non-exclusive instance was never in a native
+    // `name` group to begin with. Only two *exclusive* instances on the
+    // same page can prove they don't fight over one shared group.
+    const exclusive1Item = page.getByTestId("accordion-exclusive-item-0");
+    const exclusive2Item = page.getByTestId("accordion-exclusive-2-item-0");
+
+    await exclusive1Item.locator("summary").click();
+    await expect(exclusive1Item).toHaveAttribute("open", "");
+
+    await exclusive2Item.locator("summary").click();
+    await expect(exclusive2Item).toHaveAttribute("open", "");
+    // If both instances shared one native group name, opening an item in
+    // the second group would have natively collapsed the first.
+    await expect(exclusive1Item).toHaveAttribute("open", "");
   });
 });

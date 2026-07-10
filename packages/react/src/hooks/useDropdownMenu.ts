@@ -14,16 +14,35 @@ export interface DropdownMenuItemData {
 // roving focus among items, Tab closing the menu (WAI-ARIA APG Menu
 // Button convention), and explicit focus-return to the trigger.
 //
-// Architecture note (refined during implementation, not the original
-// contract's simpler "effect reacts to isOpen state" sketch): the
-// panel's own native `toggle` event fires on EVERY open/close transition
-// — Escape, outside light-dismiss, and explicit hidePopover() calls
-// alike — exactly like the vanilla script relies on. Treating that event
-// as the single source of truth (rather than a one-way `isOpen` state ->
-// showPopover()/hidePopover() effect) is what actually keeps React state
-// in sync when the browser closes the popover through a path React never
-// triggered itself (Escape, outside click) — a one-way effect would miss
-// those and leave `isOpen` state stale.
+// Architecture note (refined during implementation): the panel's own
+// native `toggle` event fires on EVERY open/close transition — Escape,
+// outside light-dismiss, and explicit hidePopover()/togglePopover()
+// calls alike — exactly like the vanilla script relies on. Treating
+// that event as the single source of truth (rather than a one-way
+// `isOpen` state -> showPopover()/hidePopover() effect) is what
+// actually keeps React state in sync when the browser closes the
+// popover through a path React never triggered itself.
+//
+// The trigger<->panel relationship is wired via the NATIVE invoker
+// mechanism (`button.popoverTargetElement`/`popoverTargetAction`, set
+// imperatively via a ref effect — the equivalent of the static
+// reference's declarative `popovertarget="..."` attribute, which JSX
+// can't express directly since it isn't typed in this package's pinned
+// React 18), not a manual onClick handler calling togglePopover().
+// This distinction is load-bearing, not stylistic: a manual onClick
+// handler calling togglePopover() has a real, reproducible bug — the
+// trigger sits outside the popover's own DOM subtree, so clicking it
+// while open fires the light-dismiss algorithm on `pointerdown` (closing
+// the popover) BEFORE the `click` event fires; a handler that then calls
+// togglePopover() on click sees an already-closed popover and reopens
+// it, so the menu can never be closed by clicking its own trigger a
+// second time. Browsers special-case the native invoker mechanism to
+// coordinate correctly with light-dismiss (confirmed by reproducing the
+// bug with a standalone script, then confirming the native invoker
+// property doesn't exhibit it) — this is the actual reason the HTML
+// spec recommends invoker attributes/properties over manual
+// show/hide/toggle calls for a toggle-style trigger button in the first
+// place, not just convenience.
 export function useDropdownMenu(items: DropdownMenuItemData[]) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -32,17 +51,14 @@ export function useDropdownMenu(items: DropdownMenuItemData[]) {
 
   useEffect(() => {
     const panel = panelRef.current;
-    if (!panel) return;
-    // Set imperatively via the DOM property, not a JSX `popover` attribute
-    // — confirmed against this package's pinned @types/react (^18.3.0):
-    // the popover JSX attribute only exists in React 19's canary types.
-    // HTMLElement.prototype.popover is natively typed in lib.dom.d.ts
-    // independent of React's own JSX attribute set.
-    (panel as HTMLDivElement & { popover: string }).popover = "auto";
+    const trigger = triggerRef.current;
+    if (!panel || !trigger) return;
+    panel.popover = "auto";
+    trigger.popoverTargetElement = panel;
+    trigger.popoverTargetAction = "toggle";
 
-    function handleToggle(event: Event) {
-      const toggleEvent = event as ToggleEvent;
-      const open = toggleEvent.newState === "open";
+    function handleToggle(event: ToggleEvent) {
+      const open = event.newState === "open";
       setIsOpen(open);
       if (open) {
         const firstEnabled = itemRefs.current.find(
@@ -65,11 +81,6 @@ export function useDropdownMenu(items: DropdownMenuItemData[]) {
     }, []);
   }
 
-  function onTriggerClick() {
-    const panel = panelRef.current as (HTMLDivElement & { showPopover?: () => void }) | null;
-    panel?.showPopover?.();
-  }
-
   function onPanelKeyDown(event: React.KeyboardEvent) {
     const enabled = enabledIndices();
     const currentIndex = itemRefs.current.findIndex((el) => el === document.activeElement);
@@ -86,7 +97,7 @@ export function useDropdownMenu(items: DropdownMenuItemData[]) {
       // lets the browser's normal Tab order proceed from the trigger,
       // rather than cycling within the menu. hidePopover() fires the
       // native `toggle` event above, which handles focus-return.
-      (panelRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null)?.hidePopover?.();
+      panelRef.current?.hidePopover();
       return;
     } else {
       return;
@@ -100,8 +111,8 @@ export function useDropdownMenu(items: DropdownMenuItemData[]) {
     // hidePopover() fires the native `toggle` event above, which returns
     // focus to the trigger — no separate triggerRef.current.focus() call
     // needed here, mirroring dropdown-menu.js's own comment on this point.
-    (panelRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null)?.hidePopover?.();
+    panelRef.current?.hidePopover();
   }
 
-  return { isOpen, panelRef, triggerRef, itemRefs, onTriggerClick, onPanelKeyDown, selectItem };
+  return { isOpen, panelRef, triggerRef, itemRefs, onPanelKeyDown, selectItem };
 }

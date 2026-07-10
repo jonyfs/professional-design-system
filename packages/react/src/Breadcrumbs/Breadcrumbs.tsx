@@ -3,6 +3,12 @@ import type { HTMLAttributes } from "react";
 export interface BreadcrumbItem {
   label: string;
   href: string;
+  /** Optional per-item test id — needed so a consumer/test can target a
+   * specific ancestor link individually (e.g. asserting its `href`),
+   * matching the static reference's `data-testid="breadcrumb-link-N"`
+   * convention (code review finding: the port initially had no way to
+   * address individual links). */
+  testId?: string;
 }
 
 export interface BreadcrumbsProps extends Omit<HTMLAttributes<HTMLElement>, "children"> {
@@ -19,7 +25,7 @@ export function Breadcrumbs({ items, currentLabel, className, ...rest }: Breadcr
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item) => (
           <li key={item.href} className="flex items-center gap-2">
-            <a href={item.href} className="breadcrumb-link">
+            <a href={item.href} className="breadcrumb-link" data-testid={item.testId}>
               {item.label}
             </a>
             <svg viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 breadcrumb-divider" aria-hidden="true">
