@@ -15,17 +15,18 @@ wiring are this project's only JavaScript (`src/scripts/`), everything
 else is pure HTML + Tailwind. A minimal project-wide
 Content-Security-Policy is set via `<meta>` tag on every page.
 
-The first 10 components (Button through Slide-over) are also published as
-a React + TypeScript package at [`packages/react/`](packages/react/) —
-see [React package](#react-package) below. **Both are maintained in
-parallel**: the static HTML gallery remains the ratified reference
-implementation, and the React package is a port that must stay visually
-and behaviorally identical to it, verified by pixel-parity Playwright
-tests seeded from the static gallery's own approved baselines. Breadcrumbs,
-Accordion, Tabs, Dropdown Menu (feature 005), Avatar, Card, and Alert/Banner
-(feature 006), Pagination, Sidebar, and Navbar (feature 007), and Combobox
-and Command Palette (feature 008) are static-only for now — a React port
-is a separate future feature.
+The first 14 components (Button through Dropdown Menu — the original 10
+plus Breadcrumbs, Accordion, Tabs, and Dropdown Menu, ported in feature
+009) are also published as a React + TypeScript package at
+[`packages/react/`](packages/react/) — see [React package](#react-package)
+below. **Both are maintained in parallel**: the static HTML gallery
+remains the ratified reference implementation, and the React package is
+a port that must stay visually and behaviorally identical to it, verified
+by pixel-parity Playwright tests seeded from the static gallery's own
+approved baselines. Avatar, Card, and Alert/Banner (feature 006),
+Pagination, Sidebar, and Navbar (feature 007), and Combobox and Command
+Palette (feature 008) are static-only for now — a React port is a
+separate future feature.
 
 ## Requirements
 
@@ -132,13 +133,15 @@ specs/005-navigation-disclosure-primitives/ # spec/plan/tasks/contracts (Breadcr
 specs/006-data-display-primitives/ # spec/plan/tasks/contracts (Avatar, Card, Alert/Banner)
 specs/007-application-shell-primitives/ # spec/plan/tasks/contracts (Pagination, Sidebar, Navbar)
 specs/008-advanced-forms-primitives/ # spec/plan/tasks/contracts (Combobox, Command Palette)
+specs/009-react-port-nav-disclosure/ # spec/plan/tasks/contracts (React port of Breadcrumbs, Accordion, Tabs, Dropdown Menu)
 ```
 
 ## React package
 
-[`packages/react/`](packages/react/) publishes 10 of the components above
+[`packages/react/`](packages/react/) publishes 14 of the components above
 (Button, Text Input, Badge, Checkbox, Radio, Select, Toggle, Modal, Toast,
-Slide-over) as `@professional-design-system/react`, a React + TypeScript
+Slide-over, Breadcrumbs, Accordion, Tabs, Dropdown Menu) as
+`@professional-design-system/react`, a React + TypeScript
 package built
 with `tsup` (ESM + CJS + `.d.ts`) and Tailwind CSS compiled to a
 self-contained `dist/styles.css`. It exists so the design system can be

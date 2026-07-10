@@ -221,14 +221,43 @@ closes with focus returned to the trigger.
       or `DropdownMenu` instance using only exported TypeScript prop
       types. **NOT DONE by an AI agent** — requires a human tester, same
       outstanding status as every prior feature's equivalent item
-- [ ] T028 Code review pass over
+- [x] T028 Code review pass over
       `packages/react/src/{Breadcrumbs,Accordion,Tabs,DropdownMenu}/**`,
       `packages/react/src/hooks/useDropdownMenu.ts`, and the
       `styles.css`/`index.ts`/`vite.config.ts` diffs using the
       code-reviewer agent; address any CRITICAL/HIGH findings — pay
       particular attention to the imperative `popover` property wiring
       and the arrow-key focus-management logic, the two highest-risk
-      pieces of new logic in this feature
+      pieces of new logic in this feature. **Verdict: WARNING → all
+      fixed.** 1 HIGH (showPopover() threw InvalidStateError on repeat
+      trigger activation — fixed by switching to the native
+      popoverTargetElement/popoverTargetAction invoker mechanism, which
+      also turned out necessary to avoid a second, deeper bug:
+      togglePopover() on click re-opens the menu instead of closing it,
+      because the trigger sits outside the popover's DOM subtree and the
+      browser's light-dismiss algorithm fires on pointerdown before the
+      click event does); 3 MEDIUM (DropdownMenu's aria-label dropped the
+      accessible name for non-string triggers, fixed with
+      aria-labelledby; the Accordion isolation test used only one
+      exclusive instance, weakening what it proved, fixed with a second
+      exclusive instance; two static Breadcrumbs scenarios were dropped
+      during the port, fixed by adding a per-item testId field and a
+      long-trail demo); 1 LOW (unnecessary Popover API type casts,
+      removed — natively typed in this package's DOM lib already). All
+      259 tests re-verified passing with zero visual diff after fixes.
+      **Also surfaced a real, previously-undiscovered cross-cutting bug**
+      in already-shipped code (not fixed here — out of scope for a pure
+      port, and shared by the static reference this ported faithfully):
+      `position: absolute` on a Popover-API-shown element does not
+      anchor to its DOM ancestor — browsers reset the containing block
+      to the viewport once an element is promoted to the top layer.
+      Confirmed via direct measurement against both `src/components/dropdown-menu/
+      dropdown-menu.html` (005) and `src/components/combobox/
+      combobox.html` (008): both panels render positioned against the
+      viewport, not their trigger/input. Undetected until now because
+      visual regression screenshots crop tightly to the popover element
+      itself, never asserting position relative to its trigger. Flagged
+      as a follow-up, not fixed in this feature.
 - [ ] T029 Generate Linux Playwright baselines via
       `gh workflow run update-snapshots.yml` → `gh run download` → copy
       the new `*-linux.png` files into each new spec's own
@@ -237,7 +266,7 @@ closes with focus returned to the trigger.
       pre-existing baselines this run regenerates are byte-identical to
       what's already committed before committing only the genuinely new
       files
-- [ ] T030 Confirm no `/speckit-constitution` amendment is needed (this
+- [x] T030 Confirm no `/speckit-constitution` amendment is needed (this
       feature introduces no new Component Catalog entry — a pure
       platform port, FR-008) — verify the existing Navigation &
       Disclosure section's prose still accurately describes the shipped
