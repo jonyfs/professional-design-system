@@ -24,8 +24,9 @@
        be inert on this element (an /speckit-analyze finding caught before
        implementation). The popover is opened/closed exclusively via
        combobox.js's imperative showPopover()/hidePopover() calls, which
-       are required regardless since the popover must open only when the
-       query is non-empty and matches at least one option. -->
+       are required regardless since the popover must open whenever the
+       query is non-empty — including a zero-match query, which shows
+       the "No results" state (FR-004) rather than staying closed. -->
   <ul
     id="combobox-listbox"
     role="listbox"

@@ -84,9 +84,15 @@ attribute only on `<button>` and on `<input>` elements whose `type` is
 input it is inert. The markup contract now omits it entirely; the
 listbox is opened/closed exclusively via `combobox.js`'s imperative
 `showPopover()`/`hidePopover()` calls (already required regardless, since
-the popover must open only when the query is non-empty and matches at
-least one option — a plain declarative invoker couldn't express that
-condition anyway).
+the popover must open whenever the query is non-empty — including a
+zero-match query, which shows the `.combobox-empty` "No results" state
+per FR-004 rather than staying closed — a plain declarative invoker
+couldn't express that condition anyway).
+
+**See R6 below** for why `.combobox-option`/`.command-palette-action`
+intentionally have no `focus-visible:` state — a separate correction from
+the same `/speckit-analyze` pass that produced this section, inserted
+here out of R1-R5's original sequence.
 
 ## R6: `:focus-visible` on option/action rows — why it's intentionally absent
 
