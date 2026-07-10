@@ -90,12 +90,12 @@ original bug.
       code-reviewer agent; address any CRITICAL/HIGH findings — pay
       particular attention to the anchor-name uniqueness logic and
       whether it could collide with a future feature's own anchor usage
-- [ ] T019 Confirm no `/speckit-constitution` amendment is needed (a
+- [x] T019 Corrected the constitution's Dropdown Menu/Combobox entries (a
       correctness fix to already-ratified components, not a new catalog
       entry) — or a minimal wording tightening if the existing Dropdown
       Menu/Combobox descriptions imply positioning correctness that
       wasn't actually true until this fix
-- [ ] T020 [P] Update `MEMORY.md`/the saved
+- [x] T020 [P] Update `MEMORY.md`/the saved
       `popover-absolute-positioning-bug.md` memory to reflect the bug is
       now fixed, not just documented
 

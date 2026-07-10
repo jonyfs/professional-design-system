@@ -1,4 +1,42 @@
 <!--
+SYNC IMPACT REPORT (v1.8.0 — see below for the v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.7.0 → 1.8.0
+Modified principles: None
+Added sections: None (no new catalog entry — a correctness fix to two
+  already-ratified entries).
+Corrected sections:
+  - Component Catalog → Navigation & Disclosure → Dropdown Menu: added
+    that the panel is anchored to its trigger via CSS Anchor Positioning
+    (`anchor-name`/`position-anchor`/`anchor()`), not `position: absolute`
+    alone.
+  - Component Catalog → Advanced Forms & Interaction → Combobox: the
+    prior text asserted "`position: absolute` override" was sufficient
+    to anchor the listbox under the input — this was WRONG. Once an
+    element is shown via the Popover API, the browser promotes it to the
+    top layer, which resets its `position: absolute` containing block to
+    the viewport's initial containing block, not the nearest positioned
+    ancestor — `position: absolute` alone never actually anchored either
+    Dropdown Menu's panel or Combobox's listbox to their trigger/input,
+    confirmed via direct Playwright bounding-box measurement (feature
+    010). Corrected to describe the CSS Anchor Positioning fix.
+Rationale: feature 010 (a bug-fix feature, not a new component) found
+this real, previously-undiscovered layout bug while building feature
+009's React Dropdown Menu port — existing visual-regression screenshots
+crop tightly to the popover element itself, which looks fine in
+isolation regardless of where on the page it actually renders, so no
+prior test caught it since Dropdown Menu (v1.4.0/feature 005) or
+Combobox (v1.7.0/feature 008) shipped. Verified via direct
+`CSS.supports()` testing against this project's own Playwright browser
+engines (Chromium, Firefox, WebKit) that CSS Anchor Positioning is
+natively supported in all three before adopting it as the fix — the
+same "verify, don't assume" discipline applied to the Popover API itself
+in v1.4.0. This is a MINOR bump per this project's versioning policy
+(correcting a wrong technical claim in an already-ratified pattern,
+matching the precedent of v1.6.0/v1.7.0's own AAA-contrast corrections)
+— no principle text changed.
+Templates requiring updates: None — this is a catalog-prose correction,
+  not a new pattern requiring template updates.
+
 SYNC IMPACT REPORT (v1.7.0 — see below for the v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.6.0 → 1.7.0
 Modified principles: None
@@ -723,7 +761,15 @@ catalog.
   `<dialog>` has to Modal/Slide-over. A small JS module handles what it
   doesn't: arrow-key roving focus among items, `aria-expanded` syncing on
   the trigger, and Tab-closes-the-menu (WAI-ARIA APG Menu Button
-  convention). Panel `bg-white shadow-lg ring-1 ring-neutral-300 rounded-md`.
+  convention). The panel is anchored under its trigger via **CSS Anchor
+  Positioning** (`anchor-name`/`position-anchor`/`anchor()`), each
+  instance assigned a unique anchor name at init time — `position:
+  absolute` alone does **not** anchor a Popover-API-shown element to its
+  DOM ancestor, since promoting an element to the top layer resets its
+  containing block to the viewport (a real, previously-shipped bug found
+  and corrected in feature 010; verified via `CSS.supports()` that all
+  three target browser engines natively support Anchor Positioning
+  before adopting it). Panel `bg-white shadow-lg ring-1 ring-neutral-300 rounded-md`.
   Item `text-neutral-900`, `hover:bg-neutral-50`, `active:bg-neutral-100`,
   focus-visible layers `bg-neutral-50` together with — never instead of —
   the standard focus-visible outline (the bg alone does not satisfy this
@@ -739,9 +785,12 @@ catalog.
   `role="combobox"` on the input with `aria-controls`/
   `aria-activedescendant`/`aria-autocomplete="list"`; `role="listbox"`
   on the popup, hosted via the Popover API (`popover="auto"`, the same
-  mechanism Dropdown Menu already established) with an explicit
-  `position: absolute` override (the Popover API's UA stylesheet
-  defaults to `position: fixed`, viewport-centered, otherwise). Options
+  mechanism Dropdown Menu already established), anchored under the input
+  via **CSS Anchor Positioning** (`anchor-name`/`position-anchor`/
+  `anchor()`, the identical mechanism and fix as Dropdown Menu's panel —
+  `position: absolute` alone does not anchor a Popover-API-shown element
+  to its DOM ancestor; a real, previously-shipped bug found and corrected
+  in feature 010). Options
   `text-neutral-900`, `hover:bg-neutral-50`, `active:bg-neutral-100`,
   keyboard-active `bg-neutral-100` (reusing Dropdown Menu's exact item
   states, not `bg-brand` — a transient keyboard-focus indicator, not a
@@ -830,4 +879,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.7.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09
+**Version**: 1.8.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-10
