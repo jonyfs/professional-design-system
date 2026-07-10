@@ -158,19 +158,24 @@ trailing-action) are implemented, tested, and visually verified.
       trailing-Badge markup example incorrectly showed an `<a>` wrapper
       when the shipped code (and the read-only User Story 3 acceptance
       criteria) uses a plain non-interactive `<div>` — corrected both.
-- [ ] T019 Generate Linux visual regression baselines via
+- [x] T019 Generate Linux visual regression baselines via
       `gh workflow run update-snapshots.yml` (workflow_dispatch on
       ubuntu-latest — never locally/Docker); download the artifact,
       verify zero drift on all pre-existing baselines via `cmp`, commit
-      only the genuinely new Lists baseline files
-- [ ] T020 Run `/speckit-constitution` to correct the existing "Lists"
+      only the genuinely new Lists baseline files. Result: 582
+      identical (zero drift), 18 new files (readonly/interactive/
+      trailing × 320/768/1024/1440px + firefox/webkit 1440px),
+      visually verified correct.
+- [x] T020 Run `/speckit-constitution` to correct the existing "Lists"
       Component Catalog entry: replace `text-xs text-neutral-500` with
       `text-xs text-neutral-600` for metadata, remove the "KNOWN GAP"
-      note (now resolved), and add the new `.list`/`.list-item`/
-      `.list-item-interactive` primitive documentation — judge PATCH
-      (correction of a wrong value) vs. MINOR (new catalog guidance) at
-      ratification time; this is its own explicit task, not silently
-      skipped
+      note (now resolved), and add the new `.list`/`.list-row`/
+      `.list-row-interactive` primitive documentation. Judged MINOR
+      (new catalog guidance for a genuinely shipped component, matching
+      v1.3.0's own new-token precedent) — bumped to v1.9.0. Also
+      recorded a new KNOWN GAP: Table has the identical "documented but
+      never built" defect Lists had (discovered during this feature's
+      planning), flagged for whichever future feature ships it.
 
 ---
 

@@ -1,4 +1,34 @@
 <!--
+SYNC IMPACT REPORT (v1.9.0 — see below for the v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.8.0 → 1.9.0
+Modified principles: None
+Added sections: Component Catalog → Data Display & Listings → Lists —
+  documents the shipped `.list`/`.list-row`/`.list-row-interactive`/
+  `.list-row-title`/`.list-row-metadata` primitive (feature 011).
+Corrected sections:
+  - Component Catalog → Data Display & Listings → Lists: replaced
+    `text-xs text-neutral-500` (4.83:1, fails AAA) with `text-xs
+    text-neutral-600` (7.56:1, AAA) for metadata text, and replaced the
+    "KNOWN GAP: never implemented" note with documentation of the
+    actually-shipped component and its exact class names.
+Rationale: feature 011 closed the catalog gap flagged during feature
+006 — Lists was documented as a pattern but never built as a real
+component, and its metadata token was wrong (never empirically
+verified, the same class of gap Breadcrumbs had before feature 005).
+This is a MINOR bump (new catalog guidance for a genuinely new shipped
+component, not just a wording fix), matching the precedent of v1.3.0's
+own new-token additions.
+New KNOWN GAP recorded: Table has the identical "documented but never
+built" defect Lists had — flagged for whichever future feature ships
+it, per this constitution's own established practice of recording
+follow-up gaps rather than silently deferring them (e.g. the Lists gap
+itself was recorded this way in feature 006, and is now the model for
+recording Table's).
+Templates requiring updates: ✅ none — no principle or template-level
+change, only Component Catalog content.
+-->
+
+<!--
 SYNC IMPACT REPORT (v1.8.0 — see below for the v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.7.0 → 1.8.0
 Modified principles: None
@@ -690,20 +720,46 @@ catalog.
   Tailwind's opacity modifier (`/5` background, `/20` or `/10` ring); text uses
   the AAA-safe `-strong` variant. All three are already-ratified tokens — no
   raw palette classes anywhere in the pattern.
-- **Lists**: avatars `rounded-full h-10 w-10`; title `text-sm font-semibold
-  text-neutral-900`; metadata `text-xs text-neutral-500`; interactive item
-  `hover:bg-neutral-50`.
-  **KNOWN GAP** (found by feature 006, not yet fixed at the source): Lists
-  has never been implemented as its own standalone component — when its
-  ratified `metadata` pattern (`text-xs text-neutral-500`) was actually
-  used for the first time (Card's composed demo, feature 006), a real
-  axe-core scan failed it at 4.83:1 (AAA requires 7:1). Feature 006 worked
-  around this locally (`text-neutral-600` in its own markup) without
-  correcting this entry, since Lists itself is still out of scope. Whichever
-  future feature ships Lists as a real component MUST correct this value
-  first (to `text-neutral-600` or verify an alternative) — the same class
-  of "ratified but never empirically verified" gap Breadcrumbs had before
-  feature 005.
+- **Lists**: shipped as a real component in feature 011 (`.list`/
+  `.list-row`/`.list-row-interactive`/`.list-row-title`/
+  `.list-row-metadata`, `src/components/list/list.html`). Avatars reuse
+  `.avatar-img`/`.avatar-fallback`/`avatar-lg` verbatim (no new avatar
+  CSS); title `text-sm font-semibold text-neutral-900`; metadata `text-xs
+  text-neutral-600` (corrected — see below); interactive row
+  `hover:bg-neutral-50 active:bg-neutral-100 focus-visible:outline
+  focus-visible:outline-2 focus-visible:-outline-offset-2
+  focus-visible:outline-brand`, wrapped in a single `<a href
+  tabindex="0">` (native link semantics; `tabindex="0"` is required
+  because WebKit/Safari's default keyboard-access setting otherwise
+  excludes `<a>` from the sequential Tab order — confirmed empirically,
+  not assumed). Container `.list` uses `divide-y divide-neutral-200
+  overflow-hidden rounded-md border border-neutral-200 bg-white` — the
+  `overflow-hidden` is required so a hover/focus background on the
+  first/last row clips to the container's rounded corners rather than
+  squaring off past them. Class names are `.list-row*`, not
+  `.list-item*`: Tailwind's own core `display` plugin defines a
+  `.list-item { display: list-item }` utility, and since `@layer
+  utilities` is later than `@layer components` in the cascade, a
+  same-named component class would have its `display: flex` silently
+  overridden — a real bug caught during feature 011's implementation,
+  not a hypothetical.
+  **CORRECTED GAP** (found by feature 006, fixed by feature 011): this
+  entry previously specified `text-xs text-neutral-500` for metadata,
+  and Lists had never been implemented as its own standalone component
+  — when the ratified metadata pattern was actually used for the first
+  time (Card's composed demo, feature 006), a real axe-core scan failed
+  it at 4.83:1 (AAA requires 7:1). Feature 011 corrected the token to
+  `text-neutral-600` (7.56:1, AAA-compliant, verified via the WCAG
+  relative-luminance formula) at the source and shipped the component —
+  the same class of "ratified but never empirically verified" gap
+  Breadcrumbs had before feature 005.
+  **KNOWN GAP** (found by feature 011, not yet fixed at the source):
+  Table has the identical "documented but never built" gap Lists had —
+  the Tables catalog entry above describes a ratified pattern, but no
+  `src/components/table/` component has ever shipped. Whichever future
+  feature ships Table as a real component should verify its own
+  `text-neutral-600`/`divide-y divide-neutral-200` usage empirically
+  before assuming it, following this same precedent.
 - **Avatar**: `.avatar-img` — `rounded-full object-cover` (image variant).
   `.avatar-fallback` — `bg-neutral-100 text-neutral-700 font-medium
   rounded-full` (initials fallback; 9.37:1 AAA, computed via the WCAG
@@ -879,4 +935,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.8.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-10
+**Version**: 1.9.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-10
