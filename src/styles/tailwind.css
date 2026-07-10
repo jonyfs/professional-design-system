@@ -294,7 +294,13 @@
      own generated utility of the same name (caught empirically: rows
      collapsed to `display: list-item`, breaking flex centering). */
   .list {
-    @apply divide-y divide-neutral-200 rounded-md border border-neutral-200 bg-white;
+    /* overflow-hidden: rows fill the container edge-to-edge with square
+       corners of their own — without clipping, a hover/focus background
+       on the first/last row paints a rectangular patch that pokes out
+       past rounded-md's corners (code review finding; same pairing
+       already used by .modal-panel and .command-palette-panel). */
+    @apply divide-y divide-neutral-200 overflow-hidden rounded-md
+      border border-neutral-200 bg-white;
   }
   .list-row {
     @apply flex items-center gap-3 px-4 py-3;

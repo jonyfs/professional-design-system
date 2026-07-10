@@ -71,19 +71,19 @@ test.describe("Lists", () => {
   test("interactive rows are reachable via Tab in document order and show a visible focus ring (AC1)", async ({
     page,
   }, testInfo) => {
-    // WebKit's default keyboard-access setting excludes <a> links from
-    // the Tab order entirely (confirmed empirically: Tab never moves
-    // focus off <body> on a page whose only focusable elements are
-    // anchors, while it reaches a <button> fine on the same engine) —
-    // a genuine, pre-existing Safari/WebKit platform behavior, not a
-    // defect in this component's markup.
-    test.skip(
-      testInfo.project.name === "webkit-1440",
-      "WebKit excludes <a> links from the Tab order by default",
-    );
-    // First Tab lands on the page's "Back to gallery" link, not a list
-    // row — the interactive rows are the second-through-fourth stops.
-    await page.keyboard.press("Tab");
+    // WebKit's default keyboard-access setting excludes plain <a> links
+    // (no tabindex) from the Tab order entirely (confirmed empirically:
+    // a plain <a href> was skipped over while an identical <a
+    // tabindex="0"> was correctly focused, in the same test) — the page's
+    // "Back to gallery" link has no tabindex, so on WebKit it's skipped
+    // and the very first Tab press lands directly on the first list row
+    // (which carries tabindex="0", contracts/list.contract.md). Other
+    // engines include plain links by default, so the back-link IS the
+    // first stop there — the leading Tab press below accounts for that
+    // difference explicitly rather than hardcoding one browser's order.
+    if (testInfo.project.name !== "webkit-1440") {
+      await page.keyboard.press("Tab");
+    }
     const rows = ["list-item-interactive-0", "list-item-interactive-1", "list-item-interactive-2"];
     for (const testId of rows) {
       await page.keyboard.press("Tab");

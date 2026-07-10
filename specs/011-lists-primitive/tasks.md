@@ -124,10 +124,40 @@ trailing-action) are implemented, tested, and visually verified.
       token without a dedicated pairing.
 - [x] T017 Run the full project test suite (`npm run test:e2e`) —
       confirm zero regressions across every existing spec, not just
-      `list.spec.ts`. Result: 2091 passed, 27 skipped (26 pre-existing +
-      1 new documented WebKit Tab-order skip), zero failures.
-- [ ] T018 Code review pass over the CSS/HTML diffs using the
-      code-reviewer agent; address any CRITICAL/HIGH findings
+      `list.spec.ts`. Result (before code review fixes): 2091 passed, 27
+      skipped, zero failures. Result (after code review fixes, see
+      T018): 2092 passed, 26 skipped (back to the pre-existing
+      baseline — the WebKit skip was replaced with a real fix), zero
+      failures.
+- [x] T018 Code review pass over the CSS/HTML diffs using the
+      code-reviewer agent; address any CRITICAL/HIGH findings.
+      Result: 0 CRITICAL, 2 HIGH (both fixed), 1 MEDIUM (fixed — turned
+      out to be a real, verifiable improvement), 2 LOW (no action
+      needed, confirmed not actual issues). Fixes applied:
+      (1) `.list` was missing `overflow-hidden`, so a hover/focus
+      background on the first/last row poked out past the container's
+      rounded corners — added, matching `.modal-panel`'s existing
+      `overflow-hidden`/`rounded-lg` pairing.
+      (2) `CLAUDE.md`'s feature-011 paragraph still said `.list-item`
+      (the exact name renamed away from due to the Tailwind corePlugins
+      collision) — corrected to `.list-row`.
+      (3, MEDIUM) The WebKit Tab-order test.skip was investigated
+      further rather than accepted as final: confirmed empirically via
+      a standalone script that `tabindex="0"` makes WebKit include an
+      `<a>` in its Tab order (a plain `<a href>` was skipped while an
+      identical `<a tabindex="0">` was focused correctly). This meant
+      real Safari users on default settings could not keyboard-navigate
+      into an interactive Lists row — a genuine, fixable end-user
+      accessibility gap, not just a CI-environment quirk. Added
+      `tabindex="0"` to every `.list-row-interactive` anchor, removed
+      the `test.skip`, and the assertion now passes on all engines
+      including webkit-1440 (0 skips, up from 1).
+      Also fixed two pre-existing doc-drift issues found while applying
+      the above: `contracts/list.contract.md` still referenced the
+      pre-rename `.list-item*` class names throughout, and its
+      trailing-Badge markup example incorrectly showed an `<a>` wrapper
+      when the shipped code (and the read-only User Story 3 acceptance
+      criteria) uses a plain non-interactive `<div>` — corrected both.
 - [ ] T019 Generate Linux visual regression baselines via
       `gh workflow run update-snapshots.yml` (workflow_dispatch on
       ubuntu-latest — never locally/Docker); download the artifact,

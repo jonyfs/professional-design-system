@@ -4,7 +4,7 @@ structure, shell commands, and other implementation context, read
 `specs/011-lists-primitive/plan.md` (and its `research.md`,
 `contracts/`, `quickstart.md` siblings). Features 001-010 are all
 complete and shipped. Feature 011 ships Lists as a real static component
-(`.list`/`.list-item`), closing a catalog gap flagged in feature 006:
+(`.list`/`.list-row`), closing a catalog gap flagged in feature 006:
 the constitution documented a Lists pattern that was never built, whose
 metadata text token (`text-neutral-500`, 4.83:1) failed WCAG AAA —
 corrected at the source to `text-neutral-600` (7.56:1 AAA). Reuses the
