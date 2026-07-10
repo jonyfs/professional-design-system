@@ -2,8 +2,8 @@
 
 Accessible HTML + Tailwind CSS primitive components (Button, Text Input, Badge,
 Checkbox, Radio, Select, Toggle/Switch, Modal, Toast, Slide-over, Breadcrumbs,
-Accordion, Tabs, Dropdown Menu, Avatar, Card, Alert/Banner), built exclusively
-on the semantic design tokens ratified in
+Accordion, Tabs, Dropdown Menu, Avatar, Card, Alert/Banner, Pagination,
+Sidebar, Navbar), built exclusively on the semantic design tokens ratified in
 [`.specify/memory/constitution.md`](.specify/memory/constitution.md).
 Modal/Slide-over/Dropdown Menu use native `<dialog>`/Popover API for
 focus-trapped or light-dismissable overlays; Accordion uses native
@@ -21,7 +21,8 @@ implementation, and the React package is a port that must stay visually
 and behaviorally identical to it, verified by pixel-parity Playwright
 tests seeded from the static gallery's own approved baselines. Breadcrumbs,
 Accordion, Tabs, Dropdown Menu (feature 005), Avatar, Card, and Alert/Banner
-(feature 006) are static-only for now — a React port is a separate future
+(feature 006), and Pagination, Sidebar, and Navbar (feature 007) are
+static-only for now — a React port is a separate future
 feature.
 
 ## Requirements
@@ -104,7 +105,10 @@ src/
     ├── dropdown-menu/dropdown-menu.html
     ├── avatar/avatar.html
     ├── card/card.html
-    └── alert/alert.html
+    ├── alert/alert.html
+    ├── pagination/pagination.html
+    ├── sidebar/sidebar.html
+    └── navbar/navbar.html
 scripts/
 ├── audit-tokens.mjs           # Principle IV gate (color + border-radius; scans HTML + tailwind.css @apply blocks)
 └── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings; same dual-source scan)
@@ -118,6 +122,7 @@ specs/003-overlays-modal-toast/    # spec/plan/tasks/contracts (Modal, Toast, Sl
 specs/004-react-component-library/ # spec/plan/tasks/contracts (React + TypeScript package migration)
 specs/005-navigation-disclosure-primitives/ # spec/plan/tasks/contracts (Breadcrumbs, Accordion, Tabs, Dropdown Menu)
 specs/006-data-display-primitives/ # spec/plan/tasks/contracts (Avatar, Card, Alert/Banner)
+specs/007-application-shell-primitives/ # spec/plan/tasks/contracts (Pagination, Sidebar, Navbar)
 ```
 
 ## React package

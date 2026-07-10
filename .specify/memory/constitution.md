@@ -1,4 +1,66 @@
 <!--
+SYNC IMPACT REPORT (v1.6.0 — see below for the v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.5.0 → 1.6.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Application & Navigation → Pagination (NEW entry),
+    reflecting feature 007-application-shell-primitives's shipped pattern.
+    Zero JavaScript; current page via `aria-current="page"` on
+    `bg-brand-dark text-white`; Previous/Next are genuinely-disabled
+    native `<button disabled>` at boundaries and real `<a href>` when
+    enabled (a dead `<button>` masquerading as an enabled control was a
+    real HIGH code-review finding, corrected pre-ratification); ellipsis
+    `text-neutral-600` (not `-500` — `aria-hidden` exempts assistive
+    technology, not sighted low-vision users who still read the glyph).
+Corrected sections:
+  - Component Catalog → Application & Navigation → Sidebar: active-item
+    background corrected from `bg-brand text-white` (4.83:1, fails AAA)
+    to `bg-brand-dark text-white` (7.90:1) — this ratified-since-v1.0.0
+    pattern had never actually been implemented/tested until feature 007,
+    which computed the WCAG relative-luminance formula directly and found
+    the same class of gap Button primary already avoided. Dark-theme
+    resting item text corrected from `text-neutral-400` (6.99:1, fails
+    AAA by a hair) to `text-neutral-300` (12.04:1), same root cause.
+  - Component Catalog → Application & Navigation → Navbar/Header: documents
+    the mobile menu now ships as a native `<details>`/`<summary>` element
+    (zero JavaScript, reusing Accordion's disclosure mechanism rather than
+    the Popover API — no light-dismiss/floating-positioning need exists
+    for a menu that pushes content down) and a `supports-[backdrop-filter]`
+    fallback for the sticky header's translucency.
+Known gaps documented (carried over, unchanged, not addressed this bump):
+  - Component Catalog → Data Display & Listings → Lists: still not
+    implemented as its own component; the `text-xs text-neutral-500`
+    metadata pattern remains an uncorrected latent AAA gap (see v1.5.0's
+    report for detail).
+Rationale: feature 007 (Pagination, Sidebar, Navbar) was implemented
+against these patterns as proposed Phase 1 design docs
+(specs/007-application-shell-primitives/data-model.md, contracts/*.md,
+research.md), per the same "propose in Phase 1, ratify what shipped"
+sequence used for v1.4.0 and v1.5.0. Phase 0 research computed the WCAG
+relative-luminance formula directly (not assumed) and found TWO real,
+previously-undiscovered AAA contrast failures in this constitution's own
+ratified-but-never-verified Sidebar pattern — the same "ratified but
+never empirically verified" class of bug Breadcrumbs had before v1.4.0
+and Lists still has, undiscovered until a feature actually implements
+the pattern. A `/speckit-analyze` pass also caught a CRITICAL
+Principle V gap (missing `active:` states across every interactive
+element in a first draft) and an unsound AAA exemption reasoning for
+Pagination's ellipsis, both corrected before implementation. A
+code-reviewer agent pass caught one real HIGH-severity bug (a dead,
+non-functional `<button>` posing as an enabled Pagination control) and
+one LOW vestigial-class note (Navbar's mobile `<details>` carrying an
+unused `group` class copied from Accordion), both fixed. This is a MINOR
+bump: one new catalog entry, two corrected token pairings, no principle
+text changed.
+Templates requiring updates (this MINOR bump):
+  ✅ specs/007-application-shell-primitives/data-model.md (already
+     documents these corrections as findings; this amendment folds them
+     back into the ratified source of truth)
+  ✅ specs/007-application-shell-primitives/contracts/*.md (already
+     reflect the final, corrected, shipped state)
+  ⚠ Lists' `metadata` token remains a known, documented, NOT-yet-corrected
+     gap — unchanged from v1.5.0, still tracked, not silently dropped
+
 SYNC IMPACT REPORT (v1.5.0 — see below for the v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.4.0 → 1.5.0
 Modified principles: None
@@ -446,12 +508,37 @@ class waste and full compliance with the tokens above before entering the
 catalog.
 
 ### Application & Navigation
-- **Sidebar**: `bg-neutral-900`/`text-neutral-400` (dark) or `bg-white` with
-  `border-r border-neutral-200` (light). Active: `bg-brand text-white`. Hover:
-  `bg-neutral-100`/`bg-neutral-800` with `transition-colors duration-150`.
-- **Navbar/Header**: `sticky top-0 z-40`, `backdrop-blur-md bg-white/80`,
-  `border-b border-neutral-200`. Hamburger button restricted to `lg:hidden` with
-  an expanded touch target.
+- **Sidebar**: `bg-neutral-900`/`text-neutral-300` (dark — corrected from the
+  originally speculative `text-neutral-400`; this pattern had never actually
+  been implemented until feature 007, whose real axe-core/WCAG-formula
+  measurement found 6.99:1, failing AAA by a hair, `text-neutral-300` clears
+  it at 12.04:1) or `bg-white text-neutral-700` with `border-r
+  border-neutral-200` (light). Active: `bg-brand-dark text-white` (also
+  corrected — the originally speculative `bg-brand text-white` measured
+  4.83:1, the same AAA gap Button primary already avoids; `bg-brand-dark`
+  clears it at 7.90:1), `aria-current="page"`. Hover: `bg-neutral-100`/
+  `bg-neutral-800` with `transition-colors duration-150`, `active:bg-
+  neutral-200`/`active:bg-neutral-700` (press state, Principle V).
+- **Navbar/Header**: `sticky top-0 z-40`, `backdrop-blur-md bg-white/80` with
+  a `supports-[backdrop-filter]` fallback to an opaque background where the
+  filter isn't supported, `border-b border-neutral-200`. Hamburger button
+  restricted to `lg:hidden` with an expanded touch target; the mobile menu
+  itself is a native `<details>`/`<summary>` element (zero JavaScript,
+  reusing Accordion's disclosure mechanism — no light-dismiss/floating-
+  positioning need exists for a menu that pushes content down, unlike
+  Dropdown Menu's Popover-API requirement).
+- **Pagination**: zero JavaScript. Current page `bg-brand-dark text-white`
+  + `aria-current="page"` (the Sidebar active-item pairing, reused
+  verbatim). Previous/Next are native `<button disabled>` at their
+  respective boundaries (genuinely disabled, not just styled) and real
+  `<a href>` elements when enabled — an enabled control MUST be a real,
+  navigable anchor, never a `<button>` with no `href`/handler standing in
+  for one (a dead button masquerading as enabled was a real code-review
+  finding, corrected before ratification). Page links `text-neutral-600`,
+  `hover:bg-neutral-100`, `active:bg-neutral-100`. Ellipsis `text-
+  neutral-600 aria-hidden="true"` (not `-500` — `aria-hidden` exempts
+  content from assistive technology, not from sighted low-vision users who
+  still read the glyph visually, so the AAA floor still applies).
 - **Breadcrumbs**: `text-sm text-neutral-600` (corrected from the originally
   speculative `text-neutral-500` — feature 005 was the first to actually
   implement and test this pattern, and a real axe-core AAA scan measured
@@ -635,4 +722,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.5.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09
+**Version**: 1.6.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09

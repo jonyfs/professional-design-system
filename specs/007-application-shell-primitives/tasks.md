@@ -186,7 +186,7 @@ shippable.
       active item highlighted using only its own gallery page. **NOT
       DONE by an AI agent** — requires a human tester, same outstanding
       status as every prior feature's equivalent item
-- [ ] T022 Code review pass over
+- [x] T022 Code review pass over
       `src/components/{pagination,sidebar,navbar}/**` and the
       `tailwind.css`/`vite.config.ts`/`check-contrast.mjs` diffs using
       the code-reviewer agent; address any CRITICAL/HIGH findings
@@ -197,13 +197,13 @@ shippable.
       never via local Docker. Confirm via `cmp` that pre-existing
       baselines this run regenerates are byte-identical to what's already
       committed before committing only the genuinely new files
-- [ ] T024 Run `/speckit-constitution` to fold the two real AAA
+- [x] T024 Run `/speckit-constitution` to fold the two real AAA
       corrections (Sidebar's active-item and dark-theme resting-text
       pairings) and the new Pagination pattern into the Application &
       Navigation Component Catalog section (MINOR version bump), per
       `quickstart.md`'s reminder — do not skip once implementation is
       verified stable
-- [ ] T025 [P] Update root `README.md`'s Project Structure section to
+- [x] T025 [P] Update root `README.md`'s Project Structure section to
       list the three new component directories, consistent with every
       prior feature's README update pattern
 
