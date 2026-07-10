@@ -43,9 +43,21 @@ test.describe("Pagination", () => {
     await expect(next).toBeDisabled();
   });
 
-  test("Previous/Next are enabled mid-range", async ({ page }) => {
-    await expect(page.getByTestId("pagination-prev")).toBeEnabled();
-    await expect(page.getByTestId("pagination-next")).toBeEnabled();
+  test("Previous/Next are enabled mid-range and are real navigable links, not dead buttons (code review finding)", async ({
+    page,
+  }) => {
+    const prev = page.getByTestId("pagination-prev");
+    const next = page.getByTestId("pagination-next");
+    await expect(prev).toBeEnabled();
+    await expect(next).toBeEnabled();
+    // An enabled control MUST be a real <a href> — a plain <button> with
+    // no href/handler silently does nothing on click, exactly the bug a
+    // code-reviewer agent found in an earlier draft (toBeEnabled() alone
+    // doesn't catch this, since a non-disabled <button> also passes it).
+    await expect(prev).toHaveJSProperty("tagName", "A");
+    await expect(next).toHaveJSProperty("tagName", "A");
+    await expect(prev).toHaveAttribute("href", "#");
+    await expect(next).toHaveAttribute("href", "#");
   });
 
   test("truncation shows an ellipsis for large ranges (AC4)", async ({ page }) => {
