@@ -227,7 +227,7 @@ and Escape closes it with focus restored to the pre-open target
       (LOW) both scripts fully re-render their list on every arrow-key
       press rather than patching existing DOM nodes, harmless at current
       list sizes (≤60 items)
-- [ ] T020 Generate Linux Playwright baselines via
+- [x] T020 Generate Linux Playwright baselines via
       `gh workflow run update-snapshots.yml` → `gh run download` → copy
       the new `*-linux.png` files into each new component's
       `tests/e2e/<name>.spec.ts-snapshots/` directory. Never locally,
