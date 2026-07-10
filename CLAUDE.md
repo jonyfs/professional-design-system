@@ -1,14 +1,16 @@
 <!-- SPECKIT START -->
-Active feature: `008-advanced-forms-primitives`. For technologies,
+Active feature: `009-react-port-nav-disclosure`. For technologies,
 project structure, shell commands, and other implementation context,
-read `specs/008-advanced-forms-primitives/plan.md` (and its
+read `specs/009-react-port-nav-disclosure/plan.md` (and its
 `research.md`, `data-model.md`, `contracts/`, `quickstart.md` siblings).
-Features 001-007 are all complete and shipped. Feature 008 adds two
-static HTML + Tailwind components requiring custom JavaScript (Combobox —
-WAI-ARIA 1.2 combobox with Popover-API listbox; Command Palette — Cmd/
-Ctrl+K global shortcut reusing Modal's `<dialog>` chrome), completing the
-"implemente todos os 3 acima" catalog-expansion scope; a React port is
-explicitly out of scope for this feature (reserved for feature 009).
+Features 001-008 are all complete and shipped. Feature 009 ports feature
+005's four static components (Breadcrumbs, Accordion, Tabs, Dropdown
+Menu) to `packages/react/` — a pure platform port, no new visual/
+interaction capability. Accordion keeps the native `<details name>`
+exclusive-group mechanism verbatim in JSX (zero React state); Tabs and
+Dropdown Menu are reimplemented as idiomatic React hooks. This is the
+fourth and final feature in the "cotninue implementando 2 e 3" +
+"4 features sequenciais" plan.
 <!-- SPECKIT END -->
 
 ## graphify
