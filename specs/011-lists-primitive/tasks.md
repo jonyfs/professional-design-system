@@ -158,6 +158,19 @@ trailing-action) are implemented, tested, and visually verified.
       trailing-Badge markup example incorrectly showed an `<a>` wrapper
       when the shipped code (and the read-only User Story 3 acceptance
       criteria) uses a plain non-interactive `<div>` — corrected both.
+      **Follow-up correction (post-merge, caught by real CI)**: the
+      Tab-order test's platform-conditional logic (`if project.name !==
+      "webkit-1440"`) was itself based on a macOS-only observation and
+      broke in actual GitHub Actions CI (ubuntu-latest): Linux's WebKit
+      build is a different underlying port than macOS Playwright's, and
+      does NOT skip plain `<a>` links the way macOS's does — confirmed
+      by reproducing the exact CI environment locally via the matching
+      `mcr.microsoft.com/playwright:v1.61.1-jammy` Docker image (used
+      only for behavioral debugging, never for generating visual
+      baselines). Rewrote the test to Tab repeatedly until the first
+      row is reached rather than hardcoding a fixed press-count assumed
+      from one platform — verified passing in both the real Linux
+      container and locally on macOS before re-pushing.
 - [x] T019 Generate Linux visual regression baselines via
       `gh workflow run update-snapshots.yml` (workflow_dispatch on
       ubuntu-latest — never locally/Docker); download the artifact,
