@@ -124,7 +124,7 @@ and Escape closes it with focus restored to the pre-open target
 
 ### Tests for User Story 2
 
-- [ ] T009 [P] [US2] Write `tests/e2e/command-palette.spec.ts`: visual
+- [x] T009 [P] [US2] Write `tests/e2e/command-palette.spec.ts`: visual
       regression at 320/768/1024/1440px (closed and open states), an axe
       scan, a global-shortcut assertion (`page.keyboard.press` both
       `"Control+k"` and `"Meta+k"`) opening the dialog with its search
@@ -141,7 +141,7 @@ and Escape closes it with focus restored to the pre-open target
 
 ### Implementation for User Story 2
 
-- [ ] T010 [US2] Modify `src/scripts/overlay.js`: extract the existing
+- [x] T010 [US2] Modify `src/scripts/overlay.js`: extract the existing
       per-dialog backdrop-click-close and WebKit-safe `close`-time
       refocus logic out of `initDialogTriggers()`'s per-trigger loop into
       an exported `wireDialogClose(dialog)` function; call it from
@@ -152,7 +152,7 @@ and Escape closes it with focus restored to the pre-open target
       this is a refactor of shared plumbing two already-shipped
       components depend on, not new behavior (research.md R3,
       `/speckit-analyze` finding I1)
-- [ ] T011 [US2] Implement `src/components/command-palette/command-palette.html`
+- [x] T011 [US2] Implement `src/components/command-palette/command-palette.html`
       per `contracts/command-palette.contract.md` (dialog chrome reusing
       Modal's `rounded-lg`/`shadow-xl`/`sm:max-w-lg` treatment verbatim,
       search input, action list, `aria-live="polite"` confirmation
@@ -161,7 +161,7 @@ and Escape closes it with focus restored to the pre-open target
       list should have ~20 entries so SC-002's "<5 keystrokes for a
       20-action palette" is a real, demonstrable test, not just
       illustrative
-- [ ] T012 [US2] Add `.command-palette-dialog`/`.command-palette-input`/
+- [x] T012 [US2] Add `.command-palette-dialog`/`.command-palette-input`/
       `.command-palette-list`/`.command-palette-action`/
       `.command-palette-action[aria-selected="true"]`/
       `.command-palette-action[aria-disabled="true"]` (with the same
@@ -169,7 +169,7 @@ and Escape closes it with focus restored to the pre-open target
       action mark`/`.command-palette-empty` `@apply` classes to
       `src/styles/tailwind.css` per `data-model.md`'s Command Palette
       composition
-- [ ] T013 [US2] Implement `src/scripts/command-palette.js`: a
+- [x] T013 [US2] Implement `src/scripts/command-palette.js`: a
       document-level `keydown` listener checking `(event.metaKey ||
       event.ctrlKey) && event.key.toLowerCase() === "k"`, `preventDefault()`,
       a guard no-oping if another `<dialog open>` already exists, setting
@@ -182,13 +182,13 @@ and Escape closes it with focus restored to the pre-open target
       that duplicating ~15 lines is cheaper than a forced abstraction);
       Enter writes a visible confirmation into
       `command-palette-confirmation` and calls `dialog.close()`
-- [ ] T014 [US2] Add a Command Palette card to `index.html`'s gallery
+- [x] T014 [US2] Add a Command Palette card to `index.html`'s gallery
       (including the shortcut hint), linking to
       `src/components/command-palette/command-palette.html`
-- [ ] T015 [US2] Add `commandPalette: resolve(__dirname,
+- [x] T015 [US2] Add `commandPalette: resolve(__dirname,
       "src/components/command-palette/command-palette.html")` to
       `vite.config.ts`'s `rollupOptions.input`
-- [ ] T016 [US2] Run `npm run audit:tokens && npm run audit:contrast` —
+- [x] T016 [US2] Run `npm run audit:tokens && npm run audit:contrast` —
       confirm zero violations (reuses T007's pairings, no new ones needed)
 
 **Checkpoint**: Combobox + Command Palette both independently shippable.
