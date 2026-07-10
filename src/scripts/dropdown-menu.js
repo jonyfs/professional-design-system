@@ -5,10 +5,26 @@
 // syncing on the trigger, arrow-key roving focus among items, Tab closing
 // the menu (WAI-ARIA APG Menu Button convention), and explicit
 // focus-return to the trigger on every closing path.
+//
+// anchorCounter (feature 010 fix): a top-layer element's position:
+// absolute containing block resets to the viewport, not its DOM
+// ancestor, so .dropdown-menu-panel's `right-0`/`mt-2` never actually
+// anchored to the trigger — confirmed via direct bounding-box
+// measurement. CSS Anchor Positioning (anchor-name/position-anchor/
+// anchor()) fixes this, but needs a unique anchor-name per instance —
+// a single hardcoded name would misbehave the moment a page renders
+// more than one Dropdown Menu, the same multi-instance collision class
+// already found and fixed for Accordion's native group name (feature
+// 009).
+let anchorCounter = 0;
+
 export function initDropdownMenus() {
   document.querySelectorAll("[data-dropdown-trigger]").forEach((trigger) => {
     const menu = document.getElementById(trigger.getAttribute("popovertarget"));
     if (!menu) return;
+    const anchorName = `--dropdown-anchor-${anchorCounter++}`;
+    trigger.style.anchorName = anchorName;
+    menu.style.positionAnchor = anchorName;
     const items = () => Array.from(menu.querySelectorAll('[role="menuitem"]:not(:disabled)'));
 
     // Popover API's native "toggle" event fires on every open/close

@@ -213,8 +213,15 @@
      refs (research.md R3), arrow-key roving focus + aria-expanded sync
      reimplemented as the useDropdownMenu hook. */
   .dropdown-menu-panel {
-    @apply absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white
+    @apply mt-2 w-56 origin-top-right rounded-md bg-white
       shadow-lg ring-1 ring-neutral-300 focus:outline-none;
+    /* CSS Anchor Positioning (feature 010 fix) — see src/styles/
+       tailwind.css's identical comment for the full rationale.
+       anchor-name/position-anchor assigned per-instance by
+       useDropdownMenu.ts. */
+    position: absolute;
+    top: anchor(bottom);
+    right: anchor(right);
   }
   .dropdown-menu-item {
     @apply block w-full px-4 py-2 text-left text-sm text-neutral-900

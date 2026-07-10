@@ -118,4 +118,36 @@ test.describe("Dropdown Menu", () => {
   }) => {
     await expect(page.getByTestId("dropdown-item-archive")).toBeDisabled();
   });
+
+  test("panel is positioned adjacent to the trigger, not the viewport (feature 010 regression guard)", async ({
+    page,
+  }) => {
+    // Popover-API top-layer promotion resets position:absolute's
+    // containing block to the viewport, silently breaking `right-0`/
+    // `mt-2` anchoring — this exact class of bug shipped undetected
+    // since feature 005 because visual-regression screenshots crop
+    // tightly to the panel itself, which looks fine in isolation
+    // regardless of where on the page it actually renders.
+    const trigger = page.getByTestId("dropdown-trigger");
+    await trigger.click();
+    const menu = page.getByTestId("dropdown-menu");
+    await expect(menu).toBeVisible();
+
+    const triggerBox = await trigger.boundingBox();
+    const menuBox = await menu.boundingBox();
+    expect(triggerBox).not.toBeNull();
+    expect(menuBox).not.toBeNull();
+
+    // The panel's top edge must be within a few pixels of the trigger's
+    // bottom edge (mt-2 = 8px gap), not near the top of the viewport.
+    const gap = menuBox!.y - (triggerBox!.y + triggerBox!.height);
+    expect(gap).toBeGreaterThanOrEqual(0);
+    expect(gap).toBeLessThan(20);
+    // The panel must horizontally overlap the trigger's column, not be
+    // centered/offset elsewhere on the page.
+    const horizontalOverlap =
+      Math.min(menuBox!.x + menuBox!.width, triggerBox!.x + triggerBox!.width) -
+      Math.max(menuBox!.x, triggerBox!.x);
+    expect(horizontalOverlap).toBeGreaterThan(0);
+  });
 });

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 export interface DropdownMenuItemData {
   id: string;
@@ -48,6 +48,13 @@ export function useDropdownMenu(items: DropdownMenuItemData[]) {
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  // useId(), sanitized to a valid CSS custom-ident (React's useId()
+  // return value contains ":" characters, invalid in a custom-ident):
+  // a unique anchor-name per hook instance, so two DropdownMenu
+  // instances on the same page never collide (feature 010 fix,
+  // mirroring Accordion's identical useId()-based group-name isolation
+  // from feature 009).
+  const anchorName = `--dropdown-anchor-${useId().replace(/[^a-zA-Z0-9-]/g, "")}`;
 
   useEffect(() => {
     const panel = panelRef.current;
@@ -56,6 +63,13 @@ export function useDropdownMenu(items: DropdownMenuItemData[]) {
     panel.popover = "auto";
     trigger.popoverTargetElement = panel;
     trigger.popoverTargetAction = "toggle";
+    // anchor-name/position-anchor aren't in this package's pinned
+    // TypeScript's DOM lib yet (confirmed: no match in lib.dom.d.ts),
+    // unlike popover/showPopover/hidePopover — setProperty() is
+    // generically typed on CSSStyleDeclaration and works identically at
+    // runtime (verified directly against Chromium/Firefox/WebKit).
+    trigger.style.setProperty("anchor-name", anchorName);
+    panel.style.setProperty("position-anchor", anchorName);
 
     function handleToggle(event: ToggleEvent) {
       const open = event.newState === "open";

@@ -18,32 +18,32 @@ files, no new scaffold needed.
 
 ## Phase 1: User Story 1 - Dropdown Menu panel anchors to trigger (P1) 🎯 MVP
 
-- [ ] T001 [US1] Write the bounding-box-adjacency assertion FIRST in
+- [x] T001 [US1] Write the bounding-box-adjacency assertion FIRST in
       `tests/e2e/dropdown-menu.spec.ts` (before the fix) and confirm it
       FAILS against the current, unfixed code — proves the test would
       have caught the original bug (spec.md SC-003)
-- [ ] T002 [US1] Modify `src/scripts/dropdown-menu.js`: add a
+- [x] T002 [US1] Modify `src/scripts/dropdown-menu.js`: add a
       module-level `anchorCounter`, assign a unique
       `--dropdown-anchor-N` via `trigger.style.anchorName`/
       `menu.style.positionAnchor` per instance (contracts/
       dropdown-menu-positioning.contract.md)
-- [ ] T003 [US1] Modify `.dropdown-menu-panel` in `src/styles/
+- [x] T003 [US1] Modify `.dropdown-menu-panel` in `src/styles/
       tailwind.css`: remove `right-0` from the `@apply` line, add plain
       `position: absolute; top: anchor(bottom); right: anchor(right);`
       CSS
-- [ ] T004 [US1] Re-run T001's assertion — confirm it now PASSES
-- [ ] T005 [US1] Modify `packages/react/src/hooks/useDropdownMenu.ts`:
+- [x] T004 [US1] Re-run T001's assertion — confirm it now PASSES
+- [x] T005 [US1] Modify `packages/react/src/hooks/useDropdownMenu.ts`:
       add a `useId()`-derived, custom-ident-sanitized anchor name,
       assigned via `trigger.style.anchorName`/
       `panel.style.positionAnchor` in the existing ref effect
-- [ ] T006 [US1] Modify `.dropdown-menu-panel` in `packages/react/src/
+- [x] T006 [US1] Modify `.dropdown-menu-panel` in `packages/react/src/
       styles.css` identically to T003
-- [ ] T007 [US1] Add the same bounding-box-adjacency assertion to
+- [x] T007 [US1] Add the same bounding-box-adjacency assertion to
       `tests/e2e/react-dropdown-menu.spec.ts`
-- [ ] T008 [US1] Run `tests/e2e/dropdown-menu.spec.ts` and
+- [x] T008 [US1] Run `tests/e2e/dropdown-menu.spec.ts` and
       `tests/e2e/react-dropdown-menu.spec.ts` in full — confirm zero
       regressions to existing keyboard/focus/ARIA assertions
-- [ ] T009 [US1] Run `node scripts/audit-tokens.mjs && node
+- [x] T009 [US1] Run `node scripts/audit-tokens.mjs && node
       scripts/check-contrast.mjs` — confirm zero violations (no new
       tokens)
 

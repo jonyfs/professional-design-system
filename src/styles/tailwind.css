@@ -197,8 +197,17 @@
      Popover API for open/close/light-dismiss/top-layer, arrow-key roving
      focus + aria-expanded sync via src/scripts/dropdown-menu.js. */
   .dropdown-menu-panel {
-    @apply absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white
+    @apply mt-2 w-56 origin-top-right rounded-md bg-white
       shadow-lg ring-1 ring-neutral-300 focus:outline-none;
+    /* CSS Anchor Positioning (feature 010 fix), not `absolute right-0`:
+       a top-layer element's position:absolute containing block resets
+       to the viewport, not its DOM ancestor, so `right-0` never actually
+       anchored to the trigger — confirmed via direct bounding-box
+       measurement. anchor-name/position-anchor is assigned per-instance
+       by src/scripts/dropdown-menu.js. */
+    position: absolute;
+    top: anchor(bottom);
+    right: anchor(right);
   }
   .dropdown-menu-item {
     @apply block w-full px-4 py-2 text-left text-sm text-neutral-900

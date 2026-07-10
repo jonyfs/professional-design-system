@@ -124,35 +124,51 @@ test.describe("Dropdown Menu (React package, visual parity with static reference
     // Exercises open -> close (Escape) -> reopen -> close (click) -> reopen,
     // watching for any uncaught page error the whole way.
     //
-    // { force: true } on trigger clicks: a pre-existing, separate issue
-    // (present in the static reference too, not introduced by this port —
-    // verified directly against src/components/dropdown-menu/dropdown-
-    // menu.html, which exhibits the identical behavior) causes the
-    // Popover-API-shown panel to render positioned against the viewport's
-    // initial containing block rather than its DOM ancestor once promoted
-    // to the browser's top layer, which can visually overlap the trigger
-    // at narrow viewports and make Playwright's actionability check see
-    // the panel as "intercepting" the trigger's click. That's an existing
-    // dropdown-menu-panel layout gap orthogonal to what THIS test verifies
-    // (the toggle logic, not on-screen positioning) — forcing the click
-    // targets the trigger element directly regardless.
+    // Plain (non-forced) clicks: the { force: true } workaround this test
+    // originally needed (the panel visually overlapping the trigger at
+    // narrow viewports, due to position:absolute not anchoring correctly
+    // under Popover-API top-layer promotion) is no longer necessary — that
+    // root cause is fixed in feature 010 (see the new positioning
+    // assertion below).
     const errors: string[] = [];
     page.on("pageerror", (err) => errors.push(err.message));
 
     const trigger = page.getByTestId("dropdown-trigger");
-    await trigger.click({ force: true });
+    await trigger.click();
     await expect(page.getByTestId("dropdown-menu")).toBeVisible();
     await page.keyboard.press("Escape");
     await expect(page.getByTestId("dropdown-menu")).toBeHidden();
 
-    await trigger.click({ force: true });
+    await trigger.click();
     await expect(page.getByTestId("dropdown-menu")).toBeVisible();
-    await trigger.click({ force: true });
+    await trigger.click();
     await expect(page.getByTestId("dropdown-menu")).toBeHidden();
 
-    await trigger.click({ force: true });
+    await trigger.click();
     await expect(page.getByTestId("dropdown-menu")).toBeVisible();
 
     expect(errors).toEqual([]);
+  });
+
+  test("panel is positioned adjacent to the trigger, not the viewport (feature 010 regression guard)", async ({
+    page,
+  }) => {
+    const trigger = page.getByTestId("dropdown-trigger");
+    await trigger.click();
+    const menu = page.getByTestId("dropdown-menu");
+    await expect(menu).toBeVisible();
+
+    const triggerBox = await trigger.boundingBox();
+    const menuBox = await menu.boundingBox();
+    expect(triggerBox).not.toBeNull();
+    expect(menuBox).not.toBeNull();
+
+    const gap = menuBox!.y - (triggerBox!.y + triggerBox!.height);
+    expect(gap).toBeGreaterThanOrEqual(0);
+    expect(gap).toBeLessThan(20);
+    const horizontalOverlap =
+      Math.min(menuBox!.x + menuBox!.width, triggerBox!.x + triggerBox!.width) -
+      Math.max(menuBox!.x, triggerBox!.x);
+    expect(horizontalOverlap).toBeGreaterThan(0);
   });
 });
