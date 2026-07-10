@@ -5,7 +5,21 @@
 // R2); this module adds everything else: filtering, aria-activedescendant
 // roving "focus" (real DOM focus never leaves the input), and Enter/blur
 // commit handling.
+//
+// anchorCounter (feature 010 fix): same root cause and fix as Dropdown
+// Menu's identical bug — a top-layer element's position: absolute
+// containing block resets to the viewport, so .combobox-listbox's
+// `left-0 right-0`/`mt-1` never actually anchored to the input. A unique
+// anchor-name per instance (not a single hardcoded one) avoids the
+// multi-instance collision class already found for Accordion (feature
+// 009) and Dropdown Menu (feature 010, above).
+let anchorCounter = 0;
+
 export function initCombobox({ input, listbox, options }) {
+  const anchorName = `--combobox-anchor-${anchorCounter++}`;
+  input.style.anchorName = anchorName;
+  listbox.style.positionAnchor = anchorName;
+
   let query = "";
   let filtered = [];
   let activeIndex = -1;

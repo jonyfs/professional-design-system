@@ -104,4 +104,30 @@ test.describe("Combobox", () => {
     await disabledOption.click({ force: true });
     await expect(input).not.toHaveValue("Austria");
   });
+
+  test("listbox is positioned adjacent to the input, not the viewport (feature 010 regression guard)", async ({
+    page,
+  }) => {
+    // Same root cause as Dropdown Menu's identical bug (feature 010):
+    // Popover-API top-layer promotion resets position:absolute's
+    // containing block to the viewport, silently breaking
+    // .combobox-listbox's `left-0 right-0`/`mt-1` anchoring.
+    const input = page.getByTestId("combobox-input");
+    await input.fill("ar");
+    const listbox = page.getByTestId("combobox-listbox");
+    await expect(listbox).toBeVisible();
+
+    const inputBox = await input.boundingBox();
+    const listboxBox = await listbox.boundingBox();
+    expect(inputBox).not.toBeNull();
+    expect(listboxBox).not.toBeNull();
+
+    const gap = listboxBox!.y - (inputBox!.y + inputBox!.height);
+    expect(gap).toBeGreaterThanOrEqual(0);
+    expect(gap).toBeLessThan(20);
+    const horizontalOverlap =
+      Math.min(listboxBox!.x + listboxBox!.width, inputBox!.x + inputBox!.width) -
+      Math.max(listboxBox!.x, inputBox!.x);
+    expect(horizontalOverlap).toBeGreaterThan(0);
+  });
 });

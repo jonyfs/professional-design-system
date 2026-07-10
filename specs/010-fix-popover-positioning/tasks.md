@@ -55,21 +55,21 @@ original bug.
 
 ## Phase 2: User Story 2 - Combobox listbox anchors to input (P2)
 
-- [ ] T010 [P] [US2] Write the bounding-box-adjacency assertion FIRST in
+- [x] T010 [P] [US2] Write the bounding-box-adjacency assertion FIRST in
       `tests/e2e/combobox.spec.ts` (before the fix) and confirm it FAILS
       against the current, unfixed code
-- [ ] T011 [US2] Modify `src/scripts/combobox.js`: add a module-level
+- [x] T011 [US2] Modify `src/scripts/combobox.js`: add a module-level
       `anchorCounter`, assign a unique `--combobox-anchor-N` via
       `input.style.anchorName`/`listbox.style.positionAnchor` per
       instance (contracts/combobox-positioning.contract.md)
-- [ ] T012 [US2] Modify `.combobox-listbox` in `src/styles/
+- [x] T012 [US2] Modify `.combobox-listbox` in `src/styles/
       tailwind.css`: remove `left-0 right-0` from the `@apply` line, add
       plain `position: absolute; top: anchor(bottom); left:
       anchor(left); right: anchor(right);` CSS
-- [ ] T013 [US2] Re-run T010's assertion — confirm it now PASSES
-- [ ] T014 [US2] Run `tests/e2e/combobox.spec.ts` in full — confirm zero
+- [x] T013 [US2] Re-run T010's assertion — confirm it now PASSES
+- [x] T014 [US2] Run `tests/e2e/combobox.spec.ts` in full — confirm zero
       regressions to existing filter/keyboard/ARIA assertions
-- [ ] T015 [US2] Run `node scripts/audit-tokens.mjs && node
+- [x] T015 [US2] Run `node scripts/audit-tokens.mjs && node
       scripts/check-contrast.mjs` — confirm zero violations
 
 **Checkpoint**: Combobox correctly anchors its listbox to its input.
