@@ -258,7 +258,7 @@ closes with focus returned to the trigger.
       visual regression screenshots crop tightly to the popover element
       itself, never asserting position relative to its trigger. Flagged
       as a follow-up, not fixed in this feature.
-- [ ] T029 Generate Linux Playwright baselines via
+- [x] T029 Generate Linux Playwright baselines via
       `gh workflow run update-snapshots.yml` → `gh run download` → copy
       the new `*-linux.png` files into each new spec's own
       `tests/e2e/react-<name>.spec.ts-snapshots/` directory. Never
