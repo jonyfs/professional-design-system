@@ -78,10 +78,10 @@ original bug.
 
 ## Phase 3: Polish & Cross-Cutting Concerns
 
-- [ ] T016 Run the full project test suite (`npm run test:e2e`) —
+- [x] T016 Run the full project test suite (`npm run test:e2e`) —
       confirm zero regressions across every existing spec, not just the
       two directly modified
-- [ ] T017 Compare every existing screenshot this run touches via `cmp`
+- [x] T017 Compare every existing screenshot this run touches via `cmp`
       against what's already committed — confirm zero pixel drift (the
       fix should change page layout position, not the cropped element's
       own rendered appearance); only regenerate Linux baselines via
