@@ -1,15 +1,16 @@
 <!-- SPECKIT START -->
-Active feature: `010-fix-popover-positioning`. For technologies,
-project structure, shell commands, and other implementation context,
-read `specs/010-fix-popover-positioning/plan.md` (and its `research.md`,
-`contracts/`, `quickstart.md` siblings). Features 001-009 are all
-complete and shipped. Feature 010 is a correctness bug fix (not a new
-component): Dropdown Menu's panel (005 + its 009 React port) and
-Combobox's listbox (008) don't visually anchor to their trigger/input,
-because Popover-API top-layer promotion resets `position: absolute`'s
-containing block to the viewport. Fixed with the CSS Anchor Positioning
-API (`anchor-name`/`position-anchor`/`anchor()`), confirmed natively
-supported in all three target browser engines via direct testing.
+Active feature: `011-lists-primitive`. For technologies, project
+structure, shell commands, and other implementation context, read
+`specs/011-lists-primitive/plan.md` (and its `research.md`,
+`contracts/`, `quickstart.md` siblings). Features 001-010 are all
+complete and shipped. Feature 011 ships Lists as a real static component
+(`.list`/`.list-item`), closing a catalog gap flagged in feature 006:
+the constitution documented a Lists pattern that was never built, whose
+metadata text token (`text-neutral-500`, 4.83:1) failed WCAG AAA —
+corrected at the source to `text-neutral-600` (7.56:1 AAA). Reuses the
+ratified Avatar component verbatim. Note: Table has the identical
+"documented but never built" gap and is being resolved separately in
+the upcoming React-port batch feature.
 <!-- SPECKIT END -->
 
 ## graphify

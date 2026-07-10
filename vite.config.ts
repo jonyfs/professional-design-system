@@ -32,6 +32,7 @@ export default defineConfig({
         navbar: resolve(__dirname, "src/components/navbar/navbar.html"),
         combobox: resolve(__dirname, "src/components/combobox/combobox.html"),
         commandPalette: resolve(__dirname, "src/components/command-palette/command-palette.html"),
+        list: resolve(__dirname, "src/components/list/list.html"),
       },
     },
   },

@@ -1,1 +1,3 @@
-{"feature_directory":"specs/007-application-shell-primitives"}
+{
+  "feature_directory": "specs/011-lists-primitive"
+}
