@@ -15,7 +15,16 @@
     click, and Tab all close the menu.
   </p>
 
-  <div class="mt-8 relative inline-block text-left">
+  <!-- flex justify-end: the panel's right edge anchors to the trigger's
+       right edge (a right-aligned "..." menu, matching the ratified
+       pattern's real-world use — a trigger at the right of a toolbar/
+       card row). Pushing the trigger to the far right of a full-width
+       row gives the panel room to open to its left at every viewport
+       width, responsively — a trigger placed at the page's own left
+       margin (as this demo previously was) has no such space at any
+       width. -->
+  <div class="mt-8 flex justify-end">
+  <div class="relative inline-block text-left">
     <button
       type="button"
       id="dropdown-trigger"
@@ -49,6 +58,7 @@
         Delete
       </button>
     </div>
+  </div>
   </div>
 
   <script type="module">

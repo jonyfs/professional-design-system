@@ -166,9 +166,12 @@ test.describe("Dropdown Menu (React package, visual parity with static reference
     const gap = menuBox!.y - (triggerBox!.y + triggerBox!.height);
     expect(gap).toBeGreaterThanOrEqual(0);
     expect(gap).toBeLessThan(20);
-    const horizontalOverlap =
-      Math.min(menuBox!.x + menuBox!.width, triggerBox!.x + triggerBox!.width) -
-      Math.max(menuBox!.x, triggerBox!.x);
-    expect(horizontalOverlap).toBeGreaterThan(0);
+    // Edge-alignment check, not a bare overlap check (code review
+    // finding — see the identical assertion in the static
+    // dropdown-menu.spec.ts for the full rationale).
+    const rightEdgeDelta = Math.abs(
+      menuBox!.x + menuBox!.width - (triggerBox!.x + triggerBox!.width),
+    );
+    expect(rightEdgeDelta).toBeLessThan(5);
   });
 });

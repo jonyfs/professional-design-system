@@ -143,11 +143,16 @@ test.describe("Dropdown Menu", () => {
     const gap = menuBox!.y - (triggerBox!.y + triggerBox!.height);
     expect(gap).toBeGreaterThanOrEqual(0);
     expect(gap).toBeLessThan(20);
-    // The panel must horizontally overlap the trigger's column, not be
-    // centered/offset elsewhere on the page.
-    const horizontalOverlap =
-      Math.min(menuBox!.x + menuBox!.width, triggerBox!.x + triggerBox!.width) -
-      Math.max(menuBox!.x, triggerBox!.x);
-    expect(horizontalOverlap).toBeGreaterThan(0);
+    // The panel is anchored via `right: anchor(right)` — its right edge
+    // must align closely with the trigger's right edge, not merely
+    // overlap it somewhere. A loose ">0 overlap" check would pass even
+    // if the panel anchored to the wrong side/element (code review
+    // finding: tightened from a bare overlap check to an edge-alignment
+    // check, which catches an anchor-side typo or a stale/duplicated
+    // anchor-name resolving to the wrong nearby element).
+    const rightEdgeDelta = Math.abs(
+      menuBox!.x + menuBox!.width - (triggerBox!.x + triggerBox!.width),
+    );
+    expect(rightEdgeDelta).toBeLessThan(5);
   });
 });

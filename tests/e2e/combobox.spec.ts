@@ -125,9 +125,17 @@ test.describe("Combobox", () => {
     const gap = listboxBox!.y - (inputBox!.y + inputBox!.height);
     expect(gap).toBeGreaterThanOrEqual(0);
     expect(gap).toBeLessThan(20);
-    const horizontalOverlap =
-      Math.min(listboxBox!.x + listboxBox!.width, inputBox!.x + inputBox!.width) -
-      Math.max(listboxBox!.x, inputBox!.x);
-    expect(horizontalOverlap).toBeGreaterThan(0);
+    // The listbox stretches to the input's full width (`left:
+    // anchor(left); right: anchor(right)`) — both edges must align
+    // closely with the input's, not merely overlap it somewhere (code
+    // review finding: tightened from a bare overlap check to an
+    // edge-alignment check on both sides, since this component anchors
+    // on both left and right unlike Dropdown Menu's single-edge anchor).
+    const leftEdgeDelta = Math.abs(listboxBox!.x - inputBox!.x);
+    const rightEdgeDelta = Math.abs(
+      listboxBox!.x + listboxBox!.width - (inputBox!.x + inputBox!.width),
+    );
+    expect(leftEdgeDelta).toBeLessThan(5);
+    expect(rightEdgeDelta).toBeLessThan(5);
   });
 });

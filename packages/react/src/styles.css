@@ -216,10 +216,17 @@
     @apply mt-2 w-56 origin-top-right rounded-md bg-white
       shadow-lg ring-1 ring-neutral-300 focus:outline-none;
     /* CSS Anchor Positioning (feature 010 fix) — see src/styles/
-       tailwind.css's identical comment for the full rationale.
+       tailwind.css's identical comment for the full rationale, including
+       why `inset: auto` plus the margin resets are required (the popover
+       UA stylesheet's own `inset: 0; margin: auto;` defaults otherwise
+       over-constrain/drop the anchor() values below).
        anchor-name/position-anchor assigned per-instance by
        useDropdownMenu.ts. */
     position: absolute;
+    inset: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     top: anchor(bottom);
     right: anchor(right);
   }

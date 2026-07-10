@@ -15,7 +15,11 @@ function DropdownMenuDemo() {
   return (
     <div className="min-h-screen bg-white p-8 font-sans antialiased">
       <h1 className="mt-4 text-2xl font-bold text-neutral-900">Dropdown Menu</h1>
-      <div className="mt-8">
+      {/* flex justify-end: gives the right-aligned panel room to open
+          without going off-screen at any viewport width — see
+          src/components/dropdown-menu/dropdown-menu.html's identical
+          comment for the full rationale. */}
+      <div className="mt-8 flex justify-end">
         <DropdownMenu
           trigger="More actions"
           triggerTestId="dropdown-trigger"

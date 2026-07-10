@@ -204,8 +204,20 @@
        to the viewport, not its DOM ancestor, so `right-0` never actually
        anchored to the trigger — confirmed via direct bounding-box
        measurement. anchor-name/position-anchor is assigned per-instance
-       by src/scripts/dropdown-menu.js. */
+       by src/scripts/dropdown-menu.js.
+       `inset: auto; margin: 0;` resets the popover UA stylesheet's own
+       `inset: 0; margin: auto;` defaults — without this reset, the UA's
+       `left: 0` + this element's fixed `w-56` width over-constrains the
+       box (per CSS 10.3.7's absolutely-positioned-element resolution
+       rules) and silently drops `right: anchor(right)` entirely, which
+       a loose ">0 horizontal overlap" test assertion did not catch at
+       first — caught only once the assertion was tightened to an
+       edge-alignment check (code review finding). */
     position: absolute;
+    inset: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     top: anchor(bottom);
     right: anchor(right);
   }
@@ -365,8 +377,25 @@
        (confirmed via direct bounding-box measurement; the identical bug
        existed in Dropdown Menu's .dropdown-menu-panel, feature 005).
        anchor-name/position-anchor assigned per-instance by
-       src/scripts/combobox.js. */
+       src/scripts/combobox.js.
+       `inset: auto` plus a margin reset neutralize the popover UA
+       stylesheet's own `inset: 0; margin: auto;` defaults, which
+       otherwise over-constrain/interfere with the anchor() values above
+       (the identical fix as Dropdown Menu's .dropdown-menu-panel,
+       above — see its comment for the full CSS 10.3.7 rationale).
+       `width: auto` overrides the popover UA stylesheet's OWN
+       `width: fit-content` default — without this, the listbox always
+       shrink-to-fits its content regardless of left/right being
+       explicitly anchored on both sides, so it never actually stretched
+       to the input's width (caught only once the bounding-box test was
+       tightened from a bare ">0 overlap" check to an edge-alignment
+       check on both sides — code review finding). */
     position: absolute;
+    inset: auto;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     top: anchor(bottom);
     left: anchor(left);
     right: anchor(right);
