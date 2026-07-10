@@ -42,6 +42,7 @@ const BASE_TOKENS = {
   "neutral-900": "#111827",
   "neutral-700": "#374151",
   "neutral-600": "#4B5563",
+  "neutral-300": "#D1D5DB",
   "neutral-500": "#6B7280",
   "neutral-100": "#F3F4F6",
   "neutral-50": "#F9FAFB",
@@ -169,6 +170,25 @@ const PAIRINGS = [
     name: "Alert info icon (text-info-strong on bg-info/5)",
     fg: "info-strong",
     bg: "info/5-on-white",
+    threshold: AAA_NORMAL,
+  },
+  {
+    // Feature 007 — real AAA correction (research.md R3): the
+    // constitution's ratified Sidebar dark-theme resting text,
+    // text-neutral-400 on bg-neutral-900, measures 6.99:1 and fails AAA
+    // by a hair. Corrected to text-neutral-300 (12.04:1).
+    name: "Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+    fg: "neutral-300",
+    bg: "neutral-900",
+    threshold: AAA_NORMAL,
+  },
+  {
+    // Feature 007 — Sidebar light-theme resting text was never specified
+    // by the ratified pattern at all (only hover/active were named);
+    // proposed and verified here at the AAA floor.
+    name: "Sidebar light item text (text-neutral-700 on white)",
+    fg: "neutral-700",
+    bg: "white",
     threshold: AAA_NORMAL,
   },
 ];

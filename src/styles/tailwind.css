@@ -252,4 +252,90 @@
   .alert-info {
     @apply bg-info/5 ring-1 ring-inset ring-info/20;
   }
+
+  /* Pagination primitive (contracts/pagination.contract.md) — zero
+     JavaScript. Current page uses bg-brand-dark (not the ratified
+     Sidebar pattern's literal bg-brand, which fails AAA — see
+     research.md R3). */
+  .pagination-nav {
+    @apply flex items-center justify-between gap-2;
+  }
+  .pagination-link {
+    @apply inline-flex h-9 min-w-9 items-center justify-center rounded-md px-3
+      text-sm font-medium text-neutral-600 hover:bg-neutral-50
+      hover:text-neutral-900 active:bg-neutral-100
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .pagination-link[aria-current="page"] {
+    @apply bg-brand-dark text-white hover:bg-brand-dark hover:text-white
+      active:bg-brand-dark;
+  }
+  .pagination-control {
+    @apply inline-flex h-9 items-center justify-center gap-1 rounded-md px-3
+      text-sm font-medium text-neutral-600 hover:bg-neutral-50
+      hover:text-neutral-900 active:bg-neutral-100
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent;
+  }
+  .pagination-ellipsis {
+    @apply inline-flex h-9 min-w-9 items-center justify-center text-sm
+      text-neutral-600;
+  }
+
+  /* Sidebar primitive (contracts/sidebar.contract.md) — zero JavaScript,
+     implements + corrects the ratified pattern (two real AAA gaps found
+     by research.md R3: bg-brand -> bg-brand-dark; text-neutral-400 ->
+     text-neutral-300 on the dark theme). */
+  .sidebar {
+    @apply flex h-full w-64 flex-col gap-1 p-4;
+  }
+  .sidebar-light {
+    @apply bg-white border-r border-neutral-200;
+  }
+  .sidebar-dark {
+    @apply bg-neutral-900;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium
+      transition-colors duration-150 focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand;
+  }
+  .sidebar-item-light {
+    @apply text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200;
+  }
+  .sidebar-item-dark {
+    @apply text-neutral-300 hover:bg-neutral-800 active:bg-neutral-700;
+  }
+  .sidebar-item[aria-current="page"] {
+    @apply bg-brand-dark text-white hover:bg-brand-dark active:bg-brand-dark;
+  }
+
+  /* Navbar/Header primitive (contracts/navbar.contract.md) — zero
+     JavaScript; mobile menu reuses Accordion's native <details>/<summary>
+     mechanism (research.md R1); backdrop-filter fallback per Edge Case. */
+  .navbar {
+    @apply sticky top-0 z-40 border-b border-neutral-200 bg-white
+      supports-[backdrop-filter]:bg-white/80 supports-[backdrop-filter]:backdrop-blur-md;
+  }
+  .navbar-inner {
+    @apply mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4;
+  }
+  .navbar-link {
+    @apply text-sm font-medium text-neutral-600 hover:text-neutral-900
+      active:text-neutral-700 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .navbar-menu-trigger {
+    @apply flex h-11 w-11 items-center justify-center rounded-md text-neutral-600
+      hover:bg-neutral-100 hover:text-neutral-900 active:scale-95
+      cursor-pointer list-none transition-transform duration-150
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand;
+  }
+  .navbar-mobile-panel {
+    @apply flex flex-col gap-1 border-t border-neutral-200 px-6 py-4;
+  }
 }

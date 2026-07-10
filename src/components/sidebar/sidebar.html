@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Sidebar — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Sidebar</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Zero-JavaScript vertical navigation — light and dark themes, one
+    active item.
+  </p>
+
+  <div class="mt-8 flex flex-wrap gap-6">
+    <div>
+      <h2 class="text-sm font-semibold text-neutral-900">Light theme</h2>
+      <nav aria-label="Main" data-testid="sidebar-light" class="sidebar sidebar-light mt-2">
+        <a href="#" data-testid="sidebar-item-dashboard" aria-current="page" class="sidebar-item sidebar-item-light">
+          Dashboard
+        </a>
+        <a href="#" data-testid="sidebar-item-projects" class="sidebar-item sidebar-item-light">
+          Projects
+        </a>
+        <a href="#" data-testid="sidebar-item-team" class="sidebar-item sidebar-item-light">
+          Team
+        </a>
+        <a href="#" data-testid="sidebar-item-long-label" class="sidebar-item sidebar-item-light">
+          Quarterly Financial Reporting and Analytics Dashboard
+        </a>
+        <a href="#" data-testid="sidebar-item-settings" class="sidebar-item sidebar-item-light">
+          Settings
+        </a>
+      </nav>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold text-neutral-900">Dark theme</h2>
+      <nav aria-label="Main" data-testid="sidebar-dark" class="sidebar sidebar-dark mt-2">
+        <a href="#" data-testid="sidebar-dark-item-dashboard" aria-current="page" class="sidebar-item sidebar-item-dark">
+          Dashboard
+        </a>
+        <a href="#" data-testid="sidebar-dark-item-projects" class="sidebar-item sidebar-item-dark">
+          Projects
+        </a>
+        <a href="#" data-testid="sidebar-dark-item-team" class="sidebar-item sidebar-item-dark">
+          Team
+        </a>
+        <a href="#" data-testid="sidebar-dark-item-settings" class="sidebar-item sidebar-item-dark">
+          Settings
+        </a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

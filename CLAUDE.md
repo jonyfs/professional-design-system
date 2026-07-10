@@ -1,13 +1,12 @@
 <!-- SPECKIT START -->
-Active feature: `006-data-display-primitives`. For technologies, project
-structure, shell commands, and other implementation context, read
-`specs/006-data-display-primitives/plan.md` (and its `research.md`,
-`data-model.md`, `contracts/`, `quickstart.md` siblings). Features
-001-005 are all complete and shipped — see their own `plan.md` files for
-that context. Feature 006 adds three static HTML + Tailwind components
-(Avatar, Card, Alert/Banner) expanding the Data Display & Listings
-Component Catalog section; a React port is explicitly out of scope for
-this feature.
+Active feature: `007-application-shell-primitives`. For technologies,
+project structure, shell commands, and other implementation context,
+read `specs/007-application-shell-primitives/plan.md` (and its
+`research.md`, `data-model.md`, `contracts/`, `quickstart.md` siblings).
+Features 001-006 are all complete and shipped. Feature 007 adds three
+static HTML + Tailwind components (Pagination, Sidebar, Navbar) — zero
+JavaScript — completing the Application & Navigation Component Catalog
+section; a React port is explicitly out of scope for this feature.
 <!-- SPECKIT END -->
 
 ## graphify
