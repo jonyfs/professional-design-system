@@ -209,14 +209,24 @@ and Escape closes it with focus restored to the pre-open target
       custom option list using only its own gallery page. **NOT DONE by
       an AI agent** — requires a human tester, same outstanding status as
       every prior feature's equivalent item
-- [ ] T019 Code review pass over
+- [x] T019 Code review pass over
       `src/components/{combobox,command-palette}/**`,
       `src/scripts/{combobox,command-palette,overlay}.js`, and the
       `tailwind.css`/`vite.config.ts`/`check-contrast.mjs` diffs using the
       code-reviewer agent; address any CRITICAL/HIGH findings — pay
       particular attention to the `overlay.js` refactor's blast radius
       (Modal/Slide-over) since that is the highest-risk change in this
-      feature
+      feature. **Verdict: APPROVE, 0 CRITICAL/HIGH.** The `overlay.js`
+      extraction was independently confirmed behavior-preserving (faithful
+      pure extraction, same listeners/guard, no timing change plausible).
+      Two non-blocking notes recorded for a future cleanup, not fixed now:
+      (MEDIUM) `combobox.js`/`command-palette.js`'s `matches()`/
+      `highlight()`/`enabledIndices()`/`moveActive()` are ~45 lines of
+      near-identical logic — more overlap than data-model.md's "~15 lines"
+      estimate — a legitimate small shared pure-logic module opportunity;
+      (LOW) both scripts fully re-render their list on every arrow-key
+      press rather than patching existing DOM nodes, harmless at current
+      list sizes (≤60 items)
 - [ ] T020 Generate Linux Playwright baselines via
       `gh workflow run update-snapshots.yml` → `gh run download` → copy
       the new `*-linux.png` files into each new component's
