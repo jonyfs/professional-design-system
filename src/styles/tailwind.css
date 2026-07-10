@@ -212,7 +212,15 @@
        rules) and silently drops `right: anchor(right)` entirely, which
        a loose ">0 horizontal overlap" test assertion did not catch at
        first — caught only once the assertion was tightened to an
-       edge-alignment check (code review finding). */
+       edge-alignment check (code review finding).
+       No `@position-try`/JS fallback is defined for browsers without
+       `anchor()` support: `top`/`right` would resolve to `auto`, and
+       since `inset: auto` is unconditional the panel would render at
+       its static top-layer position (viewport corner) rather than the
+       pre-fix viewport-relative-but-at-least-consistent placement —
+       an accepted risk, matching this project's precedent of adopting
+       CSS features after direct empirical engine verification rather
+       than guarding every future user agent (code review finding). */
     position: absolute;
     inset: auto;
     margin-left: 0;
@@ -389,7 +397,10 @@
        explicitly anchored on both sides, so it never actually stretched
        to the input's width (caught only once the bounding-box test was
        tightened from a bare ">0 overlap" check to an edge-alignment
-       check on both sides — code review finding). */
+       check on both sides — code review finding).
+       No fallback for browsers without `anchor()` support (same
+       accepted risk as Dropdown Menu's .dropdown-menu-panel, above —
+       code review finding). */
     position: absolute;
     inset: auto;
     width: auto;

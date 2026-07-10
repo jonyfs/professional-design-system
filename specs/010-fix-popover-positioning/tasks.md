@@ -86,10 +86,15 @@ original bug.
       fix should change page layout position, not the cropped element's
       own rendered appearance); only regenerate Linux baselines via
       `update-snapshots.yml` workflow_dispatch if drift is found
-- [ ] T018 Code review pass over the CSS/JS diffs using the
+- [x] T018 Code review pass over the CSS/JS diffs using the
       code-reviewer agent; address any CRITICAL/HIGH findings — pay
       particular attention to the anchor-name uniqueness logic and
-      whether it could collide with a future feature's own anchor usage
+      whether it could collide with a future feature's own anchor usage.
+      Result: APPROVE, 0 CRITICAL/HIGH. 1 MEDIUM (no documented
+      fallback for browsers lacking `anchor()` support) — addressed via
+      a comment in tailwind.css noting the accepted risk. 3 LOW notes
+      (setProperty/camelCase divergence, untied 5px test tolerance,
+      duplicated demo comments) — no action needed, informational only.
 - [x] T019 Corrected the constitution's Dropdown Menu/Combobox entries (a
       correctness fix to already-ratified components, not a new catalog
       entry) — or a minimal wording tightening if the existing Dropdown
