@@ -122,7 +122,7 @@ navigation skipping the disabled tab, and roving tabindex.
 
 ### Tests for User Story 3
 
-- [ ] T013 [P] [US3] Write `tests/e2e/react-tabs.spec.ts`: visual
+- [x] T013 [P] [US3] Write `tests/e2e/react-tabs.spec.ts`: visual
       regression comparing against `tabs.spec.ts`'s baselines, an axe
       scan, and a full port of `tests/e2e/tabs.spec.ts`'s acceptance
       scenarios (exactly one tab selected/panel visible on load,
@@ -132,22 +132,22 @@ navigation skipping the disabled tab, and roving tabindex.
 
 ### Implementation for User Story 3
 
-- [ ] T014 [US3] Implement `packages/react/src/Tabs/Tabs.tsx` per
+- [x] T014 [US3] Implement `packages/react/src/Tabs/Tabs.tsx` per
       `contracts/tabs.contract.md` — `useState<string>` for
       `selectedId`, a tab-button ref map, `onKeyDown` handler computing
       the next tab id **locally** before calling both `setSelectedId`
       and `.focus()` on that same local id (research.md R2 /
       `/speckit-analyze` M1 — never re-read `selectedId` state for the
       focus call, since React 18 batches the update)
-- [ ] T015 [US3] Add `.tab-trigger`/`.tab-trigger[aria-selected="true"]`/
+- [x] T015 [US3] Add `.tab-trigger`/`.tab-trigger[aria-selected="true"]`/
       `.tab-panel` `@apply` classes (ported verbatim) to
       `packages/react/src/styles.css`
-- [ ] T016 [US3] Export `Tabs`/`TabsProps`/`TabData` from
+- [x] T016 [US3] Export `Tabs`/`TabsProps`/`TabData` from
       `packages/react/src/index.ts`
-- [ ] T017 [US3] Add `tests/react-harness/tabs.html` +
+- [x] T017 [US3] Add `tests/react-harness/tabs.html` +
       `src/tabs-main.tsx` (4 tabs, 1 disabled) and a `vite.config.ts`
       entry
-- [ ] T018 [US3] Run `npm run build --workspace packages/react &&
+- [x] T018 [US3] Run `npm run build --workspace packages/react &&
       npm run audit:tokens && npm run audit:contrast` — confirm zero
       violations
 

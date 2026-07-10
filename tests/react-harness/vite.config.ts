@@ -26,6 +26,7 @@ export default defineConfig({
         slideOver: resolve(__dirname, "slide-over.html"),
         breadcrumbs: resolve(__dirname, "breadcrumbs.html"),
         accordion: resolve(__dirname, "accordion.html"),
+        tabs: resolve(__dirname, "tabs.html"),
       },
     },
   },

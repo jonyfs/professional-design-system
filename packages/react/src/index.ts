@@ -22,3 +22,5 @@ export { Breadcrumbs } from "./Breadcrumbs/Breadcrumbs";
 export type { BreadcrumbsProps, BreadcrumbItem } from "./Breadcrumbs/Breadcrumbs";
 export { Accordion } from "./Accordion/Accordion";
 export type { AccordionProps, AccordionItemData } from "./Accordion/Accordion";
+export { Tabs } from "./Tabs/Tabs";
+export type { TabsProps, TabData } from "./Tabs/Tabs";
