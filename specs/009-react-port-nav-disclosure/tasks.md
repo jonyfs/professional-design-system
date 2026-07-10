@@ -169,7 +169,7 @@ closes with focus returned to the trigger.
 
 ### Tests for User Story 4
 
-- [ ] T019 [P] [US4] Write `tests/e2e/react-dropdown-menu.spec.ts`:
+- [x] T019 [P] [US4] Write `tests/e2e/react-dropdown-menu.spec.ts`:
       visual regression comparing against `dropdown-menu.spec.ts`'s
       baselines, an axe scan, and a full port of
       `tests/e2e/dropdown-menu.spec.ts`'s acceptance scenarios (opens
@@ -180,7 +180,7 @@ closes with focus returned to the trigger.
 
 ### Implementation for User Story 4
 
-- [ ] T020 [US4] Implement `packages/react/src/hooks/useDropdownMenu.ts`
+- [x] T020 [US4] Implement `packages/react/src/hooks/useDropdownMenu.ts`
       per `contracts/dropdown-menu.contract.md` — sets
       `panelRef.current.popover = "auto"` **imperatively via the DOM
       property**, never a JSX `popover` attribute (`/speckit-analyze`
@@ -190,18 +190,18 @@ closes with focus returned to the trigger.
       H2); no `aria-selected` anywhere (finding H1 — not a valid ARIA
       state on `role="menuitem"`); explicit `triggerRef.current?.focus()`
       on every closing path
-- [ ] T021 [US4] Implement `packages/react/src/DropdownMenu/DropdownMenu.tsx`
+- [x] T021 [US4] Implement `packages/react/src/DropdownMenu/DropdownMenu.tsx`
       as a thin consumer of `useDropdownMenu`, per
       `contracts/dropdown-menu.contract.md`'s Rendered markup
-- [ ] T022 [US4] Add `.dropdown-menu-panel`/`.dropdown-menu-item`
+- [x] T022 [US4] Add `.dropdown-menu-panel`/`.dropdown-menu-item`
       `@apply` classes (ported verbatim) to
       `packages/react/src/styles.css`
-- [ ] T023 [US4] Export `DropdownMenu`/`DropdownMenuProps`/
+- [x] T023 [US4] Export `DropdownMenu`/`DropdownMenuProps`/
       `DropdownMenuItemData` from `packages/react/src/index.ts`
-- [ ] T024 [US4] Add `tests/react-harness/dropdown-menu.html` +
+- [x] T024 [US4] Add `tests/react-harness/dropdown-menu.html` +
       `src/dropdown-menu-main.tsx` (4 items, 1 disabled) and a
       `vite.config.ts` entry
-- [ ] T025 [US4] Run `npm run build --workspace packages/react &&
+- [x] T025 [US4] Run `npm run build --workspace packages/react &&
       npm run audit:tokens && npm run audit:contrast` — confirm zero
       violations
 

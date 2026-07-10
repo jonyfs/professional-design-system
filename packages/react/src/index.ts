@@ -24,3 +24,5 @@ export { Accordion } from "./Accordion/Accordion";
 export type { AccordionProps, AccordionItemData } from "./Accordion/Accordion";
 export { Tabs } from "./Tabs/Tabs";
 export type { TabsProps, TabData } from "./Tabs/Tabs";
+export { DropdownMenu } from "./DropdownMenu/DropdownMenu";
+export type { DropdownMenuProps, DropdownMenuItemData } from "./DropdownMenu/DropdownMenu";

@@ -27,6 +27,7 @@ export default defineConfig({
         breadcrumbs: resolve(__dirname, "breadcrumbs.html"),
         accordion: resolve(__dirname, "accordion.html"),
         tabs: resolve(__dirname, "tabs.html"),
+        dropdownMenu: resolve(__dirname, "dropdown-menu.html"),
       },
     },
   },
