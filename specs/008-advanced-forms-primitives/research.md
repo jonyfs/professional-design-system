@@ -74,28 +74,90 @@ correctness (manual outside-click logic, manual Escape handling, and
 manual z-index/overflow management the Popover API's top-layer avoids for
 free).
 
+**Correction (`/speckit-analyze` finding)**: an earlier draft of this
+contract placed `popovertarget="combobox-listbox"` directly on the
+`<input type="text">`, copying Dropdown Menu's `<button popovertarget=
+...>` pattern without re-verifying it against a different element type.
+Per the HTML Living Standard, `popovertarget` is a recognized invoker
+attribute only on `<button>` and on `<input>` elements whose `type` is
+`submit`/`reset`/`image`/`button` — **not** `type="text"`. On a text
+input it is inert. The markup contract now omits it entirely; the
+listbox is opened/closed exclusively via `combobox.js`'s imperative
+`showPopover()`/`hidePopover()` calls (already required regardless, since
+the popover must open only when the query is non-empty and matches at
+least one option — a plain declarative invoker couldn't express that
+condition anyway).
+
+## R6: `:focus-visible` on option/action rows — why it's intentionally absent
+
+**Decision**: `.combobox-option`/`.command-palette-action` do **not**
+declare a `focus-visible:` state, and this is a deliberate, documented
+exemption, not an oversight.
+
+**Rationale**: the WAI-ARIA `aria-activedescendant` model (used by both
+components, per FR-001/FR-003/FR-008) keeps real DOM focus on the
+`<input>` at all times — the "active" option/action is communicated via
+`aria-activedescendant` + `aria-selected`, never by moving focus onto the
+`<li>`. Since focus never lands there, `:focus-visible` structurally
+cannot match those elements in any browser; declaring the utility would
+be dead CSS. The input's own `focus-visible:` ring (already required by
+Principle V and already present via the existing Text Input pattern,
+research.md R4) is the single, persistent focus indicator for the whole
+composite widget — WCAG 2.4.7/2.4.13 are satisfied there, not per-row.
+`aria-selected="true"` → `bg-neutral-100` on the active row is a
+*selection/highlight* indicator, analogous to a `<select>`'s native
+highlighted option, not a substitute focus indicator — it was checked
+against feature 005's Dropdown Menu precedent specifically because that
+component's own first draft made the mistake of relying on a background
+alone as a focus substitute (correctly rejected then); this case differs
+because no real focus ever needs indicating on these rows in the first
+place, so there's no focus-outline gap to fill.
+
+**Alternatives considered**: moving real DOM focus onto each `<li>` as
+the user arrow-keys (rejected — this is precisely the interaction model
+WAI-ARIA APG's "Combobox with Manual/List Autocomplete" pattern uses
+`aria-activedescendant` to avoid, since moving real focus in and out of
+an input while typing causes IME and virtual-keyboard problems on mobile
+and is the reason the roving-DOM-focus alternative exists as a *separate,
+non-preferred* APG pattern).
+
 ## R3: Command Palette's dialog chrome and global shortcut scoping
 
-**Decision**: Reuse the existing `<dialog>` + `showModal()` overlay
-mechanism from Modal (feature 003, `src/scripts/overlay.js`) verbatim for
-the Command Palette's chrome — no new overlay primitive. Add exactly one
-new **document-level** `keydown` listener (this project's first) that
-checks `(event.metaKey || event.ctrlKey) && event.key.toLowerCase() ===
-"k"`, calls `event.preventDefault()`, and calls `showModal()` on the
-palette's `<dialog>` if it is not already open.
+**Decision**: Reuse `<dialog>` + `showModal()` for the Command Palette's
+chrome — no new overlay primitive. `overlay.js`'s existing
+`initDialogTriggers()` only wires its backdrop-click-close and
+`close`-time refocus listeners onto dialogs discovered via
+`document.querySelectorAll("[data-dialog-trigger]")`; the Command
+Palette's dialog has no such trigger button (it opens via a global
+shortcut, not a click), so that loop never reaches it. **`overlay.js` is
+therefore MODIFIED, not just reused**: its per-dialog wiring
+(`dialog.addEventListener("click", ...)` for backdrop-close and
+`dialog.addEventListener("close", () => dialog._lastTrigger?.focus())`
+for refocus) is extracted into an exported `wireDialogClose(dialog)`
+helper, called once per dialog by both `initDialogTriggers()` (for each
+`data-dialog-trigger` dialog, as before — no behavior change for
+Modal/Slide-over) and by `command-palette.js` (once, for its own
+dialog). Add exactly one new **document-level** `keydown` listener (this
+project's first) that checks `(event.metaKey || event.ctrlKey) &&
+event.key.toLowerCase() === "k"`, calls `event.preventDefault()`, sets
+`dialog._lastTrigger = document.activeElement` (there is no
+`data-dialog-trigger` button to capture this from, since the palette can
+open from *any* focus state per FR-006), and calls `showModal()` if the
+dialog is not already open.
 
 **Rationale**: `<dialog>`/`showModal()` already provides everything FR-007
 and FR-009 need — native focus-trapping, Escape-to-close, and (per
 feature 003's own research, verified via real cross-browser Playwright
 testing, not assumed) focus-restoration to the previously-focused element
-that Chromium/Firefox honor natively but WebKit does not, requiring
-`overlay.js`'s explicit `dialog.addEventListener("close", () =>
-dialog._lastTrigger?.focus())` safeguard. Command Palette's shortcut has
-no `<button data-dialog-trigger>` to serve as `_lastTrigger`, since it can
-open from *any* focus state on the page (FR-006) — the shortcut handler
-itself records `document.activeElement` as `dialog._lastTrigger`
-immediately before calling `showModal()`, reusing `overlay.js`'s existing
-close-time refocus logic unmodified.
+that Chromium/Firefox honor natively but WebKit does not, requiring the
+explicit `dialog._lastTrigger?.focus()` safeguard on `close`. Extracting
+`wireDialogClose()` rather than describing this as an unmodified reuse
+(an earlier draft of this research incorrectly claimed "verbatim,
+unmodified" reuse — caught by `/speckit-analyze` before implementation,
+since the actual `initDialogTriggers()` loop structurally cannot register
+anything for a trigger-less dialog) keeps the WebKit-safe refocus logic
+in exactly one place for Modal, Slide-over, and Command Palette alike,
+rather than duplicating it a second time in `command-palette.js`.
 
 **Global-shortcut collision check** (verified, not assumed): this
 project's other keydown listeners are all element-scoped, not
@@ -159,7 +221,8 @@ previously-undiscovered AAA failures in Breadcrumbs (feature 005) and
 Sidebar (feature 007). A weight-only change (`font-semibold` vs. the
 surrounding `font-normal`) uses the *same* color for both the highlighted
 and non-highlighted portions of the label, so it inherits `text-
-neutral-900`-on-white's already-ratified 15.9:1+ AAA compliance with zero
+neutral-900`-on-white's already-ratified 17.74:1 AAA compliance (computed
+directly via the WCAG relative-luminance formula, not assumed) with zero
 new verification surface — the simplest option that fully satisfies FR-002
 /FR-008's "narrows to matches" requirement (visually distinguishing the
 matched substring) without manufacturing a new contrast risk.

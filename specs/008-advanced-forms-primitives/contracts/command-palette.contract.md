@@ -38,13 +38,13 @@ discoverability, not as a required trigger element.
 
 | Interaction | Behavior |
 |---|---|
-| `Cmd+K` / `Ctrl+K` anywhere on the page (document-level listener) | `event.preventDefault()`; no-ops if another `<dialog open>` already exists (research.md R3); otherwise records `document.activeElement` as `dialog._lastTrigger` and calls `dialog.showModal()` |
-| Input | Same filtering/highlighting logic as Combobox — case-insensitive substring match, `<mark>` wrapping, re-render, `.command-palette-empty` on zero matches |
-| ArrowDown/ArrowUp | Same as Combobox — moves `activeIndex` among non-disabled filtered actions, updates `aria-activedescendant` + `aria-selected` |
+| `Cmd+K` / `Ctrl+K` anywhere on the page (document-level listener) | `event.preventDefault()`; no-ops if another `<dialog open>` already exists (research.md R3); otherwise sets `dialog._lastTrigger = document.activeElement` and calls `dialog.showModal()` |
+| Input | Filtering/highlighting logic matching the same algorithm as Combobox's (case-insensitive substring match, `<mark>` wrapping, re-render, `.command-palette-empty` on zero matches) — independently implemented in `command-palette.js`, not imported from `combobox.js` (data-model.md's "Shared behavior notes": deliberately not extracted into a third shared module) |
+| ArrowDown/ArrowUp | Same algorithm as Combobox's — moves `activeIndex` among non-disabled filtered actions, updates `aria-activedescendant` + `aria-selected`, independently implemented |
 | Enter | If an action is active and not disabled: writes a visible confirmation into `command-palette-confirmation` (e.g. "Executed: New Project"), then `dialog.close()` |
 | Escape | Native `<dialog>` behavior — closes without executing anything |
-| Click on the dialog backdrop | `dialog.close()` — reuses `overlay.js`'s existing `click === dialog` backdrop-close listener, registered on this dialog the same way every Modal instance already registers it |
-| `close` event (any path — Escape, backdrop click, Enter-execute) | `dialog._lastTrigger?.focus()` — reuses `overlay.js`'s existing WebKit-safeguard refocus logic verbatim (research.md R3) |
+| Click on the dialog backdrop | `dialog.close()` — via `overlay.js`'s exported `wireDialogClose(dialog)` helper (research.md R3), called once on this dialog from `command-palette.js` itself, since this dialog has no `data-dialog-trigger` button for `initDialogTriggers()`'s own loop to discover |
+| `close` event (any path — Escape, backdrop click, Enter-execute) | `dialog._lastTrigger?.focus()` — the same WebKit-safeguard refocus logic `wireDialogClose(dialog)` provides to Modal/Slide-over, called via the shared helper rather than duplicated (research.md R3, `/speckit-analyze` finding I1) |
 
 ## Required attributes (Principle II gate, FR-006/FR-007/FR-008/FR-009)
 
@@ -54,7 +54,7 @@ discoverability, not as a required trigger element.
 | Focus-trapped while open | Native `<dialog>` + `showModal()` (identical to Modal, feature 003) |
 | Search input focused on open | `autofocus` attribute + `showModal()`'s native initial-focus behavior |
 | Combobox semantics on the search input | `role="combobox"` + `aria-controls`/`aria-activedescendant`/`aria-autocomplete`, identical in kind to Combobox's contract |
-| Focus returns to pre-open state on close (incl. WebKit) | `overlay.js`'s existing `dialog.addEventListener("close", () => dialog._lastTrigger?.focus())`, reused verbatim |
+| Focus returns to pre-open state on close (incl. WebKit) | `overlay.js`'s exported `wireDialogClose(dialog)` helper's `close` listener (`dialog._lastTrigger?.focus()`), called once for this dialog from `command-palette.js` |
 
 ## Required states (Principle V gate)
 
@@ -63,8 +63,12 @@ discoverability, not as a required trigger element.
 | `.command-palette-action` | hover | `hover:bg-neutral-50` |
 | `.command-palette-action` | active (press) | `active:bg-neutral-100` |
 | `.command-palette-action[aria-selected="true"]` | keyboard-active | `bg-neutral-100` |
-| `.command-palette-action[aria-disabled="true"]` | disabled | `cursor-not-allowed opacity-50` |
-| `.command-palette-input` | focus | `focus:ring-0` (dialog's own backdrop/ring already frames it — an inner ring would double up visually, matching Modal's existing input treatment inside dialogs) |
+| `.command-palette-action[aria-disabled="true"]` | disabled | `cursor-not-allowed opacity-50 hover:bg-transparent active:bg-transparent` — hover/active suppressed, same fix as Combobox's contract |
+| `.command-palette-input` | focus-visible | `focus:ring-0` (dialog's own backdrop/ring already frames it — an inner ring would double up visually, matching Modal's existing input treatment inside dialogs) — the single focus indicator for the whole widget, same rationale as Combobox's input (research.md R6) |
+
+**`focus-visible` is intentionally absent from `.command-palette-action`**,
+for the identical reason as Combobox's option rows (research.md R6):
+`aria-activedescendant` never moves real focus onto an action row.
 
 ## Edge cases
 

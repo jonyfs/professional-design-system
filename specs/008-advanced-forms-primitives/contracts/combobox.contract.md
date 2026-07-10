@@ -14,11 +14,18 @@
     aria-activedescendant=""
     aria-autocomplete="list"
     autocomplete="off"
-    popovertarget="combobox-listbox"
     data-testid="combobox-input"
     class="combobox-input"
     placeholder="Search countries…"
   />
+  <!-- No popovertarget here: per the HTML Living Standard, popovertarget
+       is a recognized invoker attribute only on <button> and on <input
+       type="submit"/"reset"/"image"/"button"> — not type="text". It would
+       be inert on this element (an /speckit-analyze finding caught before
+       implementation). The popover is opened/closed exclusively via
+       combobox.js's imperative showPopover()/hidePopover() calls, which
+       are required regardless since the popover must open only when the
+       query is non-empty and matches at least one option. -->
   <ul
     id="combobox-listbox"
     role="listbox"
@@ -68,11 +75,20 @@ current filter matches zero):
 | Element | State | Required utility |
 |---|---|---|
 | `.combobox-input` | resting | `ring-1 ring-inset ring-neutral-300` |
-| `.combobox-input` | focus | `focus:ring-2 focus:ring-inset focus:ring-brand` |
+| `.combobox-input` | focus-visible | `focus:ring-2 focus:ring-inset focus:ring-brand` — the **single** focus indicator for the whole composite widget (see note below) |
 | `.combobox-option` | hover | `hover:bg-neutral-50` |
 | `.combobox-option` | active (press) | `active:bg-neutral-100` |
 | `.combobox-option[aria-selected="true"]` | keyboard-active | `bg-neutral-100` |
-| `.combobox-option[aria-disabled="true"]` | disabled | `cursor-not-allowed opacity-50` |
+| `.combobox-option[aria-disabled="true"]` | disabled | `cursor-not-allowed opacity-50 hover:bg-transparent active:bg-transparent` — hover/active suppressed so a disabled row never highlights (the same fix Dropdown Menu's contract already applies) |
+
+**`focus-visible` is intentionally absent from `.combobox-option`**
+(research.md R6): `aria-activedescendant` keeps real DOM focus on
+`.combobox-input` at all times — focus never lands on an `<li>`, so
+`:focus-visible` cannot match there in any browser, and declaring it
+would be dead CSS. `aria-selected="true"` → `bg-neutral-100` is a
+*selection* indicator (analogous to a native `<select>`'s highlighted
+option), not a substitute focus indicator, so Principle V's focus-visible
+mandate is satisfied entirely by the input's own ring.
 
 ## Edge cases
 

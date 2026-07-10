@@ -46,10 +46,13 @@
 }
 
 .combobox-option[aria-disabled="true"] {
-  @apply cursor-not-allowed opacity-50;
+  @apply cursor-not-allowed opacity-50 hover:bg-transparent active:bg-transparent;
   /* aria-disabled, not the disabled attribute — this is a <li>/<div>,
      not a form control, so `disabled` has no native effect (spec.md
-     Edge Cases) */
+     Edge Cases). hover:/active: suppression added after /speckit-analyze
+     caught the base .combobox-option row's hover/active highlight still
+     showing on a disabled row — the same bug Dropdown Menu's contract
+     already fixed with disabled:hover:bg-transparent (feature 005) */
 }
 
 .combobox-option mark {
@@ -112,7 +115,8 @@
 }
 
 .command-palette-action[aria-disabled="true"] {
-  @apply cursor-not-allowed opacity-50;
+  @apply cursor-not-allowed opacity-50 hover:bg-transparent active:bg-transparent;
+  /* same disabled-hover/active suppression as .combobox-option, above */
 }
 
 .command-palette-action mark {

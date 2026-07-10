@@ -105,9 +105,18 @@ src/
 ├── scripts/
 │   ├── combobox.js                       # new — filtering, arrow-key nav,
 │   │                                      # aria-activedescendant, Popover API wiring
-│   └── command-palette.js                # new — global Cmd/Ctrl+K shortcut,
-│                                          # filtering, arrow-key nav, reuses
-│                                          # overlay.js's dialog close/refocus pattern
+│   ├── command-palette.js                # new — global Cmd/Ctrl+K shortcut,
+│   │                                      # filtering, arrow-key nav, calls
+│   │                                      # overlay.js's wireDialogClose(dialog)
+│   └── overlay.js                        # MODIFIED — extracts wireDialogClose(dialog)
+│                                          # (backdrop-click-close + WebKit-safe
+│                                          # close-time refocus) out of
+│                                          # initDialogTriggers()'s per-trigger loop,
+│                                          # so command-palette.js can call it for
+│                                          # its trigger-less dialog too (research.md
+│                                          # R3, /speckit-analyze finding I1) — no
+│                                          # behavior change for existing Modal/
+│                                          # Slide-over callers
 └── styles/tailwind.css                   # MODIFIED — new @layer components classes
                                            # (combobox-*, command-palette-*)
 index.html                                # MODIFIED — gallery links to the 2 new pages
