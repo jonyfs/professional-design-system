@@ -211,7 +211,7 @@ closes with focus returned to the trigger.
 
 ## Phase 5: Polish & Cross-Cutting Concerns
 
-- [ ] T026 Run the full project test suite (`npm run test:e2e`) — all
+- [x] T026 Run the full project test suite (`npm run test:e2e`) — all
       existing specs (features 001-008 static + React harness) plus the
       four new ones; confirm zero regressions. Also run
       `npm run build --workspace packages/react` and confirm the new
