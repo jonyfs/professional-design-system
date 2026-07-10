@@ -3,15 +3,17 @@
 Accessible HTML + Tailwind CSS primitive components (Button, Text Input, Badge,
 Checkbox, Radio, Select, Toggle/Switch, Modal, Toast, Slide-over, Breadcrumbs,
 Accordion, Tabs, Dropdown Menu, Avatar, Card, Alert/Banner, Pagination,
-Sidebar, Navbar), built exclusively on the semantic design tokens ratified in
+Sidebar, Navbar, Combobox, Command Palette), built exclusively on the
+semantic design tokens ratified in
 [`.specify/memory/constitution.md`](.specify/memory/constitution.md).
-Modal/Slide-over/Dropdown Menu use native `<dialog>`/Popover API for
-focus-trapped or light-dismissable overlays; Accordion uses native
-`<details>`/`<summary>`. Toast, Modal/Slide-over's dismiss wiring, Tabs,
-and Dropdown Menu's keyboard/focus wiring are this project's only
-JavaScript (`src/scripts/`), everything else is pure HTML + Tailwind. A
-minimal project-wide Content-Security-Policy is set via `<meta>` tag on
-every page.
+Modal/Slide-over/Dropdown Menu/Combobox/Command Palette use native
+`<dialog>`/Popover API for focus-trapped or light-dismissable overlays;
+Accordion uses native `<details>`/`<summary>`. Toast, Modal/Slide-over's
+dismiss wiring, Tabs, Dropdown Menu's keyboard/focus wiring, Combobox's
+filter/keyboard wiring, and Command Palette's global-shortcut/filter
+wiring are this project's only JavaScript (`src/scripts/`), everything
+else is pure HTML + Tailwind. A minimal project-wide
+Content-Security-Policy is set via `<meta>` tag on every page.
 
 The first 10 components (Button through Slide-over) are also published as
 a React + TypeScript package at [`packages/react/`](packages/react/) —
@@ -21,9 +23,9 @@ implementation, and the React package is a port that must stay visually
 and behaviorally identical to it, verified by pixel-parity Playwright
 tests seeded from the static gallery's own approved baselines. Breadcrumbs,
 Accordion, Tabs, Dropdown Menu (feature 005), Avatar, Card, and Alert/Banner
-(feature 006), and Pagination, Sidebar, and Navbar (feature 007) are
-static-only for now — a React port is a separate future
-feature.
+(feature 006), Pagination, Sidebar, and Navbar (feature 007), and Combobox
+and Command Palette (feature 008) are static-only for now — a React port
+is a separate future feature.
 
 ## Requirements
 
@@ -87,7 +89,11 @@ src/
 │   ├── tabs.js                 # Tabs: roving-tabindex/arrow-key wiring (WAI-ARIA Tabs pattern)
 │   ├── dropdown-menu.js        # Dropdown Menu: arrow-key roving focus, aria-expanded sync,
 │   │                            # Tab-closes-menu (Popover API handles open/close/light-dismiss)
-│   └── alert.js                 # Alert/Banner: dismiss-button wiring (no live-region semantics)
+│   ├── alert.js                 # Alert/Banner: dismiss-button wiring (no live-region semantics)
+│   ├── combobox.js              # Combobox: filter-as-you-type, aria-activedescendant roving
+│   │                            # "focus", Popover API listbox wiring (from-scratch WAI-ARIA 1.2)
+│   └── command-palette.js       # Command Palette: global Cmd/Ctrl+K shortcut, filter/nav
+│                                # (calls overlay.js's wireDialogClose() for its dialog chrome)
 └── components/
     ├── button/button.html
     ├── text-input/text-input.html
@@ -108,7 +114,9 @@ src/
     ├── alert/alert.html
     ├── pagination/pagination.html
     ├── sidebar/sidebar.html
-    └── navbar/navbar.html
+    ├── navbar/navbar.html
+    ├── combobox/combobox.html
+    └── command-palette/command-palette.html
 scripts/
 ├── audit-tokens.mjs           # Principle IV gate (color + border-radius; scans HTML + tailwind.css @apply blocks)
 └── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings; same dual-source scan)
@@ -123,6 +131,7 @@ specs/004-react-component-library/ # spec/plan/tasks/contracts (React + TypeScri
 specs/005-navigation-disclosure-primitives/ # spec/plan/tasks/contracts (Breadcrumbs, Accordion, Tabs, Dropdown Menu)
 specs/006-data-display-primitives/ # spec/plan/tasks/contracts (Avatar, Card, Alert/Banner)
 specs/007-application-shell-primitives/ # spec/plan/tasks/contracts (Pagination, Sidebar, Navbar)
+specs/008-advanced-forms-primitives/ # spec/plan/tasks/contracts (Combobox, Command Palette)
 ```
 
 ## React package

@@ -197,7 +197,7 @@ and Escape closes it with focus restored to the pre-open target
 
 ## Phase 3: Polish & Cross-Cutting Concerns
 
-- [ ] T017 Run the full project test suite (`npm run test:e2e`) — all
+- [x] T017 Run the full project test suite (`npm run test:e2e`) — all
       existing specs (features 001-007 static + React harness) plus the
       two new ones; **explicitly confirm `modal.spec.ts` and
       `slide-over.spec.ts` still pass unmodified** after T010's
@@ -234,12 +234,12 @@ and Escape closes it with focus restored to the pre-open target
       never via local Docker. Confirm via `cmp` that pre-existing
       baselines this run regenerates are byte-identical to what's already
       committed before committing only the genuinely new files
-- [ ] T021 Run `/speckit-constitution` to add a new "Advanced Forms &
+- [x] T021 Run `/speckit-constitution` to add a new "Advanced Forms &
       Interaction" Component Catalog section documenting Combobox and
       Command Palette's shipped patterns (MINOR version bump), per
       `quickstart.md`'s reminder — do not skip once implementation is
       verified stable
-- [ ] T022 [P] Update root `README.md`'s Project Structure section to
+- [x] T022 [P] Update root `README.md`'s Project Structure section to
       list the two new component directories and the two new
       `src/scripts/*.js` modules, consistent with every prior feature's
       README update pattern

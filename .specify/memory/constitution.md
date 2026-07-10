@@ -1,4 +1,69 @@
 <!--
+SYNC IMPACT REPORT (v1.7.0 — see below for the v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.6.0 → 1.7.0
+Modified principles: None
+Added sections:
+  - Component Catalog → NEW "Advanced Forms & Interaction" section:
+    Combobox and Command Palette, reflecting feature
+    008-advanced-forms-primitives's shipped patterns — this project's
+    3rd and 4th JS modules (after overlay.js/toast.js in v1.0.0/003 and
+    tabs.js/dropdown-menu.js in v1.4.0/005). Combobox is a from-scratch
+    WAI-ARIA 1.2 combobox (native <datalist> verified insufficient — no
+    ARIA combobox roles, no styling control, inconsistent cross-browser
+    filtering, no disabled-option/no-results support) using the Popover
+    API for its listbox panel, the same mechanism Dropdown Menu already
+    established. Command Palette reuses Modal's <dialog>/showModal()
+    chrome verbatim plus this project's first document-level global
+    keyboard shortcut (Cmd/Ctrl+K).
+Corrected sections: None this bump.
+Refactored (non-visible, behavior-preserving): src/scripts/overlay.js's
+  backdrop-click-close + WebKit-safe close-time refocus logic extracted
+  into an exported wireDialogClose(dialog) helper, since Command
+  Palette's dialog has no data-dialog-trigger button for
+  initDialogTriggers()'s existing per-trigger loop to discover (it opens
+  via a global shortcut instead). Verified behavior-preserving for
+  Modal/Slide-over by running the full pre-existing suite before and
+  after: 1731/1752 passed, 21 skipped, unchanged skip count, both
+  modal.spec.ts and slide-over.spec.ts fully green.
+Known gaps documented (carried over, unchanged, not addressed this bump):
+  - Component Catalog → Data Display & Listings → Lists: still not
+    implemented as its own component; the `text-xs text-neutral-500`
+    metadata pattern remains an uncorrected latent AAA gap (see v1.5.0's
+    report for detail).
+Rationale: feature 008 (Combobox, Command Palette) was implemented
+against these patterns as proposed Phase 1 design docs
+(specs/008-advanced-forms-primitives/data-model.md, contracts/*.md,
+research.md), per the same "propose in Phase 1, ratify what shipped"
+sequence used for v1.4.0/v1.5.0/v1.6.0. Two `/speckit-analyze` passes
+caught and fixed real gaps before and during implementation: a CRITICAL
+Combobox gating-condition bug that would have made the "No results"
+state unreachable (an earlier draft gated the popover's open call on
+"query non-empty AND at least one match," directly contradicting
+FR-004); a HIGH missing `aria-expanded` sync requirement; a CRITICAL
+cross-artifact inconsistency where research.md/a contract claimed
+overlay.js's close/backdrop logic was reused "verbatim" for Command
+Palette when the actual per-trigger-loop implementation structurally
+could not reach a trigger-less dialog, corrected via the
+wireDialogClose(dialog) extraction described above; and a real
+`popovertarget` HTML-spec misuse (inert on `type="text"` inputs) caught
+before shipping. A code-reviewer agent pass found 0 CRITICAL/HIGH issues
+(verdict APPROVE) and two optional, non-blocking notes (documented in
+tasks.md T019, not carried into this amendment). A real functional bug
+was also found and fixed during implementation via a standalone debug
+script: the Command Palette's search input was missing its `id`
+attribute, silently breaking `document.getElementById()` and disabling
+the entire shortcut feature until fixed. This is a MINOR bump: one new
+catalog section plus a behavior-preserving internal refactor, no
+principle text changed.
+Templates requiring updates (this MINOR bump):
+  ✅ specs/008-advanced-forms-primitives/data-model.md (already documents
+     these corrections as findings; this amendment folds them back into
+     the ratified source of truth)
+  ✅ specs/008-advanced-forms-primitives/contracts/*.md (already reflect
+     the final, corrected, shipped state)
+  ⚠ Lists' `metadata` token remains a known, documented, NOT-yet-corrected
+     gap — unchanged from v1.5.0, still tracked, not silently dropped
+
 SYNC IMPACT REPORT (v1.6.0 — see below for the v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.5.0 → 1.6.0
 Modified principles: None
@@ -665,6 +730,49 @@ catalog.
   principle's outline mandate), disabled `disabled:opacity-50
   disabled:cursor-not-allowed`.
 
+### Advanced Forms & Interaction
+- **Combobox**: a from-scratch WAI-ARIA 1.2 combobox — native
+  `<input list>`/`<datalist>` was verified insufficient (no ARIA
+  combobox/listbox/option roles, no styling control over the suggestion
+  popup, inconsistent cross-browser substring-matching behavior, no
+  disabled-option or "No results" support) rather than assumed adequate.
+  `role="combobox"` on the input with `aria-controls`/
+  `aria-activedescendant`/`aria-autocomplete="list"`; `role="listbox"`
+  on the popup, hosted via the Popover API (`popover="auto"`, the same
+  mechanism Dropdown Menu already established) with an explicit
+  `position: absolute` override (the Popover API's UA stylesheet
+  defaults to `position: fixed`, viewport-centered, otherwise). Options
+  `text-neutral-900`, `hover:bg-neutral-50`, `active:bg-neutral-100`,
+  keyboard-active `bg-neutral-100` (reusing Dropdown Menu's exact item
+  states, not `bg-brand` — a transient keyboard-focus indicator, not a
+  persistent "selected/current" state). Matched substrings render via
+  `<mark>` with `font-semibold` on the *same* `text-neutral-900`, not a
+  new background highlight color — sidesteps introducing any new,
+  unverified contrast pairing entirely. Disabled options use
+  `aria-disabled="true"` (never the `disabled` attribute — a `<li>` is
+  not a form control) with `opacity-50` plus explicit
+  `hover:bg-transparent active:bg-transparent` suppression so a disabled
+  row never highlights. `:focus-visible` is intentionally absent from
+  option rows: `aria-activedescendant` keeps real DOM focus on the input
+  at all times, so the pseudo-class cannot structurally match a row that
+  never receives focus — the input's own focus ring is the single focus
+  indicator for the entire composite widget, not a gap in Principle V.
+- **Command Palette**: reuses Modal's `<dialog>`/`showModal()` chrome
+  verbatim (`rounded-lg`/`shadow-xl`/`sm:max-w-lg`) plus this project's
+  first document-level global keyboard shortcut — a `keydown` listener
+  checking `(event.metaKey || event.ctrlKey) && event.key.toLowerCase()
+  === "k"`, guarded against firing while another `<dialog open>` already
+  exists. Shares its filter/`aria-activedescendant`/match-highlighting
+  model with Combobox (independently implemented per component, not
+  imported — the two contexts' DOM/dialog-vs-popover mechanics differ
+  enough that the ~45 lines of shared pure logic were judged not worth a
+  third shared module, per code review). `overlay.js`'s backdrop-click-
+  close and WebKit-safe close-time refocus logic is exposed as an
+  exported `wireDialogClose(dialog)` helper (extracted from
+  `initDialogTriggers()`'s per-trigger loop, which cannot discover a
+  dialog with no `data-dialog-trigger` button) and called once for this
+  dialog — Modal/Slide-over's own wiring is unchanged.
+
 ## Governance
 
 **Authority**: this constitution supersedes any individual style practice or
@@ -722,4 +830,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.6.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09
+**Version**: 1.7.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-09
