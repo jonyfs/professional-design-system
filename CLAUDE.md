@@ -1,16 +1,15 @@
 <!-- SPECKIT START -->
-Active feature: `009-react-port-nav-disclosure`. For technologies,
+Active feature: `010-fix-popover-positioning`. For technologies,
 project structure, shell commands, and other implementation context,
-read `specs/009-react-port-nav-disclosure/plan.md` (and its
-`research.md`, `data-model.md`, `contracts/`, `quickstart.md` siblings).
-Features 001-008 are all complete and shipped. Feature 009 ports feature
-005's four static components (Breadcrumbs, Accordion, Tabs, Dropdown
-Menu) to `packages/react/` — a pure platform port, no new visual/
-interaction capability. Accordion keeps the native `<details name>`
-exclusive-group mechanism verbatim in JSX (zero React state); Tabs and
-Dropdown Menu are reimplemented as idiomatic React hooks. This is the
-fourth and final feature in the "cotninue implementando 2 e 3" +
-"4 features sequenciais" plan.
+read `specs/010-fix-popover-positioning/plan.md` (and its `research.md`,
+`contracts/`, `quickstart.md` siblings). Features 001-009 are all
+complete and shipped. Feature 010 is a correctness bug fix (not a new
+component): Dropdown Menu's panel (005 + its 009 React port) and
+Combobox's listbox (008) don't visually anchor to their trigger/input,
+because Popover-API top-layer promotion resets `position: absolute`'s
+containing block to the viewport. Fixed with the CSS Anchor Positioning
+API (`anchor-name`/`position-anchor`/`anchor()`), confirmed natively
+supported in all three target browser engines via direct testing.
 <!-- SPECKIT END -->
 
 ## graphify
