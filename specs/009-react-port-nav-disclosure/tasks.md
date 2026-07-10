@@ -39,7 +39,7 @@ in the harness and confirm pixel parity with
 
 ### Tests for User Story 1
 
-- [ ] T001 [P] [US1] Write `tests/e2e/react-breadcrumbs.spec.ts`: visual
+- [x] T001 [P] [US1] Write `tests/e2e/react-breadcrumbs.spec.ts`: visual
       regression at 320/768/1024/1440px comparing against
       `breadcrumbs.spec.ts`'s existing approved baselines, an axe scan,
       and a port of every keyboard/semantic acceptance scenario from
@@ -49,21 +49,21 @@ in the harness and confirm pixel parity with
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Implement `packages/react/src/Breadcrumbs/Breadcrumbs.tsx`
+- [x] T002 [US1] Implement `packages/react/src/Breadcrumbs/Breadcrumbs.tsx`
       per `contracts/breadcrumbs.contract.md` — `BreadcrumbItem`/
       `BreadcrumbsProps` types, pure markup, no hooks
-- [ ] T003 [US1] Add `.breadcrumb-nav`/`.breadcrumb-link`/
+- [x] T003 [US1] Add `.breadcrumb-nav`/`.breadcrumb-link`/
       `.breadcrumb-divider`/`.breadcrumb-current` `@apply` classes
       (ported verbatim from `src/styles/tailwind.css`) to
       `packages/react/src/styles.css`'s `@layer components` block
       (research.md R4)
-- [ ] T004 [US1] Export `Breadcrumbs`/`BreadcrumbsProps`/`BreadcrumbItem`
+- [x] T004 [US1] Export `Breadcrumbs`/`BreadcrumbsProps`/`BreadcrumbItem`
       from `packages/react/src/index.ts`
-- [ ] T005 [US1] Add `tests/react-harness/breadcrumbs.html` +
+- [x] T005 [US1] Add `tests/react-harness/breadcrumbs.html` +
       `src/breadcrumbs-main.tsx` demo page, and a
       `breadcrumbs: resolve(__dirname, "breadcrumbs.html")` entry to
       `tests/react-harness/vite.config.ts`'s `rollupOptions.input`
-- [ ] T006 [US1] Run `npm run build --workspace packages/react &&
+- [x] T006 [US1] Run `npm run build --workspace packages/react &&
       npm run audit:tokens && npm run audit:contrast` — confirm zero
       violations (no new tokens)
 
@@ -84,7 +84,7 @@ and confirm multiple items stay open.
 
 ### Tests for User Story 2
 
-- [ ] T007 [P] [US2] Write `tests/e2e/react-accordion.spec.ts`: visual
+- [x] T007 [P] [US2] Write `tests/e2e/react-accordion.spec.ts`: visual
       regression comparing against `accordion.spec.ts`'s baselines, an
       axe scan, an exclusive-group assertion (opening item 2 closes
       item 1), a non-exclusive assertion (both stay open), and an
@@ -92,18 +92,18 @@ and confirm multiple items stay open.
 
 ### Implementation for User Story 2
 
-- [ ] T008 [US2] Implement `packages/react/src/Accordion/Accordion.tsx`
+- [x] T008 [US2] Implement `packages/react/src/Accordion/Accordion.tsx`
       per `contracts/accordion.contract.md` — `useId()` for the shared
       `name` when `exclusive`, no `useState`/`useEffect`
-- [ ] T009 [US2] Add `.accordion-item`/`.accordion-trigger`/
+- [x] T009 [US2] Add `.accordion-item`/`.accordion-trigger`/
       `.accordion-chevron`/`.accordion-content` `@apply` classes (ported
       verbatim) to `packages/react/src/styles.css`
-- [ ] T010 [US2] Export `Accordion`/`AccordionProps`/`AccordionItemData`
+- [x] T010 [US2] Export `Accordion`/`AccordionProps`/`AccordionItemData`
       from `packages/react/src/index.ts`
-- [ ] T011 [US2] Add `tests/react-harness/accordion.html` +
+- [x] T011 [US2] Add `tests/react-harness/accordion.html` +
       `src/accordion-main.tsx` (both exclusive and non-exclusive demo
       groups) and a `vite.config.ts` entry
-- [ ] T012 [US2] Run `npm run build --workspace packages/react &&
+- [x] T012 [US2] Run `npm run build --workspace packages/react &&
       npm run audit:tokens && npm run audit:contrast` — confirm zero
       violations
 

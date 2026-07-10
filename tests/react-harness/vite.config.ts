@@ -24,6 +24,8 @@ export default defineConfig({
         modal: resolve(__dirname, "modal.html"),
         toast: resolve(__dirname, "toast.html"),
         slideOver: resolve(__dirname, "slide-over.html"),
+        breadcrumbs: resolve(__dirname, "breadcrumbs.html"),
+        accordion: resolve(__dirname, "accordion.html"),
       },
     },
   },

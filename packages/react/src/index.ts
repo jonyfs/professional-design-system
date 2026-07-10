@@ -18,3 +18,7 @@ export { Toast } from "./Toast/Toast";
 export type { ToastProps } from "./Toast/Toast";
 export { SlideOver } from "./SlideOver/SlideOver";
 export type { SlideOverProps } from "./SlideOver/SlideOver";
+export { Breadcrumbs } from "./Breadcrumbs/Breadcrumbs";
+export type { BreadcrumbsProps, BreadcrumbItem } from "./Breadcrumbs/Breadcrumbs";
+export { Accordion } from "./Accordion/Accordion";
+export type { AccordionProps, AccordionItemData } from "./Accordion/Accordion";
