@@ -206,12 +206,27 @@ No new entries needed in `shared/design-tokens.ts` or
 `scripts/check-contrast.mjs`'s `BASE_TOKENS` — every pairing above is
 already a verified-AAA pairing reused from an existing ratified pattern
 (Dropdown Menu's item states, Text Input's border/focus ring, Breadcrumbs'
-`text-neutral-600` floor). `check-contrast.mjs` DOES need two new
-`PAIRINGS` entries recording that this feature reuses `text-neutral-900`-
-on-white (option/input text) and `text-neutral-600`-on-white ("No
-results"/hint text) in this new context, per this project's established
-discipline of registering every text/background usage, not just new color
-values.
+`text-neutral-600` floor).
+
+**Correction (verified during implementation, not assumed)**: an earlier
+draft of this section additionally claimed `check-contrast.mjs` needed
+two new `PAIRINGS` entries for this feature's own `text-neutral-900`-on-
+white and `text-neutral-600`-on-white usage. Running the actual script
+after implementing Combobox showed this was unnecessary — inspection of
+`check-contrast.mjs`'s coverage mechanism (`COVERED_FG_TOKENS`, built
+from `PAIRINGS.map(p => p.fg)`) shows it tracks coverage per **foreground
+token**, not per exact (foreground, background) pair; `neutral-900` and
+`neutral-600` are already covered foreground tokens (via Button/Text
+Input/Checkbox and Breadcrumbs' entries respectively) against the same
+white background this feature also uses, so `npm run audit:contrast`
+passed with zero new entries. This differs from feature 007's Sidebar,
+where `neutral-300` was a genuinely *new* foreground token with no prior
+`PAIRINGS` entry at all — that case correctly required a new entry; this
+one doesn't, and adding one anyway would have been pure duplication. The
+lesson generalizes the project's "verify, don't assume" discipline one
+level further: even a claim about *tooling requirements* should be
+checked by running the tool, not inferred from a prior feature's
+precedent that looks superficially similar.
 
 ## R5: Highlighted-match substring style — sidesteps new-pairing risk entirely
 

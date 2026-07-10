@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Combobox — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Combobox</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    A from-scratch WAI-ARIA 1.2 combobox — type to filter, arrow keys to
+    navigate, Enter to commit, Escape to cancel. The listbox is a
+    Popover-API panel anchored to the input.
+  </p>
+
+  <div class="mt-8 max-w-sm">
+    <div class="relative">
+      <label for="combobox-input" class="mb-1 block text-sm font-medium text-neutral-900">Country</label>
+      <input
+        type="text"
+        id="combobox-input"
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="combobox-listbox"
+        aria-activedescendant=""
+        aria-autocomplete="list"
+        autocomplete="off"
+        data-testid="combobox-input"
+        class="combobox-input"
+        placeholder="Search countries…"
+      />
+      <ul
+        id="combobox-listbox"
+        role="listbox"
+        popover="auto"
+        data-testid="combobox-listbox"
+        class="combobox-listbox"
+      ></ul>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initCombobox } from "/src/scripts/combobox.js";
+
+    const countries = [
+      "Argentina", "Australia", "Austria (unavailable)", "Belgium", "Brazil",
+      "Bulgaria", "Canada", "Chile", "China", "Colombia", "Costa Rica",
+      "Croatia", "Cyprus", "Czech Republic", "Denmark", "Ecuador", "Egypt",
+      "Estonia", "Finland", "France", "Germany", "Greece", "Hungary",
+      "Iceland", "India", "Indonesia", "Ireland", "Israel", "Italy", "Japan",
+      "Kenya", "Latvia", "Lithuania", "Luxembourg", "Malaysia", "Malta",
+      "Mexico", "Netherlands", "New Zealand", "Nigeria", "Norway", "Peru",
+      "Philippines", "Poland", "Portugal", "Romania", "Singapore", "Slovakia",
+      "Slovenia", "South Africa", "South Korea", "Spain", "Sweden",
+      "Switzerland", "Thailand", "Turkey", "Ukraine",
+      "United Kingdom", "United States", "Uruguay", "Vietnam",
+    ].map((label) => ({
+      value: label.replace(" (unavailable)", ""),
+      label,
+      disabled: label.includes("(unavailable)"),
+    }));
+
+    initCombobox({
+      input: document.getElementById("combobox-input"),
+      listbox: document.getElementById("combobox-listbox"),
+      options: countries,
+    });
+  </script>
+</body>
+</html>

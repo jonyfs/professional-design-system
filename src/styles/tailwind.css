@@ -338,4 +338,66 @@
   .navbar-mobile-panel {
     @apply flex flex-col gap-1 border-t border-neutral-200 px-6 py-4;
   }
+
+  /* Combobox primitive (contracts/combobox.contract.md) — from-scratch
+     WAI-ARIA 1.2 combobox; listbox is a Popover-API panel (research.md R2). */
+  .combobox-input {
+    @apply block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
+      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400
+      focus:ring-2 focus:ring-inset focus:ring-brand sm:text-sm sm:leading-6;
+  }
+  .combobox-listbox {
+    @apply absolute left-0 right-0 mt-1 max-h-60 overflow-auto rounded-md
+      bg-white py-1 shadow-lg ring-1 ring-neutral-300;
+    /* explicit position: absolute overrides the popover UA stylesheet's
+       default position: fixed (which centers a popover in the viewport)
+       — the same override Dropdown Menu's .dropdown-menu-panel already
+       relies on (feature 005) to anchor the panel under its trigger */
+  }
+  .combobox-option {
+    @apply relative cursor-pointer select-none px-3 py-2 text-sm
+      text-neutral-900 hover:bg-neutral-50 active:bg-neutral-100;
+  }
+  .combobox-option[aria-selected="true"] {
+    @apply bg-neutral-100;
+  }
+  .combobox-option[aria-disabled="true"] {
+    @apply cursor-not-allowed opacity-50 hover:bg-transparent active:bg-transparent;
+  }
+  .combobox-option mark {
+    @apply bg-transparent font-semibold text-neutral-900;
+  }
+  .combobox-empty {
+    @apply px-3 py-2 text-sm text-neutral-600;
+  }
+
+  /* Command Palette primitive (contracts/command-palette.contract.md) —
+     reuses Modal's dialog chrome (research.md R3). */
+  .command-palette-dialog {
+    @apply relative transform overflow-hidden rounded-lg bg-white p-0
+      text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg;
+  }
+  .command-palette-input {
+    @apply block w-full border-0 border-b border-neutral-200 px-4 py-3
+      text-neutral-900 placeholder:text-neutral-400 focus:ring-0 sm:text-sm;
+  }
+  .command-palette-list {
+    @apply max-h-72 overflow-auto py-2;
+  }
+  .command-palette-action {
+    @apply flex cursor-pointer select-none items-center px-4 py-2 text-sm
+      text-neutral-900 hover:bg-neutral-50 active:bg-neutral-100;
+  }
+  .command-palette-action[aria-selected="true"] {
+    @apply bg-neutral-100;
+  }
+  .command-palette-action[aria-disabled="true"] {
+    @apply cursor-not-allowed opacity-50 hover:bg-transparent active:bg-transparent;
+  }
+  .command-palette-action mark {
+    @apply bg-transparent font-semibold text-neutral-900;
+  }
+  .command-palette-empty {
+    @apply px-4 py-2 text-sm text-neutral-600;
+  }
 }

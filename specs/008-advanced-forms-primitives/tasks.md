@@ -10,10 +10,11 @@ accessibility scans, same pattern as every prior feature.
 
 **Organization**: Tasks are grouped by user story (Combobox P1, Command
 Palette P2). No Setup/Foundational phase for existing tooling — reuses
-the scaffold entirely. `scripts/check-contrast.mjs` needs two new
-`PAIRINGS` entries (research.md R4) for this feature's own usage of
-`text-neutral-900`-on-white and `text-neutral-600`-on-white — added as
-part of Phase 1's implementation, not deferred.
+the scaffold entirely. `scripts/check-contrast.mjs` needs no new
+`PAIRINGS` entries — verified during Phase 1 (T007/T008, research.md R4
+correction): `neutral-900`/`neutral-600` are already covered foreground
+tokens, so this feature's reuse against the same white background passes
+with zero new entries.
 
 ## Format: `[ID] [P?] [Story] Description`
 
@@ -43,7 +44,7 @@ unchanged, and a non-matching query shows "No results."
 
 ### Tests for User Story 1
 
-- [ ] T001 [P] [US1] Write `tests/e2e/combobox.spec.ts`: visual
+- [x] T001 [P] [US1] Write `tests/e2e/combobox.spec.ts`: visual
       regression at 320/768/1024/1440px (closed and open-listbox states),
       an axe scan, an assertion that typing a substring narrows the
       listbox and wraps matches in `<mark>` (FR-002), ArrowDown/ArrowUp
@@ -58,21 +59,21 @@ unchanged, and a non-matching query shows "No results."
 
 ### Implementation for User Story 1
 
-- [ ] T002 [US1] Implement `src/components/combobox/combobox.html` per
+- [x] T002 [US1] Implement `src/components/combobox/combobox.html` per
       `contracts/combobox.contract.md` (no `popovertarget` on the input —
       `/speckit-analyze` confirmed it's inert on `type="text"`; the
       popover opens/closes exclusively via `combobox.js`). Gallery demo
       dataset should have enough entries (~50) that SC-001's "narrow to a
       single match by typing 3-4 characters" is a real, demonstrable test
       of the mechanism, not just illustrative
-- [ ] T003 [US1] Add `.combobox-input`/`.combobox-listbox`/
+- [x] T003 [US1] Add `.combobox-input`/`.combobox-listbox`/
       `.combobox-option`/`.combobox-option[aria-selected="true"]`/
       `.combobox-option[aria-disabled="true"]` (with
       `hover:bg-transparent active:bg-transparent` suppression — the
       `/speckit-analyze`-caught disabled-highlight fix)/`.combobox-option
       mark`/`.combobox-empty` `@apply` classes to `src/styles/
       tailwind.css` per `data-model.md`'s Combobox composition
-- [ ] T004 [US1] Implement `src/scripts/combobox.js`: filtering
+- [x] T004 [US1] Implement `src/scripts/combobox.js`: filtering
       (case-insensitive substring match, `<mark>`-wrapping matched
       substrings), `activeIndex` state clamped/reset on every filter
       pass, ArrowDown/ArrowUp navigation skipping `aria-disabled` options
@@ -87,19 +88,19 @@ unchanged, and a non-matching query shows "No results."
       Acceptance Scenario 5 requires the listbox to open and show
       `.combobox-empty` precisely on a zero-match non-empty query (per
       contracts/combobox.contract.md's Behavior wiring table verbatim)
-- [ ] T005 [US1] Add a Combobox card to `index.html`'s gallery, linking
+- [x] T005 [US1] Add a Combobox card to `index.html`'s gallery, linking
       to `src/components/combobox/combobox.html`
-- [ ] T006 [US1] Add `combobox: resolve(__dirname, "src/components/combobox/combobox.html")`
+- [x] T006 [US1] Add `combobox: resolve(__dirname, "src/components/combobox/combobox.html")`
       to `vite.config.ts`'s `rollupOptions.input`
-- [ ] T007 [US1] Extend `scripts/check-contrast.mjs`'s `PAIRINGS` with
-      this feature's own usage of `text-neutral-900`-on-white
-      (option/input text, `<mark>` highlight) and
-      `text-neutral-600`-on-white ("No results" text) per research.md R4
-      — register the usage even though both base tokens are already
-      ratified, per this project's established discipline
-- [ ] T008 [US1] Run `npm run audit:tokens && npm run audit:contrast` —
-      confirm zero violations, including the two newly-registered
-      pairings
+- [x] T007 [US1] ~~Extend `scripts/check-contrast.mjs`'s `PAIRINGS`~~ —
+      **verified unnecessary, not skipped**: running the audits after
+      implementation showed `neutral-900`/`neutral-600` are already
+      covered foreground tokens (`COVERED_FG_TOKENS` tracks per-token,
+      not per-exact-pairing), so no new entries are needed for this
+      feature's reuse against the same white background (research.md
+      R4 correction)
+- [x] T008 [US1] Run `npm run audit:tokens && npm run audit:contrast` —
+      confirm zero violations (both pass with the existing pairing set)
 
 **Checkpoint**: Combobox is independently shippable — filter-as-you-type,
 full keyboard operability, AAA-compliant, wired into the gallery and the
