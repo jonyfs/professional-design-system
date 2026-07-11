@@ -115,3 +115,13 @@ interactive.
   overflow occurs — 1440px never triggered it locally, underscoring why
   the full responsive viewport matrix must be tested, not just one
   width.
+  **Known tradeoff** (code review finding): `tabindex="0"` is applied
+  unconditionally, since static HTML/CSS cannot detect at runtime
+  whether the table's content actually overflows its wrapper. At wide
+  viewports where nothing overflows, a keyboard user still lands on a
+  focusable region with nothing to scroll before reaching real
+  interactive content (e.g. a trailing "Edit" link) — an inherent
+  limitation of a zero-JavaScript component, not a defect to silently
+  accept without documenting. A future JS-enhanced variant could set
+  `tabindex` conditionally based on `scrollWidth > clientWidth`, but
+  that is out of scope for this primitive.

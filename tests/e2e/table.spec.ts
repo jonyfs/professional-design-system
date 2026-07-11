@@ -58,10 +58,12 @@ test.describe("Table", () => {
 
   test("long cell content truncates with an ellipsis (Edge Case)", async ({ page }) => {
     const cell = page.getByTestId("table-cell-long-content");
-    const overflow = await cell.evaluate((el) => getComputedStyle(el).textOverflow);
+    const textOverflow = await cell.evaluate((el) => getComputedStyle(el).textOverflow);
     const whiteSpace = await cell.evaluate((el) => getComputedStyle(el).whiteSpace);
-    expect(overflow).toBe("ellipsis");
+    const overflow = await cell.evaluate((el) => getComputedStyle(el).overflow);
+    expect(textOverflow).toBe("ellipsis");
     expect(whiteSpace).toBe("nowrap");
+    expect(overflow).toBe("hidden");
   });
 
   test("the table scrolls horizontally rather than breaking layout at 320px (Edge Case)", async ({

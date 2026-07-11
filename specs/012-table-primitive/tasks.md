@@ -108,16 +108,19 @@ trailing-action) are implemented, tested, and visually verified.
       confirm zero regressions across every existing spec. Result: 2176
       passed, 26 skipped (unchanged from feature 011's baseline), zero
       failures.
-- [ ] T018 Code review pass over the CSS/HTML diffs using the
-      code-reviewer agent; address any CRITICAL/HIGH findings — pay
-      particular attention to (a) any remaining Tailwind core-utility
-      naming collisions the reviewer can find that this feature's own
-      research missed, and (b) whether the Tab-order/keyboard-nav
-      assertions (if any) hardcode a Tab-press count in a way that
-      could break on Linux CI's WebKit build, mirroring feature 011's
-      real CI-only failure — verify empirically via the matching
-      `mcr.microsoft.com/playwright` Docker image if any such
-      assertion is added, BEFORE pushing, not after a CI failure
+- [x] T018 Code review pass over the CSS/HTML diffs using the
+      code-reviewer agent; address any CRITICAL/HIGH findings.
+      Result: APPROVE, 0 CRITICAL/HIGH. Independently re-verified the
+      `.data-table*` naming against corePlugins.js — no collisions.
+      Confirmed no Tab-order/keyboard assumptions comparable to feature
+      011's (this feature's viewport test is deterministic CSS-property
+      based, not engine-dependent — no Docker cross-check needed). 1
+      MEDIUM (the `tabindex="0"` fix is unconditional, so keyboard users
+      hit a no-op focus stop at viewports where nothing overflows — an
+      inherent zero-JS tradeoff, documented in the contract rather than
+      silently accepted) and 1 LOW (truncation test only checked 2 of
+      3 `truncate` properties — added the missing `overflow: hidden`
+      check) — both fixed.
 - [ ] T019 Generate Linux visual regression baselines via
       `gh workflow run update-snapshots.yml` (workflow_dispatch on
       ubuntu-latest — never locally/Docker for the actual baselines;
