@@ -33,6 +33,7 @@ export default defineConfig({
         combobox: resolve(__dirname, "src/components/combobox/combobox.html"),
         commandPalette: resolve(__dirname, "src/components/command-palette/command-palette.html"),
         list: resolve(__dirname, "src/components/list/list.html"),
+        table: resolve(__dirname, "src/components/table/table.html"),
       },
     },
   },

@@ -1,16 +1,17 @@
 <!-- SPECKIT START -->
-Active feature: `011-lists-primitive`. For technologies, project
+Active feature: `012-table-primitive`. For technologies, project
 structure, shell commands, and other implementation context, read
-`specs/011-lists-primitive/plan.md` (and its `research.md`,
-`contracts/`, `quickstart.md` siblings). Features 001-010 are all
-complete and shipped. Feature 011 ships Lists as a real static component
-(`.list`/`.list-row`), closing a catalog gap flagged in feature 006:
-the constitution documented a Lists pattern that was never built, whose
-metadata text token (`text-neutral-500`, 4.83:1) failed WCAG AAA —
-corrected at the source to `text-neutral-600` (7.56:1 AAA). Reuses the
-ratified Avatar component verbatim. Note: Table has the identical
-"documented but never built" gap and is being resolved separately in
-the upcoming React-port batch feature.
+`specs/012-table-primitive/plan.md` (and its `research.md`,
+`contracts/`, `quickstart.md` siblings). Features 001-011 are all
+complete and shipped. Feature 012 ships Table as a real static
+component (`.data-table`/`.data-table-header-cell`/`.data-table-cell`),
+closing the "documented but never built" catalog gap discovered during
+feature 011's planning. Unlike Lists, the documented pattern's contrast
+was already AAA-correct — verified, not corrected. Named `.data-table*`,
+not `.table*`: Tailwind's own core `display` plugin defines `.table`/
+`.table-cell`/`.table-row` utilities that would collide, the same class
+of bug feature 011 found for `.list-item`. React port deferred to
+feature 013.
 <!-- SPECKIT END -->
 
 ## graphify
