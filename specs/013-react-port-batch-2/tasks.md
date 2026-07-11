@@ -118,7 +118,11 @@ e2e spec (visual parity + a11y + interaction) → vite.config registration.
       reason (a packaging port reusing already-ratified static patterns
       verbatim, not new visual/interaction guidance). Consistent with
       that precedent, feature 013 makes none either.
-- [ ] T026 Verify CI is green on the actual GitHub Actions run for the final commit before reporting this feature as fully shipped (lesson from features 011/012)
+- [x] T026 Verify CI is green on the actual GitHub Actions run for the
+      final commit before reporting this feature as fully shipped.
+      Result: run 29138799264 (commit 8812586) succeeded in 21m4s on
+      the real ubuntu-latest runner — genuinely CI-green, not just
+      locally/Docker-verified.
 
 ---
 
