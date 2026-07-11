@@ -105,8 +105,19 @@ e2e spec (visual parity + a11y + interaction) → vite.config registration.
       could return null under heavy concurrent test-suite load — the
       same class of issue as T022's Command Palette fix. Fixed with an
       explicit `waitFor({ state: "attached" })` first.
-- [ ] T024 Generate Linux visual regression baselines via `gh workflow run update-snapshots.yml`; verify zero drift via `cmp`; commit only genuinely new baseline files
-- [ ] T025 Update the constitution if any React-specific pattern warrants catalog documentation (judge at ratification time — likely a lighter-touch amendment than 011/012 since this is a packaging port, not new visual/interaction ratification)
+- [x] T024 Generate Linux visual regression baselines via `gh workflow
+      run update-snapshots.yml`; verify zero drift via `cmp`; commit
+      only genuinely new baseline files. Result: 618 identical (zero
+      drift), 72 new files (9 components with visual baselines ×
+      viewport/engine combinations; Command Palette has none by
+      design), visually verified correct.
+- [x] T025 Update the constitution if any React-specific pattern
+      warrants catalog documentation. Judgment: no amendment needed —
+      confirmed feature 009 (the prior React port batch) set this
+      exact precedent, making zero constitution changes for the same
+      reason (a packaging port reusing already-ratified static patterns
+      verbatim, not new visual/interaction guidance). Consistent with
+      that precedent, feature 013 makes none either.
 - [ ] T026 Verify CI is green on the actual GitHub Actions run for the final commit before reporting this feature as fully shipped (lesson from features 011/012)
 
 ---
