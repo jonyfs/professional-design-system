@@ -121,21 +121,22 @@ trailing-action) are implemented, tested, and visually verified.
       silently accepted) and 1 LOW (truncation test only checked 2 of
       3 `truncate` properties — added the missing `overflow: hidden`
       check) — both fixed.
-- [ ] T019 Generate Linux visual regression baselines via
+- [x] T019 Generate Linux visual regression baselines via
       `gh workflow run update-snapshots.yml` (workflow_dispatch on
       ubuntu-latest — never locally/Docker for the actual baselines;
       Docker is only for the T018 behavioral cross-check above);
       download the artifact, verify zero drift on all pre-existing
       baselines via `cmp`, commit only the genuinely new Table
-      baseline files
-- [ ] T020 Run `/speckit-constitution` to update the existing "Tables"
+      baseline files. Result: 600 identical (zero drift), 18 new files
+      (baseline/zebra/trailing × 320/768/1024/1440px + firefox/webkit
+      1440px), visually verified correct.
+- [x] T020 Run `/speckit-constitution` to update the existing "Tables"
       Component Catalog entry: replace the abstract pattern description
       with the actually-shipped `.data-table`/`.data-table-header-cell`/
       `.data-table-cell`/`.data-table-row-zebra` class names, remove the
       "documented but never built" gap note from the Lists entry that
-      references it, and record the R1a naming-collision lesson —
-      MINOR bump (new catalog guidance for a genuinely shipped
-      component)
+      references it, and record the R1a naming-collision lesson.
+      MINOR bump to v1.10.0.
 - [ ] T021 Verify CI is green on the actual GitHub Actions run for the
       final commit (not just local/Docker verification) before
       reporting this feature as fully shipped

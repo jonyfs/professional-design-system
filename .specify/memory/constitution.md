@@ -1,4 +1,30 @@
 <!--
+SYNC IMPACT REPORT (v1.10.0 — see below for the v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.9.0 → 1.10.0
+Modified principles: None
+Added sections: Component Catalog → Data Display & Listings → Tables —
+  documents the shipped `.data-table`/`.data-table-header-cell`/
+  `.data-table-cell`/`.data-table-row-zebra` primitive (feature 012),
+  including the py-3/py-4 header/body padding split, the Tailwind
+  corePlugins naming-collision lesson applied proactively, and the
+  scrollable-region-focusable accessibility fix and its tradeoff.
+Corrected sections:
+  - Component Catalog → Data Display & Listings → Lists: removed the
+    now-resolved KNOWN GAP note about Table (feature 011), replaced
+    with a one-line pointer to the Tables entry above.
+Rationale: feature 012 closed the "documented but never built" gap
+Lists itself had before feature 011 — the Tables catalog entry
+described a pattern but no `src/components/table/` component had ever
+shipped. Unlike Lists, the documented contrast values were empirically
+verified to already be correct (no token correction needed) — this
+amendment documents that verification rather than a fix. This is a
+MINOR bump (new catalog guidance for a genuinely shipped component),
+matching the precedent of v1.9.0's own Lists addition.
+Templates requiring updates: ✅ none — no principle or template-level
+change, only Component Catalog content.
+-->
+
+<!--
 SYNC IMPACT REPORT (v1.9.0 — see below for the v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.8.0 → 1.9.0
 Modified principles: None
@@ -709,9 +735,30 @@ catalog.
   correct here).
 
 ### Data Display & Listings
-- **Tables**: header `bg-neutral-50 text-left text-xs font-semibold
-  text-neutral-600 uppercase tracking-wider`; rows with optional zebra striping
-  (`even:bg-neutral-50`) and `divide-y divide-neutral-200`; cells `px-6 py-4`.
+- **Tables**: shipped as a real component in feature 012 (`.data-table`/
+  `.data-table-header-cell`/`.data-table-cell`/`.data-table-row-zebra`,
+  `src/components/table/table.html`), closing the "documented but never
+  built" gap flagged by feature 011. Header `bg-neutral-50 text-left
+  text-xs font-semibold text-neutral-600 uppercase tracking-wider
+  px-6 py-3` (7.23:1 AAA against `bg-neutral-50`); cells `text-sm
+  text-neutral-900 px-6 py-4 max-w-xs truncate` (16.98-17.74:1 AAA) —
+  header uses `py-3`, body cells use `py-4` (a deliberate, denser header
+  convention, not an inconsistency); both verified via the WCAG
+  relative-luminance formula rather than assumed, unlike Lists' metadata
+  token (which was actually wrong). Rows with optional zebra striping
+  (`.data-table-row-zebra`'s `even:bg-neutral-50`) and `divide-y
+  divide-neutral-200`. Class names are `.data-table*`, not `.table*`:
+  Tailwind's own core `display` plugin defines `.table { display: table
+  }`, `.table-cell { display: table-cell }`, and `.table-row { display:
+  table-row }` as core utilities — the identical class of collision
+  bug feature 011 found for Lists' `.list-item`, caught here before
+  implementation by checking `corePlugins.js` first. The horizontally-
+  scrollable wrapper (`overflow-x-auto`) requires `tabindex="0"`,
+  `role="region"`, and a descriptive `aria-label` per axe-core's
+  `scrollable-region-focusable` rule — a real violation found only at
+  narrow (320px) viewports where the table genuinely overflows, not at
+  wider ones; this is applied unconditionally since static markup can't
+  detect actual overflow at runtime, a documented, accepted tradeoff.
 - **Badges**: success `bg-success/5 text-success-strong ring-1 ring-inset
   ring-success/20`; error `bg-error/5 text-error-strong ring-1 ring-inset
   ring-error/10`; warning `bg-warning/5 text-warning-strong ring-1 ring-inset
@@ -752,14 +799,9 @@ catalog.
   `text-neutral-600` (7.56:1, AAA-compliant, verified via the WCAG
   relative-luminance formula) at the source and shipped the component —
   the same class of "ratified but never empirically verified" gap
-  Breadcrumbs had before feature 005.
-  **KNOWN GAP** (found by feature 011, not yet fixed at the source):
-  Table has the identical "documented but never built" gap Lists had —
-  the Tables catalog entry above describes a ratified pattern, but no
-  `src/components/table/` component has ever shipped. Whichever future
-  feature ships Table as a real component should verify its own
-  `text-neutral-600`/`divide-y divide-neutral-200` usage empirically
-  before assuming it, following this same precedent.
+  Breadcrumbs had before feature 005. (Table had the identical
+  "documented but never built" gap — resolved by feature 012, see the
+  Tables entry above.)
 - **Avatar**: `.avatar-img` — `rounded-full object-cover` (image variant).
   `.avatar-fallback` — `bg-neutral-100 text-neutral-700 font-medium
   rounded-full` (initials fallback; 9.37:1 AAA, computed via the WCAG
@@ -935,4 +977,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.9.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-10
+**Version**: 1.10.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-10
