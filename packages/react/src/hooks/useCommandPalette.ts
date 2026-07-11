@@ -46,7 +46,15 @@ export function useCommandPalette(actions: CommandPaletteAction[]) {
       const isShortcut = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k";
       if (!isShortcut) return;
       event.preventDefault();
-      if (document.querySelector("dialog[open]")) return;
+      // Checks THIS instance's own dialog via the DOM property (not
+      // React's `open` state, which this effect's `[]` deps would
+      // otherwise close over stale forever, and not a page-wide
+      // `document.querySelector("dialog[open]")`, which would
+      // incorrectly block this palette from opening just because some
+      // unrelated Modal/SlideOver — or a second CommandPalette
+      // instance — happens to be open elsewhere on the page; code
+      // review finding).
+      if (dialogRef.current?.open) return;
       setConfirmation("");
       setQuery("");
       setActiveIndex(-1);

@@ -36,7 +36,19 @@ export function List({ items, interactive, "data-testid": testId }: ListProps) {
         // href is required per-item when `interactive` is set
         // (data-model.md) — every row becomes a real <a tabindex="0">,
         // the same WebKit Tab-order fix from feature 011, ported
-        // verbatim, not re-derived.
+        // verbatim, not re-derived. `href` stays optional in the type
+        // (a discriminated union keyed on the list-level `interactive`
+        // flag doesn't cleanly express a per-item requirement), so this
+        // dev-only check catches the caller error TypeScript can't
+        // (code review finding): a missing href would otherwise render
+        // <a href={undefined} tabIndex={0}>, a link with no
+        // destination, silently losing every native-link affordance
+        // this component exists to preserve.
+        if (interactive && !item.href && process.env.NODE_ENV !== "production") {
+          console.warn(
+            `List: item "${item.id}" has no href but the list is interactive — it will render as a link with no destination.`,
+          );
+        }
         if (interactive) {
           return (
             <a

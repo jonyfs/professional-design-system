@@ -79,6 +79,15 @@ test.describe("Button (React package, visual parity with static reference)", () 
   });
 
   test("onClick fires via passthrough props when enabled", async ({ page }) => {
+    // Waits for the button to actually exist before evaluating — a
+    // bare page.evaluate()/querySelector() (the prior version of this
+    // test) runs immediately regardless of hydration state, unlike
+    // Playwright's own auto-waiting locators, so under heavy
+    // concurrent test-suite load it could run before React finished
+    // rendering, returning null and throwing on .addEventListener
+    // (found flaky incidentally while verifying feature 013 caused no
+    // regressions — a known, pre-existing issue, not introduced here).
+    await page.getByTestId("button-primary").waitFor({ state: "attached" });
     const clicked = await page.evaluate(() => {
       return new Promise<boolean>((resolve) => {
         const btn = document.querySelector('[data-testid="button-primary"]') as HTMLButtonElement;

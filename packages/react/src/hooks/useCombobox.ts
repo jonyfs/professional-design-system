@@ -51,29 +51,26 @@ export function useCombobox(options: ComboboxOption[], onCommit: (value: string)
     return () => listbox.removeEventListener("toggle", syncExpanded);
   }, [anchorName]);
 
-  // Guards the auto-open effect below from reopening the listbox right
-  // after commit() sets `query` to the committed value: combobox.js's
-  // `input.value = option.value` is a direct DOM property write that
-  // never fires an 'input' event, so its own query/filter state never
-  // reacts to it — only close() runs. A controlled React input can't
-  // replicate "set the value without triggering a state update" the
-  // same way, so this ref flag suppresses exactly one query-effect run
-  // to match that same "commit doesn't reopen" behavior.
-  const suppressNextAutoOpen = useRef(false);
-
-  useEffect(() => {
+  // combobox.js opens/closes the listbox IMPERATIVELY from within each
+  // event handler (the 'input' listener explicitly calls open()/close()
+  // based on whether the new value is truthy; commit() only ever calls
+  // close()) — it never derives open/closed from a reactive "value
+  // changed" effect. An earlier draft here used a `[query]`-dependent
+  // effect plus a `suppressNextAutoOpen` ref flag to fake that same
+  // imperative shape reactively, but that flag only got reset when
+  // `query` actually changed — if commit() set `query` to a value
+  // IDENTICAL to what was already typed (e.g. the user typed the exact
+  // option label and pressed Enter), the effect never re-ran, and the
+  // flag stayed stuck `true` forever, silently eating the next
+  // legitimate open (code review finding). Calling open()/close()
+  // directly from the handlers, mirroring the static reference
+  // exactly, removes the race instead of patching around it.
+  function open() {
     const listbox = listboxRef.current;
-    if (!listbox) return;
-    if (suppressNextAutoOpen.current) {
-      suppressNextAutoOpen.current = false;
-      return;
-    }
-    if (query && !listbox.matches(":popover-open")) {
-      listbox.showPopover();
-    } else if (!query && listbox.matches(":popover-open")) {
-      listbox.hidePopover();
-    }
-  }, [query]);
+    // Guard required: calling showPopover() on an already-open popover
+    // throws InvalidStateError (matches combobox.js's identical guard).
+    if (listbox && !listbox.matches(":popover-open")) listbox.showPopover();
+  }
 
   function close() {
     const listbox = listboxRef.current;
@@ -83,9 +80,7 @@ export function useCombobox(options: ComboboxOption[], onCommit: (value: string)
 
   function commit(option: ComboboxOption) {
     // Matches combobox.js's commit(): sets the input's displayed value
-    // to the committed option, then closes — suppressing the query-
-    // change effect so it doesn't reopen what close() just closed.
-    suppressNextAutoOpen.current = true;
+    // to the committed option, then closes.
     setQuery(option.value);
     onCommit(option.value);
     close();
@@ -107,6 +102,11 @@ export function useCombobox(options: ComboboxOption[], onCommit: (value: string)
   function onInputChange(value: string) {
     setQuery(value);
     setActiveIndex(-1);
+    if (value) {
+      open();
+    } else {
+      close();
+    }
   }
 
   function onInputKeyDown(event: React.KeyboardEvent) {

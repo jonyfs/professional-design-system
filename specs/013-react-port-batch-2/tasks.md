@@ -73,7 +73,38 @@ e2e spec (visual parity + a11y + interaction) → vite.config registration.
       listener — fixed by focusing a real element first, matching the
       pattern already used by the file's other (passing) tests.
       Verified stable across two full consecutive runs after the fix.
-- [ ] T023 Code review pass over all new component/hook diffs using the code-reviewer agent; address CRITICAL/HIGH findings
+- [x] T023 Code review pass over all new component/hook diffs using the
+      code-reviewer agent; address CRITICAL/HIGH findings.
+      Result: 0 CRITICAL, 1 HIGH (fixed), 2 MEDIUM (fixed), 2 LOW
+      (pre-existing/no action needed).
+      (1, HIGH) `useCombobox`'s `suppressNextAutoOpen` ref-flag hack
+      had a real bug: it only got reset when `query` state actually
+      changed, so committing a value IDENTICAL to what was already
+      typed (e.g. typing the exact option label, then Enter) left the
+      flag stuck `true` forever, silently breaking the listbox's next
+      legitimate reopen. Fixed by removing the reactive `[query]`
+      effect and flag entirely — `onInputChange` now calls open()/
+      close() directly, mirroring combobox.js's own imperative
+      structure exactly instead of faking it reactively. Added a
+      regression test proving the exact scenario now works.
+      (2, MEDIUM) Command Palette's global shortcut guard checked
+      `document.querySelector("dialog[open]")` — page-wide, so any
+      other open Modal/SlideOver (or a second CommandPalette instance)
+      would incorrectly block this palette from opening. Fixed to
+      check this instance's own `dialogRef.current?.open` instead.
+      (3, MEDIUM) `ListItemData.href` is optional in the type even
+      though data-model.md requires it per-item when `interactive` is
+      set — TypeScript can't enforce a per-item requirement keyed on a
+      sibling list-level prop via a clean discriminated union, so added
+      a dev-only `console.warn` (gated on `NODE_ENV !== "production"`)
+      catching the caller error instead.
+      Also found and fixed an unrelated, pre-existing flaky test
+      (`tests/e2e/react-button.spec.ts`, from feature 004, already
+      flagged in memory) while verifying zero regressions: a bare
+      `page.evaluate()`/`querySelector()` with no wait for hydration
+      could return null under heavy concurrent test-suite load — the
+      same class of issue as T022's Command Palette fix. Fixed with an
+      explicit `waitFor({ state: "attached" })` first.
 - [ ] T024 Generate Linux visual regression baselines via `gh workflow run update-snapshots.yml`; verify zero drift via `cmp`; commit only genuinely new baseline files
 - [ ] T025 Update the constitution if any React-specific pattern warrants catalog documentation (judge at ratification time — likely a lighter-touch amendment than 011/012 since this is a packaging port, not new visual/interaction ratification)
 - [ ] T026 Verify CI is green on the actual GitHub Actions run for the final commit before reporting this feature as fully shipped (lesson from features 011/012)

@@ -49,6 +49,32 @@ test.describe("Combobox (React package)", () => {
     await expect(page.getByTestId("combobox-input-listbox")).toBeHidden();
   });
 
+  test("reopens correctly after committing a value that exactly matches the typed query (code review finding)", async ({
+    page,
+  }) => {
+    // Regression guard: an earlier draft used a ref flag to suppress
+    // the listbox reopening right after commit() sets the input's
+    // value — but the flag only got reset when the query STATE
+    // actually changed. Typing the exact option label (so commit's
+    // setQuery(option.value) is a no-op, since it's already that
+    // value) left the flag stuck, silently breaking the listbox for
+    // the very next keystroke. Typing the exact-cased label reproduces
+    // this exactly (unlike the other tests' lowercase "brazil", which
+    // never collided with the option's actual value "Brazil").
+    const input = page.getByTestId("combobox-input");
+    await input.fill("Brazil");
+    await input.press("ArrowDown");
+    await input.press("Enter");
+    await expect(input).toHaveValue("Brazil");
+    await expect(page.getByTestId("combobox-input-listbox")).toBeHidden();
+
+    await input.fill("Canada");
+    await expect(page.getByTestId("combobox-input-listbox")).toBeVisible();
+    const listbox = page.getByTestId("combobox-input-listbox");
+    await expect(listbox.getByRole("option")).toHaveCount(1);
+    await expect(listbox.getByRole("option").first()).toContainText("Canada");
+  });
+
   test("Escape closes the listbox without changing the input's value", async ({ page }) => {
     const input = page.getByTestId("combobox-input");
     await input.fill("brazil");
