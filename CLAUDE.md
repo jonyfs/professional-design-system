@@ -1,17 +1,16 @@
 <!-- SPECKIT START -->
-Active feature: `012-table-primitive`. For technologies, project
+Active feature: `013-react-port-batch-2`. For technologies, project
 structure, shell commands, and other implementation context, read
-`specs/012-table-primitive/plan.md` (and its `research.md`,
-`contracts/`, `quickstart.md` siblings). Features 001-011 are all
-complete and shipped. Feature 012 ships Table as a real static
-component (`.data-table`/`.data-table-header-cell`/`.data-table-cell`),
-closing the "documented but never built" catalog gap discovered during
-feature 011's planning. Unlike Lists, the documented pattern's contrast
-was already AAA-correct — verified, not corrected. Named `.data-table*`,
-not `.table*`: Tailwind's own core `display` plugin defines `.table`/
-`.table-cell`/`.table-row` utilities that would collide, the same class
-of bug feature 011 found for `.list-item`. React port deferred to
-feature 013.
+`specs/013-react-port-batch-2/plan.md` (and its `research.md`,
+`contracts/`, `quickstart.md` siblings). Features 001-012 are all
+complete and shipped. Feature 013 ports the ten remaining static
+components (Pagination, Sidebar, Navbar, Avatar, Card, List, Table,
+Alert, Combobox, Command Palette) to `packages/react/`, mirroring
+feature 009's porting methodology. Combobox/Command Palette get new
+hooks (`useCombobox`, `useCommandPalette`); Command Palette reuses the
+existing `useDialogTrigger` hook verbatim rather than re-deriving
+dialog-close logic. Pure packaging port — no new visual/interaction
+capability beyond each static reference.
 <!-- SPECKIT END -->
 
 ## graphify
