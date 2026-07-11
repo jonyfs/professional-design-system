@@ -1,0 +1,16 @@
+/* Inter variable font (SIL Open Font License), fetched from Google Fonts
+   for the Claude Design sync — this repo's own Tailwind config specifies
+   "Inter" as the primary font-family (shared/design-tokens.ts) but never
+   shipped an actual font file; the design system has always silently
+   fallen back to system-ui/sans-serif in practice. This file exists only
+   so component previews imported into Claude Design render in the
+   intended typeface, matching the ratified token even though the shipped
+   product itself doesn't (a separate, pre-existing gap tracked in
+   .design-sync/NOTES.md, not fixed here). */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./inter.woff2") format("woff2");
+}

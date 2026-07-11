@@ -1,0 +1,32 @@
+{
+  "projectId": "552a5fd8-7f24-4ba5-8aa7-158c6d512d84",
+  "shape": "package",
+  "pkg": "@professional-design-system/react",
+  "globalName": "ProfessionalDesignSystem",
+  "buildCmd": "npm run build --workspace packages/react",
+  "cssEntry": "dist/styles.css",
+  "extraFonts": ["src/fonts/inter.css"],
+  "readmeHeader": ".design-sync/conventions.md",
+  "dtsPropsFor": {
+    "Button": "variant?: \"primary\" | \"secondary\"; onClick?: React.MouseEventHandler<HTMLButtonElement>; disabled?: boolean; type?: \"button\" | \"submit\" | \"reset\"; className?: string; id?: string; style?: React.CSSProperties; children?: React.ReactNode;",
+    "Badge": "variant: \"success\" | \"error\" | \"warning\" | \"neutral\"; onClick?: React.MouseEventHandler<HTMLSpanElement>; className?: string; id?: string; style?: React.CSSProperties; children?: React.ReactNode;",
+    "Checkbox": "label: string; checked?: boolean; defaultChecked?: boolean; onChange?: React.ChangeEventHandler<HTMLInputElement>; disabled?: boolean; name?: string; value?: string; required?: boolean; className?: string; id?: string; style?: React.CSSProperties; children?: React.ReactNode;",
+    "Radio": "label: string; name: string; checked?: boolean; defaultChecked?: boolean; onChange?: React.ChangeEventHandler<HTMLInputElement>; disabled?: boolean; value?: string; wrapperClassName?: string; className?: string; id?: string; style?: React.CSSProperties; children?: React.ReactNode;",
+    "Select": "label: string; error?: string; options: SelectOption[]; value?: string; defaultValue?: string; onChange?: React.ChangeEventHandler<HTMLSelectElement>; disabled?: boolean; required?: boolean; name?: string; className?: string; id?: string; style?: React.CSSProperties; children?: React.ReactNode;",
+    "Toggle": "label: string; checked?: boolean; defaultChecked?: boolean; onChange?: React.ChangeEventHandler<HTMLInputElement>; disabled?: boolean; name?: string; value?: string; className?: string; id?: string; style?: React.CSSProperties;",
+    "TextInput": "label: string; error?: string; value?: string; defaultValue?: string; onChange?: React.ChangeEventHandler<HTMLInputElement>; placeholder?: string; type?: string; disabled?: boolean; required?: boolean; name?: string; readOnly?: boolean; className?: string; id?: string; style?: React.CSSProperties;",
+    "Card": "elevated?: boolean; onClick?: React.MouseEventHandler<HTMLDivElement>; className?: string; id?: string; style?: React.CSSProperties; children?: React.ReactNode;",
+    "Accordion": "items: AccordionItemData[]; exclusive?: boolean; className?: string; id?: string; style?: React.CSSProperties;",
+    "Breadcrumbs": "items: BreadcrumbItem[]; currentLabel: string; className?: string; id?: string; style?: React.CSSProperties;",
+    "Tabs": "tabs: TabData[]; defaultSelectedId?: string; className?: string; id?: string; style?: React.CSSProperties;",
+    "Toast": "variant: \"success\" | \"error\" | \"info\"; message: string; onDismiss: () => void; className?: string; id?: string; style?: React.CSSProperties;",
+    "Modal": "open: boolean; onClose: () => void; title: string; children: React.ReactNode; hasFocusableContent?: boolean; closeButtonTestId?: string; triggerRef?: React.RefObject<HTMLElement | null>; className?: string; id?: string; style?: React.CSSProperties;",
+    "SlideOver": "open: boolean; onClose: () => void; title: string; children: React.ReactNode; hasFocusableContent?: boolean; closeButtonTestId?: string; triggerRef?: React.RefObject<HTMLElement | null>; className?: string; id?: string; style?: React.CSSProperties;"
+  },
+  "overrides": {
+    "Navbar": { "cardMode": "column", "viewport": "1200x700" },
+    "Modal": { "cardMode": "single", "primaryStory": "Default" },
+    "SlideOver": { "cardMode": "single", "primaryStory": "Default" },
+    "Pagination": { "cardMode": "column" }
+  }
+}
