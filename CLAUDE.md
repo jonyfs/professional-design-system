@@ -1,32 +1,23 @@
 <!-- SPECKIT START -->
-Active feature: `016-advanced-interaction-primitives`. For technologies,
-project structure, shell commands, and other implementation context,
-read `specs/016-advanced-interaction-primitives/plan.md` (and its
-`research.md`, `contracts/`, `quickstart.md` siblings). Features 001-015
-are all complete and shipped. Feature 016 ships four new static
-components closing the next tier of gaps from the "Known Catalog Gaps"
-list ratified in constitution v1.12.0: TreeView, Rating (read-only
-display), Menubar, and ColorPicker/ColorInput. Each reuses an
-already-ratified mechanism, confirmed empirically rather than assumed:
-TreeView is recursively nested native `<details>/<summary>` (verified via
-Chromium's real accessibility tree — `<summary>` gets role
-`DisclosureTriangle` with correct independent `expanded` state per
-instance and correct `level` via `<ul>/<li>` nesting — zero ARIA needed);
-Rating's star glyphs reuse the already-ratified `text-warning`/
-`text-neutral-300` tokens as a decorative-only pairing (real value always
-conveyed via visible text, matching Stepper/Timeline's accepted
-decorative-border exception); Menubar composes Dropdown Menu's existing
-`initDropdownMenus()` completely unmodified (its `anchorCounter` pattern
-already handles multiple independent trigger+panel instances) plus one
-new small module (`src/scripts/menubar.js`) adding only the
-roving-tabindex-between-top-level-triggers layer adapted from Tabs;
-ColorInput is a native `<input type="color">` (border/ring styling
-confirmed to apply consistently across all three engines via direct
-Playwright inspection), explicitly rejecting a custom JS color-swatch
-picker as unnecessary complexity for what the native element already
-solves. Date Picker/Calendar, interactive/sortable Data Table, Carousel,
-Chart, Scroll Area, Resizable panels, and HoverCard remain on the Known
-Catalog Gaps list, deliberately deferred.
+Active feature: `018-component-gap-inventory`. Features 001-016 are all
+complete and shipped (constitution v1.13.0). Feature 017
+(`curated-theme-presets`, spec.md only — 40+ pre-built palette themes
+requested by the user) is PARKED at the spec stage, awaiting
+`/speckit-plan`. Feature 018 (`component-gap-inventory`) is a
+research-only deliverable (see `specs/018-component-gap-inventory/
+research.md`): 105 genuine, non-duplicate UI component candidates
+cross-referenced against PrimeReact (78 components) and Mantine (117
+components, both fetched live) plus Ant Design/Radix Primitives, grouped
+into 13 categories with a buildability signal per entry, explicitly
+separated from page-level content-block patterns (pricing tables, hero
+sections, etc. — excluded, matching this project's precedent that
+compositions aren't cataloged as components) and from this catalog's
+existing 47 shipped components + 7 already-recorded Known Catalog Gaps
+(Date Picker/Calendar, interactive Data Table, Carousel, Chart, Scroll
+Area, Resizable panels, HoverCard). Feature 018 ships NO code — it is
+the roadmap input for future features to select curated slices from, the
+same way 014→015→016 each built a slice of a larger research pass. No
+plan/tasks/implementation cycle follows this feature by design.
 <!-- SPECKIT END -->
 
 ## graphify
