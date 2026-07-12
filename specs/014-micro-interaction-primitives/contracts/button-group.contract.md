@@ -71,3 +71,17 @@ Sidebar's prior finding since it's the same two colors). No new tokens.
 
 - FR-007, SC-001, SC-002 → `tests/e2e/button-group.spec.ts` (native
   radio-group keyboard behavior asserted directly, not assumed, per R9)
+
+## Cross-engine note (found via real CI failure, not planning)
+
+What happens on an ArrowRight/ArrowDown press past the LAST enabled
+option in a group containing a disabled option genuinely differs by
+engine — confirmed empirically after a CI-only WebKit failure that never
+reproduced locally on Chromium: Chromium/Firefox wrap the selection back
+to the first enabled option; WebKit's native radio-group navigation
+instead stays on the last enabled option, never wrapping past the
+disabled one. Both are legitimate native behaviors for a `disabled`
+sibling radio — this component has zero JavaScript by design (R2), so
+neither is "fixed"; the test asserts only the one guarantee that holds
+across all three engines (the disabled option itself is never reachable
+via keyboard), not the wrap-around endpoint.
