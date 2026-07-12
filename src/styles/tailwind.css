@@ -529,4 +529,110 @@
   .command-palette-empty {
     @apply px-4 py-2 text-sm text-neutral-600;
   }
+
+  /* Feature 014: Micro-Interaction & Utility Primitives */
+
+  .divider {
+    @apply border-0 border-t border-neutral-200;
+  }
+  .divider-vertical {
+    @apply h-full w-px self-stretch bg-neutral-200;
+  }
+
+  .kbd {
+    @apply inline-flex min-w-[1.5rem] items-center justify-center rounded-sm
+      border border-neutral-300 bg-neutral-50 px-1.5 py-0.5 font-mono text-xs
+      text-neutral-700 shadow-sm;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-md bg-neutral-200 motion-reduce:animate-none;
+  }
+  .skeleton-text {
+    @apply h-4 w-full;
+  }
+  .skeleton-avatar-sm {
+    @apply h-8 w-8 rounded-full;
+  }
+  .skeleton-avatar-lg {
+    @apply h-10 w-10 rounded-full;
+  }
+  .skeleton-card {
+    @apply h-32 w-full rounded-lg;
+  }
+
+  .tooltip-wrapper {
+    @apply relative inline-block;
+  }
+  .tooltip {
+    @apply pointer-events-none absolute z-50 whitespace-nowrap rounded-md
+      bg-neutral-900 px-2 py-1 text-xs text-white opacity-0 shadow-sm
+      transition-opacity delay-300 duration-150;
+  }
+  .tooltip-top {
+    position: fixed;
+    bottom: anchor(top);
+    left: anchor(center);
+    translate: -50% -6px;
+  }
+  .tooltip-wrapper:hover .tooltip,
+  .tooltip-wrapper:focus-within .tooltip {
+    @apply opacity-100;
+  }
+  /* CSS Anchor Positioning requires a unique anchor-name per trigger/
+     tooltip pairing (the same multi-instance collision class Dropdown
+     Menu's JS avoids via a runtime counter) — but Tooltip ships with
+     zero JavaScript (research.md R4), and this project's CSP
+     (`style-src 'self'`, no `unsafe-inline`) blocks inline `style="..."`
+     HTML attributes outright (confirmed empirically: a real, silent
+     failure caught only by directly checking the computed `anchor-name`
+     value and console for CSP violation messages, not by any test that
+     only asserted visibility/opacity). A pre-declared, numbered set of
+     class pairs — same-origin stylesheet rules, unaffected by style-src
+     — is the zero-JS-compatible fix; a page needing more concurrent
+     Tooltip instances than this set covers should add another numbered
+     pair here, the same "extend the numbered set" pattern already used
+     for Avatar's sm/lg sizes. */
+  .tooltip-anchor-1 { anchor-name: --tooltip-anchor-1; }
+  .tooltip-target-1 { position-anchor: --tooltip-anchor-1; }
+  .tooltip-anchor-2 { anchor-name: --tooltip-anchor-2; }
+  .tooltip-target-2 { position-anchor: --tooltip-anchor-2; }
+  .tooltip-anchor-3 { anchor-name: --tooltip-anchor-3; }
+  .tooltip-target-3 { position-anchor: --tooltip-anchor-3; }
+  .tooltip-anchor-4 { anchor-name: --tooltip-anchor-4; }
+  .tooltip-target-4 { position-anchor: --tooltip-anchor-4; }
+
+  .progress-track {
+    @apply h-2 w-full overflow-hidden rounded-full bg-neutral-200;
+  }
+  .progress-fill {
+    @apply h-full rounded-full bg-brand-dark transition-[width] duration-300;
+  }
+  .progress-fill-indeterminate {
+    @apply h-full w-1/3 animate-pulse rounded-full bg-brand-dark
+      motion-reduce:animate-none;
+  }
+
+  .button-group {
+    @apply inline-flex rounded-md shadow-sm;
+  }
+  .button-group-segment {
+    @apply relative -ml-px inline-flex cursor-pointer items-center px-3 py-2
+      text-sm font-semibold text-neutral-700 ring-1 ring-inset ring-neutral-300
+      first:ml-0 first:rounded-l-md last:rounded-r-md hover:bg-neutral-50;
+  }
+  input:checked + .button-group-segment {
+    @apply z-10 bg-brand-dark text-white ring-brand-dark;
+  }
+  input:focus-visible + .button-group-segment {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+  input:disabled + .button-group-segment {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .popover-panel {
+    @apply w-72 rounded-md border border-neutral-300 bg-white p-4 shadow-lg;
+    position-try-fallbacks: flip-block, flip-inline;
+  }
 }

@@ -43,6 +43,7 @@ const BASE_TOKENS = {
   "neutral-700": "#374151",
   "neutral-600": "#4B5563",
   "neutral-300": "#D1D5DB",
+  "neutral-200": "#E5E7EB",
   "neutral-500": "#6B7280",
   "neutral-100": "#F3F4F6",
   "neutral-50": "#F9FAFB",
@@ -191,6 +192,21 @@ const PAIRINGS = [
     bg: "white",
     threshold: AAA_NORMAL,
   },
+  {
+    // Feature 014 (research.md R4) — Tooltip's label text, verified rather
+    // than assumed from Toast/Alert's unrelated dark-surface pairings.
+    name: "Tooltip label text (text-white on bg-neutral-900)",
+    fg: "white",
+    bg: "neutral-900",
+    threshold: AAA_NORMAL,
+  },
+  {
+    // Feature 014 (research.md R3) — Kbd's key-label text.
+    name: "Kbd text (text-neutral-700 on bg-neutral-50)",
+    fg: "neutral-700",
+    bg: "neutral-50",
+    threshold: AAA_NORMAL,
+  },
 ];
 
 // Non-text UI component boundaries (WCAG 1.4.11, 3:1) — e.g. a control's
@@ -260,6 +276,16 @@ const RING_PAIRINGS = [
     name: "close-icon-btn icon fill, hover (text-neutral-600 vs white page)",
     fg: "neutral-600",
     bg: "white",
+    threshold: NON_TEXT_UI_AA,
+  },
+  {
+    // Feature 014 (research.md R1) — Progress's fill against its own
+    // track, not against the page. Not a literal `ring-*` class, but the
+    // identical WCAG 1.4.11 non-text-boundary check applies to any two
+    // adjacent solid UI-component colors that must be distinguishable.
+    name: "Progress fill vs track (bg-brand-dark vs bg-neutral-200)",
+    fg: "brand-dark",
+    bg: "neutral-200",
     threshold: NON_TEXT_UI_AA,
   },
 ];

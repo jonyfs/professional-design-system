@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Button Group — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Button Group</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Zero-JavaScript segmented control — native radio inputs sharing one
+    <code>name</code>, styled as connected button segments.
+  </p>
+
+  <div data-testid="button-group-demo-wrapper" class="mt-8 max-w-md">
+    <div data-testid="button-group" class="button-group" role="group" aria-label="View mode">
+      <input
+        type="radio"
+        name="view-mode"
+        id="vm-list"
+        data-testid="vm-list"
+        value="list"
+        class="sr-only"
+        checked
+      />
+      <label for="vm-list" data-testid="vm-list-label" class="button-group-segment">List</label>
+
+      <input
+        type="radio"
+        name="view-mode"
+        id="vm-grid"
+        data-testid="vm-grid"
+        value="grid"
+        class="sr-only"
+      />
+      <label for="vm-grid" data-testid="vm-grid-label" class="button-group-segment">Grid</label>
+
+      <input
+        type="radio"
+        name="view-mode"
+        id="vm-table"
+        data-testid="vm-table"
+        value="table"
+        class="sr-only"
+        disabled
+      />
+      <label for="vm-table" data-testid="vm-table-label" class="button-group-segment">Table</label>
+    </div>
+  </div>
+</body>
+</html>

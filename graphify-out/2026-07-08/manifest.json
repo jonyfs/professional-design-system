@@ -175,29 +175,29 @@
     "semantic_hash": "eba6943b2a2f6407162ae12e0218bdac"
   },
   "CLAUDE.md": {
-    "mtime": 1783544230.202002,
-    "ast_hash": "716d4a3de8db12c042eaa69ce48e5893",
+    "mtime": 1783563801.8733675,
+    "ast_hash": "0de5dcddeb2a45f798d19b4c308fe466",
     "semantic_hash": ""
   },
   ".remember/tmp/last-ndc.ts": {
-    "mtime": 1783540423.9176133,
-    "ast_hash": "f10cdf447a812f0f1edf0852cfdbf408",
+    "mtime": 1783554612.0843189,
+    "ast_hash": "94aa4ec8ac06fe6e70f84268bcc020c1",
     "semantic_hash": ""
   },
   ".remember/tmp/last-save.json": {
-    "mtime": 1783540423.770819,
-    "ast_hash": "36c1a2cd0714a32592420a70d2e867f3",
+    "mtime": 1783556178.131601,
+    "ast_hash": "3e7ad87fc6c985a6d7acac3d3d359747",
     "semantic_hash": ""
   },
   ".specify/feature.json": {
-    "mtime": 1783540785.7709515,
-    "ast_hash": "c510760cf84c1605ebae4173941d4f72",
+    "mtime": 1783563440.0392973,
+    "ast_hash": "7b6b25d88c396920eb42722bc354df77",
     "semantic_hash": ""
   },
   ".remember/now.md": {
-    "mtime": 1783540447.545909,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+    "mtime": 1783556178.0287714,
+    "ast_hash": "d3ccb3266b69ab23be51778ba8994e81",
+    "semantic_hash": ""
   },
   "specs/001-primitive-components/checklists/requirements.md": {
     "mtime": 1783525563.3495848,
@@ -230,8 +230,8 @@
     "semantic_hash": ""
   },
   ".remember/today-2026-07-08.md": {
-    "mtime": 1783540447.5456088,
-    "ast_hash": "e2444110688189918c2ee6b332a35411",
+    "mtime": 1783554630.4646792,
+    "ast_hash": "be76d7af7f63b371bde5063382484770",
     "semantic_hash": ""
   },
   "specs/001-primitive-components/contracts/badge.contract.md": {
@@ -295,13 +295,13 @@
     "semantic_hash": ""
   },
   "scripts/audit-tokens.mjs": {
-    "mtime": 1783528195.5248463,
-    "ast_hash": "a7c82f91e6e2f54ac0ab4978bfc5835f",
+    "mtime": 1783556190.1889958,
+    "ast_hash": "e766cfdd14753158840a4666e9b04f9c",
     "semantic_hash": ""
   },
   "scripts/check-contrast.mjs": {
-    "mtime": 1783544719.0927866,
-    "ast_hash": "ae01b758345a97bde249e17a45698938",
+    "mtime": 1783556439.1520894,
+    "ast_hash": "d65b8d8429a6f17b6c8c326b8927e1e8",
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
@@ -310,8 +310,8 @@
     "semantic_hash": ""
   },
   "tests/e2e/a11y-helper.ts": {
-    "mtime": 1783526034.8943958,
-    "ast_hash": "bf7c3c28b34154733d4131aa580f4783",
+    "mtime": 1783559934.3712566,
+    "ast_hash": "cb71d3dd5a3777b2603407648a299fa5",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -320,33 +320,33 @@
     "semantic_hash": ""
   },
   "vite.config.ts": {
-    "mtime": 1783546126.1952748,
-    "ast_hash": "07d751fe341dc047f3c963e61dbcb2ab",
+    "mtime": 1783557404.622571,
+    "ast_hash": "b0011ac6623ec692f9a4e0152dec0dde",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783546221.3786016,
-    "ast_hash": "994e8569a7382975c21b7c79bcfee606",
+    "mtime": 1783559035.719576,
+    "ast_hash": "494694a7a6da1d4a01bd7503bc6731fc",
     "semantic_hash": ""
   },
   "src/components/badge/badge.html": {
-    "mtime": 1783545529.0946145,
-    "ast_hash": "3a20e227b878f77501fa0887c2315198",
+    "mtime": 1783559035.7366128,
+    "ast_hash": "d6be0774638941351cd206683604180a",
     "semantic_hash": ""
   },
   "src/components/button/button.html": {
-    "mtime": 1783528117.3730001,
-    "ast_hash": "3661bfe3c85f8335e633f341d290bc48",
+    "mtime": 1783559035.7539535,
+    "ast_hash": "f12b8d5f96209312556b3ce7b1964db8",
     "semantic_hash": ""
   },
   "src/components/checkbox/checkbox.html": {
-    "mtime": 1783528154.6641676,
-    "ast_hash": "7936c47cd93ab967be931cca9475ba01",
+    "mtime": 1783559035.7712708,
+    "ast_hash": "2921a690caabcd6cfaf98b2f56a28eb0",
     "semantic_hash": ""
   },
   "src/components/text-input/text-input.html": {
-    "mtime": 1783528073.1258695,
-    "ast_hash": "debd932e7fe69a4387f4646184aeeaf7",
+    "mtime": 1783559035.8664305,
+    "ast_hash": "16c73095084633ba80309e4932a02440",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts": {
@@ -795,427 +795,427 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783545057.346259,
-    "ast_hash": "53a2b342510858502963130b5ba84b0a",
+    "mtime": 1783559272.7494364,
+    "ast_hash": "6da7f5e1f7e9df0b180d784398df0bd6",
     "semantic_hash": ""
   },
   "tests/e2e/badge.spec.ts-snapshots/badge-variants-chromium-1024-linux.png": {
-    "mtime": 1783532597.3142068,
+    "mtime": 1783548328.3607893,
     "ast_hash": "1c666cc2a9d79cad11676e87c6bdd0c1",
     "semantic_hash": ""
   },
   "tests/e2e/badge.spec.ts-snapshots/badge-variants-chromium-1440-linux.png": {
-    "mtime": 1783532597.3150852,
+    "mtime": 1783548328.3614547,
     "ast_hash": "67a4d8f7719a3dd7d7c9a20baed48dc7",
     "semantic_hash": ""
   },
   "tests/e2e/badge.spec.ts-snapshots/badge-variants-chromium-320-linux.png": {
-    "mtime": 1783532597.3163617,
+    "mtime": 1783548328.3621428,
     "ast_hash": "756c143cbb05bd0b200727f59b6ce1f9",
     "semantic_hash": ""
   },
   "tests/e2e/badge.spec.ts-snapshots/badge-variants-chromium-768-linux.png": {
-    "mtime": 1783532597.3172176,
+    "mtime": 1783548328.362902,
     "ast_hash": "47f906b8fe2eb00fe2fd9811ddcfa3bf",
     "semantic_hash": ""
   },
   "tests/e2e/badge.spec.ts-snapshots/badge-variants-firefox-1440-linux.png": {
-    "mtime": 1783532597.3183076,
+    "mtime": 1783548328.3636155,
     "ast_hash": "78061c313b2982607884960f763a1eb7",
     "semantic_hash": ""
   },
   "tests/e2e/badge.spec.ts-snapshots/badge-variants-webkit-1440-linux.png": {
-    "mtime": 1783532597.3193614,
+    "mtime": 1783548328.3643017,
     "ast_hash": "0c17d728a3d0b2110f6909731ff9f5a5",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-1024-linux.png": {
-    "mtime": 1783532597.3244262,
+    "mtime": 1783548328.3726134,
     "ast_hash": "bc125a906a075471eefbe50dbd3f5e00",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-1440-linux.png": {
-    "mtime": 1783532597.3252165,
+    "mtime": 1783548328.3733413,
     "ast_hash": "bc125a906a075471eefbe50dbd3f5e00",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-320-linux.png": {
-    "mtime": 1783532597.3260372,
+    "mtime": 1783548328.374056,
     "ast_hash": "bc125a906a075471eefbe50dbd3f5e00",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-default-chromium-768-linux.png": {
-    "mtime": 1783532597.3267918,
+    "mtime": 1783548328.3748648,
     "ast_hash": "bc125a906a075471eefbe50dbd3f5e00",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-default-firefox-1440-linux.png": {
-    "mtime": 1783532597.3281748,
+    "mtime": 1783548328.3755548,
     "ast_hash": "4e30fc7093b4cbc87c71a0fb118555e6",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-default-webkit-1440-linux.png": {
-    "mtime": 1783532597.329679,
+    "mtime": 1783548328.3764205,
     "ast_hash": "b68b3e6d8a64f93a4fcd974f75919e0c",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-1024-linux.png": {
-    "mtime": 1783532597.3306785,
+    "mtime": 1783548328.3772016,
     "ast_hash": "ecf9d0bdd0c15d418a47b742e8565477",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-1440-linux.png": {
-    "mtime": 1783532597.3319616,
+    "mtime": 1783548328.3779001,
     "ast_hash": "ecf9d0bdd0c15d418a47b742e8565477",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-320-linux.png": {
-    "mtime": 1783532597.3328857,
+    "mtime": 1783548328.378605,
     "ast_hash": "f67aab4db61abec880bff14f75503378",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-chromium-768-linux.png": {
-    "mtime": 1783532597.3336573,
+    "mtime": 1783548328.3793085,
     "ast_hash": "ecf9d0bdd0c15d418a47b742e8565477",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-firefox-1440-linux.png": {
-    "mtime": 1783532597.3343208,
+    "mtime": 1783548328.3799882,
     "ast_hash": "4ca522ae0d58063d8968f09562c10fc7",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-disabled-webkit-1440-linux.png": {
-    "mtime": 1783532597.3349915,
+    "mtime": 1783548328.3806512,
     "ast_hash": "d8973f67c51d30780469f0839405863f",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-1024-linux.png": {
-    "mtime": 1783532597.335943,
+    "mtime": 1783548328.38133,
     "ast_hash": "d0ec3a7af338702234dedc86fe395622",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-1440-linux.png": {
-    "mtime": 1783532597.3368351,
+    "mtime": 1783548328.3819318,
     "ast_hash": "d0ec3a7af338702234dedc86fe395622",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-320-linux.png": {
-    "mtime": 1783532597.3375547,
+    "mtime": 1783548328.3825936,
     "ast_hash": "d0ec3a7af338702234dedc86fe395622",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-chromium-768-linux.png": {
-    "mtime": 1783532597.3382373,
+    "mtime": 1783548328.383321,
     "ast_hash": "d0ec3a7af338702234dedc86fe395622",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-firefox-1440-linux.png": {
-    "mtime": 1783532597.3388681,
+    "mtime": 1783548328.3840272,
     "ast_hash": "4e30fc7093b4cbc87c71a0fb118555e6",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-focus-visible-webkit-1440-linux.png": {
-    "mtime": 1783532597.3396592,
+    "mtime": 1783548328.3847346,
     "ast_hash": "393e0ccd911b5ee9dab78eeebb239499",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-1024-linux.png": {
-    "mtime": 1783532597.3404496,
+    "mtime": 1783548328.3854191,
     "ast_hash": "cc998da6a4f954368336e43ffd0c4d8a",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-1440-linux.png": {
-    "mtime": 1783532597.3413048,
+    "mtime": 1783548328.386087,
     "ast_hash": "cc998da6a4f954368336e43ffd0c4d8a",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-320-linux.png": {
-    "mtime": 1783532597.3422198,
+    "mtime": 1783548328.3867917,
     "ast_hash": "cc998da6a4f954368336e43ffd0c4d8a",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-hover-chromium-768-linux.png": {
-    "mtime": 1783532597.342991,
+    "mtime": 1783548328.3875113,
     "ast_hash": "cc998da6a4f954368336e43ffd0c4d8a",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-hover-firefox-1440-linux.png": {
-    "mtime": 1783532597.3436751,
+    "mtime": 1783548328.3881872,
     "ast_hash": "f1dc74526f3cb67d410ab76364d29466",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-primary-hover-webkit-1440-linux.png": {
-    "mtime": 1783532597.3444128,
+    "mtime": 1783548328.3888702,
     "ast_hash": "1e1f5ab1b6a37147789698a7a33c954f",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-1024-linux.png": {
-    "mtime": 1783532597.3449762,
+    "mtime": 1783548328.389585,
     "ast_hash": "fbfa6c12e83e10a26bdaef00cdba8bd2",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-1440-linux.png": {
-    "mtime": 1783532597.3455555,
+    "mtime": 1783548328.3903384,
     "ast_hash": "fbfa6c12e83e10a26bdaef00cdba8bd2",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-320-linux.png": {
-    "mtime": 1783532597.3461037,
+    "mtime": 1783548328.391004,
     "ast_hash": "fbfa6c12e83e10a26bdaef00cdba8bd2",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-secondary-default-chromium-768-linux.png": {
-    "mtime": 1783532597.3466241,
+    "mtime": 1783548328.3916109,
     "ast_hash": "fbfa6c12e83e10a26bdaef00cdba8bd2",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-secondary-default-firefox-1440-linux.png": {
-    "mtime": 1783532597.347168,
+    "mtime": 1783548328.392199,
     "ast_hash": "2a1766009a91b71ee6c90a0b0bf78608",
     "semantic_hash": ""
   },
   "tests/e2e/button.spec.ts-snapshots/button-secondary-default-webkit-1440-linux.png": {
-    "mtime": 1783532597.3477082,
+    "mtime": 1783548328.392879,
     "ast_hash": "53fa05d0910c87e0b2dea651f4260fa2",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-checked-chromium-1024-linux.png": {
-    "mtime": 1783532597.263416,
+    "mtime": 1783548328.279846,
     "ast_hash": "b46f55c28b5c7c681fa060524b03a398",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-checked-chromium-1440-linux.png": {
-    "mtime": 1783532597.2647898,
+    "mtime": 1783548328.2802148,
     "ast_hash": "b46f55c28b5c7c681fa060524b03a398",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-checked-chromium-320-linux.png": {
-    "mtime": 1783532597.2657712,
+    "mtime": 1783548328.280705,
     "ast_hash": "0979637367a0b4ed1ec4a6d33cf17409",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-checked-chromium-768-linux.png": {
-    "mtime": 1783532597.2664158,
+    "mtime": 1783548328.281066,
     "ast_hash": "b46f55c28b5c7c681fa060524b03a398",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-checked-firefox-1440-linux.png": {
-    "mtime": 1783532597.2673688,
+    "mtime": 1783548328.2814543,
     "ast_hash": "be775ff45b1d9c7104c72cd2e9563e95",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-checked-webkit-1440-linux.png": {
-    "mtime": 1783532597.2683587,
+    "mtime": 1783548328.2818677,
     "ast_hash": "4dbf50f7261a7e3b83ffc3ad0266a5b5",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-1024-linux.png": {
-    "mtime": 1783532597.2693713,
+    "mtime": 1783548328.2822852,
     "ast_hash": "10b9fe0613e9bf2d7412484def6b5928",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-1440-linux.png": {
-    "mtime": 1783532597.2703066,
+    "mtime": 1783548328.2826915,
     "ast_hash": "10b9fe0613e9bf2d7412484def6b5928",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-320-linux.png": {
-    "mtime": 1783532597.2710037,
+    "mtime": 1783548328.2831364,
     "ast_hash": "fec8e422a0ec622efde8b4c0b106aecb",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-chromium-768-linux.png": {
-    "mtime": 1783532597.2717972,
+    "mtime": 1783548328.2835388,
     "ast_hash": "10b9fe0613e9bf2d7412484def6b5928",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-firefox-1440-linux.png": {
-    "mtime": 1783532597.272517,
+    "mtime": 1783548328.2839017,
     "ast_hash": "7268ece5f5ed07ba4f983bf33950b747",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-disabled-webkit-1440-linux.png": {
-    "mtime": 1783532597.2733777,
+    "mtime": 1783548328.2843347,
     "ast_hash": "d71f867325e10e759b086ce347a774ed",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-chromium-1024-linux.png": {
-    "mtime": 1783532597.273991,
+    "mtime": 1783548328.284702,
     "ast_hash": "8e03dd9ca57a502b7a262850acef5e5d",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-chromium-1440-linux.png": {
-    "mtime": 1783532597.274627,
+    "mtime": 1783548328.285062,
     "ast_hash": "8e03dd9ca57a502b7a262850acef5e5d",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-chromium-320-linux.png": {
-    "mtime": 1783532597.2753413,
+    "mtime": 1783548328.285449,
     "ast_hash": "1c4690d8b6df241bbaaf55446a014a08",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-chromium-768-linux.png": {
-    "mtime": 1783532597.2759125,
+    "mtime": 1783548328.2858026,
     "ast_hash": "8e03dd9ca57a502b7a262850acef5e5d",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-firefox-1440-linux.png": {
-    "mtime": 1783532597.2765198,
+    "mtime": 1783548328.2862818,
     "ast_hash": "73df5c03fd88e1f58d836f75e31dcfb0",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-focus-visible-webkit-1440-linux.png": {
-    "mtime": 1783532597.277164,
+    "mtime": 1783548328.2867093,
     "ast_hash": "a762aa7fa830f4a8a11db5a5417c6ac1",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-chromium-1024-linux.png": {
-    "mtime": 1783532597.2778485,
+    "mtime": 1783548328.2872357,
     "ast_hash": "e08440d6bd13cea00fef1fa37df41d24",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-chromium-1440-linux.png": {
-    "mtime": 1783532597.27891,
+    "mtime": 1783548328.287661,
     "ast_hash": "e08440d6bd13cea00fef1fa37df41d24",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-chromium-320-linux.png": {
-    "mtime": 1783532597.2798572,
+    "mtime": 1783548328.2881484,
     "ast_hash": "d7731c70b406b83d62033806c8de0e08",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-chromium-768-linux.png": {
-    "mtime": 1783532597.2808642,
+    "mtime": 1783548328.2885735,
     "ast_hash": "e08440d6bd13cea00fef1fa37df41d24",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-firefox-1440-linux.png": {
-    "mtime": 1783532597.2819061,
+    "mtime": 1783548328.288973,
     "ast_hash": "1b8638ebdcbee15f3b7963fe95af83f3",
     "semantic_hash": ""
   },
   "tests/e2e/checkbox.spec.ts-snapshots/checkbox-unchecked-webkit-1440-linux.png": {
-    "mtime": 1783532597.2836733,
+    "mtime": 1783548328.2894704,
     "ast_hash": "ef34eddd47acc759b3877ec183bafb62",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-default-chromium-1024-linux.png": {
-    "mtime": 1783532597.2918544,
+    "mtime": 1783548328.3357763,
     "ast_hash": "8adc77d11c751a63f9a19ef745645b07",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-default-chromium-1440-linux.png": {
-    "mtime": 1783532597.2932098,
+    "mtime": 1783548328.3365328,
     "ast_hash": "8adc77d11c751a63f9a19ef745645b07",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-default-chromium-320-linux.png": {
-    "mtime": 1783532597.294271,
+    "mtime": 1783548328.3373773,
     "ast_hash": "6736638991b0e419e513cf932c8a43a7",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-default-chromium-768-linux.png": {
-    "mtime": 1783532597.295094,
+    "mtime": 1783548328.338176,
     "ast_hash": "8adc77d11c751a63f9a19ef745645b07",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-default-firefox-1440-linux.png": {
-    "mtime": 1783532597.2958612,
+    "mtime": 1783548328.338936,
     "ast_hash": "63ea7591284021ffae34fbee1773375a",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-default-webkit-1440-linux.png": {
-    "mtime": 1783532597.296753,
+    "mtime": 1783548328.3396335,
     "ast_hash": "8b9d249d77d1c2be0a60b3656799ff62",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-disabled-chromium-1024-linux.png": {
-    "mtime": 1783532597.2973375,
+    "mtime": 1783548328.3403108,
     "ast_hash": "32f37743fb1fa74f4afe49d379356cc6",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-disabled-chromium-1440-linux.png": {
-    "mtime": 1783532597.2981462,
+    "mtime": 1783548328.3410265,
     "ast_hash": "32f37743fb1fa74f4afe49d379356cc6",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-disabled-chromium-320-linux.png": {
-    "mtime": 1783532597.2989879,
+    "mtime": 1783548328.3418517,
     "ast_hash": "8fd6daa82adaa3e215df8c414549be26",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-disabled-chromium-768-linux.png": {
-    "mtime": 1783532597.2998238,
+    "mtime": 1783548328.3430388,
     "ast_hash": "32f37743fb1fa74f4afe49d379356cc6",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-disabled-firefox-1440-linux.png": {
-    "mtime": 1783532597.3005886,
+    "mtime": 1783548328.3438258,
     "ast_hash": "d9f09853012b86e302aa0aa4a5fc74d7",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-disabled-webkit-1440-linux.png": {
-    "mtime": 1783532597.301203,
+    "mtime": 1783548328.3446727,
     "ast_hash": "f610d9d67829b4430ba3759362c86825",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-error-chromium-1024-linux.png": {
-    "mtime": 1783532597.302144,
+    "mtime": 1783548328.3455293,
     "ast_hash": "ca5ced5e68a80f93a58794bcb84fb1fe",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-error-chromium-1440-linux.png": {
-    "mtime": 1783532597.3027909,
+    "mtime": 1783548328.3462846,
     "ast_hash": "ca5ced5e68a80f93a58794bcb84fb1fe",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-error-chromium-320-linux.png": {
-    "mtime": 1783532597.30335,
+    "mtime": 1783548328.3470008,
     "ast_hash": "2dc0df9bf76d0b1eab3f92e674617fc4",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-error-chromium-768-linux.png": {
-    "mtime": 1783532597.3039463,
+    "mtime": 1783548328.3477755,
     "ast_hash": "ca5ced5e68a80f93a58794bcb84fb1fe",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-error-firefox-1440-linux.png": {
-    "mtime": 1783532597.3044896,
+    "mtime": 1783548328.3485305,
     "ast_hash": "bc865b22b60f996c595ce15e81501042",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-error-webkit-1440-linux.png": {
-    "mtime": 1783532597.3050723,
+    "mtime": 1783548328.3492913,
     "ast_hash": "309249ce8a4fc1b243a9aaee10a26246",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-focus-chromium-1024-linux.png": {
-    "mtime": 1783532597.305641,
+    "mtime": 1783548328.3500686,
     "ast_hash": "324cb2510dd3480ee0f905499d80638a",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-focus-chromium-1440-linux.png": {
-    "mtime": 1783532597.3062732,
+    "mtime": 1783548328.3507907,
     "ast_hash": "324cb2510dd3480ee0f905499d80638a",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-focus-chromium-320-linux.png": {
-    "mtime": 1783532597.3068554,
+    "mtime": 1783548328.3516557,
     "ast_hash": "38dd83374409d805d49e3d630303bf01",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-focus-chromium-768-linux.png": {
-    "mtime": 1783532597.3076394,
+    "mtime": 1783548328.3523934,
     "ast_hash": "324cb2510dd3480ee0f905499d80638a",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-focus-firefox-1440-linux.png": {
-    "mtime": 1783532597.3083744,
+    "mtime": 1783548328.3531544,
     "ast_hash": "b6d3b198eb71230b2654a5e1e3b30190",
     "semantic_hash": ""
   },
   "tests/e2e/text-input.spec.ts-snapshots/text-input-focus-webkit-1440-linux.png": {
-    "mtime": 1783532597.3090546,
+    "mtime": 1783548328.3538728,
     "ast_hash": "4179cf9510f27ea282b9184e582e9f28",
     "semantic_hash": ""
   },
@@ -1240,13 +1240,13 @@
     "semantic_hash": ""
   },
   "specs/002-form-primitives-round-2/contracts/select.contract.md": {
-    "mtime": 1783544176.4885333,
-    "ast_hash": "3e0748ec83c4c5ff29f91aac19dba212",
+    "mtime": 1783547680.227848,
+    "ast_hash": "7ac666d0e0963d4bbeea128a55e0e2dc",
     "semantic_hash": ""
   },
   "specs/002-form-primitives-round-2/contracts/toggle.contract.md": {
-    "mtime": 1783545667.6344337,
-    "ast_hash": "1212b37e2270491bf1b3bb8d4f3808b0",
+    "mtime": 1783547773.8471177,
+    "ast_hash": "65afc1b5125005e24c159973b0913f9c",
     "semantic_hash": ""
   },
   "specs/002-form-primitives-round-2/data-model.md": {
@@ -1265,13 +1265,13 @@
     "semantic_hash": ""
   },
   "specs/002-form-primitives-round-2/research.md": {
-    "mtime": 1783545648.9435284,
-    "ast_hash": "04d60f5b1179e99071913cec796eae01",
+    "mtime": 1783547697.317543,
+    "ast_hash": "47c77bca665e406325320bc5232aaa76",
     "semantic_hash": ""
   },
   "specs/002-form-primitives-round-2/tasks.md": {
-    "mtime": 1783546624.0821786,
-    "ast_hash": "4d7812785bae228b0692a8b1786ea9b8",
+    "mtime": 1783554707.1202087,
+    "ast_hash": "5ccf51c9b137c55c7e0ecd011ce4b859",
     "semantic_hash": ""
   },
   "tests/e2e/radio.spec.ts": {
@@ -1280,18 +1280,18 @@
     "semantic_hash": ""
   },
   "src/components/radio/radio.html": {
-    "mtime": 1783546200.5895023,
-    "ast_hash": "07b83968bde98588bc5f9e30f36eebcd",
+    "mtime": 1783559035.8092668,
+    "ast_hash": "346c0fe1af6ca2fe7de7eb4e53f0ba53",
     "semantic_hash": ""
   },
   "src/components/select/select.html": {
-    "mtime": 1783546481.564529,
-    "ast_hash": "ddf1a076825d4594d3449c54bfbef33e",
+    "mtime": 1783559035.8302348,
+    "ast_hash": "32c09721b16beee637c71c930d7c9097",
     "semantic_hash": ""
   },
   "src/components/toggle/toggle.html": {
-    "mtime": 1783546132.306209,
-    "ast_hash": "fb234bc2912f0c6637c65d604628ef37",
+    "mtime": 1783559035.901559,
+    "ast_hash": "04c96866bc76e89790a819ed803823bf",
     "semantic_hash": ""
   },
   "tests/e2e/radio.spec.ts-snapshots/radio-checked-chromium-1024-darwin.png": {
@@ -1537,6 +1537,1046 @@
   "tests/e2e/select.spec.ts-snapshots/select-focus-webkit-1440-darwin.png": {
     "mtime": 1783546656.30226,
     "ast_hash": "2620fb501fb6a6759d70a7f84e3b2d98",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts": {
+    "mtime": 1783546770.385548,
+    "ast_hash": "d0c3a68193141ecd60453e446e7d3065",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-1024-darwin.png": {
+    "mtime": 1783547936.6383011,
+    "ast_hash": "7f640c942222cc09e5fbf43ce911c987",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-1440-darwin.png": {
+    "mtime": 1783547936.6521378,
+    "ast_hash": "7f640c942222cc09e5fbf43ce911c987",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-320-darwin.png": {
+    "mtime": 1783547936.635721,
+    "ast_hash": "f4993aa654768064c6082ee781013ae3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-768-darwin.png": {
+    "mtime": 1783547936.6396837,
+    "ast_hash": "7f640c942222cc09e5fbf43ce911c987",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-firefox-1440-darwin.png": {
+    "mtime": 1783547939.4621446,
+    "ast_hash": "a618ac3ca79b889027bcd03e1da00962",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-webkit-1440-darwin.png": {
+    "mtime": 1783547937.6083243,
+    "ast_hash": "b85353f8ef72c3d6a1c93b0821574f9f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0839581,
+    "ast_hash": "43fbe046ce13024935d43596ddfc3aae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-1440-darwin.png": {
+    "mtime": 1783546899.5823705,
+    "ast_hash": "43fbe046ce13024935d43596ddfc3aae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-320-darwin.png": {
+    "mtime": 1783546889.0423186,
+    "ast_hash": "c9a4b0046041a5f7770ffdcf05755591",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-768-darwin.png": {
+    "mtime": 1783546892.0158198,
+    "ast_hash": "43fbe046ce13024935d43596ddfc3aae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-firefox-1440-darwin.png": {
+    "mtime": 1783546906.9802585,
+    "ast_hash": "89e408e7b2446475dfba6a918c025da3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-webkit-1440-darwin.png": {
+    "mtime": 1783546912.7523215,
+    "ast_hash": "0e057ae75728499cad123b09cbaeea2b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0346997,
+    "ast_hash": "072c3dc6ffb8b150cd66c74dce93aa2e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-1440-darwin.png": {
+    "mtime": 1783546897.9788618,
+    "ast_hash": "072c3dc6ffb8b150cd66c74dce93aa2e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-320-darwin.png": {
+    "mtime": 1783546888.9860604,
+    "ast_hash": "84a18a4286fd302e548d09ead7798a23",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-768-darwin.png": {
+    "mtime": 1783546891.965425,
+    "ast_hash": "072c3dc6ffb8b150cd66c74dce93aa2e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-firefox-1440-darwin.png": {
+    "mtime": 1783546910.8100085,
+    "ast_hash": "14fdac98f957b34863c3a4791ffe83cc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-webkit-1440-darwin.png": {
+    "mtime": 1783546911.91182,
+    "ast_hash": "5b620acdb88f369ff68e847e57793992",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-1024-darwin.png": {
+    "mtime": 1783546895.0331159,
+    "ast_hash": "fca40229ab0f59a64e66a0212760ade5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-1440-darwin.png": {
+    "mtime": 1783546897.9709117,
+    "ast_hash": "fca40229ab0f59a64e66a0212760ade5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-320-darwin.png": {
+    "mtime": 1783546888.9712873,
+    "ast_hash": "15f9e9ea70fe5b6242f403cb0041e12b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-768-darwin.png": {
+    "mtime": 1783546891.9823437,
+    "ast_hash": "fca40229ab0f59a64e66a0212760ade5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-firefox-1440-darwin.png": {
+    "mtime": 1783546905.358049,
+    "ast_hash": "25b9a458d31ad1ffbd39d5bddd9b1463",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-webkit-1440-darwin.png": {
+    "mtime": 1783546911.9153721,
+    "ast_hash": "d06cd7b9bd1a6350f335ff61dae12e23",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-checked-chromium-1024-linux.png": {
+    "mtime": 1783548328.400191,
+    "ast_hash": "cb1821e2abff334d08af804dcbe5348c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-checked-chromium-1440-linux.png": {
+    "mtime": 1783548328.400665,
+    "ast_hash": "26fc3a5e955fe3cd2b10cd261ce2fa4b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-checked-chromium-320-linux.png": {
+    "mtime": 1783548328.401122,
+    "ast_hash": "b28b6bd45184bb66b9bdf7bf2c484579",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-checked-chromium-768-linux.png": {
+    "mtime": 1783548328.4015627,
+    "ast_hash": "c74a69fcb705bcef3e30fe8fa38558d0",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-checked-firefox-1440-linux.png": {
+    "mtime": 1783548328.4020252,
+    "ast_hash": "ab4104d1ad7655ab7b5210699a45442d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-checked-webkit-1440-linux.png": {
+    "mtime": 1783548328.4024801,
+    "ast_hash": "f8acabad8cb8012740e837c6bafcf43e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-default-chromium-1024-linux.png": {
+    "mtime": 1783548328.402918,
+    "ast_hash": "659045462f2eb2c65c9c4e1a81974113",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-default-chromium-1440-linux.png": {
+    "mtime": 1783548328.4033816,
+    "ast_hash": "3898469c57d05da65e567244c92b8e14",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-default-chromium-320-linux.png": {
+    "mtime": 1783548328.4038472,
+    "ast_hash": "dd5ab597fa448db40813b8a7f4ac438e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-default-chromium-768-linux.png": {
+    "mtime": 1783548328.4042897,
+    "ast_hash": "e5f6d2c5e0eba486d9becc4163344ae4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-default-firefox-1440-linux.png": {
+    "mtime": 1783548328.4047081,
+    "ast_hash": "ecfcc1ccd6fae9183ea12c40465be451",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-default-webkit-1440-linux.png": {
+    "mtime": 1783548328.405158,
+    "ast_hash": "c23c46de8ce8a6e204cc882dbc2ffc30",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-disabled-chromium-1024-linux.png": {
+    "mtime": 1783548328.405607,
+    "ast_hash": "659045462f2eb2c65c9c4e1a81974113",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-disabled-chromium-1440-linux.png": {
+    "mtime": 1783548328.4060464,
+    "ast_hash": "3898469c57d05da65e567244c92b8e14",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-disabled-chromium-320-linux.png": {
+    "mtime": 1783548328.4064689,
+    "ast_hash": "dd5ab597fa448db40813b8a7f4ac438e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-disabled-chromium-768-linux.png": {
+    "mtime": 1783548328.406913,
+    "ast_hash": "e5f6d2c5e0eba486d9becc4163344ae4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-disabled-firefox-1440-linux.png": {
+    "mtime": 1783548328.4073758,
+    "ast_hash": "ecfcc1ccd6fae9183ea12c40465be451",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-disabled-webkit-1440-linux.png": {
+    "mtime": 1783548328.4078577,
+    "ast_hash": "c23c46de8ce8a6e204cc882dbc2ffc30",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-chromium-1024-linux.png": {
+    "mtime": 1783548328.408277,
+    "ast_hash": "8b55108f2f03936d65ee8da4ae503259",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-chromium-1440-linux.png": {
+    "mtime": 1783548328.408693,
+    "ast_hash": "2d2caf91ccba095e4b6f349e4bc670f3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-chromium-320-linux.png": {
+    "mtime": 1783548328.40912,
+    "ast_hash": "c738e433546b3d9f878d186678ba77ee",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-chromium-768-linux.png": {
+    "mtime": 1783548328.409537,
+    "ast_hash": "3d65c56493f1c0e8695ff0cb10dc0eef",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-firefox-1440-linux.png": {
+    "mtime": 1783548328.4099584,
+    "ast_hash": "882840995da8d4dca5a5d823419ba20b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/radio.spec.ts-snapshots/radio-focus-visible-webkit-1440-linux.png": {
+    "mtime": 1783548328.4103775,
+    "ast_hash": "48a5e07139865c74d489a64939ad9fb1",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-1024-linux.png": {
+    "mtime": 1783548328.2966394,
+    "ast_hash": "c05bf29c8105f0479d96751eb7fd1f4f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-1440-linux.png": {
+    "mtime": 1783548328.2972128,
+    "ast_hash": "c05bf29c8105f0479d96751eb7fd1f4f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-320-linux.png": {
+    "mtime": 1783548328.2979746,
+    "ast_hash": "56bc196626a826608f35a983a70846d9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-chromium-768-linux.png": {
+    "mtime": 1783548328.2986517,
+    "ast_hash": "c05bf29c8105f0479d96751eb7fd1f4f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-firefox-1440-linux.png": {
+    "mtime": 1783548328.2993271,
+    "ast_hash": "3b9f0da9025fbbd006f046272baacaf0",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-default-webkit-1440-linux.png": {
+    "mtime": 1783548328.2998605,
+    "ast_hash": "1f0769653c5ceebc9d82c546aba35f24",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-1024-linux.png": {
+    "mtime": 1783548328.3004022,
+    "ast_hash": "cda220413347f35dd2c28cf0a6232368",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-1440-linux.png": {
+    "mtime": 1783548328.3008423,
+    "ast_hash": "cda220413347f35dd2c28cf0a6232368",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-320-linux.png": {
+    "mtime": 1783548328.301375,
+    "ast_hash": "7437d02e48d0984677fd28e9dd5fb6a8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-chromium-768-linux.png": {
+    "mtime": 1783548328.3019514,
+    "ast_hash": "cda220413347f35dd2c28cf0a6232368",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-firefox-1440-linux.png": {
+    "mtime": 1783548328.3025603,
+    "ast_hash": "042eb4318f6eb6cb433d54b1c6a91871",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-disabled-webkit-1440-linux.png": {
+    "mtime": 1783548328.3031085,
+    "ast_hash": "e24623e8c5658b78703d3bb49aa0bf02",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-1024-linux.png": {
+    "mtime": 1783548328.3037415,
+    "ast_hash": "83150c0d9d2cf55aa621d9b188a1ae5d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-1440-linux.png": {
+    "mtime": 1783548328.304425,
+    "ast_hash": "83150c0d9d2cf55aa621d9b188a1ae5d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-320-linux.png": {
+    "mtime": 1783548328.3051639,
+    "ast_hash": "ffdafa8f9ee95ec320d5d622573ac4f4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-chromium-768-linux.png": {
+    "mtime": 1783548328.3061025,
+    "ast_hash": "83150c0d9d2cf55aa621d9b188a1ae5d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-firefox-1440-linux.png": {
+    "mtime": 1783548328.3066657,
+    "ast_hash": "be65a0f2bf4bd061d71cce656383efbb",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-error-webkit-1440-linux.png": {
+    "mtime": 1783548328.3072345,
+    "ast_hash": "b01cac5491152312e2a8871d1ab31739",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-1024-linux.png": {
+    "mtime": 1783548328.3078303,
+    "ast_hash": "305edda198e4867fbb8cc65894aea387",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-1440-linux.png": {
+    "mtime": 1783548328.3083591,
+    "ast_hash": "305edda198e4867fbb8cc65894aea387",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-320-linux.png": {
+    "mtime": 1783548328.3087988,
+    "ast_hash": "5b27ca14ae4d18914ba9b036075b0f96",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-chromium-768-linux.png": {
+    "mtime": 1783548328.3092535,
+    "ast_hash": "305edda198e4867fbb8cc65894aea387",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-firefox-1440-linux.png": {
+    "mtime": 1783548328.3096642,
+    "ast_hash": "c1c7c0340e8d25af7b277cf2b56b3d92",
+    "semantic_hash": ""
+  },
+  "tests/e2e/select.spec.ts-snapshots/select-focus-webkit-1440-linux.png": {
+    "mtime": 1783548328.310155,
+    "ast_hash": "7d078d94f42c5e2b10d0834bb54651a3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-1024-linux.png": {
+    "mtime": 1783548328.3145535,
+    "ast_hash": "b1fa4390911c9b1f3e0647af31c8f7d3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-1440-linux.png": {
+    "mtime": 1783548328.314952,
+    "ast_hash": "b1fa4390911c9b1f3e0647af31c8f7d3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-320-linux.png": {
+    "mtime": 1783548328.315333,
+    "ast_hash": "9f9adc79f5ac0f106c5bd593a5f88d54",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-chromium-768-linux.png": {
+    "mtime": 1783548328.3157046,
+    "ast_hash": "b1fa4390911c9b1f3e0647af31c8f7d3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-firefox-1440-linux.png": {
+    "mtime": 1783548328.3160715,
+    "ast_hash": "26a75979d9d56d0c9f3255c5af4a4781",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-disabled-on-webkit-1440-linux.png": {
+    "mtime": 1783548328.3164847,
+    "ast_hash": "d0c4605063991887f08303c1c2a79d43",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-1024-linux.png": {
+    "mtime": 1783548328.3168552,
+    "ast_hash": "1f40563e64757b8f776ee12517969e3e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-1440-linux.png": {
+    "mtime": 1783548328.3172219,
+    "ast_hash": "1f40563e64757b8f776ee12517969e3e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-320-linux.png": {
+    "mtime": 1783548328.31757,
+    "ast_hash": "94f2274e0d69ee6fd319c9b809e604c9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-chromium-768-linux.png": {
+    "mtime": 1783548328.3179538,
+    "ast_hash": "1f40563e64757b8f776ee12517969e3e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-firefox-1440-linux.png": {
+    "mtime": 1783548328.3184397,
+    "ast_hash": "5c82cbc24777a73f8e00209bd8fa9748",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-focus-visible-webkit-1440-linux.png": {
+    "mtime": 1783548328.3188605,
+    "ast_hash": "80ddb15e5d941dfc192c86607e9aba44",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-1024-linux.png": {
+    "mtime": 1783548328.319284,
+    "ast_hash": "3167fb5a4f352ebfb31945aa6b1486ae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-1440-linux.png": {
+    "mtime": 1783548328.3197424,
+    "ast_hash": "3167fb5a4f352ebfb31945aa6b1486ae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-320-linux.png": {
+    "mtime": 1783548328.3203373,
+    "ast_hash": "dc83967e6c304abc7475bf6a8ad35920",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-chromium-768-linux.png": {
+    "mtime": 1783548328.320965,
+    "ast_hash": "3167fb5a4f352ebfb31945aa6b1486ae",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-firefox-1440-linux.png": {
+    "mtime": 1783548328.3215775,
+    "ast_hash": "59cf8a931b963a91670d6260ae05d5e0",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-off-webkit-1440-linux.png": {
+    "mtime": 1783548328.3223677,
+    "ast_hash": "c85e38e9ecf986de5d01b479274e4be8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-1024-linux.png": {
+    "mtime": 1783548328.3230855,
+    "ast_hash": "ce164f803d2e6fab03b485cf2881e761",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-1440-linux.png": {
+    "mtime": 1783548328.3237414,
+    "ast_hash": "ce164f803d2e6fab03b485cf2881e761",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-320-linux.png": {
+    "mtime": 1783548328.3244224,
+    "ast_hash": "bb3d171622f802cc68df8f950a648b95",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-chromium-768-linux.png": {
+    "mtime": 1783548328.3250823,
+    "ast_hash": "ce164f803d2e6fab03b485cf2881e761",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-firefox-1440-linux.png": {
+    "mtime": 1783548328.3254795,
+    "ast_hash": "10aeed5c8efeb50fee25da24cf7f75d2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toggle.spec.ts-snapshots/toggle-on-webkit-1440-linux.png": {
+    "mtime": 1783548328.3260536,
+    "ast_hash": "37107e1b845b2e71fb8dbd890aced404",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/checklists/requirements.md": {
+    "mtime": 1783554919.6972003,
+    "ast_hash": "1a4480d225e84e8ace2f4050ec3761b2",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/spec.md": {
+    "mtime": 1783554902.5757523,
+    "ast_hash": "d1528754dc02699aba8ab0a87f2e3144",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/contracts/modal.contract.md": {
+    "mtime": 1783558019.8795114,
+    "ast_hash": "9194948572b0c8ea701d69b1f25642b8",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/contracts/slide-over.contract.md": {
+    "mtime": 1783557133.061626,
+    "ast_hash": "5c8bd8c30da748c84b2118ebd9b26a82",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/contracts/toast.contract.md": {
+    "mtime": 1783555898.34818,
+    "ast_hash": "92f4b17815364f9967cdf1f41165c339",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/data-model.md": {
+    "mtime": 1783557086.042526,
+    "ast_hash": "1ba02e4c7c9873c67d7ea5b25196e62a",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/plan.md": {
+    "mtime": 1783556300.1779158,
+    "ast_hash": "18f4cdfd505623522f82cf972742c3ad",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/quickstart.md": {
+    "mtime": 1783555264.96845,
+    "ast_hash": "e160bbdf8098cae62263c1b67b705126",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/research.md": {
+    "mtime": 1783557994.2292666,
+    "ast_hash": "62e20a2cc3962f9958d97c9615c46d3e",
+    "semantic_hash": ""
+  },
+  "specs/003-overlays-modal-toast/tasks.md": {
+    "mtime": 1783559294.4689374,
+    "ast_hash": "b2d9996ee0d83c84b0167863e462270e",
+    "semantic_hash": ""
+  },
+  "src/scripts/overlay.js": {
+    "mtime": 1783559916.7798326,
+    "ast_hash": "9db04c2a5b195179071c680de442b34b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts": {
+    "mtime": 1783559949.1733298,
+    "ast_hash": "e0f28d58eca661c43734b6c50879bc07",
+    "semantic_hash": ""
+  },
+  "src/components/modal/modal.html": {
+    "mtime": 1783559035.793311,
+    "ast_hash": "f370804cc88098ad1ee7325194b8b82a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-1024-darwin.png": {
+    "mtime": 1783557593.249069,
+    "ast_hash": "72d02f192d9df79efcdb04b26a28ff86",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-1440-darwin.png": {
+    "mtime": 1783557455.0513473,
+    "ast_hash": "72d02f192d9df79efcdb04b26a28ff86",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-320-darwin.png": {
+    "mtime": 1783557584.2007883,
+    "ast_hash": "d4ceda9ca486049d489c3956a734bb7e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-768-darwin.png": {
+    "mtime": 1783557588.4203966,
+    "ast_hash": "72d02f192d9df79efcdb04b26a28ff86",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-firefox-1440-darwin.png": {
+    "mtime": 1783557605.9528346,
+    "ast_hash": "18627ba806673e6aaa6a4fe3fb18e48b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-webkit-1440-darwin.png": {
+    "mtime": 1783557619.628292,
+    "ast_hash": "5e645970e729001461e00a7e6b9a7ef7",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-1024-darwin.png": {
+    "mtime": 1783560025.272874,
+    "ast_hash": "bd53114da0c76b210758966ec25e680e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-1440-darwin.png": {
+    "mtime": 1783560033.337044,
+    "ast_hash": "bd53114da0c76b210758966ec25e680e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-320-darwin.png": {
+    "mtime": 1783560009.5992334,
+    "ast_hash": "89a20491a907b38de406d18976535146",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-768-darwin.png": {
+    "mtime": 1783560017.4197323,
+    "ast_hash": "bd53114da0c76b210758966ec25e680e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-firefox-1440-darwin.png": {
+    "mtime": 1783560044.9251947,
+    "ast_hash": "362fb786f3ad0813a18e3028162ce201",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-webkit-1440-darwin.png": {
+    "mtime": 1783560068.1118815,
+    "ast_hash": "54cb66750f0d2e7a3ba055011aaae1bd",
+    "semantic_hash": ""
+  },
+  "src/scripts/toast.js": {
+    "mtime": 1783558124.8000371,
+    "ast_hash": "bfaf581b94f07da1fafbe581e5b83a85",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts": {
+    "mtime": 1783559981.5006428,
+    "ast_hash": "b501bb925d2f01cc5b7ee0d0ee2e5f06",
+    "semantic_hash": ""
+  },
+  "src/components/toast/toast.html": {
+    "mtime": 1783559035.883592,
+    "ast_hash": "79d6868d37e964517662bf0f6dafab7b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-1024-darwin.png": {
+    "mtime": 1783558209.1697595,
+    "ast_hash": "562cab19932cc60afa04ec42945ff4ed",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-1440-darwin.png": {
+    "mtime": 1783558214.6381173,
+    "ast_hash": "562cab19932cc60afa04ec42945ff4ed",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-320-darwin.png": {
+    "mtime": 1783558202.5379915,
+    "ast_hash": "e737d63ed8e3a4c3bf9f07e3b0503827",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-768-darwin.png": {
+    "mtime": 1783558205.4893506,
+    "ast_hash": "05a83d442feace79f802ae22ea0784ba",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-firefox-1440-darwin.png": {
+    "mtime": 1783558221.2071419,
+    "ast_hash": "e734f42765d06b5dd023c191b01ddb99",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-webkit-1440-darwin.png": {
+    "mtime": 1783558230.2220037,
+    "ast_hash": "9f05776bf91a1420b924f556dd32eb2a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts": {
+    "mtime": 1783559967.814105,
+    "ast_hash": "efa97d04a734ceb6f7a21861d9281fe5",
+    "semantic_hash": ""
+  },
+  "src/components/slide-over/slide-over.html": {
+    "mtime": 1783559035.848694,
+    "ast_hash": "879a40e38c98127106f3ce49c577d743",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-1024-darwin.png": {
+    "mtime": 1783558553.4658723,
+    "ast_hash": "69f33b725e6109480b1930deddebba4c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-1440-darwin.png": {
+    "mtime": 1783558557.2467768,
+    "ast_hash": "69f33b725e6109480b1930deddebba4c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-320-darwin.png": {
+    "mtime": 1783558545.598684,
+    "ast_hash": "dd63625003a29b6390fc36817c0914a4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-768-darwin.png": {
+    "mtime": 1783558549.5619721,
+    "ast_hash": "69f33b725e6109480b1930deddebba4c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-firefox-1440-darwin.png": {
+    "mtime": 1783558571.021149,
+    "ast_hash": "aa1c515809bbacdc4efd7b9930766228",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-webkit-1440-darwin.png": {
+    "mtime": 1783558576.7384033,
+    "ast_hash": "ba3b012385f656d9a66e11e238a2a185",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-1024-darwin.png": {
+    "mtime": 1783560027.9501672,
+    "ast_hash": "5ed3f3c6f597983e5444d5edac340032",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-1440-darwin.png": {
+    "mtime": 1783560036.782708,
+    "ast_hash": "7b9c2ad9218a17e0761371c46f6b6544",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-320-darwin.png": {
+    "mtime": 1783560012.211072,
+    "ast_hash": "17db4b5ad638ba5f0cd52d6cfecd7d4b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-768-darwin.png": {
+    "mtime": 1783560020.706029,
+    "ast_hash": "5ed3f3c6f597983e5444d5edac340032",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-firefox-1440-darwin.png": {
+    "mtime": 1783560057.307137,
+    "ast_hash": "a9fd22c0861ce19093bb9b966bed5712",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-webkit-1440-darwin.png": {
+    "mtime": 1783560073.8587673,
+    "ast_hash": "a2a4b1622b09063ea21826fa026f9fb8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-1024-darwin.png": {
+    "mtime": 1783560026.5102167,
+    "ast_hash": "e0e39c8fe4bc1bc5b0222c5c193893ac",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-1440-darwin.png": {
+    "mtime": 1783560034.4290206,
+    "ast_hash": "e0e39c8fe4bc1bc5b0222c5c193893ac",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-320-darwin.png": {
+    "mtime": 1783560010.716757,
+    "ast_hash": "b0b50a62eef34825ae55136f9e071006",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-768-darwin.png": {
+    "mtime": 1783560018.2352252,
+    "ast_hash": "e0e39c8fe4bc1bc5b0222c5c193893ac",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-firefox-1440-darwin.png": {
+    "mtime": 1783560054.1349552,
+    "ast_hash": "7c732cd0d5d4254cc0f6c1cdbf2c0be8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-webkit-1440-darwin.png": {
+    "mtime": 1783560071.0784512,
+    "ast_hash": "9caea60f1ef178c39e98232f49f58095",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-1024-darwin.png": {
+    "mtime": 1783560029.1698248,
+    "ast_hash": "0d34a021e1ecd30906aea66d20745915",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-1440-darwin.png": {
+    "mtime": 1783560036.948043,
+    "ast_hash": "5b06915beb1ba199634d5e4d359ff649",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-320-darwin.png": {
+    "mtime": 1783560013.2632046,
+    "ast_hash": "2947dfe8d395491da063e9864378bf34",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-768-darwin.png": {
+    "mtime": 1783560021.146203,
+    "ast_hash": "0d34a021e1ecd30906aea66d20745915",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-firefox-1440-darwin.png": {
+    "mtime": 1783560059.1769946,
+    "ast_hash": "0e42014ac78bea5711d4f91663d48a9b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-webkit-1440-darwin.png": {
+    "mtime": 1783560075.571638,
+    "ast_hash": "328f34b49b3b6b81c8394977c665c3cc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-1024-linux.png": {
+    "mtime": 1783560930.9732344,
+    "ast_hash": "99e0a1b26de720f8f6c055d68deccad4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-1440-linux.png": {
+    "mtime": 1783560930.9956954,
+    "ast_hash": "99e0a1b26de720f8f6c055d68deccad4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-320-linux.png": {
+    "mtime": 1783560931.0166407,
+    "ast_hash": "d4016cce19a98d5abd541eabf16d6fcc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-chromium-768-linux.png": {
+    "mtime": 1783560931.0173054,
+    "ast_hash": "99e0a1b26de720f8f6c055d68deccad4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-firefox-1440-linux.png": {
+    "mtime": 1783560931.0178456,
+    "ast_hash": "d1da695bc7ca05e85a806b8e353c5fe1",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-closed-webkit-1440-linux.png": {
+    "mtime": 1783560931.0183797,
+    "ast_hash": "5656a8a22f3247df45e81b0bff8d95a3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-1024-linux.png": {
+    "mtime": 1783560931.019045,
+    "ast_hash": "081e6606226551be65398a761e3d36aa",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-1440-linux.png": {
+    "mtime": 1783560931.0196464,
+    "ast_hash": "ccc3aa656032c90683f349c907f2d3c0",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-320-linux.png": {
+    "mtime": 1783560931.020092,
+    "ast_hash": "0a179c89288cb5c91d4f29ffb66ca86c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-chromium-768-linux.png": {
+    "mtime": 1783560931.0205674,
+    "ast_hash": "ccc3aa656032c90683f349c907f2d3c0",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-firefox-1440-linux.png": {
+    "mtime": 1783560931.021041,
+    "ast_hash": "31ec6419d67fb4eaa70b7760a64b65ec",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-info-open-webkit-1440-linux.png": {
+    "mtime": 1783560931.0215597,
+    "ast_hash": "78b7b0f89aed9b466782203a661c6799",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-1024-linux.png": {
+    "mtime": 1783560931.0219867,
+    "ast_hash": "ab0c1baa3341e0ef44767b6adf3c8f30",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-1440-linux.png": {
+    "mtime": 1783560931.0224714,
+    "ast_hash": "56f858bee87ebc837576491caffdc5df",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-320-linux.png": {
+    "mtime": 1783560931.0229738,
+    "ast_hash": "8c933d472c1b52a2052b68644887c7bd",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-chromium-768-linux.png": {
+    "mtime": 1783560931.0234194,
+    "ast_hash": "29747e5a7a9907982cfdfe8cfe8c7ac3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-firefox-1440-linux.png": {
+    "mtime": 1783560931.0239975,
+    "ast_hash": "49e583584fe9e146464e58e219f6977f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/modal.spec.ts-snapshots/modal-open-webkit-1440-linux.png": {
+    "mtime": 1783560931.0245345,
+    "ast_hash": "502a58289f71b8910bb2126b7ca2634c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-1024-linux.png": {
+    "mtime": 1783560931.037788,
+    "ast_hash": "3aea394ad515758a4d7d41726b524cb4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-1440-linux.png": {
+    "mtime": 1783560931.0387576,
+    "ast_hash": "3aea394ad515758a4d7d41726b524cb4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-320-linux.png": {
+    "mtime": 1783560931.0394492,
+    "ast_hash": "852c899b693c531207077326f2fe2889",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-chromium-768-linux.png": {
+    "mtime": 1783560931.0401933,
+    "ast_hash": "3aea394ad515758a4d7d41726b524cb4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-firefox-1440-linux.png": {
+    "mtime": 1783560931.0409007,
+    "ast_hash": "ab4cf5e198cc02e45980075e3f052a3b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-closed-webkit-1440-linux.png": {
+    "mtime": 1783560931.0416656,
+    "ast_hash": "29c9395dacc4d6f012f7b89d5f37c16e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-1024-linux.png": {
+    "mtime": 1783560931.0423899,
+    "ast_hash": "ce0c8c0138781503450b13011a817e95",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-1440-linux.png": {
+    "mtime": 1783560931.0431023,
+    "ast_hash": "8980d31ce9cf5faad196f4c4b004e4e2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-320-linux.png": {
+    "mtime": 1783560931.043805,
+    "ast_hash": "9fa3d9af07d0d418c307552d757039d3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-chromium-768-linux.png": {
+    "mtime": 1783560931.0445051,
+    "ast_hash": "ce0c8c0138781503450b13011a817e95",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-firefox-1440-linux.png": {
+    "mtime": 1783560931.045319,
+    "ast_hash": "e358f8e751ddbbe3f9da9af6f3039cd3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-info-open-webkit-1440-linux.png": {
+    "mtime": 1783560931.0460265,
+    "ast_hash": "81b09b5f9a6f6597a220b86952af7ebf",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-1024-linux.png": {
+    "mtime": 1783560931.0466368,
+    "ast_hash": "9e551b01b4f424193af88e187ee98155",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-1440-linux.png": {
+    "mtime": 1783560931.0475154,
+    "ast_hash": "981deed59a89364dc93103f0e3c777a7",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-320-linux.png": {
+    "mtime": 1783560931.0481985,
+    "ast_hash": "0805eacd3e6c562b640140f538eed403",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-chromium-768-linux.png": {
+    "mtime": 1783560931.0489223,
+    "ast_hash": "9e551b01b4f424193af88e187ee98155",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-firefox-1440-linux.png": {
+    "mtime": 1783560931.0496275,
+    "ast_hash": "bdaad64cb1d1a2a28452acd51d22c788",
+    "semantic_hash": ""
+  },
+  "tests/e2e/slide-over.spec.ts-snapshots/slide-over-open-webkit-1440-linux.png": {
+    "mtime": 1783560931.0503473,
+    "ast_hash": "2f4cc693573edfefe192db2337613ed9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-1024-linux.png": {
+    "mtime": 1783560931.0289733,
+    "ast_hash": "11ea804dd4e16f41731a0950cbc9e184",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-1440-linux.png": {
+    "mtime": 1783560931.0294678,
+    "ast_hash": "11ea804dd4e16f41731a0950cbc9e184",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-320-linux.png": {
+    "mtime": 1783560931.0300956,
+    "ast_hash": "3406a66be3bfe2f4be606a7b3d7ff703",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-chromium-768-linux.png": {
+    "mtime": 1783560931.0307393,
+    "ast_hash": "a5735ef10124b8a44aa22ac7121ab708",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-firefox-1440-linux.png": {
+    "mtime": 1783560931.0313272,
+    "ast_hash": "af1517187f21eb3484e71a683c334b86",
+    "semantic_hash": ""
+  },
+  "tests/e2e/toast.spec.ts-snapshots/toast-stack-webkit-1440-linux.png": {
+    "mtime": 1783560931.0319335,
+    "ast_hash": "b2d4e668015292ad2c5ca75338c6a71e",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/checklists/requirements.md": {
+    "mtime": 1783563546.3205018,
+    "ast_hash": "3a7a67de2e419d4dd499fd37817389c1",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/spec.md": {
+    "mtime": 1783564278.643444,
+    "ast_hash": "e878d399a2b2544e43924e57cbdd5dc0",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/contracts/component-props.contract.md": {
+    "mtime": 1783564298.0376709,
+    "ast_hash": "bd86b29d4dd373614b54d8e6d8ad8742",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/contracts/react-package.contract.md": {
+    "mtime": 1783563747.5025876,
+    "ast_hash": "48e30b3d2f777976d0aee51782b38a2c",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/data-model.md": {
+    "mtime": 1783564241.7292738,
+    "ast_hash": "84b37b17fc706744d328bd77a64372b5",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/plan.md": {
+    "mtime": 1783564373.6868656,
+    "ast_hash": "abede60a43fdf7729953ec9afa755717",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/quickstart.md": {
+    "mtime": 1783563788.181053,
+    "ast_hash": "0473f39d65a5e27cdf71f9a42df6b3a8",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/research.md": {
+    "mtime": 1783564343.7416544,
+    "ast_hash": "fe82f26e2f749f493004180a452ae750",
+    "semantic_hash": ""
+  },
+  "specs/004-react-component-library/tasks.md": {
+    "mtime": 1783564476.0172884,
+    "ast_hash": "2595613d96777e06a0e857e02aa7f2b4",
     "semantic_hash": ""
   }
 }

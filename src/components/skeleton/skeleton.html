@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Skeleton — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Skeleton</h1>
+
+  <div data-testid="skeleton-demo-wrapper" class="mt-8 flex max-w-md flex-col gap-6">
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Text line</h2>
+      <div data-testid="skeleton-text" aria-hidden="true" class="skeleton skeleton-text"></div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Avatar (small)</h2>
+      <div
+        data-testid="skeleton-avatar-sm"
+        aria-hidden="true"
+        class="skeleton skeleton-avatar-sm"
+      ></div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Avatar (large)</h2>
+      <div
+        data-testid="skeleton-avatar-lg"
+        aria-hidden="true"
+        class="skeleton skeleton-avatar-lg"
+      ></div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Card block</h2>
+      <div data-testid="skeleton-card" aria-hidden="true" class="skeleton skeleton-card"></div>
+    </section>
+  </div>
+</body>
+</html>

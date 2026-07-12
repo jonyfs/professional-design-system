@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Kbd — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Kbd</h1>
+
+  <div data-testid="kbd-demo-wrapper" class="mt-8 max-w-md space-y-4">
+    <p class="text-sm text-neutral-900">
+      Press
+      <kbd data-testid="kbd-example" class="kbd">⌘</kbd><kbd data-testid="kbd-example" class="kbd">K</kbd>
+      to open the command palette.
+    </p>
+    <p class="text-sm text-neutral-900">
+      Press <kbd data-testid="kbd-example" class="kbd">Esc</kbd> to close any open dialog.
+    </p>
+  </div>
+</body>
+</html>

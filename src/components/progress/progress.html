@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Progress — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Progress</h1>
+
+  <div data-testid="progress-demo-wrapper" class="mt-8 max-w-md space-y-8">
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Determinate (60%)</h2>
+      <span class="sr-only" id="progress-determinate-label">Upload progress</span>
+      <div
+        data-testid="progress-determinate"
+        role="progressbar"
+        aria-labelledby="progress-determinate-label"
+        aria-valuenow="60"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        class="progress-track"
+      >
+        <div data-progress-fill data-value="60" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Indeterminate</h2>
+      <span class="sr-only" id="progress-indeterminate-label">Processing</span>
+      <div
+        data-testid="progress-indeterminate"
+        role="progressbar"
+        aria-labelledby="progress-indeterminate-label"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        class="progress-track"
+      >
+        <div class="progress-fill-indeterminate"></div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module">
+    import { initProgressBars } from "/src/scripts/progress.js";
+    initProgressBars();
+  </script>
+</body>
+</html>

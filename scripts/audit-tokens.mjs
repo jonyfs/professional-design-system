@@ -230,8 +230,20 @@ function checkClass(rawClass) {
   const className = stripVariants(rawClass);
 
   // Border-radius utilities: `rounded`, `rounded-sm`, `rounded-t-lg`, etc.
+  // Directional/corner infixes (t/r/b/l/s/e/tl/tr/br/bl/ss/se/es/ee) name a
+  // SIDE or CORNER, not a size — `rounded-l-md` must check "md" against the
+  // allowlist, not the literal string "l-md" (a real gap found while
+  // building Button Group's first-child/last-child radius, feature 014:
+  // this comment already described `rounded-t-lg` as supported, but the
+  // check below never actually stripped the directional infix before this
+  // fix, so any directional radius class would have failed regardless of
+  // whether its size was ratified).
   if (className === "rounded" || className.startsWith("rounded-")) {
-    if (!allowedRadiusClasses.has(className)) {
+    const rest = className === "rounded" ? "" : className.slice("rounded-".length);
+    const directionalMatch = /^(tl|tr|br|bl|ss|se|es|ee|t|r|b|l|s|e)-(.+)$/.exec(rest);
+    const sizeKey = directionalMatch ? directionalMatch[2] : rest;
+    const normalized = sizeKey === "" ? "rounded" : `rounded-${sizeKey}`;
+    if (!allowedRadiusClasses.has(normalized)) {
       return `radius utility "${rawClass}" is not in tailwind.config.ts's borderRadius allowlist`;
     }
     return null;
