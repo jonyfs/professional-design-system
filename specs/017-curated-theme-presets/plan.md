@@ -6,8 +6,13 @@
 
 ## Summary
 
-Ship a runtime-swappable theme system with 42 curated, named color
-palettes (comfortably clearing the 40+ requirement), a browsable gallery,
+Ship a runtime-swappable theme system with 42 NEW curated, named color
+palettes plus this catalog's pre-existing single palette re-expressed
+as the "light" default theme under the new mechanism (43 total in the
+ThemeCollection, comfortably clearing the 40+ requirement — a
+`/speckit-analyze` finding, I1, caught this "42" vs. "43 total" phrasing
+being inconsistent across plan.md/data-model.md/tasks.md; standardized
+here), a browsable gallery,
 and a persisted user selection — with zero markup or component-file
 changes to any of this catalog's ~48 previously-shipped components.
 Confirmed empirically (research.md R1) that migrating
@@ -83,8 +88,8 @@ specs/017-curated-theme-presets/
 shared/
 └── design-tokens.ts       # MODIFIED — colors object values become
                             # CSS-custom-property references; theme
-                            # definitions (42 palettes) added as a new
-                            # exported map
+                            # definitions (43 total: 42 new + "light")
+                            # added as a new exported map
 
 tailwind.config.ts          # MODIFIED — colors config switches to the
                              # RGB-tuple `rgb(var(--x) / <alpha-value>)`
@@ -96,8 +101,10 @@ src/
 │   │                       # to change; components reference the same
 │   │                       # utility classes, which now resolve through
 │   │                       # CSS custom properties instead of static hex
-│   └── themes.css          # NEW — 42 `[data-theme="name"]` blocks, ~21
-│                           # custom properties each
+│   └── themes.css          # NEW — 43 blocks total (`:root`/
+│                           # `[data-theme="light"]` + 42 new
+│                           # `[data-theme="name"]`), ~21 custom
+│                           # properties each
 ├── scripts/
 │   └── theme-switcher.js   # NEW — reads/validates/applies the
 │                           # persisted theme before first paint,

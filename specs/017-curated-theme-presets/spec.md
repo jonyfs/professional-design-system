@@ -192,7 +192,17 @@ two themes in the full set share a near-identical palette.
   selection.
 - **SC-002**: 100% of previously-shipped components render correctly and
   consistently under every theme in the collection (no component is
-  left un-themed or visually broken under any theme).
+  left un-themed or visually broken under any theme). Verified via the
+  architecture guarantee (zero component markup/CSS changes — every
+  component references the same token names regardless of theme, plan.md
+  research.md R1) confirmed once, plus a representative component sample
+  spot-checked under a representative theme subset — not an exhaustive
+  screenshot matrix of every component under every theme, which would
+  add near-zero marginal signal once the zero-markup-change guarantee
+  itself is verified (a `/speckit-analyze` finding, F2, clarifying this
+  requirement's actual verification method rather than leaving the gap
+  between the 100% claim and the representative-sample test scope
+  implicit).
 - **SC-003**: Every theme independently passes this project's automated
   accessibility/contrast audit at the same bar already required for the
   default theme — zero exceptions.

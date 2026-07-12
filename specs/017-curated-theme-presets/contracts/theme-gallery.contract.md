@@ -15,9 +15,16 @@
         aria-pressed="false"
       >
         <span class="theme-card-swatches" aria-hidden="true">
-          <span class="theme-card-swatch" style="display:none"></span>
-          <!-- swatch colors set via CSSOM (element.style.backgroundColor),
-               NEVER an inline style="..." attribute (this project's CSP) -->
+          <span class="theme-card-swatch"></span>
+          <!-- swatch background color is set via CSSOM
+               (element.style.backgroundColor = "...") by
+               theme-switcher.js after this markup renders, NEVER an
+               inline style="..." HTML attribute (this project's CSP,
+               feature 014 R12) — this element intentionally carries NO
+               style attribute at all in the shipped markup; CSSOM
+               assignment populates the `style` PROPERTY at runtime,
+               which is not the same as authoring a `style="..."`
+               attribute in HTML and is unaffected by `style-src 'self'` -->
         </span>
         <span class="theme-card-name">Corporate</span>
       </button>

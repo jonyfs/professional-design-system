@@ -45,7 +45,12 @@
 
 ## ThemeCollection
 
-- The full ordered set of 42 Theme entities, grouped by `moodFamily` for
-  gallery display (spec.md User Story 3) — not a separate persisted
-  entity, just the complete list `themes.css`/`design-tokens.ts`
+- The full ordered set of 43 Theme entities (42 new + the pre-existing
+  "light" default re-expressed under this feature's mechanism — a
+  `/speckit-analyze` finding, I1, standardized this count across
+  plan.md/data-model.md/tasks.md, which previously disagreed on whether
+  "42" meant the new themes only or the total collection size), grouped
+  by `moodFamily` for gallery display (spec.md User Story 3) — not a
+  separate persisted entity, just the complete list
+  `themes.css`/`design-tokens.ts`
   together define.

@@ -270,3 +270,58 @@ approach:
 - This batching is an implementation-SEQUENCING decision, not a
   reduction of the 40+ requirement itself — all batches ship within this
   same feature's scope.
+
+## R6. Real source values fetched for the P1 pilot batch (5 themes)
+
+Fetched DaisyUI's actual live theme source files directly from GitHub
+(`saadeghi/daisyui`, `packages/daisyui/src/themes/{name}.css`) for the
+5 pilot themes — real, exact, currently-published values, not
+approximated from memory:
+
+- **Corporate** (light professional): `--color-primary: oklch(58%
+  0.158 241.966)` (a cool blue), `--color-base-100: oklch(100% 0 0)`
+  (pure white), `--color-base-content: oklch(22.389% 0.031 278.072)`
+  (near-black blue-gray text), `--color-success: oklch(62% 0.194
+  149.214)`, `--color-warning: oklch(85% 0.199 91.936)`,
+  `--color-error: oklch(70% 0.191 22.216)`, `--color-info: oklch(60%
+  0.126 221.723)`.
+- **Forest** (nature/earth, dark): `--color-primary: oklch(68.628%
+  0.185 148.958)` (green), `--color-base-100: oklch(20.84% 0.008
+  17.911)` (near-black warm-neutral), `--color-base-content:
+  oklch(83.768% 0.001 17.911)` (light neutral text).
+- **Business** (dark moody/professional): `--color-primary:
+  oklch(41.703% 0.099 251.473)` (deep navy blue), `--color-base-100:
+  oklch(24.353% 0 0)` (dark neutral gray), `--color-accent:
+  oklch(67.271% 0.167 35.791)` (warm orange accent).
+- **Dracula** (dark vibrant/expressive): `--color-primary:
+  oklch(75.461% 0.183 346.812)` (pink), `--color-secondary:
+  oklch(74.202% 0.148 301.883)` (purple), `--color-base-100:
+  oklch(28.822% 0.022 277.508)` (dark blue-gray) — DaisyUI's own
+  Dracula differs slightly from the original standalone Dracula
+  project's raw hex values (`#282A36` background, `#BD93F9` purple,
+  `#FF79C6` pink, etc., also fetched directly from
+  draculatheme.com/contribute) since DaisyUI re-expresses it in OKLCH
+  for its own semantic-role structure — both are legitimate, real
+  sources; DaisyUI's own re-expression is used for consistency with the
+  other 4 DaisyUI-sourced pilot themes, with the original project's raw
+  hex values available as a cross-check reference.
+- **Nord** (cool/tech minimal): `--color-primary: oklch(59.435% 0.077
+  254.027)` (muted blue), `--color-base-100: oklch(95.127% 0.007
+  260.731)` (icy near-white) — DaisyUI's own Nord is a LIGHT theme
+  (`color-scheme: light`), distinct from the original standalone Nord
+  project's own primarily-dark Polar Night palette (`#2E3440`/`#3B4252`/
+  etc., also fetched directly from nordtheme.com/docs/colors-and-
+  palettes) — both are real, legitimate references; the choice of which
+  to follow (DaisyUI's light re-interpretation vs. the original's dark
+  Polar Night base) is an explicit implementation-phase decision, not
+  pre-decided here, since either is a defensible "real, named reference"
+  per FR-002.
+
+**Conversion note**: DaisyUI v5 expresses colors in OKLCH, not hex/RGB.
+Since this catalog's token architecture (research.md R1) uses RGB
+triplets (Tailwind's own documented opacity-compatible pattern, not
+OKLCH), each OKLCH value MUST be converted to sRGB during
+implementation — a straightforward, well-defined color-space conversion,
+not a design decision, but flagged here so the implementation phase
+doesn't have to rediscover that DaisyUI's source format differs from
+this catalog's chosen storage format.
