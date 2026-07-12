@@ -1,4 +1,51 @@
 <!--
+SYNC IMPACT REPORT (v1.13.0 — see below for the v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.12.0 → 1.13.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Forms, Validation & Inputs → ColorPicker/ColorInput
+  - Component Catalog → Data Display & Listings → TreeView, Rating
+  - Component Catalog → Navigation & Disclosure → Menubar
+  - Component Catalog → Known Catalog Gaps → TreeView/Rating/Menubar/
+    ColorPicker marked shipped (feature 016), HoverCard remains deferred
+    as redundant with Tooltip+Popover, remaining gaps unaddressed
+Corrected sections: None — no prior entry needed correction.
+Rationale: feature 016 (Advanced Interaction Primitives) shipped four
+components closing the next tier of gaps from the "Known Catalog Gaps"
+list ratified in v1.12.0 — each reuses an already-ratified mechanism
+(native `<details>/<summary>` for TreeView, Dropdown Menu's panel
+mechanics for Menubar, a native `<input type="color">` for ColorPicker)
+rather than inventing a new one. This is a MINOR bump (new catalog
+guidance, four new components, zero new tokens), matching the precedent
+of v1.12.0's own feature-015 addition.
+A real accessibility-tree verification (not assumed from spec docs)
+confirmed TreeView's native `<details>/<summary>` needs zero ARIA at all
+— Chrome DevTools Protocol showed `<summary>` exposed with role
+`DisclosureTriangle` and correct independent `expanded` state per
+instance. Rating required a genuinely NEW audit-script exemption
+category (`DECORATIVE_ARIA_HIDDEN_TOKENS`, distinct from the existing
+`ICON_FILL_TEXT_TOKENS`) since its decorative star-fill color fails even
+the lower WCAG 1.4.11 non-text 3:1 floor, not just the AAA text bar the
+existing exemption category was built for. Menubar surfaced a genuinely
+tricky rapid-keypress race condition (found via code review, HIGH
+severity) where the Popover API's queued `toggle` event let
+`dropdown-menu.js`'s own unconditional close-time focus handling
+(reused unmodified) clobber a newer keypress's result regardless of any
+staleness guard applied to Menubar's own reactions — fixed by collapsing
+a two-call `hidePopover()`-then-`showPopover()` sequence into a single
+`showPopover()` call (confirmed to atomically close a sibling
+`popover="auto"` panel natively with a guaranteed event order) plus a
+`generation`/`settledGeneration` guard that ignores a keypress arriving
+before an earlier transition's final focus placement has completed.
+ColorPicker/ColorInput's `appearance-none` requirement was found only
+after building the real component with Tailwind's `ring`/`shadow`
+utility classes — an earlier isolated inline-`style` test had not
+revealed this default-appearance suppression of author `box-shadow`.
+Templates requiring updates: ✅ none — no principle or template-level
+change, only Component Catalog content.
+-->
+
+<!--
 SYNC IMPACT REPORT (v1.12.0 — see below for the v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.11.0 → 1.12.0
 Modified principles: None
@@ -912,6 +959,25 @@ catalog.
   `neutral-500` is ratified in this catalog ONLY for icon-fill/non-text
   use, never small body text; fixed with `text-neutral-600` (already
   used for every other small helper/caption text in this catalog).
+- **ColorPicker/ColorInput**: shipped in feature 016 (`.color-input`,
+  `src/components/color-input/color-input.html`) as a native
+  `<input type="color">` — **zero JavaScript**, explicitly rejecting a
+  custom JS-driven color-swatch picker (the native element already
+  provides a full OS-level picker UI, complete keyboard operability, and
+  a real hex `value` at zero JavaScript and zero additional
+  accessibility surface to get wrong). `border`/`ring`/`shadow` utilities
+  apply to the input's own box identically across all three engines, but
+  a real cross-context finding: `appearance-none` is REQUIRED for those
+  utilities' `box-shadow` to actually render — an isolated inline-`style`
+  test computed `box-shadow` correctly without it, but a real
+  class-based rule was silently suppressed by the element's default
+  `appearance: auto` swatch-box rendering until `appearance-none` was
+  added. Explicit `h-10 w-16` normalizes each engine's differing default
+  intrinsic size (Chromium 50×27, Firefox 64×32, WebKit 44×23). WebKit
+  additionally excludes this input type from the natural Tab sequence
+  entirely (confirmed on a bare, unstyled element, ruling out any
+  CSS/markup cause) — accepted as a genuine engine limitation, the same
+  class as PinInput's Firefox clipboard-event gap (feature 015).
 
 ### Data Display & Listings
 - **Tables**: shipped as a real component in feature 012 (`.data-table`/
@@ -1107,6 +1173,41 @@ catalog.
   to verify). Decorative trend arrows are `aria-hidden="true"`; the
   actual percentage/direction is conveyed in real text, never the glyph
   alone.
+- **TreeView**: shipped in feature 016 (`.tree-view`/`.tree-view-summary`/
+  `.tree-view-children`/`.tree-view-leaf`,
+  `src/components/tree-view/tree-view.html`) as recursively nested native
+  `<details>/<summary>` — **zero JavaScript, zero ARIA attributes**.
+  Confirmed via a real Chrome DevTools Protocol accessibility-tree
+  inspection (not assumed from HTML-AAM spec docs): `<summary>` is
+  exposed with role `DisclosureTriangle`, `focusable=true`, and an
+  `expanded` property tracking that exact `<details>` element's own
+  `open` state independently of any ancestor — a nested branch's own
+  collapsed/expanded state is genuinely its own. `<ul>`-nested `<li>`
+  elements automatically expose a `level` property matching visual
+  nesting depth, with no `aria-level` needed. Leaf nodes render as plain
+  `<li>` text with no `<details>` wrapper — a node with nothing to expand
+  MUST NOT show a disclosure affordance.
+- **Rating**: shipped in feature 016 (`.rating`/`.rating-stars`/
+  `.rating-star-filled`/`.rating-star-empty`/`.rating-value`,
+  `src/components/rating/rating.html`) as a **read-only display only**
+  (a clickable/settable rating input is explicitly deferred, not
+  partially built). The real numeric value (e.g. "4.2 out of 5") is
+  always visible text — the single source of truth; star glyphs are
+  `aria-hidden="true"` decorative reinforcement, rounded to the nearest
+  whole star for the visual only (no SVG clip-path/gradient partial-fill
+  hack). **Contrast note**: `text-warning` (filled stars, 2.15:1) and
+  `text-neutral-300` (empty stars) both fail even the AA 3:1 non-text
+  floor as raw figures, but since both are `aria-hidden` with the real
+  value always separately present as text, this is the same class of
+  already-accepted decorative-element exception as Stepper's/Timeline's
+  connector lines (feature 015). This required a genuinely NEW exemption
+  category in `scripts/check-contrast.mjs`,
+  `DECORATIVE_ARIA_HIDDEN_TOKENS` — distinct from the existing
+  `ICON_FILL_TEXT_TOKENS` (which requires clearing the lower 3:1 floor
+  via a `RING_PAIRINGS` entry): `text-warning` fails even that lower bar,
+  so a stricter category was added for tokens confirmed to be inside an
+  `aria-hidden` element with the real information always separately
+  rendered as text.
 
 ### Overlays, Modals & Feedback
 - **Modals**: backdrop `fixed inset-0 bg-neutral-500/75 transition-opacity`;
@@ -1244,6 +1345,36 @@ catalog.
   when the anchor target genuinely differs (element vs. cursor point);
   interaction/focus logic doesn't need to, and shouldn't be
   re-derived, when the underlying widget semantics are identical.
+- **Menubar**: shipped in feature 016 (`.menubar`/`.menubar-trigger`,
+  `src/components/menubar/menubar.html`, `src/scripts/menubar.js`) as a
+  horizontal, keyboard-navigable application menu bar — distinct from
+  Navbar (site navigation) and Dropdown Menu (single trigger). Composes
+  Dropdown Menu's existing `initDropdownMenus()` **completely
+  unmodified** for every top-level trigger's panel mechanics (open/
+  close/in-panel-arrow-keys/focus-return) — confirmed its `anchorCounter`
+  pattern already handles multiple independent trigger+panel instances
+  with zero changes needed. The one genuinely new script,
+  `menubar.js`, adds only the roving-tabindex-between-triggers layer
+  (adapted from Tabs), attached to the `[data-menubar]` CONTAINER rather
+  than each trigger (a real finding: opening a panel moves focus into
+  its first item, so a per-trigger listener stops seeing ArrowRight/
+  ArrowLeft — the container-level listener catches the key bubbling up
+  from inside an open panel, since a popover's top-layer promotion is
+  paint-only, not a DOM-tree relocation). **A genuinely tricky rapid-
+  keypress race condition was found via code review (HIGH) and fixed
+  across two iterations**: the Popover API's `toggle` event is queued,
+  not synchronous, and `dropdown-menu.js`'s own unconditional close-time
+  `trigger.focus()` (reused unmodified) could still fire against a
+  STALE transition regardless of any staleness guard `menubar.js`
+  applied to its own reactions. The eventual fix collapses a two-call
+  `hidePopover()`-then-`showPopover()` sequence into a SINGLE
+  `showPopover()` call — confirmed empirically that showing a sibling
+  `popover="auto"` panel already closes the currently-open one as one
+  atomic native operation with a guaranteed event order — plus a
+  `generation`/`settledGeneration` guard that ignores a keypress arriving
+  before an earlier transition's final focus placement has completed,
+  rather than trying to out-race `dropdown-menu.js`'s unmodifiable
+  close-handler after the fact.
 
 ### Advanced Forms & Interaction
 - **Combobox**: a from-scratch WAI-ARIA 1.2 combobox — native
@@ -1323,12 +1454,21 @@ catalog.
   evaluated during feature 015's research phase (a 10-major-design-system
   comparison — shadcn/ui, Radix UI, MUI, Ant Design, Chakra UI, Mantine,
   Carbon, Polaris, Primer, Fluent 2 — surfaced these as the next tier of
-  genuine gaps) but deliberately deferred for the same reason as the list
-  above: each needs a substantially new interaction pattern (HoverCard is
-  additionally judged redundant with this catalog's existing
-  Tooltip+Popover combination, not merely deferred for complexity).
-  Flagged here for whichever future feature takes them on, extending
-  (not replacing) the list above.
+  genuine gaps). **TreeView, Rating, Menubar, and ColorPicker/ColorInput
+  have now shipped in feature 016** (see their Component Catalog entries
+  above) — each was genuinely buildable by reusing an existing mechanism
+  (native `<details>/<summary>` for TreeView, Dropdown Menu's panel
+  mechanics for Menubar, a native `<input type="color">` for
+  ColorPicker), not the "substantially new interaction pattern" barrier
+  that still applies to the remainder of this list. **HoverCard remains
+  deferred** — still judged redundant with this catalog's existing
+  Tooltip+Popover combination, not a complexity deferral.
+- Remaining deferred, unaddressed by feature 016: **Date Picker/Calendar,
+  interactive/sortable Data Table, Carousel, Chart, Scroll Area,
+  Resizable panels, HoverCard** — each still requires a substantially new
+  interaction pattern (or, for HoverCard, is redundant with an existing
+  combination) with no existing mechanism in this catalog to extend or
+  reuse. Flagged here for whichever future feature takes them on.
 
 ## Governance
 
@@ -1387,4 +1527,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.12.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-12
+**Version**: 1.13.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-12

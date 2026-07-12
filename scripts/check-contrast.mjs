@@ -390,6 +390,28 @@ const COVERED_FG_TOKENS = new Set(PAIRINGS.map((p) => p.fg));
 const ICON_FILL_TEXT_TOKENS = new Set(["neutral-500", "neutral-600"]);
 const RING_VERIFIED_TOKENS = new Set(RING_PAIRINGS.map((p) => p.fg));
 
+// Feature 016 (Rating, research.md R2): a stricter sibling of
+// ICON_FILL_TEXT_TOKENS above. Rating's filled-star glyph is an
+// `aria-hidden` icon fill whose measured contrast (text-warning, 2.15:1)
+// fails even the *lower* WCAG 1.4.11 non-text 3:1 floor that
+// ICON_FILL_TEXT_TOKENS' RING_PAIRINGS path requires — so that mechanism
+// doesn't apply here either. This is the same class of already-accepted
+// decorative-element exception this catalog uses for Stepper's/Timeline's
+// connector lines (feature 015 research.md R7) and Card's/Divider's
+// border colors, just extending it to cover a `text-*` token caught by
+// this scan (Stepper's connector is a `bg-*`/`border-*` token, which this
+// scan never looks at). The exemption applies ONLY when every use of the
+// token is: (a) inside an `aria-hidden="true"` element, and (b) the real
+// information it would otherwise convey is separately rendered as normal
+// visible text nearby (never the sole carrier of information). Add a
+// token here ONLY after confirming both conditions by reading the
+// component's actual markup/contract — never defensively. (Rating's
+// empty-star token, `neutral-300`, needed no entry here at all — it
+// already has its own unrelated PAIRINGS entry, "Sidebar dark item text",
+// verified at 12.04:1 AAA, so it was already in COVERED_FG_TOKENS before
+// this feature.)
+const DECORATIVE_ARIA_HIDDEN_TOKENS = new Set(["warning"]);
+
 const htmlFiles = [
   join(rootDir, "index.html"),
   ...collectHtmlFiles(join(rootDir, "src", "components")),
@@ -451,6 +473,7 @@ function scanClassesForCoverage(classes, sourceLabel) {
     if (!(suffix in BASE_TOKENS)) continue; // not a project color token (e.g. arbitrary value) — out of scope here
     if (COVERED_FG_TOKENS.has(suffix)) continue;
     if (ICON_FILL_TEXT_TOKENS.has(suffix) && RING_VERIFIED_TOKENS.has(suffix)) continue;
+    if (DECORATIVE_ARIA_HIDDEN_TOKENS.has(suffix)) continue;
     uncoveredTextTokens.add(`${suffix} (seen in ${sourceLabel})`);
   }
 }

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Rating — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Rating</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Read-only quality signal — the real numeric value is always visible
+    text, the star row is decorative reinforcement only
+    (<code>aria-hidden</code>).
+  </p>
+
+  <div data-testid="rating-demo-wrapper" class="mt-8 space-y-4">
+    <div class="rating" data-testid="rating-fractional">
+      <span class="rating-stars" aria-hidden="true">
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-empty" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+      </span>
+      <span class="rating-value">4.2 out of 5</span>
+    </div>
+
+    <div class="rating" data-testid="rating-whole">
+      <span class="rating-stars" aria-hidden="true">
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+      </span>
+      <span class="rating-value">5 out of 5</span>
+    </div>
+  </div>
+</body>
+</html>

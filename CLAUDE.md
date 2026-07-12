@@ -1,29 +1,32 @@
 <!-- SPECKIT START -->
-Active feature: `015-feedback-data-display-primitives`. For technologies,
+Active feature: `016-advanced-interaction-primitives`. For technologies,
 project structure, shell commands, and other implementation context,
-read `specs/015-feedback-data-display-primitives/plan.md` (and its
-`research.md`, `contracts/`, `quickstart.md` siblings). Features 001-014
-are all complete and shipped. Feature 015 ships ten new static
-components closing gaps found against a 10-major-design-system
-comparison (shadcn/ui, Radix UI, MUI, Ant Design, Chakra UI, Mantine,
-Carbon, Polaris, Primer, Fluent 2): Spinner, AspectRatio, Indicator,
-DataList (P1); Slider, Stepper, File Input (P2); Timeline (P3);
-Stat/Metric Card, PinInput (P4). Slider reuses Progress's exact
-fill/track color pairing (6.38:1) via the `accent-color` CSS property
-(no vendor-prefixed pseudo-elements needed — verified supported in all
-three target engines). PinInput and File Input are the only two
-components needing new JS (`src/scripts/pin-input.js` — paste-splitting,
-auto-advance, Backspace-retreat across separate `<input>` boxes;
-`src/scripts/file-input.js` — a small `change`-event listener for
-filename display, since the selected filename has no CSS-only solution).
-A real accessibility
-defect was caught before shipping: Indicator's initial draft assumed
-Badge's severity tokens would transfer directly to a solid-fill badge,
-but Badge's actual pattern is a tint + `-strong`-text, not solid + white
-text — the base status colors fail even AA 4.5:1 with white text; fixed
-by using the `-strong` variants (already ratified) as solid fills
-instead, all clearing AAA. File Input's drag-and-drop is scoped to a
-static visual treatment only, with real DnD JS explicitly deferred.
+read `specs/016-advanced-interaction-primitives/plan.md` (and its
+`research.md`, `contracts/`, `quickstart.md` siblings). Features 001-015
+are all complete and shipped. Feature 016 ships four new static
+components closing the next tier of gaps from the "Known Catalog Gaps"
+list ratified in constitution v1.12.0: TreeView, Rating (read-only
+display), Menubar, and ColorPicker/ColorInput. Each reuses an
+already-ratified mechanism, confirmed empirically rather than assumed:
+TreeView is recursively nested native `<details>/<summary>` (verified via
+Chromium's real accessibility tree — `<summary>` gets role
+`DisclosureTriangle` with correct independent `expanded` state per
+instance and correct `level` via `<ul>/<li>` nesting — zero ARIA needed);
+Rating's star glyphs reuse the already-ratified `text-warning`/
+`text-neutral-300` tokens as a decorative-only pairing (real value always
+conveyed via visible text, matching Stepper/Timeline's accepted
+decorative-border exception); Menubar composes Dropdown Menu's existing
+`initDropdownMenus()` completely unmodified (its `anchorCounter` pattern
+already handles multiple independent trigger+panel instances) plus one
+new small module (`src/scripts/menubar.js`) adding only the
+roving-tabindex-between-top-level-triggers layer adapted from Tabs;
+ColorInput is a native `<input type="color">` (border/ring styling
+confirmed to apply consistently across all three engines via direct
+Playwright inspection), explicitly rejecting a custom JS color-swatch
+picker as unnecessary complexity for what the native element already
+solves. Date Picker/Calendar, interactive/sortable Data Table, Carousel,
+Chart, Scroll Area, Resizable panels, and HoverCard remain on the Known
+Catalog Gaps list, deliberately deferred.
 <!-- SPECKIT END -->
 
 ## graphify

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>ColorPicker/ColorInput — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+</head>
+<body class="page-shell">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">ColorPicker/ColorInput</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Native <code>&lt;input type="color"&gt;</code> — zero JavaScript, a
+    full OS-level color picker UI, complete keyboard operability, and a
+    real hex value, all for free.
+  </p>
+
+  <div data-testid="color-input-demo-wrapper" class="mt-8 max-w-md space-y-8">
+    <div>
+      <label for="color-accent" class="text-sm font-medium text-neutral-900">Accent color</label>
+      <input
+        type="color"
+        id="color-accent"
+        value="#004BB3"
+        class="color-input mt-2"
+        data-testid="color-input-accent"
+      />
+    </div>
+    <div>
+      <label for="color-disabled" class="text-sm font-medium text-neutral-900">Disabled</label>
+      <input
+        type="color"
+        id="color-disabled"
+        value="#6B7280"
+        disabled
+        class="color-input mt-2"
+        data-testid="color-input-disabled"
+      />
+    </div>
+  </div>
+</body>
+</html>
