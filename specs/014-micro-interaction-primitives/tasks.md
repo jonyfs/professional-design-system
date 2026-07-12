@@ -415,7 +415,7 @@ adoption assessed and applied or explicitly declined.
       established rule. Download the artifact, verify zero drift on any
       pre-existing baseline (only the 10 new components' `*-linux.png`
       files should be new), commit the new baselines
-- [ ] T071 Run `/speckit-constitution` to add all ten new Component
+- [X] T071 Run `/speckit-constitution` to add all ten new Component
       Catalog entries (Textarea, Divider, Kbd, Skeleton, Tooltip,
       Progress, Button Group — with its native-radio-group keyboard
       model explicitly documented per research.md R2 — Popover, and

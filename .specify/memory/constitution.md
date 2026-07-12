@@ -1,4 +1,54 @@
 <!--
+SYNC IMPACT REPORT (v1.11.0 — see below for the v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.10.0 → 1.11.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Forms, Validation & Inputs → Textarea, Button
+    Group / Segmented Control
+  - Component Catalog → Data Display & Listings → Divider/Separator,
+    Kbd, Skeleton, Empty State
+  - Component Catalog → Overlays, Modals & Feedback → Tooltip, Progress
+  - Component Catalog → Navigation & Disclosure → Popover, Context Menu
+  - Component Catalog → NEW "Known Catalog Gaps" subsection (Date
+    Picker/Calendar, interactive Data Table, Carousel, Chart, Scroll
+    Area, Resizable panels — deliberately deferred, not silently dropped)
+  - Design Foundations → Typography & Text Scale → `font-mono` token
+    (this catalog's first ratified monospace stack)
+Corrected sections:
+  - Component Catalog → Navigation & Disclosure → Command Palette: noted
+    its ⌘K/Ctrl+K markup now uses the shared `.kbd` class instead of
+    duplicating the same utility string inline (feature 014).
+Rationale: feature 014 (Micro-Interaction & Utility Primitives) shipped
+ten components closing genuine gaps found via a shadcn/ui + Radix UI
+Primitives comparison — each extends an already-ratified mechanism
+(Accordion's native exclusivity for Button Group, Dropdown Menu's
+Popover-API/Anchor-Positioning wiring for Popover/Context Menu, Avatar/
+Card's sizing for Skeleton) rather than inventing a new one. This is a
+MINOR bump (new catalog guidance + one new token), matching the
+precedent of v1.9.0's own Lists addition.
+Two genuine, previously-undiscovered bugs were found and fixed during
+this feature, both now documented directly in the affected catalog
+entries above so future components don't repeat them: (1) this
+project's CSP (`style-src 'self'`, no `unsafe-inline`) silently blocks
+inline `style="..."` HTML attributes — affected both Tooltip's
+`anchor-name`/`position-anchor` and Progress's fill width, caught only
+by inspecting computed style values and browser console output, since
+no test asserting ARIA attributes or opacity alone would have surfaced
+it; fixed via pre-declared numbered CSS classes (Tooltip, preserves
+zero-JS) and direct CSSOM property assignment via a small script
+(Progress, since percentage is a continuous value space unlike
+Tooltip's small set of anchor pairings). (2) `scripts/audit-tokens.mjs`
+had a real bug of its own: its code comment claimed to support
+directional radius utilities like `rounded-t-lg`, but the allowlist
+check never actually stripped the directional infix before validating —
+found while building Button Group's `first:rounded-l-md`/
+`last:rounded-r-md` segment corners, now fixed to correctly parse
+side/corner infixes before checking the base radius allowlist.
+Templates requiring updates: ✅ none — no principle or template-level
+change, only Component Catalog and Design Foundations content.
+-->
+
+<!--
 SYNC IMPACT REPORT (v1.10.0 — see below for the v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.9.0 → 1.10.0
 Modified principles: None
@@ -639,6 +689,11 @@ text-safe `-strong` companion, unlike success/warning/error.
 ### Typography & Text Scale
 - Family: `font-sans` (Inter, system-ui, sans-serif), with `antialiased` always
   active.
+- `font-mono` (ui-monospace, SFMono-Regular, Menlo, monospace) — added in
+  feature 014 for Kbd, this catalog's first ratified monospace stack. A
+  standard, dependency-free system stack (no new font file/CDN link, unlike
+  Inter's own pre-existing font-delivery gap tracked separately). Reserved
+  for keyboard-shortcut display; not a general body-copy alternative.
 - `text-xs` (12px, `font-normal`/`font-medium`) — captions, metadata, micro-text.
 - `text-sm` (14px, `font-normal`/`font-semibold`) — default body copy, input
   labels, table items.
@@ -733,6 +788,33 @@ catalog.
   below the input (AAA-safe text variant); the parent input additionally
   receives `ring-error focus:ring-error` (non-text use — base token is
   correct here).
+- **Textarea**: shipped as a real component in feature 014
+  (`src/components/textarea/textarea.html`), closing the gap this entry's
+  own "Text inputs/selects/textareas" wording had implied without a
+  standalone component ever existing — the same class of "documented but
+  never shipped" gap Table had before feature 012. Reuses the Text
+  inputs/selects pattern above verbatim; the only differences are
+  `resize-y` (never bare `resize`, which permits horizontal resize and
+  breaks responsive layouts) and a `rows="4"` default.
+- **Button Group / Segmented Control**: shipped in feature 014
+  (`.button-group`/`.button-group-segment`,
+  `src/components/button-group/button-group.html`) as **zero
+  JavaScript** — visually-hidden native `<input type="radio">` elements
+  sharing one `name` attribute, each paired with a `<label>` styled as a
+  connected segment (`first:rounded-l-md last:rounded-r-md` on the outer
+  segments, `-ml-px` collapsing adjacent borders to a single 1px line).
+  Native radio-group behavior (arrow keys move the checked segment,
+  skipping disabled ones; Tab enters/exits the whole group as one stop)
+  is free from the browser. This REUSES Accordion's native shared-`name`
+  exclusivity mechanism (feature 009) rather than porting Tabs' custom
+  roving-tabindex widget — the explicit precedent going forward: when a
+  native form control already solves an exclusivity/selection problem,
+  prefer it over a hand-rolled ARIA widget. Active segment
+  `bg-brand-dark text-white` (7.90:1, the same Sidebar/Pagination
+  active-item pairing, re-verified rather than assumed since contrast
+  ratios are colors-only and don't change by context). Disabled segment
+  `opacity-50 cursor-not-allowed` on the label, driven by
+  `input:disabled +`.
 
 ### Data Display & Listings
 - **Tables**: shipped as a real component in feature 012 (`.data-table`/
@@ -824,6 +906,48 @@ catalog.
   above). Message text `text-neutral-900` (matching Toast's message
   treatment below). Optional dismiss control reuses `close-icon-btn`
   verbatim (Overlays section below) — no new interactive class.
+- **Divider/Separator**: shipped in feature 014
+  (`src/components/divider/divider.html`). `.divider` — `border-t
+  border-neutral-200`, reused verbatim for BOTH the semantic `<hr>`
+  thematic-break case and the non-semantic horizontal `role="separator"`
+  `<div>` case used inside flex/grid layouts (no second class needed for
+  that variant — only orientation, not semantics, changes the box model).
+  `.divider-vertical` — `h-full w-px self-stretch bg-neutral-200`, for
+  vertical breaks inside toolbars; always non-semantic (`role="separator"
+  aria-orientation="vertical"`), since no semantic HTML element for a
+  vertical thematic break exists.
+- **Kbd**: shipped in feature 014 (`.kbd`,
+  `src/components/kbd/kbd.html`) for inline keyboard-shortcut display —
+  `rounded-sm border-neutral-300 bg-neutral-50 font-mono text-xs
+  text-neutral-700 shadow-sm` (9.86:1 AAA, computed via the WCAG
+  relative-luminance formula). Real `<kbd>` element, no ARIA needed
+  (native semantics already communicate "this represents keyboard
+  input"). Requires `font-mono` (Design Foundations, above) — Command
+  Palette's pre-existing inline ⌘K/Ctrl+K markup (feature 008) was
+  updated to adopt this shared class rather than continuing to duplicate
+  the same utility string.
+- **Skeleton**: shipped in feature 014 (`.skeleton` +
+  `.skeleton-text`/`.skeleton-avatar-sm`/`.skeleton-avatar-lg`/
+  `.skeleton-card`, `src/components/skeleton/skeleton.html`) as a loading
+  placeholder — `animate-pulse bg-neutral-200`, avatar presets reusing
+  Avatar's exact `h-8 w-8`/`h-10 w-10` sizes and the card preset reusing
+  Card's `rounded-lg` verbatim, so a skeleton-to-real-content swap never
+  shifts layout. **This is the first `motion-reduce:` handling this
+  codebase has ever ratified** — no prior mechanism existed (confirmed by
+  grep, not assumed) since every previously-shipped animation was a
+  one-shot state-change transition, not a continuous/looping one.
+  `motion-reduce:animate-none` (Tailwind's built-in variant, not a raw
+  media query) is the established pattern for any future continuous
+  animation.
+- **Empty State**: shipped in feature 014
+  (`src/components/empty-state/empty-state.html`) as **this catalog's
+  first purely compositional entry — no new CSS class**. Centered `flex
+  flex-col items-center gap-3 py-12 text-center` wrapper; `aria-hidden`
+  icon; a real `<h2>`/`<h3>` heading (never a styled `<div>` standing in
+  for one); `text-neutral-600` description; optional `.btn-primary`
+  action. Built entirely from already-ratified utilities/classes —
+  confirmed empirically during implementation that no new class was
+  needed, rather than assumed either way going in.
 
 ### Overlays, Modals & Feedback
 - **Modals**: backdrop `fixed inset-0 bg-neutral-500/75 transition-opacity`;
@@ -833,6 +957,46 @@ catalog.
   ease-in-out duration-500`; `h-full` with `max-w-md`.
 - **Toasts/banners**: `fixed top-4 right-4 z-50`, semantic icon on the left,
   explicit close button on the right (`text-neutral-400 hover:text-neutral-500`).
+- **Tooltip**: shipped in feature 014
+  (`.tooltip-wrapper`/`.tooltip`/`.tooltip-top`,
+  `src/components/tooltip/tooltip.html`) as **zero JavaScript** —
+  visibility is purely `:hover`/`:focus-within` driven (opacity
+  transition, `delay-300` before appearing), positioned via CSS Anchor
+  Positioning (`anchor-name`/`position-anchor`/`anchor()`, the same
+  cross-engine-verified mechanism as Dropdown Menu) but deliberately
+  WITHOUT the Popover API — a tooltip is non-interactive and must never
+  contain focusable content (WAI-ARIA tooltip pattern), unlike
+  Popover/Dropdown Menu/Combobox's click-triggered dismissible panels.
+  **Ratified CSP constraint**: this project's `style-src 'self'` (no
+  `unsafe-inline`) silently blocks inline `style="anchor-name:..."` HTML
+  attributes — confirmed empirically (a real, previously-undiscovered
+  bug: `anchor-name` computed to `none` and the tooltip rendered at the
+  wrong position, uncaught by any test that only asserted opacity, not
+  actual placement). Fixed via 4 pre-declared numbered
+  `.tooltip-anchor-N`/`.tooltip-target-N` class pairs in the stylesheet
+  (same-origin rules, unaffected by `style-src`) — any future component
+  needing a per-instance CSS custom property MUST use this
+  numbered-class technique or a JS-driven CSSOM assignment (see
+  Progress, below), never an inline `style` attribute.
+- **Progress**: shipped in feature 014
+  (`.progress-track`/`.progress-fill`/`.progress-fill-indeterminate`,
+  `src/components/progress/progress.html`). `role="progressbar"` with
+  `aria-valuenow`/`aria-valuemin`/`aria-valuemax` (indeterminate variant
+  omits `aria-valuenow`). Track `bg-neutral-200`, fill `bg-brand-dark`
+  (6.38:1 against the track, clearing WCAG 1.4.11's 3:1 non-text floor
+  with over double the required margin — computed via the WCAG
+  relative-luminance formula, not assumed from Sidebar's unrelated
+  text-contrast pairing). Indeterminate fill gated by
+  `motion-reduce:animate-none`. Fill width is driven by a small script
+  (`src/scripts/progress.js`, `element.style.width` set directly via the
+  CSSOM from a `data-value` attribute) rather than a static inline
+  `style="width:..."` — the same CSP constraint Tooltip hit (above), but
+  fixed with a script instead of numbered classes since a percentage is
+  a continuous 0–100 value space, not a small boundable set. Direct
+  CSSOM property assignment (`el.style.foo = ...`) is NOT subject to the
+  `style-src` check that blocks the inline HTML attribute — the same
+  distinction Dropdown Menu's `trigger.style.anchorName = ...` already
+  relied on, now made explicit for future components to reuse.
 
 ### Navigation & Disclosure
 - **Accordion/Disclosure**: native `<details>`/`<summary>` — zero JavaScript,
@@ -873,6 +1037,43 @@ catalog.
   the standard focus-visible outline (the bg alone does not satisfy this
   principle's outline mandate), disabled `disabled:opacity-50
   disabled:cursor-not-allowed`.
+- **Popover**: shipped in feature 014 (`.popover-panel`,
+  `src/components/popover/popover.html`, `src/scripts/popover.js`) — a
+  generic-content variant of Dropdown Menu's exact mechanism above
+  (`popover="auto"` + Anchor Positioning, unique anchor-name per
+  instance), but hosting arbitrary content instead of a fixed
+  `role="menuitem"` list, so no roving-focus/item-list logic is carried
+  over. Two things ARE carried over from Dropdown Menu's `toggle`
+  listener: `aria-expanded` sync, and close-path `trigger.focus()`
+  (any component hosting real interactive content must return focus
+  somewhere sane on close). Adds `position-try-fallbacks: flip-block,
+  flip-inline` on `.popover-panel` for viewport-edge repositioning —
+  **new coverage Dropdown Menu itself never had** (Dropdown Menu's own
+  contract explicitly documents viewport-edge positioning as out of
+  scope); verified `position-try-fallbacks` support directly via
+  `CSS.supports()` across all three target engines before adopting it,
+  the same discipline as Anchor Positioning itself in feature 010. Also
+  ships a `MutationObserver` closing the panel if its trigger is removed
+  from the DOM while open (native `popover="auto"` panels do not
+  auto-close on trigger removal, and an unhandled removed-trigger would
+  leave an orphaned floating panel with no way to dismiss it).
+- **Context Menu**: shipped in feature 014 (`src/scripts/context-menu.js`,
+  `src/components/context-menu/context-menu.html`), reusing Dropdown
+  Menu's `.dropdown-menu-panel`/`.dropdown-menu-item` classes verbatim
+  but **forking** (not reusing verbatim) its JS: CSS Anchor Positioning
+  can only anchor to a real DOM element, never a synthetic cursor
+  coordinate, so on `contextmenu` (with `event.preventDefault()` to
+  suppress the native browser menu) the panel's `style.left`/`style.top`
+  are set imperatively from `event.clientX`/`event.clientY`, clamped
+  against `window.innerWidth`/`innerHeight` minus the panel's own
+  measured `offsetWidth`/`offsetHeight` so it never renders off-screen.
+  Arrow-key roving focus and toggle-driven focus-init (first item on
+  open)/focus-return (to the right-clicked target on close) ARE copied
+  verbatim from Dropdown Menu, since neither depends on the positioning
+  mechanism. **Precedent for future forks**: positioning logic forks
+  when the anchor target genuinely differs (element vs. cursor point);
+  interaction/focus logic doesn't need to, and shouldn't be
+  re-derived, when the underlying widget semantics are identical.
 
 ### Advanced Forms & Interaction
 - **Combobox**: a from-scratch WAI-ARIA 1.2 combobox — native
@@ -918,7 +1119,21 @@ catalog.
   exported `wireDialogClose(dialog)` helper (extracted from
   `initDialogTriggers()`'s per-trigger loop, which cannot discover a
   dialog with no `data-dialog-trigger` button) and called once for this
-  dialog — Modal/Slide-over's own wiring is unchanged.
+  dialog — Modal/Slide-over's own wiring is unchanged. **Updated in
+  feature 014**: its inline ⌘K/Ctrl+K markup now uses the shared `.kbd`
+  class (above) instead of duplicating the same utility string inline.
+
+### Known Catalog Gaps (deliberately deferred, not silently dropped)
+- **Date Picker/Calendar, interactive/sortable Data Table, Carousel,
+  Chart, Scroll Area, Resizable panels**: evaluated during feature 014's
+  research phase (a shadcn/ui + Radix UI Primitives comparison surfaced
+  these as genuine gaps against common component-library baselines) but
+  deliberately deferred — unlike feature 014's ten shipped components,
+  each of these requires a substantially new interaction pattern with no
+  existing mechanism in this catalog to extend or reuse. Flagged here for
+  whichever future feature takes them on, matching this constitution's
+  established practice of recording deferred gaps explicitly (e.g. Table
+  was recorded this way before feature 012 built it).
 
 ## Governance
 
@@ -977,4 +1192,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.10.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-10
+**Version**: 1.11.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-11
