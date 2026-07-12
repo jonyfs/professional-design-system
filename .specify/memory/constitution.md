@@ -1,4 +1,50 @@
 <!--
+SYNC IMPACT REPORT (v1.12.0 — see below for the v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.11.0 → 1.12.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Application & Navigation → Stepper/Steps
+  - Component Catalog → Forms, Validation & Inputs → Slider (Range),
+    File Input/Upload
+  - Component Catalog → Data Display & Listings → AspectRatio,
+    Indicator, DataList, Timeline, Stat/Metric Card
+  - Component Catalog → Overlays, Modals & Feedback → Spinner/Loader
+  - Component Catalog → Advanced Forms & Interaction → PinInput/OTP
+  - Component Catalog → Known Catalog Gaps → extended (not replaced)
+    with TreeView, Rating, Menubar, ColorPicker/ColorInput, HoverCard
+    (feature 015's research phase, a 10-major-design-system comparison)
+Corrected sections: None — no prior entry needed correction.
+Rationale: feature 015 (Feedback & Data Display Primitives) shipped ten
+components closing genuine gaps found via a 10-major-design-system
+comparison (shadcn/ui, Radix UI, MUI, Ant Design, Chakra UI, Mantine,
+Carbon, Polaris, Primer, Fluent 2) — each reuses an already-ratified
+mechanism (Progress's fill/track pairing for Slider, Pagination's
+active-item pairing for Stepper, Avatar's sizing for Spinner/Timeline,
+Badge's `-strong` tokens for Indicator, TextInput's focus ring for
+PinInput) rather than inventing a new one. This is a MINOR bump (new
+catalog guidance, ten new components, zero new design tokens), matching
+the precedent of v1.11.0's own feature-014 addition.
+Two real defects were found and fixed during this feature, both now
+documented directly in the affected catalog entries above: (1)
+Indicator's initial draft assumed Badge's severity tokens transferred
+directly to a solid-fill badge, but the base status colors fail even AA
+4.5:1 with white text (2.54:1–4.83:1) — fixed with the `-strong`
+variants as solid fills instead (7.68:1–10.31:1, all AAA). (2) File
+Input's helper text used `text-neutral-500` (4.83:1, clears AA but fails
+this catalog's AAA 7:1 floor) — `neutral-500` is ratified only for
+icon-fill/non-text use in this catalog, never body text; fixed with
+`text-neutral-600`. A third, non-visual defect was also caught and fixed
+during implementation: File Input's native `<input>` had to be
+reordered to be first in the DOM (not last) for its mandated
+focus-visible rule to be matchable at all by the `~` sibling combinator,
+and its icon/text content wrapped in one `.file-drop-zone-content` div
+so the focus-visible/disabled rules produce one cohesive visual change
+instead of one per child element.
+Templates requiring updates: ✅ none — no principle or template-level
+change, only Component Catalog content.
+-->
+
+<!--
 SYNC IMPACT REPORT (v1.11.0 — see below for the v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.10.0 → 1.11.0
 Modified principles: None
@@ -753,6 +799,22 @@ catalog.
   neutral-600 aria-hidden="true"` (not `-500` — `aria-hidden` exempts
   content from assistive technology, not from sighted low-vision users who
   still read the glyph visually, so the AAA floor still applies).
+- **Stepper/Steps**: shipped in feature 015
+  (`.stepper`/`.stepper-step`/`.stepper-step-completed`/
+  `.stepper-step-current`/`.stepper-step-upcoming`/`.stepper-circle`,
+  `src/components/stepper/stepper.html`) as **presentational-only in this
+  feature** — no click-to-navigate interactivity beyond what a natural
+  link/button per step would already provide (a documented, deliberate
+  scope decision, not an oversight). Reuses Pagination's exact
+  `bg-brand-dark text-white` current/completed-item pairing verbatim
+  (7.90:1, re-verified rather than assumed identical just because both
+  are "the current one in a sequence"). The connector line between
+  circles is `background-color` on a `::after` pseudo-element
+  (`bg-neutral-200` upcoming / `bg-brand-dark` completed) — purely
+  decorative, matching this catalog's already-accepted
+  low-contrast-decorative-border exception (Card/Divider/List's
+  `border-neutral-200`), not a new WCAG 1.4.11 gap. `aria-current="step"`
+  on the current step only (not `"page"` — a step is not a page).
 - **Breadcrumbs**: `text-sm text-neutral-600` (corrected from the originally
   speculative `text-neutral-500` — feature 005 was the first to actually
   implement and test this pattern, and a real axe-core AAA scan measured
@@ -815,6 +877,41 @@ catalog.
   ratios are colors-only and don't change by context). Disabled segment
   `opacity-50 cursor-not-allowed` on the label, driven by
   `input:disabled +`.
+- **Slider (Range)**: shipped in feature 015 (`.slider`,
+  `src/components/slider/slider.html`) as native `<input type="range">`
+  — **zero JavaScript**. Fill/thumb driven by Tailwind's `accent-*`
+  utility (`accent-brand-dark` on `bg-neutral-200`), confirmed via
+  `CSS.supports()` to be supported across Chromium/Firefox/WebKit,
+  chosen over hand-rolled `::-webkit-slider-thumb`/`::-moz-range-thumb`
+  vendor-prefixed pseudo-elements (each only supported in one engine
+  family). Reuses Progress's exact fill/track pairing verbatim (6.38:1,
+  confirmed identical colors before citing the number, not re-computed).
+  Native keyboard support (arrow keys, Home/End, Page Up/Down) is free
+  from the browser.
+- **File Input/Upload**: shipped in feature 015 (`.file-drop-zone`/
+  `.file-input-native`, `src/components/file-input/file-input.html`,
+  `src/scripts/file-input.js`) as a native `<input type="file">`
+  (opacity-0, `absolute inset-0`) layered under a styled drop-zone
+  wrapper — click-to-browse works natively. The native input MUST be
+  first in the DOM inside `.file-drop-zone` (a real bug found during
+  implementation: the general-sibling combinator `~` only matches
+  elements AFTER the reference element, so an input placed last made the
+  mandated focus-visible rule permanently unmatchable); the icon/text
+  MUST be wrapped in one `.file-drop-zone-content` sibling so the
+  focus-visible/disabled rules produce one cohesive outline/opacity
+  change instead of one per child. The selected filename is displayed via
+  `src/scripts/file-input.js`'s `change`-event listener (the native input
+  is visually transparent, so its own browser filename chrome is never
+  seen) — the only genuinely new interactivity this component needs.
+  Real drag-and-drop (`dragenter`/`dragover`/`drop` handling) is
+  explicitly deferred as a documented future enhancement, not silently
+  dropped — a materially larger JS surface than reading the `change`
+  event's own `.files` list. **Contrast correction found during
+  implementation**: the helper text originally used `text-neutral-500`
+  (measures 4.83:1, clears AA but fails this catalog's AAA 7:1 floor) —
+  `neutral-500` is ratified in this catalog ONLY for icon-fill/non-text
+  use, never small body text; fixed with `text-neutral-600` (already
+  used for every other small helper/caption text in this catalog).
 
 ### Data Display & Listings
 - **Tables**: shipped as a real component in feature 012 (`.data-table`/
@@ -948,6 +1045,68 @@ catalog.
   action. Built entirely from already-ratified utilities/classes —
   confirmed empirically during implementation that no new class was
   needed, rather than assumed either way going in.
+- **AspectRatio**: shipped in feature 015
+  (`src/components/aspect-ratio/aspect-ratio.html`) as **this catalog's
+  second purely compositional entry — no new CSS class**, matching
+  Empty State's precedent. Plain `aspect-[16/9]`/`aspect-square`/
+  `aspect-[4/3]` Tailwind utilities backed by the standard `aspect-ratio`
+  CSS property (confirmed supported across the full target engine
+  matrix). Constrains embedded media to a fixed ratio, preventing layout
+  shift as the media loads; the contained element still needs its own
+  real `alt`/accessible name — AspectRatio itself adds no new
+  accessibility requirement.
+- **Indicator**: shipped in feature 015 (`.indicator-wrapper`/
+  `.indicator`/`.indicator-error`/`.indicator-success`/
+  `.indicator-warning`/`.indicator-info`/`.indicator-neutral`/
+  `.indicator-dot`, `src/components/indicator/indicator.html`) as a
+  small overlay badge positioned via plain `relative`/`absolute`
+  (confirmed empirically that CSS Anchor Positioning is unneeded — an
+  Indicator overlays its own direct parent, never a separate top-layer
+  element like Tooltip/Popover). Genuinely distinct from the standalone
+  Badge component. **Real contrast defect caught before shipping, not
+  assumed transferable from Badge**: Badge's own pattern is a 5%-opacity
+  tint + `text-{status}-strong`, never `text-white` on the *base* status
+  color — the base colors were never calibrated for solid-fill +
+  white-text use. Computed directly: `text-white` on the base
+  `bg-success`/`bg-warning`/`bg-error`/`bg-info`/`bg-neutral-500`
+  measures 2.54:1 / 2.15:1 / 3.76:1 / 3.68:1 / 4.83:1 — all fail this
+  catalog's AAA 7:1 floor, four of five fail even AA 4.5:1. Fixed with
+  the `-strong` variants (already ratified for Badge/Alert text) as
+  solid fills instead: 7.68:1 / 9.07:1 / 8.31:1 / 8.72:1 against white,
+  and `neutral-700` (10.31:1) replacing `neutral-500` for the same
+  reason — all clear AAA comfortably. The lesson generalizes: re-verify
+  the actual computed ratio any time a new component reuses a
+  "similar-sounding" existing token in a structurally different way
+  (solid fill vs. tint), not just when the token name matches. The badge
+  itself is `aria-hidden="true"`; the host's own accessible name (a
+  visually-hidden sibling span) MUST include the count/status value for
+  the count/status variant.
+- **DataList**: shipped in feature 015
+  (`src/components/data-list/data-list.html`) as **this catalog's third
+  purely compositional entry — no new CSS class**. Real semantic
+  `<dl>`/`<dt>`/`<dd>` key-value pairs styled with the same
+  `text-sm font-medium text-neutral-900` (label) /
+  `text-sm text-neutral-600` (value) pairing already used throughout
+  Forms and Empty State — `<dt>`/`<dd>` natively associate each term with
+  its description, no ARIA needed.
+- **Timeline**: shipped in feature 015 (`.timeline`/`.timeline-item`/
+  `.timeline-content`, `src/components/timeline/timeline.html`) as
+  **zero JavaScript** — a real `<ol>` (chronological order is
+  semantically meaningful) of dated events, each with a real
+  `<time datetime="...">` timestamp. Reuses Avatar's
+  `.avatar-fallback`/`.avatar-sm` classes verbatim for each event's
+  actor. The connecting line (`::before` pseudo-element, `bg-neutral-200`)
+  is the same accepted decorative-border exception as Stepper's connector
+  and Card/Divider/List — not a new contrast gap.
+- **Stat/Metric Card**: shipped in feature 015
+  (`src/components/stat-card/stat-card.html`) as **pure composition of
+  the existing `.card` class + typography tokens — no new CSS class**,
+  confirmed empirically rather than assumed. Trend indicator reuses
+  `text-success-strong`/`text-error-strong` verbatim (identical
+  text-on-white usage context Badge already established, no new pairing
+  to verify). Decorative trend arrows are `aria-hidden="true"`; the
+  actual percentage/direction is conveyed in real text, never the glyph
+  alone.
 
 ### Overlays, Modals & Feedback
 - **Modals**: backdrop `fixed inset-0 bg-neutral-500/75 transition-opacity`;
@@ -997,6 +1156,17 @@ catalog.
   `style-src` check that blocks the inline HTML attribute — the same
   distinction Dropdown Menu's `trigger.style.anchorName = ...` already
   relied on, now made explicit for future components to reuse.
+- **Spinner/Loader**: shipped in feature 015
+  (`.spinner`/`.spinner-sm`/`.spinner-lg`,
+  `src/components/spinner/spinner.html`) as **zero JavaScript** — an SVG
+  with `animate-spin` (Tailwind's built-in utility) `text-brand-dark`,
+  distinct from Progress's linear/determinate-capable bar. Sizes reuse
+  Avatar's exact `h-8 w-8`/`h-10 w-10` scale for visual consistency.
+  `role="status"` + `aria-label="Loading"` (no visible text label
+  competing for space, but assistive technology still announces the
+  loading state). Gated by `motion-reduce:animate-none`, reusing
+  Skeleton's precedent (feature 014) for the same class of continuous/
+  looping animation.
 
 ### Navigation & Disclosure
 - **Accordion/Disclosure**: native `<details>`/`<summary>` — zero JavaScript,
@@ -1122,6 +1292,20 @@ catalog.
   dialog — Modal/Slide-over's own wiring is unchanged. **Updated in
   feature 014**: its inline ⌘K/Ctrl+K markup now uses the shared `.kbd`
   class (above) instead of duplicating the same utility string inline.
+- **PinInput/OTP**: shipped in feature 015 (`.pin-input-box`,
+  `src/components/pin-input/pin-input.html`, `src/scripts/pin-input.js`)
+  as a segmented one-character-per-box numeric input, built from real,
+  separate `<input>` elements (never a single input with visual tricks)
+  so each box is genuinely focusable and screen-reader-navigable. Needed
+  its own new small JS module — no existing script handled multi-box
+  focus distribution — providing per-box numeric filtering with
+  auto-advance, Backspace-retreat on an empty box, and paste-splitting
+  across the remaining boxes starting from whichever box receives the
+  paste (non-numeric content rejected, excess length truncated). Reuses
+  TextInput's exact ring/focus treatment (`ring-neutral-300`,
+  `focus:ring-brand`) rather than inventing a new focus idiom. Real
+  `<fieldset>`/`<legend>` grouping with a per-box `aria-label` (e.g.
+  "Digit 1"), since no single visible label covers all boxes.
 
 ### Known Catalog Gaps (deliberately deferred, not silently dropped)
 - **Date Picker/Calendar, interactive/sortable Data Table, Carousel,
@@ -1133,7 +1317,18 @@ catalog.
   existing mechanism in this catalog to extend or reuse. Flagged here for
   whichever future feature takes them on, matching this constitution's
   established practice of recording deferred gaps explicitly (e.g. Table
-  was recorded this way before feature 012 built it).
+  was recorded this way before feature 012 built it). **Still deferred as
+  of feature 015** — none of these ten components address this list.
+- **TreeView, Rating, Menubar, ColorPicker/ColorInput, HoverCard**:
+  evaluated during feature 015's research phase (a 10-major-design-system
+  comparison — shadcn/ui, Radix UI, MUI, Ant Design, Chakra UI, Mantine,
+  Carbon, Polaris, Primer, Fluent 2 — surfaced these as the next tier of
+  genuine gaps) but deliberately deferred for the same reason as the list
+  above: each needs a substantially new interaction pattern (HoverCard is
+  additionally judged redundant with this catalog's existing
+  Tooltip+Popover combination, not merely deferred for complexity).
+  Flagged here for whichever future feature takes them on, extending
+  (not replacing) the list above.
 
 ## Governance
 
@@ -1192,4 +1387,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.11.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-11
+**Version**: 1.12.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-12

@@ -207,6 +207,41 @@ const PAIRINGS = [
     bg: "neutral-50",
     threshold: AAA_NORMAL,
   },
+  {
+    // Feature 015 (research.md R9) — Indicator's solid-fill badge text.
+    // NOT the same relationship as Badge's tint+strong-text pattern —
+    // caught a real defect where the base status colors (bg-success etc.)
+    // fail even AA 4.5:1 with white text; the -strong variants (already
+    // ratified for text-bearing use elsewhere) are the correct fill here.
+    name: "Indicator success (text-white on bg-success-strong)",
+    fg: "white",
+    bg: "success-strong",
+    threshold: AAA_NORMAL,
+  },
+  {
+    name: "Indicator warning (text-white on bg-warning-strong)",
+    fg: "white",
+    bg: "warning-strong",
+    threshold: AAA_NORMAL,
+  },
+  {
+    name: "Indicator error (text-white on bg-error-strong)",
+    fg: "white",
+    bg: "error-strong",
+    threshold: AAA_NORMAL,
+  },
+  {
+    name: "Indicator info (text-white on bg-info-strong)",
+    fg: "white",
+    bg: "info-strong",
+    threshold: AAA_NORMAL,
+  },
+  {
+    name: "Indicator neutral (text-white on bg-neutral-700)",
+    fg: "white",
+    bg: "neutral-700",
+    threshold: AAA_NORMAL,
+  },
 ];
 
 // Non-text UI component boundaries (WCAG 1.4.11, 3:1) — e.g. a control's

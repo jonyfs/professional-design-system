@@ -635,4 +635,108 @@
     @apply w-72 rounded-md border border-neutral-300 bg-white p-4 shadow-lg;
     position-try-fallbacks: flip-block, flip-inline;
   }
+
+  /* Feature 015: Feedback & Data Display Primitives */
+
+  .spinner {
+    @apply animate-spin text-brand-dark;
+  }
+  .spinner-sm {
+    @apply h-8 w-8;
+  }
+  .spinner-lg {
+    @apply h-10 w-10;
+  }
+
+  .indicator-wrapper {
+    @apply relative inline-flex;
+  }
+  .indicator {
+    @apply absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] items-center
+      justify-center rounded-full px-1 text-xs font-semibold text-white;
+  }
+  .indicator-error {
+    @apply bg-error-strong;
+  }
+  .indicator-success {
+    @apply bg-success-strong;
+  }
+  .indicator-warning {
+    @apply bg-warning-strong;
+  }
+  .indicator-info {
+    @apply bg-info-strong;
+  }
+  .indicator-neutral {
+    @apply bg-neutral-700;
+  }
+  .indicator-dot {
+    @apply h-2.5 w-2.5 min-w-0 p-0;
+  }
+
+  .slider {
+    @apply h-2 cursor-pointer appearance-none rounded-full bg-neutral-200
+      accent-brand-dark disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .slider:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+
+  .stepper {
+    @apply flex items-center gap-2;
+  }
+  .stepper-step {
+    @apply flex flex-1 items-center gap-2;
+  }
+  .stepper-step:not(:last-child)::after {
+    content: "";
+    @apply h-0.5 flex-1 bg-neutral-200;
+  }
+  .stepper-step-completed::after {
+    @apply bg-brand-dark;
+  }
+  .stepper-circle {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full
+      bg-neutral-200 text-sm font-semibold text-neutral-600;
+  }
+  .stepper-step-completed .stepper-circle,
+  .stepper-step-current .stepper-circle {
+    @apply bg-brand-dark text-white;
+  }
+
+  .file-drop-zone {
+    @apply relative flex flex-col items-center gap-1 rounded-md border-2
+      border-dashed border-neutral-300 p-6 text-center;
+  }
+  .file-input-native {
+    @apply absolute inset-0 h-full w-full cursor-pointer opacity-0
+      disabled:cursor-not-allowed;
+  }
+  .file-input-native:focus-visible ~ .file-drop-zone-content {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+  .file-input-native:disabled ~ .file-drop-zone-content {
+    @apply opacity-50;
+  }
+
+  .timeline {
+    @apply relative space-y-6;
+  }
+  .timeline-item {
+    @apply relative flex gap-3;
+  }
+  .timeline-item:not(:last-child)::before {
+    content: "";
+    @apply absolute left-4 top-8 h-full w-px bg-neutral-200;
+  }
+  .timeline-content {
+    @apply flex-1 space-y-0.5;
+  }
+
+  .pin-input-box {
+    @apply h-12 w-10 rounded-md border-0 text-center text-lg font-semibold
+      text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300
+      focus:ring-2 focus:ring-inset focus:ring-brand
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
 }

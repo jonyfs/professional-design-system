@@ -1,23 +1,29 @@
 <!-- SPECKIT START -->
-Active feature: `014-micro-interaction-primitives`. For technologies,
+Active feature: `015-feedback-data-display-primitives`. For technologies,
 project structure, shell commands, and other implementation context,
-read `specs/014-micro-interaction-primitives/plan.md` (and its
-`research.md`, `contracts/`, `quickstart.md` siblings). Features 001-013
-are all complete and shipped. Feature 014 ships ten new static
-components closing gaps found against shadcn/ui and Radix UI
-Primitives: Textarea, Divider, Kbd, Skeleton (P1); Tooltip, Progress,
-Button Group, Empty State (P2); Popover (P3); Context Menu (P4).
-Tooltip ships with zero JavaScript (CSS Anchor Positioning without the
-Popover API). Button Group ships as native radio inputs styled as
-segments (zero JS, reusing Accordion's `name`-attribute exclusivity
-mechanism) rather than Tabs' custom roving-tabindex widget. Popover
-reuses Dropdown Menu's Popover-API/Anchor-Positioning mechanism with
-generic content; Context Menu forks Dropdown Menu's JS for
-cursor-position anchoring (CSS Anchor Positioning cannot anchor to a
-synthetic point). Adds one new design token (`fontFamily.mono` for
-Kbd) and this codebase's first `prefers-reduced-motion` handling
-(`motion-reduce:animate-none` on Skeleton's pulse, via Tailwind's
-built-in variant — no prior mechanism existed to reuse).
+read `specs/015-feedback-data-display-primitives/plan.md` (and its
+`research.md`, `contracts/`, `quickstart.md` siblings). Features 001-014
+are all complete and shipped. Feature 015 ships ten new static
+components closing gaps found against a 10-major-design-system
+comparison (shadcn/ui, Radix UI, MUI, Ant Design, Chakra UI, Mantine,
+Carbon, Polaris, Primer, Fluent 2): Spinner, AspectRatio, Indicator,
+DataList (P1); Slider, Stepper, File Input (P2); Timeline (P3);
+Stat/Metric Card, PinInput (P4). Slider reuses Progress's exact
+fill/track color pairing (6.38:1) via the `accent-color` CSS property
+(no vendor-prefixed pseudo-elements needed — verified supported in all
+three target engines). PinInput and File Input are the only two
+components needing new JS (`src/scripts/pin-input.js` — paste-splitting,
+auto-advance, Backspace-retreat across separate `<input>` boxes;
+`src/scripts/file-input.js` — a small `change`-event listener for
+filename display, since the selected filename has no CSS-only solution).
+A real accessibility
+defect was caught before shipping: Indicator's initial draft assumed
+Badge's severity tokens would transfer directly to a solid-fill badge,
+but Badge's actual pattern is a tint + `-strong`-text, not solid + white
+text — the base status colors fail even AA 4.5:1 with white text; fixed
+by using the `-strong` variants (already ratified) as solid fills
+instead, all clearing AAA. File Input's drag-and-drop is scoped to a
+static visual treatment only, with real DnD JS explicitly deferred.
 <!-- SPECKIT END -->
 
 ## graphify
