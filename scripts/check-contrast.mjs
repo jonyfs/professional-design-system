@@ -460,6 +460,73 @@ const KNOWN_THEME_CONTRAST_GAPS = new Set([
   "nord:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
   "nord:Sidebar light item text (text-neutral-700 on bg-neutral-50)",
   "nord:Kbd text (text-neutral-700 on bg-neutral-50)",
+
+  // Phase 5 (P2 batch, 13 themes: cosmo/flatly/litera/lumen/zephyr/
+  // sandstone from Bootswatch; silk/winter/cupcake/garden/autumn/
+  // lemonade/caramellatte from DaisyUI). All 13 are LIGHT themes — none
+  // of these are the dark-theme dual-role conflict documented above; all
+  // are the same TUNING category as corporate/nord's entries above.
+  // Bootswatch-sourced themes' neutral-100..900 are Bootstrap's own real,
+  // unmodified gray-100..900 scale (shared/design-tokens.ts's
+  // sourceReference), which Bootstrap itself designed against WCAG AA
+  // (4.5:1), not this catalog's stricter self-imposed AAA (7:1) bar —
+  // several real gray-500/600 steps (e.g. Bootstrap's actual "muted"
+  // gray, #ADB5BD) don't even clear the 3:1 non-text floor against
+  // white. DaisyUI-sourced themes hit the same close-miss ramp-tuning
+  // limitation already documented for corporate/nord above.
+  "cosmo:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "cosmo:Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
+  "cosmo:Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
+  "flatly:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "flatly:Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+  "flatly:Sidebar light item text (text-neutral-700 on bg-neutral-50)",
+  "flatly:Kbd text (text-neutral-700 on bg-neutral-50)",
+  "flatly:Indicator neutral (text-white on bg-neutral-700)",
+  "flatly:Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
+  "flatly:Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
+  "flatly:close-icon-btn icon fill, hover (text-neutral-600 vs bg-neutral-50 panel)",
+  "litera:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "litera:Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
+  "litera:Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
+  "lumen:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "lumen:Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+  "lumen:Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
+  "lumen:Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
+  "lumen:close-icon-btn icon fill, hover (text-neutral-600 vs bg-neutral-50 panel)",
+  "zephyr:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "zephyr:Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
+  "zephyr:Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
+  "silk:Button secondary text hover (text-neutral-900 on bg-neutral-100)",
+  "silk:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "silk:Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+  "silk:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "silk:Sidebar light item text (text-neutral-700 on bg-neutral-50)",
+  "silk:Kbd text (text-neutral-700 on bg-neutral-50)",
+  "silk:Indicator neutral (text-white on bg-neutral-700)",
+  "silk:Tab trigger active text (text-neutral-800 on bg-neutral-50)",
+  "winter:Button secondary text hover (text-neutral-900 on bg-neutral-100)",
+  "winter:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "winter:Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+  "winter:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "winter:Sidebar light item text (text-neutral-700 on bg-neutral-50)",
+  "winter:Kbd text (text-neutral-700 on bg-neutral-50)",
+  "winter:Indicator neutral (text-white on bg-neutral-700)",
+  "winter:Tab trigger active text (text-neutral-800 on bg-neutral-50)",
+  "cupcake:Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+  "cupcake:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "sandstone:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "sandstone:Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
+  "sandstone:Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
+  "garden:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "autumn:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "lemonade:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "caramellatte:Button secondary text hover (text-neutral-900 on bg-neutral-100)",
+  "caramellatte:Badge neutral (text-neutral-600 on bg-neutral-50)",
+  "caramellatte:Avatar fallback initials (text-neutral-700 on bg-neutral-100)",
+  "caramellatte:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "caramellatte:Sidebar light item text (text-neutral-700 on bg-neutral-50)",
+  "caramellatte:Kbd text (text-neutral-700 on bg-neutral-50)",
+  "caramellatte:Indicator neutral (text-white on bg-neutral-700)",
 ]);
 
 let failures = [];

@@ -1,11 +1,32 @@
 import { test, expect } from "@playwright/test";
 
-// Feature 017 T026 — visual regression baselines for the representative
-// component sample under each of the 5 new P1 pilot themes (contracts/
+// Feature 017 T026/T041 — visual regression baselines for the
+// representative component sample under each new theme (contracts/
 // theme-gallery.contract.md's preview region), proving the pipeline
 // generalizes beyond the pre-existing "light" theme (already covered by
 // this catalog's ~48 pre-existing per-component baselines).
-const NEW_THEMES = ["corporate", "forest", "nord", "dracula", "business"];
+const NEW_THEMES = [
+  // Phase 4 (P1 pilot batch)
+  "corporate",
+  "forest",
+  "nord",
+  "dracula",
+  "business",
+  // Phase 5 (P2 batch)
+  "cosmo",
+  "flatly",
+  "litera",
+  "lumen",
+  "zephyr",
+  "silk",
+  "winter",
+  "cupcake",
+  "sandstone",
+  "garden",
+  "autumn",
+  "lemonade",
+  "caramellatte",
+];
 
 test.describe("Theme restyle visual regression (P1 pilot batch)", () => {
   for (const themeId of NEW_THEMES) {
