@@ -133,6 +133,22 @@ export interface ThemeDefinition {
   tokens: ThemeTokens;
 }
 
+// The 7 mood-family categories research.md R3 curated the 42-theme
+// selection from, in display order — the single source of truth both
+// src/components/theme-gallery/theme-gallery.html's section headings AND
+// every ThemeDefinition.moodFamily value must match exactly, so a typo in
+// either place can't silently create an 8th "family" or leave a section
+// permanently empty.
+export const MOOD_FAMILIES = [
+  "Light Professional",
+  "Warm/Organic Light",
+  "Nature/Earth",
+  "Cool/Tech Minimal",
+  "Dark Moody/Professional",
+  "Dark Vibrant/Expressive",
+  "Distinctive/Characterful",
+] as const;
+
 export const THEMES: ThemeDefinition[] = [
   {
     id: "light",

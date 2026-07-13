@@ -18,11 +18,20 @@
 // compliant, and this check makes "forgot to" a hard failure instead of a
 // silent gap. (The RING_PAIRINGS list is not similarly auto-scanned against
 // markup — see its own comment for why.)
+//
+// Feature 017 (Curated Theme Presets, contracts/theme-tokens.contract.md,
+// task T009): pairings/rings are declared ONCE, by token NAME (e.g.
+// "neutral-900"), and are re-resolved to actual hex values once per THEME —
+// every entry below is checked against every theme in
+// shared/design-tokens.ts's THEMES array, not just the pre-existing
+// "light" theme. THEMES is this script's (and themes.css's) single shared
+// source of truth; there is no separate hardcoded palette here anymore.
 
 import { hex } from "wcag-contrast";
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { THEMES, REQUIRED_THEME_PROPERTIES } from "../shared/design-tokens.ts";
 
 const AAA_NORMAL = 7;
 const AAA_LARGE_OR_UI = 4.5;
@@ -34,50 +43,71 @@ const AAA_LARGE_OR_UI = 4.5;
 const NON_TEXT_UI_AA = 3;
 const rootDir = fileURLToPath(new URL("..", import.meta.url));
 
-// Resolved from tailwind.config.ts (v1.3.1 constitution palette).
-const BASE_TOKENS = {
-  "brand-dark": "#004BB3",
-  brand: "#0066FF",
-  white: "#FFFFFF",
-  "neutral-900": "#111827",
-  "neutral-700": "#374151",
-  "neutral-600": "#4B5563",
-  "neutral-300": "#D1D5DB",
-  "neutral-200": "#E5E7EB",
-  "neutral-500": "#6B7280",
-  "neutral-100": "#F3F4F6",
-  "neutral-50": "#F9FAFB",
-  success: "#10B981",
-  warning: "#F59E0B",
-  error: "#EF4444",
-  info: "#3B82F6",
-  "success-strong": "#065F46",
-  "error-strong": "#991B1B",
-  "warning-strong": "#78350F",
-  "info-strong": "#1E40AF",
-};
+// The theme-independent key names every theme in THEMES must declare
+// (REQUIRED_THEME_PROPERTIES minus its "--color-" CSS custom-property
+// prefix, e.g. "--color-neutral-50" -> "neutral-50") — the same keys
+// ThemeTokens' interface fields use.
+const REQUIRED_KEYS = REQUIRED_THEME_PROPERTIES.map((prop) =>
+  prop.replace("--color-", ""),
+);
 
-// Backgrounds computed by alpha-compositing a base token over white, matching
-// what Tailwind's opacity modifier (`bg-success/5`) renders as against a
-// white page — computed here instead of hand-typed so they can't drift from
-// BASE_TOKENS if a token's hex ever changes.
-function compositeOverWhite(baseHex, alphaPercent) {
+// "white" is deliberately NOT one of THEMES' per-theme tokens: it is the
+// literal, theme-invariant color of text set directly against a colored
+// surface (e.g. Button primary's `text-white` on `bg-brand-dark`, or
+// Indicator's `text-white` on `bg-success-strong`) — every theme's
+// brand-dark/success-strong/etc. is independently verified (below) to stay
+// dark enough for AAA against literal white, so this token never needs a
+// per-theme value of its own.
+const WHITE = "#FFFFFF";
+
+// Backgrounds computed by alpha-compositing a base token over a given
+// backdrop, matching what Tailwind's opacity modifier (`bg-success/5`)
+// renders as when layered over whatever surface sits behind it — computed
+// here instead of hand-typed so they can't drift from a theme's real token
+// values. Feature 017: the backdrop is now the ACTIVE THEME's own
+// `neutral-50` (this catalog's page/surface background role — see
+// src/styles/tailwind.css's `.page-shell` comment), not a hardcoded
+// "#FFFFFF" — for the pre-existing "light" theme these are numerically
+// identical (`neutral-50` IS `#FFFFFF` there), so this changes no existing
+// pass/fail result, but a dark theme's `neutral-50` is genuinely dark, and
+// a badge/alert tint sitting on it must be composited against THAT color,
+// not literal white, to be checked correctly.
+function compositeOver(baseHex, alphaPercent, backdropHex) {
   const alpha = alphaPercent / 100;
-  const clean = baseHex.replace("#", "");
-  const r = parseInt(clean.slice(0, 2), 16);
-  const g = parseInt(clean.slice(2, 4), 16);
-  const b = parseInt(clean.slice(4, 6), 16);
-  const blend = (channel) => Math.round(alpha * channel + (1 - alpha) * 255);
-  return `#${[blend(r), blend(g), blend(b)].map((c) => c.toString(16).padStart(2, "0")).join("").toUpperCase()}`;
+  const base = baseHex.replace("#", "");
+  const backdrop = backdropHex.replace("#", "");
+  const baseChannel = (offset) => parseInt(base.slice(offset, offset + 2), 16);
+  const backdropChannel = (offset) =>
+    parseInt(backdrop.slice(offset, offset + 2), 16);
+  const blend = (offset) =>
+    Math.round(
+      alpha * baseChannel(offset) + (1 - alpha) * backdropChannel(offset),
+    );
+  return `#${[0, 2, 4]
+    .map((offset) => blend(offset).toString(16).padStart(2, "0"))
+    .join("")
+    .toUpperCase()}`;
 }
 
-const TOKENS = {
-  ...BASE_TOKENS,
-  "success/5-on-white": compositeOverWhite(BASE_TOKENS.success, 5),
-  "error/5-on-white": compositeOverWhite(BASE_TOKENS.error, 5),
-  "warning/5-on-white": compositeOverWhite(BASE_TOKENS.warning, 5),
-  "info/5-on-white": compositeOverWhite(BASE_TOKENS.info, 5),
-};
+// Builds this theme's full token-name -> hex lookup: its 21 declared
+// `--color-*` values (spread as-is from THEMES, keyed by name without the
+// CSS custom-property prefix) plus the theme-invariant "white" and the
+// alpha-composited tint tokens PAIRINGS references (e.g. "success/5").
+function buildTokenMap(theme) {
+  const map = { ...theme.tokens, white: WHITE };
+  map["success/5"] = compositeOver(map.success, 5, map["neutral-50"]);
+  map["error/5"] = compositeOver(map.error, 5, map["neutral-50"]);
+  map["warning/5"] = compositeOver(map.warning, 5, map["neutral-50"]);
+  map["info/5"] = compositeOver(map.info, 5, map["neutral-50"]);
+  return map;
+}
+
+// The canonical set of token names any theme can supply, used only to
+// decide (theme-independently) whether a `text-<suffix>` class the markup
+// coverage scan finds is a real project color token at all, vs. an
+// unrelated utility (spacing/alignment/etc. already filtered by
+// NON_COLOR_TEXT_SUFFIXES) or an arbitrary value out of this scan's scope.
+const KNOWN_TOKEN_NAMES = new Set([...REQUIRED_KEYS, "white"]);
 
 const PAIRINGS = [
   {
@@ -87,45 +117,54 @@ const PAIRINGS = [
     threshold: AAA_NORMAL,
   },
   {
-    name: "Button secondary text (text-neutral-900 on white)",
-    fg: "neutral-900",
-    bg: "white",
-    threshold: AAA_NORMAL,
-  },
-  {
-    name: "Button secondary text hover (text-neutral-900 on bg-neutral-50)",
+    // .btn-secondary's own background (bg-neutral-50, this catalog's
+    // page/surface role — feature 017 retrofit; previously literal
+    // bg-white, numerically identical for the "light" theme).
+    name: "Button secondary text (text-neutral-900 on bg-neutral-50)",
     fg: "neutral-900",
     bg: "neutral-50",
     threshold: AAA_NORMAL,
   },
   {
-    name: "Text Input label/value (text-neutral-900 on white)",
+    // .btn-secondary's hover state (hover:bg-neutral-100 — feature 017
+    // retrofit shifted this up one neutral tier alongside the bg-white ->
+    // bg-neutral-50 default-state rename above, since neutral-50 no longer
+    // means "subtle highlight" on top of a separate page background).
+    name: "Button secondary text hover (text-neutral-900 on bg-neutral-100)",
     fg: "neutral-900",
-    bg: "white",
+    bg: "neutral-100",
     threshold: AAA_NORMAL,
   },
   {
-    name: "Text Input error message (text-error-strong on white)",
+    // Sits on the page (.page-shell's bg-neutral-50), not literal white —
+    // feature 017 retrofit.
+    name: "Text Input label/value (text-neutral-900 on bg-neutral-50)",
+    fg: "neutral-900",
+    bg: "neutral-50",
+    threshold: AAA_NORMAL,
+  },
+  {
+    name: "Text Input error message (text-error-strong on bg-neutral-50)",
     fg: "error-strong",
-    bg: "white",
+    bg: "neutral-50",
     threshold: AAA_NORMAL,
   },
   {
     name: "Badge success (text-success-strong on bg-success/5)",
     fg: "success-strong",
-    bg: "success/5-on-white",
+    bg: "success/5",
     threshold: AAA_NORMAL,
   },
   {
     name: "Badge error (text-error-strong on bg-error/5)",
     fg: "error-strong",
-    bg: "error/5-on-white",
+    bg: "error/5",
     threshold: AAA_NORMAL,
   },
   {
     name: "Badge warning (text-warning-strong on bg-warning/5)",
     fg: "warning-strong",
-    bg: "warning/5-on-white",
+    bg: "warning/5",
     threshold: AAA_NORMAL,
   },
   {
@@ -135,15 +174,15 @@ const PAIRINGS = [
     threshold: AAA_NORMAL,
   },
   {
-    name: "Checkbox label (text-neutral-900 on white)",
+    name: "Checkbox label (text-neutral-900 on bg-neutral-50)",
     fg: "neutral-900",
-    bg: "white",
+    bg: "neutral-50",
     threshold: AAA_NORMAL,
   },
   {
-    name: "Button focus-visible outline (bg-brand on white, non-text UI boundary)",
+    name: "Button focus-visible outline (bg-brand on bg-neutral-50, non-text UI boundary)",
     fg: "brand",
-    bg: "white",
+    bg: "neutral-50",
     threshold: AAA_LARGE_OR_UI,
   },
   {
@@ -151,9 +190,9 @@ const PAIRINGS = [
     // by feature 003's /speckit-analyze extending this coverage scan to also
     // read tailwind.css's @apply blocks, not just HTML. Passes comfortably
     // (7.90:1); this was a real verification gap, not a contrast defect.
-    name: "Back-link / demo-link text (text-brand-dark on white)",
+    name: "Back-link / demo-link text (text-brand-dark on bg-neutral-50)",
     fg: "brand-dark",
-    bg: "white",
+    bg: "neutral-50",
     threshold: AAA_NORMAL,
   },
   {
@@ -170,7 +209,7 @@ const PAIRINGS = [
     // strong (previously info had no text-safe -strong variant).
     name: "Alert info icon (text-info-strong on bg-info/5)",
     fg: "info-strong",
-    bg: "info/5-on-white",
+    bg: "info/5",
     threshold: AAA_NORMAL,
   },
   {
@@ -186,10 +225,12 @@ const PAIRINGS = [
   {
     // Feature 007 — Sidebar light-theme resting text was never specified
     // by the ratified pattern at all (only hover/active were named);
-    // proposed and verified here at the AAA floor.
-    name: "Sidebar light item text (text-neutral-700 on white)",
+    // proposed and verified here at the AAA floor. .sidebar-light's own
+    // background is bg-neutral-50 (feature 017 retrofit; previously
+    // literal bg-white).
+    name: "Sidebar light item text (text-neutral-700 on bg-neutral-50)",
     fg: "neutral-700",
-    bg: "white",
+    bg: "neutral-50",
     threshold: AAA_NORMAL,
   },
   {
@@ -201,7 +242,14 @@ const PAIRINGS = [
     threshold: AAA_NORMAL,
   },
   {
-    // Feature 014 (research.md R3) — Kbd's key-label text.
+    // Feature 014 (research.md R3) — Kbd's key-label text. Kbd's own
+    // bg-neutral-50 was never bg-white (unaffected by the feature 017
+    // bg-white rename), though neutral-50's ROLE change means Kbd's
+    // background now literally equals the page's own background for the
+    // "light" theme — an intentional, already-accepted trade-off (Kbd's
+    // border + shadow, not a background-color difference, are what
+    // visually separate it from the page, matching the same pattern
+    // Card/Modal/List already rely on).
     name: "Kbd text (text-neutral-700 on bg-neutral-50)",
     fg: "neutral-700",
     bg: "neutral-50",
@@ -242,6 +290,18 @@ const PAIRINGS = [
     bg: "neutral-700",
     threshold: AAA_NORMAL,
   },
+  {
+    // Feature 017's parametrization scan (KNOWN_TOKEN_NAMES now spans the
+    // full 21-token palette, not just the previous script's incomplete
+    // hardcoded subset) surfaced this as a real, previously-invisible gap:
+    // `.tab-trigger[aria-selected="true"]`'s active-state text color had
+    // no PAIRINGS entry at all since feature 009 first shipped Tabs.
+    // Sits on the page (no distinct .tabs-list background).
+    name: "Tab trigger active text (text-neutral-800 on bg-neutral-50)",
+    fg: "neutral-800",
+    bg: "neutral-50",
+    threshold: AAA_NORMAL,
+  },
 ];
 
 // Non-text UI component boundaries (WCAG 1.4.11, 3:1) — e.g. a control's
@@ -270,9 +330,11 @@ const PAIRINGS = [
 // inspection" prose.
 const RING_PAIRINGS = [
   {
-    name: "Toggle track ring, off state (ring-neutral-500 vs white page)",
+    // Bounds the whole control against the page it sits on — feature 017:
+    // the page's own background is bg-neutral-50, not literal white.
+    name: "Toggle track ring, off state (ring-neutral-500 vs bg-neutral-50 page)",
     fg: "neutral-500",
-    bg: "white",
+    bg: "neutral-50",
     threshold: NON_TEXT_UI_AA,
   },
   {
@@ -284,21 +346,21 @@ const RING_PAIRINGS = [
     // effectively invisible — see toggle.contract.md's Verification note)
     // is deliberately NOT checked here, since only the outer/page boundary
     // is the one WCAG 1.4.11 cares about for this control.
-    name: "Toggle track ring, on state (ring-neutral-500 vs white page — outer edge, state-invariant)",
+    name: "Toggle track ring, on state (ring-neutral-500 vs bg-neutral-50 page — outer edge, state-invariant)",
     fg: "neutral-500",
-    bg: "white",
+    bg: "neutral-50",
     threshold: NON_TEXT_UI_AA,
   },
   {
-    name: "Text Input / Select focus ring (ring-brand vs white page)",
+    name: "Text Input / Select focus ring (ring-brand vs bg-neutral-50 page)",
     fg: "brand",
-    bg: "white",
+    bg: "neutral-50",
     threshold: NON_TEXT_UI_AA,
   },
   {
-    name: "Text Input / Select error ring (ring-error vs white page)",
+    name: "Text Input / Select error ring (ring-error vs bg-neutral-50 page)",
     fg: "error",
-    bg: "white",
+    bg: "neutral-50",
     threshold: NON_TEXT_UI_AA,
   },
   {
@@ -307,10 +369,12 @@ const RING_PAIRINGS = [
     // here rather than PAIRINGS because an icon fill is a WCAG 1.4.11
     // non-text boundary (3:1), not literal text (7:1) — see
     // ICON_FILL_TEXT_TOKENS below, which is what lets the text- coverage
-    // scan accept this entry as sufficient for `text-neutral-600`.
-    name: "close-icon-btn icon fill, hover (text-neutral-600 vs white page)",
+    // scan accept this entry as sufficient for `text-neutral-600`. Used
+    // inside Modal/Toast/Slide-over panels, all bg-neutral-50 (feature 017
+    // retrofit; previously literal bg-white).
+    name: "close-icon-btn icon fill, hover (text-neutral-600 vs bg-neutral-50 panel)",
     fg: "neutral-600",
-    bg: "white",
+    bg: "neutral-50",
     threshold: NON_TEXT_UI_AA,
   },
   {
@@ -327,24 +391,46 @@ const RING_PAIRINGS = [
 
 let failures = [];
 
-for (const { name, fg, bg, threshold } of [...PAIRINGS, ...RING_PAIRINGS]) {
-  const fgHex = TOKENS[fg];
-  const bgHex = TOKENS[bg];
-  if (!fgHex || !bgHex) {
-    failures.push(`${name}: unknown token "${!fgHex ? fg : bg}" — add it to TOKENS`);
+for (const theme of THEMES) {
+  const missingKeys = REQUIRED_KEYS.filter((key) => !theme.tokens[key]);
+  if (missingKeys.length > 0) {
+    // T009a (completeness check): a theme silently missing a required
+    // property would otherwise fall back to `:root`'s ("light"'s) value
+    // for that one property in the shipped CSS, passing this audit
+    // undetected while shipping a broken/incomplete theme — fail loudly
+    // instead, and skip this theme's pairing checks below (their computed
+    // ratios would be meaningless against undefined token values).
+    failures.push(
+      `[theme: ${theme.id}] incomplete theme definition — missing required ` +
+        `token(s): ${missingKeys.join(", ")} (contracts/theme-tokens.contract.md's 21-property requirement)`,
+    );
     continue;
   }
-  const ratio = hex(fgHex, bgHex);
-  if (ratio < threshold) {
-    failures.push(
-      `${name}: ${ratio.toFixed(2)}:1 — below required ${threshold}:1 (${fgHex} on ${bgHex})`,
-    );
+
+  const TOKENS = buildTokenMap(theme);
+
+  for (const { name, fg, bg, threshold } of [...PAIRINGS, ...RING_PAIRINGS]) {
+    const fgHex = TOKENS[fg];
+    const bgHex = TOKENS[bg];
+    if (!fgHex || !bgHex) {
+      failures.push(
+        `[theme: ${theme.id}] ${name}: unknown token "${!fgHex ? fg : bg}" — add it to buildTokenMap()`,
+      );
+      continue;
+    }
+    const ratio = hex(fgHex, bgHex);
+    if (ratio < threshold) {
+      failures.push(
+        `[theme: ${theme.id}] ${name}: ${ratio.toFixed(2)}:1 — below required ${threshold}:1 (${fgHex} on ${bgHex})`,
+      );
+    }
   }
 }
 
 // --- Coverage check: every text-<token> color class actually shipped must
 // have at least one PAIRING entry, or a real combination could ship with
-// zero contrast verification. ---
+// zero contrast verification. Theme-independent: this checks that a token
+// NAME is audited somewhere, not any one theme's hex value. ---
 
 function collectHtmlFiles(dir) {
   const files = [];
@@ -470,7 +556,7 @@ function scanClassesForCoverage(classes, sourceLabel) {
     if (!base.startsWith("text-")) continue;
     const suffix = base.slice("text-".length).split("/")[0]; // strip opacity modifier
     if (NON_COLOR_TEXT_SUFFIXES.has(suffix)) continue;
-    if (!(suffix in BASE_TOKENS)) continue; // not a project color token (e.g. arbitrary value) — out of scope here
+    if (!KNOWN_TOKEN_NAMES.has(suffix)) continue; // not a project color token (e.g. arbitrary value) — out of scope here
     if (COVERED_FG_TOKENS.has(suffix)) continue;
     if (ICON_FILL_TEXT_TOKENS.has(suffix) && RING_VERIFIED_TOKENS.has(suffix)) continue;
     if (DECORATIVE_ARIA_HIDDEN_TOKENS.has(suffix)) continue;
@@ -546,8 +632,8 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Contrast audit passed — ${PAIRINGS.length} text pairing(s) (AAA) + ${RING_PAIRINGS.length} ` +
-    `non-text UI pairing(s) (WCAG 1.4.11, 3:1) checked, all above threshold; ` +
+  `Contrast audit passed — ${THEMES.length} theme(s) × (${PAIRINGS.length} text pairing(s) (AAA) + ` +
+    `${RING_PAIRINGS.length} non-text UI pairing(s) (WCAG 1.4.11, 3:1)) checked, all above threshold; ` +
     `markup coverage verified against ${htmlFiles.length} HTML file(s), ` +
     `${applyBlocks.length + reactApplyBlocks.length} @apply block(s) across 2 CSS files, ` +
     `and ${tsxFiles.length} .tsx file(s).`,

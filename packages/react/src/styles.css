@@ -35,8 +35,14 @@
      name to apply across default/error/disabled instances (same visual
      output either way — @apply expands to the identical utility list). */
   .text-input {
+    /* Placeholder text now uses neutral-600 instead of neutral-400:
+       feature 017 contrast-audit parametrization found neutral-400
+       measures 2.54:1 against bg-neutral-50 — real rendered text, held
+       to the same AAA 7:1 floor as any other text
+       (scripts/check-contrast.mjs's PAIRINGS). neutral-600 clears it at
+       7.56:1, this catalog's existing "safe AAA small text" tier. */
     @apply block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
-      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400
+      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-600
       focus:ring-2 focus:ring-inset focus:ring-brand disabled:opacity-50
       disabled:cursor-not-allowed sm:text-sm sm:leading-6;
   }
@@ -179,7 +185,9 @@
       focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
   .accordion-chevron {
-    @apply h-5 w-5 shrink-0 text-neutral-400 transition-transform
+    /* text-neutral-500, not -400 — see src/styles/tailwind.css's
+       identical feature 017 contrast-audit comment. */
+    @apply h-5 w-5 shrink-0 text-neutral-500 transition-transform
       duration-200 group-open:rotate-180;
   }
   .accordion-content {
@@ -397,8 +405,10 @@
   }
 
   .combobox-input {
+    /* placeholder:text-neutral-600 — see .text-input's identical
+       feature 017 contrast-audit comment above. */
     @apply block w-full rounded-md border-0 py-1.5 text-neutral-900 shadow-sm
-      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400
+      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-600
       focus:ring-2 focus:ring-inset focus:ring-brand sm:text-sm sm:leading-6;
   }
   .combobox-listbox {
@@ -436,8 +446,10 @@
       text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg;
   }
   .command-palette-input {
+    /* placeholder:text-neutral-600 — see .text-input's identical
+       feature 017 contrast-audit comment above. */
     @apply block w-full border-0 border-b border-neutral-200 px-4 py-3
-      text-neutral-900 placeholder:text-neutral-400 focus:ring-0 sm:text-sm;
+      text-neutral-900 placeholder:text-neutral-600 focus:ring-0 sm:text-sm;
   }
   .command-palette-list {
     @apply max-h-72 overflow-auto py-2;
