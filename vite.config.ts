@@ -70,6 +70,7 @@ export default defineConfig({
           __dirname,
           "src/components/settings-example/settings-example.html",
         ),
+        themeGallery: resolve(__dirname, "src/components/theme-gallery/theme-gallery.html"),
       },
     },
   },

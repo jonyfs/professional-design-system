@@ -6,6 +6,10 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
   <title>Professional Design System — Component Gallery</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <!-- Activation MUST run as early as possible to avoid a flash of the
+       wrong theme (contracts/theme-switcher.contract.md) — a bare
+       type="module" src reference, zero inline logic. -->
+  <script type="module" src="/src/scripts/theme-switcher.js"></script>
 </head>
 <body class="page-shell">
   <header class="border-b border-neutral-200 px-6 py-8">
@@ -429,6 +433,14 @@
         Rating + ColorInput (016) composed with Card + Divider (006/014) on one real page (SC-003).
       </p>
       <a href="/src/components/settings-example/settings-example.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Theme Gallery</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Curated theme presets — select one to restyle every component instantly.
+      </p>
+      <a href="/src/components/theme-gallery/theme-gallery.html" class="demo-link">View full demo →</a>
     </section>
   </main>
 </body>
