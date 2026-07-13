@@ -13,7 +13,13 @@ const DEFAULT_THEME = "light";
 // Cases, FR-006) MUST fall back to the default, never silently apply an
 // unknown data-theme value that resolves to nothing.
 export function resolveInitialTheme(knownThemeIds) {
-  const stored = localStorage.getItem(STORAGE_KEY);
+  let stored = null;
+  try {
+    stored = localStorage.getItem(STORAGE_KEY);
+  } catch {
+    // localStorage can throw (blocked storage, sandboxed iframe, some
+    // private-browsing configurations) — fall back to the default theme.
+  }
   return knownThemeIds.includes(stored) ? stored : DEFAULT_THEME;
 }
 
@@ -23,10 +29,24 @@ export function applyTheme(themeId) {
 
 export function selectTheme(themeId, knownThemeIds) {
   if (!knownThemeIds.includes(themeId)) return; // never persist an unknown id
-  localStorage.setItem(STORAGE_KEY, themeId);
+  try {
+    localStorage.setItem(STORAGE_KEY, themeId);
+  } catch {
+    // Persistence failure must not block the theme from applying —
+    // degrade to in-memory-only for this session.
+  }
   applyTheme(themeId);
 }
 ```
+
+**Error handling (Phase 8 T074 code-review finding)**: `localStorage`
+access MUST be wrapped in `try/catch` in both directions — a real, non-
+exotic environment (storage blocked by browser policy/extension,
+sandboxed third-party iframe embedding, some private-browsing
+configurations) throws on `getItem`/`setItem` rather than failing
+silently. An uncaught exception here would block `applyTheme()` from
+ever running, which is a functional regression (theme never switches),
+not just a persistence nice-to-have degrading gracefully.
 
 **Required activation point**: `resolveInitialTheme()` + `applyTheme()`
 MUST run as early as possible in `<head>` (a real, CSP-compliant

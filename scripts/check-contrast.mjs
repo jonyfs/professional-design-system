@@ -531,7 +531,7 @@ const KNOWN_THEME_CONTRAST_GAPS = new Set([
   // Phase 6 + 7 (P3/P4 batches, 24 themes: everforest/gruvbox/aqua/
   // emerald/slate/spacelab/cerulean/quartz/journal/dim/night/darkly/
   // cyborg/superhero/abyss/synthwave/cyberpunk/tokyonight/halloween/
-  // luxury/retro/coffee/rosepine/catppuccin). 19 of these 24 are dark
+  // luxury/retro/coffee/rosepine/catppuccin). 17 of these 24 are dark
   // themes (only emerald/spacelab/cerulean/journal/quartz/cyberpunk/retro
   // are light) — the large majority of these entries are the SAME
   // structural dual-role conflict already documented above (forest/
@@ -539,11 +539,24 @@ const KNOWN_THEME_CONTRAST_GAPS = new Set([
   // Back-link pattern), just multiplied across many more dark themes in
   // this batch; the remainder are the same TUNING category (Badge/
   // Avatar/Kbd/Sidebar-light neutral-ramp close-misses) already
-  // documented for corporate/nord/cosmo-etc. above. quartz additionally
-  // has one genuinely unique entry (Button focus-visible outline) from
-  // its own real, unusually-bright purple body-bg capping the maximum
-  // achievable contrast even at literal black (see its
-  // shared/design-tokens.ts sourceReference for the exact numbers).
+  // documented for corporate/nord/cosmo-etc. above.
+  //
+  // QUARTZ-INVERTED-RAMP: quartz's 21 entries below are NOT ordinary
+  // TUNING close-misses (unlike this comment previously claimed) — most
+  // measure well below the 5.2-6.9:1 TUNING band (e.g. Tooltip label
+  // text 1.00:1, Indicator neutral 1.26:1, Sidebar dark item text
+  // 2.31:1). The real cause: quartz's neutral-50 (page bg) is Bootswatch
+  // Quartz's own real mid-luminance purple, which forces its derived
+  // neutral-900 to resolve to literal white instead of dark ink to stay
+  // in-gamut — the opposite ramp direction every other "light" theme
+  // uses. This reproduces the SAME "components assume neutral-900 is
+  // always dark ink" structural conflict documented above for dark
+  // themes, just triggered by an atypically-toned light theme's own page
+  // background rather than by genuine dark-theme status. One entry
+  // (Button focus-visible outline) is a distinct, additional issue: its
+  // own unusually-bright purple body-bg caps the maximum achievable
+  // contrast even at literal black (see shared/design-tokens.ts's
+  // sourceReference for the exact numbers).
   "everforest:Button secondary text hover (text-neutral-900 on bg-neutral-100)",
   "everforest:Badge neutral (text-neutral-600 on bg-neutral-50)",
   "everforest:Back-link / demo-link text (text-brand-dark on bg-neutral-50)",

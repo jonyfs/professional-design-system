@@ -13,7 +13,14 @@ const KNOWN_THEME_IDS = THEMES.map((theme) => theme.id);
 // Cases, FR-006) MUST fall back to the default, never silently apply an
 // unknown data-theme value that resolves to nothing.
 export function resolveInitialTheme(knownThemeIds) {
-  const stored = localStorage.getItem(STORAGE_KEY);
+  let stored = null;
+  try {
+    stored = localStorage.getItem(STORAGE_KEY);
+  } catch {
+    // localStorage can throw (blocked storage, sandboxed iframe, some
+    // private-browsing configurations) — fall back to the default theme
+    // rather than letting an uncaught exception block theme activation.
+  }
   return knownThemeIds.includes(stored) ? stored : DEFAULT_THEME;
 }
 
@@ -23,7 +30,12 @@ export function applyTheme(themeId) {
 
 export function selectTheme(themeId, knownThemeIds) {
   if (!knownThemeIds.includes(themeId)) return; // never persist an unknown id
-  localStorage.setItem(STORAGE_KEY, themeId);
+  try {
+    localStorage.setItem(STORAGE_KEY, themeId);
+  } catch {
+    // Persistence failure (quota, blocked storage) must not prevent the
+    // theme from applying — degrade to in-memory-only for this session.
+  }
   applyTheme(themeId);
 }
 

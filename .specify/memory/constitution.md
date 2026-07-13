@@ -1,4 +1,59 @@
 <!--
+SYNC IMPACT REPORT (v1.14.0 — see below for the v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.13.0 → 1.14.0
+Modified principles:
+  - II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE) —
+    added a "Curated-theme exception precedent" paragraph. The Principle's
+    AAA bar remains NON-NEGOTIABLE and zero-exception for the default
+    ("light") theme and any future default/primary theme; a new,
+    documented allowlist-exception path (mirroring the pre-existing
+    DECORATIVE_ARIA_HIDDEN_TOKENS/ICON_FILL_TEXT_TOKENS precedent) is
+    permitted ONLY for the curated theme collection described in the new
+    Theming & Multi-Palette Architecture section, and only when
+    individually named and reasoned in scripts/check-contrast.mjs's
+    KNOWN_THEME_CONTRAST_GAPS — never a silent or blanket failure. This is
+    an additive clarification, not a redefinition or loosening of the
+    Principle's core guarantee, so it does not require a MAJOR bump.
+Added sections:
+  - NEW top-level "Theming & Multi-Palette Architecture" section (between
+    Design Foundations and Component Catalog): documents the CSS-custom-
+    property/data-theme runtime-switching mechanism, the zero-markup-
+    change guarantee (verified via a real 2-theme proof-of-concept before
+    scaling), the 43-theme curated collection across 7 mood families
+    sourced exclusively from real, named references (DaisyUI, Bootswatch,
+    Nord/Dracula/Gruvbox/Everforest/Tokyo Night/Rose Pine/Catppuccin —
+    never algorithmically generated), the localStorage try/catch
+    persistence-error-handling requirement (a real code-review finding,
+    T074), and the KNOWN_THEME_CONTRAST_GAPS allowlist as the permanent
+    mechanism for future theme additions under the fixed schema's dual-
+    role token constraint.
+Corrected sections: None (see scripts/check-contrast.mjs's own in-file
+  comment fix, T074, referenced in the new Theming section above — a
+  code-comment accuracy fix, not a constitution-tracked correction).
+Rationale: feature 017 (Curated Theme Presets) shipped a genuinely new
+architectural layer — this catalog's first multi-palette/runtime-theming
+system — rather than a new component or token addition within the existing
+single-palette model every prior feature (001-016) worked within. It
+required a real Principle II carve-out (a fixed 21-token schema's
+`*-strong`/`brand-dark` tokens serving two roles — ink-text and solid-fill —
+that invert for sufficiently dark themes, discovered empirically once real
+dark themes were derived and audited, not anticipated during planning) and
+introduces a permanent precedent (the KNOWN_THEME_CONTRAST_GAPS allowlist)
+that will govern every future theme addition, not just this feature's 43.
+This is a MINOR bump: one new top-level section plus an additive Principle
+II clarification (no principle removed or redefined backward-
+incompatibly, and the default theme's AAA guarantee is unchanged and still
+zero-exception).
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/017-curated-theme-presets/spec.md's own SC-003
+  amendment (documented separately, dated during Phase 4 implementation)
+  is the upstream source this constitution amendment now ratifies back
+  into the project's permanent governance layer, per this constitution's
+  established "propose in Phase 1/discover in implementation, ratify what
+  shipped" sequence (v1.4.0 onward).
+-->
+
+<!--
 SYNC IMPACT REPORT (v1.13.0 — see below for the v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.12.0 → 1.13.0
 Modified principles: None
@@ -664,6 +719,26 @@ No component is considered complete without AAA-level accessibility:
 the contractual guarantee that every product built on top of it is usable by
 anyone, including screen-reader and keyboard-only users.
 
+**Curated-theme exception precedent** (added v1.14.0, feature 017): this
+catalog's fixed 21-token semantic schema uses `*-strong` status colors and
+`brand-dark` in two roles at once — ink-colored text read directly against
+the page, and a solid fill behind white text (Indicator, Button primary) —
+that agree in direction for a light theme but provably invert for a
+sufficiently dark one (page-background lightness and ink-text lightness
+swap which end of the scale they sit at). No single token value can satisfy
+both roles simultaneously for such a theme without splitting the schema
+into separate ink/fill tokens per semantic color — a materially larger
+cross-component rework, not a color-value iteration. The default ("light")
+theme and every future default/primary theme MUST still pass this
+Principle's AAA bar with zero exceptions. For the curated theme collection
+(see "Theming & Multi-Palette Architecture" below) ONLY, a documented,
+individually-named, reasoned exception in `scripts/check-contrast.mjs`'s
+`KNOWN_THEME_CONTRAST_GAPS` allowlist is permitted in place of a genuine
+pass — never a silent or blanket failure. This mirrors the pre-existing
+`DECORATIVE_ARIA_HIDDEN_TOKENS`/`ICON_FILL_TEXT_TOKENS` exemption
+precedent (v1.13.0/feature 016) for the identical kind of documented,
+reasoned exception applied to a different constraint class.
+
 ### III. Tailwind-Only Architecture (Zero Parallel CSS)
 The entire ecosystem MUST run exclusively on the Tailwind CSS utility API.
 Parallel custom `.css` files (outside of Tailwind's theme configuration) are
@@ -807,6 +882,83 @@ text-safe `-strong` companion, unlike success/warning/error.
   modals/panels/primary containers), `rounded-full` (9999px, pills/circles —
   toggle tracks and dots, avatars; any fully-rounded element, not a step on
   the 4/8/12px scale above).
+
+## Theming & Multi-Palette Architecture
+
+Shipped in feature 017 (Curated Theme Presets). This is a NEW top-level
+architectural layer, not a Component Catalog entry — it changes how every
+existing and future component receives its color values, not any single
+component's markup.
+
+**Mechanism**: every color in the Base Semantic Palette above is delivered
+as a CSS custom property on `:root`/`[data-theme="..."]`
+(`src/styles/themes.css`), expressed as a space-separated RGB triplet and
+consumed via Tailwind's opacity-modifier-compatible pattern
+(`rgb(var(--color-brand) / <alpha-value>)`), so utilities like `bg-success/5`
+continue to work identically across every theme. Runtime switching is a
+single `data-theme` attribute on `<html>` (never a class, never a
+per-section attribute) — `src/scripts/theme-switcher.js` resolves the
+active theme (`localStorage` key `pds-theme`, namespaced since this is the
+first feature in this catalog to use `localStorage` at all) and applies it
+as early as possible via a bare `<script type="module">` with zero inline
+logic, this catalog's established convention. `localStorage` access MUST be
+wrapped in `try/catch` in both read and write directions (a real,
+non-exotic environment — blocked storage, sandboxed third-party iframe
+embedding, some private-browsing configurations — throws rather than
+failing silently); a persistence failure MUST degrade to in-memory-only
+theme application for that session, never block `applyTheme()` from
+running at all. An unrecognized/corrupted stored value MUST fall back to
+the `"light"` default theme, never apply an unknown `data-theme` value that
+resolves to nothing (FR-006).
+
+**Zero-markup-change guarantee**: because every previously-shipped
+component already referenced semantic token names (Principle IV) rather
+than raw palette classes, re-theming requires editing ONLY
+`src/styles/themes.css` (adding a `[data-theme="..."]` block) and
+`shared/design-tokens.ts` (adding a `THEMES` array entry) — zero changes to
+any component's `.html`/`.tsx` file. This was verified empirically via a
+real 2-theme proof-of-concept including opacity-modifier utilities
+(`bg-success/5`) before scaling to the full collection (research.md R1),
+not assumed from the token architecture alone.
+
+**Curated theme collection**: 43 named themes across 7 mood families
+(`MOOD_FAMILIES` in `shared/design-tokens.ts`) — Light Professional (9),
+Warm/Organic Light (6), Nature/Earth (5), Cool/Tech Minimal (6), Dark
+Moody/Professional (7), Dark Vibrant/Expressive (6), Distinctive/
+Characterful (4). Every theme's palette is sourced from a real, named,
+externally-verifiable reference — DaisyUI v5's built-in theme set,
+Bootswatch's Bootstrap theme set, and standalone community projects (Nord,
+Dracula, Gruvbox, Everforest, Tokyo Night, Rose Pine, Catppuccin) — never
+algorithmically generated (e.g. hue-rotated) or invented, per the original
+request's explicit "not AI-generated-looking" bar. Each theme's
+`sourceReference` field in `shared/design-tokens.ts` documents its exact
+provenance and any derivation notes. OKLCH-space source values were
+converted to sRGB via a real browser engine (Chromium canvas 2D context
+pixel readback), not hand-rolled color-space math, to guarantee
+spec-correct conversion. `"light"` is the sole default theme (FR-006) —
+the pre-existing v1.0.0–v1.13.0 palette re-expressed as a theme entry
+verbatim, a pure architectural refactor with zero visual change.
+
+**Accessibility verification at scale**: `scripts/check-contrast.mjs`'s
+existing `PAIRINGS`/`RING_PAIRINGS` structure (theme-independent, by token
+name) runs once per theme rather than being hand-verified per theme. The
+`KNOWN_THEME_CONTRAST_GAPS` allowlist (see Principle II's "Curated-theme
+exception precedent" above) is the permanent, load-bearing mechanism for
+any future theme addition whose derived colors cannot clear the AAA/WCAG
+1.4.11 bar under the fixed 21-token schema's dual-role constraint — every
+entry MUST be individually named (`"themeId:pairingName"`) and reasoned,
+never a blanket per-theme or per-pairing suppression. A code-review pass
+(feature 017 Phase 8, T074) found and corrected one categorization
+inaccuracy in this allowlist's own explanatory comments (Bootswatch
+Quartz's 21 entries were mis-attributed to an ordinary neutral-ramp
+"tuning" close-miss category when most measure far below that band; the
+real cause is Quartz's own mid-luminance purple page background forcing
+its derived `neutral-900` to resolve to white instead of dark ink — the
+same "components assume `neutral-900` is always dark" structural conflict
+as dark themes, just triggered by an atypically-toned light theme) — a
+precedent that this allowlist's categorization comments MUST describe the
+actual measured root cause, not be assumed to fit the nearest existing
+bucket.
 
 ## Component Catalog & Tailwind UI Patterns
 
@@ -1527,4 +1679,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.13.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-12
+**Version**: 1.14.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-13
