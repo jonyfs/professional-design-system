@@ -63,9 +63,13 @@ test.describe("Theme Gallery", () => {
 
     // Confirm the SERVED HTML SOURCE itself never authors style="..." —
     // the swatch spans' style attribute only exists because CSSOM set it
-    // at runtime, not because it shipped in markup.
-    const response = await page.goto("/src/components/theme-gallery/theme-gallery.html");
-    const html = (await response?.text()) ?? "";
+    // at runtime, not because it shipped in markup. A separate
+    // page.request.get() (not a second page.goto() to the same URL) —
+    // Firefox specifically serves a repeat same-URL navigation as a
+    // response Playwright can't read the body of ("Response body is
+    // unavailable for redirect responses").
+    const response = await page.request.get("/src/components/theme-gallery/theme-gallery.html");
+    const html = await response.text();
     expect(html).not.toMatch(/style="/);
   });
 

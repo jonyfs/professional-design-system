@@ -836,6 +836,11 @@
     @apply flex gap-1;
   }
   .theme-card-swatch {
-    @apply h-6 w-6 rounded-full;
+    /* inline-block (not the contract's bare h-6 w-6): a <span> is
+       display: inline by default, which ignores explicit width/height
+       entirely — found by visually inspecting a rendered card, the
+       swatches were invisible despite CSSOM correctly setting each
+       one's background-color. */
+    @apply inline-block h-6 w-6 rounded-full;
   }
 }
