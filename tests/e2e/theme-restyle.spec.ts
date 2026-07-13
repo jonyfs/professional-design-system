@@ -26,6 +26,32 @@ const NEW_THEMES = [
   "autumn",
   "lemonade",
   "caramellatte",
+  // Phase 6 (P3 batch)
+  "everforest",
+  "gruvbox",
+  "aqua",
+  "emerald",
+  "slate",
+  "spacelab",
+  "cerulean",
+  "quartz",
+  "journal",
+  "dim",
+  "night",
+  "darkly",
+  "cyborg",
+  // Phase 7 (P4 batch)
+  "superhero",
+  "abyss",
+  "synthwave",
+  "cyberpunk",
+  "tokyonight",
+  "halloween",
+  "luxury",
+  "retro",
+  "coffee",
+  "rosepine",
+  "catppuccin",
 ];
 
 test.describe("Theme restyle visual regression (P1 pilot batch)", () => {
