@@ -1,0 +1,10 @@
+/* A throwaway theme block for T001's own test only — never part of the
+   shipped themes.css / theme collection. Values are deliberately
+   distinct from "light" so a real restyle is observable. Served as a
+   real same-origin stylesheet (not an inline <style> tag, which this
+   project's CSP style-src 'self' blocks exactly like an inline
+   style="..." attribute — both count as "inline" under CSP). */
+[data-theme="poc-test"] {
+  --color-brand-dark: 154 52 18;
+  --color-success: 22 163 74;
+}

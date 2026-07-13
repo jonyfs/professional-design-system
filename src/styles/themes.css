@@ -1,0 +1,39 @@
+/* Feature 017 (Curated Theme Presets) — theme token layer.
+ *
+ * Each theme is a flat block of 21 `--color-*` custom properties (RGB
+ * triplets, space-separated) consumed via shared/design-tokens.ts's
+ * `rgb(var(--color-x) / <alpha-value>)` pattern (contracts/theme-tokens
+ * .contract.md). `:root` (no attribute needed) carries the default
+ * theme's values so an unthemed page — or one where theme-switcher.js
+ * hasn't run yet — still renders correctly.
+ *
+ * "light" is the pure-refactor baseline: identical values to this
+ * catalog's original, pre-existing hex palette (shared/design-tokens.ts's
+ * THEMES["light"].tokens is the hex source of truth these RGB triplets
+ * are derived from — the two MUST stay in sync).
+ */
+
+:root,
+[data-theme="light"] {
+  --color-brand-light: 230 240 255; /* #E6F0FF */
+  --color-brand: 0 102 255; /* #0066FF */
+  --color-brand-dark: 0 75 179; /* #004BB3 */
+  --color-neutral-50: 255 255 255; /* #FFFFFF — surface/page background role */
+  --color-neutral-100: 243 244 246; /* #F3F4F6 */
+  --color-neutral-200: 229 231 235; /* #E5E7EB */
+  --color-neutral-300: 209 213 219; /* #D1D5DB */
+  --color-neutral-400: 156 163 175; /* #9CA3AF */
+  --color-neutral-500: 107 114 128; /* #6B7280 */
+  --color-neutral-600: 75 85 99; /* #4B5563 */
+  --color-neutral-700: 55 65 81; /* #374151 */
+  --color-neutral-800: 31 41 55; /* #1F2937 */
+  --color-neutral-900: 17 24 39; /* #111827 */
+  --color-success: 16 185 129; /* #10B981 */
+  --color-success-strong: 6 95 70; /* #065F46 */
+  --color-warning: 245 158 11; /* #F59E0B */
+  --color-warning-strong: 120 53 15; /* #78350F */
+  --color-error: 239 68 68; /* #EF4444 */
+  --color-error-strong: 153 27 27; /* #991B1B */
+  --color-info: 59 130 246; /* #3B82F6 */
+  --color-info-strong: 30 64 175; /* #1E40AF */
+}

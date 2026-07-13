@@ -32,7 +32,7 @@ export function Table({ columns, rows, zebra, ariaLabel, "data-testid": testId }
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-neutral-200 bg-white">
+        <tbody className="divide-y divide-neutral-200 bg-neutral-50">
           {rows.map((row, i) => (
             <tr key={i} className={zebra ? "data-table-row-zebra" : undefined}>
               {row.cells.map((cell, j) => (

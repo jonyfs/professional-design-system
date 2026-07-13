@@ -9,7 +9,7 @@ import { colors, borderRadius, fontFamily } from "./shared/design-tokens";
 // Values live in shared/design-tokens.ts (feature 004) so this config and
 // packages/react/tailwind.config.ts can't silently drift from each other.
 export default {
-  content: ["./index.html", "./src/**/*.html"],
+  content: ["./index.html", "./src/**/*.html", "./tests/e2e/fixtures/*.html"],
   theme: {
     extend: { colors, borderRadius, fontFamily },
   },
