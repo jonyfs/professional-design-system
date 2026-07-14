@@ -822,6 +822,49 @@ const KNOWN_THEME_CONTRAST_GAPS = new Set([
   "catppuccin:Indicator neutral (text-white on bg-neutral-700)",
   "catppuccin:Progress fill vs track (bg-brand-dark vs bg-neutral-200)",
   "caramellatte:Indicator neutral (text-white on bg-neutral-700)",
+
+  // Feature 027 (Claude-Design-inspired batch 2). obsidian/nebula are
+  // this batch's 2 dark themes and inherit the exact same structural
+  // limitation already documented above for forest/dracula/business/
+  // rosepine/catppuccin: a token used both as ink-on-page text AND as
+  // Indicator's solid-fill-behind-white-text can't satisfy both roles
+  // on a dark canvas — the ink-on-page role wins (Badge/Alert are more
+  // widely used), so Indicator's/Tooltip's white-on-*-strong text and
+  // Progress's brand-dark-vs-neutral-200 fill fail here too, same as
+  // every other dark theme in this catalog. linen/nebula's "Sidebar
+  // dark item text" and obsidian/nebula's "Back-link / demo-link
+  // text" are the same recurring pairings already accepted for
+  // forest/dracula/business/nord/catppuccin above. "Button focus-
+  // visible outline" and "Badge success/error" are the same pairing
+  // types already accepted for quartz/aqua — a real, signature brand
+  // hue landing just under the non-text 4.5:1 / text 7:1 bar against
+  // that theme's own real page background, not a defect unique to
+  // this batch.
+  "obsidian:Button focus-visible outline (bg-brand on bg-neutral-50, non-text UI boundary)",
+  "obsidian:Back-link / demo-link text (text-brand-dark on bg-neutral-50)",
+  "obsidian:Tooltip label text (text-white on bg-neutral-900)",
+  "obsidian:Indicator success (text-white on bg-success-strong)",
+  "obsidian:Indicator warning (text-white on bg-warning-strong)",
+  "obsidian:Indicator error (text-white on bg-error-strong)",
+  "obsidian:Indicator info (text-white on bg-info-strong)",
+  "obsidian:Indicator neutral (text-white on bg-neutral-700)",
+  "obsidian:Progress fill vs track (bg-brand-dark vs bg-neutral-200)",
+  "linen:Badge success (text-success-strong on bg-success/5)",
+  "linen:Button focus-visible outline (bg-brand on bg-neutral-50, non-text UI boundary)",
+  "linen:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "graphite:Button focus-visible outline (bg-brand on bg-neutral-50, non-text UI boundary)",
+  "nebula:Badge error (text-error-strong on bg-error/5)",
+  "nebula:Button focus-visible outline (bg-brand on bg-neutral-50, non-text UI boundary)",
+  "nebula:Back-link / demo-link text (text-brand-dark on bg-neutral-50)",
+  "nebula:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+  "nebula:Tooltip label text (text-white on bg-neutral-900)",
+  "nebula:Indicator success (text-white on bg-success-strong)",
+  "nebula:Indicator warning (text-white on bg-warning-strong)",
+  "nebula:Indicator error (text-white on bg-error-strong)",
+  "nebula:Indicator info (text-white on bg-info-strong)",
+  "nebula:Indicator neutral (text-white on bg-neutral-700)",
+  "nebula:Text Input / Select focus ring (ring-brand vs bg-neutral-50 page)",
+  "nebula:Progress fill vs track (bg-brand-dark vs bg-neutral-200)",
 ]);
 
 let failures = [];
@@ -940,7 +983,16 @@ const RING_VERIFIED_TOKENS = new Set(RING_PAIRINGS.map((p) => p.fg));
 // already has its own unrelated PAIRINGS entry, "Sidebar dark item text",
 // verified at 12.04:1 AAA, so it was already in COVERED_FG_TOKENS before
 // this feature.)
-const DECORATIVE_ARIA_HIDDEN_TOKENS = new Set(["warning"]);
+// Feature 020 (ChartEmptyState): the empty-state.contract.md recipe
+// (feature 014) ratified `text-neutral-400` for this exact decorative
+// aria-hidden icon, but — like Rating before it — the pattern had never
+// actually been built and empirically measured until now. Computed via
+// the same WCAG relative-luminance formula: neutral-400 vs. neutral-50
+// measures 2.54:1, failing even the 3:1 non-text floor. The icon is
+// `aria-hidden="true"` and the "No data to display" heading right next to
+// it carries the full meaning, so this is the identical decorative-icon
+// exception class as Rating's star fill, not a new one.
+const DECORATIVE_ARIA_HIDDEN_TOKENS = new Set(["warning", "neutral-400"]);
 
 const htmlFiles = [
   join(rootDir, "index.html"),

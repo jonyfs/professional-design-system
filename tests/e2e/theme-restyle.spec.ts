@@ -52,6 +52,12 @@ const NEW_THEMES = [
   "coffee",
   "rosepine",
   "catppuccin",
+  // Feature 027 — Claude-Design-inspired batch 2
+  "aurora",
+  "obsidian",
+  "linen",
+  "graphite",
+  "nebula",
 ];
 
 test.describe("Theme restyle visual regression (P1 pilot batch)", () => {
