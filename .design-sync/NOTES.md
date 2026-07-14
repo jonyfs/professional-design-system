@@ -1,5 +1,73 @@
 # design-sync notes for professional-design-system
 
+## Fixes applied (2026-07-13 re-sync — 24 → 61 components)
+
+- **Real, currently-shipping bug found and fixed: Chart colors were
+  always solid black.** `packages/react/src/hooks/useChartColors.ts`
+  reads `--color-*` CSS custom properties at runtime via
+  `getComputedStyle(document.documentElement)` (so charts re-theme
+  automatically when `data-theme` changes) — but
+  `packages/react/src/styles.css` never actually defined those custom
+  properties anywhere. Every Chart component (Line/Bar/Area/Pie/Radar/
+  Radial) has been rendering every series in solid black for ANY real
+  consumer of the npm package, not just this sync — confirmed by
+  authoring a PieChart preview with real data and seeing every slice
+  render black with zero color. Root cause: `src/styles/themes.css`
+  (the static site's theme layer, feature 017) has always carried the
+  default/light theme's full `:root` token block "so an unthemed
+  page... still renders correctly," but this block was never ported
+  into the React package's own separately-compiled stylesheet. Fixed
+  by adding the identical default-theme `:root` block (21 `--color-*`
+  custom properties, verbatim values) to `packages/react/src/styles.css`
+  — the package still ships no theme-switching capability of its own,
+  this is strictly the baseline that makes Chart's existing runtime
+  color-reading actually work out of the box. Verify: any real project
+  using `@professional-design-system/react`'s Chart components should
+  re-check their rendered charts after upgrading past this fix — they
+  were silently monochrome before.
+- **Preview-only quirk, not a product bug: PieChart's entrance
+  animation.** `PieChart.tsx`'s own source comment already documents
+  this: `isAnimationActive` sweeps the pie in from 0° over ~1s, and "a
+  screenshot/assertion taken before that entrance animation settles
+  sees a partial arc... tests should emulate reduced-motion for
+  deterministic renders." The design-sync capture harness has no
+  `page.emulateMedia()` equivalent, so `.design-sync/previews/
+  PieChart.tsx` patches `window.matchMedia` for
+  `prefers-reduced-motion` queries directly in the preview file (a
+  `Proxy` wrapping the real `MediaQueryList`, not a plain object
+  spread — spreading drops `addEventListener`/`removeEventListener`,
+  which crashes `usePrefersReducedMotion`'s `useEffect` and blanks the
+  whole render with no error surfaced). This is scoped to the preview
+  file only; the real component and its tests are unaffected.
+- **PieChart and Collapse authored + graded good** (T004-equivalent
+  for this sync): both were flagged `bad` on first capture (PieChart
+  `RENDER_BLANK`, Collapse `RENDER_THIN`) since they had no authored
+  preview and their floor-card defaults didn't produce meaningful
+  content. Ported real usage from `tests/react-harness/src/
+  chart-main.tsx` (PieChart's donut/pie examples) and `collapse-main.tsx`
+  (Collapse's two-independent-panels example).
+- **29 of the 37 new components from features 019-023 shipped as
+  floor cards** (user's explicit choice — "floor cards for now" over
+  authoring previews for all or a curated subset): DataTable + its 4
+  sub-components, MultiSelect, 5 of 6 Chart types (all but PieChart),
+  all 11 localized-identifier inputs, ActionIcon, CopyButton,
+  SplitButton, AvatarGroup, Highlight, Code, ColorSwatch, NavLink,
+  Anchor, Spoiler. None are broken — the render check passed clean for
+  all of them (`fallbackCard: true` is the deliberate, honest baseline,
+  never a failure). Authorable incrementally on any future re-sync with
+  zero rework of what's already there.
+- **No anchor available for this re-sync** — the prior sync's
+  `_ds_sync.json` only covered the original 24 components (dated
+  2026-07-11, before features 019-023 shipped ~37 more). Ran
+  `resync.mjs` without `--remote` (full-verification path, explicitly
+  supported by the driver) rather than hand-transcribing the fetched
+  anchor into a local cache file — an earlier attempt to do that by
+  retyping the `DesignSync(get_file)` result into a heredoc was
+  correctly flagged by the session's safety classifier as an
+  unverifiable basis for a shared-resource-modifying command. The
+  full-verification path produces the identical correct result for a
+  sync this size (61 components) — no material downside for this repo.
+
 ## Fixes applied
 
 - **`dtsPropsFor` overrides for 14 components** (Button, Badge, Checkbox,
@@ -145,3 +213,36 @@
   artifact — don't remove those 4 safelist entries on a future re-sync
   just because they look like "sync scaffolding"; they belong in
   `packages/react/tailwind.config.ts` permanently.
+
+- **The chart-color `:root` block added to `packages/react/src/
+  styles.css` this run is a real product fix, not sync scaffolding**
+  (same category as the Sidebar safelist fix above) — don't remove it
+  on a future re-sync. It's intentionally the DEFAULT theme only (no
+  cross-theme switching added to the package); if this design system
+  ever gives the React package its own theme-switcher, this block
+  should be reconciled with that work rather than duplicated.
+- **29 components still on the floor card** (see "Fixes applied (2026-07-13)"
+  above for the full list) — the user explicitly chose this scope over
+  authoring previews now. Authoring any of them on a later re-sync is
+  zero-rework: write `.design-sync/previews/<Name>.tsx`, rebuild,
+  recapture, grade. Good starting candidates by real-world prominence:
+  DataTable, MultiSelect, and the 5 remaining Chart types (Line/Bar/
+  Area/Radar/Radial) — same data/composition patterns already used for
+  PieChart's own preview (`tests/react-harness/src/chart-main.tsx` has
+  real usage for all of them).
+- **`conventions.md` says "24 components"** — now stale (61 shipped)
+  but not factually wrong (every class/component name it references
+  still verifies against the current build, checked this run). Per the
+  base skill's "never rewrite once authored" rule, this was reported
+  rather than silently edited — a future sync (or the user) should
+  decide whether to refresh the count and add a short mention of the
+  37 new components (DataTable, Chart, the 023 batch, localized inputs)
+  to the "Composition patterns worth knowing" section.
+- **No verification anchor exists yet going into the NEXT re-sync
+  either** — this run's `_ds_sync.json` (61 components, all real
+  hashes) is now the live anchor on the project, so the next sync CAN
+  use `--remote` normally. Fetch it via `DesignSync(get_file, path:
+  "_ds_sync.json")` and write it to `.design-sync/.cache/remote-sync.json`
+  using the Write tool with the tool's own returned content (not a
+  hand-retyped heredoc) to avoid the transcription-risk block this run
+  hit.
