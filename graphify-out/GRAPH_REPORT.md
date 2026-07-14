@@ -1,16 +1,16 @@
-# Graph Report - professional-design-system  (2026-07-11)
+# Graph Report - professional-design-system  (2026-07-14)
 
 ## Corpus Check
-- 353 files · ~611,946 words
+- 630 files · ~1,158,152 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2192 nodes · 2123 edges · 265 communities (208 shown, 57 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
+- 3844 nodes · 3920 edges · 464 communities (366 shown, 98 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.63)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `876770da`
+- Built from commit: `8cdc7ddb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,7 +44,7 @@
 - check-contrast.mjs
 - a11y-helper.ts
 - playwright.config.ts
-- tailwind.config.ts
+- theme-gallery.js
 - button.spec.ts
 - text-input.spec.ts
 - badge.spec.ts
@@ -236,30 +236,182 @@
 - Agent Context Config (context_file / context_markers)
 - Context Section Upsert/Remove Gate Mechanism
 - Coding Agent Context Extension README
+- button-group.spec.ts
+- composed-example.spec.ts
+- divider.spec.ts
+- empty-state.spec.ts
+- kbd.spec.ts
+- popover.spec.ts
+- progress.spec.ts
+- skeleton.spec.ts
+- textarea.spec.ts
+- tooltip.spec.ts
+- Tasks: Feedback & Data Display Primitives
+- Data Model: Feedback & Data Display Primitives
+- Quickstart: Feedback & Data Display Primitives
+- Phase 0 Research: Feedback & Data Display Primitives
+- Component Contract: AspectRatio
+- Component Contract: DataList
+- Component Contract: File Input
+- Component Contract: Indicator
+- Component Contract: PinInput
+- Component Contract: Slider
+- Component Contract: Spinner
+- Component Contract: Stat/Metric Card
+- Component Contract: Stepper
+- Component Contract: Timeline
+- feature-015-csp-sweep.spec.ts
+- aspect-ratio.spec.ts
+- dashboard-example.spec.ts
+- data-list.spec.ts
+- file-input.spec.ts
+- indicator.spec.ts
+- slider.spec.ts
+- spinner.spec.ts
+- stat-card.spec.ts
+- stepper.spec.ts
+- timeline.spec.ts
+- Implementation Plan: Advanced Interaction Primitives
+- Tasks: Advanced Interaction Primitives
+- Quickstart: Advanced Interaction Primitives
+- Component Contract: ColorPicker/ColorInput
+- Component Contract: Menubar
+- Component Contract: Rating
+- Component Contract: TreeView
+- Research: Advanced Interaction Primitives
+- Data Model: Advanced Interaction Primitives
+- feature-016-csp-sweep.spec.ts
+- color-input.spec.ts
+- menubar.spec.ts
+- rating.spec.ts
+- settings-example.spec.ts
+- tree-view.spec.ts
+- Implementation Plan: Component Gap Inventory
+- Component candidates (105 total, grouped by category)
+- Specification Quality Checklist: Curated Theme Presets
+- Implementation Plan: Curated Theme Presets
+- Research: Curated Theme Presets
+- Quickstart: Curated Theme Presets
+- Contract: Theme Gallery
+- Data Model: Curated Theme Presets
+- Contract: Theme Switcher (persistence + activation)
+- Specification Quality Checklist: Localized Input Primitives
+- Specification Quality Checklist: Recharts-Based Chart Primitives
+- theme-restyle.spec.ts
+- design-tokens.ts
+- Component Contract: Navigation & Disclosure Utilities — NavLink, Anchor, Collapse, Spoiler (User Story 4)
+- data-table-main.tsx
+- Component Contract: Core Table — Sort, Filter, Paginate (User Story 1)
+- Component Contract: Row Selection & Bulk Actions (User Story 2)
+- Component Contract: Button Variants — ActionIcon, CopyButton, Split Button (User Story 2)
+- Component Contract: Form Inputs — NumberInput, PasswordInput, MultiSelect (User Story 1)
+- CopyButton.tsx
+- Highlight.tsx
+- Phase 1 Data Model: Gallery Theme Selector
+- Component Contract: CRUD Operations (User Story 3)
+- AvatarGroup.tsx
+- today-2026-07-11.done.md
+- ActionIcon.tsx
+- Code.tsx
+- ColorSwatch.tsx
+- NumberInput.tsx
+- PasswordInput.tsx
+- copy-button.js
+- catalog-expansion-data-display-main.tsx
+- Anchor.tsx
+- Collapse.tsx
+- NavLink.tsx
+- Spoiler.tsx
+- multi-select-main.tsx
+- color-swatch.js
+- catalog-expansion-buttons.spec.ts
+- Implementation Plan: Localized Input Primitives
+- Implementation Plan: Recharts-Based Chart Primitives
+- gallery-theme-selector.js
+- DataTableForm.tsx
+- List.tsx
+- chart-main.tsx
+- types.ts
+- PieChart.tsx
+- usePrefersReducedMotion.ts
+- wireDialogClose
+- Toast.tsx
+- react-slide-over.spec.ts
+- chart-batch-2-main.tsx
+- Quickstart: Recharts Additional Chart Types (Batch 2)
+- Phase 1 Data Model: Recharts Additional Chart Types (Batch 2)
+- Research: Recharts Additional Chart Types (Batch 2)
+- Component Contract: Composed Chart & Scatter Chart (User Story 1)
+- Component Contract: Treemap & Sankey Diagram (User Story 3)
+- Accordion.tsx
+- Badge.tsx
+- Breadcrumbs.tsx
+- Navbar.tsx
+- Select.tsx
+- Sidebar.tsx
+- Table.tsx
+- Tabs.tsx
+- Button.tsx
+- Card.tsx
+- CardNumberInput.tsx
+- CepInput.tsx
+- Checkbox.tsx
+- PhoneBrInput.tsx
+- PhoneIntlInput.tsx
+- PisPasepInput.tsx
+- Radio.tsx
+- TextInput.tsx
+- TituloEleitorInput.tsx
+- Toggle.tsx
+- VehiclePlateInput.tsx
+- Component Contract: Funnel Chart (User Story 2)
+- Implementation Plan: Sitewide Theme Selector & Persistence
+- Tasks: Sitewide Theme Selector & Persistence
+- Quickstart: Sitewide Theme Selector & Persistence
+- apply-theme-rollout.mjs
+- Research: Sitewide Theme Selector & Persistence
+- Component Contract: Sitewide Theme Rollout (User Stories 1 & 2)
+- check-theme-rollout.mjs
+- Phase 1 Data Model: Sitewide Theme Selector & Persistence
+- sitewide-theme-persistence.spec.ts
+- Tasks: Demo Gallery Visual Showcase
+- Quickstart: Demo Gallery Visual Showcase
+- Component Contract: Root Gallery Redesign (User Stories 1 & 2)
+- Research: Demo Gallery Visual Showcase
+- apply-demo-page-polish.mjs
+- Component Contract: Individual Demo Page Polish (User Story 3)
+- Phase 1 Data Model: Demo Gallery Visual Showcase
+- check-demo-page-polish.mjs
+- Implementation Plan: Claude-Design-Inspired Theme Presets (Batch 2)
+- Tasks: Claude-Design-Inspired Theme Presets (Batch 2)
+- Per-theme anchor values (real, extracted — research.md R3)
+- Research: Claude-Design-Inspired Theme Presets (Batch 2)
+- Quickstart: Claude-Design-Inspired Theme Presets (Batch 2)
+- Data Model: Claude-Design-Inspired Theme Presets (Batch 2)
 
 ## God Nodes (most connected - your core abstractions)
-1. `expectNoA11yViolations()` - 61 edges
-2. `expectNoConsoleErrors()` - 17 edges
-3. `Tasks: [FEATURE NAME]` - 13 edges
-4. `Tasks: Design System Primitive Components` - 13 edges
-5. `Phase 0 Research: Micro-Interaction & Utility Primitives` - 13 edges
-6. `compilerOptions` - 12 edges
-7. `compilerOptions` - 12 edges
-8. `Data Model: Micro-Interaction & Utility Primitives` - 12 edges
-9. `scripts` - 11 edges
-10. `Tasks: Navigation & Disclosure Primitives` - 11 edges
+1. `expectNoA11yViolations()` - 74 edges
+2. `stripNonDigits()` - 33 edges
+3. `expectNoConsoleErrors()` - 20 edges
+4. `Component candidates (105 total, grouped by category)` - 15 edges
+5. `useChartColors()` - 14 edges
+6. `ValidationResult` - 14 edges
+7. `DataTable()` - 13 edges
+8. `Tasks: Recharts-Based Chart Primitives` - 13 edges
+9. `Tasks: [FEATURE NAME]` - 13 edges
+10. `Tasks: Design System Primitive Components` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `openViaShortcut()` --calls--> `expectNoConsoleErrors()`  [EXTRACTED]
-  tests/e2e/command-palette.spec.ts → tests/e2e/a11y-helper.ts
-- `Full SDD Cycle Workflow (speckit)` --conceptually_related_to--> `Spec Kit Extensions Registration Config`  [INFERRED]
-  .specify/workflows/speckit/workflow.yml → .specify/extensions.yml
-- `Full SDD Cycle Workflow (speckit)` --references--> `Implementation Plan Template`  [INFERRED]
-  .specify/workflows/speckit/workflow.yml → .specify/templates/plan-template.md
-- `Full SDD Cycle Workflow (speckit)` --references--> `Feature Specification Template`  [INFERRED]
-  .specify/workflows/speckit/workflow.yml → .specify/templates/spec-template.md
-- `Full SDD Cycle Workflow (speckit)` --references--> `Tasks Template`  [INFERRED]
-  .specify/workflows/speckit/workflow.yml → .specify/templates/tasks-template.md
+- `DataTableRowActionsProps` --references--> `CrudConfig`  [EXTRACTED]
+  packages/react/src/DataTable/DataTableRowActions.tsx → shared/data-table/types.ts
+- `DataTableToolbarProps` --references--> `BulkAction`  [EXTRACTED]
+  packages/react/src/DataTable/DataTableToolbar.tsx → shared/data-table/types.ts
+- `MultiSelectProps` --references--> `MultiSelectOption`  [EXTRACTED]
+  packages/react/src/MultiSelect/MultiSelect.tsx → shared/multi-select/index.ts
+- `MultiSelect()` --calls--> `filterOptions()`  [EXTRACTED]
+  packages/react/src/MultiSelect/MultiSelect.tsx → shared/multi-select/index.ts
+- `MultiSelect()` --calls--> `removeSelection()`  [EXTRACTED]
+  packages/react/src/MultiSelect/MultiSelect.tsx → shared/multi-select/index.ts
 
 ## Import Cycles
 - None detected.
@@ -268,7 +420,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (265 total, 57 thin omitted)
+## Communities (464 total, 98 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -284,7 +436,7 @@ Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Discl
 
 ### Community 3 - "Agent Context Extension"
 Cohesion: 0.06
-Nodes (30): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+22 more)
+Nodes (34): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+26 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -339,16 +491,12 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, isolatedModules, lib, module, moduleResolution, noEmit, resolveJsonModule (+5 more)
 
 ### Community 28 - "check-contrast.mjs"
-Cohesion: 0.11
-Nodes (17): applyBlocks, BASE_TOKENS, COVERED_FG_TOKENS, failures, htmlFiles, ICON_FILL_TEXT_TOKENS, NON_COLOR_TEXT_SUFFIXES, PAIRINGS (+9 more)
+Cohesion: 0.07
+Nodes (38): acceptedGaps, applyBlocks, buildTokenMap(), compositeOver(), COVERED_FG_TOKENS, DECORATIVE_ARIA_HIDDEN_TOKENS, failures, htmlFiles (+30 more)
 
-### Community 29 - "a11y-helper.ts"
+### Community 32 - "theme-gallery.js"
 Cohesion: 0.06
-Nodes (4): expectNoA11yViolations(), expectNoConsoleErrors(), formatViolations(), openViaShortcut()
-
-### Community 32 - "tailwind.config.ts"
-Cohesion: 0.71
-Nodes (3): borderRadius, colors, fontFamily
+Nodes (68): CnpjInput, CnpjInputProps, CpfInput, CpfInputProps, CodeTypeConfig, useValidatedInput(), UseValidatedInputResult, Validity (+60 more)
 
 ### Community 34 - "button.spec.ts"
 Cohesion: 0.07
@@ -451,8 +599,8 @@ Cohesion: 0.09
 Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+14 more)
 
 ### Community 59 - "overlay.js"
-Cohesion: 0.70
-Nodes (3): initCommandPalette(), initDialogTriggers(), wireDialogClose()
+Cohesion: 0.17
+Nodes (26): AreaChart(), AreaChartProps, BarChart(), BarChartProps, CHART_COLOR_TOKENS, ChartDataTable(), ChartDataTableProps, ChartEmptyState() (+18 more)
 
 ### Community 60 - "Specification Quality Checklist: React Component Library (Claude Design Compatibility)"
 Cohesion: 0.07
@@ -484,7 +632,7 @@ Nodes (5): Component (one row per shipped primitive), Cross-cutting invariants, 
 
 ### Community 68 - "package.json"
 Cohesion: 0.07
-Nodes (27): devDependencies, react, react-dom, tailwindcss, tsup, @types/react, @types/react-dom, typescript (+19 more)
+Nodes (29): dependencies, recharts, devDependencies, react, react-dom, tailwindcss, tsup, @types/react (+21 more)
 
 ### Community 69 - "devDependencies"
 Cohesion: 0.10
@@ -499,16 +647,16 @@ Cohesion: 0.17
 Nodes (11): compilerOptions, esModuleInterop, jsx, lib, module, moduleResolution, noEmit, skipLibCheck (+3 more)
 
 ### Community 72 - "Button.tsx"
-Cohesion: 0.50
-Nodes (3): Toast(), ToastProps, VARIANT_ICON_CLASSES
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Recharts Additional Chart Types (Batch 2), Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 75 - "react-button.spec.ts"
 Cohesion: 0.18
 Nodes (10): Checklist Format (REQUIRED), Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Phase Structure, Pre-Execution Checks, Task Generation Rules (+2 more)
 
 ### Community 78 - "index.ts"
-Cohesion: 0.50
-Nodes (3): Badge(), BadgeProps, VARIANT_CLASSES
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Advanced Data Table, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 80 - "react-select.spec.ts"
 Cohesion: 0.18
@@ -531,8 +679,8 @@ Cohesion: 0.25
 Nodes (7): Anti-Examples: What NOT To Do, Checklist Purpose: "Unit Tests for English", Example Checklist Types & Sample Items, Execution Steps, Post-Execution Checks, Pre-Execution Checks, User Input
 
 ### Community 90 - "react-toggle.spec.ts"
-Cohesion: 0.29
-Nodes (6): Avatar(), AvatarProps, SIZE_CLASSES, List(), ListItemData, ListProps
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Component Catalog Expansion (Batch 1), Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 91 - "Select.tsx"
 Cohesion: 0.29
@@ -545,6 +693,14 @@ Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline
 ### Community 94 - "Radio.tsx"
 Cohesion: 0.52
 Nodes (5): Combobox(), ComboboxProps, highlight(), ComboboxOption, useCombobox()
+
+### Community 95 - "TextInput.tsx"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Gallery Theme Selector, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 96 - "Toggle.tsx"
+Cohesion: 0.08
+Nodes (24): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Notes (deviations from the plan above, ratified here), Implementation Strategy, Incremental Delivery (+16 more)
 
 ### Community 97 - "react-modal.spec.ts"
 Cohesion: 0.33
@@ -559,8 +715,8 @@ Cohesion: 0.29
 Nodes (6): Coding Agent Context Extension, Commands, Configuration, Disable, Requirements, Why an extension?
 
 ### Community 102 - "react-toast.spec.ts"
-Cohesion: 0.29
-Nodes (6): Acceptance mapping, Component Contract: Button Group / Segmented Control, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+Cohesion: 0.25
+Nodes (7): Acceptance mapping, Component Contract: Button Group / Segmented Control, Cross-engine note (found via real CI failure, not planning), Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
 
 ### Community 103 - "useDialogTrigger.ts"
 Cohesion: 0.29
@@ -727,8 +883,8 @@ Cohesion: 0.40
 Nodes (4): Combobox, Command Palette, Phase 1 Data Model: Advanced Forms Primitives, Shared behavior notes
 
 ### Community 147 - "Implementation Plan: Advanced Forms Primitives"
-Cohesion: 0.40
-Nodes (4): Alert(), AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS
+Cohesion: 0.09
+Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Notes (deviations from the plan above, ratified here), Implementation Strategy, Incremental Delivery (+14 more)
 
 ### Community 148 - "Tasks: Advanced Forms Primitives"
 Cohesion: 0.14
@@ -787,20 +943,24 @@ Cohesion: 0.40
 Nodes (3): exclusiveItems, exclusiveItems2, independentItems
 
 ### Community 163 - "Button.tsx"
-Cohesion: 0.50
-Nodes (3): 00:28 | main, 10:04 | main, 13:25 | main
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Feedback & Data Display Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 164 - "Modal.tsx"
-Cohesion: 0.24
-Nodes (10): CommandPalette(), CommandPaletteProps, highlight(), CommandPaletteAction, useCommandPalette(), useDialogTrigger(), Modal(), ModalProps (+2 more)
+Cohesion: 0.11
+Nodes (35): DataTable(), DataTableProps, sortIcon(), DataTableEmptyState(), DataTableEmptyStateProps, DataTableFieldDefinition, DataTableForm(), DataTableFormProps (+27 more)
 
 ### Community 165 - "SlideOver.tsx"
 Cohesion: 0.50
 Nodes (3): Behavior, Execution, Update Coding Agent Context
 
+### Community 167 - "react-accordion.spec.ts"
+Cohesion: 0.09
+Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Notes (deviations from the plan above, ratified here), Implementation Strategy, Incremental Delivery (+14 more)
+
 ### Community 170 - "Breadcrumbs.tsx"
-Cohesion: 0.50
-Nodes (3): BreadcrumbItem, Breadcrumbs(), BreadcrumbsProps
+Cohesion: 0.10
+Nodes (19): ActionIcon, Anchor, AvatarGroup, Code, Collapse, ColorSwatch, CopyButton, Highlight (+11 more)
 
 ### Community 173 - "DropdownMenu.tsx"
 Cohesion: 0.60
@@ -879,8 +1039,8 @@ Cohesion: 0.33
 Nodes (5): Data Model: Table Primitive, Table, Table Cell, Table Header Cell, Table Row
 
 ### Community 197 - "index.ts"
-Cohesion: 0.10
-Nodes (24): Accordion(), AccordionItemData, AccordionProps, Button, ButtonProps, Checkbox, CheckboxProps, Navbar() (+16 more)
+Cohesion: 0.40
+Nodes (3): AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS
 
 ### Community 198 - "Implementation Plan: React Port — Batch 2 (Remaining Static Components)"
 Cohesion: 0.07
@@ -923,19 +1083,455 @@ Cohesion: 0.47
 Nodes (5): actions, Default(), InContext(), projectActions, useAutoOpenViaShortcut()
 
 ### Community 229 - "design-sync notes for professional-design-system"
+Cohesion: 0.33
+Nodes (5): design-sync notes for professional-design-system, Fixes applied, Fixes applied (2026-07-13 re-sync — 24 → 61 components), Preview authoring notes, Re-sync risks
+
+### Community 266 - "button-group.spec.ts"
+Cohesion: 0.10
+Nodes (20): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation for User Story 4, Implementation Notes (deviations from the plan above, ratified here), Implementation Strategy (+12 more)
+
+### Community 267 - "composed-example.spec.ts"
+Cohesion: 0.13
+Nodes (14): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Notes (deviations from the plan above, ratified here), Implementation Strategy, Parallel Opportunities (+6 more)
+
+### Community 268 - "divider.spec.ts"
+Cohesion: 0.17
+Nodes (11): Phase 0 Research: Localized Input Primitives, R10: Assistive-technology announcement without interrupting typing, R1: Shared validators module, not per-surface duplication, R2: CPF/CNPJ check-digit algorithm, R3: CEP, Brazilian phone format detection, R4: Título de Eleitor and PIS/PASEP check-digit algorithms, R5: Vehicle plate pattern recognition (legacy vs. Mercosul), R6: IBAN checksum (international, mod-97) (+3 more)
+
+### Community 269 - "empty-state.spec.ts"
+Cohesion: 0.17
+Nodes (11): Phase 0 Research: Advanced Data Table, R10: Empty states — reuse the existing Empty State recipe, two message variants, R1: No new dependency — hand-rolled state, not a headless table library, R2: Sort model — array of `{ columnId, direction }`, cycling per column, R3: Filter model — one global predicate + per-column predicates, ANDed, R4: Pagination — reuse the existing `Pagination` component's markup, new state math only, R5: Selection model — a Set of row ids + an explicit page-vs-all-matching scope flag, R6: Bulk-action toolbar — appears above the table, not a floating overlay (+3 more)
+
+### Community 270 - "kbd.spec.ts"
+Cohesion: 0.18
+Nodes (10): Full success-criteria trace, Prerequisites, Quickstart: Localized Input Primitives, Setup, Validate: accessibility, zero regressions (SC-006), Validate: error message is self-explanatory (SC-004), Validate: format-as-you-type with zero manual punctuation (SC-001), Validate: known-invalid values are rejected (SC-002) (+2 more)
+
+### Community 271 - "popover.spec.ts"
+Cohesion: 0.18
+Nodes (10): Full success-criteria trace, Prerequisites, Quickstart: Recharts-Based Chart Primitives, Setup, Validate: accessibility (SC-003, SC-004), Validate: chart renders on-theme with zero manual color config (SC-001), Validate: empty dataset (FR-012) and null/zero edge cases, Validate: reduced motion (FR-013) (+2 more)
+
+### Community 272 - "progress.spec.ts"
+Cohesion: 0.18
+Nodes (10): R1: Competitor validation round (confirming/extending feature 018's inventory), R2: Batch selection criteria, R3: MultiSelect vs. Combobox — extension, not duplication, R4: Split Button — Button + Dropdown Menu composition, not a new panel mechanism, R5: Collapse vs. Accordion — same disclosure primitive, different grouping semantics, R6: NavLink — extends Sidebar's existing active-item convention, R7: CopyButton — Clipboard API, with an explicit failure state, R8: ColorSwatch — accessible alternative to color-only meaning (+2 more)
+
+### Community 273 - "skeleton.spec.ts"
+Cohesion: 0.47
+Nodes (7): MultiSelect(), MultiSelectProps, addSelection(), filterOptions(), MultiSelectOption, removeSelection(), initMultiSelect()
+
+### Community 274 - "textarea.spec.ts"
+Cohesion: 0.20
+Nodes (9): ChartColorPalette, ChartComponent (abstract shape shared by all 6 chart types), ChartDataTable (non-visual equivalent, FR-009), ChartEmptyState, ChartLegend, ChartTooltip, Cross-cutting invariants, DataSeries (+1 more)
+
+### Community 275 - "tooltip.spec.ts"
+Cohesion: 0.20
+Nodes (9): Full success-criteria trace, Prerequisites, Quickstart: Component Catalog Expansion (Batch 1), Setup, Validate: accessibility, tokens, and responsive behavior (SC-002, SC-004), Validate: Button Variants (US2, SC-001/SC-003), Validate: Data-Display Micro-Components (US3, SC-001/SC-003), Validate: Form Inputs (US1, SC-001/SC-003) (+1 more)
+
+### Community 276 - "Tasks: Feedback & Data Display Primitives"
+Cohesion: 0.09
+Nodes (21): AspectRatio, DataList, Dependencies & Execution Order, File Input, Format: `[ID] [P?] [Story] Description`, Implementation Strategy, Incremental Delivery, Indicator (+13 more)
+
+### Community 277 - "Data Model: Feedback & Data Display Primitives"
+Cohesion: 0.15
+Nodes (12): AspectRatio, Data Model: Feedback & Data Display Primitives, DataList, File Input, Indicator, PinInput, Relationships, Slider (+4 more)
+
+### Community 278 - "Quickstart: Feedback & Data Display Primitives"
+Cohesion: 0.18
+Nodes (10): Automated validation, Expected outcomes, P1 — Spinner, AspectRatio, Indicator, DataList, P2 — Slider, Stepper, File Input, P3 — Timeline, P4 — Stat/Metric Card, PinInput, Prerequisites, Quickstart: Feedback & Data Display Primitives (+2 more)
+
+### Community 279 - "Phase 0 Research: Feedback & Data Display Primitives"
+Cohesion: 0.18
+Nodes (10): Phase 0 Research: Feedback & Data Display Primitives, R1. Slider fill/track contrast — identical to Progress's existing verification, R2. Native range input styling — `accent-color`, not vendor-prefixed pseudo-elements, R3. Indicator positioning — plain `relative`/`absolute`, no Anchor Positioning needed, R4. PinInput needs a new, small JS module, R5. AspectRatio and DataList — new-CSS-need check, R6. File Input's drag-and-drop scope — static visual only, explicitly deferred, R7. Stepper's active-step treatment — Pagination's pairing transfers, but the shape differs (+2 more)
+
+### Community 280 - "Component Contract: AspectRatio"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: AspectRatio, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 281 - "Component Contract: DataList"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: DataList, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 282 - "Component Contract: File Input"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: File Input, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 283 - "Component Contract: Indicator"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Indicator, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 284 - "Component Contract: PinInput"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: PinInput, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 285 - "Component Contract: Slider"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Slider, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 286 - "Component Contract: Spinner"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Spinner, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 287 - "Component Contract: Stat/Metric Card"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Stat/Metric Card, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 288 - "Component Contract: Stepper"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Stepper, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 289 - "Component Contract: Timeline"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Timeline, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 292 - "feature-015-csp-sweep.spec.ts"
+Cohesion: 0.09
+Nodes (3): expectNoConsoleErrors(), openViaShortcut(), PAGES
+
+### Community 293 - "aspect-ratio.spec.ts"
+Cohesion: 0.22
+Nodes (7): Acceptance mapping, ChartDataTable, ChartEmptyState, ChartLegend, ChartTooltip, Component Contract: Shared Chart Chrome — User Story 3 + Cross-Cutting, Components
+
+### Community 294 - "dashboard-example.spec.ts"
+Cohesion: 0.22
+Nodes (8): Phase 0 Research: Recharts-Based Chart Primitives, R1: Charting library version and rendering model, R2: Theme-token color integration, R3: Chart color palette ordering (FR-008), R4: Non-visual data equivalent (FR-009), R5: Reduced-motion handling (FR-013), R6: Radial ("gauge-style") chart implementation, R7: Shared Tooltip/Legend as chart-type-independent components (US3)
+
+### Community 295 - "data-list.spec.ts"
+Cohesion: 0.22
+Nodes (8): Full success-criteria trace, Prerequisites, Quickstart: Gallery Theme Selector, Setup, Validate: accessibility and responsive behavior (SC-004), Validate: agreement with the dedicated Theme Gallery page (SC-005), Validate: every theme is selectable from the gallery page (SC-001, SC-003), Validate: persistence across reload/navigation (SC-002)
+
+### Community 296 - "file-input.spec.ts"
+Cohesion: 0.22
+Nodes (8): Bulk Action, Column Definition, Cross-cutting invariants, Data Table Instance, Phase 1 Data Model: Advanced Data Table, Record Edit/Create Form, Row Selection, Sort Entry
+
+### Community 297 - "indicator.spec.ts"
+Cohesion: 0.22
+Nodes (8): Full success-criteria trace, Prerequisites, Quickstart: Advanced Data Table, Setup, Validate: accessibility and responsive behavior (SC-004, SC-005), Validate: CRUD (SC-003), Validate: selection and bulk actions (SC-002), Validate: sort, filter, paginate a large dataset (SC-001)
+
+### Community 299 - "slider.spec.ts"
+Cohesion: 0.29
+Nodes (6): 00:21 | main, 00:23 | main, 13:40 | main, 14:33 | main, 14:35 | main, 23:44 | main
+
+### Community 300 - "spinner.spec.ts"
+Cohesion: 0.29
+Nodes (6): 00:35 | main, 01:51 | main, 05:47 | main, 07:28 | main, 09:23 | main, 23:45 | main
+
+### Community 301 - "stat-card.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Core Brazilian Fields (CPF, CNPJ, CEP, Phone-BR) — User Story 1, Components, Markup contract, Props (React shape; static HTML uses equivalent `data-*` attributes), Required behavior (FR mapping)
+
+### Community 302 - "stepper.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Extended Brazilian Identifiers (Título de Eleitor, PIS/PASEP, Vehicle Plate) — User Story 2, Components, Markup contract, Props, Required behavior (FR mapping)
+
+### Community 303 - "timeline.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: International Codes (IBAN, Payment Card, International Phone) — User Story 3, Components, Markup contract, Props, Required behavior (FR mapping)
+
+### Community 304 - "Implementation Plan: Advanced Interaction Primitives"
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Advanced Interaction Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
+
+### Community 305 - "Tasks: Advanced Interaction Primitives"
+Cohesion: 0.15
+Nodes (12): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation Strategy, Incremental Delivery, MVP First (User Story 1 Only), Parallel Execution Examples, Phase 1: User Story 1 - Hierarchical navigation via TreeView (P1) 🎯 MVP, Phase 2: User Story 2 - At-a-glance quality signal via Rating (P2) (+4 more)
+
+### Community 306 - "Quickstart: Advanced Interaction Primitives"
+Cohesion: 0.18
+Nodes (10): Automated validation, Expected outcomes, P1 — TreeView, P2 — Rating, P3 — Menubar, P4 — ColorInput, Prerequisites, Quickstart: Advanced Interaction Primitives (+2 more)
+
+### Community 307 - "Component Contract: ColorPicker/ColorInput"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: ColorPicker/ColorInput, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 308 - "Component Contract: Menubar"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Menubar, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 309 - "Component Contract: Rating"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Rating, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 310 - "Component Contract: TreeView"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: TreeView, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 311 - "Research: Advanced Interaction Primitives"
+Cohesion: 0.29
+Nodes (6): R1. TreeView — native `<details>/<summary>` confirmed fully sufficient, zero ARIA needed, R2. Rating — whole/empty star technique, decorative-only contrast justification, R3. Menubar — composes Dropdown Menu unmodified + one new small roving-tabindex layer, R4. ColorInput — native `<input type="color">` styling constraints, verified cross-engine, R5. Testing strategy carry-forward, Research: Advanced Interaction Primitives
+
+### Community 312 - "Data Model: Advanced Interaction Primitives"
+Cohesion: 0.33
+Nodes (5): ColorPicker/ColorInput, Data Model: Advanced Interaction Primitives, Menubar, Rating, TreeView
+
+### Community 315 - "color-input.spec.ts"
+Cohesion: 0.29
+Nodes (6): Code Type Definition (one per `shared/validators/*.ts` module), Cross-cutting invariants, International Phone's variant shape, Phase 1 Data Model: Localized Input Primitives, Validated Code Field (one per rendered component instance), Validation Result
+
+### Community 316 - "menubar.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Core Charts (Line, Bar, Area, Pie/Donut) — User Story 1, Components, Markup contract, Props (shared shape, see data-model.md ChartComponent), Required behavior (Principle II / FR mapping)
+
+### Community 317 - "rating.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Extended Charts (Radar, Radial) — User Story 2, Components, Markup contract, Props, Required behavior
+
+### Community 318 - "settings-example.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Gallery Theme Selector, `index.html` (MODIFIED — `<header>` addition), Required attributes, Required behavior, `src/scripts/gallery-theme-selector.js` (NEW)
+
+### Community 319 - "tree-view.spec.ts"
+Cohesion: 0.29
+Nodes (6): Phase 0 Research: Gallery Theme Selector, R1: Control type — native `<select>` with `<optgroup>`, not a card grid, R2: Data source and selection mechanism — reuse verbatim, no adapter layer, R3: Reflecting the current theme in the control on load, R4: Keeping the dedicated Theme Gallery page and this control in sync, R5: Avoiding layout overflow at 320px
+
+### Community 320 - "Implementation Plan: Component Gap Inventory"
+Cohesion: 0.07
+Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Component Gap Inventory, Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
+
+### Community 321 - "Component candidates (105 total, grouped by category)"
+Cohesion: 0.08
+Nodes (24): Advanced Form Inputs (18), Already-recorded Known Catalog Gaps (constitution v1.13.0 — cross-referenced, NOT re-counted below), Buttons & Actions (6), Chat & Social (5), Component candidates (105 total, grouped by category), Consent & System Messaging (5), Cross-referenced, not re-counted (already on the Known Catalog Gaps list), Data-adjacent widgets (7) (+16 more)
+
+### Community 322 - "Specification Quality Checklist: Curated Theme Presets"
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Curated Theme Presets, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
+
+### Community 323 - "Implementation Plan: Curated Theme Presets"
+Cohesion: 0.12
+Nodes (15): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation Strategy, Incremental Delivery, MVP First (Phases 1-4 only), Parallel Execution Examples, Phase 1: Architecture — CSS custom property token migration (P1, MVP), Phase 2: Contrast audit parametrization (P1, MVP) (+7 more)
+
+### Community 324 - "Research: Curated Theme Presets"
+Cohesion: 0.20
+Nodes (9): R1. Theme architecture mechanism — CSS custom properties via Tailwind's RGB-tuple technique, confirmed empirically, R2. The AAA/AA contrast re-verification bottleneck — parametrize the existing audit script, don't hand-verify 40 times, R3. Where the 40+ theme names/directions come from — real, fetched inventories, not invented, R4. Gallery/preview mechanism, R5. Persistence mechanism, R6. Real source values fetched for the P1 pilot batch (5 themes), Research: Curated Theme Presets, Scale/Scope batching decision (+1 more)
+
+### Community 325 - "Quickstart: Curated Theme Presets"
+Cohesion: 0.29
+Nodes (6): Automated validation, Expected outcomes, Prerequisites, Quickstart: Curated Theme Presets, Run the dev gallery, Validate the architecture (P1 MVP)
+
+### Community 326 - "Contract: Theme Gallery"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Theme Gallery, Markup contract, Required attributes, Token allowlist used
+
+### Community 327 - "Data Model: Curated Theme Presets"
+Cohesion: 0.33
+Nodes (5): Data Model: Curated Theme Presets, Theme, ThemeCollection, ThemeToken, UserThemeSelection
+
+### Community 328 - "Contract: Theme Switcher (persistence + activation)"
 Cohesion: 0.40
-Nodes (4): design-sync notes for professional-design-system, Fixes applied, Preview authoring notes, Re-sync risks
+Nodes (4): Acceptance mapping, Contract: Theme Switcher (persistence + activation), Required attributes, `src/scripts/theme-switcher.js` (NEW)
+
+### Community 330 - "Specification Quality Checklist: Localized Input Primitives"
+Cohesion: 0.11
+Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Localized Input Primitives, Assumptions, Edge Cases, Feature Specification: Localized Input Primitives (+9 more)
+
+### Community 331 - "Specification Quality Checklist: Recharts-Based Chart Primitives"
+Cohesion: 0.11
+Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Recharts-Based Chart Primitives, Assumptions, Edge Cases, Feature Specification: Recharts-Based Chart Primitives (+9 more)
+
+### Community 335 - "design-tokens.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Avatar Group, Code, ColorSwatch, Component Contract: Data-Display Micro-Components — Avatar Group, Highlight, Code, ColorSwatch (User Story 3), Highlight
+
+### Community 336 - "Component Contract: Navigation & Disclosure Utilities — NavLink, Anchor, Collapse, Spoiler (User Story 4)"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Anchor, Collapse, Component Contract: Navigation & Disclosure Utilities — NavLink, Anchor, Collapse, Spoiler (User Story 4), NavLink, Spoiler
+
+### Community 337 - "data-table-main.tsx"
+Cohesion: 0.29
+Nodes (5): columns, FIRST_NAMES, LAST_NAMES, ROLES, rows
+
+### Community 338 - "Component Contract: Core Table — Sort, Filter, Paginate (User Story 1)"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Component Contract: Core Table — Sort, Filter, Paginate (User Story 1), Markup contract (both surfaces), Required behavior (FR mapping), Shared state module: `shared/data-table/`
+
+### Community 339 - "Component Contract: Row Selection & Bulk Actions (User Story 2)"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Component Contract: Row Selection & Bulk Actions (User Story 2), Markup contract, Required behavior (FR mapping), Shared state module: `shared/data-table/selection.ts`
+
+### Community 340 - "Component Contract: Button Variants — ActionIcon, CopyButton, Split Button (User Story 2)"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, ActionIcon, Component Contract: Button Variants — ActionIcon, CopyButton, Split Button (User Story 2), CopyButton, Split Button
+
+### Community 341 - "Component Contract: Form Inputs — NumberInput, PasswordInput, MultiSelect (User Story 1)"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Component Contract: Form Inputs — NumberInput, PasswordInput, MultiSelect (User Story 1), MultiSelect, NumberInput, PasswordInput
+
+### Community 342 - "CopyButton.tsx"
+Cohesion: 0.40
+Nodes (3): CopyButtonProps, CopyStatus, ICONS
+
+### Community 343 - "Highlight.tsx"
+Cohesion: 0.50
+Nodes (4): Highlight(), HighlightProps, Segment, splitSegments()
+
+### Community 344 - "Phase 1 Data Model: Gallery Theme Selector"
+Cohesion: 0.40
+Nodes (4): Cross-cutting invariant, Gallery Theme Selection (ephemeral UI state, not a new entity), Phase 1 Data Model: Gallery Theme Selector, Theme Collection (existing entity, read-only here)
+
+### Community 345 - "Component Contract: CRUD Operations (User Story 3)"
+Cohesion: 0.40
+Nodes (4): Acceptance mapping, Component Contract: CRUD Operations (User Story 3), Markup contract, Required behavior (FR mapping)
+
+### Community 347 - "today-2026-07-11.done.md"
+Cohesion: 0.50
+Nodes (3): 00:28 | main, 10:04 | main, 13:25 | main
+
+### Community 383 - "Implementation Plan: Localized Input Primitives"
+Cohesion: 0.22
+Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Localized Input Primitives, Project Structure, Source Code (repository root), Summary, Technical Context
+
+### Community 384 - "Implementation Plan: Recharts-Based Chart Primitives"
+Cohesion: 0.22
+Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Recharts-Based Chart Primitives, Project Structure, Source Code (repository root), Summary, Technical Context
+
+### Community 388 - "DataTableForm.tsx"
+Cohesion: 0.24
+Nodes (10): CommandPalette(), CommandPaletteProps, highlight(), CommandPaletteAction, useCommandPalette(), useDialogTrigger(), Modal(), ModalProps (+2 more)
+
+### Community 389 - "List.tsx"
+Cohesion: 0.29
+Nodes (5): Avatar(), AvatarProps, SIZE_CLASSES, ListItemData, ListProps
+
+### Community 390 - "chart-main.tsx"
+Cohesion: 0.29
+Nodes (4): categorySeries, marketShareData, revenueData, skillData
+
+### Community 391 - "types.ts"
+Cohesion: 0.19
+Nodes (23): ComposedChart(), ComposedChartProps, FunnelChart(), FunnelChartProps, Sankey(), SankeyProps, ScatterChart(), ScatterChartProps (+15 more)
+
+### Community 393 - "usePrefersReducedMotion.ts"
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
+
+### Community 397 - "wireDialogClose"
+Cohesion: 0.70
+Nodes (3): initCommandPalette(), initDialogTriggers(), wireDialogClose()
+
+### Community 402 - "react-slide-over.spec.ts"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Demo Gallery Visual Showcase, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 408 - "chart-batch-2-main.tsx"
+Cohesion: 0.20
+Nodes (7): composedSeries, funnelData, revenueData, sankeyLinks, sankeyNodes, scatterSeries, treemapData
+
+### Community 409 - "Quickstart: Recharts Additional Chart Types (Batch 2)"
+Cohesion: 0.22
+Nodes (8): Full success-criteria trace, Prerequisites, Quickstart: Recharts Additional Chart Types (Batch 2), Setup, Validate: accessibility, responsiveness, and completeness (SC-002–SC-006), Validate: Composed & Scatter Charts (US1, SC-001/SC-002), Validate: Funnel Chart (US2, SC-001), Validate: Treemap & Sankey (US3, SC-001)
+
+### Community 410 - "Phase 1 Data Model: Recharts Additional Chart Types (Batch 2)"
+Cohesion: 0.25
+Nodes (7): Composed Chart, Cross-cutting (all 5), Funnel Chart, Phase 1 Data Model: Recharts Additional Chart Types (Batch 2), Sankey Diagram, Scatter Chart, Treemap
+
+### Community 411 - "Research: Recharts Additional Chart Types (Batch 2)"
+Cohesion: 0.29
+Nodes (6): R1: Data shape per chart type, R2: ChartLegend/ChartDataTable compatibility with non-standard shapes, R3: Secondary Y-axis (ComposedChart, FR-001's edge case), R4: Reduced-motion and color-token reuse (unchanged from feature 020), Research: Recharts Additional Chart Types (Batch 2), Summary
+
+### Community 412 - "Component Contract: Composed Chart & Scatter Chart (User Story 1)"
+Cohesion: 0.40
+Nodes (4): Acceptance mapping, Component Contract: Composed Chart & Scatter Chart (User Story 1), Composed Chart, Scatter Chart
+
+### Community 413 - "Component Contract: Treemap & Sankey Diagram (User Story 3)"
+Cohesion: 0.40
+Nodes (4): Acceptance mapping, Component Contract: Treemap & Sankey Diagram (User Story 3), Sankey Diagram, Treemap
+
+### Community 418 - "Select.tsx"
+Cohesion: 0.50
+Nodes (3): Select, SelectOption, SelectProps
+
+### Community 437 - "Implementation Plan: Sitewide Theme Selector & Persistence"
+Cohesion: 0.07
+Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Sitewide Theme Selector & Persistence, Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
+
+### Community 438 - "Tasks: Sitewide Theme Selector & Persistence"
+Cohesion: 0.17
+Nodes (11): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites), Phase 3: User Story 1 - Theme Persists When Navigating (Priority: P1) 🎯 MVP (+3 more)
+
+### Community 439 - "Quickstart: Sitewide Theme Selector & Persistence"
+Cohesion: 0.22
+Nodes (8): Full success-criteria trace, Prerequisites, Quickstart: Sitewide Theme Selector & Persistence, Setup, Validate: completeness across all 77 rollout-target pages, Validate: no regressions, Validate: selector present on every page (US2, SC-002), Validate: theme persists across navigation (US1, SC-001/SC-003)
+
+### Community 440 - "apply-theme-rollout.mjs"
+Cohesion: 0.29
+Nodes (5): errors, files, results, skipped, updated
+
+### Community 441 - "Research: Sitewide Theme Selector & Persistence"
+Cohesion: 0.33
+Nodes (5): R1: Confirming the exact rollout unit (verified against live source), R2: Per-page insertion point for the selector markup, R3: Verification strategy for 77 files, Research: Sitewide Theme Selector & Persistence, Summary
+
+### Community 442 - "Component Contract: Sitewide Theme Rollout (User Stories 1 & 2)"
+Cohesion: 0.40
+Nodes (4): Acceptance mapping, Behavioral contract, Component Contract: Sitewide Theme Rollout (User Stories 1 & 2), Per-page markup contract
+
+### Community 443 - "check-theme-rollout.mjs"
+Cohesion: 0.50
+Nodes (3): EXEMPT, files, REQUIRED
+
+### Community 444 - "Phase 1 Data Model: Sitewide Theme Selector & Persistence"
+Cohesion: 0.50
+Nodes (3): Active Theme (existing entity, feature 017 — unchanged), Gallery Page (scope entity, not a data entity), Phase 1 Data Model: Sitewide Theme Selector & Persistence
+
+### Community 447 - "Tasks: Demo Gallery Visual Showcase"
+Cohesion: 0.12
+Nodes (15): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+7 more)
+
+### Community 448 - "Quickstart: Demo Gallery Visual Showcase"
+Cohesion: 0.22
+Nodes (8): Full success-criteria trace, Prerequisites, Quickstart: Demo Gallery Visual Showcase, Setup, Validate: categorized, navigable gallery (US2, SC-002/SC-003), Validate: individual demo pages feel polished (US3), Validate: opening section communicates scale (US1, SC-001), Validate: zero regressions (SC-004, FR-007/FR-008)
+
+### Community 449 - "Component Contract: Root Gallery Redesign (User Stories 1 & 2)"
+Cohesion: 0.25
+Nodes (7): Acceptance mapping, Category sections (FR-002, research.md R1), Component Contract: Root Gallery Redesign (User Stories 1 & 2), Flagship treatment (FR-004, research.md R2), Opening section (FR-001, research.md R3), Preserved guarantees (Edge Cases), Quick-jump navigation (FR-003, research.md R4)
+
+### Community 450 - "Research: Demo Gallery Visual Showcase"
+Cohesion: 0.25
+Nodes (7): R1: Category mapping method, R2: Flagship component selection (FR-004), R3: Opening/hero section content (FR-001), R4: Quick-jump navigation mechanism (FR-003), R5: Individual demo-page polish (FR-006) — scripted, not bespoke, Research: Demo Gallery Visual Showcase, Summary
+
+### Community 451 - "apply-demo-page-polish.mjs"
+Cohesion: 0.29
+Nodes (5): errors, files, results, skipped, updated
+
+### Community 452 - "Component Contract: Individual Demo Page Polish (User Story 3)"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Component Contract: Individual Demo Page Polish (User Story 3), Markup contract, Preserved guarantees, Scope
+
+### Community 453 - "Phase 1 Data Model: Demo Gallery Visual Showcase"
+Cohesion: 0.33
+Nodes (5): Demo Page Polish (the feature-025-style rollout unit), Flagship Component (a flag on an existing Gallery Category entry), Gallery Category Section, Opening Section Stat, Phase 1 Data Model: Demo Gallery Visual Showcase
+
+### Community 458 - "Implementation Plan: Claude-Design-Inspired Theme Presets (Batch 2)"
+Cohesion: 0.07
+Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Claude-Design-Inspired Theme Presets (Batch 2), Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
+
+### Community 459 - "Tasks: Claude-Design-Inspired Theme Presets (Batch 2)"
+Cohesion: 0.15
+Nodes (12): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites), Phase 3: User Story 1 - A new, distinctly different batch of curated themes (Priority: P1) 🎯 MVP (+4 more)
+
+### Community 460 - "Per-theme anchor values (real, extracted — research.md R3)"
+Cohesion: 0.18
+Nodes (10): Acceptance mapping, `aurora` (Stripe-derived), Contract: Source-Role → ThemeTokens Mapping, General mapping rule, `graphite` (Vercel-derived), `linen` (Notion-derived), `nebula` (Sentry-derived), `obsidian` (Linear-derived) (+2 more)
+
+### Community 461 - "Research: Claude-Design-Inspired Theme Presets (Batch 2)"
+Cohesion: 0.22
+Nodes (8): R1. Source structure — corrected against the real repository, not assumed, R2. Extraction methodology, R3. Batch selection — 5 sources, verified genuinely distinct, R4. Mood-family assignment, R5. Source-role → `ThemeTokens` mapping methodology, R6. Font substitution, R7. User Story 2 — component-gap research conclusion, Research: Claude-Design-Inspired Theme Presets (Batch 2)
+
+### Community 462 - "Quickstart: Claude-Design-Inspired Theme Presets (Batch 2)"
+Cohesion: 0.25
+Nodes (7): Automated validation, Expected outcomes, Prerequisites, Quickstart: Claude-Design-Inspired Theme Presets (Batch 2), Run the dev gallery, Validate User Story 1 (new themes, P1 MVP), Validate User Story 2 (component-gap research)
+
+### Community 463 - "Data Model: Claude-Design-Inspired Theme Presets (Batch 2)"
+Cohesion: 0.29
+Nodes (6): Aesthetic Reference (new, research-only — spec.md's own entity), Data Model: Claude-Design-Inspired Theme Presets (Batch 2), Theme (existing, feature 017 — 5 new instances), ThemeCollection (existing, feature 017 — grows from 43 to 48), ThemeToken (existing, feature 017 — unchanged), UserThemeSelection (existing, feature 017 — unchanged)
 
 ## Knowledge Gaps
-- **1335 isolated node(s):** `countries`, `actions`, `projectActions`, `teamMembers`, `notifications` (+1330 more)
+- **2317 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+2312 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **57 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **98 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `countries`, `actions`, `projectActions` to the rest of the system?**
-  _1335 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
+  _2317 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
@@ -943,7 +1539,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.0625 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Feature Specification: Design System Primitive Components` be split into smaller, more focused modules?**

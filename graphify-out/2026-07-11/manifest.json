@@ -140,8 +140,8 @@
     "semantic_hash": "c09cdcdf8b86381d5955182b5eac0caf"
   },
   ".specify/memory/constitution.md": {
-    "mtime": 1783730616.775137,
-    "ast_hash": "e77603ed214cfdb6777147cea0a2a993",
+    "mtime": 1783816067.7951736,
+    "ast_hash": "5a6244008952f293eaa62aedb7451b0d",
     "semantic_hash": ""
   },
   ".specify/templates/checklist-template.md": {
@@ -175,8 +175,8 @@
     "semantic_hash": "eba6943b2a2f6407162ae12e0218bdac"
   },
   "CLAUDE.md": {
-    "mtime": 1783737363.3255017,
-    "ast_hash": "64a4cb6f0a55356083f83380d3f20e31",
+    "mtime": 1783810635.58355,
+    "ast_hash": "1a70cbec7eb8c46ad0e820ac805f4f6d",
     "semantic_hash": ""
   },
   ".remember/tmp/last-ndc.ts": {
@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   ".specify/feature.json": {
-    "mtime": 1783736624.9535837,
-    "ast_hash": "29783a9407bbb0d65cb509223801b1db",
+    "mtime": 1783810108.6947346,
+    "ast_hash": "627c337b1a3606b6d778a340bff4e90a",
     "semantic_hash": ""
   },
   ".remember/now.md": {
@@ -290,13 +290,13 @@
     "semantic_hash": ""
   },
   "scripts/audit-tokens.mjs": {
-    "mtime": 1783594548.1588643,
-    "ast_hash": "3ed0f707534872f02826dbafe620ce8c",
+    "mtime": 1783814030.6975503,
+    "ast_hash": "cdc543d0b886ae3705afb37a999dda59",
     "semantic_hash": ""
   },
   "scripts/check-contrast.mjs": {
-    "mtime": 1783643245.4223595,
-    "ast_hash": "8d9821107cc3d60b60d9b918bffe809d",
+    "mtime": 1783811875.868324,
+    "ast_hash": "37febab3acb8d6adef2b61a42fd62a2d",
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
@@ -315,13 +315,13 @@
     "semantic_hash": ""
   },
   "vite.config.ts": {
-    "mtime": 1783728201.6820192,
-    "ast_hash": "a8f607034d7dd89a61b2aa0fa1ae767c",
+    "mtime": 1783814698.415712,
+    "ast_hash": "ec6aebc760ec637aebcf5cbf58b2c9a1",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1783728217.408518,
-    "ast_hash": "fa89420a6e4efc871c6e99127669da5c",
+    "mtime": 1783814709.2991743,
+    "ast_hash": "ef19ea7bc043e329889088478d136b5c",
     "semantic_hash": ""
   },
   "src/components/badge/badge.html": {
@@ -2605,8 +2605,8 @@
     "semantic_hash": ""
   },
   "shared/design-tokens.ts": {
-    "mtime": 1783637455.8062925,
-    "ast_hash": "4c4689d2226a7d64eecc3015d653fdc1",
+    "mtime": 1783813433.5686615,
+    "ast_hash": "e365c2021ca31c7307dcc557638b3aa4",
     "semantic_hash": ""
   },
   "tests/e2e/react-button.spec.ts": {
@@ -6365,8 +6365,8 @@
     "semantic_hash": ""
   },
   "src/components/command-palette/command-palette.html": {
-    "mtime": 1783651140.6260133,
-    "ast_hash": "76a13d65aba0600df945e247a2fd0e4e",
+    "mtime": 1783814426.567533,
+    "ast_hash": "6484aaa9b032350cc40dd30aebf8bad0",
     "semantic_hash": ""
   },
   "tests/e2e/command-palette.spec.ts-snapshots/command-palette-closed-chromium-1024-darwin.png": {
@@ -6410,8 +6410,8 @@
     "semantic_hash": ""
   },
   "tests/e2e/command-palette.spec.ts-snapshots/command-palette-open-chromium-320-darwin.png": {
-    "mtime": 1783650983.0540242,
-    "ast_hash": "8727ff07b887ed678712bfb951ec57ce",
+    "mtime": 1783818114.0401778,
+    "ast_hash": "88ef5e38021bc737a58023cbb086d8e7",
     "semantic_hash": ""
   },
   "tests/e2e/command-palette.spec.ts-snapshots/command-palette-open-chromium-768-darwin.png": {
@@ -6530,8 +6530,8 @@
     "semantic_hash": ""
   },
   "tests/e2e/command-palette.spec.ts-snapshots/command-palette-open-chromium-320-linux.png": {
-    "mtime": 1783741834.7379005,
-    "ast_hash": "14db753e3afd6dcae532dbe960b54109",
+    "mtime": 1783818127.8688738,
+    "ast_hash": "f13b6c1dddcf80e4e58bdef4af3dbac2",
     "semantic_hash": ""
   },
   "tests/e2e/command-palette.spec.ts-snapshots/command-palette-open-chromium-768-linux.png": {
@@ -8787,6 +8787,996 @@
   ".remember/today-2026-07-10.done.md": {
     "mtime": 1783718922.4838932,
     "ast_hash": "536f510615f0b6cbc0b03574b9f196ba",
+    "semantic_hash": ""
+  },
+  "src/scripts/context-menu.js": {
+    "mtime": 1783814226.74099,
+    "ast_hash": "88fad857686b4703bfe6164e5e6cbaef",
+    "semantic_hash": ""
+  },
+  "src/scripts/popover.js": {
+    "mtime": 1783815698.592095,
+    "ast_hash": "e6b5a6617e3f4519c615b9e90aa6fd57",
+    "semantic_hash": ""
+  },
+  "src/scripts/progress.js": {
+    "mtime": 1783815009.898614,
+    "ast_hash": "1436873829aa8fe22524fab428631833",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts": {
+    "mtime": 1783813938.208042,
+    "ast_hash": "3e39b695d83c4cd11f58d2f1ea1456cb",
+    "semantic_hash": ""
+  },
+  "tests/e2e/composed-example.spec.ts": {
+    "mtime": 1783814769.8732448,
+    "ast_hash": "6e3828e507dee4ce11259865d4cce6ab",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts": {
+    "mtime": 1783814384.0778615,
+    "ast_hash": "ec16259b190b332f1414c21b318bb4c5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts": {
+    "mtime": 1783813464.685873,
+    "ast_hash": "f288e86ff439d2e63eb94282d2f92546",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts": {
+    "mtime": 1783813788.6224594,
+    "ast_hash": "f73a8081b7d5976525848f6487591512",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts": {
+    "mtime": 1783813484.2116265,
+    "ast_hash": "3d4189379d88b817f96a846e1405bd7a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts": {
+    "mtime": 1783814059.5271137,
+    "ast_hash": "6c29c0366e97405c616b14f01ba75c3c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts": {
+    "mtime": 1783815077.6313803,
+    "ast_hash": "e7d384779249c4f9288120f157891533",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts": {
+    "mtime": 1783813492.447428,
+    "ast_hash": "3b0f56f83c7c5e31c01271e3b77dee6c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts": {
+    "mtime": 1783813449.2788677,
+    "ast_hash": "db189594c072aa2df557f37e561e8293",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts": {
+    "mtime": 1783815147.8604345,
+    "ast_hash": "43d0f1d9365657fce0c6ff549ae298fb",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/checklists/requirements.md": {
+    "mtime": 1783810193.8500152,
+    "ast_hash": "b578a11f3faebdcb893ef97cbe9e4e56",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/button-group.contract.md": {
+    "mtime": 1783811350.121679,
+    "ast_hash": "ad948906c111bd84026708f42d299aac",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/context-menu.contract.md": {
+    "mtime": 1783810580.1359785,
+    "ast_hash": "9208eae9e09c969dae6341e94380a034",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/divider.contract.md": {
+    "mtime": 1783811933.5594647,
+    "ast_hash": "6efb2c36fda4df16d2b765c5debd70bd",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/empty-state.contract.md": {
+    "mtime": 1783810589.7341537,
+    "ast_hash": "2daeb37c1fd5f2e8267635f4a3b588ad",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/kbd.contract.md": {
+    "mtime": 1783813302.667905,
+    "ast_hash": "92b2927666876c16ab125695493e2d8f",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/popover.contract.md": {
+    "mtime": 1783812408.2212508,
+    "ast_hash": "0fa2292c5325b32cef13ff3c77df2b53",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/progress.contract.md": {
+    "mtime": 1783810515.5749655,
+    "ast_hash": "f28cd09b780cc4ba97591b809591a888",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/skeleton.contract.md": {
+    "mtime": 1783810567.8735824,
+    "ast_hash": "10cc2454319119b9399df7b107e73113",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/textarea.contract.md": {
+    "mtime": 1783810494.707569,
+    "ast_hash": "20bf29cc31d6fc209112643a1dc29eca",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/contracts/tooltip.contract.md": {
+    "mtime": 1783811219.7296302,
+    "ast_hash": "1b481c2f9ab275cad37b1175834ad3dd",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/data-model.md": {
+    "mtime": 1783810461.3835354,
+    "ast_hash": "a6ef8f4b55dd6065935da8d42567125e",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/plan.md": {
+    "mtime": 1783813315.821643,
+    "ast_hash": "1e5665a2a202008af93baa8af0b8e2d9",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/quickstart.md": {
+    "mtime": 1783811400.1204848,
+    "ast_hash": "b6228a9c6d1ca454e2b4d05fe54460f6",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/research.md": {
+    "mtime": 1783815221.7654014,
+    "ast_hash": "66708ce39a857add928d69472e790a11",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/spec.md": {
+    "mtime": 1783812453.3500636,
+    "ast_hash": "854c79f953e7cfa16837e3d722ebcf93",
+    "semantic_hash": ""
+  },
+  "specs/014-micro-interaction-primitives/tasks.md": {
+    "mtime": 1783816090.8344386,
+    "ast_hash": "77fefd02b92717ab5856a63b89e52c71",
+    "semantic_hash": ""
+  },
+  "src/components/button-group/button-group.html": {
+    "mtime": 1783813894.6485195,
+    "ast_hash": "03e8c6b4590fddec82ca1cfcc91a687b",
+    "semantic_hash": ""
+  },
+  "src/components/composed-example/composed-example.html": {
+    "mtime": 1783814995.4712481,
+    "ast_hash": "7249a61d971f6689279bacf3af890adc",
+    "semantic_hash": ""
+  },
+  "src/components/context-menu/context-menu.html": {
+    "mtime": 1783814239.4240794,
+    "ast_hash": "46ddca019072e601ee359fd79a70583e",
+    "semantic_hash": ""
+  },
+  "src/components/divider/divider.html": {
+    "mtime": 1783813645.2528176,
+    "ast_hash": "1b18bbf2e57643d2e65f978508eb1462",
+    "semantic_hash": ""
+  },
+  "src/components/empty-state/empty-state.html": {
+    "mtime": 1783813905.4765303,
+    "ast_hash": "e2f5558e7ec97c5fb71263b8474fca0c",
+    "semantic_hash": ""
+  },
+  "src/components/kbd/kbd.html": {
+    "mtime": 1783813654.6537464,
+    "ast_hash": "f53325a5bad449d9b2cfd4da59b0dbe3",
+    "semantic_hash": ""
+  },
+  "src/components/popover/popover.html": {
+    "mtime": 1783814124.853977,
+    "ast_hash": "1e26e2329a44d7c9cc4d7bfa22f689e4",
+    "semantic_hash": ""
+  },
+  "src/components/progress/progress.html": {
+    "mtime": 1783815055.2097797,
+    "ast_hash": "7b0e625f2ab1d6b11516073697c56b99",
+    "semantic_hash": ""
+  },
+  "src/components/skeleton/skeleton.html": {
+    "mtime": 1783813663.5225308,
+    "ast_hash": "3fb8cf6db4e470d97f0daec435bda2cc",
+    "semantic_hash": ""
+  },
+  "src/components/textarea/textarea.html": {
+    "mtime": 1783813634.475271,
+    "ast_hash": "ac7ce2f45977a656b5b1040dc2548df5",
+    "semantic_hash": ""
+  },
+  "src/components/tooltip/tooltip.html": {
+    "mtime": 1783814982.9812424,
+    "ast_hash": "65730997308600c95d22273e4f05550b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-1024-darwin.png": {
+    "mtime": 1783814613.191681,
+    "ast_hash": "c783d7d2a1b1e3e6e1c8c894e26dc98a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-1440-darwin.png": {
+    "mtime": 1783813919.8533719,
+    "ast_hash": "c783d7d2a1b1e3e6e1c8c894e26dc98a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-320-darwin.png": {
+    "mtime": 1783814495.122731,
+    "ast_hash": "b1feb4bd258d8fcdbecacf8818350adb",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-768-darwin.png": {
+    "mtime": 1783814553.8331594,
+    "ast_hash": "c783d7d2a1b1e3e6e1c8c894e26dc98a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-firefox-1440-darwin.png": {
+    "mtime": 1783814746.0016527,
+    "ast_hash": "fdac02c930b622ea06cf64982914216e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-webkit-1440-darwin.png": {
+    "mtime": 1783814905.4795609,
+    "ast_hash": "ce17c0a0cd2d898463771ac7ee500f39",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-1024-darwin.png": {
+    "mtime": 1783814619.0361428,
+    "ast_hash": "72301b440fc94c75b095362789341854",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-1440-darwin.png": {
+    "mtime": 1783814253.9503744,
+    "ast_hash": "72301b440fc94c75b095362789341854",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-320-darwin.png": {
+    "mtime": 1783814500.8063312,
+    "ast_hash": "adff958d467dbe90dab141810e869f05",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-768-darwin.png": {
+    "mtime": 1783814559.3640838,
+    "ast_hash": "72301b440fc94c75b095362789341854",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-firefox-1440-darwin.png": {
+    "mtime": 1783814761.8344355,
+    "ast_hash": "55f8b49fd36cab1c3661fa9b3fe6bb51",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-webkit-1440-darwin.png": {
+    "mtime": 1783814917.0630846,
+    "ast_hash": "32d063298f5826b898f2538d7924ff76",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-1024-darwin.png": {
+    "mtime": 1783814619.2651737,
+    "ast_hash": "0817ad99350177108e0f326da2577791",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-1440-darwin.png": {
+    "mtime": 1783813718.4736655,
+    "ast_hash": "0817ad99350177108e0f326da2577791",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-320-darwin.png": {
+    "mtime": 1783814501.0453372,
+    "ast_hash": "2493968812c8c4896033f676d7c54fbe",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-768-darwin.png": {
+    "mtime": 1783814559.667051,
+    "ast_hash": "0817ad99350177108e0f326da2577791",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-firefox-1440-darwin.png": {
+    "mtime": 1783814762.2269738,
+    "ast_hash": "b99934ccd345c901319da127683644b7",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-webkit-1440-darwin.png": {
+    "mtime": 1783814917.8996415,
+    "ast_hash": "28753eb25e3eec939e2092d21742fc00",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-1024-darwin.png": {
+    "mtime": 1783814621.4268684,
+    "ast_hash": "01a1db6a7a83ba0bb453c17578f67bb5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-1440-darwin.png": {
+    "mtime": 1783813920.4273787,
+    "ast_hash": "01a1db6a7a83ba0bb453c17578f67bb5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-320-darwin.png": {
+    "mtime": 1783814503.6747096,
+    "ast_hash": "8ec6f3ea064e355ba04702d812372bc3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-768-darwin.png": {
+    "mtime": 1783814561.9697933,
+    "ast_hash": "01a1db6a7a83ba0bb453c17578f67bb5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-firefox-1440-darwin.png": {
+    "mtime": 1783814768.3636103,
+    "ast_hash": "de0e143e6078caeab3ab1fd5578cd26c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-webkit-1440-darwin.png": {
+    "mtime": 1783814922.0259264,
+    "ast_hash": "9a41c3d87417c45ab0febd485a6b104a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-1024-darwin.png": {
+    "mtime": 1783814621.921421,
+    "ast_hash": "e0edf4715d2bfb716bc420180a455692",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-1440-darwin.png": {
+    "mtime": 1783813718.7902336,
+    "ast_hash": "e0edf4715d2bfb716bc420180a455692",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-320-darwin.png": {
+    "mtime": 1783814504.0314775,
+    "ast_hash": "08860ad4dc91fc1fd0a596af27b06a48",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-768-darwin.png": {
+    "mtime": 1783814562.3343146,
+    "ast_hash": "e0edf4715d2bfb716bc420180a455692",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-firefox-1440-darwin.png": {
+    "mtime": 1783814769.6488256,
+    "ast_hash": "aad2cd2bbb58b8009541f8983f07f731",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-webkit-1440-darwin.png": {
+    "mtime": 1783814922.4902334,
+    "ast_hash": "045fcc1f54b3d51bfa0f833ccc0a9c26",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-1024-darwin.png": {
+    "mtime": 1783814629.9205315,
+    "ast_hash": "6d3ef8606a33462bdae673645fcf59d3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-1440-darwin.png": {
+    "mtime": 1783814139.9828494,
+    "ast_hash": "a70a0ff7dfe7585c3d5eb9003983fccc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-320-darwin.png": {
+    "mtime": 1783814511.2518275,
+    "ast_hash": "68967dd60eeb15e3ce883b799022b0eb",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-768-darwin.png": {
+    "mtime": 1783814569.3499346,
+    "ast_hash": "60592c753e246877337a696ab0bfac81",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-firefox-1440-darwin.png": {
+    "mtime": 1783814792.2826262,
+    "ast_hash": "f4530bb50f91e46409c2094ea48a82fa",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-webkit-1440-darwin.png": {
+    "mtime": 1783814933.934392,
+    "ast_hash": "e318d2f6bc7ffbe81919daf7c5fad2ad",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-1024-darwin.png": {
+    "mtime": 1783814629.9314048,
+    "ast_hash": "cac4d6a78586abe76bc5f71064de8689",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-1440-darwin.png": {
+    "mtime": 1783815113.9464068,
+    "ast_hash": "1d481b053d673cceaf01407d2b748835",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-320-darwin.png": {
+    "mtime": 1783814511.4673743,
+    "ast_hash": "40da570e8c57f45d849e98c260a03941",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-768-darwin.png": {
+    "mtime": 1783814569.7683644,
+    "ast_hash": "cac4d6a78586abe76bc5f71064de8689",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-firefox-1440-darwin.png": {
+    "mtime": 1783814793.1373882,
+    "ast_hash": "40fe4353e64ca7871f2e586598117f66",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-webkit-1440-darwin.png": {
+    "mtime": 1783814934.6352434,
+    "ast_hash": "0e9bd92dcaa2cbc6465d0f555d646f80",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-1024-darwin.png": {
+    "mtime": 1783814657.866515,
+    "ast_hash": "2c79941efe6af3c3d7446d5027cf90c6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-1440-darwin.png": {
+    "mtime": 1783813719.577097,
+    "ast_hash": "2c79941efe6af3c3d7446d5027cf90c6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-320-darwin.png": {
+    "mtime": 1783814538.6929617,
+    "ast_hash": "5326fd3734883eae3ea8750189f5db37",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-768-darwin.png": {
+    "mtime": 1783814596.989148,
+    "ast_hash": "2c79941efe6af3c3d7446d5027cf90c6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-firefox-1440-darwin.png": {
+    "mtime": 1783814867.119187,
+    "ast_hash": "34aff3cd8402141377482d955bf971a3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-webkit-1440-darwin.png": {
+    "mtime": 1783814985.3337295,
+    "ast_hash": "74fcd11e07cdf7e37d5ac589bf3c80e0",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-1024-darwin.png": {
+    "mtime": 1783814663.0686603,
+    "ast_hash": "599c8b18ae343ec1a3f2f0880d906674",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-1440-darwin.png": {
+    "mtime": 1783813719.9074428,
+    "ast_hash": "599c8b18ae343ec1a3f2f0880d906674",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-320-darwin.png": {
+    "mtime": 1783814543.4049876,
+    "ast_hash": "d18282f4324b3bd3f16046ae7e1f7b1c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-768-darwin.png": {
+    "mtime": 1783814601.8358438,
+    "ast_hash": "599c8b18ae343ec1a3f2f0880d906674",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-firefox-1440-darwin.png": {
+    "mtime": 1783814881.7421932,
+    "ast_hash": "51f9dfe5e7811a806cbc34f171ce33f4",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-webkit-1440-darwin.png": {
+    "mtime": 1783814993.8620145,
+    "ast_hash": "cd28e11ec254c77f8e8676a4f16df2c6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-1024-darwin.png": {
+    "mtime": 1783814663.2893798,
+    "ast_hash": "2a33dcfed70ec886311f0334b88adfe9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-1440-darwin.png": {
+    "mtime": 1783813720.346099,
+    "ast_hash": "2a33dcfed70ec886311f0334b88adfe9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-320-darwin.png": {
+    "mtime": 1783814543.7176745,
+    "ast_hash": "41045167533f5752f6f647ca454dce33",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-768-darwin.png": {
+    "mtime": 1783814602.1380847,
+    "ast_hash": "2a33dcfed70ec886311f0334b88adfe9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-firefox-1440-darwin.png": {
+    "mtime": 1783814882.95239,
+    "ast_hash": "c5b78cb56a0502c07da3c3b1a15b625a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-webkit-1440-darwin.png": {
+    "mtime": 1783814994.729954,
+    "ast_hash": "8475b49ce2826899dd986d485a5d6eb7",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-1024-darwin.png": {
+    "mtime": 1783814663.3019145,
+    "ast_hash": "3ad0d23bf6119b83948fa8f107ab4f98",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-1440-darwin.png": {
+    "mtime": 1783813720.2768528,
+    "ast_hash": "3ad0d23bf6119b83948fa8f107ab4f98",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-320-darwin.png": {
+    "mtime": 1783814543.5732942,
+    "ast_hash": "d12a414c7c85ee5e027d2fe91ec6457c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-768-darwin.png": {
+    "mtime": 1783814602.1372004,
+    "ast_hash": "3ad0d23bf6119b83948fa8f107ab4f98",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-firefox-1440-darwin.png": {
+    "mtime": 1783814882.6228726,
+    "ast_hash": "930d9fa19cb34360d4736e7526a3e1a8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-webkit-1440-darwin.png": {
+    "mtime": 1783814993.9940438,
+    "ast_hash": "61a332e88f61b56e325f6d13fefeb1ee",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-1024-darwin.png": {
+    "mtime": 1783815363.413653,
+    "ast_hash": "461edd0a1426142ca4de173a979eb62e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-1440-darwin.png": {
+    "mtime": 1783815163.8780663,
+    "ast_hash": "aa9a909032ea016e6dd16c0dd8ecef4a",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-320-darwin.png": {
+    "mtime": 1783815243.4960759,
+    "ast_hash": "4374dfc4cd89f0932670b0aa42708c07",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-768-darwin.png": {
+    "mtime": 1783815301.092038,
+    "ast_hash": "1d603de5192a1e4d3b885dd4bf9e4244",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-firefox-1440-darwin.png": {
+    "mtime": 1783815580.3489668,
+    "ast_hash": "3e561540fc0aaaa7f6e0dc730b4f9f42",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-webkit-1440-darwin.png": {
+    "mtime": 1783815684.3320785,
+    "ast_hash": "26a660dab69015f3035a0871a5be1837",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-1024-darwin.png": {
+    "mtime": 1783815363.9083326,
+    "ast_hash": "d78fcc2531b1fd8e1a31b5dd547c57bd",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-1440-darwin.png": {
+    "mtime": 1783815164.3839273,
+    "ast_hash": "44430ac0f3e898a36f84e75259a96c4d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-320-darwin.png": {
+    "mtime": 1783815243.7995775,
+    "ast_hash": "2769f8ffa04456db43bddb9d917c271d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-768-darwin.png": {
+    "mtime": 1783815301.4446983,
+    "ast_hash": "edd97872ee78612e8c0653ef87c4d3e8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-firefox-1440-darwin.png": {
+    "mtime": 1783815580.8024023,
+    "ast_hash": "3dd02ec6669aa21424740c37bb824d3f",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-webkit-1440-darwin.png": {
+    "mtime": 1783815684.6542273,
+    "ast_hash": "fb2a75c1304bfcc1cc22f4c346f618e1",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-1024-linux.png": {
+    "mtime": 1783818127.8755224,
+    "ast_hash": "ce9e1eb033497b96acef0908e90590f2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-1440-linux.png": {
+    "mtime": 1783818127.8760529,
+    "ast_hash": "ce9e1eb033497b96acef0908e90590f2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-320-linux.png": {
+    "mtime": 1783818127.8764992,
+    "ast_hash": "6c0d212095baf7a8638a34a3f788f82c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-chromium-768-linux.png": {
+    "mtime": 1783818127.8768601,
+    "ast_hash": "ce9e1eb033497b96acef0908e90590f2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-firefox-1440-linux.png": {
+    "mtime": 1783818127.8773048,
+    "ast_hash": "8fcb04c004691a3ed6647673a90af570",
+    "semantic_hash": ""
+  },
+  "tests/e2e/button-group.spec.ts-snapshots/button-group-all-webkit-1440-linux.png": {
+    "mtime": 1783818127.8776724,
+    "ast_hash": "4ced5255024b6fcaa491f8a3899b6c14",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-1024-linux.png": {
+    "mtime": 1783818127.8843756,
+    "ast_hash": "36482df9f1910da90a0868ad72b66204",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-1440-linux.png": {
+    "mtime": 1783818127.8848407,
+    "ast_hash": "36482df9f1910da90a0868ad72b66204",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-320-linux.png": {
+    "mtime": 1783818127.8852854,
+    "ast_hash": "bdb5367be6e60fea187fa3aed834282e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-chromium-768-linux.png": {
+    "mtime": 1783818127.8857245,
+    "ast_hash": "36482df9f1910da90a0868ad72b66204",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-firefox-1440-linux.png": {
+    "mtime": 1783818127.8863556,
+    "ast_hash": "19016a0fe8309eef90e6c56ff9ac8055",
+    "semantic_hash": ""
+  },
+  "tests/e2e/context-menu.spec.ts-snapshots/context-menu-open-webkit-1440-linux.png": {
+    "mtime": 1783818127.8868403,
+    "ast_hash": "71093ad682843ac263729256d46178c5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-1024-linux.png": {
+    "mtime": 1783818127.8933969,
+    "ast_hash": "d8d10bf274d55cf3f6c0100c6201abed",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-1440-linux.png": {
+    "mtime": 1783818127.8938332,
+    "ast_hash": "d8d10bf274d55cf3f6c0100c6201abed",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-320-linux.png": {
+    "mtime": 1783818127.8942387,
+    "ast_hash": "eb8c1a5e5493322e2446532cc2c7f3a6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-chromium-768-linux.png": {
+    "mtime": 1783818127.8946376,
+    "ast_hash": "d8d10bf274d55cf3f6c0100c6201abed",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-firefox-1440-linux.png": {
+    "mtime": 1783818127.895051,
+    "ast_hash": "9da4b5228373e226cb19ee2121139523",
+    "semantic_hash": ""
+  },
+  "tests/e2e/divider.spec.ts-snapshots/divider-all-webkit-1440-linux.png": {
+    "mtime": 1783818127.895709,
+    "ast_hash": "e5149f878ab747c444b9a348b32de839",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-1024-linux.png": {
+    "mtime": 1783818127.9038606,
+    "ast_hash": "e5725cf8caf32334ba3aec02e3bff467",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-1440-linux.png": {
+    "mtime": 1783818127.9042897,
+    "ast_hash": "e5725cf8caf32334ba3aec02e3bff467",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-320-linux.png": {
+    "mtime": 1783818127.9050064,
+    "ast_hash": "8d1439275a09529499dd9b5cf769e6ee",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-chromium-768-linux.png": {
+    "mtime": 1783818127.9057004,
+    "ast_hash": "e5725cf8caf32334ba3aec02e3bff467",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-firefox-1440-linux.png": {
+    "mtime": 1783818127.9061382,
+    "ast_hash": "7c7e1796c7af536d52caa53c2168f500",
+    "semantic_hash": ""
+  },
+  "tests/e2e/empty-state.spec.ts-snapshots/empty-state-all-webkit-1440-linux.png": {
+    "mtime": 1783818127.9067912,
+    "ast_hash": "13a57fcc6635184f2e9cd7573613b8a3",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-1024-linux.png": {
+    "mtime": 1783818127.9144137,
+    "ast_hash": "eb92f268bbed61390d9f219ff3e27938",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-1440-linux.png": {
+    "mtime": 1783818127.9150739,
+    "ast_hash": "eb92f268bbed61390d9f219ff3e27938",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-320-linux.png": {
+    "mtime": 1783818127.9156168,
+    "ast_hash": "ecdd8ae4d344912296f89b184f10f05b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-chromium-768-linux.png": {
+    "mtime": 1783818127.9163086,
+    "ast_hash": "eb92f268bbed61390d9f219ff3e27938",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-firefox-1440-linux.png": {
+    "mtime": 1783818127.9170156,
+    "ast_hash": "e2c29c43914a37bc8e6c854aaa77fa84",
+    "semantic_hash": ""
+  },
+  "tests/e2e/kbd.spec.ts-snapshots/kbd-all-webkit-1440-linux.png": {
+    "mtime": 1783818127.9175699,
+    "ast_hash": "f251f5177d11f443264c7d1f2cf58905",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-1024-linux.png": {
+    "mtime": 1783818127.9257984,
+    "ast_hash": "846cc26c6da0b1123ca4b35313637f58",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-1440-linux.png": {
+    "mtime": 1783818127.9263532,
+    "ast_hash": "3913a388be7f2a76cfc7487bf3f44f40",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-320-linux.png": {
+    "mtime": 1783818127.9268456,
+    "ast_hash": "79655eb2b743f2d007ff32fb0546c6dc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-chromium-768-linux.png": {
+    "mtime": 1783818127.92735,
+    "ast_hash": "a53a7b9a6e3e29840ce4273e29c2cc74",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-firefox-1440-linux.png": {
+    "mtime": 1783818127.9277298,
+    "ast_hash": "b827c83a641f49221bd5c0ab29a4e26c",
+    "semantic_hash": ""
+  },
+  "tests/e2e/popover.spec.ts-snapshots/popover-open-webkit-1440-linux.png": {
+    "mtime": 1783818127.9281328,
+    "ast_hash": "49a3ea628ccbd1857a8e2548efed2eab",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-1024-linux.png": {
+    "mtime": 1783818127.9360752,
+    "ast_hash": "055d1a4d473b0b15ba791241eb0e4088",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-1440-linux.png": {
+    "mtime": 1783818127.936912,
+    "ast_hash": "055d1a4d473b0b15ba791241eb0e4088",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-320-linux.png": {
+    "mtime": 1783818127.9377236,
+    "ast_hash": "4c57b263857a3abb0af8ce081bf729a2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-chromium-768-linux.png": {
+    "mtime": 1783818127.9385135,
+    "ast_hash": "055d1a4d473b0b15ba791241eb0e4088",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-firefox-1440-linux.png": {
+    "mtime": 1783818127.939282,
+    "ast_hash": "06266c0051ede59d4a9fd27358145117",
+    "semantic_hash": ""
+  },
+  "tests/e2e/progress.spec.ts-snapshots/progress-all-webkit-1440-linux.png": {
+    "mtime": 1783818127.940051,
+    "ast_hash": "3e11f3ee54bd333181a9fb7951811a6b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-1024-linux.png": {
+    "mtime": 1783818127.9513636,
+    "ast_hash": "ba02aa37c17bc07ca1ca49656a304d73",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-1440-linux.png": {
+    "mtime": 1783818127.9521651,
+    "ast_hash": "ba02aa37c17bc07ca1ca49656a304d73",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-320-linux.png": {
+    "mtime": 1783818127.9529529,
+    "ast_hash": "95457314be47140709bf3bbeaf0052d9",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-chromium-768-linux.png": {
+    "mtime": 1783818127.9537296,
+    "ast_hash": "ba02aa37c17bc07ca1ca49656a304d73",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-firefox-1440-linux.png": {
+    "mtime": 1783818127.9545255,
+    "ast_hash": "5a0294e4b14e0a7627f5b1ee0f46989b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/skeleton.spec.ts-snapshots/skeleton-all-webkit-1440-linux.png": {
+    "mtime": 1783818127.9552803,
+    "ast_hash": "37d2908171231e06f9cc1dd5ea12bf9d",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-1024-linux.png": {
+    "mtime": 1783818127.9640746,
+    "ast_hash": "a64078cdf3117eda9a4c6f8822ab1957",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-1440-linux.png": {
+    "mtime": 1783818127.9646325,
+    "ast_hash": "a64078cdf3117eda9a4c6f8822ab1957",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-320-linux.png": {
+    "mtime": 1783818127.9651313,
+    "ast_hash": "84abcabfe15955f04c3082588a261c96",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-chromium-768-linux.png": {
+    "mtime": 1783818127.965646,
+    "ast_hash": "a64078cdf3117eda9a4c6f8822ab1957",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-firefox-1440-linux.png": {
+    "mtime": 1783818127.9661546,
+    "ast_hash": "e4206c0d09689c0760ff29af019e44f7",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-default-webkit-1440-linux.png": {
+    "mtime": 1783818127.9666662,
+    "ast_hash": "07f61f62852df5edc227d8520d8507d2",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-1024-linux.png": {
+    "mtime": 1783818127.967168,
+    "ast_hash": "c60db1ac76b6fbfef7ad497f5df41500",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-1440-linux.png": {
+    "mtime": 1783818127.9676533,
+    "ast_hash": "c60db1ac76b6fbfef7ad497f5df41500",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-320-linux.png": {
+    "mtime": 1783818127.9681299,
+    "ast_hash": "9b93adf2bc0d926de78d54e55e19006e",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-chromium-768-linux.png": {
+    "mtime": 1783818127.9686356,
+    "ast_hash": "c60db1ac76b6fbfef7ad497f5df41500",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-firefox-1440-linux.png": {
+    "mtime": 1783818127.969132,
+    "ast_hash": "8e78d3ca8c0aac20277bb2e359674798",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-disabled-webkit-1440-linux.png": {
+    "mtime": 1783818127.9696357,
+    "ast_hash": "ed42eecfaf32bb48068765d9679aeb23",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-1024-linux.png": {
+    "mtime": 1783818127.9701717,
+    "ast_hash": "90c502aef043a73fda77372b727b5672",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-1440-linux.png": {
+    "mtime": 1783818127.9706714,
+    "ast_hash": "90c502aef043a73fda77372b727b5672",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-320-linux.png": {
+    "mtime": 1783818127.971169,
+    "ast_hash": "c716cfac2243d3c4789aae6c28ee67cc",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-chromium-768-linux.png": {
+    "mtime": 1783818127.971667,
+    "ast_hash": "90c502aef043a73fda77372b727b5672",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-firefox-1440-linux.png": {
+    "mtime": 1783818127.9721723,
+    "ast_hash": "133c0cf2960a1e9192b612d70f9a7388",
+    "semantic_hash": ""
+  },
+  "tests/e2e/textarea.spec.ts-snapshots/textarea-error-webkit-1440-linux.png": {
+    "mtime": 1783818127.972651,
+    "ast_hash": "a563172343a1e7dfc895cbfdb4b955e1",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-1024-linux.png": {
+    "mtime": 1783818127.980504,
+    "ast_hash": "445bce1f8d750cace09e03a090bd5087",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-1440-linux.png": {
+    "mtime": 1783818127.9810445,
+    "ast_hash": "5294af184ffc3f78ea6c700f20017dbf",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-320-linux.png": {
+    "mtime": 1783818127.9815204,
+    "ast_hash": "b5762e0213981c60e2793f396f8e3234",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-chromium-768-linux.png": {
+    "mtime": 1783818127.9820235,
+    "ast_hash": "806db5eae92aeee897b84b05867d10c5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-firefox-1440-linux.png": {
+    "mtime": 1783818127.9825299,
+    "ast_hash": "6b7aacd9762607c1164f2f4c14f8089b",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-hidden-webkit-1440-linux.png": {
+    "mtime": 1783818127.9830024,
+    "ast_hash": "1d767dca90c25f4c32a2114974f42cf6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-1024-linux.png": {
+    "mtime": 1783818127.9837112,
+    "ast_hash": "78cbd8537363f3bcaeae14a90deefb30",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-1440-linux.png": {
+    "mtime": 1783818127.9843795,
+    "ast_hash": "54a03e7ce9623041231815d1aa8cb894",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-320-linux.png": {
+    "mtime": 1783818127.9850547,
+    "ast_hash": "e2abfe1552dbeb5d014be5f849aadf38",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-chromium-768-linux.png": {
+    "mtime": 1783818127.9857187,
+    "ast_hash": "275ecf8bee1e42e93c3eee90994cbb49",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-firefox-1440-linux.png": {
+    "mtime": 1783818127.9864128,
+    "ast_hash": "9ee930d9662cc1aab91130fd49477eef",
+    "semantic_hash": ""
+  },
+  "tests/e2e/tooltip.spec.ts-snapshots/tooltip-revealed-webkit-1440-linux.png": {
+    "mtime": 1783818127.9871533,
+    "ast_hash": "196bbe11d68bbd5aac950b4e6a75d910",
     "semantic_hash": ""
   }
 }

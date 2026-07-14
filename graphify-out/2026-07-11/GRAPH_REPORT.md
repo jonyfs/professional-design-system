@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-11)
 
 ## Corpus Check
-- 322 files · ~561,291 words
+- 353 files · ~613,648 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1805 nodes · 1685 edges · 250 communities (213 shown, 37 thin omitted)
+- 2193 nodes · 2100 edges · 276 communities (219 shown, 57 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f53e5075`
+- Built from commit: `ad6c6190`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -45,7 +45,12 @@
 - a11y-helper.ts
 - playwright.config.ts
 - tailwind.config.ts
+- button.spec.ts
+- text-input.spec.ts
+- badge.spec.ts
+- checkbox.spec.ts
 - Specification Quality Checklist: Form Primitives — Round 2
+- radio.spec.ts
 - Quickstart: Form Primitives — Round 2
 - Component Contract: Toggle / Switch
 - Component Contract: Radio
@@ -53,6 +58,8 @@
 - Phase 0 Research: Form Primitives — Round 2
 - Phase 1 Data Model: Form Primitives — Round 2
 - Tasks: Form Primitives — Round 2
+- select.spec.ts
+- toggle.spec.ts
 - Implementation Plan: Advanced Forms Primitives
 - Specification Quality Checklist: Overlays — Modal, Slide-over, Toast
 - Component Contract: Toast
@@ -76,14 +83,26 @@
 - compilerOptions
 - compilerOptions
 - Button.tsx
+- react-button.spec.ts
 - index.ts
 - select-main.tsx
+- react-select.spec.ts
+- react-badge.spec.ts
+- react-checkbox.spec.ts
+- react-radio.spec.ts
+- react-text-input.spec.ts
+- react-toggle.spec.ts
 - Select.tsx
 - toast-main.tsx
 - Checkbox.tsx
 - Radio.tsx
 - TextInput.tsx
 - Toggle.tsx
+- react-modal.spec.ts
+- react-slide-over.spec.ts
+- tailwind.config.ts
+- react-toast.spec.ts
+- useDialogTrigger.ts
 - Implementation Plan: Navigation & Disclosure Primitives
 - Tasks: Navigation & Disclosure Primitives
 - Quickstart: Navigation & Disclosure Primitives
@@ -93,6 +112,10 @@
 - Component Contract: Tabs
 - Phase 1 Data Model: Navigation & Disclosure Primitives
 - Phase 0 Research: Navigation & Disclosure Primitives
+- accordion.spec.ts
+- breadcrumbs.spec.ts
+- dropdown-menu.spec.ts
+- tabs.spec.ts
 - Implementation Plan: Data Display Primitives
 - Tasks: Data Display Primitives
 - Quickstart: Data Display Primitives
@@ -101,6 +124,9 @@
 - Component Contract: Card
 - Phase 0 Research: Data Display Primitives
 - Phase 1 Data Model: Data Display Primitives
+- alert.spec.ts
+- avatar.spec.ts
+- card.spec.ts
 - Implementation Plan: Application Shell Primitives
 - Tasks: Application Shell Primitives
 - Quickstart: Application Shell Primitives
@@ -109,6 +135,9 @@
 - Component Contract: Sidebar
 - Phase 0 Research: Application Shell Primitives
 - Phase 1 Data Model: Application Shell Primitives
+- navbar.spec.ts
+- pagination.spec.ts
+- sidebar.spec.ts
 - Quickstart: Advanced Forms Primitives
 - Component Contract: Combobox
 - Component Contract: Command Palette
@@ -116,6 +145,8 @@
 - Phase 1 Data Model: Advanced Forms Primitives
 - Implementation Plan: Advanced Forms Primitives
 - Tasks: Advanced Forms Primitives
+- combobox.spec.ts
+- command-palette.spec.ts
 - Implementation Plan: React Port — Navigation & Disclosure Primitives
 - Quickstart: React Port — Navigation & Disclosure Primitives
 - Component Contract: Accordion (React)
@@ -130,12 +161,14 @@
 - Button.tsx
 - Modal.tsx
 - SlideOver.tsx
+- react-accordion.spec.ts
+- react-breadcrumbs.spec.ts
 - index.ts
 - Breadcrumbs.tsx
 - tabs-main.tsx
+- react-tabs.spec.ts
 - DropdownMenu.tsx
 - dropdown-menu-main.tsx
-- Professional Design System
 - Implementation Plan: Fix Popover Panel Positioning (Dropdown Menu, Combobox)
 - Quickstart: Fix Popover Panel Positioning
 - Phase 0 Research: Fix Popover Panel Positioning
@@ -154,6 +187,7 @@
 - Contract: Table
 - Quickstart: Table Primitive
 - Data Model: Table Primitive
+- table.spec.ts
 - index.ts
 - Implementation Plan: React Port — Batch 2 (Remaining Static Components)
 - Contract: React Port — Batch 2
@@ -168,6 +202,16 @@
 - combobox-main.tsx
 - command-palette-main.tsx
 - navbar-main.tsx
+- react-alert.spec.ts
+- react-avatar.spec.ts
+- react-card.spec.ts
+- react-combobox.spec.ts
+- react-command-palette.spec.ts
+- react-list.spec.ts
+- react-navbar.spec.ts
+- react-pagination.spec.ts
+- react-sidebar.spec.ts
+- react-table.spec.ts
 - Table.tsx
 - Professional Design System — conventions
 - List.tsx
@@ -177,70 +221,82 @@
 - Navbar.tsx
 - Sidebar.tsx
 - Combobox.tsx
+- .specify/feature.json
+- GitHub MCP Server (list_issues / create issue tools)
+- .specify/init-options.json
+- plan.md (Implementation Plan)
+- .specify/templates/plan-template.md
+- quickstart.md
+- checklists/requirements.md (Spec Quality Checklist)
+- research.md
+- .specify/scripts/bash/setup-plan.sh
+- spec.md (Feature Specification)
+- tasks.md (Task List)
+- .specify/templates/tasks-template.md
+- Agent Context Config (context_file / context_markers)
+- Context Section Upsert/Remove Gate Mechanism
+- Coding Agent Context Extension README
 
 ## God Nodes (most connected - your core abstractions)
-1. `speckit-tasks Skill` - 15 edges
-2. `speckit-plan Skill` - 14 edges
-3. `Tasks: Design System Primitive Components` - 13 edges
-4. `speckit-implement Skill` - 13 edges
-5. `compilerOptions` - 12 edges
-6. `compilerOptions` - 12 edges
-7. `Contract: React Port — Batch 2` - 11 edges
-8. `Data Model: React Port — Batch 2` - 11 edges
-9. `Tasks: React Port — Navigation & Disclosure Primitives` - 11 edges
-10. `Tasks: Navigation & Disclosure Primitives` - 11 edges
+1. `expectNoA11yViolations()` - 50 edges
+2. `expectNoConsoleErrors()` - 15 edges
+3. `Phase 0 Research: Micro-Interaction & Utility Primitives` - 13 edges
+4. `Tasks: [FEATURE NAME]` - 13 edges
+5. `Tasks: Design System Primitive Components` - 13 edges
+6. `Data Model: Micro-Interaction & Utility Primitives` - 12 edges
+7. `compilerOptions` - 12 edges
+8. `compilerOptions` - 12 edges
+9. `Tasks: Micro-Interaction & Utility Primitives` - 11 edges
+10. `scripts` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `speckit-plan Skill` --references--> `CLAUDE.md (Coding Agent Context File)`  [EXTRACTED]
-  .claude/skills/speckit-plan/SKILL.md → .claude/skills/speckit-agent-context-update/SKILL.md
-- `speckit-implement Skill` --references--> `checklists/ (Requirement Checklists Directory)`  [EXTRACTED]
-  .claude/skills/speckit-implement/SKILL.md → .claude/skills/speckit-checklist/SKILL.md
-- `speckit-clarify Skill` --references--> `checklists/requirements.md (Spec Quality Checklist)`  [EXTRACTED]
-  .claude/skills/speckit-clarify/SKILL.md → .claude/skills/speckit-specify/SKILL.md
-- `speckit-specify Skill` --references--> `.specify/templates/plan-template.md`  [EXTRACTED]
-  .claude/skills/speckit-specify/SKILL.md → .claude/skills/speckit-constitution/SKILL.md
-- `speckit-tasks Skill` --references--> `.specify/templates/tasks-template.md`  [EXTRACTED]
-  .claude/skills/speckit-tasks/SKILL.md → .claude/skills/speckit-constitution/SKILL.md
+- `openViaShortcut()` --calls--> `expectNoConsoleErrors()`  [EXTRACTED]
+  tests/e2e/command-palette.spec.ts → tests/e2e/a11y-helper.ts
+- `Full SDD Cycle Workflow (speckit)` --conceptually_related_to--> `Spec Kit Extensions Registration Config`  [INFERRED]
+  .specify/workflows/speckit/workflow.yml → .specify/extensions.yml
+- `Full SDD Cycle Workflow (speckit)` --references--> `Implementation Plan Template`  [INFERRED]
+  .specify/workflows/speckit/workflow.yml → .specify/templates/plan-template.md
+- `Full SDD Cycle Workflow (speckit)` --references--> `Feature Specification Template`  [INFERRED]
+  .specify/workflows/speckit/workflow.yml → .specify/templates/spec-template.md
+- `Full SDD Cycle Workflow (speckit)` --references--> `Tasks Template`  [INFERRED]
+  .specify/workflows/speckit/workflow.yml → .specify/templates/tasks-template.md
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Extension Hooks Pre/Post-Execution Pattern** — claude_skills_speckit_agent_context_update_skill, claude_skills_speckit_analyze_skill, claude_skills_speckit_checklist_skill, claude_skills_speckit_clarify_skill, claude_skills_speckit_constitution_skill, claude_skills_speckit_converge_skill, claude_skills_speckit_implement_skill, claude_skills_speckit_plan_skill, claude_skills_speckit_specify_skill, claude_skills_speckit_tasks_skill, claude_skills_speckit_taskstoissues_skill, concept_extensions_yml [INFERRED 0.85]
-- **Constitution Authority Enforcement Across Commands** — concept_constitution_md, claude_skills_speckit_specify_skill, claude_skills_speckit_clarify_skill, claude_skills_speckit_plan_skill, claude_skills_speckit_tasks_skill, claude_skills_speckit_analyze_skill, claude_skills_speckit_checklist_skill, claude_skills_speckit_converge_skill, claude_skills_speckit_implement_skill [INFERRED 0.85]
-- **Spec-Driven Development Workflow Pipeline** — claude_skills_speckit_specify_skill, claude_skills_speckit_clarify_skill, claude_skills_speckit_plan_skill, claude_skills_speckit_tasks_skill, claude_skills_speckit_analyze_skill, claude_skills_speckit_checklist_skill, claude_skills_speckit_implement_skill, claude_skills_speckit_converge_skill [INFERRED 0.85]
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (250 total, 37 thin omitted)
+## Communities (276 total, 57 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
 Nodes (5): get_feature_paths(), get_repo_root(), _persist_feature_json(), resolve_specify_init_dir(), common.sh script
 
 ### Community 1 - "Implementation & Planning Artifacts"
-Cohesion: 0.22
-Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Design System Primitive Components, Project Structure, Source Code (repository root), Summary, Technical Context
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Micro-Interaction & Utility Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 2 - "Spec Quality & Convergence"
-Cohesion: 0.16
-Nodes (34): speckit-agent-context-update Skill, speckit-analyze Skill, speckit-checklist Skill, speckit-clarify Skill, speckit-constitution Skill, speckit-converge Skill, speckit-implement Skill, speckit-plan Skill (+26 more)
+Cohesion: 0.08
+Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Disclosure), 3. Build Semantic Models, 4. Detection Passes (Token-Efficient Analysis), 5. Severity Assignment, 6. Produce Compact Analysis Report, 7. Provide Next Actions, 8. Offer Remediation (+17 more)
 
 ### Community 3 - "Agent Context Extension"
-Cohesion: 0.09
-Nodes (21): Advanced Forms & Interaction, Alignment Grid & Spacing, Application & Navigation, Base Semantic Palette, Component Catalog & Tailwind UI Patterns, Core Principles, Data Display & Listings, Design Foundations: Tokens, Typography & Grid (+13 more)
+Cohesion: 0.06
+Nodes (31): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+23 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
-Nodes (10): Agent Context Config (context_file / context_markers), speckit.agent-context.update Command, Agent Context Extension Manifest, Context Section Upsert/Remove Gate Mechanism, Coding Agent Context Extension README, Spec Kit Extensions Registration Config, Implementation Plan Template, Feature Specification Template (+2 more)
+Nodes (7): speckit.agent-context.update Command, Agent Context Extension Manifest, Spec Kit Extensions Registration Config, Implementation Plan Template, Feature Specification Template, Tasks Template, Full SDD Cycle Workflow (speckit)
 
 ### Community 5 - "Constitution & Templates Skill"
 Cohesion: 0.08
 Nodes (25): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+17 more)
 
 ### Community 6 - "Feature Specification: Design System Primitive Components"
-Cohesion: 0.11
-Nodes (16): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Design System Primitive Components, Assumptions, Edge Cases, Feature Specification: Design System Primitive Components (+8 more)
+Cohesion: 0.07
+Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Design System Primitive Components, Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
 
 ### Community 9 - "GitHub Issue Conversion"
 Cohesion: 0.22
@@ -287,16 +343,36 @@ Cohesion: 0.11
 Nodes (17): applyBlocks, BASE_TOKENS, COVERED_FG_TOKENS, failures, htmlFiles, ICON_FILL_TEXT_TOKENS, NON_COLOR_TEXT_SUFFIXES, PAIRINGS (+9 more)
 
 ### Community 29 - "a11y-helper.ts"
-Cohesion: 0.42
-Nodes (3): expectNoA11yViolations(), expectNoConsoleErrors(), formatViolations()
+Cohesion: 0.07
+Nodes (4): expectNoA11yViolations(), expectNoConsoleErrors(), formatViolations(), openViaShortcut()
 
 ### Community 32 - "tailwind.config.ts"
-Cohesion: 0.73
+Cohesion: 0.71
 Nodes (3): borderRadius, colors, fontFamily
+
+### Community 34 - "button.spec.ts"
+Cohesion: 0.07
+Nodes (26): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery, MVP First (User Story 1 Only) (+18 more)
+
+### Community 35 - "text-input.spec.ts"
+Cohesion: 0.09
+Nodes (21): Button Group, Dependencies & Execution Order, Divider, Empty State, Format: `[ID] [P?] [Story] Description`, Implementation Strategy, Incremental Delivery, Kbd (depends on T001) (+13 more)
+
+### Community 36 - "badge.spec.ts"
+Cohesion: 0.12
+Nodes (15): 1. Initialize Convergence Context, 2. Load Artifacts (Progressive Disclosure), 3. Build the Intent Inventory, 4. Assess the Codebase and Classify Findings, 5. Assign Severity, 6. Present the In-Session Findings Summary, 7. Append Convergence Tasks (or report converged), 8. Provide Next Actions (Handoff) (+7 more)
+
+### Community 37 - "checkbox.spec.ts"
+Cohesion: 0.14
+Nodes (13): Phase 0 Research: Micro-Interaction & Utility Primitives, R10. Popover's orphaned-panel edge case, R11. Kbd contrast — computed, not assumed, R12. Inline `style="..."` HTML attributes are silently blocked by this project's CSP — found during implementation, not planning, R1. Progress bar fill/track contrast (WCAG 1.4.11 non-text, ≥3:1), R2. Button Group active-segment contrast — and the keyboard-model decision, R3. Kbd typography — no monospace token exists yet, R4. Tooltip mechanism — CSS Anchor Positioning without the Popover API (+5 more)
 
 ### Community 38 - "Specification Quality Checklist: Form Primitives — Round 2"
 Cohesion: 0.07
 Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Form Primitives — Round 2, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 39 - "radio.spec.ts"
+Cohesion: 0.15
+Nodes (12): Assumptions, Edge Cases, Feature Specification: [FEATURE NAME], Functional Requirements, Key Entities *(include if feature involves data)*, Measurable Outcomes, Requirements *(mandatory)*, Success Criteria *(mandatory)* (+4 more)
 
 ### Community 40 - "Quickstart: Form Primitives — Round 2"
 Cohesion: 0.22
@@ -326,21 +402,29 @@ Nodes (5): Cross-cutting invariants (all three components), Phase 1 Data Model: 
 Cohesion: 0.09
 Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+14 more)
 
+### Community 47 - "select.spec.ts"
+Cohesion: 0.15
+Nodes (12): Button Group, Context Menu, Data Model: Micro-Interaction & Utility Primitives, Divider, Empty State, Kbd, Popover, Progress (+4 more)
+
+### Community 48 - "toggle.spec.ts"
+Cohesion: 0.18
+Nodes (10): Completion Report, Done When, Key rules, Mandatory Post-Execution Hooks, Outline, Phase 0: Outline & Research, Phase 1: Design & Contracts, Phases (+2 more)
+
 ### Community 49 - "Implementation Plan: Advanced Forms Primitives"
-Cohesion: 0.11
-Nodes (16): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Advanced Forms Primitives, Assumptions, Edge Cases, Feature Specification: Advanced Forms Primitives (Combobox, Command Palette) (+8 more)
+Cohesion: 0.07
+Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Advanced Forms Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
 
 ### Community 50 - "Specification Quality Checklist: Overlays — Modal, Slide-over, Toast"
-Cohesion: 0.11
-Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Overlays — Modal, Slide-over, Toast, Assumptions, Edge Cases, Feature Specification: Overlays — Modal, Slide-over, Toast (+9 more)
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Overlays — Modal, Slide-over, Toast, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 51 - "Component Contract: Toast"
 Cohesion: 0.22
 Nodes (8): Acceptance mapping, Behavior wiring (`src/scripts/toast.js`), Component Contract: Toast, Edge case — multiple simultaneous toasts, Markup contract, Required attributes (FR-002), Token allowlist used, Variants (constitution's ratified status tokens, same mapping as Badge)
 
 ### Community 52 - "Implementation Plan: Overlays — Modal, Slide-over, Toast"
-Cohesion: 0.22
-Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Overlays — Modal, Slide-over, Toast, Project Structure, Source Code (repository root, additions only — existing scaffold unchanged), Summary, Technical Context
+Cohesion: 0.18
+Nodes (10): Completion Report, Done When, For AI Generation, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, Quick Guidelines, Section Requirements (+2 more)
 
 ### Community 53 - "Quickstart: Overlays — Modal, Slide-over, Toast"
 Cohesion: 0.22
@@ -414,9 +498,73 @@ Nodes (13): compilerOptions, declaration, esModuleInterop, forceConsistentCasing
 Cohesion: 0.17
 Nodes (11): compilerOptions, esModuleInterop, jsx, lib, module, moduleResolution, noEmit, skipLibCheck (+3 more)
 
-### Community 91 - "Select.tsx"
+### Community 72 - "Button.tsx"
 Cohesion: 0.50
-Nodes (3): Select, SelectOption, SelectProps
+Nodes (3): Toast(), ToastProps, VARIANT_ICON_CLASSES
+
+### Community 75 - "react-button.spec.ts"
+Cohesion: 0.18
+Nodes (10): Checklist Format (REQUIRED), Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Phase Structure, Pre-Execution Checks, Task Generation Rules (+2 more)
+
+### Community 78 - "index.ts"
+Cohesion: 0.50
+Nodes (3): Badge(), BadgeProps, VARIANT_CLASSES
+
+### Community 80 - "react-select.spec.ts"
+Cohesion: 0.18
+Nodes (10): Core Principles, Governance, [PRINCIPLE_1_NAME], [PRINCIPLE_2_NAME], [PRINCIPLE_3_NAME], [PRINCIPLE_4_NAME], [PRINCIPLE_5_NAME], [PROJECT_NAME] Constitution (+2 more)
+
+### Community 86 - "react-badge.spec.ts"
+Cohesion: 0.18
+Nodes (10): Automated validation, Expected outcomes, P1 — Textarea, Divider, Kbd, Skeleton, P2 — Tooltip, Progress, Button Group, Empty State, P3 — Popover, P4 — Context Menu, Prerequisites, Quickstart: Micro-Interaction & Utility Primitives (+2 more)
+
+### Community 87 - "react-checkbox.spec.ts"
+Cohesion: 0.20
+Nodes (9): 07:37 | main, 07:41-08:38 | main, 12:42 | main, 14:59 | main, 19:30 | main, 21:03 | main, 21:13 | main, 21:16 | main (+1 more)
+
+### Community 88 - "react-radio.spec.ts"
+Cohesion: 0.22
+Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: [FEATURE], Project Structure, Source Code (repository root), Summary, Technical Context
+
+### Community 89 - "react-text-input.spec.ts"
+Cohesion: 0.25
+Nodes (7): Anti-Examples: What NOT To Do, Checklist Purpose: "Unit Tests for English", Example Checklist Types & Sample Items, Execution Steps, Post-Execution Checks, Pre-Execution Checks, User Input
+
+### Community 90 - "react-toggle.spec.ts"
+Cohesion: 0.29
+Nodes (6): Avatar(), AvatarProps, SIZE_CLASSES, List(), ListItemData, ListProps
+
+### Community 91 - "Select.tsx"
+Cohesion: 0.29
+Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, User Input
+
+### Community 93 - "Checkbox.tsx"
+Cohesion: 0.29
+Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, User Input
+
+### Community 94 - "Radio.tsx"
+Cohesion: 0.52
+Nodes (5): Combobox(), ComboboxProps, highlight(), ComboboxOption, useCombobox()
+
+### Community 97 - "react-modal.spec.ts"
+Cohesion: 0.33
+Nodes (4): getPageWindow(), PageEntry, Pagination(), PaginationProps
+
+### Community 98 - "react-slide-over.spec.ts"
+Cohesion: 0.29
+Nodes (6): 00:07 | main, 01:08 | main, 09:40 | main, 10:29-10:31 | main, 18:27 | main, 22:50-22:52 | main
+
+### Community 101 - "tailwind.config.ts"
+Cohesion: 0.29
+Nodes (6): Coding Agent Context Extension, Commands, Configuration, Disable, Requirements, Why an extension?
+
+### Community 102 - "react-toast.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Button Group / Segmented Control, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 103 - "useDialogTrigger.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Context Menu, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
 
 ### Community 104 - "Implementation Plan: Navigation & Disclosure Primitives"
 Cohesion: 0.07
@@ -454,6 +602,22 @@ Nodes (6): Accordion / Disclosure, Breadcrumbs, Cross-cutting invariants (all fo
 Cohesion: 0.29
 Nodes (6): Phase 0 Research: Navigation & Disclosure Primitives, R1. Dropdown Menu interaction foundation: native Popover API vs. custom JS, R2. Tabs interaction: confirms no native element applies, R3. Design token sufficiency — verified, not assumed, R4. Testing strategy: consistent with features 001-004, R5. CSP: no change needed
 
+### Community 115 - "accordion.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Divider, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 116 - "breadcrumbs.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Empty State, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 117 - "dropdown-menu.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Kbd, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 118 - "tabs.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Popover, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
 ### Community 119 - "Implementation Plan: Data Display Primitives"
 Cohesion: 0.07
 Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Data Display Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
@@ -485,6 +649,18 @@ Nodes (7): Phase 0 Research: Data Display Primitives, R1. Alert/Banner dismiss m
 ### Community 126 - "Phase 1 Data Model: Data Display Primitives"
 Cohesion: 0.33
 Nodes (5): Alert / Banner, Avatar, Card, Cross-cutting invariants (all three components), Phase 1 Data Model: Data Display Primitives
+
+### Community 128 - "alert.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Progress, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 129 - "avatar.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Skeleton, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 130 - "card.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Textarea, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
 
 ### Community 131 - "Implementation Plan: Application Shell Primitives"
 Cohesion: 0.07
@@ -518,6 +694,18 @@ Nodes (6): Phase 0 Research: Application Shell Primitives, R1. Navbar mobile men
 Cohesion: 0.33
 Nodes (5): Cross-cutting invariants (all three components), Navbar / Header, Pagination, Phase 1 Data Model: Application Shell Primitives, Sidebar
 
+### Community 139 - "navbar.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Component Contract: Tooltip, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 140 - "pagination.spec.ts"
+Cohesion: 0.40
+Nodes (4): Outline, Post-Execution Checks, Pre-Execution Checks, User Input
+
+### Community 141 - "sidebar.spec.ts"
+Cohesion: 0.40
+Nodes (4): Outline, Post-Execution Checks, Pre-Execution Checks, User Input
+
 ### Community 142 - "Quickstart: Advanced Forms Primitives"
 Cohesion: 0.20
 Nodes (9): Constitution amendment reminder, Discoverability check (SC-005), Generating new visual regression baselines, Manual validation scenarios (traceable to spec.md), Prerequisites, Quickstart: Advanced Forms Primitives, Run the component gallery, Run the full test suite (+1 more)
@@ -539,12 +727,20 @@ Cohesion: 0.40
 Nodes (4): Combobox, Command Palette, Phase 1 Data Model: Advanced Forms Primitives, Shared behavior notes
 
 ### Community 147 - "Implementation Plan: Advanced Forms Primitives"
-Cohesion: 0.22
-Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Advanced Forms Primitives, Project Structure, Source Code (repository root, additions only — existing scaffold unchanged), Summary, Technical Context
+Cohesion: 0.40
+Nodes (4): Alert(), AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS
 
 ### Community 148 - "Tasks: Advanced Forms Primitives"
 Cohesion: 0.14
 Nodes (13): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation Strategy, Parallel Execution Examples, Path Conventions, Phase 1: User Story 1 - Combobox (Priority: P1) 🎯 MVP (+5 more)
+
+### Community 150 - "combobox.spec.ts"
+Cohesion: 0.40
+Nodes (4): 12:11 | main, 14:04 | main, 16:53 | main, 20:49 | main
+
+### Community 151 - "command-palette.spec.ts"
+Cohesion: 0.40
+Nodes (4): [Category 1], [Category 2], [CHECKLIST TYPE] Checklist: [FEATURE NAME], Notes
 
 ### Community 152 - "Implementation Plan: React Port — Navigation & Disclosure Primitives"
 Cohesion: 0.07
@@ -582,17 +778,33 @@ Nodes (5): Accordion, Breadcrumbs, Dropdown Menu, Phase 1 Data Model: React Port
 Cohesion: 0.10
 Nodes (19): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation for User Story 4, Implementation Strategy, Parallel Execution Examples (+11 more)
 
+### Community 161 - "index.ts"
+Cohesion: 0.50
+Nodes (3): Behavior, Execution, Update Coding Agent Context
+
 ### Community 162 - "accordion-main.tsx"
 Cohesion: 0.40
 Nodes (3): exclusiveItems, exclusiveItems2, independentItems
 
+### Community 163 - "Button.tsx"
+Cohesion: 0.50
+Nodes (3): 00:28 | main, 10:04 | main, 13:25 | main
+
+### Community 164 - "Modal.tsx"
+Cohesion: 0.24
+Nodes (10): CommandPalette(), CommandPaletteProps, highlight(), CommandPaletteAction, useCommandPalette(), useDialogTrigger(), Modal(), ModalProps (+2 more)
+
+### Community 165 - "SlideOver.tsx"
+Cohesion: 0.50
+Nodes (3): Behavior, Execution, Update Coding Agent Context
+
+### Community 170 - "Breadcrumbs.tsx"
+Cohesion: 0.50
+Nodes (3): BreadcrumbItem, Breadcrumbs(), BreadcrumbsProps
+
 ### Community 173 - "DropdownMenu.tsx"
 Cohesion: 0.60
 Nodes (4): DropdownMenu(), DropdownMenuProps, DropdownMenuItemData, useDropdownMenu()
-
-### Community 176 - "Professional Design System"
-Cohesion: 0.20
-Nodes (9): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+1 more)
 
 ### Community 177 - "Implementation Plan: Fix Popover Panel Positioning (Dropdown Menu, Combobox)"
 Cohesion: 0.07
@@ -667,8 +879,8 @@ Cohesion: 0.33
 Nodes (5): Data Model: Table Primitive, Table, Table Cell, Table Header Cell, Table Row
 
 ### Community 197 - "index.ts"
-Cohesion: 0.07
-Nodes (35): Alert(), AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS, Avatar(), AvatarProps, SIZE_CLASSES, Card() (+27 more)
+Cohesion: 0.10
+Nodes (24): Accordion(), AccordionItemData, AccordionProps, Button, ButtonProps, Checkbox, CheckboxProps, Navbar() (+16 more)
 
 ### Community 198 - "Implementation Plan: React Port — Batch 2 (Remaining Static Components)"
 Cohesion: 0.07
@@ -715,24 +927,24 @@ Cohesion: 0.40
 Nodes (4): design-sync notes for professional-design-system, Fixes applied, Preview authoring notes, Re-sync risks
 
 ## Knowledge Gaps
-- **1054 isolated node(s):** `Fixes applied`, `Preview authoring notes`, `Re-sync risks`, `Where the truth lives`, `Styling idiom` (+1049 more)
+- **1336 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+1331 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **57 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `Fixes applied`, `Preview authoring notes`, `Re-sync risks` to the rest of the system?**
-  _1054 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
+  _1336 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
+- **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
+  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
+- **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
+  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Feature Specification: Design System Primitive Components` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
-- **Should `audit-tokens.mjs` be split into smaller, more focused modules?**
-  _Cohesion score 0.10144927536231885 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
