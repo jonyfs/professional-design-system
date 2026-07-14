@@ -1,3 +1,19 @@
+/* Feature 020 finding: packages/react's compiled styles.css only ever
+ * *consumes* the --color-* custom properties (rgb(var(--color-x))) —
+ * feature 017's theming refactor never made the package (or this harness)
+ * *define* their default values, only src/styles/themes.css (the static
+ * gallery) does. Without this import every React-harness demo has
+ * rendered with unset/invalid --color-* variables since feature 017
+ * Phase 1 (undetected: the react-button.spec.ts baseline predates the
+ * refactor, and CI has been down since 2026-07-12). Scoped fix for this
+ * dev-only harness only — see feature 020's implementation notes for the
+ * separate, broader question of whether packages/react's *published*
+ * dist/styles.css should also ship a default :root block for real
+ * consumers. @import MUST precede every other rule (CSS spec) — hence
+ * this sits above @tailwind, not below.
+ */
+@import "../../../src/styles/themes.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

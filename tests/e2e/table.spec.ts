@@ -28,8 +28,12 @@ test.describe("Table", () => {
   test("header text passes WCAG AAA contrast (SC-001)", async ({ page }) => {
     const header = page.getByTestId("table-baseline").locator("th").first();
     const color = await header.evaluate((el) => getComputedStyle(el).color);
-    // text-neutral-600 (#4B5563) — 7.23:1 against bg-neutral-50.
-    expect(color).toBe("rgb(75, 85, 99)");
+    // text-neutral-700 (#374151) against the header cell's own bg-neutral-100
+    // (not bg-neutral-50, this test's stale prior comment) — 9.37:1 AAA.
+    // Corrected from -600 (6.86:1, fails AAA) by feature 020's harness
+    // contrast fix, which was the first test surface to ever render real
+    // theme colors against this pairing.
+    expect(color).toBe("rgb(55, 65, 81)");
   });
 
   test("cell text passes WCAG AAA contrast (SC-001)", async ({ page }) => {
