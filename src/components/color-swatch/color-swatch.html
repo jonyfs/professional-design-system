@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Color Swatch — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <script type="module" src="/src/scripts/theme-switcher.js"></script>
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Color Swatch</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Color chip whose background is the caller-supplied value. Because the value
+    is unbounded, it is applied via <code class="code-inline">data-swatch-color</code>
+    through the CSSOM (keeping the strict <code class="code-inline">style-src 'self'</code>
+    CSP), and an <code class="code-inline">sr-only</code> label carries the color
+    name/value so it is never conveyed by hue alone.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <ul class="mt-8 flex flex-wrap items-center gap-4">
+    <li>
+      <span data-testid="color-swatch-brand" class="inline-flex items-center gap-2">
+        <span class="color-swatch" data-swatch-color="#2563eb"></span>
+        <span class="sr-only">Brand blue, #2563eb</span>
+        <span aria-hidden="true" class="text-sm text-neutral-900">Brand blue</span>
+      </span>
+    </li>
+    <li>
+      <span data-testid="color-swatch-success" class="inline-flex items-center gap-2">
+        <span class="color-swatch" data-swatch-color="#16a34a"></span>
+        <span class="sr-only">Success green, #16a34a</span>
+        <span aria-hidden="true" class="text-sm text-neutral-900">Success green</span>
+      </span>
+    </li>
+    <li>
+      <span data-testid="color-swatch-white" class="inline-flex items-center gap-2">
+        <span class="color-swatch" data-swatch-color="#ffffff"></span>
+        <span class="sr-only">White, #ffffff</span>
+        <span aria-hidden="true" class="text-sm text-neutral-900">White</span>
+      </span>
+    </li>
+  </ul>
+
+  <script type="module" src="/src/scripts/color-swatch.js"></script>
+  <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
+</body>
+</html>
