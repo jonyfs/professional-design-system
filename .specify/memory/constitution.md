@@ -1,4 +1,396 @@
 <!--
+SYNC IMPACT REPORT (v1.24.0 — see below for the v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.23.0 → 1.24.0
+Modified principles: None
+Added sections:
+  - Theming & Multi-Palette Architecture → new "Curated theme batch 2"
+    paragraph (feature 027): 5 new themes (aurora/obsidian/linen/
+    graphite/nebula), bringing the collection from 43 to 48 themes,
+    each independently derived from a real, browser-rendered
+    design-language analysis (never fabricated hex values), generic
+    mood-based naming with company attribution kept research-only,
+    all 5 fitting an existing mood-family category. Documents two real
+    implementation-time corrections (nebula's brand color, and
+    obsidian/nebula's dark-theme semantic *-strong convention) and the
+    User Story 2 confirmatory research conclusion (no new
+    component-type gap found).
+Corrected sections: None this bump.
+Rationale: feature 027 (Claude-Design-Inspired Theme Presets Batch 2)
+is a pure additive batch to feature 017's existing architecture — zero
+new theming mechanism, zero new dependency, zero regression to any of
+the 43 existing themes (verified via a clean full-catalog regression,
+5182 passed / 2 known-flaky-unrelated failures / 30 skipped = 5214,
+reconciled). This is a MINOR bump: new theme data plus documentation,
+no principle text changed.
+Templates requiring updates: ✅ none — specs/027-claude-design-
+  inspired-themes/tasks.md documents this feature's own implementation
+  in full.
+
+SYNC IMPACT REPORT (v1.23.0 — see below for the v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.22.0 → 1.23.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → "Gallery Presentation &
+    Discoverability" subsection amended with a short addendum
+    documenting feature 026's T017 full-catalog regression gate
+    findings: one real bug (the demo-page-header rollout script's
+    header-anchoring regex assumed every page's `<h1>` precedes its
+    live component demo; navbar.html uniquely renders its live
+    sticky-navbar demo first, so the regex swallowed it into the
+    wrapper div and broke `position: sticky` — fixed in
+    `src/components/navbar/navbar.html`, and confirmed via a
+    programmatic sweep of all 77 pages that no other page shares this
+    structure) plus three pre-existing test-staleness fixes surfaced
+    by the same gate (feature 025's theme-selector added a real tab
+    stop that broke two hardcoded single-Tab-press tests; feature
+    026's own category-section restructuring broke an older test's
+    `main section` card locator).
+Corrected sections: None this bump.
+Rationale: T017 is this project's catalog-wide zero-regression gate,
+and a full run surfaced real findings worth recording for future
+scripted, catalog-wide rollouts (feature 025 and 026's own pattern):
+a page-shape assumption ("intro precedes the live demo") that holds
+for 76 of 77 pages but not the one component whose demo depends on
+being first in the DOM. This is a MINOR bump: an addendum to existing
+documentation, no principle text changed.
+Templates requiring updates: ✅ none — specs/026-demo-gallery-showcase/
+  tasks.md T017 documents the investigation and fixes in full.
+
+SYNC IMPACT REPORT (v1.22.0 — see below for the v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.21.0 → 1.22.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Gallery Presentation
+    & Discoverability" subsection (feature 026): documents the root
+    gallery's redesign from a flat, uncategorized 78-card grid (a
+    verified, direct match for this project's own Anti-Template Policy
+    banned patterns) into a categorized showcase with an opening
+    stats section, zero-JS quick-jump nav, and flagship treatment for
+    Data Table/Chart/Command Palette/curated theming — plus a new
+    every-page convention (the `.demo-page-header` wrapper, rolled out
+    to all 77 demo pages the same scripted way feature 025 rolled out
+    theme persistence).
+Corrected sections: None this bump.
+Rationale: feature 026 (Demo Gallery Visual Showcase) closes a real,
+verified violation of this project's own design-quality standards —
+the gallery meant to demonstrate this catalog's visual-quality bar did
+not meet it. Zero components dropped/duplicated, zero behavior changes
+to any shipped component (presentation-layer only). One real
+implementation-time bug caught before rollout, not after: the
+demo-page-header wrapper's first draft assumed `page-shell` used
+`px-6` padding and a different background than `bg-neutral-50` — both
+wrong, found by checking `src/styles/tailwind.css` directly rather
+than assuming, and simplified to a border-only treatment that needed
+neither assumption. This is a MINOR bump: one new documentation
+subsection, no principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/026-demo-gallery-showcase/tasks.md
+  documents this feature's own implementation in full.
+
+SYNC IMPACT REPORT (v1.21.0 — see below for the v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.20.0 → 1.21.0
+Modified principles: None
+Added sections:
+  - Theming & Multi-Palette Architecture → new "Sitewide rollout"
+    paragraph (feature 025): the theme-activation script + selector
+    control, previously present on only 2 of 78 static gallery pages,
+    now rolled out to all 77 remaining pages — a required convention
+    for every future new static gallery page.
+Corrected sections:
+  - Theming & Multi-Palette Architecture → the "Known gap —
+    packages/react's published styles never define default token
+    values" entry was marked unresolved as of feature 020; it is now
+    marked RESOLVED, reflecting the actual fix applied during this
+    session's Claude Design sync (packages/react/src/styles.css now
+    ships the default theme's :root token block) — the constitution
+    had drifted out of sync with a fix already applied to the repo,
+    corrected here rather than left stale.
+Rationale: feature 025 (Sitewide Theme Selector & Persistence) closes a
+gap verified directly against the live repo: only index.html and
+theme-gallery.html of 78 static pages loaded theme-switcher.js, so
+every individual component demo page silently ignored the persisted
+theme and had no selector at all. Zero new theming logic, zero new
+persistence mechanism — purely a rollout of feature 017/021's
+already-shipped mechanism via a small idempotent script, verified
+complete via a 77/77 completeness check. This is a MINOR bump: one new
+documentation paragraph plus one corrected stale gap-status, no
+principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/025-sitewide-theme-persistence/tasks.md
+  documents this feature's own implementation in full.
+
+SYNC IMPACT REPORT (v1.20.0 — see below for the v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.19.0 → 1.20.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Data Display & Listings → Charts entry extended
+    with 5 additional Recharts chart types (ComposedChart, ScatterChart,
+    FunnelChart, Treemap, Sankey), completing full coverage of all 11
+    native Recharts top-level chart components (6 from feature 020 + 5
+    from feature 024). Known Catalog Gaps' Chart entry updated: no
+    remaining Recharts chart-type gap (Candlestick explicitly excluded —
+    not a native Recharts component, a separate, larger scope decision
+    if ever pursued).
+Corrected sections: None this bump.
+Rationale: feature 024 (Recharts Additional Chart Types, Batch 2) closes
+the remaining slice of feature 020's own explicitly-deferred scope note
+("more specialized chart types... are out of scope for this feature").
+Zero new dependencies (all 5 types already ship in the `recharts`
+package feature 020 adopted), zero new design tokens, zero new shared
+chrome — every new chart type reuses `ChartFrame`/`ChartLegend`/
+`ChartTooltip`/`ChartEmptyState`/`ChartDataTable`/`useChartColors`/
+`usePrefersReducedMotion` verbatim. One real gap closed as a side effect
+of this feature's own research: feature 020's Assumptions had
+incorrectly listed "Candlestick" as a deferred native Recharts type —
+Recharts has no native Candlestick component (it would require composing
+custom shapes atop `ComposedChart`, a separate, larger decision) — this
+is now correctly documented rather than silently perpetuated. This is a
+MINOR bump: one catalog entry extended, no principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/024-recharts-additional-charts/tasks.md
+  documents this feature's own implementation notes in full.
+
+SYNC IMPACT REPORT (v1.19.0 — see below for the v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.18.0 → 1.19.0
+Modified principles: None
+Added sections:
+  - Component Catalog → new "Component Catalog Expansion (Batch 1,
+    Feature 023)" entry: 14 new components (NumberInput, PasswordInput,
+    MultiSelect, ActionIcon, CopyButton, SplitButton, AvatarGroup,
+    Highlight, Code, ColorSwatch, NavLink, Anchor, Collapse, Spoiler),
+    all shipped dual-surface, selected as a curated, buildable slice of
+    feature 018's 105-candidate gap inventory — each reusing an existing
+    mechanism (Button, Combobox, Dropdown Menu, Accordion's `<details>`,
+    Sidebar's active-item convention, Avatar) rather than a new
+    interaction pattern. Zero new dependencies, zero new design tokens.
+Corrected sections: None this bump.
+Rationale: feature 023 (Component Catalog Expansion, Batch 1) closes 14
+entries from feature 018's inventory after a fresh confirmatory
+competitor-research round (22 named competitors total across both
+rounds — Mantine, Ant Design, PrimeReact, Radix, Chakra, Carbon,
+Polaris, Primer, Fluent 2 from 018, plus MUI, shadcn/ui, Salesforce
+Lightning, Adobe Spectrum, and Atlassian newly verified this round).
+Built in parallel by 4 independent implementation passes (one per user
+story), then integrated centrally. Real, non-hypothetical fixes found
+during implementation, beyond the ones each pass reported inline in
+tasks.md: (1) NumberInput's steppers were redesigned from a vertically-
+stacked pair to side-by-side, since the stacked layout measured a
+24×14px hit target and failed WCAG 2.2's 2.5.8 Target Size (Minimum,
+AA) — the project's own axe config enforces `wcag22aa`; (2) MultiSelect's
+options panel uses `popover="manual"` rather than Combobox's `popover
+="auto"`, because MultiSelect (unlike Combobox) opens on focus/click of
+an input outside the popover's own DOM subtree, and an `auto` popover's
+light-dismiss algorithm closes it on that same click's `pointerdown`
+before the `click` handler ever runs; (3) the static ColorSwatch sets
+its caller-supplied color via the CSSOM (`element.style.backgroundColor`)
+rather than an inline `style` attribute, since every page's `style-src
+'self'` CSP (used verbatim catalog-wide, never `'unsafe-inline'`) would
+otherwise render the chip transparent. This is a MINOR bump: one new
+catalog entry (14 components), no principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/023-component-catalog-expansion/tasks.md's
+  own Implementation Notes section documents these fixes in full.
+
+SYNC IMPACT REPORT (v1.18.0 — see below for the v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.17.0 → 1.18.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Data Display & Listings → Data Table (NEW entry):
+    an advanced, customizable Data Table — sort/filter/paginate, multi-row
+    selection with bulk actions, and opt-in CRUD — closing the
+    "interactive/sortable Data Table" gap flagged deferred since feature
+    014. Shipped on both surfaces (static `src/scripts/data-table.js` +
+    React `packages/react/src/DataTable/*`) sharing one framework-agnostic
+    `shared/data-table/` module (sorting/filtering/pagination/selection
+    pure functions) — the same shared-core convention established by
+    feature 019's `shared/validators/`, not a new architectural pattern.
+    TanStack Table was evaluated (per Principle VII's adoption-review
+    protocol, specs/022-advanced-data-table/research.md R1) and
+    deliberately rejected in favor of hand-rolled state: this catalog
+    already builds equivalent-complexity interaction from scratch
+    (Combobox, Dropdown Menu), and a table this size didn't warrant a new
+    runtime dependency.
+  - Component Catalog → Known Catalog Gaps → interactive/sortable Data
+    Table marked shipped (feature 022); Date Picker/Calendar, Carousel,
+    Scroll Area, Resizable panels, HoverCard remain deferred.
+Corrected sections: None this bump.
+Rationale: feature 022 (Advanced Data Table) closes a gap this
+constitution has tracked as deferred since feature 014. Four real bugs
+were found and fixed during implementation: (1) the CRUD edit/create form
+component was always-mounted rather than conditionally rendered, so
+React's useState-initializer-runs-once-on-mount meant switching between
+editing different rows left stale values — fixed with a `key` prop keyed
+to the target record, forcing a remount; (2) the native HTML5 `required`
+attribute on form fields triggered the browser's own constraint
+validation before React's `onSubmit`/`preventDefault()` could run,
+short-circuiting the custom field-error UI — fixed with `noValidate` on
+the form; (3) the static surface's programmatically-opened dialogs
+(create/edit/delete, opened via button click rather than
+`[data-dialog-trigger]`) never set `dialog._lastTrigger`, so
+`overlay.js`'s `wireDialogClose` focus-return-on-close silently no-opped
+— fixed by setting `_lastTrigger` at every call site; (4) the static
+surface's full-subtree `innerHTML = ""` re-render on every state change
+destroyed and recreated the "Columns" visibility `<details>` element,
+resetting its `open` state to closed on every checkbox toggle inside it
+— fixed with a closure-scoped flag restored via the `toggle` event. A
+fifth, narrow-viewport-only layout bug was found post-implementation: the
+"Columns" dropdown panel's `absolute right-0` positioning anchored its
+right edge to the (narrow, left-of-center) `<summary>` element rather
+than the viewport, pushing the panel off-screen to the left at 320px —
+fixed with `left-0 sm:left-auto sm:right-0`. This is a MINOR bump: one
+new catalog entry, no principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/022-advanced-data-table/tasks.md's own
+  Implementation Notes section documents the bugs/fixes described above.
+
+SYNC IMPACT REPORT (v1.17.0 — see below for the v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.16.0 → 1.17.0
+Modified principles: None
+Added sections:
+  - Theming & Multi-Palette Architecture → new "Gallery-wide theme
+    preview" paragraph: the main component gallery (`index.html`) gained
+    its own theme-selection `<select>` (grouped by `MOOD_FAMILIES`,
+    `src/scripts/gallery-theme-selector.js`) so the whole catalog can be
+    previewed under any curated theme from one page, complementing
+    (not replacing) the dedicated Theme Gallery page. No new persistence
+    mechanism, no new theme data — reuses feature 017's `THEMES`/
+    `MOOD_FAMILIES`/`selectTheme()`/`KNOWN_THEME_IDS` verbatim.
+Corrected sections: None this bump (see Rationale for a fix applied
+  without a "corrected" prose change to an already-ratified catalog
+  entry — this is a genuinely new, previously-undiscovered bug, not a
+  correction to prior documentation).
+Rationale: feature 021 (Gallery Theme Selector) added no new component
+and no new architectural exception — purely a new consumer of feature
+017's already-ratified theming mechanism, hence a documentation
+addendum to the existing Theming & Multi-Palette Architecture section
+rather than a new Component Catalog entry. One real, previously-
+undiscovered bug was found and fixed during implementation while running
+this feature's own 320px-viewport check: `index.html`'s header `<code>`
+element (present since feature 017's 2026-07-09 commit, unrelated to
+this feature's own markup) didn't wrap in WebKit at narrow viewports,
+overflowing the page by 4px — invisible until this feature's own SC-004
+acceptance test exercised the whole page's scroll width rather than only
+the new control. Confirmed via `git blame` to predate this feature
+before fixing with a one-class (`break-words`) addition. This is a MINOR
+bump: one new documentation paragraph describing a shipped addition, no
+principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/021-gallery-theme-selector/tasks.md's own
+  Implementation Notes section already documents the bug/fix described
+  above.
+
+SYNC IMPACT REPORT (v1.16.0 — see below for the v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.15.0 → 1.16.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Forms, Validation & Inputs → Localized Identifier/
+    Contact Fields (NEW entry): 11 masked, self-validating components
+    (CPF, CNPJ, CEP, Brazilian phone, Título de Eleitor, PIS/PASEP,
+    vehicle plate, IBAN, card number, international phone) across both
+    the static gallery and the React package — this catalog's first
+    feature to add net-new components to both surfaces simultaneously
+    since feature 004. A new `shared/validators/` framework-agnostic
+    module is the single source of truth for every check-digit/checksum
+    algorithm, consumed identically by `src/scripts/localized-inputs.js`
+    and every React component.
+Corrected sections: None this bump.
+Rationale: feature 019 (Localized Input Primitives) shipped with zero new
+npm dependencies (every algorithm — CPF/CNPJ/Título/PIS-PASEP modulo-11,
+IBAN mod-97, Luhn — is self-contained arithmetic, so Principle VII's
+adoption-review protocol was never triggered) and a real, previously-
+undiscovered bug found and fixed during implementation: `PhoneIntlInput`'s
+first draft prepended the selected country's calling code directly into
+the input's own value, which then fed back into the same `format()`/
+`validate()` call on the next keystroke — the calling code's own digits
+were double-counted as part of the national number, producing a false
+"wrong length" rejection after the first keystroke. Fixed by keeping the
+calling code as separate, non-editable display chrome, restoring the
+idempotency every other component in this feature already had. This is a
+MINOR bump: one new catalog entry (11 new components across both
+surfaces), no principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/019-localized-input-primitives/{plan,research,
+  data-model,tasks}.md already reflect the final, corrected, shipped
+  state described above.
+
+SYNC IMPACT REPORT (v1.15.0 — see below for the v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.14.0 → 1.15.0
+Modified principles: None
+Added sections:
+  - Component Catalog → Data Display & Listings → Charts (NEW entry):
+    6 Recharts-based chart types (Line, Bar, Area, Pie/Donut, Radar,
+    Radial) plus a shared Tooltip/Legend, closing the "Chart" gap flagged
+    deferred since feature 014 — this catalog's SECOND top-level
+    architectural exception (after Theming) and its FIRST component ever
+    to ship React-only, with no zero-JavaScript static HTML twin
+    (Recharts has no framework-independent rendering path; documented in
+    spec.md Assumptions and the new static `src/components/chart/
+    chart.html` cross-reference page, which links to the React demo
+    instead of duplicating it).
+  - Component Catalog → Known Catalog Gaps → Chart marked shipped
+    (feature 020); Date Picker/Calendar, interactive Data Table, Carousel,
+    Scroll Area, Resizable panels, HoverCard remain deferred.
+  - Theming & Multi-Palette Architecture → new paragraph documenting a
+    real, currently-unresolved gap found while building this feature: the
+    React package's compiled `dist/styles.css` only ever *consumes* the
+    `--color-*` custom properties, never *defines* their default values —
+    only `src/styles/themes.css` (the static gallery) does. Every real
+    downstream consumer of `@professional-design-system/react` that
+    doesn't separately author an equivalent `:root` block currently gets
+    unstyled/invalid theme colors. Fixed locally for this project's own
+    dev/test harness (`tests/react-harness/src/harness.css` now imports
+    `src/styles/themes.css`) so this feature's own tests could run
+    meaningfully, but the underlying package-level gap for real consumers
+    is recorded here as unresolved, not silently patched over.
+Corrected sections:
+  - Component Catalog → Data Display & Listings → Tables: the ratified
+    entry claimed the header cell sits on `bg-neutral-50` at "7.23:1
+    AAA" — both were wrong. The shipped `.data-table-header-cell` class
+    has always used `bg-neutral-100`, and paired with the also-ratified
+    `text-neutral-600`, the real measured contrast is 6.86:1, failing
+    this catalog's own AAA 7:1 floor. Never caught before because no test
+    surface had ever rendered this pairing against real computed theme
+    colors until feature 020's harness fix above made that possible for
+    the first time. Corrected to `text-neutral-700` (9.37:1 AAA) in both
+    `src/styles/tailwind.css` and `packages/react/src/styles.css`, and
+    `tests/e2e/table.spec.ts`'s hardcoded color assertion/comment updated
+    to match.
+Rationale: feature 020 (Recharts-Based Chart Primitives) shipped this
+catalog's next architectural exception after Theming — a component whose
+underlying library has no non-React output, an explicit, reasoned
+Principle III exception (chart colors are still 100% derived from the
+same `--color-*` tokens every other component uses, via a new
+`useChartColors()` hook reading them live with `getComputedStyle`, never
+a hardcoded literal) rather than a violation. Two real, previously-
+undiscovered defects were found and fixed during implementation, both the
+same class of bug this constitution has repeatedly documented ("ratified/
+shipped but never empirically verified against real rendered output"):
+(1) a real axe-core `no-focusable-content` violation from an early draft
+nesting the shared Legend's interactive `<button>`s inside the
+`role="img"` figure wrapper meant only for the chart visualization itself
+— fixed by extracting a `ChartFrame` component that scopes `role="img"`
+to just the SVG/`ResponsiveContainer`, with Legend/DataTable rendered as
+siblings, not descendants; (2) the Table header-cell contrast bug
+described above, surfaced only as a side effect of fixing this feature's
+own test harness to actually load real theme tokens (previously every
+React-harness demo — not just this feature's — silently rendered with
+unset/invalid CSS custom properties, undetected because the pre-existing
+`react-button.spec.ts` visual baseline predates feature 017's theming
+refactor and CI has been down since 2026-07-12). A new
+`DECORATIVE_ARIA_HIDDEN_TOKENS` entry (`neutral-400`) was added to
+`scripts/check-contrast.mjs` for `ChartEmptyState`'s decorative icon,
+which measures 2.54:1 against `bg-neutral-50` — below even the 3:1
+non-text floor — the identical already-accepted exception class as
+Rating's star fill (v1.13.0), confirmed via the same WCAG
+relative-luminance formula rather than assumed. This is a MINOR bump: one
+new catalog entry (six new components + two shared primitives), one
+corrected already-ratified pairing, one new documented architectural
+gap — no principle text changed.
+Templates requiring updates: ✅ none — no plan/spec/tasks template
+  structural change; specs/020-recharts-chart-primitives/{plan,research,
+  data-model,tasks}.md already reflect the final, corrected, shipped
+  state described above.
+
 SYNC IMPACT REPORT (v1.14.0 — see below for the v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.13.0 → 1.14.0
 Modified principles:
@@ -960,11 +1352,174 @@ precedent that this allowlist's categorization comments MUST describe the
 actual measured root cause, not be assumed to fit the nearest existing
 bucket.
 
+**Known gap — `packages/react`'s published styles never defined default
+token values — RESOLVED** (found during feature 020, fixed during the
+Claude Design sync following feature 023): `packages/react/
+src/styles.css`'s compiled output only ever *consumed* the `--color-*`
+custom properties (`rgb(var(--color-x) / <alpha-value>)`) — only
+`src/styles/themes.css` (the static gallery) actually *defined* their
+`:root`/`[data-theme]` values. Any real consumer of
+`@professional-design-system/react` who didn't separately author an
+equivalent `:root` block got every component (most visibly, every Chart
+type — solid black series) rendered with unset/invalid theme colors.
+This had silently affected every React-harness demo page since feature
+017 Phase 1, undetected because the pre-existing visual baselines
+predate that refactor and CI has been down since 2026-07-12. Found for
+real (not merely suspected) when a Claude Design sync's PieChart preview
+capture rendered every slice black. Fixed by adding the default/light
+theme's full `:root` token block (verbatim from `src/styles/
+themes.css`) directly into `packages/react/src/styles.css` — the
+package still ships no theme-switching mechanism of its own, this is
+strictly the baseline so any component reading these tokens at runtime
+(currently only Chart) renders correctly out of the box. See
+`.design-sync/NOTES.md`'s 2026-07-13 entry for the full account.
+
+**Gallery-wide theme preview** (feature 021): the main component gallery
+(`index.html`) carries its own theme-selection `<select>` (grouped by
+`MOOD_FAMILIES` via `<optgroup>`, `src/scripts/gallery-theme-selector.js`)
+so every shipped component card can be previewed under any curated theme
+from that one page, without navigating to the dedicated Theme Gallery
+page (`theme-gallery.html`, feature 017's own richer per-theme
+card/swatch browsing experience, which this complements rather than
+replaces). Introduces no new persistence mechanism or theme data — it
+reads `THEMES`/`MOOD_FAMILIES` and calls `selectTheme()`/`KNOWN_THEME_IDS`
+verbatim from the existing feature 017 modules, so a selection made here
+and a selection made on the dedicated Theme Gallery page always agree on
+next view (same `pds-theme` `localStorage` key).
+
+**Sitewide rollout** (feature 025): verified directly (not assumed)
+that only `index.html` and `theme-gallery.html` of this catalog's 78
+static gallery pages actually loaded `theme-switcher.js` — every other
+individual component demo page silently ignored the persisted theme
+entirely (always rendered the default, un-themed look) and had no
+selector control at all. Rolled the identical 3-snippet pattern (the
+`<head>`-level `theme-switcher.js` activation script, the
+`#gallery-theme-select` markup block, and the `gallery-theme-selector.js`
+wiring script — all copied verbatim from `index.html`, zero new
+scripts/markup/logic) out to all 77 remaining pages via a small,
+idempotent script (`scripts/apply-theme-rollout.mjs`), gated by a
+completeness check (`scripts/check-theme-rollout.mjs`) confirming all
+77/77 pass. **This is now a required convention for every new static
+gallery page**, alongside the CSP meta tag, `page-shell` body class,
+and back-link every page already carries — a future feature adding a
+new component demo page MUST include all 3 snippets from the start,
+not retrofit them later. `theme-gallery.html` is deliberately exempt —
+it already has its own, richer, feature-017-native theme-picker UI
+(`theme-gallery.js`), not the generic dropdown, which fully satisfies
+the same underlying capability.
+
+**Curated theme batch 2** (feature 027): 5 new themes — `aurora`,
+`obsidian`, `linen`, `graphite`, `nebula` — added to the existing
+43-theme `THEMES` collection (feature 017's architecture, zero new
+mechanism), bringing the total to 48. Each theme's aesthetic direction
+was independently derived from a real, browser-rendered design-
+language analysis (`getdesign.md/<slug>/design-md` pages from the
+`VoltAgent/awesome-claude-design` index — plain `fetch()` only returns
+an unhydrated SPA shell, verified; the page's own "DESIGN.md" preview
+toggle must be clicked in a real browser to extract the actual
+frontmatter) — real hex values and real component-token structure,
+never invented, matching feature 017's own "real published values,
+never approximated" bar. The inspiring company for each theme is
+recorded only in `specs/027-claude-design-inspired-themes/research.md`
+as an internal research artifact — never in shipped code, comments,
+or theme names/descriptions, which use generic mood-based naming
+(`sourceReference` describes derivation methodology, not company
+identity) per this feature's own resolved naming decision. All 5
+themes fit an existing `MOOD_FAMILIES` category (`aurora` → Distinctive/
+Characterful, `obsidian` → Dark Moody/Professional, `linen` → Warm/
+Organic Light, `graphite` → Cool/Tech Minimal, `nebula` → Dark Vibrant/
+Expressive) — no 8th category was needed.
+
+Two real corrections found during implementation (not assumed away):
+(1) `nebula`'s `brand` token does NOT use its source's literal near-
+black primary color, which sat almost exactly as dark as this theme's
+own `neutral-50` and would have rendered brand text/borders/fills
+nearly invisible against the page — the same "dark theme needs its own
+visible brand register" issue this catalog's `forest`/`dracula` themes
+already document; a real, visibly-distinct accent tier from the same
+source was used instead. (2) `obsidian`/`nebula`'s semantic `*-strong`
+tokens do NOT reuse the light-default theme's values verbatim (which
+fail contrast against a dark canvas) — they follow `forest`'s own
+proven inverted-lightness convention for dark themes (`*-strong`
+lighter than `*`, suited to the ink-on-page text role, accepting that
+Indicator's white-on-`*-strong` solid-fill role then fails — the same
+documented, deliberate trade-off `forest`/`dracula`/`business` already
+make). The remaining contrast gaps this batch's 2 dark themes and 3
+light themes surfaced (`KNOWN_THEME_CONTRAST_GAPS`) are the same
+recurring pairing categories already accepted throughout this file for
+`forest`/`dracula`/`business`/`rosepine`/`catppuccin`/`quartz`/`aqua`/
+`nord` — an inherent limitation of the fixed 21-token schema for
+sufficiently dark or high-chroma themes, not unique to this batch.
+
+This feature's confirmatory research (checking whether the same source
+collection surfaces any component-catalog gap feature 018 missed)
+concluded no genuine new component-type gap — every component role the
+5 fetched sources document (buttons, text inputs, feature/pricing
+cards, nav bars, footers, badges/pills, code blocks) already has a
+shipped equivalent; the only non-1:1 items (illustrated sticker
+mascots, hero mesh gradients) are visual treatments of existing
+surfaces, not distinct component types, and are out of scope for a
+theme-tokens feature.
+
 ## Component Catalog & Tailwind UI Patterns
 
 Any component copied from Tailwind UI MUST undergo immediate refactoring for zero
 class waste and full compliance with the tokens above before entering the
 catalog.
+
+### Gallery Presentation & Discoverability (feature 026)
+
+The root gallery (`index.html`) was originally a flat, uncategorized
+grid of identically-styled cards — verified directly (not assumed) to
+be a direct, unintentional match for this project's own documented
+Anti-Template Policy banned patterns ("default card grids with uniform
+spacing and no hierarchy," "safe gray-on-white styling with one
+decorative accent color"). Redesigned into: an opening section stating
+concrete, verifiable claims (component count, dual-surface guarantee,
+WCAG AAA commitment, curated theme count — never marketing copy); a
+zero-JavaScript quick-jump `<nav>` (native anchor links) to 8 category
+sections, 6 of which are this catalog's own existing Component Catalog
+categories below (Application & Navigation, Forms/Validation & Inputs,
+Data Display & Listings, Overlays/Modals & Feedback, Navigation &
+Disclosure, Advanced Forms & Interaction), plus **Composed Examples**
+(the 3 page-level composition demos, never meant to be discovered
+alongside atomic components) and **Theming** (the dedicated Theme
+Gallery page); and a visually-distinct "flagship" treatment (2-column
+card span + a one-line "why this matters" note) for Data Table, Chart,
+Command Palette, and the curated theme system — this catalog's four
+largest engineering investments, made concrete in the grid itself
+rather than only asserted in prose. Zero components were dropped,
+duplicated, or had their underlying markup/behavior changed — this is
+a presentation-layer reorganization only (all 78 "View full demo →"
+links verified to still resolve correctly).
+
+**New every-page convention**: every individual component demo page
+now wraps its existing `<h1>`/intro `<p>`/theme-selector block (feature
+025) in a `.demo-page-header` bottom-border treatment — applied
+uniformly to all 77 pages via a scripted, idempotent rollout
+(`scripts/apply-demo-page-polish.mjs`, mirroring feature 025's
+`apply-theme-rollout.mjs` pattern exactly), not 77 bespoke redesigns.
+This is now a required convention for every future new static gallery
+page, alongside the CSP meta tag, `page-shell` body class, back-link,
+and feature 025's theme-activation/selector snippets. One real
+implementation-time correction: the wrapper was first drafted with a
+`bg-neutral-50` tint and a `-mx-6`/`px-6` bleed, but `page-shell`
+itself already sets `bg-neutral-50` (the tint would have been
+invisible) and uses `p-8`, not `px-6` (the bleed math would have been
+wrong) — caught by checking `src/styles/tailwind.css` directly rather
+than assuming, and simplified to a border-only treatment needing
+neither.
+
+**T017 full-catalog regression gate finding**: the rollout script's
+header-anchoring regex assumed every page's `<h1>` precedes its live
+component demo — true for 76 of 77 pages, but Navbar's demo must
+render first in `<body>` for its `position: sticky` behavior to be
+meaningfully demonstrated, so the regex swallowed the live navbar into
+the wrapper div and broke its stickiness. Fixed directly in
+`src/components/navbar/navbar.html`; confirmed via a programmatic
+sweep that no other page shares this demo-before-`<h1>` shape. Any
+future scripted, catalog-wide rollout of this kind should check for
+this shape explicitly rather than assume it away.
 
 ### Application & Navigation
 - **Sidebar**: `bg-neutral-900`/`text-neutral-300` (dark — corrected from the
@@ -1130,19 +1685,58 @@ catalog.
   entirely (confirmed on a bare, unstyled element, ruling out any
   CSS/markup cause) — accepted as a genuine engine limitation, the same
   class as PinInput's Firefox clipboard-event gap (feature 015).
+- **Localized Identifier/Contact Fields**: shipped in feature 019 — 11
+  masked, self-validating components (`CpfInput`, `CnpjInput`, `CepInput`,
+  `PhoneBrInput`, `TituloEleitorInput`, `PisPasepInput`,
+  `VehiclePlateInput`, `IbanInput`, `CardNumberInput`, `PhoneIntlInput`,
+  under `packages/react/src/*Input/`, plus static twins under
+  `src/components/*-input/`) spanning Brazilian documents/contacts (CPF,
+  CNPJ, CEP, phone), extended Brazilian identifiers (Título de Eleitor,
+  PIS/PASEP, vehicle plate), and international codes (IBAN, card number,
+  international phone). Every check-digit/checksum algorithm (CPF/CNPJ/
+  Título/PIS-PASEP modulo-11, IBAN mod-97, Luhn) lives in one
+  framework-agnostic `shared/validators/` module — the static
+  `src/scripts/localized-inputs.js` wiring and every React component
+  import the exact same functions, mirroring `shared/design-tokens.ts`'s
+  established single-source-of-truth pattern; no new npm dependency was
+  needed (Principle VII not triggered — every algorithm is self-contained
+  arithmetic). Each component reuses `TextInput`'s exact `.text-input`/
+  `aria-invalid`/`aria-describedby` markup unchanged, extended with an
+  `aria-live="polite"` error region (FR-019) so a validity change is
+  announced without interrupting ongoing typing. A shared
+  `useValidatedInput()` hook (React) and a shared `wireField()`/
+  `wirePhoneIntlField()` pair (static) both implement the identical
+  timing rule: a value is only ever evaluated for pass/fail once it
+  reaches its code type's expected length or the field blurs, and an
+  empty non-required field is never reported invalid. **A real
+  round-trip bug was found and fixed during implementation**:
+  `PhoneIntlInput`'s first draft had `format()` prepend the selected
+  country's calling code into the input's own displayed value (e.g. "+1
+  1234567890"), which then fed back into `format()`/`validate()` on the
+  next keystroke — the calling code's own digits got counted as part of
+  the national number, inflating the digit count and producing false
+  "wrong length" rejections on a second keystroke. Fixed by making the
+  calling code purely a separate, non-editable display element (never
+  part of the `<input>`'s value), restoring idempotency. Título de
+  Eleitor's implementation documents an honest simplification: it uses
+  the standard, most commonly published TSE modulo-11 algorithm without
+  an additional special-case adjustment some references describe for the
+  São Paulo/Minas Gerais state codes, since that adjustment could not be
+  verified with full confidence against an authoritative source.
 
 ### Data Display & Listings
 - **Tables**: shipped as a real component in feature 012 (`.data-table`/
   `.data-table-header-cell`/`.data-table-cell`/`.data-table-row-zebra`,
   `src/components/table/table.html`), closing the "documented but never
-  built" gap flagged by feature 011. Header `bg-neutral-50 text-left
-  text-xs font-semibold text-neutral-600 uppercase tracking-wider
-  px-6 py-3` (7.23:1 AAA against `bg-neutral-50`); cells `text-sm
-  text-neutral-900 px-6 py-4 max-w-xs truncate` (16.98-17.74:1 AAA) —
-  header uses `py-3`, body cells use `py-4` (a deliberate, denser header
-  convention, not an inconsistency); both verified via the WCAG
-  relative-luminance formula rather than assumed, unlike Lists' metadata
-  token (which was actually wrong). Rows with optional zebra striping
+  built" gap flagged by feature 011. Header `bg-neutral-100 text-left
+  text-xs font-semibold text-neutral-700 uppercase tracking-wider
+  px-6 py-3` (9.37:1 AAA against `bg-neutral-100` — corrected from the
+  originally-ratified but wrong `bg-neutral-50`/`text-neutral-600`/
+  "7.23:1" figures, feature 020: the header cell has always actually sat
+  on `bg-neutral-100`, and paired with `-600` that measures 6.86:1,
+  failing AAA); cells `text-sm text-neutral-900 px-6 py-4 max-w-xs
+  truncate` (16.98-17.74:1 AAA) — header uses `py-3`, body cells use
+  `py-4` (a deliberate, denser header convention, not an inconsistency). Rows with optional zebra striping
   (`.data-table-row-zebra`'s `even:bg-neutral-50`) and `divide-y
   divide-neutral-200`. Class names are `.data-table*`, not `.table*`:
   Tailwind's own core `display` plugin defines `.table { display: table
@@ -1156,6 +1750,38 @@ catalog.
   narrow (320px) viewports where the table genuinely overflows, not at
   wider ones; this is applied unconditionally since static markup can't
   detect actual overflow at runtime, a documented, accepted tradeoff.
+- **Data Table**: shipped in feature 022, closing the "interactive/
+  sortable Data Table" gap flagged deferred since feature 014. Advanced,
+  customizable, dual-surface (`src/scripts/data-table.js` + React
+  `packages/react/src/DataTable/{DataTable,DataTableToolbar,
+  DataTableRowActions,DataTableForm,DataTableEmptyState}.tsx`), built on
+  the plain Table pattern above (`.data-table*` classes, unchanged) rather
+  than a parallel markup convention. Sort, global + per-column filter, and
+  pagination are pure functions in `shared/data-table/{sorting,filtering,
+  pagination}.ts`, consumed identically by both surfaces — the same
+  shared-core convention `shared/validators/` established in feature 019,
+  not a new pattern. Multi-row selection (`shared/data-table/selection.ts`
+  — `{ids: Set<string>, scope: "page" | "all-matching"}`) surfaces an
+  in-flow bulk-actions toolbar (not a floating one) once any row is
+  checked, with a page-vs-all-matching-rows link once the dataset spans
+  more than one page. CRUD is fully opt-in per table instance
+  (`crud: {create?, edit?, delete?}`) — when a flag is off, its affordance
+  (button, row action) is absent entirely, not disabled, per this
+  catalog's established absent-vs-disabled convention. Create/edit reuses
+  the Modal pattern (Overlays section below) plus TextInput/Select's
+  existing error-message convention for validation; delete requires a
+  confirm step via the same Modal. Column visibility is a native
+  `<details>/<summary>` disclosure (this catalog's zero-JS-friendly
+  convention, matching Accordion and TreeView) rather than a bespoke
+  dropdown — its checkbox-panel is `absolute left-0 sm:left-auto
+  sm:right-0` (not simply `right-0`): anchoring only to the right edge
+  pushed the panel off-screen to the left at 320px whenever the
+  `<summary>` trigger sits left-of-center, a real bug found only by the
+  320px Playwright project, not by any wider viewport. TanStack Table was
+  evaluated per Principle VII (specs/022-advanced-data-table/research.md
+  R1) and deliberately not adopted — hand-rolled state matches this
+  catalog's existing from-scratch precedent (Combobox, Dropdown Menu) and
+  a table of this scope didn't justify a new runtime dependency.
 - **Badges**: success `bg-success/5 text-success-strong ring-1 ring-inset
   ring-success/20`; error `bg-error/5 text-error-strong ring-1 ring-inset
   ring-error/10`; warning `bg-warning/5 text-warning-strong ring-1 ring-inset
@@ -1360,6 +1986,66 @@ catalog.
   so a stricter category was added for tokens confirmed to be inside an
   `aria-hidden` element with the real information always separately
   rendered as text.
+- **Charts**: shipped in feature 020 — six Recharts-based chart types
+  (`LineChart`, `BarChart`, `AreaChart` with a `stacked` variant,
+  `PieChart` with a `donut` variant, `RadarChart`, `RadialChart`) plus two
+  shared, chart-type-independent primitives (`ChartTooltip`, `ChartLegend`)
+  under `packages/react/src/Chart/`, closing the "Chart" gap this
+  constitution has flagged deferred since feature 014. **This catalog's
+  first component shipped React-only** — Recharts has no
+  framework-independent rendering path, so there is no zero-JavaScript
+  static HTML twin; `src/components/chart/chart.html` is a cross-reference
+  page linking to the React demo instead of duplicating it (spec.md
+  Assumptions, a deliberate, documented exception to the dual-shipping
+  convention every prior feature followed). Every chart's color palette is
+  read live from the existing `--color-*` custom properties via a new
+  `useChartColors()` hook (`getComputedStyle`, an 8-token ordered sequence
+  — `brand`/`success`/`warning`/`error`/`info`/`brand-dark`/
+  `success-strong`/`info-strong`, all already-ratified, zero new tokens),
+  re-evaluated on a `MutationObserver` watching `data-theme` — the same
+  mechanism that lets Tailwind `className` utilities re-theme, just reached
+  via JS since Recharts requires literal color props on its own internally-
+  rendered SVG, not `className`. Every chart renders an `sr-only`
+  `ChartDataTable` (reusing feature 012's `.data-table*` classes) as its
+  non-visual data equivalent, and a `ChartEmptyState` (reusing feature
+  014's empty-state recipe) for a zero-row dataset. `isAnimationActive`
+  is gated by a new `usePrefersReducedMotion()` hook. A `ChartFrame`
+  wrapper scopes `role="img"` to only the chart visualization itself —
+  an early draft's `role="img"` on the same element as `ChartLegend`'s
+  interactive `<button>`s tripped a real axe-core `no-focusable-content`
+  violation, fixed by moving Legend/DataTable to siblings of the
+  `role="img"` node rather than descendants. `ChartLegend` uses real
+  `<button>` elements with the full Principle V state set, not Recharts'
+  own non-interactive default legend. Recharts' entrance animation sweeps
+  in progressively from 0° to its final state — a screenshot or assertion
+  taken before that settles will see a partial chart, not a rendering bug;
+  tests emulate `prefers-reduced-motion: reduce` for deterministic,
+  instant renders instead.
+  **Extended in feature 024** with the 5 remaining native Recharts
+  chart-container components — `ComposedChart` (bar/line/area combined,
+  with an opt-in secondary Y-axis via `yAxisId`, per-series), `ScatterChart`
+  (each series owns its own `{x, y}` point array — the one chart type in
+  this catalog with no shared `data` prop), `FunnelChart` (same prop
+  shape as `PieChart` — no multi-series concept), `Treemap` (recursive
+  `{name, value?, children?}` nodes), and `Sankey` (index-addressed
+  `nodes`/`links`) — completing full coverage of all 11 native Recharts
+  chart types. Every new type reuses the exact shared chrome above
+  verbatim — zero new dependencies, zero new tokens, zero new mechanism.
+  `Treemap`/`Sankey` deliberately have no `ChartLegend` (a "toggle a
+  node" interaction doesn't map onto a hierarchy or a flow graph the way
+  it does onto a handful of series) — both still expose `ChartFrame`'s
+  accessible data-table toggle, fed a flattened `{name, value}`
+  representation. A real, currently-shipping bug was found and fixed
+  during this feature's implementation (not specific to the 5 new chart
+  types — it affected all 6 of feature 020's original types too):
+  `packages/react/src/styles.css` never defined the `--color-*` CSS
+  custom properties `useChartColors()` reads at runtime, so every chart
+  in this catalog rendered every series in solid black for any real
+  consumer of the npm package — discovered via the Claude Design sync's
+  PieChart preview capture (not this feature's own testing, since the
+  React harness's existing dev-server setup happened to mask it). Fixed
+  by shipping the default theme's `:root` token block (verbatim from
+  `src/styles/themes.css`) in the package's own stylesheet.
 
 ### Overlays, Modals & Feedback
 - **Modals**: backdrop `fixed inset-0 bg-neutral-500/75 transition-opacity`;
@@ -1590,6 +2276,76 @@ catalog.
   `<fieldset>`/`<legend>` grouping with a per-box `aria-label` (e.g.
   "Digit 1"), since no single visible label covers all boxes.
 
+### Component Catalog Expansion (Batch 1, Feature 023)
+
+A curated, 14-component slice of feature 018's 105-candidate gap
+inventory, selected for reusing an existing mechanism already in this
+catalog rather than requiring a new interaction pattern. Shipped
+dual-surface (static HTML/vanilla JS + React), zero new dependencies,
+zero new design tokens.
+
+- **NumberInput**: TextInput's shell + two side-by-side stepper
+  buttons (not stacked — a stacked pair measured a 24×14px hit target,
+  failing WCAG 2.2's 2.5.8 Target Size; side-by-side at 24×24 passes).
+  Clamps to `[min, max]` on blur, not per keystroke; each stepper
+  disables individually at its bound.
+- **PasswordInput**: TextInput's shell + a show/hide toggle button
+  whose `aria-label` names the action it performs NEXT ("Show
+  password"/"Hide password"), preserving value and caret position
+  across toggles.
+- **MultiSelect**: extends Combobox's filterable-listbox mechanism with
+  multiple concurrent selections rendered as removable chips. Uses
+  `popover="manual"`, not Combobox's `popover="auto"` — MultiSelect
+  opens on focus/click of an input outside the popover's own subtree,
+  and an `auto` popover's light-dismiss algorithm closes it on that
+  same click's `pointerdown` before the `click` handler runs (Combobox
+  never hits this since it only opens while typing).
+- **ActionIcon**: an icon-only Button variant with a mandatory
+  `aria-label` (required at the TypeScript level on the React surface,
+  not merely documented).
+- **CopyButton**: reuses Button verbatim; writes to the clipboard via
+  the native async Clipboard API, showing a temporary "Copied"
+  confirmation or a distinct failure state (never silently reporting
+  success on a rejected write).
+- **SplitButton**: a primary action segment + a second segment reusing
+  Dropdown Menu's exact Popover-API mechanism (`useDropdownMenu`) —
+  not a new popup pattern.
+- **AvatarGroup**: overlapping `.avatar-img`/`.avatar-fallback` chips
+  with a "+N" overflow indicator shown only when membership exceeds the
+  configured limit — never a "+0" or hidden placeholder otherwise.
+- **Highlight**: wraps case-insensitive substring matches in `<mark>`,
+  reusing Combobox's existing `.combobox-option mark` treatment
+  (`bg-transparent font-semibold`) rather than inventing a new
+  highlight color.
+- **Code**: inline and block variants sharing Kbd's `font-mono` token;
+  a distinct component from Kbd (keyboard-input semantics vs. code
+  display).
+- **ColorSwatch**: a caller-colored chip with a mandatory `.sr-only`
+  text alternative (never color alone, per Principle II). The static
+  surface applies the color via the CSSOM
+  (`element.style.backgroundColor`), not an inline `style` attribute —
+  every page's `style-src 'self'` CSP (no page ever uses
+  `'unsafe-inline'`) renders an inline-styled background transparent.
+- **NavLink**: reuses Sidebar's exact active-item classes
+  (`[aria-current="page"]` → `bg-brand-dark text-white`) as a
+  standalone component usable outside a full Sidebar layout.
+- **Anchor**: the simplest component in this batch — a single styled
+  inline `<a>` using the ratified `text-brand-dark` link token.
+- **Collapse**: a single, independent native `<details>/<summary>`
+  disclosure — Accordion's identical mechanism minus the "close
+  siblings" group behavior. Named `.collapse-item`, not `.collapse`:
+  Tailwind's own core utilities define `.collapse { visibility:
+  collapse }`, which would silently override a same-named
+  component-layer class — the same class of collision bug feature 011
+  found for Lists' `.list-item` and feature 012 found for Table's
+  `.data-table*`, caught here before implementation.
+- **Spoiler**: Collapse's mechanism + a pre-open `line-clamp-*`
+  truncation. Its clamped preview lives INSIDE `<summary>`, not as a
+  sibling — a closed `<details>` renders only its `<summary>` and hides
+  every other child, so a truncated preview cannot be a sibling of it.
+  Shows no "Show more" control at all when the content doesn't actually
+  exceed the clamp threshold.
+
 ### Known Catalog Gaps (deliberately deferred, not silently dropped)
 - **Date Picker/Calendar, interactive/sortable Data Table, Carousel,
   Chart, Scroll Area, Resizable panels**: evaluated during feature 014's
@@ -1621,6 +2377,31 @@ catalog.
   interaction pattern (or, for HoverCard, is redundant with an existing
   combination) with no existing mechanism in this catalog to extend or
   reuse. Flagged here for whichever future feature takes them on.
+- **Chart has now shipped in feature 020** (see Component Catalog → Data
+  Display & Listings → Charts above) — the "substantially new interaction
+  pattern" barrier was cleared by adopting Recharts rather than
+  hand-rolling SVG/Canvas rendering, a deliberate, documented exception to
+  this catalog's zero-new-dependency norm (Principle VII diligence
+  recorded in specs/020-recharts-chart-primitives/plan.md's Constitution
+  Check) rather than inventing the pattern from scratch. **Still deferred
+  as of feature 020**: Date Picker/Calendar, interactive/sortable Data
+  Table, Carousel, Scroll Area, Resizable panels, HoverCard.
+- **Interactive/sortable Data Table has now shipped in feature 022** (see
+  Component Catalog → Data Display & Listings → Data Table above) — unlike
+  Chart, no new dependency was needed: sort/filter/paginate/selection are
+  hand-rolled pure functions built on the existing plain-Table markup,
+  and TanStack Table was evaluated and deliberately not adopted (see the
+  Data Table entry). **Still deferred as of feature 022**: Date
+  Picker/Calendar, Carousel, Scroll Area, Resizable panels, HoverCard.
+- **Chart's Recharts chart-type coverage is now complete as of feature
+  024** (see Component Catalog → Data Display & Listings → Charts
+  above) — all 11 native Recharts top-level chart components are
+  shipped (6 from feature 020, 5 from feature 024: ComposedChart,
+  ScatterChart, FunnelChart, Treemap, Sankey). Candlestick is explicitly
+  NOT a gap — Recharts has no native Candlestick component, correcting
+  an imprecise mention in feature 020's own Assumptions (see feature
+  024's spec.md Assumptions). **Still deferred as of feature 024**: Date
+  Picker/Calendar, Carousel, Scroll Area, Resizable panels, HoverCard.
 
 ## Governance
 
@@ -1679,4 +2460,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.14.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-13
+**Version**: 1.24.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-14
