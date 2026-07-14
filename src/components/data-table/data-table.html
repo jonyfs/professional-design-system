@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Data Table — Professional Design System</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <script type="module" src="/src/scripts/theme-switcher.js"></script>
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Data Table</h1>
+  <p class="mt-2 max-w-2xl text-sm text-neutral-600">
+    Sort, filter, paginate, multi-select with bulk actions, and opt-in
+    CRUD — a distinct, more capable sibling of the zero-JavaScript
+    <a href="/src/components/table/table.html" class="demo-link">Table</a>
+    component.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Read-only</h2>
+  <div class="mt-4" data-testid="data-table-readonly" id="data-table-readonly"></div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Selectable + bulk actions</h2>
+  <div class="mt-4" data-testid="data-table-selectable" id="data-table-selectable"></div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Full CRUD</h2>
+  <div class="mt-4" data-testid="data-table-crud" id="data-table-crud"></div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Empty (no data yet)</h2>
+  <div class="mt-4" data-testid="data-table-empty" id="data-table-empty"></div>
+
+  <script type="module">
+    import { initDataTable } from "/src/scripts/data-table.js";
+
+    const FIRST_NAMES = ["Jane", "Alex", "Sam", "Priya", "Wei", "Carlos", "Fatima", "Liam", "Noor", "Yuki"];
+    const LAST_NAMES = ["Cooper", "Morgan", "Silva", "Kim", "Chen", "Santos", "Ali", "Byrne", "Haddad", "Tanaka"];
+    const ROLES = ["Admin", "Editor", "Viewer"];
+
+    const rows = Array.from({ length: 1247 }, (_, i) => ({
+      id: `row-${i + 1}`,
+      name: `${FIRST_NAMES[i % FIRST_NAMES.length]} ${LAST_NAMES[(i * 3) % LAST_NAMES.length]}`,
+      email: `user${i + 1}@example.com`,
+      role: ROLES[i % ROLES.length],
+    }));
+
+    const columns = [
+      { id: "name", label: "Name", sortable: true, filterable: true },
+      { id: "email", label: "Email", sortable: true, filterable: true },
+      { id: "role", label: "Role", sortable: true, filterable: true },
+    ];
+
+    initDataTable(document.getElementById("data-table-readonly"), {
+      columns,
+      rows,
+      ariaLabel: "Users, read-only",
+    });
+
+    initDataTable(document.getElementById("data-table-selectable"), {
+      columns,
+      rows: rows.slice(0, 25),
+      ariaLabel: "Users, selectable",
+      bulkActions: [
+        { id: "delete", label: "Delete selected", requiresConfirmation: true, onTrigger: () => {} },
+        { id: "tag", label: "Tag as reviewed", onTrigger: () => {} },
+      ],
+    });
+
+    initDataTable(document.getElementById("data-table-crud"), {
+      columns,
+      rows: rows.slice(0, 10),
+      ariaLabel: "Users, full CRUD",
+      crud: { create: true, edit: true, delete: true },
+      fields: [
+        { id: "name", label: "Name", required: true },
+        { id: "email", label: "Email", required: true },
+        { id: "role", label: "Role" },
+      ],
+    });
+
+    initDataTable(document.getElementById("data-table-empty"), {
+      columns,
+      rows: [],
+      ariaLabel: "Users, empty",
+      crud: { create: true },
+    });
+  </script>
+  <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
+</body>
+</html>
