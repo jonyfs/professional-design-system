@@ -1,0 +1,12 @@
+export * as cpf from "./cpf";
+export * as cnpj from "./cnpj";
+export * as cep from "./cep";
+export * as phoneBr from "./phone-br";
+export * as tituloEleitor from "./titulo-eleitor";
+export * as pisPasep from "./pis-pasep";
+export * as vehiclePlate from "./vehicle-plate";
+export * as iban from "./iban";
+export * as cardNumber from "./card-number";
+export * as phoneIntl from "./phone-intl";
+export type { ValidationResult } from "./common";
+export { COUNTRY_PHONE_TABLE, getCountryEntry, type CountryPhoneEntry } from "./phone-intl";
