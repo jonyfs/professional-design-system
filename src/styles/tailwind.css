@@ -358,8 +358,14 @@
     @apply min-w-full divide-y divide-neutral-200;
   }
   .data-table-header-cell {
+    /* text-neutral-700, not -600: feature 020's harness contrast fix
+       exposed that -600 measures 6.86:1 against bg-neutral-100, just
+       under this catalog's AAA 7:1 floor — a real, previously-unverified
+       gap in this ratified pattern (feature 012), never caught before
+       since no test surface actually rendered real theme colors against
+       it until now. -700 clears it at 9.37:1. */
     @apply bg-neutral-100 px-6 py-3 text-left text-xs font-semibold
-      text-neutral-600 uppercase tracking-wider;
+      text-neutral-700 uppercase tracking-wider;
   }
   .data-table-cell {
     @apply max-w-xs truncate px-6 py-4 text-sm text-neutral-900;
@@ -652,6 +658,54 @@
     @apply cursor-not-allowed opacity-50;
   }
 
+  /* Feature 023: Component Catalog Expansion — Button Variants (US2,
+     contracts/023-component-catalog-expansion/button-variants.contract.md) */
+
+  /* ActionIcon — icon-only button reusing Button's variant system, sized
+     square; its accessible name comes from a mandatory aria-label (there
+     is no visible text). Base sets layout/state; the -primary/-secondary
+     modifier sets colour only, so the two never conflict. */
+  .action-icon {
+    @apply inline-flex items-center justify-center rounded-md p-2 shadow-sm
+      active:scale-[0.98] focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed
+      transition-[box-shadow,background-color,transform] duration-150;
+  }
+  .action-icon-primary {
+    @apply bg-brand-dark text-white hover:shadow-md;
+  }
+  .action-icon-secondary {
+    @apply border border-neutral-300 bg-neutral-50 text-neutral-900 hover:bg-neutral-100;
+  }
+
+  /* CopyButton reuses .btn-secondary verbatim — its copied/failed states
+     only swap the inner icon+label colour via the ratified
+     text-success-strong / text-error-strong utilities, so it needs no
+     dedicated class here. */
+
+  /* Split Button — a primary action segment plus an attached dropdown
+     segment, styled as one connected control (Button Group's
+     segment-adjacency treatment: adjoining border-radius, -ml-px seam);
+     the second segment opens the ratified Dropdown Menu panel. */
+  .split-button {
+    @apply inline-flex rounded-md shadow-sm;
+  }
+  .split-button-primary {
+    @apply inline-flex items-center rounded-l-md bg-brand-dark px-4 py-2 text-sm
+      font-semibold text-white hover:shadow-md active:scale-[0.98]
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand disabled:opacity-50 disabled:cursor-not-allowed
+      transition-[box-shadow,transform] duration-150;
+  }
+  .split-button-toggle {
+    @apply -ml-px inline-flex items-center rounded-r-md border-l border-brand
+      bg-brand-dark px-2 py-2 text-white hover:shadow-md active:scale-[0.98]
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand disabled:opacity-50 disabled:cursor-not-allowed
+      transition-[box-shadow,transform] duration-150;
+  }
+
   .popover-panel {
     @apply w-72 rounded-md border border-neutral-300 bg-neutral-50 p-4 shadow-lg;
     position-try-fallbacks: flip-block, flip-inline;
@@ -842,5 +896,139 @@
        swatches were invisible despite CSSOM correctly setting each
        one's background-color. */
     @apply inline-block h-6 w-6 rounded-full;
+  }
+
+  /* Data-display micro-components (feature 023 US3) — Avatar Group,
+     Highlight, Code, ColorSwatch. All reuse already-ratified tokens
+     (Avatar sizing, Kbd's font-mono, Combobox's <mark> treatment,
+     the sr-only utility) — zero new design tokens (spec.md SC-004). */
+
+  /* Avatar Group — a row of existing .avatar-* elements with
+     negative-margin overlap; a ring in the page-background token keeps
+     overlapping avatars visually distinct. The last slot may be a
+     .avatar-fallback-styled "+N" chip (built in markup, no new class). */
+  .avatar-group {
+    @apply flex items-center;
+  }
+  .avatar-group > * {
+    @apply ring-2 ring-neutral-50;
+  }
+  .avatar-group > * + * {
+    @apply -ml-2;
+  }
+
+  /* Highlight — reuses Combobox's exact <mark> match treatment rather
+     than introducing a new highlight/background color token. */
+  .highlight mark {
+    @apply bg-transparent font-semibold text-neutral-900;
+  }
+
+  /* Code — shares Kbd's font-mono token, sized/colored for code display
+     (distinct from Kbd's keyboard-input semantics). */
+  .code-inline {
+    @apply rounded-sm bg-neutral-100 px-1.5 py-0.5 font-mono text-sm text-neutral-900;
+  }
+  .code-block {
+    @apply block w-full overflow-x-auto rounded-md bg-neutral-100 p-4 font-mono
+      text-sm text-neutral-900;
+  }
+
+  /* ColorSwatch — inline-block so the <span> honors width/height (same
+     lesson as .theme-card-swatch); the background-color is set inline
+     per-instance (caller-supplied, unbounded). An inset ring keeps light
+     colors visible; the accessible name comes from an adjacent .sr-only
+     label, never hue alone (WCAG use-of-color). */
+  .color-swatch {
+    @apply inline-block h-6 w-6 rounded-md ring-1 ring-inset ring-neutral-300;
+  }
+
+  /* Feature 023: Component Catalog Expansion — Navigation & Disclosure
+     Utilities (US4, contracts/023-component-catalog-expansion/
+     nav-utility.contract.md). Zero new tokens: NavLink mirrors Sidebar's
+     active-item convention verbatim, Anchor reuses the ratified brand-dark
+     link token, Collapse/Spoiler reuse Accordion's native <details>
+     treatment. */
+
+  /* NavLink — reuses Sidebar's exact active-item convention (research.md
+     R6) but under a standalone class name for use outside a Sidebar. The
+     @apply rules are byte-identical to .sidebar-item/.sidebar-item-light/
+     .sidebar-item[aria-current] so the computed result is pixel-identical
+     to Sidebar's active item. */
+  .nav-link {
+    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium
+      transition-colors duration-150 focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand;
+  }
+  .nav-link-light {
+    @apply text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200;
+  }
+  .nav-link[aria-current="page"] {
+    @apply bg-brand-dark text-white hover:bg-brand-dark active:bg-brand-dark;
+  }
+
+  /* Anchor — styled inline link primitive reusing the ratified brand-dark
+     link token (the same token .back-link/.demo-link use; the contrast
+     audit only verifies text-brand-dark, not text-brand, on bg-neutral-50).
+     Hover toggles the underline off rather than shifting hue, keeping the
+     AAA-verified text color fixed while still declaring a designed hover
+     state (Principle V). */
+  .anchor {
+    @apply text-brand-dark underline hover:no-underline active:text-brand-dark
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand rounded-sm;
+  }
+
+  /* Collapse — a single, standalone native <details> disclosure (distinct
+     from Accordion's grouped/mutually-exclusive multi-item behavior). Reuses
+     Accordion's exact visual treatment; NOT named `.collapse` because that
+     is a built-in Tailwind visibility utility (visibility: collapse) that
+     would win in the later utilities layer and hide the element. */
+  .collapse-item {
+    @apply rounded-md border border-neutral-200;
+  }
+  .collapse-trigger {
+    @apply flex w-full items-center justify-between gap-4 px-4 py-3 text-left
+      text-sm font-medium text-neutral-900 cursor-pointer list-none
+      hover:text-neutral-700 active:text-neutral-600
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .collapse-chevron {
+    /* text-neutral-500, not -400 — see .accordion-chevron's identical
+       feature 017 contrast-audit comment. */
+    @apply h-5 w-5 shrink-0 text-neutral-500 transition-transform
+      duration-200 group-open:rotate-180;
+  }
+  .collapse-content {
+    @apply px-4 pb-4 text-sm text-neutral-600;
+  }
+
+  /* Spoiler — Collapse's native-<details> mechanism plus a pre-open
+     truncation measurement. Because a closed <details> renders ONLY its
+     <summary>, the truncated preview lives INSIDE the summary and is
+     line-clamped while closed, unclamped (group-open) while open. A tiny
+     script (src/scripts/collapse.js) measures the clamped content and sets
+     data-truncatable="false" when nothing overflows, which hides the
+     Show more/less control entirely (spec.md US4 edge case). */
+  .spoiler-summary {
+    @apply block cursor-pointer list-none rounded-sm
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .spoiler[data-truncatable="false"] .spoiler-summary {
+    @apply cursor-default;
+  }
+  .spoiler-content {
+    @apply text-sm text-neutral-600 line-clamp-3 group-open:line-clamp-none;
+  }
+  .spoiler[data-truncatable="false"] .spoiler-content {
+    @apply line-clamp-none;
+  }
+  .spoiler-toggle {
+    @apply mt-2 inline-flex text-sm font-medium text-brand-dark;
+  }
+  .spoiler[data-truncatable="false"] .spoiler-toggle {
+    @apply hidden;
   }
 }
