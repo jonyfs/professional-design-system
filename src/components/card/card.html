@@ -6,14 +6,26 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self';" />
   <title>Card — Professional Design System</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <script type="module" src="/src/scripts/theme-switcher.js"></script>
 </head>
 <body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
   <a href="/index.html" class="back-link">← Back to gallery</a>
   <h1 class="mt-4 text-2xl font-bold text-neutral-900">Card</h1>
   <p class="mt-2 max-w-md text-sm text-neutral-600">
     Zero-JavaScript content container — border + shadow for visual
     separation, optional hover elevation.
   </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
 
   <div class="mt-8 flex flex-wrap gap-6">
     <div data-testid="card-default" class="card max-w-sm">
@@ -48,5 +60,6 @@
       </div>
     </div>
   </div>
+  <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
 </body>
 </html>

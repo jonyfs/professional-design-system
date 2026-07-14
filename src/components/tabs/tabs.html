@@ -6,14 +6,26 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
   <title>Tabs — Professional Design System</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <script type="module" src="/src/scripts/theme-switcher.js"></script>
 </head>
 <body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
   <a href="/index.html" class="back-link">← Back to gallery</a>
   <h1 class="mt-4 text-2xl font-bold text-neutral-900">Tabs</h1>
   <p class="mt-2 max-w-md text-sm text-neutral-600">
     WAI-ARIA Tabs pattern — roving tabindex, Left/Right/Home/End arrow-key
     navigation.
   </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
 
   <div class="mt-8 max-w-lg" data-testid="tabs" data-tabs>
     <div role="tablist" aria-label="Product information" class="tabs-list">
@@ -85,5 +97,6 @@
     import { initTabs } from "/src/scripts/tabs.js";
     initTabs();
   </script>
+  <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
 </body>
 </html>

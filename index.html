@@ -14,15 +14,119 @@
 <body class="page-shell">
   <header class="border-b border-neutral-200 px-6 py-8">
     <h1 class="text-2xl font-bold text-neutral-900">Professional Design System</h1>
-    <p class="mt-2 max-w-2xl text-sm text-neutral-600">
-      Primitive components built exclusively on the semantic tokens ratified in
-      <code class="text-neutral-700">.specify/memory/constitution.md</code> (v1.5.0).
-      Every component below is also a standalone, independently testable page —
-      open it directly to copy its markup.
-    </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
   </header>
 
-  <main class="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 py-10 sm:grid-cols-2">
+  <section class="border-b border-neutral-200 bg-neutral-50 px-6 py-10">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-lg font-semibold text-neutral-900">What this catalog actually ships</h2>
+      <dl class="mt-4 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div>
+          <dt class="text-3xl font-bold text-brand-dark">78</dt>
+          <dd class="mt-1 text-sm text-neutral-600">shipped components</dd>
+        </div>
+        <div>
+          <dt class="text-3xl font-bold text-brand-dark">2</dt>
+          <dd class="mt-1 text-sm text-neutral-600">surfaces per component — zero-JS static HTML and React, identical behavior</dd>
+        </div>
+        <div>
+          <dt class="text-3xl font-bold text-brand-dark">AAA</dt>
+          <dd class="mt-1 text-sm text-neutral-600">WCAG contrast target, structural — not a checkbox</dd>
+        </div>
+        <div>
+          <dt class="text-3xl font-bold text-brand-dark">40+</dt>
+          <dd class="mt-1 text-sm text-neutral-600">curated themes, re-colored live across every page</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <nav aria-label="Jump to category" class="border-b border-neutral-200 px-6 py-3">
+    <div class="mx-auto flex max-w-5xl flex-wrap gap-1">
+        <a href="#app-nav" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Application & Navigation</a>
+        <a href="#forms" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Forms, Validation & Inputs</a>
+        <a href="#data" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Data Display & Listings</a>
+        <a href="#overlays" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Overlays, Modals & Feedback</a>
+        <a href="#nav-disc" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Navigation & Disclosure</a>
+        <a href="#adv-forms" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Advanced Forms & Interaction</a>
+        <a href="#composed" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Composed Examples</a>
+        <a href="#theming" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Theming</a>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-5xl space-y-12 px-6 py-10">
+    <section id="app-nav" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Application & Navigation</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Breadcrumbs</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Zero-JavaScript ancestor trail with a non-interactive current page.
+      </p>
+      <a href="/src/components/breadcrumbs/breadcrumbs.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Pagination</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Zero-JavaScript page navigation with genuinely-disabled boundaries.
+      </p>
+      <a href="/src/components/pagination/pagination.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Sidebar</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Light/dark vertical navigation, both AAA-verified independently.
+      </p>
+      <a href="/src/components/sidebar/sidebar.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Navbar</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Sticky header with a zero-JavaScript native mobile menu.
+      </p>
+      <a href="/src/components/navbar/navbar.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Stepper</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Presentational multi-step progress indicator.
+      </p>
+      <a href="/src/components/stepper/stepper.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">NavLink</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Standalone navigation link reusing Sidebar's active-item treatment.
+      </p>
+      <a href="/src/components/nav-link/nav-link.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Anchor</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Styled inline link primitive using the ratified brand-dark link token.
+      </p>
+      <a href="/src/components/anchor/anchor.html" class="demo-link">View full demo →</a>
+    </section>
+      </div>
+    </section>
+
+    <section id="forms" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Forms, Validation & Inputs</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
     <section class="rounded-lg border border-neutral-200 p-6">
       <h2 class="text-lg font-semibold text-neutral-900">Button</h2>
       <p class="mt-1 text-sm text-neutral-600">
@@ -37,14 +141,6 @@
         Label, placeholder, focus, and inline-error states.
       </p>
       <a href="/src/components/text-input/text-input.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Badge</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Success, error, warning, and neutral status indicators.
-      </p>
-      <a href="/src/components/badge/badge.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
@@ -80,63 +176,206 @@
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Modal</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">Textarea</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Focus-trapped dialog with native &lt;dialog&gt; — Escape, backdrop, and
-        close-button dismissal.
+        Multi-line text input reusing Text Input's ratified pattern — vertical-only resize.
       </p>
-      <a href="/src/components/modal/modal.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/textarea/textarea.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Toast</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">Button Group</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Transient, non-modal notifications with <code>aria-live</code>
-        announcement and no focus theft.
+        Zero-JavaScript segmented control — native radio inputs styled as connected buttons.
       </p>
-      <a href="/src/components/toast/toast.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/button-group/button-group.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Slide-over</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">Slider</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Edge-anchored focus-trapped panel sharing Modal's exact native
-        &lt;dialog&gt; mechanism.
+        Native range input styled via accent-color, zero JavaScript.
       </p>
-      <a href="/src/components/slide-over/slide-over.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/slider/slider.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Breadcrumbs</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">File Input</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Zero-JavaScript ancestor trail with a non-interactive current page.
+        Styled native file picker with a drop-zone visual treatment.
       </p>
-      <a href="/src/components/breadcrumbs/breadcrumbs.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/file-input/file-input.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Accordion</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">ColorPicker/ColorInput</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Native &lt;details&gt;/&lt;summary&gt; disclosure, independent or
-        single-open-at-a-time.
+        Native color-selection form control, zero JavaScript.
       </p>
-      <a href="/src/components/accordion/accordion.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/color-input/color-input.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Tabs</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">CPF Input</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        WAI-ARIA Tabs pattern with roving tabindex and arrow-key navigation.
+        Brazilian individual taxpayer number — formatted as-you-type, official check-digit validation.
       </p>
-      <a href="/src/components/tabs/tabs.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/cpf-input/cpf-input.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Dropdown Menu</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">CNPJ Input</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Native Popover API for light-dismiss, with keyboard roving focus.
+        Brazilian company taxpayer number — formatted as-you-type, official check-digit validation.
       </p>
-      <a href="/src/components/dropdown-menu/dropdown-menu.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/cnpj-input/cnpj-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">CEP Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Brazilian postal code — formatted as-you-type, shape validation.
+      </p>
+      <a href="/src/components/cep-input/cep-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Brazilian Phone Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Auto-detects landline vs. mobile formatting from the digit count.
+      </p>
+      <a href="/src/components/phone-br-input/phone-br-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Título de Eleitor Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Brazilian voter registration number — official TSE check-digit validation.
+      </p>
+      <a href="/src/components/titulo-eleitor-input/titulo-eleitor-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">PIS/PASEP Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Brazilian PIS/PASEP/NIT number — formatted as-you-type, official check-digit validation.
+      </p>
+      <a href="/src/components/pis-pasep-input/pis-pasep-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Vehicle Plate Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Recognizes both the legacy (AAA-0000) and Mercosul (AAA0A00) patterns.
+      </p>
+      <a href="/src/components/vehicle-plate-input/vehicle-plate-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">IBAN Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        International Bank Account Number — grouped display, ISO 13616 mod-97 checksum.
+      </p>
+      <a href="/src/components/iban-input/iban-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Card Number Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Payment card number — 4-digit grouping, Luhn checksum validation.
+      </p>
+      <a href="/src/components/card-number-input/card-number-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">International Phone Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Country calling code prefix with overall-length validation per country.
+      </p>
+      <a href="/src/components/phone-intl-input/phone-intl-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Number Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Text Input's shell with +/- steppers and clamp-on-blur to min/max.
+      </p>
+      <a href="/src/components/number-input/number-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Password Input</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Text Input's shell with a show/hide toggle that preserves value and caret.
+      </p>
+      <a href="/src/components/password-input/password-input.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Multi Select</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Combobox's filter listbox extended to multiple selections with removable chips.
+      </p>
+      <a href="/src/components/multi-select/multi-select.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Action Icon</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Icon-only button variant with a mandatory accessible name and full state coverage.
+      </p>
+      <a href="/src/components/action-icon/action-icon.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Copy Button</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Copies text to the clipboard with temporary success and distinct failure states.
+      </p>
+      <a href="/src/components/copy-button/copy-button.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Split Button</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Primary action segment plus an attached Dropdown Menu of alternate actions.
+      </p>
+      <a href="/src/components/split-button/split-button.html" class="demo-link">View full demo →</a>
+    </section>
+      </div>
+    </section>
+
+    <section id="data" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Data Display & Listings</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border-2 border-brand-dark bg-brand-light/20 p-6 sm:col-span-2">
+      <h2 class="text-lg font-semibold text-neutral-900">Chart</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Line, Bar, Area, Pie/Donut, Radar, and Radial charts with a shared
+        tooltip/legend — React package only, no zero-JavaScript static
+        version (Recharts has no framework-independent output).
+      </p>
+      <a href="/src/components/chart/chart.html" class="demo-link">View full demo →</a>
+    
+      <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-brand-dark">Flagship — 11 Recharts chart types with live re-theming across 40+ curated presets.</p>
+    </section>
+
+    <section class="rounded-lg border-2 border-brand-dark bg-brand-light/20 p-6 sm:col-span-2">
+      <h2 class="text-lg font-semibold text-neutral-900">Data Table</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Sort, filter, paginate, multi-select with bulk actions, and opt-in CRUD.
+      </p>
+      <a href="/src/components/data-table/data-table.html" class="demo-link">View full demo →</a>
+    
+      <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-brand-dark">Flagship — Full CRUD, bulk actions, and sort/filter/paginate built from scratch on both surfaces.</p>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Badge</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Success, error, warning, and neutral status indicators.
+      </p>
+      <a href="/src/components/badge/badge.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
@@ -164,46 +403,6 @@
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Pagination</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Zero-JavaScript page navigation with genuinely-disabled boundaries.
-      </p>
-      <a href="/src/components/pagination/pagination.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Sidebar</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Light/dark vertical navigation, both AAA-verified independently.
-      </p>
-      <a href="/src/components/sidebar/sidebar.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Navbar</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Sticky header with a zero-JavaScript native mobile menu.
-      </p>
-      <a href="/src/components/navbar/navbar.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Combobox</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        From-scratch WAI-ARIA combobox with filter-as-you-type and a Popover-API listbox.
-      </p>
-      <a href="/src/components/combobox/combobox.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Command Palette</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Cmd/Ctrl+K global-shortcut action launcher reusing Modal's dialog chrome.
-      </p>
-      <a href="/src/components/command-palette/command-palette.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
       <h2 class="text-lg font-semibold text-neutral-900">Lists</h2>
       <p class="mt-1 text-sm text-neutral-600">
         Zero-JavaScript vertical list — read-only, whole-row-interactive, and with a trailing action.
@@ -217,14 +416,6 @@
         Zero-JavaScript semantic table — baseline, zebra-striped, and with a trailing action column.
       </p>
       <a href="/src/components/table/table.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Textarea</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Multi-line text input reusing Text Input's ratified pattern — vertical-only resize.
-      </p>
-      <a href="/src/components/textarea/textarea.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
@@ -252,67 +443,11 @@
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Tooltip</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Zero-JavaScript hover/focus label using CSS Anchor Positioning.
-      </p>
-      <a href="/src/components/tooltip/tooltip.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Progress</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Determinate and indeterminate completion indicator.
-      </p>
-      <a href="/src/components/progress/progress.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Button Group</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Zero-JavaScript segmented control — native radio inputs styled as connected buttons.
-      </p>
-      <a href="/src/components/button-group/button-group.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
       <h2 class="text-lg font-semibold text-neutral-900">Empty State</h2>
       <p class="mt-1 text-sm text-neutral-600">
         Compositional recipe for "no data yet" surfaces.
       </p>
       <a href="/src/components/empty-state/empty-state.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Popover</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Click-triggered floating panel of arbitrary content, reusing Dropdown Menu's mechanism.
-      </p>
-      <a href="/src/components/popover/popover.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Context Menu</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Right-click action menu positioned at the cursor.
-      </p>
-      <a href="/src/components/context-menu/context-menu.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Composed Example</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Textarea + Divider + Button Group + Tooltip composed on one real page (SC-003).
-      </p>
-      <a href="/src/components/composed-example/composed-example.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Spinner</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Zero-JavaScript rotating loading indicator, reduced-motion aware.
-      </p>
-      <a href="/src/components/spinner/spinner.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
@@ -340,30 +475,6 @@
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Slider</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Native range input styled via accent-color, zero JavaScript.
-      </p>
-      <a href="/src/components/slider/slider.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Stepper</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Presentational multi-step progress indicator.
-      </p>
-      <a href="/src/components/stepper/stepper.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">File Input</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Styled native file picker with a drop-zone visual treatment.
-      </p>
-      <a href="/src/components/file-input/file-input.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
       <h2 class="text-lg font-semibold text-neutral-900">Timeline</h2>
       <p class="mt-1 text-sm text-neutral-600">
         Vertical sequence of dated, actor-attributed events.
@@ -377,22 +488,6 @@
         Dashboard-style big number + label + trend composition.
       </p>
       <a href="/src/components/stat-card/stat-card.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">PinInput</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Segmented verification-code input with auto-advance and paste-splitting.
-      </p>
-      <a href="/src/components/pin-input/pin-input.html" class="demo-link">View full demo →</a>
-    </section>
-
-    <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">Dashboard Example</h2>
-      <p class="mt-1 text-sm text-neutral-600">
-        Stat Card + Indicator (015) composed with Avatar + Divider (006) on one real page (SC-003).
-      </p>
-      <a href="/src/components/dashboard-example/dashboard-example.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
@@ -412,6 +507,140 @@
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Avatar Group</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Stacked, overlapping avatars with a "+N" overflow chip past a set limit.
+      </p>
+      <a href="/src/components/avatar-group/avatar-group.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Highlight</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Wraps case-insensitive search-match substrings in &lt;mark&gt;.
+      </p>
+      <a href="/src/components/highlight/highlight.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Code</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Inline and block code display sharing Kbd's monospace token.
+      </p>
+      <a href="/src/components/code/code.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Color Swatch</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Caller-supplied color chip with a non-color-only accessible label.
+      </p>
+      <a href="/src/components/color-swatch/color-swatch.html" class="demo-link">View full demo →</a>
+    </section>
+      </div>
+    </section>
+
+    <section id="overlays" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Overlays, Modals & Feedback</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Modal</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Focus-trapped dialog with native &lt;dialog&gt; — Escape, backdrop, and
+        close-button dismissal.
+      </p>
+      <a href="/src/components/modal/modal.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Toast</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Transient, non-modal notifications with <code>aria-live</code>
+        announcement and no focus theft.
+      </p>
+      <a href="/src/components/toast/toast.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Slide-over</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Edge-anchored focus-trapped panel sharing Modal's exact native
+        &lt;dialog&gt; mechanism.
+      </p>
+      <a href="/src/components/slide-over/slide-over.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Tooltip</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Zero-JavaScript hover/focus label using CSS Anchor Positioning.
+      </p>
+      <a href="/src/components/tooltip/tooltip.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Progress</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Determinate and indeterminate completion indicator.
+      </p>
+      <a href="/src/components/progress/progress.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Spinner</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Zero-JavaScript rotating loading indicator, reduced-motion aware.
+      </p>
+      <a href="/src/components/spinner/spinner.html" class="demo-link">View full demo →</a>
+    </section>
+      </div>
+    </section>
+
+    <section id="nav-disc" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Navigation & Disclosure</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Accordion</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Native &lt;details&gt;/&lt;summary&gt; disclosure, independent or
+        single-open-at-a-time.
+      </p>
+      <a href="/src/components/accordion/accordion.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Tabs</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        WAI-ARIA Tabs pattern with roving tabindex and arrow-key navigation.
+      </p>
+      <a href="/src/components/tabs/tabs.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Dropdown Menu</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Native Popover API for light-dismiss, with keyboard roving focus.
+      </p>
+      <a href="/src/components/dropdown-menu/dropdown-menu.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Popover</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Click-triggered floating panel of arbitrary content, reusing Dropdown Menu's mechanism.
+      </p>
+      <a href="/src/components/popover/popover.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Context Menu</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Right-click action menu positioned at the cursor.
+      </p>
+      <a href="/src/components/context-menu/context-menu.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
       <h2 class="text-lg font-semibold text-neutral-900">Menubar</h2>
       <p class="mt-1 text-sm text-neutral-600">
         Horizontal, keyboard-navigable application menu bar with per-trigger dropdown panels.
@@ -420,11 +649,73 @@
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
-      <h2 class="text-lg font-semibold text-neutral-900">ColorPicker/ColorInput</h2>
+      <h2 class="text-lg font-semibold text-neutral-900">Collapse</h2>
       <p class="mt-1 text-sm text-neutral-600">
-        Native color-selection form control, zero JavaScript.
+        A single, independent collapsible built on native &lt;details&gt; — opening
+        one never closes another.
       </p>
-      <a href="/src/components/color-input/color-input.html" class="demo-link">View full demo →</a>
+      <a href="/src/components/collapse/collapse.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Spoiler</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Truncates long text with a Show more/Show less control; short content shows
+        no control at all.
+      </p>
+      <a href="/src/components/spoiler/spoiler.html" class="demo-link">View full demo →</a>
+    </section>
+      </div>
+    </section>
+
+    <section id="adv-forms" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Advanced Forms & Interaction</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border-2 border-brand-dark bg-brand-light/20 p-6 sm:col-span-2">
+      <h2 class="text-lg font-semibold text-neutral-900">Command Palette</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Cmd/Ctrl+K global-shortcut action launcher reusing Modal's dialog chrome.
+      </p>
+      <a href="/src/components/command-palette/command-palette.html" class="demo-link">View full demo →</a>
+    
+      <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-brand-dark">Flagship — From-scratch WAI-ARIA action launcher with a global ⌘K/Ctrl+K shortcut.</p>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Combobox</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        From-scratch WAI-ARIA combobox with filter-as-you-type and a Popover-API listbox.
+      </p>
+      <a href="/src/components/combobox/combobox.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">PinInput</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Segmented verification-code input with auto-advance and paste-splitting.
+      </p>
+      <a href="/src/components/pin-input/pin-input.html" class="demo-link">View full demo →</a>
+    </section>
+      </div>
+    </section>
+
+    <section id="composed" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Composed Examples</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Composed Example</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Textarea + Divider + Button Group + Tooltip composed on one real page (SC-003).
+      </p>
+      <a href="/src/components/composed-example/composed-example.html" class="demo-link">View full demo →</a>
+    </section>
+
+    <section class="rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-lg font-semibold text-neutral-900">Dashboard Example</h2>
+      <p class="mt-1 text-sm text-neutral-600">
+        Stat Card + Indicator (015) composed with Avatar + Divider (006) on one real page (SC-003).
+      </p>
+      <a href="/src/components/dashboard-example/dashboard-example.html" class="demo-link">View full demo →</a>
     </section>
 
     <section class="rounded-lg border border-neutral-200 p-6">
@@ -434,14 +725,28 @@
       </p>
       <a href="/src/components/settings-example/settings-example.html" class="demo-link">View full demo →</a>
     </section>
+      </div>
+    </section>
 
-    <section class="rounded-lg border border-neutral-200 p-6">
+    <section id="theming" class="scroll-mt-6">
+      <h2 class="text-xl font-bold text-neutral-900">Theming</h2>
+      <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section class="rounded-lg border-2 border-brand-dark bg-brand-light/20 p-6 sm:col-span-2">
       <h2 class="text-lg font-semibold text-neutral-900">Theme Gallery</h2>
       <p class="mt-1 text-sm text-neutral-600">
         Curated theme presets — select one to restyle every component instantly.
       </p>
       <a href="/src/components/theme-gallery/theme-gallery.html" class="demo-link">View full demo →</a>
+    
+      <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-brand-dark">Flagship — 40+ curated themes, applied instantly and persisted across every page.</p>
+    </section>
+      </div>
     </section>
   </main>
+
+  <!-- Doesn't need to run before first paint like theme-switcher.js does
+       (contracts/gallery-theme-selector.contract.md) — only needs the
+       <select> markup above and the already-applied data-theme to exist. -->
+  <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
 </body>
 </html>

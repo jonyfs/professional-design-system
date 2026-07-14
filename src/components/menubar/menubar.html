@@ -6,8 +6,10 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
   <title>Menubar — Professional Design System</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <script type="module" src="/src/scripts/theme-switcher.js"></script>
 </head>
 <body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
   <a href="/index.html" class="back-link">← Back to gallery</a>
   <h1 class="mt-4 text-2xl font-bold text-neutral-900">Menubar</h1>
   <p class="mt-2 max-w-md text-sm text-neutral-600">
@@ -15,6 +17,16 @@
     Menu's existing panel mechanics (reused completely unmodified) with a
     new roving-tabindex layer between top-level triggers.
   </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
 
   <div class="menubar mt-8" role="menubar" aria-label="Application menu" data-menubar data-testid="menubar">
     <div class="relative inline-block">
@@ -87,5 +99,6 @@
     initDropdownMenus();
     initMenubar();
   </script>
+  <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
 </body>
 </html>

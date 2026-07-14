@@ -1,5 +1,16 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page, type Locator } from "@playwright/test";
 import { expectNoA11yViolations } from "./a11y-helper";
+
+// The site-wide theme selector (feature 025) adds its own tab stop between
+// the back-link and each page's component demo, so a single Tab press is no
+// longer a safe assumption — retry like button.spec.ts/select.spec.ts do.
+async function tabUntilFocused(page: Page, target: Locator, maxPresses = 5) {
+  for (let i = 0; i < maxPresses; i++) {
+    await page.keyboard.press("Tab");
+    if (await target.evaluate((el) => el === document.activeElement)) return;
+  }
+  throw new Error(`Target not focused after ${maxPresses} Tab presses`);
+}
 
 test.describe("ColorPicker/ColorInput", () => {
   test.beforeEach(async ({ page }) => {
@@ -22,7 +33,7 @@ test.describe("ColorPicker/ColorInput", () => {
     test.skip(browserName === "webkit", "WebKit excludes input[type=color] from the Tab sequence");
     const input = page.getByTestId("color-input-accent");
     await page.getByRole("link", { name: "← Back to gallery" }).focus();
-    await page.keyboard.press("Tab");
+    await tabUntilFocused(page, input);
     await expect(input).toBeFocused();
   });
 
