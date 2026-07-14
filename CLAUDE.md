@@ -1,7 +1,7 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan
-at specs/017-curated-theme-presets/plan.md
+at specs/027-claude-design-inspired-themes/plan.md
 <!-- SPECKIT END -->
 
 ## graphify
