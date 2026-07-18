@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-18)
 
 ## Corpus Check
-- 857 files · ~2,420,354 words
+- 874 files · ~2,409,398 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5253 nodes · 5456 edges · 608 communities (490 shown, 118 thin omitted)
+- 5380 nodes · 5579 edges · 621 communities (503 shown, 118 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9bb00db8`
+- Built from commit: `964bbd83`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -516,6 +516,15 @@
 - rewrite-base-path.mjs
 - Specification Quality Checklist: Material Catalog Layout
 - Specification Quality Checklist: Speed Up CI Test Suite
+- Implementation Plan: Flagship App Showcase
+- devDependencies
+- sample-data.ts
+- compilerOptions
+- Tasks: Flagship App Showcase
+- Data Model: Flagship App Showcase
+- Contract: Flagship App Showcase
+- Quickstart: Flagship App Showcase
+- Research: Flagship App Showcase
 
 ## God Nodes (most connected - your core abstractions)
 1. `expectNoA11yViolations()` - 100 edges
@@ -523,7 +532,7 @@
 3. `useChartColors()` - 24 edges
 4. `expectNoConsoleErrors()` - 24 edges
 5. `usePrefersReducedMotion()` - 22 edges
-6. `Component Catalog & Tailwind UI Patterns` - 19 edges
+6. `Component Catalog & Tailwind UI Patterns` - 20 edges
 7. `useSeriesVisibility()` - 17 edges
 8. `Component candidates (105 total, grouped by category)` - 15 edges
 9. `ValidationResult` - 14 edges
@@ -548,7 +557,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (608 total, 118 thin omitted)
+## Communities (621 total, 118 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -564,7 +573,7 @@ Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Discl
 
 ### Community 3 - "Agent Context Extension"
 Cohesion: 0.04
-Nodes (43): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+35 more)
+Nodes (44): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+36 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -2082,8 +2091,44 @@ Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness,
 Cohesion: 0.11
 Nodes (16): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Speed Up CI Test Suite, Assumptions, Edge Cases, Feature Specification: Speed Up CI Test Suite (+8 more)
 
+### Community 608 - "Implementation Plan: Flagship App Showcase"
+Cohesion: 0.07
+Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Flagship App Showcase, Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
+
+### Community 609 - "devDependencies"
+Cohesion: 0.10
+Nodes (19): dependencies, @professional-design-system/react, react, react-dom, devDependencies, autoprefixer, postcss, tailwindcss (+11 more)
+
+### Community 610 - "sample-data.ts"
+Cohesion: 0.17
+Nodes (15): App(), BADGE_VARIANT, parseMetric(), ChartPoint, chartSeries, Metric, metrics, Notification (+7 more)
+
+### Community 611 - "compilerOptions"
+Cohesion: 0.14
+Nodes (13): compilerOptions, allowJs, esModuleInterop, jsx, lib, module, moduleResolution, noEmit (+5 more)
+
+### Community 612 - "Tasks: Flagship App Showcase"
+Cohesion: 0.14
+Nodes (13): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites), Phase 3: User Story 1 - See the design system's real power in one realistic screen (Priority: P1) 🎯 MVP (+5 more)
+
+### Community 613 - "Data Model: Flagship App Showcase"
+Cohesion: 0.25
+Nodes (7): Chart Series Point, Data Model: Flagship App Showcase, Metric (stat card), Notification, Organization (for ContextSwitcher), Table Row (DataTable), Team Member
+
+### Community 614 - "Contract: Flagship App Showcase"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Flagship App Showcase, `deploy-pages.yml` addition (build job, after the main site's build), `index.html` addition (homepage link, FR-006), Page composition (`showcase/src/App.tsx`), `showcase/vite.config.ts`
+
+### Community 615 - "Quickstart: Flagship App Showcase"
+Cohesion: 0.29
+Nodes (6): Full regression, Prerequisites, Quickstart: Flagship App Showcase, Validate locally, Validate the deploy, Validate the homepage link
+
+### Community 616 - "Research: Flagship App Showcase"
+Cohesion: 0.29
+Nodes (6): R1. Surface decision — new `showcase/` app, not `tests/react-harness/`, R2. Component selection for a realistic SaaS dashboard (>= 15, spec.md SC-001), R3. Sample data shape, R4. Deploy integration, R5. Chart's broken link, found while researching this feature, Research: Flagship App Showcase
+
 ## Knowledge Gaps
-- **3132 isolated node(s):** `Content Quality`, `Requirement Completeness`, `Feature Readiness`, `Notes`, `User Story 1 - Faster feedback on every push to main (Priority: P1)` (+3127 more)
+- **3215 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+3210 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **118 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -2092,8 +2137,8 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `expectNoA11yViolations()` connect `a11y-helper.ts` to `react-catalog-expansion-buttons.spec.ts`, `feature-015-csp-sweep.spec.ts`, `color-input.spec.ts`, `button.spec.ts`, `context-menu.spec.ts`, `react-select.spec.ts`, `select.spec.ts`, `react-catalog-expansion-nav-utility.spec.ts`, `NavLink.tsx`, `catalog-expansion-buttons.spec.ts`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **What connects `Content Quality`, `Requirement Completeness`, `Feature Readiness` to the rest of the system?**
-  _3132 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
+  _3215 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
@@ -2101,6 +2146,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.044444444444444446 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._

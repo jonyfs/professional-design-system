@@ -606,5 +606,18 @@
   "604": "rewrite-base-path.mjs",
   "605": "Specification Quality Checklist: Material Catalog Layout",
   "606": "menubar.spec.ts",
-  "607": "Specification Quality Checklist: Speed Up CI Test Suite"
+  "607": "Specification Quality Checklist: Speed Up CI Test Suite",
+  "608": "Implementation Plan: Flagship App Showcase",
+  "609": "devDependencies",
+  "610": "sample-data.ts",
+  "611": "compilerOptions",
+  "612": "Tasks: Flagship App Showcase",
+  "613": "Data Model: Flagship App Showcase",
+  "614": "Contract: Flagship App Showcase",
+  "615": "Quickstart: Flagship App Showcase",
+  "616": "Research: Flagship App Showcase",
+  "617": "postcss.config.js",
+  "618": "tailwind.config.ts",
+  "619": "vite.config.ts",
+  "620": "flagship-showcase.spec.ts"
 }

@@ -605,5 +605,6 @@
   "603": "gallery-showcase.spec.ts",
   "604": "rewrite-base-path.mjs",
   "605": "Specification Quality Checklist: Material Catalog Layout",
-  "606": "menubar.spec.ts"
+  "606": "menubar.spec.ts",
+  "607": "Specification Quality Checklist: Speed Up CI Test Suite"
 }
