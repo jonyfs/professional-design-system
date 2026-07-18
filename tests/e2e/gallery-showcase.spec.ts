@@ -34,6 +34,8 @@ test.describe("Categorized, navigable gallery (US2)", () => {
     ["adv-forms", "Advanced Forms & Interaction"],
     ["composed", "Composed Examples"],
     ["theming", "Theming"],
+    ["layout", "Layout & Structure"],
+    ["consent-messaging", "Consent & System Messaging"],
   ] as const;
 
   for (const [id, label] of CATEGORIES) {
@@ -43,9 +45,9 @@ test.describe("Categorized, navigable gallery (US2)", () => {
     });
   }
 
-  test("all 78 components remain present and reachable (SC-002)", async ({ page }) => {
+  test("all 114 components remain present and reachable (SC-002)", async ({ page }) => {
     const links = page.locator('a.demo-link, a[class*="demo-link"]');
-    await expect(links).toHaveCount(78);
+    await expect(links).toHaveCount(114);
   });
 
   test("flagship components (Data Table, Chart, Command Palette, Theme Gallery) are visually distinct", async ({

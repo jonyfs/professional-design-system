@@ -52,6 +52,34 @@ export const colors = {
   },
 };
 
+// Fixed, provider-mandated brand identifiers (feature 035, research.md
+// R2 / plan.md Complexity Tracking). Deliberately NOT part of `colors`
+// above — every value there is a CSS-custom-property indirection that
+// swaps per `[data-theme]`; these must render identically regardless
+// of the host app's selected curated theme, since they represent
+// externally mandated brand marks (Google's "G", Facebook's blue,
+// etc.), not this catalog's own swappable palette. Plain hex literals,
+// consumed directly by SocialLoginGroup's icon components (SVG `fill`
+// attributes) on both surfaces — never through a `bg-*`/`text-*`
+// Tailwind class, since brand color is confined to the icon glyph only
+// (research.md R1); the button surface itself always uses the existing
+// `neutral-50`/`neutral-900` (or, for Apple/GitHub's optional
+// monochrome appearance, the existing `neutral-900`/white) semantic
+// tokens, never a provider-specific fill.
+export const providerBrand = {
+  google: { blue: "#4285F4", green: "#34A853", yellow: "#FBBC05", red: "#EA4335" },
+  apple: { black: "#000000", white: "#FFFFFF" },
+  facebook: { blue: "#1877F2" },
+  microsoft: { red: "#F25022", green: "#7FBA00", blue: "#00A4EF", yellow: "#FFB900" },
+  github: { black: "#171515" },
+  // Example custom-provider accents used by this catalog's own demo/
+  // preview content (research.md R7) — not a governed preset; a real
+  // consumer of the custom-entry API supplies their own `color`.
+  instagram: "#E1306C",
+  tiktok: "#000000",
+  discord: "#5865F2",
+} as const;
+
 export const borderRadius = {
   sm: "0.25rem", // 4px — inputs/checkboxes/small tags
   md: "0.5rem", // 8px — buttons/dropdowns/secondary navigation

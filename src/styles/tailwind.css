@@ -1031,4 +1031,360 @@
   .spoiler[data-truncatable="false"] .spoiler-toggle {
     @apply hidden;
   }
+
+  /* Feature 028: Layout & Structure Primitives — Spacing (US1,
+     contracts/spacing-primitives.contract.md) */
+  .stack {
+    @apply flex flex-col;
+  }
+  .stack-xs { @apply space-y-2; }
+  .stack-sm { @apply space-y-4; }
+  .stack-md { @apply space-y-6; }
+  .stack-lg { @apply space-y-8; }
+
+  /* Named .group-row, not .group — Tailwind's own built-in `.group`
+     utility (group-hover:/group-focus: state scoping) already claims
+     that class name; colliding would silently break any component
+     using group-hover inside a Stack/Group composition (the same
+     class of bug as .collapse vs Tailwind's visibility:collapse,
+     feature 023). */
+  .group-row {
+    @apply flex flex-row flex-wrap items-center;
+  }
+  .group-row-xs { @apply gap-2; }
+  .group-row-sm { @apply gap-4; }
+  .group-row-md { @apply gap-6; }
+  .group-row-lg { @apply gap-8; }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  /* Feature 028: Layout & Structure Primitives — Surface (US2,
+     contracts/surface-primitives.contract.md) */
+
+  /* Named .container-page, not .container — Tailwind ships its own
+     built-in breakpoint-keyed max-width utility under that name;
+     reusing it would silently change behavior for any page relying
+     on Tailwind's default .container semantics. */
+  .container-page {
+    @apply mx-auto max-w-5xl px-6;
+  }
+
+  /* Same border/radius/background as .card, deliberately without its
+     shadow or mandated p-6 — a lighter-weight surface, not a Card
+     variant. */
+  .paper {
+    @apply rounded-lg border border-neutral-200 bg-neutral-50;
+  }
+
+  /* Feature 028: Layout & Structure Primitives — Grid (US3,
+     contracts/grid-primitives.contract.md). Breakpoint rule
+     (research.md R3): 1 column below sm, 2 at sm, configured count
+     at lg+. */
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-6;
+  }
+  .grid-responsive.grid-cols-2-lg { @apply sm:grid-cols-2; }
+  .grid-responsive.grid-cols-3-lg { @apply sm:grid-cols-2 lg:grid-cols-3; }
+  .grid-responsive.grid-cols-4-lg { @apply sm:grid-cols-2 lg:grid-cols-4; }
+
+  /* SimpleGrid: identical responsive rule, no per-item span control —
+     a thin, deliberately-constrained sibling of grid-responsive. */
+  .simple-grid {
+    @apply grid grid-cols-1 gap-6;
+  }
+  .simple-grid.grid-cols-2-lg { @apply sm:grid-cols-2; }
+  .simple-grid.grid-cols-3-lg { @apply sm:grid-cols-2 lg:grid-cols-3; }
+  .simple-grid.grid-cols-4-lg { @apply sm:grid-cols-2 lg:grid-cols-4; }
+
+  .flex-row-primitive { @apply flex flex-row flex-wrap gap-4; }
+  .flex-col-primitive { @apply flex flex-col gap-4; }
+
+  /* Feature 028: Layout & Structure Primitives — AppShell (US4,
+     contracts/app-shell.contract.md). .app-shell-body's
+     flex-col lg:flex-row IS the entire mobile-reflow mechanism
+     (research.md R5's correction: Sidebar has no existing
+     mobile-collapse mechanism to reuse, verified directly against
+     its source — so this is a pure CSS stack, not a toggleable
+     drawer). */
+  .app-shell {
+    @apply flex min-h-screen flex-col;
+  }
+  .app-shell-body {
+    @apply flex flex-1 flex-col lg:flex-row;
+  }
+  .app-shell-main {
+    @apply flex-1 overflow-y-auto p-6;
+  }
+
+  /* Feature 029: Feedback Primitives — Circular Progress (US1,
+     contracts/circular-progress.contract.md). Dynamic per-instance
+     stroke-dashoffset is set via CSSOM in src/scripts/circular-progress.js
+     (this project's CSP style-src 'self' blocks inline style="..."
+     attributes — the same pattern src/scripts/progress.js already
+     uses for Progress's fill width). */
+  .circular-progress {
+    @apply inline-block;
+  }
+  .circular-progress-track {
+    @apply stroke-neutral-200;
+    fill: none;
+  }
+  .circular-progress-fill {
+    @apply stroke-brand;
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 300ms ease-out;
+  }
+  .circular-progress-fill-success { @apply stroke-success; }
+  .circular-progress-fill-warning { @apply stroke-warning; }
+  .circular-progress-fill-error { @apply stroke-error; }
+  .circular-progress-fill-info { @apply stroke-info; }
+  .semi-circle-progress {
+    @apply inline-block;
+  }
+
+  /* Feature 029: Feedback Primitives — Notification Center (US2,
+     contracts/notification-center.contract.md). Reuses Indicator's
+     .indicator-wrapper/.indicator and Dropdown Menu's native Popover
+     API mechanics verbatim — no new interaction pattern. */
+  .notification-center-trigger {
+    @apply relative inline-flex h-10 w-10 items-center justify-center
+      rounded-md text-neutral-600 hover:bg-neutral-100
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .notification-center-panel {
+    @apply w-80 rounded-lg border border-neutral-200 bg-neutral-50 p-2 shadow-lg;
+  }
+  .notification-center-item {
+    @apply flex flex-col gap-1 rounded-md p-3 text-sm;
+  }
+  .notification-center-item-unread {
+    @apply bg-brand-light/20;
+  }
+  .notification-center-empty {
+    @apply p-6 text-center text-sm text-neutral-600;
+  }
+
+  /* Feature 029: Feedback Primitives — Password Strength Meter (US3,
+     contracts/password-strength-meter.contract.md). Reuses Progress's
+     existing .progress-track/.progress-fill verbatim; only the
+     severity color mapping is new. */
+  .password-strength-meter-fill[data-level="weak"] { @apply bg-error; }
+  .password-strength-meter-fill[data-level="fair"] { @apply bg-warning; }
+  .password-strength-meter-fill[data-level="strong"] { @apply bg-success; }
+
+  /* Feature 032: Overlays — Affix (US1, contracts/affix.contract.md).
+     A general-purpose scroll-threshold pinning primitive, distinct
+     from Back-to-Top's own one-off inline logic (feature 031). */
+  .affix-pinned {
+    @apply fixed top-0 left-0 right-0 z-40;
+  }
+
+  /* LoadingOverlay (US2, contracts/loading-overlay.contract.md) —
+     reuses Spinner's existing .spinner/.spinner-lg verbatim; only the
+     container-scoped positioned overlay is new. */
+  .loading-overlay-container {
+    @apply relative;
+  }
+  .loading-overlay {
+    @apply absolute inset-0 z-10 flex items-center justify-center bg-neutral-50/75;
+  }
+
+  /* Bottom Sheet (US3, contracts/bottom-sheet.contract.md) — reuses
+     Slide-over's exact native <dialog> mechanism (overlay.js) verbatim;
+     only the anchor-edge/max-height geometry differs. */
+  /* top: auto; margin: 0 reset the native <dialog> UA stylesheet's own
+     inset: 0 / margin: auto defaults (the same class of fix
+     .dropdown-menu-panel/.popover-panel already needed) — found by
+     running this against a live browser, not assumed: with top left
+     at its UA default of 0 alongside this class's own bottom-0, the
+     dialog was fully constrained between top:0 and bottom:0 with no
+     explicit height, so the UA's auto margins centered it vertically
+     instead of anchoring it to the bottom edge. */
+  .bottom-sheet-dialog {
+    @apply p-0 border-0 fixed inset-x-0 bottom-0 w-full max-h-[80vh];
+    top: auto;
+    margin: 0;
+  }
+  .bottom-sheet-dialog::backdrop {
+    background-color: theme("colors.neutral.500 / 75%");
+  }
+  .bottom-sheet-panel {
+    @apply relative flex max-h-[80vh] w-full flex-col overflow-y-auto
+      bg-neutral-50 shadow-xl p-6 transform transition ease-in-out
+      duration-500;
+  }
+
+  /* Feature 033: Data Display Composables — ThemeIcon (US1,
+     contracts/theme-icon-blockquote.contract.md). Badge's exact
+     per-color opacity/ring values in a rounded-full circle instead of
+     Badge's rounded-md pill; Avatar's exact sm/lg dimensions. */
+  .theme-icon {
+    @apply inline-flex items-center justify-center rounded-full;
+  }
+  .theme-icon-sm {
+    @apply h-8 w-8;
+  }
+  .theme-icon-lg {
+    @apply h-10 w-10;
+  }
+  .theme-icon-success {
+    @apply bg-success/5 text-success-strong ring-1 ring-inset ring-success/20;
+  }
+  .theme-icon-error {
+    @apply bg-error/5 text-error-strong ring-1 ring-inset ring-error/10;
+  }
+  .theme-icon-warning {
+    @apply bg-warning/5 text-warning-strong ring-1 ring-inset ring-warning/10;
+  }
+  .theme-icon-info {
+    @apply bg-info/5 text-info-strong ring-1 ring-inset ring-info/20;
+  }
+  .theme-icon-brand {
+    @apply bg-brand-light text-brand-dark;
+  }
+
+  /* Blockquote (US2, contracts/theme-icon-blockquote.contract.md) —
+     existing typography/spacing tokens only. */
+  .blockquote {
+    @apply border-l-4 border-neutral-300 pl-4 italic text-neutral-600;
+  }
+  .blockquote-cite {
+    @apply mt-2 block text-sm not-italic text-neutral-600;
+  }
+
+  /* BackgroundImage (US2, contracts/background-image-watermark.contract.md)
+     — the scrim reuses this catalog's existing overlay/backdrop
+     darkening convention (Modal/Slide-over's ::backdrop); the fallback
+     bg-neutral-200 shows if the caller's image fails to load. */
+  .background-image-container {
+    @apply relative overflow-hidden rounded-lg bg-neutral-200 bg-cover bg-center;
+  }
+  .background-image-scrim {
+    @apply absolute inset-0 bg-neutral-900/50;
+  }
+  .background-image-content {
+    @apply relative z-10 p-6 text-white;
+  }
+
+  /* Watermark (US3, contracts/background-image-watermark.contract.md)
+     — a pure CSS repeating-background technique, no new dependency. */
+  .watermark-container {
+    @apply relative overflow-hidden;
+  }
+  .watermark-layer {
+    @apply pointer-events-none absolute inset-0 z-0 bg-repeat;
+  }
+  .watermark-content {
+    @apply relative z-10;
+  }
+
+  /* Feature 034: Data Display Patterns — OverflowList (US1,
+     contracts/overflow-list.contract.md). Neutral chip styling
+     matching Badge's own convention. */
+  .overflow-list {
+    @apply flex flex-nowrap items-center gap-2 overflow-hidden;
+  }
+  .overflow-list-chip {
+    @apply inline-flex shrink-0 items-center rounded-md bg-neutral-50 px-2 py-1
+      text-xs font-medium text-neutral-600 ring-1 ring-inset ring-neutral-500/10;
+  }
+  .overflow-list-more {
+    @apply inline-flex shrink-0 items-center rounded-md bg-neutral-100 px-2 py-1
+      text-xs font-medium text-neutral-700 ring-1 ring-inset ring-neutral-500/10;
+  }
+
+  /* PickList/Transfer (US2, contracts/pick-list.contract.md) —
+     reuses List's exact .list class verbatim. */
+  .pick-list-panel {
+    @apply list max-h-64 min-h-[4rem] overflow-y-auto;
+  }
+  .pick-list-controls {
+    @apply flex flex-col justify-center gap-2;
+  }
+
+  /* Gallery (US3, contracts/gallery.contract.md) — reuses Modal's
+     exact native <dialog> mechanism, only full-screen geometry is new. */
+  .gallery-dialog {
+    @apply h-screen w-screen max-h-none max-w-none border-0 bg-neutral-900 p-0;
+  }
+  .gallery-dialog::backdrop {
+    background-color: theme("colors.neutral.900");
+  }
+  .gallery-image {
+    @apply mx-auto block max-h-full max-w-full object-contain;
+  }
+  .gallery-controls {
+    @apply absolute inset-x-0 bottom-6 flex items-center justify-center gap-4;
+  }
+  .gallery-close {
+    @apply absolute right-4 top-4;
+  }
+
+  /* Compare (US3, contracts/compare.contract.md) — the divider
+     reuses Slider's exact native <input type="range"> + .slider
+     class verbatim. */
+  .compare-container {
+    @apply relative overflow-hidden rounded-lg select-none;
+  }
+  .compare-image {
+    @apply block h-full w-full object-cover;
+  }
+  .compare-after-wrapper {
+    @apply absolute inset-0 overflow-hidden;
+  }
+  .compare-divider-line {
+    @apply pointer-events-none absolute inset-y-0 w-0.5 bg-white shadow-md;
+  }
+  .compare-slider {
+    @apply absolute inset-0 h-full w-full cursor-ew-resize appearance-none bg-transparent opacity-0;
+  }
+
+  /* Feature 035: Configurable Social Login Buttons
+     (contracts/social-login-group.contract.md). Default "neutral"
+     appearance reuses this catalog's existing AAA-verified
+     neutral-50/neutral-900 pairing — brand color lives only in the
+     icon glyph (research.md R1), never the button surface. */
+  .social-login-group {
+    @apply flex flex-col gap-3;
+  }
+  .social-login-group-compact {
+    @apply flex-row flex-wrap gap-2;
+  }
+  .social-login-btn {
+    @apply inline-flex w-full items-center justify-center gap-3 rounded-md
+      border border-neutral-300 bg-neutral-50 px-4 py-2.5
+      text-sm font-semibold text-neutral-900
+      hover:bg-neutral-100
+      active:scale-[0.98]
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed
+      transition-[background-color,transform] duration-150;
+  }
+  .social-login-btn-compact {
+    @apply w-auto px-3;
+  }
+  .social-login-btn-label {
+    @apply truncate;
+  }
+  .social-login-btn-label-hidden {
+    @apply sr-only;
+  }
+  .social-login-btn-icon {
+    @apply h-5 w-5 shrink-0;
+  }
+  /* Apple/GitHub-only optional monochrome appearance (research.md R1) —
+     the provider's OWN brand fill, safe because both extremes clear
+     AAA on their own (~17-21:1). No other preset and no custom entry
+     may use this class. */
+  .social-login-btn-monochrome-dark {
+    @apply border-transparent bg-neutral-900 text-white hover:bg-neutral-800;
+  }
+  .social-login-btn-monochrome-light {
+    @apply border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-50;
+  }
 }
