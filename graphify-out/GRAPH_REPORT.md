@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-18)
 
 ## Corpus Check
-- 852 files · ~1,756,301 words
+- 852 files · ~1,756,404 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5213 nodes · 5421 edges · 604 communities (487 shown, 117 thin omitted)
+- 5212 nodes · 5420 edges · 604 communities (487 shown, 117 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5644a3fe`
+- Built from commit: `a75a88af`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -520,7 +520,7 @@
 3. `useChartColors()` - 24 edges
 4. `expectNoConsoleErrors()` - 24 edges
 5. `usePrefersReducedMotion()` - 22 edges
-6. `Component Catalog & Tailwind UI Patterns` - 20 edges
+6. `Component Catalog & Tailwind UI Patterns` - 19 edges
 7. `useSeriesVisibility()` - 17 edges
 8. `Component candidates (105 total, grouped by category)` - 15 edges
 9. `ValidationResult` - 14 edges
@@ -561,7 +561,7 @@ Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Discl
 
 ### Community 3 - "Agent Context Extension"
 Cohesion: 0.04
-Nodes (44): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+36 more)
+Nodes (43): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+35 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -2072,17 +2072,17 @@ Cohesion: 0.67
 Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
 
 ## Knowledge Gaps
-- **3109 isolated node(s):** `graphify`, `Content Quality`, `Requirement Completeness`, `Feature Readiness`, `Notes` (+3104 more)
+- **3108 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+3103 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **117 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ValidationResult` connect `theme-gallery.js` to `feature-016-csp-sweep.spec.ts`, `TreeSelect.tsx`, `index.ts`, `localized-inputs.js`?**
+- **Why does `expectNoA11yViolations()` connect `a11y-helper.ts` to `react-catalog-expansion-buttons.spec.ts`, `feature-015-csp-sweep.spec.ts`, `color-input.spec.ts`, `button.spec.ts`, `context-menu.spec.ts`, `react-select.spec.ts`, `select.spec.ts`, `react-catalog-expansion-nav-utility.spec.ts`, `NavLink.tsx`, `catalog-expansion-buttons.spec.ts`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **What connects `graphify`, `Content Quality`, `Requirement Completeness` to the rest of the system?**
-  _3109 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
+  _3108 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
@@ -2090,6 +2090,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.044444444444444446 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
