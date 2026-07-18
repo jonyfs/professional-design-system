@@ -1,16 +1,16 @@
-# Graph Report - professional-design-system  (2026-07-14)
+# Graph Report - professional-design-system  (2026-07-17)
 
 ## Corpus Check
-- 630 files · ~1,158,152 words
+- 781 files · ~1,240,727 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3844 nodes · 3920 edges · 464 communities (366 shown, 98 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.63)
+- 4752 nodes · 5008 edges · 563 communities (456 shown, 107 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8cdc7ddb`
+- Built from commit: `2f77f44a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -318,6 +318,7 @@
 - PasswordInput.tsx
 - copy-button.js
 - catalog-expansion-data-display-main.tsx
+- react-modal.spec.ts
 - Anchor.tsx
 - Collapse.tsx
 - NavLink.tsx
@@ -325,46 +326,53 @@
 - multi-select-main.tsx
 - color-swatch.js
 - catalog-expansion-buttons.spec.ts
+- react-slide-over.spec.ts
 - Implementation Plan: Localized Input Primitives
 - Implementation Plan: Recharts-Based Chart Primitives
 - gallery-theme-selector.js
+- gallery-theme-selector.spec.ts
+- react-localized-inputs.spec.ts
 - DataTableForm.tsx
 - List.tsx
 - chart-main.tsx
 - types.ts
 - PieChart.tsx
 - usePrefersReducedMotion.ts
+- react-modal.spec.ts
+- react-chart-core.spec.ts
 - wireDialogClose
-- Toast.tsx
+- react-data-table.spec.ts
+- Research: Consent & System Messaging Primitives
 - react-slide-over.spec.ts
+- Contract: Dark Mode Toggle
+- Contract: Session Timeout Modal
+- Data Model: Consent & System Messaging Primitives
+- Badge.tsx
+- DarkModeToggle.tsx
 - chart-batch-2-main.tsx
 - Quickstart: Recharts Additional Chart Types (Batch 2)
 - Phase 1 Data Model: Recharts Additional Chart Types (Batch 2)
 - Research: Recharts Additional Chart Types (Batch 2)
 - Component Contract: Composed Chart & Scatter Chart (User Story 1)
 - Component Contract: Treemap & Sankey Diagram (User Story 3)
-- Accordion.tsx
-- Badge.tsx
-- Breadcrumbs.tsx
-- Navbar.tsx
+- TreemapNode
+- modal.spec.ts
 - Select.tsx
-- Sidebar.tsx
-- Table.tsx
-- Tabs.tsx
-- Button.tsx
-- Card.tsx
-- CardNumberInput.tsx
-- CepInput.tsx
-- Checkbox.tsx
-- PhoneBrInput.tsx
+- react-catalog-expansion-buttons.spec.ts
+- localized-inputs.js
+- List.tsx
 - PhoneIntlInput.tsx
-- PisPasepInput.tsx
-- Radio.tsx
-- TextInput.tsx
-- TituloEleitorInput.tsx
-- Toggle.tsx
-- VehiclePlateInput.tsx
+- Contract: Team/Workspace Switcher, Language Switcher
+- Quickstart: Navigation Micro-Patterns
+- Research: Navigation Micro-Patterns
+- Contract: Onboarding Tour / Coachmark
+- Contract: Back-to-Top Button, Scroll Progress Bar
+- ValidationResult
+- Data Model: Navigation Micro-Patterns
+- ScrollProgressBar.tsx
+- catalog-expansion-buttons.spec.ts
 - Component Contract: Funnel Chart (User Story 2)
+- react-slide-over.spec.ts
 - Implementation Plan: Sitewide Theme Selector & Persistence
 - Tasks: Sitewide Theme Selector & Persistence
 - Quickstart: Sitewide Theme Selector & Persistence
@@ -382,36 +390,111 @@
 - Component Contract: Individual Demo Page Polish (User Story 3)
 - Phase 1 Data Model: Demo Gallery Visual Showcase
 - check-demo-page-polish.mjs
+- Contract: Bottom Sheet
+- Data Model: Overlays
 - Implementation Plan: Claude-Design-Inspired Theme Presets (Batch 2)
 - Tasks: Claude-Design-Inspired Theme Presets (Batch 2)
 - Per-theme anchor values (real, extracted — research.md R3)
 - Research: Claude-Design-Inspired Theme Presets (Batch 2)
 - Quickstart: Claude-Design-Inspired Theme Presets (Batch 2)
 - Data Model: Claude-Design-Inspired Theme Presets (Batch 2)
+- DarkModeToggle.tsx
+- Tasks: Data Display Composables
+- Contract: BackgroundImage, Watermark
+- Quickstart: Data Display Composables
+- Research: Data Display Composables
+- Contract: ThemeIcon, Blockquote
+- Data Model: Data Display Composables
+- Alert.tsx
+- CopyButton.tsx
+- Navbar.tsx
+- SystemBanner.tsx
+- Table.tsx
+- Toast.tsx
+- Affix.tsx
+- AppShell.tsx
+- Center.tsx
+- LoadingOverlay.tsx
+- PhoneIntlInput.tsx
+- Contract: Compare
+- Contract: Gallery
+- Contract: OverflowList
+- Contract: PickList / Transfer
+- Data Model: Data Display Patterns
+- Contract: RollingNumber
+- ValidationResult
+- Component Contract: Social Login Group
+- Phase 0 Research: Configurable Social Login Buttons
+- Phase 1 Data Model: Configurable Social Login Buttons
+- Quickstart: Configurable Social Login Buttons
+- social-login-buttons-main.tsx
+- Alert.tsx
+- CopyButton.tsx
+- ScrollProgressBar.tsx
+- feature-016-csp-sweep.spec.ts
+- Breadcrumbs.tsx
+- Navbar.tsx
+- OnboardingTour.tsx
+- PickList.tsx
+- Sidebar.tsx
+- Table.tsx
+- Tabs.tsx
+- ActionIcon.tsx
+- Affix.tsx
+- Anchor.tsx
+- AppShell.tsx
+- BackgroundImage.tsx
+- Blockquote.tsx
+- Button.tsx
+- Card.tsx
+- Center.tsx
+- Checkbox.tsx
+- Code.tsx
+- Collapse.tsx
+- ColorSwatch.tsx
+- Compare.tsx
+- Container.tsx
+- Flex.tsx
+- Grid.tsx
+- Group.tsx
+- NavLink.tsx
+- NumberInput.tsx
+- OfflineBanner.tsx
+- OverflowList.tsx
+- PasswordInput.tsx
+- Radio.tsx
+- RollingNumber.tsx
+- SemiCircleProgress.tsx
+- SessionTimeoutModal.tsx
+- SimpleGrid.tsx
+- Spoiler.tsx
+- Stack.tsx
+- ThemeIcon.tsx
+- Toggle.tsx
 
 ## God Nodes (most connected - your core abstractions)
-1. `expectNoA11yViolations()` - 74 edges
+1. `expectNoA11yViolations()` - 93 edges
 2. `stripNonDigits()` - 33 edges
-3. `expectNoConsoleErrors()` - 20 edges
-4. `Component candidates (105 total, grouped by category)` - 15 edges
-5. `useChartColors()` - 14 edges
-6. `ValidationResult` - 14 edges
-7. `DataTable()` - 13 edges
-8. `Tasks: Recharts-Based Chart Primitives` - 13 edges
-9. `Tasks: [FEATURE NAME]` - 13 edges
-10. `Tasks: Design System Primitive Components` - 13 edges
+3. `useChartColors()` - 24 edges
+4. `expectNoConsoleErrors()` - 24 edges
+5. `usePrefersReducedMotion()` - 22 edges
+6. `Component Catalog & Tailwind UI Patterns` - 18 edges
+7. `useSeriesVisibility()` - 17 edges
+8. `Component candidates (105 total, grouped by category)` - 15 edges
+9. `ValidationResult` - 14 edges
+10. `ChartDataTable()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `DataTableRowActionsProps` --references--> `CrudConfig`  [EXTRACTED]
   packages/react/src/DataTable/DataTableRowActions.tsx → shared/data-table/types.ts
 - `DataTableToolbarProps` --references--> `BulkAction`  [EXTRACTED]
   packages/react/src/DataTable/DataTableToolbar.tsx → shared/data-table/types.ts
-- `MultiSelectProps` --references--> `MultiSelectOption`  [EXTRACTED]
-  packages/react/src/MultiSelect/MultiSelect.tsx → shared/multi-select/index.ts
-- `MultiSelect()` --calls--> `filterOptions()`  [EXTRACTED]
-  packages/react/src/MultiSelect/MultiSelect.tsx → shared/multi-select/index.ts
-- `MultiSelect()` --calls--> `removeSelection()`  [EXTRACTED]
-  packages/react/src/MultiSelect/MultiSelect.tsx → shared/multi-select/index.ts
+- `CodeTypeConfig` --references--> `ValidationResult`  [EXTRACTED]
+  packages/react/src/hooks/useValidatedInput.ts → shared/validators/common.ts
+- `DataTableProps` --references--> `BulkAction`  [EXTRACTED]
+  packages/react/src/DataTable/DataTable.tsx → shared/data-table/types.ts
+- `DataTableProps` --references--> `ColumnDefinition`  [EXTRACTED]
+  packages/react/src/DataTable/DataTable.tsx → shared/data-table/types.ts
 
 ## Import Cycles
 - None detected.
@@ -420,7 +503,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (464 total, 98 thin omitted)
+## Communities (563 total, 107 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -435,8 +518,8 @@ Cohesion: 0.08
 Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Disclosure), 3. Build Semantic Models, 4. Detection Passes (Token-Efficient Analysis), 5. Severity Assignment, 6. Produce Compact Analysis Report, 7. Provide Next Actions, 8. Offer Remediation (+17 more)
 
 ### Community 3 - "Agent Context Extension"
-Cohesion: 0.06
-Nodes (34): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+26 more)
+Cohesion: 0.05
+Nodes (42): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+34 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -491,12 +574,12 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, isolatedModules, lib, module, moduleResolution, noEmit, resolveJsonModule (+5 more)
 
 ### Community 28 - "check-contrast.mjs"
-Cohesion: 0.07
-Nodes (38): acceptedGaps, applyBlocks, buildTokenMap(), compositeOver(), COVERED_FG_TOKENS, DECORATIVE_ARIA_HIDDEN_TOKENS, failures, htmlFiles (+30 more)
+Cohesion: 0.10
+Nodes (22): acceptedGaps, applyBlocks, buildTokenMap(), compositeOver(), COVERED_FG_TOKENS, DECORATIVE_ARIA_HIDDEN_TOKENS, failures, htmlFiles (+14 more)
 
 ### Community 32 - "theme-gallery.js"
-Cohesion: 0.06
-Nodes (68): CnpjInput, CnpjInputProps, CpfInput, CpfInputProps, CodeTypeConfig, useValidatedInput(), UseValidatedInputResult, Validity (+60 more)
+Cohesion: 0.18
+Nodes (23): format(), isComplete(), validate(), format(), isComplete(), validate(), format(), isComplete() (+15 more)
 
 ### Community 34 - "button.spec.ts"
 Cohesion: 0.07
@@ -599,8 +682,8 @@ Cohesion: 0.09
 Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery (the order this session follows), MVP First (User Story 1 Only) (+14 more)
 
 ### Community 59 - "overlay.js"
-Cohesion: 0.17
-Nodes (26): AreaChart(), AreaChartProps, BarChart(), BarChartProps, CHART_COLOR_TOKENS, ChartDataTable(), ChartDataTableProps, ChartEmptyState() (+18 more)
+Cohesion: 0.13
+Nodes (49): AreaChart(), AreaChartProps, BarChart(), BarChartProps, CHART_COLOR_TOKENS, ChartDataTable(), ChartDataTableProps, ChartEmptyState() (+41 more)
 
 ### Community 60 - "Specification Quality Checklist: React Component Library (Claude Design Compatibility)"
 Cohesion: 0.07
@@ -947,8 +1030,8 @@ Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Feedback & Data Display Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 164 - "Modal.tsx"
-Cohesion: 0.11
-Nodes (35): DataTable(), DataTableProps, sortIcon(), DataTableEmptyState(), DataTableEmptyStateProps, DataTableFieldDefinition, DataTableForm(), DataTableFormProps (+27 more)
+Cohesion: 0.07
+Nodes (50): CommandPalette(), CommandPaletteProps, highlight(), DataTable(), DataTableProps, sortIcon(), DataTableEmptyState(), DataTableEmptyStateProps (+42 more)
 
 ### Community 165 - "SlideOver.tsx"
 Cohesion: 0.50
@@ -963,8 +1046,8 @@ Cohesion: 0.10
 Nodes (19): ActionIcon, Anchor, AvatarGroup, Code, Collapse, ColorSwatch, CopyButton, Highlight (+11 more)
 
 ### Community 173 - "DropdownMenu.tsx"
-Cohesion: 0.60
-Nodes (4): DropdownMenu(), DropdownMenuProps, DropdownMenuItemData, useDropdownMenu()
+Cohesion: 0.36
+Nodes (7): DropdownMenu(), DropdownMenuProps, DropdownMenuItemData, useDropdownMenu(), SplitButton(), SplitButtonAction, SplitButtonProps
 
 ### Community 177 - "Implementation Plan: Fix Popover Panel Positioning (Dropdown Menu, Combobox)"
 Cohesion: 0.07
@@ -1039,8 +1122,8 @@ Cohesion: 0.33
 Nodes (5): Data Model: Table Primitive, Table, Table Cell, Table Header Cell, Table Row
 
 ### Community 197 - "index.ts"
-Cohesion: 0.40
-Nodes (3): AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS
+Cohesion: 0.13
+Nodes (18): BackToTop(), BackToTopProps, BottomSheet(), BottomSheetProps, ContextSwitcher(), ContextSwitcherProps, SwitcherOption, LoadingOverlay() (+10 more)
 
 ### Community 198 - "Implementation Plan: React Port — Batch 2 (Remaining Static Components)"
 Cohesion: 0.07
@@ -1183,7 +1266,7 @@ Cohesion: 0.29
 Nodes (6): Acceptance mapping, Component Contract: Timeline, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
 
 ### Community 292 - "feature-015-csp-sweep.spec.ts"
-Cohesion: 0.09
+Cohesion: 0.07
 Nodes (3): expectNoConsoleErrors(), openViaShortcut(), PAGES
 
 ### Community 293 - "aspect-ratio.spec.ts"
@@ -1209,10 +1292,6 @@ Nodes (8): Full success-criteria trace, Prerequisites, Quickstart: Advanced Data
 ### Community 299 - "slider.spec.ts"
 Cohesion: 0.29
 Nodes (6): 00:21 | main, 00:23 | main, 13:40 | main, 14:33 | main, 14:35 | main, 23:44 | main
-
-### Community 300 - "spinner.spec.ts"
-Cohesion: 0.29
-Nodes (6): 00:35 | main, 01:51 | main, 05:47 | main, 07:28 | main, 09:23 | main, 23:45 | main
 
 ### Community 301 - "stat-card.spec.ts"
 Cohesion: 0.29
@@ -1261,6 +1340,10 @@ Nodes (6): R1. TreeView — native `<details>/<summary>` confirmed fully suffici
 ### Community 312 - "Data Model: Advanced Interaction Primitives"
 Cohesion: 0.33
 Nodes (5): ColorPicker/ColorInput, Data Model: Advanced Interaction Primitives, Menubar, Rating, TreeView
+
+### Community 313 - "feature-016-csp-sweep.spec.ts"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Consent & System Messaging Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 315 - "color-input.spec.ts"
 Cohesion: 0.29
@@ -1319,12 +1402,12 @@ Cohesion: 0.40
 Nodes (4): Acceptance mapping, Contract: Theme Switcher (persistence + activation), Required attributes, `src/scripts/theme-switcher.js` (NEW)
 
 ### Community 330 - "Specification Quality Checklist: Localized Input Primitives"
-Cohesion: 0.11
-Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Localized Input Primitives, Assumptions, Edge Cases, Feature Specification: Localized Input Primitives (+9 more)
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Localized Input Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 331 - "Specification Quality Checklist: Recharts-Based Chart Primitives"
-Cohesion: 0.11
-Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Recharts-Based Chart Primitives, Assumptions, Edge Cases, Feature Specification: Recharts-Based Chart Primitives (+9 more)
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Recharts-Based Chart Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 335 - "design-tokens.ts"
 Cohesion: 0.29
@@ -1355,8 +1438,8 @@ Cohesion: 0.33
 Nodes (5): Acceptance mapping, Component Contract: Form Inputs — NumberInput, PasswordInput, MultiSelect (User Story 1), MultiSelect, NumberInput, PasswordInput
 
 ### Community 342 - "CopyButton.tsx"
-Cohesion: 0.40
-Nodes (3): CopyButtonProps, CopyStatus, ICONS
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Layout & Structure Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 343 - "Highlight.tsx"
 Cohesion: 0.50
@@ -1370,45 +1453,145 @@ Nodes (4): Cross-cutting invariant, Gallery Theme Selection (ephemeral UI state,
 Cohesion: 0.40
 Nodes (4): Acceptance mapping, Component Contract: CRUD Operations (User Story 3), Markup contract, Required behavior (FR mapping)
 
+### Community 346 - "AvatarGroup.tsx"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Feedback Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
 ### Community 347 - "today-2026-07-11.done.md"
 Cohesion: 0.50
 Nodes (3): 00:28 | main, 10:04 | main, 13:25 | main
 
-### Community 383 - "Implementation Plan: Localized Input Primitives"
+### Community 348 - "ActionIcon.tsx"
+Cohesion: 0.10
+Nodes (19): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation for User Story 4, Implementation Strategy, Phase 1: Setup (+11 more)
+
+### Community 349 - "Code.tsx"
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
+
+### Community 350 - "ColorSwatch.tsx"
+Cohesion: 0.35
+Nodes (7): borderRadius, colors, fontFamily, providerBrand, REQUIRED_THEME_PROPERTIES, ThemeDefinition, ThemeTokens
+
+### Community 351 - "NumberInput.tsx"
+Cohesion: 0.20
+Nodes (9): Automated validation, Expected outcomes, Prerequisites, Quickstart: Layout & Structure Primitives, Run the dev gallery, Validate User Story 1 (Stack, Group, Center), Validate User Story 2 (Container, Paper), Validate User Story 3 (Grid, SimpleGrid, Flex) (+1 more)
+
+### Community 352 - "PasswordInput.tsx"
 Cohesion: 0.22
-Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Localized Input Primitives, Project Structure, Source Code (repository root), Summary, Technical Context
+Nodes (8): Automated validation, Expected outcomes, Prerequisites, Quickstart: Feedback Primitives, Run the dev gallery, Validate User Story 1 (RingProgress, SemiCircleProgress), Validate User Story 2 (Notification Center), Validate User Story 3 (Password Strength Meter)
+
+### Community 360 - "react-modal.spec.ts"
+Cohesion: 0.25
+Nodes (7): R1. Per-primitive token mapping (verified against real source, not assumed), R2. Static-HTML shipping mechanics, R3. Breakpoint convention for Grid/SimpleGrid/Flex, R4. React wrapper shape, R5. AppShell's real composition contract — correction from spec.md's assumption, R6. Contrast/token audit, Research: Layout & Structure Primitives
+
+### Community 364 - "Anchor.tsx"
+Cohesion: 0.25
+Nodes (7): R1. De-duplication verification (already covered in spec.md, restated here for the plan record), R2. CSSOM arc-value assignment (CSP compliance), R3. RingProgress/SemiCircleProgress markup shape, R4. Notification Center composition, R5. Password Strength Meter scoring, R6. Contrast/token audit, Research: Feedback Primitives
+
+### Community 365 - "Collapse.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: RingProgress, SemiCircleProgress, React wrapper shape, `src/scripts/circular-progress.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 366 - "NavLink.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Password Strength Meter, React wrapper shape, `src/scripts/password-strength-meter.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 367 - "Spoiler.tsx"
+Cohesion: 0.47
+Nodes (4): useNotificationPanel(), NotificationCenter(), NotificationCenterItem, NotificationCenterProps
+
+### Community 371 - "catalog-expansion-buttons.spec.ts"
+Cohesion: 0.40
+Nodes (5): Level, LEVEL_LABEL, PasswordStrengthMeter(), PasswordStrengthMeterProps, scorePassword()
+
+### Community 373 - "react-slide-over.spec.ts"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: AppShell, React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 383 - "Implementation Plan: Localized Input Primitives"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Grid Primitives (Grid, SimpleGrid, Flex), React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
 
 ### Community 384 - "Implementation Plan: Recharts-Based Chart Primitives"
-Cohesion: 0.22
-Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: Recharts-Based Chart Primitives, Project Structure, Source Code (repository root), Summary, Technical Context
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Spacing Primitives (Stack, Group, Center), React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 385 - "gallery-theme-selector.js"
+Cohesion: 0.26
+Nodes (11): MOOD_FAMILIES, initGalleryThemeSelector(), populateSelect(), buildThemeCard(), renderGallery(), rgbTripletToCss(), slugifyMoodFamily(), themeTokenTripletFor() (+3 more)
+
+### Community 386 - "gallery-theme-selector.spec.ts"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Surface Primitives (Container, Paper), React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 387 - "react-localized-inputs.spec.ts"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Notification Center, React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
 
 ### Community 388 - "DataTableForm.tsx"
-Cohesion: 0.24
-Nodes (10): CommandPalette(), CommandPaletteProps, highlight(), CommandPaletteAction, useCommandPalette(), useDialogTrigger(), Modal(), ModalProps (+2 more)
+Cohesion: 0.33
+Nodes (5): Circular Progress Primitive (2 instances: RingProgress, SemiCircleProgress), Data Model: Feedback Primitives, Notification Center, Password Strength Meter, Relationships
 
 ### Community 389 - "List.tsx"
-Cohesion: 0.29
-Nodes (5): Avatar(), AvatarProps, SIZE_CLASSES, ListItemData, ListProps
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
 
 ### Community 390 - "chart-main.tsx"
-Cohesion: 0.29
-Nodes (4): categorySeries, marketShareData, revenueData, skillData
+Cohesion: 0.25
+Nodes (5): THEMES, categorySeries, marketShareData, revenueData, skillData
 
 ### Community 391 - "types.ts"
-Cohesion: 0.19
-Nodes (23): ComposedChart(), ComposedChartProps, FunnelChart(), FunnelChartProps, Sankey(), SankeyProps, ScatterChart(), ScatterChartProps (+15 more)
+Cohesion: 0.22
+Nodes (8): 2FA/Verification reminder banner (persistent, has an action, no dismiss), Acceptance mapping, Contract: Offline Banner, 2FA Reminder, Maintenance Bar, Maintenance/Announcement Bar (full-width, persistent, no `max-w-*` wrapper), Offline Banner (auto show/hide, no dismiss control), React wrapper shape, `src/scripts/offline-banner.js`, Static HTML usage
 
 ### Community 393 - "usePrefersReducedMotion.ts"
 Cohesion: 0.12
 Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
 
+### Community 394 - "react-modal.spec.ts"
+Cohesion: 0.40
+Nodes (4): AppShell (1 instance — composition, not a token-mapped primitive), Data Model: Layout & Structure Primitives, Layout Primitive (8 instances: Stack, Group, Center, Container, Paper, Grid, SimpleGrid, Flex), Relationship
+
+### Community 395 - "react-chart-core.spec.ts"
+Cohesion: 0.67
+Nodes (3): initPasswordStrengthMeter(), LEVEL_LABEL, scorePassword()
+
 ### Community 397 - "wireDialogClose"
-Cohesion: 0.70
-Nodes (3): initCommandPalette(), initDialogTriggers(), wireDialogClose()
+Cohesion: 0.25
+Nodes (7): Full regression, Prerequisites, Quickstart: Consent & System Messaging Primitives, Validate 2FA reminder / Maintenance Bar, Validate Dark Mode Toggle, Validate Offline Banner, Validate Session Timeout Modal
+
+### Community 399 - "react-data-table.spec.ts"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Navigation Micro-Patterns, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 401 - "Research: Consent & System Messaging Primitives"
+Cohesion: 0.25
+Nodes (7): R1: Session Timeout Modal reuses Modal verbatim, adds only a countdown, R2: Standalone "Countdown Timer" (inventory item 92) is NOT shipped by this feature, R3: Offline Banner uses the native `online`/`offline` window events, no polling, R4: 2FA reminder + Maintenance Bar are layout/content variants of Alert, not new CSS, R5: Dark Mode Toggle's dark-theme pairing, Research: Consent & System Messaging Primitives, Summary
 
 ### Community 402 - "react-slide-over.spec.ts"
 Cohesion: 0.07
 Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Demo Gallery Visual Showcase, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 403 - "Contract: Dark Mode Toggle"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Dark Mode Toggle, React wrapper shape, `src/scripts/dark-mode-toggle.js`, Static HTML usage
+
+### Community 404 - "Contract: Session Timeout Modal"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Session Timeout Modal, React wrapper shape, `src/scripts/session-timeout-modal.js`, Static HTML usage
+
+### Community 405 - "Data Model: Consent & System Messaging Primitives"
+Cohesion: 0.33
+Nodes (5): Connectivity State (Offline Banner), Dark Mode Toggle State, Data Model: Consent & System Messaging Primitives, Session Timeout Modal, System Banner Content (2FA reminder, Maintenance Bar)
+
+### Community 406 - "Badge.tsx"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Overlays, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 407 - "DarkModeToggle.tsx"
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
 
 ### Community 408 - "chart-batch-2-main.tsx"
 Cohesion: 0.20
@@ -1434,9 +1617,69 @@ Nodes (4): Acceptance mapping, Component Contract: Composed Chart & Scatter Char
 Cohesion: 0.40
 Nodes (4): Acceptance mapping, Component Contract: Treemap & Sankey Diagram (User Story 3), Sankey Diagram, Treemap
 
+### Community 415 - "TreemapNode"
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
+
+### Community 417 - "modal.spec.ts"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Affix, React wrapper shape, `src/scripts/affix.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
 ### Community 418 - "Select.tsx"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Data Display Composables, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 419 - "react-catalog-expansion-buttons.spec.ts"
+Cohesion: 0.11
+Nodes (17): Dependencies & Execution Order, Follow-up (out of this feature's scope, flagged during planning), Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup (+9 more)
+
+### Community 420 - "localized-inputs.js"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: LoadingOverlay, React wrapper shape, `src/scripts/loading-overlay.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 421 - "List.tsx"
+Cohesion: 0.29
+Nodes (5): Avatar(), AvatarProps, SIZE_CLASSES, ListItemData, ListProps
+
+### Community 422 - "PhoneIntlInput.tsx"
+Cohesion: 0.29
+Nodes (6): Full regression, Prerequisites, Quickstart: Overlays, Validate Affix, Validate Bottom Sheet, Validate LoadingOverlay
+
+### Community 423 - "Contract: Team/Workspace Switcher, Language Switcher"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Team/Workspace Switcher, Language Switcher, React wrapper shape, `src/scripts/context-switcher.js`, Static HTML usage — Language Switcher, Static HTML usage — Team/Workspace Switcher
+
+### Community 424 - "Quickstart: Navigation Micro-Patterns"
+Cohesion: 0.29
+Nodes (6): Full regression, Prerequisites, Quickstart: Navigation Micro-Patterns, Validate Back-to-Top Button & Scroll Progress Bar, Validate Onboarding Tour, Validate Team/Workspace Switcher & Language Switcher
+
+### Community 425 - "Research: Navigation Micro-Patterns"
+Cohesion: 0.29
+Nodes (6): R1: Team/Workspace Switcher and Language Switcher reuse Dropdown Menu's exact mechanics, richer content only where needed, R2: Back-to-Top Button ships only the scroll-threshold logic it needs, not a standalone "Affix" primitive, R3: Scroll Progress Bar reuses Progress's exact fill mechanism, driven by scroll instead of a static value, R4: Onboarding Tour reuses Popover's positioning, adds a sequencing layer, Research: Navigation Micro-Patterns, Summary
+
+### Community 426 - "Contract: Onboarding Tour / Coachmark"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Onboarding Tour / Coachmark, React wrapper shape, `src/scripts/onboarding-tour.js`, Static HTML usage
+
+### Community 427 - "Contract: Back-to-Top Button, Scroll Progress Bar"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Back-to-Top Button, Scroll Progress Bar, React wrapper shape, `src/scripts/scroll-feedback.js`, Static HTML usage
+
+### Community 428 - "ValidationResult"
+Cohesion: 0.29
+Nodes (6): R1: Drawer excluded — verified identical to Slide-over, not assumed, R2: Affix is genuinely new infrastructure, not a retrofit of Back-to-Top, R3: LoadingOverlay reuses Spinner verbatim, adds container-scoped positioning + a11y state, R4: Bottom Sheet reuses Slide-over's exact `<dialog>` mechanism, different anchor geometry, Research: Overlays, Summary
+
+### Community 429 - "Data Model: Navigation Micro-Patterns"
+Cohesion: 0.40
+Nodes (4): Data Model: Navigation Micro-Patterns, Scroll Position State (Back-to-Top, Scroll Progress Bar), Switcher Option (Team/Workspace, Language), Tour Step (Onboarding Tour)
+
+### Community 430 - "ScrollProgressBar.tsx"
 Cohesion: 0.50
-Nodes (3): Select, SelectOption, SelectProps
+Nodes (3): Gallery(), GalleryImage, GalleryProps
+
+### Community 434 - "catalog-expansion-buttons.spec.ts"
+Cohesion: 0.17
+Nodes (8): PRESETS, providerBrand, ProviderId, ProviderPreset, CustomProviderEntry, isCustomEntry(), SocialLoginGroup(), SocialLoginGroupProps
 
 ### Community 437 - "Implementation Plan: Sitewide Theme Selector & Persistence"
 Cohesion: 0.07
@@ -1498,6 +1741,14 @@ Nodes (5): Acceptance mapping, Component Contract: Individual Demo Page Polish (
 Cohesion: 0.33
 Nodes (5): Demo Page Polish (the feature-025-style rollout unit), Flagship Component (a flag on an existing Gallery Category entry), Gallery Category Section, Opening Section Stat, Phase 1 Data Model: Demo Gallery Visual Showcase
 
+### Community 456 - "Contract: Bottom Sheet"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: Bottom Sheet, React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 457 - "Data Model: Overlays"
+Cohesion: 0.40
+Nodes (4): Affix State, Bottom Sheet, Data Model: Overlays, LoadingOverlay State
+
 ### Community 458 - "Implementation Plan: Claude-Design-Inspired Theme Presets (Batch 2)"
 Cohesion: 0.07
 Nodes (24): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Claude-Design-Inspired Theme Presets (Batch 2), Complexity Tracking, Constitution Check, Documentation (this feature) (+16 more)
@@ -1522,16 +1773,146 @@ Nodes (7): Automated validation, Expected outcomes, Prerequisites, Quickstart: C
 Cohesion: 0.29
 Nodes (6): Aesthetic Reference (new, research-only — spec.md's own entity), Data Model: Claude-Design-Inspired Theme Presets (Batch 2), Theme (existing, feature 017 — 5 new instances), ThemeCollection (existing, feature 017 — grows from 43 to 48), ThemeToken (existing, feature 017 — unchanged), UserThemeSelection (existing, feature 017 — unchanged)
 
+### Community 464 - "DarkModeToggle.tsx"
+Cohesion: 0.67
+Nodes (3): applyTheme(), DarkModeToggle(), DarkModeToggleProps
+
+### Community 468 - "Tasks: Data Display Composables"
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
+
+### Community 469 - "Contract: BackgroundImage, Watermark"
+Cohesion: 0.20
+Nodes (9): Acceptance mapping, BackgroundImage, Contract: BackgroundImage, Watermark, React wrapper shape, `src/scripts/background-image.js`, `src/scripts/watermark.js`, `src/styles/tailwind.css` additions, Static HTML usage (+1 more)
+
+### Community 470 - "Quickstart: Data Display Composables"
+Cohesion: 0.25
+Nodes (7): Full regression, Prerequisites, Quickstart: Data Display Composables, Validate BackgroundImage, Validate Blockquote, Validate ThemeIcon, Validate Watermark
+
+### Community 471 - "Research: Data Display Composables"
+Cohesion: 0.25
+Nodes (7): R1: Batch scoping — trivial composables split from genuinely-new-pattern candidates, R2: ThemeIcon reuses Badge's exact color convention, Avatar's exact size convention, R3: Blockquote uses existing typography tokens only, R4: BackgroundImage's scrim reuses the existing overlay/backdrop convention, R5: Watermark is a pure CSS repeating-background technique, Research: Data Display Composables, Summary
+
+### Community 472 - "Contract: ThemeIcon, Blockquote"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: ThemeIcon, Blockquote, React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 473 - "Data Model: Data Display Composables"
+Cohesion: 0.33
+Nodes (5): BackgroundImage, Blockquote, Data Model: Data Display Composables, ThemeIcon, Watermark
+
+### Community 474 - "Alert.tsx"
+Cohesion: 0.10
+Nodes (24): CardNumberInput, CardNumberInputProps, CepInput, CepInputProps, CnpjInput, CnpjInputProps, CpfInput, CpfInputProps (+16 more)
+
+### Community 475 - "CopyButton.tsx"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Data Display Patterns, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 476 - "Navbar.tsx"
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Configurable Social Login Buttons, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
+
+### Community 477 - "SystemBanner.tsx"
+Cohesion: 0.16
+Nodes (16): cardNumber, cep, cnpj, cpf, iban, phoneBr, phoneIntl, pisPasep (+8 more)
+
+### Community 478 - "Table.tsx"
+Cohesion: 0.12
+Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
+
+### Community 480 - "Affix.tsx"
+Cohesion: 0.33
+Nodes (9): stripNonAlphanumeric(), format(), isComplete(), letterToDigits(), mod97(), validate(), format(), isComplete() (+1 more)
+
+### Community 481 - "AppShell.tsx"
+Cohesion: 0.29
+Nodes (8): format(), isComplete(), validate(), applyValidity(), CODE_TYPES, initLocalizedInputs(), wireField(), wirePhoneIntlField()
+
+### Community 482 - "Center.tsx"
+Cohesion: 0.22
+Nodes (8): Full regression, Prerequisites, Quickstart: Data Display Patterns, Validate Compare, Validate Gallery, Validate OverflowList, Validate PickList, Validate RollingNumber
+
+### Community 483 - "LoadingOverlay.tsx"
+Cohesion: 0.25
+Nodes (7): R1: OverflowList uses ResizeObserver + a measure-then-render pass, reusing Badge's chip styling, R2: RollingNumber reuses the `requestAnimationFrame` throttling pattern already established, applied to a value tween instead of a scroll listener, R3: PickList/Transfer composes two List instances + move buttons, reusing List's exact row markup, R4: Gallery reuses Modal's exact `<dialog>` focus-trap mechanism, adds only image-cycling state, R5: Compare's divider is a native `<input type="range">`, styled invisibly, driving a CSS `clip-path`, Research: Data Display Patterns, Summary
+
+### Community 487 - "PhoneIntlInput.tsx"
+Cohesion: 0.33
+Nodes (5): PhoneIntlInput, PhoneIntlInputProps, Select, SelectOption, SelectProps
+
+### Community 488 - "Contract: Compare"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Compare, React wrapper shape, `src/scripts/compare.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 489 - "Contract: Gallery"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Gallery, React wrapper shape, `src/scripts/gallery.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 490 - "Contract: OverflowList"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: OverflowList, React wrapper shape, `src/scripts/overflow-list.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 491 - "Contract: PickList / Transfer"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: PickList / Transfer, React wrapper shape, `src/scripts/pick-list.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 492 - "Data Model: Data Display Patterns"
+Cohesion: 0.29
+Nodes (6): Compare State, Data Model: Data Display Patterns, Gallery Image, OverflowList Item, PickList Item, RollingNumber Value
+
+### Community 493 - "Contract: RollingNumber"
+Cohesion: 0.33
+Nodes (5): Acceptance mapping, Contract: RollingNumber, React wrapper shape, `src/scripts/rolling-number.js`, Static HTML usage
+
+### Community 500 - "Component Contract: Social Login Group"
+Cohesion: 0.20
+Nodes (9): Acceptance mapping, Component Contract: Social Login Group, React wrapper shape, Required classes (Principle V gate), `shared/design-tokens.ts` addition, `src/scripts/social-login.js`, `src/styles/tailwind.css` additions, Static HTML usage (fixed example configuration, research.md R7) (+1 more)
+
+### Community 501 - "Phase 0 Research: Configurable Social Login Buttons"
+Cohesion: 0.22
+Nodes (8): Phase 0 Research: Configurable Social Login Buttons, R1: Solid brand-color fill vs. neutral surface + colored icon mark, R2: Where fixed provider-brand colors live in the token architecture, R3: Icon sourcing, R4: Contrast-audit coverage for the new fixed pairing, R5: Custom-entry accent application (CSP-safe), R6: Button shape and layout modes, R7: Static HTML surface and the custom-entry mechanism
+
+### Community 502 - "Phase 1 Data Model: Configurable Social Login Buttons"
+Cohesion: 0.25
+Nodes (7): CustomProviderEntry, Phase 1 Data Model: Configurable Social Login Buttons, ProviderId (built-in presets), ProviderPreset, Relationships, SocialLoginGroup (the composed entity), State transitions
+
+### Community 503 - "Quickstart: Configurable Social Login Buttons"
+Cohesion: 0.25
+Nodes (7): Contrast verification (Constitution Check gate), Expected outcome, Prerequisites, Quickstart: Configurable Social Login Buttons, Validate US1 — brand-compliant top providers (P1), Validate US2 — one config array drives the group (P2), Validate US3 — providers without a mandated spec (P3)
+
+### Community 505 - "Alert.tsx"
+Cohesion: 0.40
+Nodes (3): AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS
+
+### Community 506 - "CopyButton.tsx"
+Cohesion: 0.40
+Nodes (3): CopyButtonProps, CopyStatus, ICONS
+
+### Community 507 - "ScrollProgressBar.tsx"
+Cohesion: 0.67
+Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
+
+### Community 512 - "OnboardingTour.tsx"
+Cohesion: 0.50
+Nodes (3): OnboardingTour(), OnboardingTourProps, TourStep
+
+### Community 513 - "PickList.tsx"
+Cohesion: 0.50
+Nodes (3): PickList(), PickListItem, PickListProps
+
 ## Knowledge Gaps
-- **2317 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+2312 more)
+- **2811 isolated node(s):** `CustomProviderEntry`, `providerBrand`, `ProviderPreset`, `Content Quality`, `Requirement Completeness` (+2806 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **98 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **107 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
-  _2317 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `expectNoA11yViolations()` connect `a11y-helper.ts` to `feature-015-csp-sweep.spec.ts`, `color-input.spec.ts`, `button.spec.ts`, `context-menu.spec.ts`, `react-modal.spec.ts`, `react-select.spec.ts`, `select.spec.ts`, `slide-over.spec.ts`, `react-catalog-expansion-nav-utility.spec.ts`?**
+  _High betweenness centrality (0.000) - this node is a cross-community bridge._
+- **What connects `CustomProviderEntry`, `providerBrand`, `ProviderPreset` to the rest of the system?**
+  _2811 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
@@ -1539,8 +1920,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.045454545454545456 - nodes in this community are weakly interconnected._
 - **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Should `Feature Specification: Design System Primitive Components` be split into smaller, more focused modules?**
-  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
