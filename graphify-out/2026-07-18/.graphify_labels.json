@@ -603,5 +603,6 @@
   "601": "catalog-expansion-buttons.spec.ts",
   "602": "advanced-form-inputs.spec.ts",
   "603": "gallery-showcase.spec.ts",
-  "604": "rewrite-base-path.mjs"
+  "604": "rewrite-base-path.mjs",
+  "605": "Specification Quality Checklist: Material Catalog Layout"
 }

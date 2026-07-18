@@ -36,14 +36,204 @@
   },
   "nodes": [
     {
+      "label": "requirements.md",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_checklists_requirements",
+      "community": 605,
+      "norm_label": "requirements.md"
+    },
+    {
+      "label": "Specification Quality Checklist: Material Catalog Layout",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
+      "community": 605,
+      "norm_label": "specification quality checklist: material catalog layout"
+    },
+    {
+      "label": "Content Quality",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_content_quality",
+      "community": 605,
+      "norm_label": "content quality"
+    },
+    {
+      "label": "Requirement Completeness",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_requirement_completeness",
+      "community": 605,
+      "norm_label": "requirement completeness"
+    },
+    {
+      "label": "Feature Readiness",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_feature_readiness",
+      "community": 605,
+      "norm_label": "feature readiness"
+    },
+    {
+      "label": "Notes",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_notes",
+      "community": 605,
+      "norm_label": "notes"
+    },
+    {
+      "label": "spec.md",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec",
+      "community": 605,
+      "norm_label": "spec.md"
+    },
+    {
+      "label": "Feature Specification: Material Catalog Layout",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
+      "community": 605,
+      "norm_label": "feature specification: material catalog layout"
+    },
+    {
+      "label": "User Scenarios & Testing *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
+      "community": 605,
+      "norm_label": "user scenarios & testing *(mandatory)*"
+    },
+    {
+      "label": "User Story 1 - Browse every category from a persistent sidebar (Priority: P1)",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_user_story_1_browse_every_category_from_a_persistent_sidebar_priority_p1",
+      "community": 605,
+      "norm_label": "user story 1 - browse every category from a persistent sidebar (priority: p1)"
+    },
+    {
+      "label": "User Story 2 - Understand the catalog's scale and purpose from the hero (Priority: P2)",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_user_story_2_understand_the_catalog_s_scale_and_purpose_from_the_hero_priority_p2",
+      "community": 605,
+      "norm_label": "user story 2 - understand the catalog's scale and purpose from the hero (priority: p2)"
+    },
+    {
+      "label": "User Story 3 - Scan components in a uniform, predictable grid (Priority: P3)",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_user_story_3_scan_components_in_a_uniform_predictable_grid_priority_p3",
+      "community": 605,
+      "norm_label": "user story 3 - scan components in a uniform, predictable grid (priority: p3)"
+    },
+    {
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_edge_cases",
+      "community": 605,
+      "norm_label": "edge cases"
+    },
+    {
+      "label": "Requirements *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_requirements_mandatory",
+      "community": 605,
+      "norm_label": "requirements *(mandatory)*"
+    },
+    {
+      "label": "Functional Requirements",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_functional_requirements",
+      "community": 605,
+      "norm_label": "functional requirements"
+    },
+    {
+      "label": "Key Entities",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_key_entities",
+      "community": 605,
+      "norm_label": "key entities"
+    },
+    {
+      "label": "Success Criteria *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_success_criteria_mandatory",
+      "community": 605,
+      "norm_label": "success criteria *(mandatory)*"
+    },
+    {
+      "label": "Measurable Outcomes",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_measurable_outcomes",
+      "community": 605,
+      "norm_label": "measurable outcomes"
+    },
+    {
+      "label": "Assumptions",
+      "file_type": "document",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "specs_040_material_catalog_layout_spec_assumptions",
+      "community": 605,
+      "norm_label": "assumptions"
+    },
+    {
       "label": "constitution.md",
       "file_type": "document",
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specify_memory_constitution",
       "community": 3,
-      "norm_label": "constitution.md"
+      "norm_label": "constitution.md",
+      "id": "specify_memory_constitution"
     },
     {
       "label": "Professional Design System Constitution",
@@ -51,9 +241,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1527",
       "_origin": "ast",
-      "id": "specify_memory_constitution_professional_design_system_constitution",
       "community": 3,
-      "norm_label": "professional design system constitution"
+      "norm_label": "professional design system constitution",
+      "id": "specify_memory_constitution_professional_design_system_constitution"
     },
     {
       "label": "Core Principles",
@@ -61,9 +251,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1530",
       "_origin": "ast",
-      "id": "specify_memory_constitution_core_principles",
       "community": 3,
-      "norm_label": "core principles"
+      "norm_label": "core principles",
+      "id": "specify_memory_constitution_core_principles"
     },
     {
       "label": "I. Cognitive Ergonomics & Visual Hierarchy",
@@ -71,9 +261,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1532",
       "_origin": "ast",
-      "id": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy",
       "community": 3,
-      "norm_label": "i. cognitive ergonomics & visual hierarchy"
+      "norm_label": "i. cognitive ergonomics & visual hierarchy",
+      "id": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy"
     },
     {
       "label": "II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)",
@@ -81,9 +271,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1548",
       "_origin": "ast",
-      "id": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable",
       "community": 3,
-      "norm_label": "ii. absolute semantic accessibility (wcag 2.2 aaa) (non-negotiable)"
+      "norm_label": "ii. absolute semantic accessibility (wcag 2.2 aaa) (non-negotiable)",
+      "id": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable"
     },
     {
       "label": "III. Tailwind-Only Architecture (Zero Parallel CSS)",
@@ -91,9 +281,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1584",
       "_origin": "ast",
-      "id": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css",
       "community": 3,
-      "norm_label": "iii. tailwind-only architecture (zero parallel css)"
+      "norm_label": "iii. tailwind-only architecture (zero parallel css)",
+      "id": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css"
     },
     {
       "label": "IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)",
@@ -101,9 +291,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1595",
       "_origin": "ast",
-      "id": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable",
       "community": 3,
-      "norm_label": "iv. design token discipline (zero hardcoding) (non-negotiable)"
+      "norm_label": "iv. design token discipline (zero hardcoding) (non-negotiable)",
+      "id": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable"
     },
     {
       "label": "V. Interactive State Completeness (NON-NEGOTIABLE)",
@@ -111,9 +301,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1607",
       "_origin": "ast",
-      "id": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable",
       "community": 3,
-      "norm_label": "v. interactive state completeness (non-negotiable)"
+      "norm_label": "v. interactive state completeness (non-negotiable)",
+      "id": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable"
     },
     {
       "label": "VI. Project Language Policy (NON-NEGOTIABLE)",
@@ -121,9 +311,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1619",
       "_origin": "ast",
-      "id": "specify_memory_constitution_vi_project_language_policy_non_negotiable",
       "community": 3,
-      "norm_label": "vi. project language policy (non-negotiable)"
+      "norm_label": "vi. project language policy (non-negotiable)",
+      "id": "specify_memory_constitution_vi_project_language_policy_non_negotiable"
     },
     {
       "label": "VII. Autonomous Skill Acquisition Protocol (NON-NEGOTIABLE)",
@@ -131,9 +321,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1635",
       "_origin": "ast",
-      "id": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable",
       "community": 3,
-      "norm_label": "vii. autonomous skill acquisition protocol (non-negotiable)"
+      "norm_label": "vii. autonomous skill acquisition protocol (non-negotiable)",
+      "id": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable"
     },
     {
       "label": "Design Foundations: Tokens, Typography & Grid",
@@ -141,9 +331,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1666",
       "_origin": "ast",
-      "id": "specify_memory_constitution_design_foundations_tokens_typography_grid",
       "community": 3,
-      "norm_label": "design foundations: tokens, typography & grid"
+      "norm_label": "design foundations: tokens, typography & grid",
+      "id": "specify_memory_constitution_design_foundations_tokens_typography_grid"
     },
     {
       "label": "Base Semantic Palette",
@@ -151,9 +341,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1668",
       "_origin": "ast",
-      "id": "specify_memory_constitution_base_semantic_palette",
       "community": 3,
-      "norm_label": "base semantic palette"
+      "norm_label": "base semantic palette",
+      "id": "specify_memory_constitution_base_semantic_palette"
     },
     {
       "label": "Typography & Text Scale",
@@ -161,9 +351,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1699",
       "_origin": "ast",
-      "id": "specify_memory_constitution_typography_text_scale",
       "community": 3,
-      "norm_label": "typography & text scale"
+      "norm_label": "typography & text scale",
+      "id": "specify_memory_constitution_typography_text_scale"
     },
     {
       "label": "Alignment Grid & Spacing",
@@ -171,9 +361,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1716",
       "_origin": "ast",
-      "id": "specify_memory_constitution_alignment_grid_spacing",
       "community": 3,
-      "norm_label": "alignment grid & spacing"
+      "norm_label": "alignment grid & spacing",
+      "id": "specify_memory_constitution_alignment_grid_spacing"
     },
     {
       "label": "Theming & Multi-Palette Architecture",
@@ -181,9 +371,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1728",
       "_origin": "ast",
-      "id": "specify_memory_constitution_theming_multi_palette_architecture",
       "community": 3,
-      "norm_label": "theming & multi-palette architecture"
+      "norm_label": "theming & multi-palette architecture",
+      "id": "specify_memory_constitution_theming_multi_palette_architecture"
     },
     {
       "label": "Component Catalog & Tailwind UI Patterns",
@@ -191,9 +381,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2001",
       "_origin": "ast",
-      "id": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
       "community": 3,
-      "norm_label": "component catalog & tailwind ui patterns"
+      "norm_label": "component catalog & tailwind ui patterns",
+      "id": "specify_memory_constitution_component_catalog_tailwind_ui_patterns"
     },
     {
       "label": "Layout & Structure Primitives (feature 028)",
@@ -201,9 +391,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2007",
       "_origin": "ast",
-      "id": "specify_memory_constitution_layout_structure_primitives_feature_028",
       "community": 3,
-      "norm_label": "layout & structure primitives (feature 028)"
+      "norm_label": "layout & structure primitives (feature 028)",
+      "id": "specify_memory_constitution_layout_structure_primitives_feature_028"
     },
     {
       "label": "Feedback Primitives (feature 029)",
@@ -211,9 +401,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2051",
       "_origin": "ast",
-      "id": "specify_memory_constitution_feedback_primitives_feature_029",
       "community": 3,
-      "norm_label": "feedback primitives (feature 029)"
+      "norm_label": "feedback primitives (feature 029)",
+      "id": "specify_memory_constitution_feedback_primitives_feature_029"
     },
     {
       "label": "Consent & System Messaging Primitives (feature 030)",
@@ -221,9 +411,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2122",
       "_origin": "ast",
-      "id": "specify_memory_constitution_consent_system_messaging_primitives_feature_030",
       "community": 3,
-      "norm_label": "consent & system messaging primitives (feature 030)"
+      "norm_label": "consent & system messaging primitives (feature 030)",
+      "id": "specify_memory_constitution_consent_system_messaging_primitives_feature_030"
     },
     {
       "label": "Navigation Micro-Patterns (feature 031)",
@@ -231,9 +421,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2184",
       "_origin": "ast",
-      "id": "specify_memory_constitution_navigation_micro_patterns_feature_031",
       "community": 3,
-      "norm_label": "navigation micro-patterns (feature 031)"
+      "norm_label": "navigation micro-patterns (feature 031)",
+      "id": "specify_memory_constitution_navigation_micro_patterns_feature_031"
     },
     {
       "label": "Overlays (feature 032)",
@@ -241,9 +431,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2231",
       "_origin": "ast",
-      "id": "specify_memory_constitution_overlays_feature_032",
       "community": 3,
-      "norm_label": "overlays (feature 032)"
+      "norm_label": "overlays (feature 032)",
+      "id": "specify_memory_constitution_overlays_feature_032"
     },
     {
       "label": "Data Display Composables (feature 033)",
@@ -251,9 +441,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2277",
       "_origin": "ast",
-      "id": "specify_memory_constitution_data_display_composables_feature_033",
       "community": 3,
-      "norm_label": "data display composables (feature 033)"
+      "norm_label": "data display composables (feature 033)",
+      "id": "specify_memory_constitution_data_display_composables_feature_033"
     },
     {
       "label": "Data Display Patterns (feature 034)",
@@ -261,9 +451,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2323",
       "_origin": "ast",
-      "id": "specify_memory_constitution_data_display_patterns_feature_034",
       "community": 3,
-      "norm_label": "data display patterns (feature 034)"
+      "norm_label": "data display patterns (feature 034)",
+      "id": "specify_memory_constitution_data_display_patterns_feature_034"
     },
     {
       "label": "Configurable Social Login Buttons (feature 035)",
@@ -271,9 +461,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2373",
       "_origin": "ast",
-      "id": "specify_memory_constitution_configurable_social_login_buttons_feature_035",
       "community": 3,
-      "norm_label": "configurable social login buttons (feature 035)"
+      "norm_label": "configurable social login buttons (feature 035)",
+      "id": "specify_memory_constitution_configurable_social_login_buttons_feature_035"
     },
     {
       "label": "Gallery Presentation & Discoverability (feature 026)",
@@ -281,9 +471,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2450",
       "_origin": "ast",
-      "id": "specify_memory_constitution_gallery_presentation_discoverability_feature_026",
       "community": 3,
-      "norm_label": "gallery presentation & discoverability (feature 026)"
+      "norm_label": "gallery presentation & discoverability (feature 026)",
+      "id": "specify_memory_constitution_gallery_presentation_discoverability_feature_026"
     },
     {
       "label": "Homepage Component Showcase (feature 037)",
@@ -291,9 +481,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2504",
       "_origin": "ast",
-      "id": "specify_memory_constitution_homepage_component_showcase_feature_037",
       "community": 3,
-      "norm_label": "homepage component showcase (feature 037)"
+      "norm_label": "homepage component showcase (feature 037)",
+      "id": "specify_memory_constitution_homepage_component_showcase_feature_037"
     },
     {
       "label": "Advanced Form Inputs Batch (feature 039)",
@@ -301,9 +491,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2567",
       "_origin": "ast",
-      "id": "specify_memory_constitution_advanced_form_inputs_batch_feature_039",
       "community": 3,
-      "norm_label": "advanced form inputs batch (feature 039)"
+      "norm_label": "advanced form inputs batch (feature 039)",
+      "id": "specify_memory_constitution_advanced_form_inputs_batch_feature_039"
     },
     {
       "label": "Forms, Validation & Inputs",
@@ -311,9 +501,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2706",
       "_origin": "ast",
-      "id": "specify_memory_constitution_forms_validation_inputs",
       "community": 3,
-      "norm_label": "forms, validation & inputs"
+      "norm_label": "forms, validation & inputs",
+      "id": "specify_memory_constitution_forms_validation_inputs"
     },
     {
       "label": "Data Display & Listings",
@@ -321,9 +511,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2850",
       "_origin": "ast",
-      "id": "specify_memory_constitution_data_display_listings",
       "community": 3,
-      "norm_label": "data display & listings"
+      "norm_label": "data display & listings",
+      "id": "specify_memory_constitution_data_display_listings"
     },
     {
       "label": "Overlays, Modals & Feedback",
@@ -331,9 +521,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3173",
       "_origin": "ast",
-      "id": "specify_memory_constitution_overlays_modals_feedback",
       "community": 3,
-      "norm_label": "overlays, modals & feedback"
+      "norm_label": "overlays, modals & feedback",
+      "id": "specify_memory_constitution_overlays_modals_feedback"
     },
     {
       "label": "Navigation & Disclosure",
@@ -341,9 +531,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3233",
       "_origin": "ast",
-      "id": "specify_memory_constitution_navigation_disclosure",
       "community": 3,
-      "norm_label": "navigation & disclosure"
+      "norm_label": "navigation & disclosure",
+      "id": "specify_memory_constitution_navigation_disclosure"
     },
     {
       "label": "Advanced Forms & Interaction",
@@ -351,9 +541,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3340",
       "_origin": "ast",
-      "id": "specify_memory_constitution_advanced_forms_interaction",
       "community": 3,
-      "norm_label": "advanced forms & interaction"
+      "norm_label": "advanced forms & interaction",
+      "id": "specify_memory_constitution_advanced_forms_interaction"
     },
     {
       "label": "Component Catalog Expansion (Batch 1, Feature 023)",
@@ -361,9 +551,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3402",
       "_origin": "ast",
-      "id": "specify_memory_constitution_component_catalog_expansion_batch_1_feature_023",
       "community": 3,
-      "norm_label": "component catalog expansion (batch 1, feature 023)"
+      "norm_label": "component catalog expansion (batch 1, feature 023)",
+      "id": "specify_memory_constitution_component_catalog_expansion_batch_1_feature_023"
     },
     {
       "label": "Known Catalog Gaps (deliberately deferred, not silently dropped)",
@@ -371,9 +561,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3472",
       "_origin": "ast",
-      "id": "specify_memory_constitution_known_catalog_gaps_deliberately_deferred_not_silently_dropped",
       "community": 3,
-      "norm_label": "known catalog gaps (deliberately deferred, not silently dropped)"
+      "norm_label": "known catalog gaps (deliberately deferred, not silently dropped)",
+      "id": "specify_memory_constitution_known_catalog_gaps_deliberately_deferred_not_silently_dropped"
     },
     {
       "label": "Governance",
@@ -381,9 +571,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3529",
       "_origin": "ast",
-      "id": "specify_memory_constitution_governance",
       "community": 3,
-      "norm_label": "governance"
+      "norm_label": "governance",
+      "id": "specify_memory_constitution_governance"
     },
     {
       "label": "rewrite-base-path.mjs",
@@ -52423,6 +52613,186 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_checklists_requirements",
+      "target": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_checklists_requirements",
+      "target": "specs_040_material_catalog_layout_spec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_checklists_requirements_content_quality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_checklists_requirements_feature_readiness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_checklists_requirements_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_checklists_requirements_requirement_completeness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec",
+      "target": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_spec_assumptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_spec_requirements_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_spec_success_criteria_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
+      "target": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_edge_cases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_user_story_1_browse_every_category_from_a_persistent_sidebar_priority_p1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_user_story_2_understand_the_catalog_s_scale_and_purpose_from_the_hero_priority_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_user_story_3_scan_components_in_a_uniform_predictable_grid_priority_p3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_requirements_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_functional_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_requirements_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_key_entities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/040-material-catalog-layout/spec.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "specs_040_material_catalog_layout_spec_success_criteria_mandatory",
+      "target": "specs_040_material_catalog_layout_spec_measurable_outcomes",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
@@ -52438,9 +52808,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1527",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution",
-      "target": "specify_memory_constitution_professional_design_system_constitution",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_professional_design_system_constitution"
     },
     {
       "relation": "contains",
@@ -52448,9 +52818,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2001",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_component_catalog_tailwind_ui_patterns"
     },
     {
       "relation": "contains",
@@ -52458,9 +52828,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1530",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_core_principles",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_core_principles"
     },
     {
       "relation": "contains",
@@ -52468,9 +52838,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1666",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_design_foundations_tokens_typography_grid"
     },
     {
       "relation": "contains",
@@ -52478,9 +52848,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3529",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_governance",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_governance"
     },
     {
       "relation": "contains",
@@ -52488,9 +52858,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1728",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_professional_design_system_constitution",
-      "target": "specify_memory_constitution_theming_multi_palette_architecture",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_theming_multi_palette_architecture"
     },
     {
       "relation": "contains",
@@ -52498,9 +52868,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1532",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_i_cognitive_ergonomics_visual_hierarchy"
     },
     {
       "relation": "contains",
@@ -52508,9 +52878,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1548",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_ii_absolute_semantic_accessibility_wcag_2_2_aaa_non_negotiable"
     },
     {
       "relation": "contains",
@@ -52518,9 +52888,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1584",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_iii_tailwind_only_architecture_zero_parallel_css"
     },
     {
       "relation": "contains",
@@ -52528,9 +52898,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1595",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_iv_design_token_discipline_zero_hardcoding_non_negotiable"
     },
     {
       "relation": "contains",
@@ -52538,9 +52908,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1607",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_v_interactive_state_completeness_non_negotiable"
     },
     {
       "relation": "contains",
@@ -52548,9 +52918,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1619",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_vi_project_language_policy_non_negotiable",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_vi_project_language_policy_non_negotiable"
     },
     {
       "relation": "contains",
@@ -52558,9 +52928,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1635",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_core_principles",
-      "target": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_vii_autonomous_skill_acquisition_protocol_non_negotiable"
     },
     {
       "relation": "contains",
@@ -52568,9 +52938,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1716",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "target": "specify_memory_constitution_alignment_grid_spacing",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_alignment_grid_spacing"
     },
     {
       "relation": "contains",
@@ -52578,9 +52948,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1668",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "target": "specify_memory_constitution_base_semantic_palette",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_base_semantic_palette"
     },
     {
       "relation": "contains",
@@ -52588,9 +52958,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L1699",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_design_foundations_tokens_typography_grid",
-      "target": "specify_memory_constitution_typography_text_scale",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_typography_text_scale"
     },
     {
       "relation": "contains",
@@ -52598,9 +52968,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2567",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_advanced_form_inputs_batch_feature_039",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_advanced_form_inputs_batch_feature_039"
     },
     {
       "relation": "contains",
@@ -52608,9 +52978,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3340",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_advanced_forms_interaction",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_advanced_forms_interaction"
     },
     {
       "relation": "contains",
@@ -52618,9 +52988,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3402",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_component_catalog_expansion_batch_1_feature_023",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_component_catalog_expansion_batch_1_feature_023"
     },
     {
       "relation": "contains",
@@ -52628,9 +52998,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2373",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_configurable_social_login_buttons_feature_035",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_configurable_social_login_buttons_feature_035"
     },
     {
       "relation": "contains",
@@ -52638,9 +53008,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_consent_system_messaging_primitives_feature_030",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_consent_system_messaging_primitives_feature_030"
     },
     {
       "relation": "contains",
@@ -52648,9 +53018,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2277",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_data_display_composables_feature_033",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_data_display_composables_feature_033"
     },
     {
       "relation": "contains",
@@ -52658,9 +53028,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2850",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_data_display_listings",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_data_display_listings"
     },
     {
       "relation": "contains",
@@ -52668,9 +53038,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2323",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_data_display_patterns_feature_034",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_data_display_patterns_feature_034"
     },
     {
       "relation": "contains",
@@ -52678,9 +53048,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2051",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_feedback_primitives_feature_029",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_feedback_primitives_feature_029"
     },
     {
       "relation": "contains",
@@ -52688,9 +53058,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2706",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_forms_validation_inputs",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_forms_validation_inputs"
     },
     {
       "relation": "contains",
@@ -52698,9 +53068,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2450",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_gallery_presentation_discoverability_feature_026",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_gallery_presentation_discoverability_feature_026"
     },
     {
       "relation": "contains",
@@ -52708,9 +53078,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2504",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_homepage_component_showcase_feature_037",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_homepage_component_showcase_feature_037"
     },
     {
       "relation": "contains",
@@ -52718,9 +53088,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3472",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_known_catalog_gaps_deliberately_deferred_not_silently_dropped",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_known_catalog_gaps_deliberately_deferred_not_silently_dropped"
     },
     {
       "relation": "contains",
@@ -52728,9 +53098,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2007",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_layout_structure_primitives_feature_028",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_layout_structure_primitives_feature_028"
     },
     {
       "relation": "contains",
@@ -52738,9 +53108,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3233",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_navigation_disclosure",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_navigation_disclosure"
     },
     {
       "relation": "contains",
@@ -52748,9 +53118,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_navigation_micro_patterns_feature_031",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_navigation_micro_patterns_feature_031"
     },
     {
       "relation": "contains",
@@ -52758,9 +53128,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L2231",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_overlays_feature_032",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_overlays_feature_032"
     },
     {
       "relation": "contains",
@@ -52768,9 +53138,9 @@
       "source_file": ".specify/memory/constitution.md",
       "source_location": "L3173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specify_memory_constitution_component_catalog_tailwind_ui_patterns",
-      "target": "specify_memory_constitution_overlays_modals_feedback",
-      "confidence_score": 1.0
+      "target": "specify_memory_constitution_overlays_modals_feedback"
     },
     {
       "relation": "contains",

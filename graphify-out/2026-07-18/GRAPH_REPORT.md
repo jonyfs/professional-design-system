@@ -5,7 +5,7 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5216 nodes · 5423 edges · 605 communities (487 shown, 118 thin omitted)
+- 5235 nodes · 5441 edges · 606 communities (488 shown, 118 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
@@ -514,6 +514,7 @@
 - Toggle.tsx
 - Watermark.tsx
 - rewrite-base-path.mjs
+- Specification Quality Checklist: Material Catalog Layout
 
 ## God Nodes (most connected - your core abstractions)
 1. `expectNoA11yViolations()` - 101 edges
@@ -546,7 +547,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (605 total, 118 thin omitted)
+## Communities (606 total, 118 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -2072,8 +2073,12 @@ Nodes (4): Highlight(), HighlightProps, Segment, splitSegments()
 Cohesion: 0.67
 Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
 
+### Community 605 - "Specification Quality Checklist: Material Catalog Layout"
+Cohesion: 0.11
+Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Material Catalog Layout, Assumptions, Edge Cases, Feature Specification: Material Catalog Layout (+9 more)
+
 ## Knowledge Gaps
-- **3109 isolated node(s):** `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)`, `IV. Design Token Discipline (Zero Hardcoding) (NON-NEGOTIABLE)`, `V. Interactive State Completeness (NON-NEGOTIABLE)` (+3104 more)
+- **3121 isolated node(s):** `Content Quality`, `Requirement Completeness`, `Feature Readiness`, `Notes`, `User Story 1 - Browse every category from a persistent sidebar (Priority: P1)` (+3116 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **118 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -2084,8 +2089,8 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
 - **Why does `stripNonDigits()` connect `theme-gallery.js` to `localized-inputs.js`, `feature-016-csp-sweep.spec.ts`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **What connects `I. Cognitive Ergonomics & Visual Hierarchy`, `II. Absolute Semantic Accessibility (WCAG 2.2 AAA) (NON-NEGOTIABLE)`, `III. Tailwind-Only Architecture (Zero Parallel CSS)` to the rest of the system?**
-  _3109 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Content Quality`, `Requirement Completeness`, `Feature Readiness` to the rest of the system?**
+  _3121 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**

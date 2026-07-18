@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-18)
 
 ## Corpus Check
-- 855 files · ~1,759,845 words
+- 855 files · ~2,418,735 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5235 nodes · 5441 edges · 606 communities (488 shown, 118 thin omitted)
+- 5235 nodes · 5439 edges · 607 communities (489 shown, 118 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `24b6b6c5`
+- Built from commit: `fa233499`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -517,7 +517,7 @@
 - Specification Quality Checklist: Material Catalog Layout
 
 ## God Nodes (most connected - your core abstractions)
-1. `expectNoA11yViolations()` - 101 edges
+1. `expectNoA11yViolations()` - 100 edges
 2. `stripNonDigits()` - 33 edges
 3. `useChartColors()` - 24 edges
 4. `expectNoConsoleErrors()` - 24 edges
@@ -547,7 +547,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (606 total, 118 thin omitted)
+## Communities (607 total, 118 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13

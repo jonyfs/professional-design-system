@@ -36,14 +36,24 @@
   },
   "nodes": [
     {
+      "label": "menubar.spec.ts",
+      "file_type": "code",
+      "source_file": "tests/e2e/menubar.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_e2e_menubar_spec",
+      "community": 606,
+      "norm_label": "menubar.spec.ts"
+    },
+    {
       "label": "requirements.md",
       "file_type": "document",
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_checklists_requirements",
       "community": 605,
-      "norm_label": "requirements.md"
+      "norm_label": "requirements.md",
+      "id": "specs_040_material_catalog_layout_checklists_requirements"
     },
     {
       "label": "Specification Quality Checklist: Material Catalog Layout",
@@ -51,9 +61,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
       "community": 605,
-      "norm_label": "specification quality checklist: material catalog layout"
+      "norm_label": "specification quality checklist: material catalog layout",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout"
     },
     {
       "label": "Content Quality",
@@ -61,9 +71,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_checklists_requirements_content_quality",
       "community": 605,
-      "norm_label": "content quality"
+      "norm_label": "content quality",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_content_quality"
     },
     {
       "label": "Requirement Completeness",
@@ -71,9 +81,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_checklists_requirements_requirement_completeness",
       "community": 605,
-      "norm_label": "requirement completeness"
+      "norm_label": "requirement completeness",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_requirement_completeness"
     },
     {
       "label": "Feature Readiness",
@@ -81,9 +91,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_checklists_requirements_feature_readiness",
       "community": 605,
-      "norm_label": "feature readiness"
+      "norm_label": "feature readiness",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_feature_readiness"
     },
     {
       "label": "Notes",
@@ -91,9 +101,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_checklists_requirements_notes",
       "community": 605,
-      "norm_label": "notes"
+      "norm_label": "notes",
+      "id": "specs_040_material_catalog_layout_checklists_requirements_notes"
     },
     {
       "label": "spec.md",
@@ -101,9 +111,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec",
       "community": 605,
-      "norm_label": "spec.md"
+      "norm_label": "spec.md",
+      "id": "specs_040_material_catalog_layout_spec"
     },
     {
       "label": "Feature Specification: Material Catalog Layout",
@@ -111,9 +121,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
       "community": 605,
-      "norm_label": "feature specification: material catalog layout"
+      "norm_label": "feature specification: material catalog layout",
+      "id": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout"
     },
     {
       "label": "User Scenarios & Testing *(mandatory)*",
@@ -121,9 +131,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
       "community": 605,
-      "norm_label": "user scenarios & testing *(mandatory)*"
+      "norm_label": "user scenarios & testing *(mandatory)*",
+      "id": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory"
     },
     {
       "label": "User Story 1 - Browse every category from a persistent sidebar (Priority: P1)",
@@ -131,9 +141,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_user_story_1_browse_every_category_from_a_persistent_sidebar_priority_p1",
       "community": 605,
-      "norm_label": "user story 1 - browse every category from a persistent sidebar (priority: p1)"
+      "norm_label": "user story 1 - browse every category from a persistent sidebar (priority: p1)",
+      "id": "specs_040_material_catalog_layout_spec_user_story_1_browse_every_category_from_a_persistent_sidebar_priority_p1"
     },
     {
       "label": "User Story 2 - Understand the catalog's scale and purpose from the hero (Priority: P2)",
@@ -141,9 +151,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_user_story_2_understand_the_catalog_s_scale_and_purpose_from_the_hero_priority_p2",
       "community": 605,
-      "norm_label": "user story 2 - understand the catalog's scale and purpose from the hero (priority: p2)"
+      "norm_label": "user story 2 - understand the catalog's scale and purpose from the hero (priority: p2)",
+      "id": "specs_040_material_catalog_layout_spec_user_story_2_understand_the_catalog_s_scale_and_purpose_from_the_hero_priority_p2"
     },
     {
       "label": "User Story 3 - Scan components in a uniform, predictable grid (Priority: P3)",
@@ -151,9 +161,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_user_story_3_scan_components_in_a_uniform_predictable_grid_priority_p3",
       "community": 605,
-      "norm_label": "user story 3 - scan components in a uniform, predictable grid (priority: p3)"
+      "norm_label": "user story 3 - scan components in a uniform, predictable grid (priority: p3)",
+      "id": "specs_040_material_catalog_layout_spec_user_story_3_scan_components_in_a_uniform_predictable_grid_priority_p3"
     },
     {
       "label": "Edge Cases",
@@ -161,9 +171,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_edge_cases",
       "community": 605,
-      "norm_label": "edge cases"
+      "norm_label": "edge cases",
+      "id": "specs_040_material_catalog_layout_spec_edge_cases"
     },
     {
       "label": "Requirements *(mandatory)*",
@@ -171,9 +181,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L75",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_requirements_mandatory",
       "community": 605,
-      "norm_label": "requirements *(mandatory)*"
+      "norm_label": "requirements *(mandatory)*",
+      "id": "specs_040_material_catalog_layout_spec_requirements_mandatory"
     },
     {
       "label": "Functional Requirements",
@@ -181,9 +191,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_functional_requirements",
       "community": 605,
-      "norm_label": "functional requirements"
+      "norm_label": "functional requirements",
+      "id": "specs_040_material_catalog_layout_spec_functional_requirements"
     },
     {
       "label": "Key Entities",
@@ -191,9 +201,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L92",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_key_entities",
       "community": 605,
-      "norm_label": "key entities"
+      "norm_label": "key entities",
+      "id": "specs_040_material_catalog_layout_spec_key_entities"
     },
     {
       "label": "Success Criteria *(mandatory)*",
@@ -201,9 +211,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L98",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_success_criteria_mandatory",
       "community": 605,
-      "norm_label": "success criteria *(mandatory)*"
+      "norm_label": "success criteria *(mandatory)*",
+      "id": "specs_040_material_catalog_layout_spec_success_criteria_mandatory"
     },
     {
       "label": "Measurable Outcomes",
@@ -211,9 +221,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L100",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_measurable_outcomes",
       "community": 605,
-      "norm_label": "measurable outcomes"
+      "norm_label": "measurable outcomes",
+      "id": "specs_040_material_catalog_layout_spec_measurable_outcomes"
     },
     {
       "label": "Assumptions",
@@ -221,9 +231,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L108",
       "_origin": "ast",
-      "id": "specs_040_material_catalog_layout_spec_assumptions",
       "community": 605,
-      "norm_label": "assumptions"
+      "norm_label": "assumptions",
+      "id": "specs_040_material_catalog_layout_spec_assumptions"
     },
     {
       "label": "constitution.md",
@@ -12934,16 +12944,6 @@
       "community": 29,
       "norm_label": "localized-inputs.spec.ts",
       "id": "tests_e2e_localized_inputs_spec"
-    },
-    {
-      "label": "menubar.spec.ts",
-      "file_type": "code",
-      "source_file": "tests/e2e/menubar.spec.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 29,
-      "norm_label": "menubar.spec.ts",
-      "id": "tests_e2e_menubar_spec"
     },
     {
       "label": "modal.spec.ts",
@@ -52618,9 +52618,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_checklists_requirements",
-      "target": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout"
     },
     {
       "relation": "references",
@@ -52628,9 +52628,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_checklists_requirements",
-      "target": "specs_040_material_catalog_layout_spec",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec"
     },
     {
       "relation": "contains",
@@ -52638,9 +52638,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_checklists_requirements_content_quality",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_checklists_requirements_content_quality"
     },
     {
       "relation": "contains",
@@ -52648,9 +52648,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_checklists_requirements_feature_readiness",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_checklists_requirements_feature_readiness"
     },
     {
       "relation": "contains",
@@ -52658,9 +52658,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_checklists_requirements_notes",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_checklists_requirements_notes"
     },
     {
       "relation": "contains",
@@ -52668,9 +52668,9 @@
       "source_file": "specs/040-material-catalog-layout/checklists/requirements.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_checklists_requirements_specification_quality_checklist_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_checklists_requirements_requirement_completeness",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_checklists_requirements_requirement_completeness"
     },
     {
       "relation": "contains",
@@ -52678,9 +52678,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec",
-      "target": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout"
     },
     {
       "relation": "contains",
@@ -52688,9 +52688,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_spec_assumptions",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_assumptions"
     },
     {
       "relation": "contains",
@@ -52698,9 +52698,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_spec_requirements_mandatory",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_requirements_mandatory"
     },
     {
       "relation": "contains",
@@ -52708,9 +52708,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_spec_success_criteria_mandatory",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_success_criteria_mandatory"
     },
     {
       "relation": "contains",
@@ -52718,9 +52718,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_feature_specification_material_catalog_layout",
-      "target": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory"
     },
     {
       "relation": "contains",
@@ -52728,9 +52728,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_edge_cases",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_edge_cases"
     },
     {
       "relation": "contains",
@@ -52738,9 +52738,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_user_story_1_browse_every_category_from_a_persistent_sidebar_priority_p1",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_user_story_1_browse_every_category_from_a_persistent_sidebar_priority_p1"
     },
     {
       "relation": "contains",
@@ -52748,9 +52748,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_user_story_2_understand_the_catalog_s_scale_and_purpose_from_the_hero_priority_p2",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_user_story_2_understand_the_catalog_s_scale_and_purpose_from_the_hero_priority_p2"
     },
     {
       "relation": "contains",
@@ -52758,9 +52758,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_user_scenarios_testing_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_user_story_3_scan_components_in_a_uniform_predictable_grid_priority_p3",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_user_story_3_scan_components_in_a_uniform_predictable_grid_priority_p3"
     },
     {
       "relation": "contains",
@@ -52768,9 +52768,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_requirements_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_functional_requirements",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_functional_requirements"
     },
     {
       "relation": "contains",
@@ -52778,9 +52778,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_requirements_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_key_entities",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_key_entities"
     },
     {
       "relation": "contains",
@@ -52788,9 +52788,9 @@
       "source_file": "specs/040-material-catalog-layout/spec.md",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "specs_040_material_catalog_layout_spec_success_criteria_mandatory",
-      "target": "specs_040_material_catalog_layout_spec_measurable_outcomes",
-      "confidence_score": 1.0
+      "target": "specs_040_material_catalog_layout_spec_measurable_outcomes"
     },
     {
       "relation": "references",
@@ -71156,17 +71156,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "tests/e2e/menubar.spec.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_e2e_menubar_spec",
-      "target": "tests_e2e_a11y_helper"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "tests/e2e/modal.spec.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -72250,17 +72239,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tests_e2e_localized_inputs_spec",
-      "target": "tests_e2e_a11y_helper_expectnoa11yviolations"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/e2e/menubar.spec.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_e2e_menubar_spec",
       "target": "tests_e2e_a11y_helper_expectnoa11yviolations"
     },
     {
@@ -108061,5 +108039,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "24b6b6c55688e5d25c1b21e01a7f49aa763a4385"
+  "built_at_commit": "fa233499a957166226931eeaef3bb901d21fb2c5"
 }
