@@ -32,16 +32,47 @@ jobs:
       - name: Production build
         run: npm run build
 
+  # Feature 041 — the E2E suite (6690 tests across 6 browser/viewport
+  # projects) was the long pole of every CI run (30-55 min in a single
+  # serial job), and now directly gates the Pages deploy + auto-semver
+  # pipeline (feature 039). Playwright's own built-in --shard flag
+  # distributes the SAME full test set across parallel runners rather
+  # than reducing or sampling what's tested (spec.md FR-001/FR-002) — a
+  # GitHub Actions matrix job fails overall the instant any one shard
+  # fails, so the "CI" workflow's conclusion feature 039's deploy-pages.yml
+  # already keys off (workflow_run) still means "every shard passed,"
+  # with no separate aggregation step needed.
+  e2e:
+    needs: verify
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages/react (react-*.spec.ts consume its dist/ output)
+        run: npm run build --workspace packages/react
+
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: E2E tests (visual regression + accessibility)
-        run: npm run test:e2e
+      - name: E2E tests (visual regression + accessibility) — shard ${{ matrix.shard }}/4
+        run: npx playwright test --shard=${{ matrix.shard }}/4
 
       - name: Upload Playwright report
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-shard-${{ matrix.shard }}
           path: playwright-report/
           retention-days: 14
