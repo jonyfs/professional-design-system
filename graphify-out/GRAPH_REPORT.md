@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-18)
 
 ## Corpus Check
-- 812 files · ~1,737,446 words
+- 852 files · ~1,756,301 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 4991 nodes · 5529 edges · 538 communities (458 shown, 80 thin omitted)
+- 5213 nodes · 5421 edges · 604 communities (487 shown, 117 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bda1c89e`
+- Built from commit: `5644a3fe`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -456,32 +456,87 @@
 - Flex.tsx
 - Grid.tsx
 - Group.tsx
+- Contract: TagsInput
+- Contract: TreeSelect
+- Research: Advanced Form Inputs Batch
+- advanced-form-inputs-main.tsx
+- TreeSelect.tsx
+- localized-inputs.js
+- PhoneIntlInput.tsx
+- Alert.tsx
+- Highlight.tsx
+- Accordion.tsx
+- AvatarGroup.tsx
+- Breadcrumbs.tsx
+- Navbar.tsx
+- OnboardingTour.tsx
+- PickList.tsx
+- ScrollProgressBar.tsx
+- Sidebar.tsx
+- SystemBanner.tsx
+- Table.tsx
+- Tabs.tsx
+- Toast.tsx
+- ActionIcon.tsx
+- Affix.tsx
+- Anchor.tsx
+- AppShell.tsx
+- BackgroundImage.tsx
+- BackToTop.tsx
+- Blockquote.tsx
+- Button.tsx
+- Card.tsx
+- Center.tsx
+- Checkbox.tsx
+- Code.tsx
+- Collapse.tsx
+- ColorSwatch.tsx
+- Compare.tsx
+- Container.tsx
+- Flex.tsx
+- Grid.tsx
+- Group.tsx
+- LoadingOverlay.tsx
+- NavLink.tsx
+- NumberInput.tsx
+- OfflineBanner.tsx
+- OverflowList.tsx
+- Paper.tsx
+- PasswordInput.tsx
+- Radio.tsx
+- RingProgress.tsx
 - RollingNumber.tsx
 - SemiCircleProgress.tsx
+- SimpleGrid.tsx
+- Spoiler.tsx
+- Stack.tsx
+- ThemeIcon.tsx
+- Toggle.tsx
+- Watermark.tsx
 
 ## God Nodes (most connected - your core abstractions)
-1. `expectNoA11yViolations()` - 102 edges
+1. `expectNoA11yViolations()` - 101 edges
 2. `stripNonDigits()` - 33 edges
 3. `useChartColors()` - 24 edges
 4. `expectNoConsoleErrors()` - 24 edges
 5. `usePrefersReducedMotion()` - 22 edges
-6. `Component Catalog & Tailwind UI Patterns` - 19 edges
+6. `Component Catalog & Tailwind UI Patterns` - 20 edges
 7. `useSeriesVisibility()` - 17 edges
 8. `Component candidates (105 total, grouped by category)` - 15 edges
-9. `DataTable()` - 14 edges
-10. `ValidationResult` - 14 edges
+9. `ValidationResult` - 14 edges
+10. `Quickstart: Advanced Form Inputs Batch` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `renderGallery()` --indirect_call--> `moodFamily()`  [INFERRED]
   src/scripts/theme-gallery.js → specs/038-per-source-theme-batch/derived/generate-output.mjs
+- `initInputMasks()` --calls--> `applyMask()`  [EXTRACTED]
+  src/scripts/input-mask.js → shared/input-mask/index.ts
+- `DataTableRowActionsProps` --references--> `CrudConfig`  [EXTRACTED]
+  packages/react/src/DataTable/DataTableRowActions.tsx → shared/data-table/types.ts
+- `DataTableToolbarProps` --references--> `BulkAction`  [EXTRACTED]
+  packages/react/src/DataTable/DataTableToolbar.tsx → shared/data-table/types.ts
 - `CodeTypeConfig` --references--> `ValidationResult`  [EXTRACTED]
   packages/react/src/hooks/useValidatedInput.ts → shared/validators/common.ts
-- `DataTableProps` --references--> `BulkAction`  [EXTRACTED]
-  packages/react/src/DataTable/DataTable.tsx → shared/data-table/types.ts
-- `DataTableProps` --references--> `ColumnDefinition`  [EXTRACTED]
-  packages/react/src/DataTable/DataTable.tsx → shared/data-table/types.ts
-- `DataTableProps` --references--> `CrudConfig`  [EXTRACTED]
-  packages/react/src/DataTable/DataTable.tsx → shared/data-table/types.ts
 
 ## Import Cycles
 - None detected.
@@ -490,7 +545,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (538 total, 80 thin omitted)
+## Communities (604 total, 117 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -506,7 +561,7 @@ Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Discl
 
 ### Community 3 - "Agent Context Extension"
 Cohesion: 0.04
-Nodes (43): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+35 more)
+Nodes (44): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+36 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -565,8 +620,8 @@ Cohesion: 0.10
 Nodes (22): acceptedGaps, applyBlocks, buildTokenMap(), compositeOver(), COVERED_FG_TOKENS, DECORATIVE_ARIA_HIDDEN_TOKENS, failures, htmlFiles (+14 more)
 
 ### Community 32 - "theme-gallery.js"
-Cohesion: 0.07
-Nodes (56): format(), isComplete(), validate(), format(), isComplete(), validate(), format(), isComplete() (+48 more)
+Cohesion: 0.18
+Nodes (23): format(), isComplete(), validate(), format(), isComplete(), validate(), format(), isComplete() (+15 more)
 
 ### Community 34 - "button.spec.ts"
 Cohesion: 0.07
@@ -670,7 +725,7 @@ Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Descripti
 
 ### Community 59 - "overlay.js"
 Cohesion: 0.13
-Nodes (48): AreaChart(), AreaChartProps, BarChart(), BarChartProps, CHART_COLOR_TOKENS, ChartDataTable(), ChartDataTableProps, ChartEmptyState() (+40 more)
+Nodes (49): AreaChart(), AreaChartProps, BarChart(), BarChartProps, CHART_COLOR_TOKENS, ChartDataTable(), ChartDataTableProps, ChartEmptyState() (+41 more)
 
 ### Community 60 - "Specification Quality Checklist: React Component Library (Claude Design Compatibility)"
 Cohesion: 0.07
@@ -1017,8 +1072,8 @@ Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Feedback & Data Display Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 164 - "Modal.tsx"
-Cohesion: 0.06
-Nodes (55): BottomSheet(), BottomSheetProps, CommandPalette(), CommandPaletteProps, highlight(), DataTable(), DataTableProps, sortIcon() (+47 more)
+Cohesion: 0.05
+Nodes (58): BottomSheet(), BottomSheetProps, CommandPalette(), CommandPaletteProps, highlight(), DataTable(), DataTableProps, sortIcon() (+50 more)
 
 ### Community 165 - "SlideOver.tsx"
 Cohesion: 0.50
@@ -1111,6 +1166,10 @@ Nodes (6): Prerequisites, Quickstart: Table Primitive, Run the test suite, Valid
 ### Community 195 - "Data Model: Table Primitive"
 Cohesion: 0.33
 Nodes (5): Data Model: Table Primitive, Table, Table Cell, Table Header Cell, Table Row
+
+### Community 197 - "index.ts"
+Cohesion: 0.10
+Nodes (24): CardNumberInput, CardNumberInputProps, CepInput, CepInputProps, CnpjInput, CnpjInputProps, CpfInput, CpfInputProps (+16 more)
 
 ### Community 198 - "Implementation Plan: React Port — Batch 2 (Remaining Static Components)"
 Cohesion: 0.07
@@ -1254,7 +1313,7 @@ Nodes (6): Acceptance mapping, Component Contract: Timeline, Markup contract, Re
 
 ### Community 292 - "feature-015-csp-sweep.spec.ts"
 Cohesion: 0.07
-Nodes (3): expectNoConsoleErrors(), openViaShortcut(), PAGES
+Nodes (5): expectNoConsoleErrors(), openViaShortcut(), PAGES, ALL_PAGES, ZERO_JS_PAGES
 
 ### Community 293 - "aspect-ratio.spec.ts"
 Cohesion: 0.22
@@ -1281,8 +1340,8 @@ Cohesion: 0.29
 Nodes (6): 00:21 | main, 00:23 | main, 13:40 | main, 14:33 | main, 14:35 | main, 23:44 | main
 
 ### Community 300 - "spinner.spec.ts"
-Cohesion: 0.50
-Nodes (3): Accordion(), AccordionItemData, AccordionProps
+Cohesion: 0.07
+Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Advanced Form Inputs Batch, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 301 - "stat-card.spec.ts"
 Cohesion: 0.29
@@ -1433,8 +1492,8 @@ Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Layout & Structure Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 343 - "Highlight.tsx"
-Cohesion: 0.50
-Nodes (4): Highlight(), HighlightProps, Segment, splitSegments()
+Cohesion: 0.10
+Nodes (19): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation for User Story 4, Implementation Strategy, Phase 1: Setup (+11 more)
 
 ### Community 344 - "Phase 1 Data Model: Gallery Theme Selector"
 Cohesion: 0.40
@@ -1630,7 +1689,7 @@ Nodes (6): Acceptance mapping, Contract: LoadingOverlay, React wrapper shape, `s
 
 ### Community 421 - "List.tsx"
 Cohesion: 0.29
-Nodes (6): Avatar(), AvatarProps, SIZE_CLASSES, List(), ListItemData, ListProps
+Nodes (5): Avatar(), AvatarProps, SIZE_CLASSES, ListItemData, ListProps
 
 ### Community 422 - "PhoneIntlInput.tsx"
 Cohesion: 0.29
@@ -1797,8 +1856,8 @@ Cohesion: 0.33
 Nodes (5): BackgroundImage, Blockquote, Data Model: Data Display Composables, ThemeIcon, Watermark
 
 ### Community 474 - "Alert.tsx"
-Cohesion: 0.02
-Nodes (114): Affix(), AffixProps, Alert(), AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS, Anchor(), AnchorProps (+106 more)
+Cohesion: 0.08
+Nodes (28): Autocomplete(), AutocompleteProps, CascadeOption, Cascader(), CascaderProps, FloatLabel(), FloatLabelProps, InputMask() (+20 more)
 
 ### Community 475 - "CopyButton.tsx"
 Cohesion: 0.07
@@ -1817,8 +1876,8 @@ Cohesion: 0.12
 Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
 
 ### Community 479 - "Toast.tsx"
-Cohesion: 0.50
-Nodes (3): Toast(), ToastProps, VARIANT_ICON_CLASSES
+Cohesion: 0.14
+Nodes (13): Full regression, Prerequisites, Quickstart: Advanced Form Inputs Batch, Validate Autocomplete, Validate Cascader, Validate FloatLabel, Validate InputMask, Validate Interactive Rating (+5 more)
 
 ### Community 480 - "Affix.tsx"
 Cohesion: 0.17
@@ -1864,10 +1923,6 @@ Nodes (6): Compare State, Data Model: Data Display Patterns, Gallery Image, Over
 Cohesion: 0.33
 Nodes (5): Acceptance mapping, Contract: RollingNumber, React wrapper shape, `src/scripts/rolling-number.js`, Static HTML usage
 
-### Community 494 - "ValidationResult"
-Cohesion: 0.50
-Nodes (3): Badge(), BadgeProps, VARIANT_CLASSES
-
 ### Community 500 - "Component Contract: Social Login Group"
 Cohesion: 0.20
 Nodes (9): Acceptance mapping, Component Contract: Social Login Group, React wrapper shape, Required classes (Principle V gate), `shared/design-tokens.ts` addition, `src/scripts/social-login.js`, `src/styles/tailwind.css` additions, Static HTML usage (fixed example configuration, research.md R7) (+1 more)
@@ -1890,15 +1945,19 @@ Nodes (10): cssBlocks, derived, hexToRgb(), moodFamily(), names, order, research
 
 ### Community 506 - "CopyButton.tsx"
 Cohesion: 0.40
-Nodes (4): CopyButton(), CopyButtonProps, CopyStatus, ICONS
+Nodes (3): CopyButtonProps, CopyStatus, ICONS
 
 ### Community 507 - "ScrollProgressBar.tsx"
-Cohesion: 0.67
-Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
+Cohesion: 0.15
+Nodes (12): Autocomplete Option, Cascade Level Option, Cascade Path, Data Model: Advanced Form Inputs Batch, FloatLabel State, JsonInput State, Mask Pattern (InputMask), Mention Token (+4 more)
+
+### Community 508 - "feature-016-csp-sweep.spec.ts"
+Cohesion: 0.16
+Nodes (16): cardNumber, cep, cnpj, cpf, iban, phoneBr, phoneIntl, pisPasep (+8 more)
 
 ### Community 510 - "Breadcrumbs.tsx"
-Cohesion: 0.50
-Nodes (3): BreadcrumbItem, Breadcrumbs(), BreadcrumbsProps
+Cohesion: 0.25
+Nodes (7): Acceptance mapping, Contract: InputMask, React wrapper shape, `shared/input-mask/index.ts` (new shared module, reused by both surfaces), `src/scripts/input-mask.js`, `src/styles/tailwind.css` additions, Static HTML usage
 
 ### Community 511 - "Navbar.tsx"
 Cohesion: 0.20
@@ -1924,17 +1983,25 @@ Nodes (8): Phase 0 Research: Per-Source Theme Batch (70 themes), R1. Source veri
 Cohesion: 0.29
 Nodes (6): 00:35 | main, 01:51 | main, 05:47 | main, 07:28 | main, 09:23 | main, 23:45 | main
 
+### Community 517 - "ActionIcon.tsx"
+Cohesion: 0.25
+Nodes (7): Acceptance mapping, Contract: Mentions, React wrapper shape, `shared/mentions/index.ts` (new shared module, research.md R4), `src/scripts/mentions.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
 ### Community 518 - "Affix.tsx"
 Cohesion: 0.33
 Nodes (5): Contract: Component Showcase Card, Markup shape, Overlay/triggered component preview rule (research.md R7), States (per `/ui-ux-pro-max` `state-clarity`/`elevation-consistent`), Verification gate
 
 ### Community 519 - "Anchor.tsx"
-Cohesion: 0.50
-Nodes (3): 01:44 | main, 07:03 | main, 23:36 | main
+Cohesion: 0.33
+Nodes (5): 01:44 | main, 07:03 | main, 09:12 | main, 11:20 | main, 23:36 | main
 
 ### Community 520 - "AppShell.tsx"
 Cohesion: 0.50
 Nodes (3): Contract: Prism Token Derivation, Derivation rule, Verification gate (mandatory before shipping, same as every prior theme)
+
+### Community 521 - "BackgroundImage.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Autocomplete, React wrapper shape, `src/scripts/autocomplete.js`, `src/styles/tailwind.css` additions, Static HTML usage
 
 ### Community 522 - "Blockquote.tsx"
 Cohesion: 0.50
@@ -1944,25 +2011,85 @@ Nodes (3): Component Showcase Card (conceptual, not a new type), Phase 1 Data Mo
 Cohesion: 0.50
 Nodes (3): Contract: Per-Source Batch Theme Derivation, Derivation rule (per theme, applied identically 70 times), Verification gate (mandatory before shipping, same as every prior theme batch)
 
+### Community 524 - "Card.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Cascader, React wrapper shape, `src/scripts/cascader.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 525 - "Center.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: FloatLabel, React wrapper shape, `src/scripts/float-label.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 526 - "Checkbox.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: Interactive Rating (modifies existing Rating component), Markup addition to `src/components/rating/rating.html`, React wrapper shape, Real finding (research.md R1), `src/styles/tailwind.css` additions
+
+### Community 531 - "Container.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: JsonInput, React wrapper shape, `src/scripts/json-input.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 532 - "Flex.tsx"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: RangeSlider, React wrapper shape, `src/scripts/range-slider.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 536 - "Contract: TagsInput"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: TagsInput, React wrapper shape, `src/scripts/tags-input.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 537 - "Contract: TreeSelect"
+Cohesion: 0.29
+Nodes (6): Acceptance mapping, Contract: TreeSelect, React wrapper shape, `src/scripts/tree-select.js`, `src/styles/tailwind.css` additions, Static HTML usage
+
+### Community 538 - "Research: Advanced Form Inputs Batch"
+Cohesion: 0.33
+Nodes (5): R1. Verified reuse targets (real code inspected, not assumed), R2. Genuinely new logic per component (not covered by any reuse), R3. De-duplication re-check (spec.md Assumptions), R4. Mentions helper placement, Research: Advanced Form Inputs Batch
+
+### Community 539 - "advanced-form-inputs-main.tsx"
+Cohesion: 0.33
+Nodes (4): COUNTRIES, FOLDER_TREE, REGION_TREE, USERS
+
+### Community 540 - "TreeSelect.tsx"
+Cohesion: 0.33
+Nodes (9): stripNonAlphanumeric(), format(), isComplete(), letterToDigits(), mod97(), validate(), format(), isComplete() (+1 more)
+
+### Community 548 - "localized-inputs.js"
+Cohesion: 0.29
+Nodes (8): format(), isComplete(), validate(), applyValidity(), CODE_TYPES, initLocalizedInputs(), wireField(), wirePhoneIntlField()
+
+### Community 549 - "PhoneIntlInput.tsx"
+Cohesion: 0.33
+Nodes (5): PhoneIntlInput, PhoneIntlInputProps, Select, SelectOption, SelectProps
+
+### Community 550 - "Alert.tsx"
+Cohesion: 0.40
+Nodes (3): AlertProps, VARIANT_ICON_CLASSES, VARIANT_ICON_PATHS
+
+### Community 551 - "Highlight.tsx"
+Cohesion: 0.50
+Nodes (4): Highlight(), HighlightProps, Segment, splitSegments()
+
+### Community 558 - "ScrollProgressBar.tsx"
+Cohesion: 0.67
+Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
+
 ## Knowledge Gaps
-- **2877 isolated node(s):** `countries`, `actions`, `projectActions`, `teamMembers`, `notifications` (+2872 more)
+- **3109 isolated node(s):** `graphify`, `Content Quality`, `Requirement Completeness`, `Feature Readiness`, `Notes` (+3104 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **80 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **117 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Combobox()` connect `Radio.tsx` to `Alert.tsx`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `Pagination()` connect `react-modal.spec.ts` to `Alert.tsx`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `DataTable()` connect `Modal.tsx` to `Alert.tsx`?**
+- **Why does `ValidationResult` connect `theme-gallery.js` to `feature-016-csp-sweep.spec.ts`, `TreeSelect.tsx`, `index.ts`, `localized-inputs.js`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **What connects `countries`, `actions`, `projectActions` to the rest of the system?**
-  _2877 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `graphify`, `Content Quality`, `Requirement Completeness` to the rest of the system?**
+  _3109 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
+  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
+- **Should `Agent Context Extension` be split into smaller, more focused modules?**
+  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+- **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
