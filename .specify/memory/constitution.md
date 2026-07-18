@@ -1,4 +1,112 @@
 <!--
+SYNC IMPACT REPORT (v1.35.0 — see below for the v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.34.0 → 1.35.0
+Modified principles: Theming & Multi-Palette Architecture's per-source
+  derivation rule ("never algorithmically generated (e.g. hue-rotated)
+  or invented") is narrowly amended, in advance of feature 038's
+  implementation (not retroactively): a per-source theme's `brand`
+  MAY be hue-rotated in fixed increments *after* real-value derivation,
+  strictly to break a near-duplicate collision against an
+  already-placed theme (same canvas polarity, within a tight OKLCH
+  tolerance) — never as a substitute for sourcing a real value in the
+  first place, and never applied to a theme that doesn't already have
+  one. This is distinct from Prism's (feature 036) synthesis-from-
+  scratch exception: every feature 038 theme still starts from one
+  real, cited, per-site anchor; hue-rotation only nudges that real
+  anchor's hue when 70 real companies' colors collide.
+Added sections:
+  - Theming & Multi-Palette Architecture → new "Per-Source Theme Batch
+    (feature 038)" paragraph, added below, documenting the rule change
+    above plus the monochrome-primary alternate-anchor rule (search the
+    same site's own other documented colors before ever falling back to
+    a catalog default).
+Corrected sections: None this bump.
+Rationale: `/speckit-analyze` on feature 038 flagged (C1) that its
+plan/research generalized Prism's hue-rotation method into the
+per-source-mapped category without the constitution having sanctioned
+that blend in advance — the same gate Prism's own carve-out had to
+clear before its implementation shipped (v1.33.0). Resolving this
+*before* `shared/design-tokens.ts`/`themes.css` are written (not after,
+as originally scoped in tasks.md T014) keeps the per-source rule's
+"never invented" guarantee intact: every theme still cites one real
+anchor per research.md R6's "Raw brand anchor" column; only the FINAL
+hue may be nudged, and only to stay distinguishable at 70-theme scale.
+This is a MINOR bump: a narrow, explicit exception to an existing rule,
+not new principle text or a reversal.
+Templates requiring updates: ✅ none — specs/038-per-source-theme-batch/
+  research.md documents the real per-site raw anchors and de-duplication
+  log this amendment describes.
+
+SYNC IMPACT REPORT (v1.34.0 — see below for the v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.33.0 → 1.34.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Homepage Component
+    Showcase" subsection (feature 037): all 114 homepage cards now
+    render a real, `inert`-wrapped excerpt of that component's own
+    markup instead of text-only descriptions, in a content-driven
+    bento grid, plus a live "proof wall" hero. Documents a new
+    `inert`-wrapped-preview pattern (resolves the real HTML conflict
+    between "whole card is one native link" and "card embeds the
+    component's real, sometimes-interactive markup"), the frozen-
+    open-state convention for triggered/overlay components, two
+    surfaced pre-existing technical constraints (Chart's React-only
+    rendering, Data Table's JS-only static page), and three real bugs
+    found and fixed via manual browser verification (nested-`<a>`
+    auto-closing the outer card link; a genuine AAA contrast violation
+    from a new surface tone; `.card-elevated` used without its
+    required base `.card` class).
+Corrected sections: None this bump.
+Rationale: feature 037 (Homepage Component Showcase) is a
+presentation-layer redesign of the existing 114-card gallery grid —
+zero components added/removed/recategorized, zero markup change to
+any individual component's own demo page. Verified via the full
+Playwright suite (see specs/037-homepage-component-showcase/tasks.md
+T020 for the reconciled tally) plus manual live-browser verification
+(screenshots across the full page, a live theme switch). This is a
+MINOR bump: a new documented UI pattern and governance precedent
+(inert-wrapped real markup inside whole-card links), not a principle
+change.
+Templates requiring updates: ✅ none — specs/037-homepage-component-
+  showcase/tasks.md documents this feature's own implementation in
+  full.
+
+SYNC IMPACT REPORT (v1.33.0 — see below for the v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.32.0 → 1.33.0
+Modified principles: None
+Added sections:
+  - Theming & Multi-Palette Architecture → new "Prism — a synthesized
+    theme, not a source-mapped one" paragraph (feature 036): 1 new
+    theme, `prism`, bringing the 48-theme `THEMES` collection to 49.
+    Documents a new derivation *category* this section now recognizes
+    alongside feature 017's DaisyUI/Bootswatch mapping and feature
+    027's per-company mapping: synthesizing ONE palette across a
+    representative, cross-category sample of real external sources
+    (7 sites from the VoltAgent/awesome-design-md GitHub collection,
+    spanning 7 of its 10 categories), rather than one theme per
+    source. Documents the real math used (circular-mean hue averaging
+    for the `brand` accent — chosen because linear RGB averaging
+    across hues this far apart on the wheel produces visual mud, a
+    real, checked reason, not an arbitrary preference — and linear-RGB
+    averaging for the hue-coherent semantic clusters), and a real,
+    live-contrast-tool-driven correction (the initial derived `brand`
+    value failed two non-text checks at 2.28:1; two rounds of
+    lightness-only adjustment, same hue/saturation, cleared both).
+    Exactly one gap was added to `KNOWN_THEME_CONTRAST_GAPS`, matching
+    an existing structural-conflict pattern already present on ~20 of
+    the other 48 themes.
+Corrected sections: None this bump.
+Rationale: feature 036 (Prism Color Scheme) ships 1 new theme via a
+genuinely new derivation methodology (cross-collection synthesis, not
+per-source mapping) — a new governance category worth naming, not a
+duplicate of feature 017/027's pattern. Verified via a clean
+`audit:tokens`/`audit:contrast` pass (49 themes, 1 documented gap) plus
+the full-catalog Playwright regression. This is a MINOR bump: new
+theme data, a new documented derivation category, and documentation —
+no principle text itself changed.
+Templates requiring updates: ✅ none — specs/036-prism-color-scheme/
+  tasks.md documents this feature's own implementation in full.
+
 SYNC IMPACT REPORT (v1.32.0 — see below for the v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.31.0 → 1.32.0
 Modified principles: None
@@ -1750,6 +1858,93 @@ mascots, hero mesh gradients) are visual treatments of existing
 surfaces, not distinct component types, and are out of scope for a
 theme-tokens feature.
 
+**Prism — a synthesized theme, not a source-mapped one** (feature
+036): 1 new theme, `prism`, added to the existing 48-theme `THEMES`
+collection, bringing the total to 49. Unlike every prior curated batch
+(feature 017's DaisyUI/Bootswatch mapping, feature 027's per-company
+mapping), Prism introduces a new derivation *category* this section
+now documents: synthesizing ONE new palette across a representative,
+cross-category sample of real sources, rather than mapping one theme
+per source. 7 real sites from the `VoltAgent/awesome-design-md`
+GitHub collection (Claude, Supabase, Vercel, Stripe, Airbnb, Linear,
+Spotify — 7 of that collection's 10 categories) were sampled directly
+(each site's own `design-md/<slug>/DESIGN.md` file, real hex values,
+not the collection's prose-only README). `brand` was derived via
+circular-mean hue averaging (linear RGB averaging across hues this far
+apart on the wheel produces visual mud — a real, documented reason to
+use the circular method instead, not an arbitrary choice), converging
+on ~190° (cyan-teal); `success`/`warning`/`error`/`info` via linear-RGB
+averaging of the hue-coherent semantic clusters within the same
+sample. The initial `HSL(190°,70%,50%)` `brand` value failed this
+catalog's own live contrast checks (2.28:1 against a 3:1/4.5:1 bar);
+two rounds of L-only adjustment (50%→40%→34%, same hue/saturation)
+cleared every non-text check. Result: exactly ONE documented gap
+(`KNOWN_THEME_CONTRAST_GAPS`) — Sidebar's fixed dark-item-on-
+`neutral-900` pairing (5.78:1, need 7:1), a structural conflict this
+fixed 21-token schema already imposes on roughly 20 of the other 48
+themes (light and dark alike), not specific to Prism's derivation.
+Fits the existing "Light Professional" `MOOD_FAMILIES` category as its
+10th member — no 8th category was needed. Full derivation, per-site
+citations, and math: `specs/036-prism-color-scheme/research.md`.
+
+**Per-Source Theme Batch — 70 real-company-derived themes** (feature
+038): 70 new themes added to the existing 49-theme `THEMES` collection,
+bringing the total to 119. Unlike Prism's (feature 036) synthesis-
+from-scratch approach, this batch generalizes feature 017/027's per-
+source-mapped method to 70 further real sites from the `VoltAgent/
+awesome-design-md` collection: each theme's `brand` anchor is that
+site's own real, documented `primary` color — except 14 sites (e.g.
+Figma, Spacex, Uber) whose `primary` is a real, common pattern for
+minimalist tech brands: functionally monochrome (literal black or
+white). For these, the pipeline used that same site's own OTHER
+documented chromatic color instead (e.g. Figma's `accent-magenta`
+`#FF3D8B`, Spacex's own `link-blue-fallback` `#0000EE`) rather than
+inventing a hue from unstable near-zero-chroma math. Only 5 sites
+(Ollama, Raycast, Resend, Runwayml, Warp) document zero chromatic
+color anywhere in their entire palette; these fall back to this
+catalog's own base `"light"` brand value (`#0066FF`), honestly
+recorded per-theme in `sourceReference` rather than the boilerplate
+used for the other 65 real-value-sourced themes. `neutral-50`/
+`neutral-900` derive from each site's own real canvas/ink anchors; the
+`neutral-100`–`800` ramp is OKLCH-interpolated per feature 017's
+established method; semantic roles use each site's own documented
+colors where present, else this catalog's existing defaults.
+
+**Amended per-source derivation rule — collision-breaking hue
+rotation** (v1.35.0, pre-authorized ahead of this feature's
+implementation so the rule change wasn't retroactive): processing all
+70 themes in a fixed order against every already-placed theme (same
+canvas polarity) found 37 real near-duplicate collisions — common
+tech/fintech blue and automotive/luxury dark-with-accent patterns
+recurring naturally across 70 real companies, not a derivation flaw.
+Each collision is resolved with a deterministic +27° OKLCH hue
+rotation (repeated until clear), re-deriving only the brand-dependent
+tokens (`brand`/`brand-dark`/`brand-light`); the independently-sourced
+neutral ramp and semantic tokens are never touched by this step. This
+is distinct from — and narrower than — Prism's synthesis-from-scratch
+exception: every feature 038 theme still starts from one real, cited,
+per-site anchor; hue-rotation only nudges that real anchor's hue to
+break a collision against an already-placed theme, never substitutes
+for sourcing a real value in the first place, and is never applied to
+a theme that doesn't already have one.
+
+Mood family distribution across the full 119-theme collection: Light
+Professional (49), Warm/Organic Light (16), Nature/Earth (13), Cool/
+Tech Minimal (8), Dark Moody/Professional (9), Dark Vibrant/Expressive
+(19), Distinctive/Characterful (5) — no 8th category was needed
+(confirms feature 027's prior finding). All 119 ids verified
+programmatically unique. Accessibility: `scripts/check-contrast.mjs`'s
+existing pairing structure surfaced 355 new contrast gaps across this
+batch, every one individually documented in
+`KNOWN_THEME_CONTRAST_GAPS` (`"themeId:pairingName"`, real measured
+ratio noted inline) — the same recurring structural categories
+(dual-role Indicator/Tooltip/Progress white-on-brand pairings,
+close-miss neutral-ramp tuning on Badge/Alert soft backgrounds,
+Sidebar dark-item-on-`neutral-900`) already accepted throughout this
+file for the pre-existing 49 themes, not unique to this batch's
+derivation. Full per-theme derivation table with real per-site
+citations: `specs/038-per-source-theme-batch/research.md` R6.
+
 ## Component Catalog & Tailwind UI Patterns
 
 Any component copied from Tailwind UI MUST undergo immediate refactoring for zero
@@ -2252,6 +2447,69 @@ the wrapper div and broke its stickiness. Fixed directly in
 sweep that no other page shares this demo-before-`<h1>` shape. Any
 future scripted, catalog-wide rollout of this kind should check for
 this shape explicitly rather than assume it away.
+
+### Homepage Component Showcase (feature 037)
+
+Feature 026's category grid still described every component in prose
+only — no card showed what the component actually looked like. This
+feature replaced all 114 text-only cards with cards that render a
+real, `inert`-wrapped excerpt of that component's own existing static
+markup, sized into a content-driven bento grid (large/wide/standard,
+based on each component's real rendered footprint, not decoration) and
+grouped under the same 10 categories feature 026 already established.
+The hero's flat 4-stat strip became a "proof wall" — 5 real, layered,
+gently-rotated component fragments staged beside the headline,
+proving "everything here is live UI" before any stat is read; the 4
+stats moved to a quieter supporting row (and one, corrected: the
+theme count had drifted to a stale hardcoded "40+" — this catalog
+actually ships 49).
+
+**New `inert`-wrapped-preview pattern**: since a native `<a>` cannot
+validly contain interactive descendants, and FR-001 required every
+card to embed the component's *real* markup (which for ~30 components
+is itself interactive — buttons, inputs, toggles), every preview
+excerpt is wrapped in a container carrying the HTML `inert` attribute
+— removing it from the tab order and accessibility tree natively,
+zero JS, so the outer whole-card `<a>` remains the only focusable
+element. Components normally shown via a trigger (Modal, Toast,
+Slide-over, Command Palette, Dropdown Menu, Popover, Context Menu,
+Menubar, Tooltip, Notification Center, Session Timeout Modal) render
+their real markup in a frozen, already-open visual state instead of a
+live trigger invocation — this catalog's `KNOWN_THEME_CONTRAST_GAPS`-
+style honesty precedent applied to a *behavioral* constraint instead
+of a color one: documented and worked around, never silently faked
+with a screenshot.
+
+**Two real, pre-existing technical constraints surfaced, not
+invented**: Chart ships React-only (no static-HTML rendering path
+exists for Recharts at all, already documented on that component's own
+demo page) and Data Table's static demo page renders entirely via a
+JS call into empty containers (no static markup exists to excerpt for
+either). Both cards use a compact, real-token-based static
+approximation instead of a live excerpt, each clearly labeled in a
+code comment as a documented exception — not a silent gap.
+
+**Real bugs found and fixed during implementation** (via an actual
+browser screenshot review, not just the automated suite): (1) literal
+`<a>` tags nested inside preview markup (Breadcrumbs'/Pagination's own
+real links) caused the browser's HTML tree-construction algorithm to
+auto-close the OUTER whole-card `<a>` the instant it hit the first
+nested one — silently breaking card structure for every affected card
+(the nested content rendered as unstyled siblings outside the card
+entirely). `inert` prevents focus/pointer interaction but does
+**not** prevent this parse-level auto-closing, since anchor-in-anchor
+is a distinct HTML validity rule from generic interactive-content
+nesting — fixed by using `<span>` for decorative nested link-styled
+text instead of a real `<a>`. (2) A genuine AAA violation (6.86:1,
+below 7:1) from placing existing secondary text color
+(`text-neutral-600`) against the new hero/preview surface tone
+(`bg-neutral-100`, one step darker than this catalog's proven-safe
+`bg-neutral-50` canvas) — fixed by darkening to `text-neutral-700`
+(9.37:1) for that specific surface. (3) `.card-elevated` was used
+standalone in two preview excerpts without its required base `.card`
+class, silently omitting its own background — fixed by pairing both
+classes, matching every other real usage of that class in this
+catalog.
 
 ### Application & Navigation
 - **Sidebar**: `bg-neutral-900`/`text-neutral-300` (dark — corrected from the
@@ -3192,4 +3450,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.32.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-14
+**Version**: 1.35.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
