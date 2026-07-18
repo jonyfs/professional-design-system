@@ -140,8 +140,8 @@
     "semantic_hash": "c09cdcdf8b86381d5955182b5eac0caf"
   },
   ".specify/memory/constitution.md": {
-    "mtime": 1784385433.3987422,
-    "ast_hash": "7a30e517dc2382fd09afd4d028ac3f76",
+    "mtime": 1784390261.893238,
+    "ast_hash": "57229576a9fc27d62216585e1734903f",
     "semantic_hash": ""
   },
   ".specify/templates/checklist-template.md": {
@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   ".specify/feature.json": {
-    "mtime": 1784377722.7106576,
-    "ast_hash": "fc060f31b689bb8dc2265365e755bd99",
+    "mtime": 1784389690.506256,
+    "ast_hash": "9abcdac0a9380c1605420c5f1a71706b",
     "semantic_hash": ""
   },
   ".remember/now.md": {
@@ -315,8 +315,8 @@
     "semantic_hash": ""
   },
   "vite.config.ts": {
-    "mtime": 1784381187.5204327,
-    "ast_hash": "936dc4f0ff438e5d445843149d686abf",
+    "mtime": 1784389834.9366014,
+    "ast_hash": "ed039f7c045dbfd6da450521d6124cd4",
     "semantic_hash": ""
   },
   "index.html": {
@@ -16887,6 +16887,26 @@
   "tests/react-harness/advanced-form-inputs.html": {
     "mtime": 1784381209.500782,
     "ast_hash": "89693212dbb5a140cb9761c1a2c04423",
+    "semantic_hash": ""
+  },
+  "scripts/rewrite-base-path.mjs": {
+    "mtime": 1784389922.727932,
+    "ast_hash": "13390b283109c3f66c3cf704c84553ad",
+    "semantic_hash": ""
+  },
+  ".github/workflows/deploy-pages.yml": {
+    "mtime": 1784389999.8105953,
+    "ast_hash": "bc09d83acf5399f02bf8d87375aad3bc",
+    "semantic_hash": ""
+  },
+  "specs/040-material-catalog-layout/checklists/requirements.md": {
+    "mtime": 1784389682.8902912,
+    "ast_hash": "7821c63718f40680a49d74da097b9326",
+    "semantic_hash": ""
+  },
+  "specs/040-material-catalog-layout/spec.md": {
+    "mtime": 1784389666.528786,
+    "ast_hash": "c8488c4709c24ab576ba794d01794e2c",
     "semantic_hash": ""
   }
 }

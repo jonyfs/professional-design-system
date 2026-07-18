@@ -602,5 +602,6 @@
   "600": "autocomplete.js",
   "601": "catalog-expansion-buttons.spec.ts",
   "602": "advanced-form-inputs.spec.ts",
-  "603": "gallery-showcase.spec.ts"
+  "603": "gallery-showcase.spec.ts",
+  "604": "rewrite-base-path.mjs"
 }
