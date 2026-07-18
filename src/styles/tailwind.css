@@ -1452,7 +1452,7 @@
   }
   .tags-input-tag-remove {
     @apply inline-flex h-4 w-4 items-center justify-center rounded-sm text-neutral-500
-      hover:bg-neutral-200 hover:text-neutral-900 focus-visible:outline
+      hover:bg-neutral-200 hover:text-neutral-900 active:scale-90 focus-visible:outline
       focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand
       disabled:opacity-50 disabled:cursor-not-allowed;
   }
@@ -1499,7 +1499,10 @@
 
   /* Feature 039 — Cascader */
   .cascader-trigger {
-    @apply form-input flex items-center justify-between text-left;
+    @apply form-input flex items-center justify-between text-left hover:bg-neutral-100
+      active:scale-[0.99] focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50
+      disabled:cursor-not-allowed;
   }
   .cascader-panels {
     @apply absolute z-10 mt-1 flex gap-0 rounded-md bg-neutral-50 shadow-lg ring-1
@@ -1517,7 +1520,10 @@
 
   /* Feature 039 — TreeSelect */
   .tree-select-trigger {
-    @apply form-input flex items-center justify-between text-left;
+    @apply form-input flex items-center justify-between text-left hover:bg-neutral-100
+      active:scale-[0.99] focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50
+      disabled:cursor-not-allowed;
   }
   .tree-select-panel {
     @apply absolute z-10 mt-1 max-h-72 w-full overflow-auto rounded-md bg-neutral-50

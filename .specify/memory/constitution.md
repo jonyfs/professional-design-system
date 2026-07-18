@@ -2609,7 +2609,19 @@ prop-derived attribute on the React surface) instead of relying on
 `:placeholder-shown` at all — focus state remains CSS-only, since
 `:focus` itself was never affected.
 
-### Application & Navigation
+**Real finding — a follow-up Principle V compliance pass (requested
+explicitly, after the feature's own suite was already green) caught 2
+real gaps this feature's own test suite did not**: `.cascader-trigger`
+and `.tree-select-trigger` are real `<button>` elements but had only
+inherited `.form-input`'s text-field-style `focus:ring-2`, missing
+`hover:`, `active:`, and `disabled:opacity-50 disabled:cursor-not-
+allowed` entirely, and `.tags-input-tag-remove` was missing `active:`.
+Neither gap fails any automated check this catalog runs today
+(Playwright's a11y scan checks ARIA/contrast, not Principle V's
+specific state-declaration completeness) — both were caught only by
+re-reading the compiled CSS directly against the Principle's literal
+text. Fixed to the same `hover:/active:/focus-visible:/disabled:`
+set every other button in this catalog declares.
 - **Sidebar**: `bg-neutral-900`/`text-neutral-300` (dark — corrected from the
   originally speculative `text-neutral-400`; this pattern had never actually
   been implemented until feature 007, whose real axe-core/WCAG-formula
