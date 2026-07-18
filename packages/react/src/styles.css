@@ -919,4 +919,49 @@
   .compare-slider {
     @apply absolute inset-0 h-full w-full cursor-ew-resize appearance-none bg-transparent opacity-0;
   }
+
+  /* Feature 035: Configurable Social Login Buttons
+     (contracts/social-login-group.contract.md). Default "neutral"
+     appearance reuses this catalog's existing AAA-verified
+     neutral-50/neutral-900 pairing — brand color lives only in the
+     icon glyph (research.md R1), never the button surface. */
+  .social-login-group {
+    @apply flex flex-col gap-3;
+  }
+  .social-login-group-compact {
+    @apply flex-row flex-wrap gap-2;
+  }
+  .social-login-btn {
+    @apply inline-flex w-full items-center justify-center gap-3 rounded-md
+      border border-neutral-300 bg-neutral-50 px-4 py-2.5
+      text-sm font-semibold text-neutral-900
+      hover:bg-neutral-100
+      active:scale-[0.98]
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed
+      transition-[background-color,transform] duration-150;
+  }
+  .social-login-btn-compact {
+    @apply w-auto px-3;
+  }
+  .social-login-btn-label {
+    @apply truncate;
+  }
+  .social-login-btn-label-hidden {
+    @apply sr-only;
+  }
+  .social-login-btn-icon {
+    @apply h-5 w-5 shrink-0;
+  }
+  /* Apple/GitHub-only optional monochrome appearance (research.md R1) —
+     the provider's OWN brand fill, safe because both extremes clear
+     AAA on their own (~17-21:1). No other preset and no custom entry
+     may use this class. */
+  .social-login-btn-monochrome-dark {
+    @apply border-transparent bg-neutral-900 text-white hover:bg-neutral-800;
+  }
+  .social-login-btn-monochrome-light {
+    @apply border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-50;
+  }
 }
