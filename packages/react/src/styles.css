@@ -645,4 +645,278 @@
   .spoiler[data-truncatable="false"] .spoiler-toggle {
     @apply hidden;
   }
+
+  /* Backfill: classes from features 015, 028, 029, 031-034 reused or
+     introduced by their React ports, verbatim from tailwind.css, that
+     were never duplicated into this file (the gap feature 035's own
+     tasks.md flagged as a follow-up). */
+  .progress-track {
+    @apply h-2 w-full overflow-hidden rounded-full bg-neutral-200;
+  }
+  .progress-fill {
+    @apply h-full rounded-full bg-brand-dark transition-[width] duration-300;
+  }
+  .progress-fill-indeterminate {
+    @apply h-full w-1/3 animate-pulse rounded-full bg-brand-dark
+      motion-reduce:animate-none;
+  }
+  .popover-panel {
+    @apply w-72 rounded-md border border-neutral-300 bg-neutral-50 p-4 shadow-lg;
+    position-try-fallbacks: flip-block, flip-inline;
+  }
+  .slider {
+    @apply h-2 cursor-pointer appearance-none rounded-full bg-neutral-200
+      accent-brand-dark disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .slider:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+  .spinner {
+    @apply animate-spin text-brand-dark;
+  }
+  .spinner-sm {
+    @apply h-8 w-8;
+  }
+  .spinner-lg {
+    @apply h-10 w-10;
+  }
+  .indicator-wrapper {
+    @apply relative inline-flex;
+  }
+  .indicator {
+    @apply absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] items-center
+      justify-center rounded-full px-1 text-xs font-semibold text-white;
+  }
+  .indicator-error {
+    @apply bg-error-strong;
+  }
+  .indicator-success {
+    @apply bg-success-strong;
+  }
+  .indicator-warning {
+    @apply bg-warning-strong;
+  }
+  .indicator-info {
+    @apply bg-info-strong;
+  }
+  .indicator-neutral {
+    @apply bg-neutral-700;
+  }
+  .indicator-dot {
+    @apply h-2.5 w-2.5 min-w-0 p-0;
+  }
+
+  /* Feature 028: Layout & Structure Primitives */
+  .stack {
+    @apply flex flex-col;
+  }
+  .stack-xs { @apply space-y-2; }
+  .stack-sm { @apply space-y-4; }
+  .stack-md { @apply space-y-6; }
+  .stack-lg { @apply space-y-8; }
+  .group-row {
+    @apply flex flex-row flex-wrap items-center;
+  }
+  .group-row-xs { @apply gap-2; }
+  .group-row-sm { @apply gap-4; }
+  .group-row-md { @apply gap-6; }
+  .group-row-lg { @apply gap-8; }
+  .center {
+    @apply flex items-center justify-center;
+  }
+  .container-page {
+    @apply mx-auto max-w-5xl px-6;
+  }
+  .paper {
+    @apply rounded-lg border border-neutral-200 bg-neutral-50;
+  }
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-6;
+  }
+  .grid-responsive.grid-cols-2-lg { @apply sm:grid-cols-2; }
+  .grid-responsive.grid-cols-3-lg { @apply sm:grid-cols-2 lg:grid-cols-3; }
+  .grid-responsive.grid-cols-4-lg { @apply sm:grid-cols-2 lg:grid-cols-4; }
+  .simple-grid {
+    @apply grid grid-cols-1 gap-6;
+  }
+  .simple-grid.grid-cols-2-lg { @apply sm:grid-cols-2; }
+  .simple-grid.grid-cols-3-lg { @apply sm:grid-cols-2 lg:grid-cols-3; }
+  .simple-grid.grid-cols-4-lg { @apply sm:grid-cols-2 lg:grid-cols-4; }
+  .flex-row-primitive { @apply flex flex-row flex-wrap gap-4; }
+  .flex-col-primitive { @apply flex flex-col gap-4; }
+  .app-shell {
+    @apply flex min-h-screen flex-col;
+  }
+  .app-shell-body {
+    @apply flex flex-1 flex-col lg:flex-row;
+  }
+  .app-shell-main {
+    @apply flex-1 overflow-y-auto p-6;
+  }
+
+  /* Feature 029: Feedback Primitives */
+  .circular-progress {
+    @apply inline-block;
+  }
+  .circular-progress-track {
+    @apply stroke-neutral-200;
+    fill: none;
+  }
+  .circular-progress-fill {
+    @apply stroke-brand;
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 300ms ease-out;
+  }
+  .circular-progress-fill-success { @apply stroke-success; }
+  .circular-progress-fill-warning { @apply stroke-warning; }
+  .circular-progress-fill-error { @apply stroke-error; }
+  .circular-progress-fill-info { @apply stroke-info; }
+  .semi-circle-progress {
+    @apply inline-block;
+  }
+  .notification-center-trigger {
+    @apply relative inline-flex h-10 w-10 items-center justify-center
+      rounded-md text-neutral-600 hover:bg-neutral-100
+      focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .notification-center-panel {
+    @apply w-80 rounded-lg border border-neutral-200 bg-neutral-50 p-2 shadow-lg;
+  }
+  .notification-center-item {
+    @apply flex flex-col gap-1 rounded-md p-3 text-sm;
+  }
+  .notification-center-item-unread {
+    @apply bg-brand-light/20;
+  }
+  .notification-center-empty {
+    @apply p-6 text-center text-sm text-neutral-600;
+  }
+  .password-strength-meter-fill[data-level="weak"] { @apply bg-error; }
+  .password-strength-meter-fill[data-level="fair"] { @apply bg-warning; }
+  .password-strength-meter-fill[data-level="strong"] { @apply bg-success; }
+
+  /* Feature 032: Overlays */
+  .affix-pinned {
+    @apply fixed top-0 left-0 right-0 z-40;
+  }
+  .loading-overlay-container {
+    @apply relative;
+  }
+  .loading-overlay {
+    @apply absolute inset-0 z-10 flex items-center justify-center bg-neutral-50/75;
+  }
+  .bottom-sheet-dialog {
+    @apply p-0 border-0 fixed inset-x-0 bottom-0 w-full max-h-[80vh];
+    top: auto;
+    margin: 0;
+  }
+  .bottom-sheet-dialog::backdrop {
+    background-color: theme("colors.neutral.500 / 75%");
+  }
+  .bottom-sheet-panel {
+    @apply relative flex max-h-[80vh] w-full flex-col overflow-y-auto
+      bg-neutral-50 shadow-xl p-6 transform transition ease-in-out
+      duration-500;
+  }
+
+  /* Feature 033: Data Display Composables */
+  .theme-icon {
+    @apply inline-flex items-center justify-center rounded-full;
+  }
+  .theme-icon-sm {
+    @apply h-8 w-8;
+  }
+  .theme-icon-lg {
+    @apply h-10 w-10;
+  }
+  .theme-icon-success {
+    @apply bg-success/5 text-success-strong ring-1 ring-inset ring-success/20;
+  }
+  .theme-icon-error {
+    @apply bg-error/5 text-error-strong ring-1 ring-inset ring-error/10;
+  }
+  .theme-icon-warning {
+    @apply bg-warning/5 text-warning-strong ring-1 ring-inset ring-warning/10;
+  }
+  .theme-icon-info {
+    @apply bg-info/5 text-info-strong ring-1 ring-inset ring-info/20;
+  }
+  .theme-icon-brand {
+    @apply bg-brand-light text-brand-dark;
+  }
+  .blockquote {
+    @apply border-l-4 border-neutral-300 pl-4 italic text-neutral-600;
+  }
+  .blockquote-cite {
+    @apply mt-2 block text-sm not-italic text-neutral-600;
+  }
+  .background-image-container {
+    @apply relative overflow-hidden rounded-lg bg-neutral-200 bg-cover bg-center;
+  }
+  .background-image-scrim {
+    @apply absolute inset-0 bg-neutral-900/50;
+  }
+  .background-image-content {
+    @apply relative z-10 p-6 text-white;
+  }
+  .watermark-container {
+    @apply relative overflow-hidden;
+  }
+  .watermark-layer {
+    @apply pointer-events-none absolute inset-0 z-0 bg-repeat;
+  }
+  .watermark-content {
+    @apply relative z-10;
+  }
+
+  /* Feature 034: Data Display Patterns */
+  .overflow-list {
+    @apply flex flex-nowrap items-center gap-2 overflow-hidden;
+  }
+  .overflow-list-chip {
+    @apply inline-flex shrink-0 items-center rounded-md bg-neutral-50 px-2 py-1
+      text-xs font-medium text-neutral-600 ring-1 ring-inset ring-neutral-500/10;
+  }
+  .overflow-list-more {
+    @apply inline-flex shrink-0 items-center rounded-md bg-neutral-100 px-2 py-1
+      text-xs font-medium text-neutral-700 ring-1 ring-inset ring-neutral-500/10;
+  }
+  .pick-list-panel {
+    @apply list max-h-64 min-h-[4rem] overflow-y-auto;
+  }
+  .pick-list-controls {
+    @apply flex flex-col justify-center gap-2;
+  }
+  .gallery-dialog {
+    @apply h-screen w-screen max-h-none max-w-none border-0 bg-neutral-900 p-0;
+  }
+  .gallery-dialog::backdrop {
+    background-color: theme("colors.neutral.900");
+  }
+  .gallery-image {
+    @apply mx-auto block max-h-full max-w-full object-contain;
+  }
+  .gallery-controls {
+    @apply absolute inset-x-0 bottom-6 flex items-center justify-center gap-4;
+  }
+  .gallery-close {
+    @apply absolute right-4 top-4;
+  }
+  .compare-container {
+    @apply relative overflow-hidden rounded-lg select-none;
+  }
+  .compare-image {
+    @apply block h-full w-full object-cover;
+  }
+  .compare-after-wrapper {
+    @apply absolute inset-0 overflow-hidden;
+  }
+  .compare-divider-line {
+    @apply pointer-events-none absolute inset-y-0 w-0.5 bg-white shadow-md;
+  }
+  .compare-slider {
+    @apply absolute inset-0 h-full w-full cursor-ew-resize appearance-none bg-transparent opacity-0;
+  }
 }
