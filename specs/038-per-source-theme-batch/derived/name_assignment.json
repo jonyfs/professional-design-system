@@ -1,0 +1,492 @@
+{
+ "airbnb": {
+  "name": "fuchsia",
+  "hue": 343,
+  "sat": 97,
+  "light": 45,
+  "bucket": "magenta_light"
+ },
+ "airtable": {
+  "name": "fern",
+  "hue": 120,
+  "sat": 100,
+  "light": 26,
+  "bucket": "green_light"
+ },
+ "apple": {
+  "name": "cobalt",
+  "hue": 210,
+  "sat": 100,
+  "light": 40,
+  "bucket": "blue_light"
+ },
+ "binance": {
+  "name": "gilded",
+  "hue": 48,
+  "sat": 100,
+  "light": 38,
+  "bucket": "yellow_dark"
+ },
+ "bmw": {
+  "name": "skyline",
+  "hue": 215,
+  "sat": 77,
+  "light": 47,
+  "bucket": "blue_light"
+ },
+ "bmw-m": {
+  "name": "blaze",
+  "hue": 5,
+  "sat": 82,
+  "light": 52,
+  "bucket": "red_dark"
+ },
+ "bugatti": {
+  "name": "rust",
+  "hue": 44,
+  "sat": 100,
+  "light": 39,
+  "bucket": "orange_dark"
+ },
+ "cal": {
+  "name": "lilac",
+  "hue": 259,
+  "sat": 83,
+  "light": 64,
+  "bucket": "violet_light"
+ },
+ "claude": {
+  "name": "scarlet",
+  "hue": 16,
+  "sat": 46,
+  "light": 45,
+  "bucket": "red_light"
+ },
+ "clay": {
+  "name": "peony",
+  "hue": 336,
+  "sat": 73,
+  "light": 50,
+  "bucket": "magenta_light"
+ },
+ "clickhouse": {
+  "name": "brass",
+  "hue": 61,
+  "sat": 100,
+  "light": 33,
+  "bucket": "yellow_dark"
+ },
+ "cohere": {
+  "name": "azure",
+  "hue": 217,
+  "sat": 80,
+  "light": 48,
+  "bucket": "blue_light"
+ },
+ "coinbase": {
+  "name": "denim",
+  "hue": 221,
+  "sat": 100,
+  "light": 50,
+  "bucket": "blue_light"
+ },
+ "composio": {
+  "name": "midnight",
+  "hue": 221,
+  "sat": 100,
+  "light": 60,
+  "bucket": "blue_dark"
+ },
+ "cursor": {
+  "name": "ember",
+  "hue": 13,
+  "sat": 100,
+  "light": 43,
+  "bucket": "red_light"
+ },
+ "dell-1996": {
+  "name": "poppy",
+  "hue": 354,
+  "sat": 90,
+  "light": 47,
+  "bucket": "red_light"
+ },
+ "elevenlabs": {
+  "name": "brick",
+  "hue": 0,
+  "sat": 72,
+  "light": 51,
+  "bucket": "red_light"
+ },
+ "expo": {
+  "name": "cove",
+  "hue": 228,
+  "sat": 93,
+  "light": 62,
+  "bucket": "blue_light"
+ },
+ "ferrari": {
+  "name": "cinder",
+  "hue": 5,
+  "sat": 80,
+  "light": 54,
+  "bucket": "red_dark"
+ },
+ "figma": {
+  "name": "blossom",
+  "hue": 330,
+  "sat": 100,
+  "light": 43,
+  "bucket": "magenta_light"
+ },
+ "framer": {
+  "name": "amethyst",
+  "hue": 290,
+  "sat": 84,
+  "light": 62,
+  "bucket": "violet_dark"
+ },
+ "hashicorp": {
+  "name": "velvet",
+  "hue": 274,
+  "sat": 100,
+  "light": 63,
+  "bucket": "violet_dark"
+ },
+ "hp": {
+  "name": "garnet",
+  "hue": 220,
+  "sat": 98,
+  "light": 43,
+  "bucket": "blue_light"
+ },
+ "ibm": {
+  "name": "crimson",
+  "hue": 219,
+  "sat": 99,
+  "light": 53,
+  "bucket": "blue_light"
+ },
+ "intercom": {
+  "name": "magma",
+  "hue": 238,
+  "sat": 100,
+  "light": 40,
+  "bucket": "blue_light"
+ },
+ "kraken": {
+  "name": "wisteria",
+  "hue": 259,
+  "sat": 91,
+  "light": 58,
+  "bucket": "violet_light"
+ },
+ "lamborghini": {
+  "name": "amber",
+  "hue": 38,
+  "sat": 100,
+  "light": 32,
+  "bucket": "orange_light"
+ },
+ "lovable": {
+  "name": "carmine",
+  "hue": 217,
+  "sat": 75,
+  "light": 52,
+  "bucket": "blue_light"
+ },
+ "mastercard": {
+  "name": "vermillion",
+  "hue": 353,
+  "sat": 100,
+  "light": 46,
+  "bucket": "red_light"
+ },
+ "meta": {
+  "name": "apricot",
+  "hue": 213,
+  "sat": 100,
+  "light": 44,
+  "bucket": "blue_light"
+ },
+ "minimax": {
+  "name": "saffron",
+  "hue": 222,
+  "sat": 88,
+  "light": 51,
+  "bucket": "blue_light"
+ },
+ "mintlify": {
+  "name": "clementine",
+  "hue": 10,
+  "sat": 81,
+  "light": 45,
+  "bucket": "red_light"
+ },
+ "miro": {
+  "name": "copper",
+  "hue": 230,
+  "sat": 100,
+  "light": 63,
+  "bucket": "blue_light"
+ },
+ "mistral.ai": {
+  "name": "ochre",
+  "hue": 12,
+  "sat": 100,
+  "light": 42,
+  "bucket": "red_light"
+ },
+ "mongodb": {
+  "name": "sage",
+  "hue": 120,
+  "sat": 100,
+  "light": 26,
+  "bucket": "green_light"
+ },
+ "nike": {
+  "name": "bronze",
+  "hue": 224,
+  "sat": 100,
+  "light": 53,
+  "bucket": "blue_light"
+ },
+ "nintendo-2001": {
+  "name": "tawny",
+  "hue": 355,
+  "sat": 100,
+  "light": 45,
+  "bucket": "red_light"
+ },
+ "nvidia": {
+  "name": "mint",
+  "hue": 92,
+  "sat": 100,
+  "light": 25,
+  "bucket": "green_light"
+ },
+ "ollama": {
+  "name": "citrine",
+  "hue": 216,
+  "sat": 100,
+  "light": 50,
+  "bucket": "blue_light"
+ },
+ "opencode.ai": {
+  "name": "daffodil",
+  "hue": 8,
+  "sat": 33,
+  "light": 19,
+  "bucket": "red_light"
+ },
+ "pinterest": {
+  "name": "honeycomb",
+  "hue": 351,
+  "sat": 100,
+  "light": 45,
+  "bucket": "red_light"
+ },
+ "playstation": {
+  "name": "marigold",
+  "hue": 208,
+  "sat": 100,
+  "light": 41,
+  "bucket": "blue_light"
+ },
+ "posthog": {
+  "name": "clover",
+  "hue": 34,
+  "sat": 100,
+  "light": 33,
+  "bucket": "orange_light"
+ },
+ "raycast": {
+  "name": "navy",
+  "hue": 216,
+  "sat": 100,
+  "light": 55,
+  "bucket": "blue_dark"
+ },
+ "renault": {
+  "name": "meadow",
+  "hue": 54,
+  "sat": 100,
+  "light": 35,
+  "bucket": "yellow_dark"
+ },
+ "replicate": {
+  "name": "jade",
+  "hue": 7,
+  "sat": 100,
+  "light": 45,
+  "bucket": "red_light"
+ },
+ "resend": {
+  "name": "moss",
+  "hue": 216,
+  "sat": 100,
+  "light": 50,
+  "bucket": "blue_light"
+ },
+ "revolut": {
+  "name": "pine",
+  "hue": 238,
+  "sat": 70,
+  "light": 58,
+  "bucket": "blue_light"
+ },
+ "runwayml": {
+  "name": "juniper",
+  "hue": 216,
+  "sat": 100,
+  "light": 50,
+  "bucket": "blue_light"
+ },
+ "sanity": {
+  "name": "verdant",
+  "hue": 120,
+  "sat": 100,
+  "light": 26,
+  "bucket": "green_light"
+ },
+ "sentry": {
+  "name": "orchid",
+  "hue": 256,
+  "sat": 21,
+  "light": 21,
+  "bucket": "violet_light"
+ },
+ "shopify": {
+  "name": "spruce",
+  "hue": 141,
+  "sat": 28,
+  "light": 38,
+  "bucket": "green_light"
+ },
+ "slack": {
+  "name": "seafoam",
+  "hue": 299,
+  "sat": 56,
+  "light": 19,
+  "bucket": "magenta_light"
+ },
+ "spacex": {
+  "name": "glacier",
+  "hue": 240,
+  "sat": 100,
+  "light": 47,
+  "bucket": "blue_light"
+ },
+ "spotify": {
+  "name": "lagoon",
+  "hue": 120,
+  "sat": 100,
+  "light": 27,
+  "bucket": "green_light"
+ },
+ "starbucks": {
+  "name": "teal",
+  "hue": 4,
+  "sat": 82,
+  "light": 43,
+  "bucket": "red_light"
+ },
+ "supabase": {
+  "name": "abyssal",
+  "hue": 151,
+  "sat": 100,
+  "light": 26,
+  "bucket": "green_light"
+ },
+ "superhuman": {
+  "name": "deepsea",
+  "hue": 242,
+  "sat": 29,
+  "light": 23,
+  "bucket": "blue_light"
+ },
+ "tesla": {
+  "name": "tidal",
+  "hue": 224,
+  "sat": 73,
+  "light": 56,
+  "bucket": "blue_light"
+ },
+ "theverge": {
+  "name": "lavenderfield",
+  "hue": 259,
+  "sat": 100,
+  "light": 50,
+  "bucket": "violet_light"
+ },
+ "together.ai": {
+  "name": "indigo",
+  "hue": 312,
+  "sat": 100,
+  "light": 41,
+  "bucket": "magenta_light"
+ },
+ "uber": {
+  "name": "cosmos",
+  "hue": 240,
+  "sat": 100,
+  "light": 47,
+  "bucket": "blue_light"
+ },
+ "vodafone": {
+  "name": "voyager",
+  "hue": 0,
+  "sat": 100,
+  "light": 45,
+  "bucket": "red_light"
+ },
+ "voltagent": {
+  "name": "twilight",
+  "hue": 158,
+  "sat": 100,
+  "light": 37,
+  "bucket": "green_dark"
+ },
+ "warp": {
+  "name": "eclipse",
+  "hue": 216,
+  "sat": 100,
+  "light": 55,
+  "bucket": "blue_dark"
+ },
+ "webflow": {
+  "name": "mulberry",
+  "hue": 259,
+  "sat": 100,
+  "light": 62,
+  "bucket": "violet_light"
+ },
+ "wired": {
+  "name": "plum",
+  "hue": 201,
+  "sat": 100,
+  "light": 35,
+  "bucket": "blue_light"
+ },
+ "wise": {
+  "name": "chalk",
+  "hue": 92,
+  "sat": 100,
+  "light": 26,
+  "bucket": "green_light"
+ },
+ "x.ai": {
+  "name": "pebble",
+  "hue": 262,
+  "sat": 100,
+  "light": 67,
+  "bucket": "violet_dark"
+ },
+ "zapier": {
+  "name": "fog",
+  "hue": 10,
+  "sat": 100,
+  "light": 43,
+  "bucket": "red_light"
+ }
+}

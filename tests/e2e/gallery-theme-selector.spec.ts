@@ -19,7 +19,7 @@ test.describe("Gallery theme selector (US1 — live preview)", () => {
   test("lists every theme grouped by mood family", async ({ page }) => {
     const select = page.locator("#gallery-theme-select");
     await expect(select.locator("optgroup")).toHaveCount(7);
-    await expect(select.locator("option")).toHaveCount(49);
+    await expect(select.locator("option")).toHaveCount(119);
   });
 
   test("reflects the currently active theme on load", async ({ page }) => {

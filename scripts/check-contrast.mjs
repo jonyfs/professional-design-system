@@ -871,6 +871,368 @@ const KNOWN_THEME_CONTRAST_GAPS = new Set([
   // themes (light and dark alike, e.g. corporate/silk/winter/cupcake),
   // not a Prism-specific derivation flaw. Real measured ratio: 5.78:1.
   "prism:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
+
+  // Feature 038 (per-source theme batch, 70 themes) — same structural
+  // token-schema conflicts already documented for the pre-existing 49
+  // themes above (dual-role Indicator/Tooltip/Progress white-on-brand
+  // pairings, close-miss neutral-ramp tuning on Badge/Alert soft
+  // backgrounds, Sidebar dark-item-on-neutral-900), not derivation-
+  // pipeline-specific flaws. Real measured ratios noted inline.
+  "fuchsia:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "fuchsia:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "fuchsia:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "fuchsia:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.58:1
+  "fern:Badge success (text-success-strong on bg-success/5)", // 6.86:1
+  "fern:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "fern:Alert info icon (text-info-strong on bg-info/5)", // 6.94:1
+  "fern:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.77:1
+  "cobalt:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "cobalt:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "cobalt:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "cobalt:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.77:1
+  "gilded:Button primary text (text-white on bg-brand-dark)", // 4.96:1
+  "gilded:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 3.99:1
+  "gilded:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.68:1
+  "gilded:Tooltip label text (text-white on bg-neutral-900)", // 1.09:1
+  "gilded:Indicator success (text-white on bg-success-strong)", // 2.54:1
+  "gilded:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "gilded:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "gilded:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "gilded:Indicator neutral (text-white on bg-neutral-700)", // 1.59:1
+  "gilded:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.93:1
+  "skyline:Badge error (text-error-strong on bg-error/5)", // 6.71:1
+  "skyline:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "skyline:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.51:1
+  "blaze:Button primary text (text-white on bg-brand-dark)", // 4.65:1
+  "blaze:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.25:1
+  "blaze:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "blaze:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "blaze:Indicator success (text-white on bg-success-strong)", // 2.68:1
+  "blaze:Indicator warning (text-white on bg-warning-strong)", // 1.85:1
+  "blaze:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "blaze:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "blaze:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "blaze:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 2.00:1
+  "rust:Button primary text (text-white on bg-brand-dark)", // 4.81:1
+  "rust:Badge success (text-success-strong on bg-success/5)", // 6.85:1
+  "rust:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.12:1
+  "rust:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "rust:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "rust:Indicator success (text-white on bg-success-strong)", // 2.76:1
+  "rust:Indicator warning (text-white on bg-warning-strong)", // 2.38:1
+  "rust:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "rust:Indicator info (text-white on bg-info-strong)", // 1.44:1
+  "rust:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "rust:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.93:1
+  "lilac:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "lilac:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "lilac:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "lilac:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.91:1
+  "scarlet:Badge warning (text-warning-strong on bg-warning/5)", // 6.90:1
+  "scarlet:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "scarlet:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "peony:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "peony:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "peony:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.89:1
+  "brass:Button primary text (text-white on bg-brand-dark)", // 4.76:1
+  "brass:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.16:1
+  "brass:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "brass:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "brass:Indicator success (text-white on bg-success-strong)", // 2.28:1
+  "brass:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "brass:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "brass:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "brass:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "brass:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.95:1
+  "azure:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "azure:Badge error (text-error-strong on bg-error/5)", // 6.54:1
+  "azure:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "azure:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.65:1
+  "denim:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "denim:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "denim:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "denim:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.87:1
+  "midnight:Button primary text (text-white on bg-brand-dark)", // 4.99:1
+  "midnight:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 3.97:1
+  "midnight:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "midnight:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "midnight:Indicator success (text-white on bg-success-strong)", // 1.99:1
+  "midnight:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "midnight:Indicator error (text-white on bg-error-strong)", // 2.70:1
+  "midnight:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "midnight:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "midnight:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.86:1
+  "ember:Badge error (text-error-strong on bg-error/5)", // 6.95:1
+  "ember:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "ember:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.53:1
+  "poppy:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "poppy:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "poppy:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "brick:Badge success (text-success-strong on bg-success/5)", // 6.74:1
+  "brick:Badge error (text-error-strong on bg-error/5)", // 6.71:1
+  "brick:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "brick:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.89:1
+  "cove:Badge success (text-success-strong on bg-success/5)", // 6.74:1
+  "cove:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "cove:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.84:1
+  "cove:Text Input / Select error ring (ring-error vs bg-neutral-50 page)", // 2.39:1
+  "cinder:Button primary text (text-white on bg-brand-dark)", // 4.67:1
+  "cinder:Badge warning (text-warning-strong on bg-warning/5)", // 6.94:1
+  "cinder:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.24:1
+  "cinder:Alert info icon (text-info-strong on bg-info/5)", // 6.81:1
+  "cinder:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "cinder:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "cinder:Indicator success (text-white on bg-success-strong)", // 2.63:1
+  "cinder:Indicator warning (text-white on bg-warning-strong)", // 2.77:1
+  "cinder:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "cinder:Indicator info (text-white on bg-info-strong)", // 2.79:1
+  "cinder:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "cinder:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.99:1
+  "blossom:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "blossom:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "blossom:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "amethyst:Button primary text (text-white on bg-brand-dark)", // 4.86:1
+  "amethyst:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.07:1
+  "amethyst:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "amethyst:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "amethyst:Indicator success (text-white on bg-success-strong)", // 2.28:1
+  "amethyst:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "amethyst:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "amethyst:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "amethyst:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "amethyst:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.91:1
+  "velvet:Button primary text (text-white on bg-brand-dark)", // 4.75:1
+  "velvet:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.17:1
+  "velvet:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "velvet:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "velvet:Indicator success (text-white on bg-success-strong)", // 2.13:1
+  "velvet:Indicator warning (text-white on bg-warning-strong)", // 1.48:1
+  "velvet:Indicator error (text-white on bg-error-strong)", // 2.74:1
+  "velvet:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "velvet:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "velvet:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.96:1
+  "garnet:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "garnet:Badge error (text-error-strong on bg-error/5)", // 6.54:1
+  "garnet:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.81:1
+  "crimson:Badge success (text-success-strong on bg-success/5)", // 6.94:1
+  "crimson:Badge error (text-error-strong on bg-error/5)", // 6.82:1
+  "crimson:Badge warning (text-warning-strong on bg-warning/5)", // 6.94:1
+  "crimson:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.89:1
+  "magma:Badge success (text-success-strong on bg-success/5)", // 6.96:1
+  "magma:Badge error (text-error-strong on bg-error/5)", // 6.87:1
+  "magma:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "magma:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.91:1
+  "wisteria:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "wisteria:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "wisteria:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "wisteria:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "amber:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "amber:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "amber:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "amber:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.65:1
+  "carmine:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "carmine:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "carmine:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "carmine:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.76:1
+  "vermillion:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "vermillion:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "vermillion:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "vermillion:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.51:1
+  "apricot:Badge success (text-success-strong on bg-success/5)", // 6.85:1
+  "apricot:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "apricot:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "apricot:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.71:1
+  "saffron:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "saffron:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "saffron:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "saffron:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.89:1
+  "clementine:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "clementine:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "clementine:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "clementine:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.89:1
+  "copper:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "copper:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "copper:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "copper:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.76:1
+  "ochre:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "ochre:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "ochre:Alert info icon (text-info-strong on bg-info/5)", // 6.71:1
+  "ochre:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.71:1
+  "sage:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "sage:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "sage:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "sage:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.81:1
+  "bronze:Badge success (text-success-strong on bg-success/5)", // 6.76:1
+  "bronze:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "bronze:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.91:1
+  "tawny:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "tawny:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "tawny:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "tawny:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "mint:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "mint:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "mint:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "mint:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "citrine:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "citrine:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "citrine:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "citrine:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "daffodil:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "daffodil:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "daffodil:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "daffodil:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.74:1
+  "honeycomb:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "honeycomb:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "honeycomb:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "honeycomb:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "marigold:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "marigold:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "marigold:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "marigold:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "clover:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "clover:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "clover:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "clover:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.55:1
+  "navy:Button primary text (text-white on bg-brand-dark)", // 4.93:1
+  "navy:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.02:1
+  "navy:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.64:1
+  "navy:Tooltip label text (text-white on bg-neutral-900)", // 1.10:1
+  "navy:Indicator success (text-white on bg-success-strong)", // 2.54:1
+  "navy:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "navy:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "navy:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "navy:Indicator neutral (text-white on bg-neutral-700)", // 1.60:1
+  "navy:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.95:1
+  "meadow:Button primary text (text-white on bg-brand-dark)", // 4.77:1
+  "meadow:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.15:1
+  "meadow:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.68:1
+  "meadow:Tooltip label text (text-white on bg-neutral-900)", // 1.09:1
+  "meadow:Indicator success (text-white on bg-success-strong)", // 2.54:1
+  "meadow:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "meadow:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "meadow:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "meadow:Indicator neutral (text-white on bg-neutral-700)", // 1.59:1
+  "meadow:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 2.01:1
+  "jade:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "jade:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "jade:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "jade:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.65:1
+  "moss:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "moss:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "moss:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "moss:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "pine:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "pine:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "pine:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "pine:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.78:1
+  "juniper:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "juniper:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "juniper:Badge neutral (text-neutral-600 on bg-neutral-50)", // 5.33:1
+  "juniper:Avatar fallback initials (text-neutral-700 on bg-neutral-100)", // 5.21:1
+  "juniper:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "juniper:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.41:1
+  "verdant:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "verdant:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "verdant:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "verdant:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.65:1
+  "orchid:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "orchid:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "orchid:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "orchid:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.81:1
+  "spruce:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "spruce:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "spruce:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "spruce:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "seafoam:Badge success (text-success-strong on bg-success/5)", // 6.91:1
+  "seafoam:Badge error (text-error-strong on bg-error/5)", // 6.92:1
+  "seafoam:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "seafoam:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.77:1
+  "glacier:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "glacier:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "glacier:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "glacier:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "lagoon:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "lagoon:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "lagoon:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "lagoon:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "teal:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "teal:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "teal:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "teal:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "abyssal:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "abyssal:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "abyssal:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "abyssal:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.84:1
+  "deepsea:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "deepsea:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "deepsea:Avatar fallback initials (text-neutral-700 on bg-neutral-100)", // 6.99:1
+  "deepsea:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "deepsea:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.42:1
+  "tidal:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "tidal:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "tidal:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "tidal:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "lavenderfield:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "lavenderfield:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "lavenderfield:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "lavenderfield:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "indigo:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "indigo:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "indigo:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "indigo:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "cosmos:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "cosmos:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "cosmos:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "voyager:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "voyager:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "voyager:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "voyager:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.44:1
+  "twilight:Button primary text (text-white on bg-brand-dark)", // 4.79:1
+  "twilight:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.14:1
+  "twilight:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.62:1
+  "twilight:Tooltip label text (text-white on bg-neutral-900)", // 1.12:1
+  "twilight:Indicator success (text-white on bg-success-strong)", // 2.54:1
+  "twilight:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "twilight:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "twilight:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "twilight:Indicator neutral (text-white on bg-neutral-700)", // 1.62:1
+  "twilight:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 2.03:1
+  "eclipse:Button primary text (text-white on bg-brand-dark)", // 4.83:1
+  "eclipse:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 4.10:1
+  "eclipse:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.68:1
+  "eclipse:Tooltip label text (text-white on bg-neutral-900)", // 1.09:1
+  "eclipse:Indicator success (text-white on bg-success-strong)", // 2.54:1
+  "eclipse:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "eclipse:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "eclipse:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "eclipse:Indicator neutral (text-white on bg-neutral-700)", // 1.59:1
+  "eclipse:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.98:1
+  "mulberry:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "mulberry:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "mulberry:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "mulberry:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.80:1
+  "plum:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "plum:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "plum:Alert info icon (text-info-strong on bg-info/5)", // 6.87:1
+  "plum:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 4.89:1
+  "chalk:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "chalk:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "chalk:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "chalk:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.92:1
+  "pebble:Button primary text (text-white on bg-brand-dark)", // 4.98:1
+  "pebble:Back-link / demo-link text (text-brand-dark on bg-neutral-50)", // 3.97:1
+  "pebble:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
+  "pebble:Tooltip label text (text-white on bg-neutral-900)", // 1.00:1
+  "pebble:Indicator success (text-white on bg-success-strong)", // 2.54:1
+  "pebble:Indicator warning (text-white on bg-warning-strong)", // 2.15:1
+  "pebble:Indicator error (text-white on bg-error-strong)", // 2.73:1
+  "pebble:Indicator info (text-white on bg-info-strong)", // 2.66:1
+  "pebble:Indicator neutral (text-white on bg-neutral-700)", // 1.47:1
+  "pebble:Progress fill vs track (bg-brand-dark vs bg-neutral-200)", // 1.86:1
+  "fog:Badge success (text-success-strong on bg-success/5)", // 6.93:1
+  "fog:Badge error (text-error-strong on bg-error/5)", // 6.93:1
+  "fog:Alert info icon (text-info-strong on bg-info/5)", // 6.74:1
+  "fog:Sidebar dark item text (text-neutral-300 on bg-neutral-900)", // 5.83:1
 ]);
 
 let failures = [];
