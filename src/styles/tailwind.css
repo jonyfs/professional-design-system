@@ -99,6 +99,21 @@
       disabled:opacity-50 disabled:cursor-not-allowed sm:text-sm sm:leading-6;
   }
 
+  /* Feature 039 — extracted from Text Input's/Textarea's own existing
+     inline utility composition (features 001/008) into reusable
+     classes, the same way Select's own treatment was already
+     extracted as .form-select. No new values introduced. */
+  .form-input {
+    @apply block w-full rounded-md border-0 bg-neutral-50 py-1.5 text-neutral-900 shadow-sm
+      ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-600
+      focus:ring-2 focus:ring-inset focus:ring-brand sm:text-sm sm:leading-6;
+  }
+  .form-textarea {
+    @apply block w-full resize-y rounded-md border-0 bg-neutral-50 py-1.5 text-neutral-900
+      shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-600
+      focus:ring-2 focus:ring-inset focus:ring-brand sm:text-sm sm:leading-6;
+  }
+
   /* Radio primitive (contracts/radio.contract.md) */
   .radio-input {
     @apply h-4 w-4 border-neutral-300 text-brand focus-visible:outline
@@ -1423,5 +1438,182 @@
   }
   .social-login-btn-monochrome-light {
     @apply border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-50;
+  }
+
+  /* Feature 039 (Advanced Form Inputs batch) — TagsInput */
+  .tags-input {
+    @apply flex flex-wrap items-center gap-1.5 rounded-md border border-neutral-300
+      bg-neutral-50 px-2 py-1.5 focus-within:outline focus-within:outline-2
+      focus-within:outline-offset-2 focus-within:outline-brand;
+  }
+  .tags-input-tag {
+    @apply inline-flex items-center gap-1 rounded-md bg-neutral-100 px-2 py-0.5
+      text-sm font-medium text-neutral-800;
+  }
+  .tags-input-tag-remove {
+    @apply inline-flex h-4 w-4 items-center justify-center rounded-sm text-neutral-500
+      hover:bg-neutral-200 hover:text-neutral-900 focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-brand
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .tags-input-field {
+    @apply min-w-[8ch] flex-1 border-0 bg-transparent p-0 text-sm text-neutral-900
+      focus:outline-none focus:ring-0;
+  }
+
+  /* Feature 039 — Autocomplete */
+  .autocomplete-field {
+    @apply form-input;
+  }
+  .autocomplete-listbox {
+    @apply absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-neutral-50
+      py-1 shadow-lg ring-1 ring-neutral-900/5;
+  }
+  .autocomplete-option {
+    @apply cursor-pointer px-3 py-2 text-sm text-neutral-900;
+  }
+  .autocomplete-option[aria-selected="true"] {
+    @apply bg-brand text-white;
+  }
+  .autocomplete-empty {
+    @apply px-3 py-2 text-sm text-neutral-600;
+  }
+
+  /* Feature 039 — Mentions */
+  .mentions-field {
+    @apply form-textarea;
+  }
+  .mentions-popover {
+    @apply absolute z-10 max-h-48 w-64 overflow-auto rounded-md bg-neutral-50 py-1
+      shadow-lg ring-1 ring-neutral-900/5;
+  }
+  .mentions-option {
+    @apply cursor-pointer px-3 py-2 text-sm text-neutral-900;
+  }
+  .mentions-option[aria-selected="true"] {
+    @apply bg-brand text-white;
+  }
+  .mentions-token {
+    @apply rounded-sm bg-brand/10 px-0.5 font-medium text-brand-dark;
+  }
+
+  /* Feature 039 — Cascader */
+  .cascader-trigger {
+    @apply form-input flex items-center justify-between text-left;
+  }
+  .cascader-panels {
+    @apply absolute z-10 mt-1 flex gap-0 rounded-md bg-neutral-50 shadow-lg ring-1
+      ring-neutral-900/5;
+  }
+  .cascader-panel {
+    @apply max-h-60 w-48 overflow-auto border-r border-neutral-200 py-1 last:border-r-0;
+  }
+  .cascader-option {
+    @apply flex cursor-pointer items-center justify-between px-3 py-2 text-sm text-neutral-900;
+  }
+  .cascader-option[aria-selected="true"] {
+    @apply bg-brand text-white;
+  }
+
+  /* Feature 039 — TreeSelect */
+  .tree-select-trigger {
+    @apply form-input flex items-center justify-between text-left;
+  }
+  .tree-select-panel {
+    @apply absolute z-10 mt-1 max-h-72 w-full overflow-auto rounded-md bg-neutral-50
+      p-2 shadow-lg ring-1 ring-neutral-900/5;
+  }
+  .tree-select-node[aria-selected="true"] > summary,
+  .tree-select-leaf[aria-selected="true"] {
+    @apply bg-brand text-white;
+  }
+  .tree-select-leaf {
+    @apply cursor-pointer rounded-sm px-2 py-1 text-sm text-neutral-900 hover:bg-neutral-100;
+  }
+
+  /* Feature 039 — InputMask */
+  .input-mask {
+    @apply form-input;
+  }
+
+  /* Feature 039 — JsonInput */
+  .json-input {
+    @apply form-textarea font-mono text-sm;
+  }
+  .json-input[aria-invalid="true"] {
+    @apply ring-2 ring-error;
+  }
+  .json-input-error {
+    @apply mt-1 text-sm text-error-strong;
+  }
+
+  /* Feature 039 — RangeSlider. Two full-width rows, genuinely
+     separate in the DOM (never overlapping) — see research finding
+     in src/scripts/range-slider.js. Reuses Slider's exact .slider
+     class for each row's native input. */
+  .range-slider-rows {
+    @apply space-y-4;
+  }
+  .range-slider-row {
+    @apply flex items-center gap-2;
+  }
+  .range-slider-row-label {
+    @apply w-10 shrink-0 text-xs text-neutral-600;
+  }
+
+  /* Feature 039 — FloatLabel */
+  .float-label-wrapper {
+    @apply relative;
+  }
+  .float-label-field {
+    @apply form-input pt-4;
+  }
+  .float-label-text {
+    @apply pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm
+      text-neutral-600 transition-all duration-150 ease-out
+      motion-reduce:transition-none
+      peer-focus:top-2 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-brand-dark;
+  }
+  /* Real cross-browser finding: Tailwind auto-generates a
+     `:-moz-placeholder` fallback rule for ANY `:placeholder-shown`
+     selector in this file, hand-written or not (confirmed by
+     inspecting the compiled output directly, not assumed). Modern
+     Firefox no longer recognizes `:-moz-placeholder` at all; an
+     unrecognized pseudo-class inside `:not()` makes Firefox treat the
+     whole `:not(...)` as unconditionally true, so the "floated" state
+     applied REGARDLESS of actual fill state — verified via a real
+     cross-browser Playwright run (chromium/webkit passed, firefox
+     failed identically both before and after hand-writing the plain
+     selector). A tiny, justified JS enhancement (toggling
+     `data-filled` from real `.value` state) replaces the
+     `:placeholder-shown` dependency entirely rather than trying to
+     out-maneuver a build-tool-injected vendor rule. */
+  .float-label-wrapper[data-filled="true"] .float-label-text {
+    @apply top-2 translate-y-0 text-xs;
+  }
+
+  /* Feature 039 — Interactive Rating (extends the existing Rating component) */
+  .rating-interactive {
+    @apply flex flex-row-reverse gap-1;
+  }
+  /* "peer" itself must stay a literal HTML class alongside this one
+     (Tailwind forbids @apply-ing the bare peer/group marker utility,
+     matching feature 037's own group-utility finding) */
+  .rating-interactive-input {
+    @apply sr-only;
+  }
+  .rating-interactive-star {
+    @apply h-6 w-6 cursor-pointer text-neutral-300 hover:text-brand
+      peer-checked:text-brand peer-focus-visible:outline
+      peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2
+      peer-focus-visible:outline-brand;
+  }
+  /* flex-row-reverse + the general sibling combinator: checking star N
+     (DOM-order last-to-first) visually fills every star from the row's
+     start up to N. A plain CSS combinator (Principle III's @layer
+     escape hatch), not expressible as a bare Tailwind utility class. */
+  .rating-interactive-input:checked ~ .rating-interactive-input ~ .rating-interactive-star,
+  .rating-interactive-input:checked ~ .rating-interactive-star {
+    @apply text-brand;
   }
 }

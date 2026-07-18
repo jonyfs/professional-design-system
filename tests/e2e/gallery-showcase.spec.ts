@@ -53,9 +53,9 @@ test.describe("Categorized, navigable gallery (US2)", () => {
     });
   }
 
-  test("all 114 components remain present and reachable (SC-002)", async ({ page }) => {
+  test("all 123 components remain present and reachable (SC-002)", async ({ page }) => {
     const cards = page.locator("a.showcase-card");
-    await expect(cards).toHaveCount(114);
+    await expect(cards).toHaveCount(123);
   });
 
   test("every card shows a real live preview, not a text-only description (feature 037 FR-001)", async ({ page }) => {

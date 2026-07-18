@@ -51,6 +51,28 @@
       <span class="rating-value">5 out of 5</span>
     </div>
   </div>
+
+  <div data-testid="rating-interactive-demo" class="mt-8">
+    <p class="text-sm font-medium text-neutral-900" id="rating-interactive-label">Rate this product</p>
+    <div
+      role="radiogroup"
+      aria-labelledby="rating-interactive-label"
+      class="rating-interactive"
+      data-rating-interactive
+      data-max="5"
+    >
+      <input type="radio" name="rating-interactive" value="5" id="ri-5" class="rating-interactive-input peer" />
+      <label for="ri-5" class="rating-interactive-star" aria-label="5 stars">★</label>
+      <input type="radio" name="rating-interactive" value="4" id="ri-4" class="rating-interactive-input peer" />
+      <label for="ri-4" class="rating-interactive-star" aria-label="4 stars">★</label>
+      <input type="radio" name="rating-interactive" value="3" id="ri-3" class="rating-interactive-input peer" />
+      <label for="ri-3" class="rating-interactive-star" aria-label="3 stars">★</label>
+      <input type="radio" name="rating-interactive" value="2" id="ri-2" class="rating-interactive-input peer" />
+      <label for="ri-2" class="rating-interactive-star" aria-label="2 stars">★</label>
+      <input type="radio" name="rating-interactive" value="1" id="ri-1" class="rating-interactive-input peer" />
+      <label for="ri-1" class="rating-interactive-star" aria-label="1 star">★</label>
+    </div>
+  </div>
   <script type="module" src="/src/scripts/gallery-theme-selector.js"></script>
 </body>
 </html>

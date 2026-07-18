@@ -61,6 +61,7 @@ export default defineConfig({
         dataDisplayComposables: resolve(__dirname, "data-display-composables.html"),
         dataDisplayPatterns: resolve(__dirname, "data-display-patterns.html"),
         socialLoginButtons: resolve(__dirname, "social-login-buttons.html"),
+        advancedFormInputs: resolve(__dirname, "advanced-form-inputs.html"),
       },
     },
   },
