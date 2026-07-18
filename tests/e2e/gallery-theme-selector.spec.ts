@@ -28,7 +28,7 @@ test.describe("Gallery theme selector (US1 — live preview)", () => {
 
   test("selecting a theme restyles every card with no page reload", async ({ page }) => {
     const select = page.locator("#gallery-theme-select");
-    const card = page.locator("main section section").first();
+    const card = page.locator("a.showcase-card").first();
     const before = await card.evaluate((el) => getComputedStyle(el).borderColor);
 
     await select.selectOption("dracula");
@@ -43,7 +43,7 @@ test.describe("Gallery theme selector (US1 — live preview)", () => {
 
   test("a card scrolled out of view also reflects the new theme", async ({ page }) => {
     const select = page.locator("#gallery-theme-select");
-    const lastCard = page.locator("main section section").last();
+    const lastCard = page.locator("a.showcase-card").last();
     await lastCard.scrollIntoViewIfNeeded();
     const before = await lastCard.evaluate((el) => getComputedStyle(el).borderColor);
 

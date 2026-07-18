@@ -25,6 +25,43 @@
       focus-visible:outline-offset-2 focus-visible:outline-brand rounded-sm;
   }
 
+  /* Homepage Component Showcase (feature 037,
+     contracts/showcase-card.contract.md). Whole-card link — the ONLY
+     focusable element in the card; the real component excerpt inside
+     .showcase-card-preview is wrapped in the `inert` HTML attribute in
+     markup (never a CSS-only fake), which removes it from the tab
+     order and accessibility tree natively. */
+  .showcase-card {
+    @apply flex flex-col gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-5
+      shadow-sm transition-[transform,box-shadow] duration-200 ease-out
+      hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand;
+  }
+  .showcase-card-standard {
+    @apply sm:col-span-1 sm:row-span-1;
+  }
+  .showcase-card-wide {
+    @apply sm:col-span-2 sm:row-span-1;
+  }
+  .showcase-card-large {
+    @apply sm:col-span-2 sm:row-span-2;
+  }
+  .showcase-card-eyebrow {
+    @apply font-mono text-xs font-semibold uppercase tracking-wide text-brand-dark;
+  }
+  .showcase-card-preview {
+    @apply flex flex-1 items-center justify-center overflow-hidden rounded-md
+      border border-neutral-200 bg-neutral-100 p-4 min-h-[8rem];
+  }
+  .showcase-card-name {
+    @apply text-sm font-semibold text-neutral-900
+      group-hover:text-brand-dark transition-colors duration-200;
+  }
+  .showcase-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4;
+  }
+
   .page-shell {
     /* bg-neutral-50 (not bg-white): neutral-50 is this catalog's
        theme-invertible "surface/page background" role (feature 017
