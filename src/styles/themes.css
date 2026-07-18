@@ -1180,3 +1180,27 @@
   --color-info: 0 181 255; /* #00B5FF */
   --color-info-strong: 0 188 255; /* #00BCFF */
 }
+
+[data-theme="prism"] {
+  --color-brand-light: 145 235 255; /* #91EBFF */
+  --color-brand: 26 127 147; /* #1A7F93 */
+  --color-brand-dark: 0 64 82; /* #004052 */
+  --color-neutral-50: 255 255 255; /* #FFFFFF */
+  --color-neutral-100: 214 215 216; /* #D6D7D8 */
+  --color-neutral-200: 179 180 182; /* #B3B4B6 */
+  --color-neutral-300: 149 151 153; /* #959799 */
+  --color-neutral-400: 121 124 127; /* #797C7F */
+  --color-neutral-500: 97 100 103; /* #616467 */
+  --color-neutral-600: 74 77 81; /* #4A4D51 */
+  --color-neutral-700: 53 57 61; /* #35393D */
+  --color-neutral-800: 34 38 42; /* #22262A */
+  --color-neutral-900: 25 29 33; /* #191D21 */
+  --color-success: 62 202 117; /* #3ECA75 */
+  --color-success-strong: 0 96 11; /* #00600B */
+  --color-warning: 236 163 34; /* #ECA322 */
+  --color-warning-strong: 119 54 0; /* #773600 */
+  --color-error: 218 59 54; /* #DA3B36 */
+  --color-error-strong: 154 0 0; /* #9A0000 */
+  --color-info: 50 136 248; /* #3288F8 */
+  --color-info-strong: 0 73 180; /* #0049B4 */
+}

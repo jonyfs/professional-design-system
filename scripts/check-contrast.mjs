@@ -865,6 +865,12 @@ const KNOWN_THEME_CONTRAST_GAPS = new Set([
   "nebula:Indicator neutral (text-white on bg-neutral-700)",
   "nebula:Text Input / Select focus ring (ring-brand vs bg-neutral-50 page)",
   "nebula:Progress fill vs track (bg-brand-dark vs bg-neutral-200)",
+  // Feature 036 (Prism): the ONLY documented gap this theme has —
+  // Sidebar's fixed dark-item-on-neutral-900 pairing is a structural
+  // conflict this fixed 21-token schema already imposes on ~20 other
+  // themes (light and dark alike, e.g. corporate/silk/winter/cupcake),
+  // not a Prism-specific derivation flaw. Real measured ratio: 5.78:1.
+  "prism:Sidebar dark item text (text-neutral-300 on bg-neutral-900)",
 ]);
 
 let failures = [];

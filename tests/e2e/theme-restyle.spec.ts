@@ -58,6 +58,8 @@ const NEW_THEMES = [
   "linen",
   "graphite",
   "nebula",
+  // Feature 036 — Prism (cross-collection synthesis)
+  "prism",
 ];
 
 test.describe("Theme restyle visual regression (P1 pilot batch)", () => {
