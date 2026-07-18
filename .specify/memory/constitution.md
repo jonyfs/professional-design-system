@@ -1,4 +1,34 @@
 <!--
+SYNC IMPACT REPORT (v1.36.0 — see below for the v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.35.0 → 1.36.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Advanced Form
+    Inputs Batch (feature 039)" subsection: 10 new/extended
+    components (TagsInput, Autocomplete, Mentions, Cascader,
+    TreeSelect, InputMask, JsonInput, RangeSlider, FloatLabel,
+    Interactive Rating), bringing the catalog to 123 components,
+    closing feature 018's inventory candidates #10-27.
+Corrected sections: None this bump.
+Rationale: feature 039 ships 4 real findings worth a permanent
+governance record, each corrected before merge, not after: (1) Rating
+had no React port at all before this feature (plan assumed one
+existed); (2) decorative `aria-hidden` markup cannot be made
+interactive by attaching a handler to it — Interactive Rating uses a
+genuinely separate native radio-group markup instead; (3) the classic
+"two overlapping range inputs" dual-slider technique fails WCAG 2.5.8
+target-size/offset under real axe-core scanning — resolved with two
+genuinely separate rows rather than a `clip-path` patch; (4) Tailwind
+auto-generates an `:-moz-placeholder` fallback for any
+`:placeholder-shown` usage that is unconditionally true in modern
+Firefox, floating FloatLabel's label regardless of fill state — fixed
+via a `data-filled` attribute instead. This is a MINOR bump: new
+component documentation and real, corrected findings, not a principle
+reversal.
+Templates requiring updates: ✅ none — specs/039-advanced-form-inputs/
+  research.md and the contracts/ directory document each reuse target
+  and the 4 findings above in full.
+
 SYNC IMPACT REPORT (v1.35.0 — see below for the v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.34.0 → 1.35.0
 Modified principles: Theming & Multi-Palette Architecture's per-source
@@ -2511,6 +2541,74 @@ class, silently omitting its own background — fixed by pairing both
 classes, matching every other real usage of that class in this
 catalog.
 
+### Advanced Form Inputs Batch (feature 039)
+
+10 components closing feature 018's inventory candidates #10-27
+(TagsInput, Autocomplete, Mentions, Cascader, TreeSelect, InputMask,
+JsonInput, RangeSlider, FloatLabel, and an interactive mode for the
+existing Rating component), bringing the catalog to 123 total
+components. Every item reuses an already-shipped mechanism rather
+than inventing a new one: `shared/multi-select/index.ts`'s
+`filterOptions` for Autocomplete/Mentions' suggestion lists, Combobox's
+single-select commit semantics for Autocomplete, TreeView's native
+`<details>`/`<summary>` disclosure verbatim for TreeSelect, Dropdown
+Menu's panel mechanics for Cascader, and the existing Slider's exact
+`.slider` class for RangeSlider's two rows.
+
+**Real finding — Rating never had a React port before this feature**:
+the plan assumed an existing `packages/react/src/Rating/Rating.tsx`
+to extend; none existed (Rating had been static-HTML-only since
+feature 016). `Rating.tsx` is therefore a new file shipping BOTH the
+pre-existing read-only/decorative rendering (default, `interactive:
+false`, byte-for-byte behavior-equivalent to the static surface) and
+the new interactive mode, discovered only once the build actually
+tried to import it — not assumed correct from the plan alone.
+
+**Real finding — decorative `aria-hidden` markup cannot become
+interactive by adding a click handler**: Rating's existing star row
+is `aria-hidden="true"` (decorative reinforcement only, the real value
+conveyed via adjacent text). Interactive Rating uses a genuinely
+different, separate markup — a native radio group (one real
+`<input type="radio">` per star value, the standard accessible
+star-rating pattern) — rather than attaching interactivity to
+already-hidden markup, which would remain invisible to assistive
+technology regardless of what script runs on it.
+
+**Real finding — the classic "two overlapping range inputs" dual-
+slider technique fails WCAG 2.5.8**: an initial RangeSlider draft
+stacked two full-width native range inputs at an identical absolute
+position (the standard technique for dual-thumb sliders, since no
+native cross-browser dual-thumb control exists). Automated a11y
+scanning (axe-core's target-size/target-offset checks) correctly
+flagged a real conflict: both bounding boxes are perfectly identical
+regardless of where each thumb visually renders, so the measured gap
+between the two targets is 0px — a genuine hit-testing ambiguity, not
+a tool false-positive (confirmed by also breaking a real Playwright
+pointer interaction against the same clipped-element workaround
+attempted first). Resolved by rendering two genuinely separate rows
+(never overlapping in the DOM/layout) instead of trying to patch the
+overlap with `clip-path` — the simpler fix that avoids the whole
+problem class rather than one that manages it.
+
+**Real finding — Tailwind's `:placeholder-shown` support silently
+breaks in modern Firefox**: FloatLabel's floated/resting label state
+was originally CSS-only, driven by `:focus` and
+`:not(:placeholder-shown)`. Tailwind auto-generates an additional
+`:-moz-placeholder` fallback selector for any `:placeholder-shown`
+usage in this file, hand-written or compiled from a utility class
+alike (confirmed directly in the compiled CSS output, not assumed).
+`:-moz-placeholder` no longer exists in current Firefox, and an
+unrecognized pseudo-class inside `:not()` makes Firefox treat the
+whole `:not(...)` as unconditionally true — floating every label
+regardless of actual fill state, caught only by a real cross-browser
+Playwright run (chromium/webkit passed, firefox failed identically
+whether the selector was Tailwind-generated or hand-written). Fixed by
+toggling a plain `data-filled` attribute from the field's real
+`.value` (a small, justified script on the static surface; a direct
+prop-derived attribute on the React surface) instead of relying on
+`:placeholder-shown` at all — focus state remains CSS-only, since
+`:focus` itself was never affected.
+
 ### Application & Navigation
 - **Sidebar**: `bg-neutral-900`/`text-neutral-300` (dark — corrected from the
   originally speculative `text-neutral-400`; this pattern had never actually
@@ -3450,4 +3548,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.35.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
+**Version**: 1.36.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
