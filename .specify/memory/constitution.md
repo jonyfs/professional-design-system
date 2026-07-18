@@ -1,4 +1,293 @@
 <!--
+SYNC IMPACT REPORT (v1.32.0 — see below for the v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.31.0 → 1.32.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Configurable Social
+    Login Buttons" subsection (feature 035): 1 new component
+    (SocialLoginGroup) — a genuinely new pattern outside feature 018's
+    inventory, requested directly by the user — bringing the catalog to
+    114 total components. Documents a real, computed accessibility
+    finding (solid provider brand-color fills, e.g. Facebook's official
+    blue, fail this catalog's non-negotiable AAA bar — resolved by
+    confining brand color to the icon glyph, never the button surface)
+    and a new governance category: the first tokens in this catalog
+    deliberately kept OUTSIDE the theme-reactive semantic palette,
+    since provider brand marks must NOT re-theme with the host app's
+    selected curated theme (documented in Complexity Tracking, same
+    governance shape as the existing KNOWN_THEME_CONTRAST_GAPS/
+    ICON_FILL_TEXT_TOKENS exception precedent). Also documents a CSP
+    inline-style bug and an under-AAA caption-text bug, both found and
+    fixed via the dedicated Playwright suite before it was accepted as
+    green, and flags a separate, larger pre-existing gap (features
+    028-034's React package CSS never got duplicated into
+    packages/react/src/styles.css) found while scoping this feature's
+    own foundational work — tracked as its own follow-up, not fixed
+    here, per the user's explicit choice.
+Corrected sections: None this bump.
+Rationale: feature 035 (Configurable Social Login Buttons) ships 1 new
+component plus a deliberately-scoped, justified exception to Principle
+IV's token discipline (fixed, non-theme-reactive provider brand
+colors) — a new governance category, not a violation left unresolved.
+Verified via a clean dedicated suite (90/90 passed across all 6
+browser/viewport projects) plus the full-catalog regression (see
+tasks.md T025 for the reconciled tally). This is a MINOR bump: new
+component data, a new documented exception category, and
+documentation — no principle text itself changed.
+Templates requiring updates: ✅ none — specs/035-social-login-buttons/
+  tasks.md documents this feature's own implementation in full.
+
+SYNC IMPACT REPORT (v1.31.0 — see below for the v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.30.0 → 1.31.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Data Display
+    Patterns" subsection (feature 034): 5 new components (OverflowList,
+    RollingNumber, PickList/Transfer, Gallery, Compare) bringing
+    feature 018's inventory's Data Display category from 8/16 to
+    13/16 — its practical ceiling (TreeTable/QRCode remain out of
+    scope per prior notes) — bringing the catalog to 113 total
+    components. Documents two real bugs found by live-browser testing
+    and fixed before shipping: (1) OverflowList's first draft
+    re-measured item widths on every render() call including passes
+    after items were already hidden via display:none, so a
+    previously-hidden (0-width) item trivially "fit" on the next pass
+    and the whole computation cascaded into showing everything
+    regardless of real container width — fixed by caching each item's
+    natural width once, before any hiding occurs, applied identically
+    to the React port which had the same vulnerability; (2) Gallery's
+    first draft used bare <img> elements as thumbnail triggers, which
+    have no native focusability, breaking keyboard activation and
+    focus-return — fixed by wrapping thumbnails in real <button>
+    elements on both surfaces, plus a related React-only bug where the
+    focus-return ref always pointed at the first thumbnail regardless
+    of which one was actually clicked.
+Corrected sections: None this bump.
+Rationale: feature 034 (Data Display Patterns) ships 5 of the
+category's remaining items, reusing existing composition patterns
+(overlay.js's dialog mechanism for Gallery, this catalog's established
+CSP img-src variant, native range/checkbox inputs for Compare/PickList)
+and zero new design tokens or dependencies. Verified via a clean
+full-catalog regression (5885 passed / 7 failed — the recurring
+menubar flake (4) plus three newly-observed but confirmed-transient
+flakes (Session Timeout Modal, Center's a11y check, Team/Workspace
+Switcher's arrow-key test), each reproduced as 5/5 passing in
+isolation — / 30 skipped = 5922, reconciled against a fresh `--list`
+run). This is a MINOR bump: new component data plus documentation, no
+principle text changed.
+Templates requiring updates: ✅ none — specs/034-data-display-
+  patterns/tasks.md documents this feature's own implementation in
+  full.
+
+SYNC IMPACT REPORT (v1.30.0 — see below for the v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.29.0 → 1.30.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Data Display
+    Composables" subsection (feature 033): 4 new components (ThemeIcon,
+    Blockquote, BackgroundImage, Watermark) bringing feature 018's
+    inventory's Data Display category from 4/16 to 8/16 — a deliberate
+    partial closure, with the remaining 8 items (5 genuinely-new-
+    pattern candidates deferred to a future feature, TreeTable/QRCode
+    already deferred per prior notes) explicitly documented, not
+    silently dropped — bringing the catalog to 108 total components.
+    Documents a real CSP gap found by checking existing precedent
+    (Watermark's data: URI needed the img-src 'self' data:; variant
+    Avatar/Card/List/Aspect Ratio already established, not the generic
+    per-page template) and a color-source correction (ThemeIcon's
+    info/brand variants sourced from Alert/Button rather than assumed
+    to come from Badge, which ships neither). Notably: this was the
+    only batch this session with zero real implementation bugs found
+    during its own regression gate, consistent with the inventory's
+    own "trivial CSS composition" buildability signal for every item
+    in it.
+Corrected sections: None this bump.
+Rationale: feature 033 (Data Display Composables) ships 4 of the
+category's remaining 12 items and zero new design tokens or
+dependencies — pure composition of already-ratified Badge/Avatar/
+Alert/Button tokens and the existing typography/overlay conventions.
+Verified via a clean full-catalog regression (5768 passed / 4
+known-flaky-unrelated failures — the recurring menubar test plus one
+newly-observed but confirmed-transient navigation-micro-patterns flake,
+reproduced as 5/5 passing in isolation — / 30 skipped = 5802,
+reconciled against a fresh `--list` run). This is a MINOR bump: new
+component data plus documentation, no principle text changed.
+Templates requiring updates: ✅ none — specs/033-data-display-
+  composables/tasks.md documents this feature's own implementation in
+  full.
+
+SYNC IMPACT REPORT (v1.29.0 — see below for the v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.28.0 → 1.29.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Overlays"
+    subsection (feature 032): 3 new components (Affix, LoadingOverlay,
+    Bottom Sheet) closing feature 018's inventory's Overlays category
+    from 0% to 3/6 — the remaining 3 (Drawer, Dialog Manager, Popover
+    Combobox variant) explicitly excluded per verified de-duplication/
+    out-of-scope findings, not silently dropped — bringing the catalog
+    to 104 total components. Documents 3 real CSS bugs found by
+    live-browser testing: LoadingOverlay repeating feature 030's exact
+    `.alert`-style `hidden`-vs-`display:flex` collision (same fix:
+    CSSOM `style.display` assignment); Bottom Sheet's `<dialog>`
+    centering itself instead of anchoring to the bottom edge due to the
+    native UA stylesheet's `inset:0`/`margin:auto` defaults (fixed with
+    an explicit `top:auto; margin:0` reset, the same class of fix
+    `.dropdown-menu-panel`/`.popover-panel` already needed); and a
+    flex-shrink gotcha in `.bottom-sheet-panel`'s `flex flex-col`
+    structure (a test-fixture-level fix, `shrink-0`, not a change to
+    the shared class Slide-over also uses unmodified).
+Corrected sections: None this bump.
+Rationale: feature 032 (Overlays) closes 3 of the inventory's 6
+Overlays items and ships zero new design tokens or dependencies —
+Affix is genuinely new scroll-threshold infrastructure, LoadingOverlay
+reuses Spinner verbatim, Bottom Sheet reuses Slide-over's exact
+`<dialog>` mechanism. Verified via a clean full-catalog regression
+(5697 passed / 3 known-flaky-unrelated menubar failures / 30 skipped =
+5730, reconciled against a fresh `--list` run) after fixing 3 real
+bugs the gate itself surfaced. This is a MINOR bump: new component
+data plus documentation, no principle text changed.
+Templates requiring updates: ✅ none — specs/032-overlays/tasks.md
+  documents this feature's own implementation in full.
+
+SYNC IMPACT REPORT (v1.28.0 — see below for the v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.27.0 → 1.28.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Navigation
+    Micro-Patterns" subsection (feature 031): 5 new components (Team/
+    Workspace Switcher, Language Switcher, Back-to-Top Button, Scroll
+    Progress Bar, Onboarding Tour/Coachmark) closing feature 018's
+    inventory's Navigation micro-patterns category from 1/6 (Avatar
+    Group, feature 023) to 6/6 — the third category (after Layout &
+    Structure and Consent & System Messaging) to reach 100% — bringing
+    the catalog to 101 total components. Documents a repeated scope-
+    discipline decision (Back-to-Top scoped to its own minimal
+    threshold logic, not a standalone "Affix" primitive, mirroring
+    feature 030's identical Countdown-Timer precedent), a real
+    gallery-count bug (a combined "Scroll Progress Bar & Back-to-Top"
+    card broke the one-card-per-inventory-item convention, caught by
+    the feature's own regression gate), and a test-fixture height bug
+    found by live-browser testing (the demo page was only ~94px
+    scrollable, nowhere near the 400px show/hide threshold).
+Corrected sections: None this bump.
+Rationale: feature 031 (Navigation Micro-Patterns) closes feature
+018's inventory's third 100%-complete category and ships zero new
+design tokens or dependencies — every primitive reuses an already-
+ratified mechanism (Dropdown Menu, Avatar, Progress, Popover).
+Verified via a clean full-catalog regression (5612 passed / 4
+known-flaky-unrelated menubar failures / 30 skipped = 5646, reconciled
+against a fresh `--list` run) after fixing a real gallery-card
+count bug and a test-fixture scroll-height bug the gate itself
+surfaced. This is a MINOR bump: new component data plus documentation,
+no principle text changed.
+Templates requiring updates: ✅ none — specs/031-navigation-micro-
+  patterns/tasks.md documents this feature's own implementation in
+  full.
+
+SYNC IMPACT REPORT (v1.27.0 — see below for the v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.26.0 → 1.27.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Consent & System
+    Messaging Primitives" subsection (feature 030): 5 new components
+    (Session Timeout Modal, Offline Banner, 2FA Reminder Banner,
+    Maintenance/Announcement Bar, Dark Mode Toggle) closing feature
+    018's inventory's Consent & System Messaging category from 0% to
+    5/5 — the second category (after Layout & Structure, feature 028)
+    to reach 100% — bringing the catalog to 96 total components.
+    Documents a scope decision (Dark Mode Toggle's `dim` dark-theme
+    pairing, verified against real theme metadata), a real CSS bug
+    found by live-browser testing (the native `hidden` attribute
+    losing to `.alert`'s author-origin `display:flex`, fixed via
+    direct CSSOM `style.display` assignment), a React-package
+    architecture correction (an early draft imported a nonexistent
+    theme-persistence module; fixed by porting only the minimal logic
+    needed, matching the one existing precedent for reading global
+    theme state), and a Toggle click-target issue avoided by checking
+    this catalog's own established precedent before writing tests
+    rather than discovering it via failure.
+Corrected sections: None this bump.
+Rationale: feature 030 (Consent & System Messaging Primitives) closes
+feature 018's inventory's second 100%-complete category and ships zero
+new design tokens, themes, or dependencies — every primitive reuses an
+already-ratified mechanism (Modal, Alert, Toggle, theme-switcher.js).
+Verified via a clean full-catalog regression (5522 passed / 4
+known-flaky-unrelated menubar failures / 30 skipped = 5556, reconciled
+against a fresh `--list` run) after fixing a real CSS bug, a real
+architecture inconsistency, and a stale count the gate's own precedent
+anticipated. This is a MINOR bump: new component data plus
+documentation, no principle text changed.
+Templates requiring updates: ✅ none — specs/030-consent-system-
+  messaging/tasks.md documents this feature's own implementation in
+  full.
+
+SYNC IMPACT REPORT (v1.26.0 — see below for the v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.25.0 → 1.26.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Feedback Primitives"
+    subsection (feature 029): 4 new components (RingProgress,
+    SemiCircleProgress, Notification Center, Password Strength Meter)
+    closing feature 018's inventory's Feedback category from 0% to
+    4/5, bringing the catalog to 91 total components. Documents a
+    de-duplication finding (the inventory's 5th candidate,
+    "Notification", explicitly excluded — Toast's existing
+    .toast/.toast-stack already cover it), a new variant of the
+    recurring Tailwind-prefix naming-collision bug (this time against
+    the audit script's own `ring-` color-utility detection heuristic,
+    not Tailwind's generated CSS — fixed via .ring-progress* →
+    .circular-progress*), a real axe-caught accessibility bug (an
+    aria-labelledby reference to an initially-empty node on Password
+    Strength Meter's progressbar, fixed with a static aria-label plus
+    a separate aria-live status span), a test-timing lesson (reading
+    raw CSSOM-assigned values instead of getComputedStyle/boundingBox,
+    which are flaky against in-flight CSS transitions), and a third
+    occurrence of the recurring hardcoded-count test bug (87 → 91 in
+    gallery-showcase.spec.ts, no new category needed this time).
+Corrected sections: None this bump.
+Rationale: feature 029 (Feedback Primitives) closes feature 018's
+Feedback category to 4/5 (Notification explicitly excluded, not
+silently dropped) and ships zero new design tokens or dependencies —
+every primitive reuses an already-ratified base (Progress, Indicator,
+Dropdown Menu's Popover API). Verified via a clean full-catalog
+regression (5415 passed / 3 known-flaky-unrelated menubar failures /
+30 skipped = 5448, reconciled against a fresh `--list` run) after
+fixing the naming collision, the real a11y bug, and the stale count
+the gate itself surfaced. This is a MINOR bump: new component data
+plus documentation, no principle text changed.
+Templates requiring updates: ✅ none — specs/029-feedback-primitives/
+  tasks.md documents this feature's own implementation in full.
+
+SYNC IMPACT REPORT (v1.25.0 — see below for the v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.24.0 → 1.25.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Layout & Structure
+    Primitives" subsection (feature 028): 9 new components (Stack,
+    Group, Center, Container, Paper, Grid, SimpleGrid, Flex, AppShell)
+    closing feature 018's inventory's Layout & Structure category from
+    0/9 to 9/9, bringing the catalog to 87 total components. Documents
+    2 Tailwind built-in class-name collisions avoided (.group→
+    .group-row, .container→.container-page), a real AppShell scope
+    correction found during planning (Sidebar has no mobile-collapse
+    mechanism to reuse — verified directly, not assumed — so AppShell
+    uses a pure CSS stack instead), and a recurring hardcoded-count
+    test bug found again during this feature's own full-catalog
+    regression gate (gallery-showcase.spec.ts, same class of issue as
+    feature 027's gallery-theme-selector.spec.ts fix).
+Corrected sections: None this bump.
+Rationale: feature 028 (Layout & Structure Primitives) closes the
+component-gap inventory's only 0% category and ships zero new design
+tokens or dependencies. Verified via a clean full-catalog regression
+(5319 passed / 3 known-flaky-unrelated failures / 30 skipped = 5352,
+reconciled) after fixing the one real regression the gate itself
+surfaced. This is a MINOR bump: new component data plus documentation,
+no principle text changed.
+Templates requiring updates: ✅ none — specs/028-layout-structure-
+  primitives/tasks.md documents this feature's own implementation in
+  full.
+
 SYNC IMPACT REPORT (v1.24.0 — see below for the v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.23.0 → 1.24.0
 Modified principles: None
@@ -1467,6 +1756,449 @@ Any component copied from Tailwind UI MUST undergo immediate refactoring for zer
 class waste and full compliance with the tokens above before entering the
 catalog.
 
+### Layout & Structure Primitives (feature 028)
+
+Closes feature 018's own component-gap inventory's "Layout &
+Structure" category from 0/9 to 9/9 — the only category in that
+105-candidate inventory with zero shipped candidates before this
+feature — bringing the catalog to 87 total components. Ships Stack,
+Group, Center (spacing/alignment, US1), Container, Paper (width/
+surface, US2), Grid, SimpleGrid, Flex (responsive arrangement, US3),
+and AppShell (page-shell composition, US4). Every primitive reuses an
+already-ratified token (space-y-*/gap-* scale, the existing max-width/
+padding convention, Card's surface/shadow tokens, this catalog's
+4-breakpoint responsive rule) — zero new design tokens introduced.
+
+Two Tailwind built-in class-name collisions avoided before shipping
+(verified directly against Tailwind's own generated utilities, not
+assumed): `Group` renders `.group-row`, not `.group` (Tailwind's own
+`group-hover:`/`group-focus:` state-scoping utility already claims
+that name); `Container` renders `.container-page`, not `.container`
+(Tailwind's own breakpoint-keyed max-width utility). Same class of
+bug as `.collapse` → `.collapse-item` (feature 023).
+
+**AppShell composition correction, found during planning, not
+assumed**: reading `src/components/sidebar/sidebar.html` and its
+`.sidebar` class directly revealed Sidebar has no mobile-collapse
+mechanism of its own — a fixed-width flex column with zero responsive
+classes and zero toggle script (only Navbar has real responsive
+behavior, a native `<details>/<summary>` menu). AppShell's own
+mobile behavior is therefore a pure CSS reflow (`.app-shell-body`'s
+`flex-col lg:flex-row` — sidebar stacks above main content below
+1024px), not a reuse of a collapse behavior that doesn't exist. A
+genuine collapsible sidebar drawer remains a future enhancement to
+Sidebar itself, out of this feature's scope.
+
+**Recurring bug class found again during this feature's own T017-
+style full-catalog regression gate**: `tests/e2e/gallery-showcase.
+spec.ts` (feature 026) hardcoded "78 components" and a fixed
+`CATEGORIES` list — both broken by this feature's 9 additions and new
+category. Fixed (count → 87, `["layout", "Layout & Structure"]`
+added). This is the same recurring "catalog-wide count assertion
+needs updating on growth" bug already found once for feature 027's
+`gallery-theme-selector.spec.ts` (43 → 48) — a pattern worth watching
+for any future feature that adds components or categories to the
+root gallery.
+
+### Feedback Primitives (feature 029)
+
+Closes feature 018's component-gap inventory's "Feedback" category
+from 0% to 4/5 shipped, bringing the catalog to 91 total components:
+RingProgress, SemiCircleProgress (US1, circular/semi-circular SVG
+progress with a shared stroke-dashoffset mechanism), Notification
+Center (US2, a bell trigger with an unread-count badge opening a
+panel of past notifications via the native Popover API), and Password
+Strength Meter (US3, live strength feedback reusing Progress's
+existing fill mechanism). Each reuses an already-ratified primitive
+rather than inventing a parallel one: Indicator's badge classes and
+Dropdown Menu's native Popover API wiring for Notification Center;
+Progress's `.progress-track`/`.progress-fill` verbatim for Password
+Strength Meter.
+
+**De-duplication finding, not silently dropped**: the inventory's 5th
+Feedback candidate, "Notification" (item 47), is explicitly excluded
+— verified directly against `src/styles/tailwind.css`'s real `.toast`/
+`.toast-stack` classes and `src/scripts/toast.js`, which already cover
+transient notification messages. Shipping a second, redundant
+notification primitive under a different name would fragment the
+catalog rather than extend it.
+
+**New naming-collision variant found and fixed, not just a Tailwind
+CSS collision this time**: an initial `.ring-progress`/
+`.ring-progress-track`/`.ring-progress-fill*` naming choice failed
+`npm run audit:tokens` with 15 violations, but the collision wasn't
+with Tailwind's *generated CSS* (the usual failure mode behind
+`.group` → `.group-row`, `.container` → `.container-page`, `.collapse`
+→ `.collapse-item`) — it was with the **audit script's own
+Tailwind-utility-prefix detection heuristic**, which treats any class
+starting with `ring-` as an application of Tailwind's real
+`ring-{color}` utility and flags the remainder as an unratified color
+token (`progress`, `progress-track`, etc.). Same root cause (reusing a
+live Tailwind utility prefix in a custom class name), different
+detection surface. Fixed by renaming to `.circular-progress`/
+`.circular-progress-track`/`.circular-progress-fill*` throughout
+`tailwind.css`, both HTML components, `src/scripts/circular-progress.js`
+(renamed from `ring-progress.js`, exporting `initCircularProgress`),
+and the contract doc — `npm run audit:tokens` then passed clean.
+
+**Real accessibility bug found by axe, not assumed away**: Password
+Strength Meter's progress track originally used
+`aria-labelledby="password-strength-label"` pointing at a `<span>`
+that is empty until the user types — axe's `aria-progressbar-name`
+rule correctly flags a labelledby reference to an empty node as no
+accessible name at all. Fixed by giving the progressbar a static
+`aria-label="Password strength"` (always non-empty) and keeping the
+dynamic level text as a separate `aria-live="polite"` span, announced
+on change rather than serving as the name itself. Applied to both the
+static HTML and the React wrapper.
+
+**Test-timing lesson, consistent with `progress.spec.ts`'s own
+established pattern**: `.progress-fill` and `.circular-progress-fill`
+both carry a 300ms CSS transition. Asserting against
+`getComputedStyle()`/`boundingBox()` immediately after a script/React
+re-render reads a value mid-transition and is flaky. `tests/e2e/
+feedback-primitives.spec.ts` instead reads the raw CSSOM-assigned
+value directly (`el.style.strokeDashoffset` / `el.style.width`),
+matching how `progress.spec.ts` already reads `el.style.width` rather
+than a computed or measured value.
+
+**Recurring stale-count bug caught again by this feature's own T022
+full-catalog regression gate**: `gallery-showcase.spec.ts`'s SC-002
+test still hardcoded "87 components" (feature 028's number) — no
+category label needed adding this time, since all 4 new primitives
+joined the existing "Overlays, Modals & Feedback" section rather than
+opening a new one. Fixed (87 → 91). Third occurrence of this exact
+bug class (after features 027 and 028) — any future feature that adds
+components to the root gallery should expect to make this same fix.
+
+### Consent & System Messaging Primitives (feature 030)
+
+Closes feature 018's component-gap inventory's "Consent & System
+Messaging" category from 0% to 5/5 — the second category (after
+Layout & Structure, feature 028) to reach 100%, bringing the catalog
+to 96 total components: Session Timeout Modal (US1, an idle-timeout
+warning composing Modal's exact `<dialog>` mechanism with this
+catalog's first `setInterval`-driven countdown), Offline Banner, 2FA
+Reminder Banner, Maintenance/Announcement Bar (US2, all three content/
+layout variants of Alert), and Dark Mode Toggle (US3, a Toggle wrapper
+bound to the `light`/`dim` theme pair). Zero new design tokens or
+themes — every primitive reuses an already-shipped mechanism (Modal,
+Alert, Toggle, `theme-switcher.js`).
+
+**Scope decision, documented not assumed**: Dark Mode Toggle's dark
+counterpart is `dim`, not a literal `"dark"` theme — verified directly
+against `shared/design-tokens.ts`'s `THEMES` array, which has no theme
+named `"dark"` (the catalog's theming system is a 48-entry curated
+palette selector, feature 017, not a light/dark binary). `dim` was
+chosen as DaisyUI's own general-purpose dark theme, the most
+defensible non-arbitrary pick among the 8 themes sharing the "Dark
+Moody/Professional" `moodFamily`.
+
+**Real CSS bug found by running against a live browser, not assumed
+clean**: the native `hidden` attribute does not reliably hide `.alert`
+— its `@apply flex` gives it an author-origin `display: flex`
+declaration that the CSS cascade lets win over the browser's UA-origin
+`[hidden] { display: none }` default (author styles always outrank UA
+styles as a cascade origin, regardless of selector specificity). Every
+prior `.alert`/Toast dismissal in this catalog only ever permanently
+removes the element (`alert.js`/`toast.js` both call `.remove()`), so
+this collision never surfaced before — Offline Banner is the first
+component needing to show/hide the SAME element repeatedly based on
+live browser state. Fixed via direct CSSOM `style.display` assignment
+(the same pattern `progress.js`/`circular-progress.js` already use for
+this project's CSP), which — being inline style — outranks any
+class-based `display` declaration. Worth watching for in any future
+primitive that toggles visibility on an existing `@apply`-styled
+element rather than adding or removing it from the DOM.
+
+**React package architecture correction, found by checking precedent
+before writing, not assumed**: an early draft of Dark Mode Toggle's
+React wrapper imported a nonexistent `selectTheme`/`KNOWN_THEME_IDS`
+from a `../lib/theme` module — `packages/react/src` has no port of the
+static site's `theme-switcher.js` at all (grepping the whole package
+for `localStorage`/`documentElement` found exactly one precedent,
+`useChartColors.ts`, which only ever *reads* global theme state via a
+`MutationObserver`, never writes `localStorage`). Fixed by having
+`DarkModeToggle.tsx` port only the minimal `light`/`dim`/`pds-theme`-
+key logic it needs directly, matching `useChartColors`'s read-only
+observer pattern for the read side and adding a small, self-contained
+write side — no fake cross-file import, no dependency on the static
+site's 48-theme `THEMES` array.
+
+**Toggle click-target bug avoided by checking precedent first, not
+discovered by test failure**: `Toggle`'s markup wraps a visually-hidden
+(`sr-only`) checkbox with an overlapping `.toggle-track` span, which
+intercepts pointer events aimed at the input directly — this
+catalog's own `toggle.spec.ts` already established the fix (click the
+wrapping `<label>`, not the input), which Dark Mode Toggle's markup
+and tests follow via a `data-testid` on the label.
+
+### Navigation Micro-Patterns (feature 031)
+
+Closes feature 018's component-gap inventory's "Navigation
+micro-patterns" category from 1/6 (Avatar Group, feature 023) to
+6/6 — the third category (after Layout & Structure, feature 028, and
+Consent & System Messaging, feature 030) to reach 100%, bringing the
+catalog to 101 total components: Team/Workspace Switcher, Language
+Switcher (US1, both composing Dropdown Menu's exact panel mechanics —
+Language Switcher is a pure content variant of the same
+`ContextSwitcher` React component, not a second one), Back-to-Top
+Button, Scroll Progress Bar (US2, one shared rAF-throttled scroll
+listener driving both), and Onboarding Tour/Coachmark (US3, this
+catalog's first multi-step sequencing UI, reusing Popover's exact
+positioning mechanism per step). Zero new design tokens — every
+primitive reuses an already-shipped mechanism (Dropdown Menu, Avatar,
+Progress, Popover).
+
+**Scope discipline, repeating an established pattern**: Back-to-Top
+ships only the minimal scroll-threshold visibility logic it needs, NOT
+a standalone "Affix" primitive — the inventory's own note points at a
+different, not-yet-built category item, the identical situation
+feature 030 already handled for Session Timeout Modal/Countdown Timer.
+
+**Real gallery-count bug found by this feature's own regression gate,
+a new variant of the recurring pattern**: an initial combined "Scroll
+Progress Bar & Back-to-Top" gallery card broke the "one card per
+inventory item" convention feature 030 established (`SystemBanner`
+covers 2 inventory items in one React component, but still ships 2
+separate demo pages/cards) — merging both into one card left the
+gallery's demo-link count at 100, not the expected 101, caught by
+`gallery-showcase.spec.ts`'s own SC-002 count assertion. Fixed by
+splitting into 2 cards (both linking to the same combined
+`scroll-feedback.html` demo page) — implementation sharing is fine,
+but each inventory item still needs its own discoverable gallery
+entry.
+
+**Test-fixture height bug found by running against a live browser, not
+assumed**: the Scroll Progress Bar/Back-to-Top demo page's initial
+content was only ~94px scrollable at 1440×900 — nowhere near
+Back-to-Top's 400px show/hide threshold — so `scrollIntoViewIfNeeded()`
+(which scrolls only the minimum distance to bring an element into
+view) never came close to crossing it, and the progress percentage
+never grew meaningfully. Fixed by adding real height (standard-scale
+`h-96` spacer elements, not arbitrary-value utilities) to the demo
+page and scrolling directly to `document.documentElement.scrollHeight`
+in tests instead of relying on `scrollIntoViewIfNeeded()`.
+
+### Overlays (feature 032)
+
+Closes feature 018's component-gap inventory's "Overlays" category
+from 0% to 3/6, bringing the catalog to 104 total components: Affix
+(US1, general-purpose scroll-threshold pinning infrastructure —
+distinct from Back-to-Top's own one-off inline logic, feature 031,
+which stays unchanged), LoadingOverlay (US2, a container-scoped
+blocking spinner overlay reusing Spinner's exact markup verbatim), and
+Bottom Sheet (US3, reusing Slide-over's exact native `<dialog>`
+mechanism with bottom-edge instead of right-edge anchoring). The other
+3 inventory items are explicitly excluded, not silently dropped:
+Drawer (verified identical to the existing Slide-over by reading its
+real CSS directly), Dialog Manager (a JS-API layer, not a visual
+component), and Popover Combobox variant (confirmed Mantine-internal,
+not a standalone pattern this catalog needs). Zero new design tokens.
+
+**Three real CSS bugs found by running against a live browser, not
+assumed clean, all in the same general family as feature 030's Offline
+Banner finding**:
+
+1. **LoadingOverlay repeated the exact `.alert`-style `hidden`-vs-
+   `display:flex` collision** — `.loading-overlay`'s own `@apply flex`
+   beat the native `[hidden]` UA default the same way `.alert` did in
+   feature 030, despite an early draft of this contract explicitly
+   (and wrongly) claiming no collision risk existed. Fixed identically
+   — direct CSSOM `style.display` assignment, not the `hidden`
+   attribute/IDL property.
+2. **Bottom Sheet's `<dialog>` centered itself instead of anchoring to
+   the bottom edge** — the native `<dialog>` UA stylesheet's own
+   `inset: 0` / `margin: auto` defaults (the same class of default this
+   catalog's `.dropdown-menu-panel`/`.popover-panel` already had to
+   reset) left `top` at its UA value of `0` alongside this class's own
+   `bottom-0`, so with no explicit height the auto margins centered the
+   box vertically. Fixed with an explicit `top: auto; margin: 0` reset.
+3. **A flex-shrink gotcha in the overflow test fixture**: `.bottom-
+   sheet-panel` is `flex flex-col` (identical structure to Slide-over's
+   own panel) — flex items shrink to fit their container by default, so
+   a fixed-height spacer div used to force overflow in the test page
+   was silently squeezed down instead of overflowing and triggering the
+   panel's own `overflow-y-auto` scroll. Fixed with `shrink-0` on the
+   demo's own content children — a fixture-level fix, not a change to
+   the shared `.bottom-sheet-panel` class (which Slide-over also uses
+   unmodified, and could in principle hit the identical gotcha with
+   sufficiently long real content — noted for any future feature that
+   touches Slide-over's own overflow behavior).
+
+### Data Display Composables (feature 033)
+
+Brings feature 018's component-gap inventory's "Data Display" category
+from 4/16 (ColorSwatch/Spoiler/Highlight/Code, feature 023) to 8/16,
+bringing the catalog to 108 total components: ThemeIcon (US1, an icon
+in a colored circle reusing Badge's exact per-color opacity/ring
+convention and Avatar's exact size scale), Blockquote (US2, existing
+typography tokens only), BackgroundImage (US2, content overlaid on an
+image with a legible-contrast scrim reusing the existing Modal/
+Slide-over backdrop-darkening convention), and Watermark (US3, a pure
+CSS repeating-background technique via a generated SVG data URI, no
+new dependency). Zero new design tokens.
+
+**Deliberate partial category closure, not a full 16/16 sweep**: the
+category's other 8 items stay explicitly out of this feature's scope
+— 5 genuinely-new-pattern candidates (OverflowList, RollingNumber,
+PickList/Transfer, Gallery, Compare) deferred to a future feature
+rather than combined into one oversized batch (this session's
+established 4-5-item sizing precedent), plus TreeTable and QRCode
+already deferred per feature 018's own notes (TreeTable cross-
+references the deferred interactive Data Table gap; QRCode needs a
+new client-side dependency).
+
+**A real CSP gap found by checking existing precedent, not the
+generic per-page template**: Watermark's generated SVG rendered as a
+`data:` URI, and this catalog's generic per-page CSP template
+(`default-src 'self'`, no `img-src`) blocks `data:` sources by
+fallback. Grepping the existing catalog found the exact fix already in
+use — Avatar/Card/List/Aspect Ratio all ship an `img-src 'self'
+data:;` CSP variant for their own `data:`-URI placeholder images;
+`background-image.html`/`watermark.html` use that same variant.
+
+**Also corrected before shipping, not assumed**: an early research
+draft assumed ThemeIcon's `info`/`brand` color variants would come
+from Badge directly — checking Badge's real markup found it ships
+only 4 variants (success/error/warning/neutral, no info/brand).
+Fixed by sourcing `info`'s values from Alert's own `.alert-info` and
+`brand`'s from Button's existing `brand-light`/`brand-dark` pair —
+both already-ratified tokens, just not previously surfaced through
+Badge specifically.
+
+This feature shipped clean on the first full test pass — the ONLY
+batch this session with zero real implementation bugs found during
+its own regression gate, consistent with the inventory's own "trivial
+CSS composition" buildability signal for every item in it.
+
+### Data Display Patterns (feature 034)
+
+Brings feature 018's component-gap inventory's "Data Display" category
+from 8/16 (feature 033) to 13/16 — its practical ceiling without
+absorbing TreeTable's Data Table dependency or QRCode's new client-
+side dependency — bringing the catalog to 113 total components:
+OverflowList (US1, this catalog's first ResizeObserver usage),
+RollingNumber (US2, an rAF-driven numeric tween, reusing the
+rAF-throttle pattern already established for scroll listeners),
+PickList/Transfer (US2, a dual-list composed entirely of List/Checkbox/
+ActionIcon reused verbatim), Gallery (US3, reusing Modal's exact
+native `<dialog>` mechanism with full-screen geometry), and Compare
+(US3, a native `<input type="range">` — Slider's exact existing
+component — driving a CSS `clip-path`). Zero new design tokens.
+
+**A genuinely subtle, reproducible bug found only by running against a
+live browser, not caught by code review alone**: OverflowList's first
+draft re-measured each item's (and the "+N more" chip's) `offsetWidth`
+on every `render()` call, including calls made after a PRIOR render
+had already hidden some items via `display:none`. A hidden element's
+`offsetWidth` is always 0, so any item hidden by an earlier pass would
+be measured as "0px wide" on the next pass, trivially "fit," get
+un-hidden, and the whole computation would cascade into showing every
+item regardless of real width — reproduced concretely (a 356px-wide
+row of chips rendering fully "fit" inside a 200px container) and
+confirmed to recur on every subsequent resize event too, not just
+component initialization. Fixed by measuring each item's natural width
+exactly ONCE, before anything is ever hidden, and reusing the cached
+value for every future fit calculation — applied identically to both
+the static-HTML script and the React port, since the React version had
+the same underlying vulnerability (re-reading `el.offsetWidth` from
+refs whose `display` had already been toggled by a previous render).
+
+**A real accessibility bug found by the keyboard/focus-return test
+failing, not assumed correct**: Gallery's first draft used bare
+`<img>` elements as `[data-gallery-thumb]` triggers — an `<img>` has
+no native focusability, so neither keyboard activation nor
+`wireDialogClose()`'s focus-return-to-trigger worked. Fixed by
+wrapping each thumbnail in a real `<button>` (matching every other
+overlay trigger in this catalog), on both surfaces — the React
+contract's own first draft had a parallel bug (hardcoding the
+focus-return ref to always point at the FIRST thumbnail regardless of
+which one was actually clicked), also fixed before shipping.
+
+**Also found and fixed**: a literal `style="width: ...px"` attribute in
+an early OverflowList demo draft, which is blocked by this project's
+CSP the same as any other inline style — replaced with a Tailwind
+arbitrary-value utility class (`w-[200px]`), compiled to a real
+stylesheet rule at build time, not an inline attribute.
+
+### Configurable Social Login Buttons (feature 035)
+
+A new `SocialLoginGroup` component — outside feature 018's inventory
+(verified via a graphify query before drafting the spec: no social-
+login/OAuth-button candidate exists in that 105-item catalog), bringing
+the catalog to 114 total components. A single, ordered `providers`
+array renders 5 brand-governed presets (Google, Apple, Facebook,
+Microsoft, GitHub) plus an open custom-entry mechanism for any other
+identity provider (demonstrated with Instagram, TikTok, Discord).
+Presentation and a selection callback only — no OAuth redirect, token
+exchange, or network call of the component's own; the host application
+owns the real authentication flow, the same posture every other
+component in this catalog takes toward its own domain (Toast never
+queues a real notification backend, Password Strength Meter never
+calls a real API).
+
+**A real, computed accessibility finding, not assumed**: this
+feature's central design decision was resolving a genuine tension
+between provider brand mandates and this catalog's non-negotiable
+Principle II (WCAG AAA). Computed directly via the WCAG relative-
+luminance formula: Facebook's official solid blue-fill button
+(`#1877F2` background, white text) measures **4.24:1** — failing AAA's
+7:1 gate, and barely failing even AA's 4.5:1. A representative custom
+brand color (Instagram's magenta, `#E1306C`) fails AAA against
+*either* black or white text (4.34:1 / 4.84:1) — there is no safe text
+color for that background at all. Resolution: every preset and every
+custom entry defaults to this catalog's existing AAA-verified
+`neutral-50`/`neutral-900` surface, confining brand color to the icon
+glyph only (never the button's own fill or text) — which also matches
+how Google/Microsoft/GitHub's own official button kits recommend
+presenting their mark in the first place. Apple and GitHub's own
+black/near-black/white brand fills remain safe as an optional
+alternate appearance specifically because both extremes clear AAA at
+roughly 17-21:1 regardless of what text sits on them.
+
+**A new, deliberately non-theme-reactive token category**: the 5
+presets' brand colors (`providerBrand` in `shared/design-tokens.ts`)
+are the first tokens in this catalog kept structurally OUTSIDE the
+21-token, 42-curated-theme-reactive semantic palette — a provider's
+brand mark must render identically regardless of which curated theme
+the host app has selected, which is the opposite of what every other
+token in this file exists to do. Documented as a named, reasoned
+exception in Complexity Tracking (specs/035-social-login-buttons/
+plan.md), the same governance shape this constitution already uses for
+`KNOWN_THEME_CONTRAST_GAPS` and `ICON_FILL_TEXT_TOKENS`/
+`DECORATIVE_ARIA_HIDDEN_TOKENS` — a documented, individually-named
+exception in place of a silent gap, applied here to a new constraint
+class (external brand-color fixedness) rather than a contrast
+shortfall.
+
+**Also found and fixed during implementation, before any of it
+shipped**: an early draft of the custom-entry example icons (Instagram/
+TikTok/Discord) used a literal inline `style="background-color: ..."`
+attribute — blocked by this project's CSP the same as any other inline
+style. Fixed by moving the accent color into the `<svg>` itself (a
+`fill` presentation attribute on a background `<circle>`, exactly like
+the Facebook preset's icon already does), which needs no Tailwind
+class or inline style at all. A second, unrelated bug in the same
+demo page — a helper caption using `text-neutral-500` (4.83:1,
+sub-AAA) instead of this catalog's established `text-neutral-600`
+(7.56:1) for body copy — was caught by the dedicated Playwright a11y
+test itself failing, not assumed correct, and fixed before the suite
+was accepted as green.
+
+**A separate, larger pre-existing gap found while scoping this
+feature's foundational work, tracked as its own follow-up rather than
+fixed here**: `packages/react/src/styles.css` — which duplicates
+`src/styles/tailwind.css`'s `@layer components` block verbatim, since
+the two are independently compiled Tailwind builds — had silently
+stopped receiving that duplication starting with feature 028's Layout
+& Structure primitives and never caught back up through feature 034,
+leaving roughly 40 React components shipping with zero compiled CSS in
+the published `@professional-design-system/react` package. This
+feature's own Phase 2 explicitly re-verified its own duplication step
+to avoid repeating that gap, but remediating the historical ~40-
+component backlog is out of this feature's scope.
+
 ### Gallery Presentation & Discoverability (feature 026)
 
 The root gallery (`index.html`) was originally a flat, uncategorized
@@ -2460,4 +3192,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.24.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-14
+**Version**: 1.32.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-14
