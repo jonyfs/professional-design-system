@@ -30,6 +30,14 @@ test.describe("Opening section communicates scale (US1)", () => {
     await expect(wall.getByText("Card title")).toBeVisible();
     await expect(wall.locator(".progress-track")).toBeVisible();
   });
+
+  // Feature 042 FR-006/SC-003 — a clear, visible link from the catalog
+  // homepage to the flagship app showcase.
+  test("links to the flagship app showcase", async ({ page }) => {
+    const link = page.getByRole("link", { name: /See it as a real app/ });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("href", "/showcase/index.html");
+  });
 });
 
 test.describe("Categorized, navigable gallery (US2)", () => {

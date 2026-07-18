@@ -1,7 +1,7 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan
-at specs/039-advanced-form-inputs/plan.md
+at specs/042-flagship-app-showcase/plan.md
 <!-- SPECKIT END -->
 
 ## graphify

@@ -148,14 +148,22 @@
      UA's own `dialog:modal` stylesheet) makes the viewport the containing
      block, so a width set here is now determinate. */
   .modal-dialog {
-    @apply p-0 border-0 w-[calc(100vw-2rem)] max-w-lg;
+    @apply p-0 border-0 bg-transparent w-[calc(100vw-2rem)] max-w-lg;
   }
   .modal-dialog::backdrop {
     background-color: theme("colors.neutral.500 / 75%");
   }
+  /* text-neutral-900 is NOT redundant with inheritance here: a native
+     <dialog> shown via showModal() gets the UA stylesheet's own default
+     `color` (CanvasText, ~black) on the <dialog> element itself, which
+     wins over whatever color the page's real ancestor tree set — even
+     though .modal-panel remains a normal DOM descendant. Undetected
+     until feature 042's showcase nested a Modal inside a dark theme:
+     consumer content that doesn't set its own explicit text color (e.g.
+     a plain <dl>/<dd>) silently rendered black-on-dark-navy. */
   .modal-panel {
     @apply relative w-full transform overflow-hidden rounded-lg bg-neutral-50 px-4
-      pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:p-6;
+      pb-4 pt-5 text-left text-neutral-900 shadow-xl transition-all sm:my-8 sm:p-6;
   }
 
   /* Shared close/dismiss icon button — Modal, Slide-over, Toast
@@ -171,14 +179,17 @@
      <dialog> mechanism as Modal, anchored to the right edge instead of
      centered. */
   .slide-over-dialog {
-    @apply p-0 border-0 fixed inset-y-0 right-0 h-full w-full max-w-md;
+    @apply p-0 border-0 bg-transparent fixed inset-y-0 right-0 h-full w-full max-w-md;
   }
   .slide-over-dialog::backdrop {
     background-color: theme("colors.neutral.500 / 75%");
   }
+  /* text-neutral-900: same UA-default-color-on-<dialog> issue as
+     .modal-panel above — Slide-over shares the identical native <dialog>
+     mechanism (research.md), so it shares the same fix. */
   .slide-over-panel {
-    @apply relative flex h-full w-full flex-col bg-neutral-50 shadow-xl p-6
-      transform transition ease-in-out duration-500;
+    @apply relative flex h-full w-full flex-col bg-neutral-50 text-neutral-900
+      shadow-xl p-6 transform transition ease-in-out duration-500;
   }
 
   /* Toast primitive (contracts/toast.contract.md) — plain positioned

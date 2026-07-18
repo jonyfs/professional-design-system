@@ -1,4 +1,34 @@
 <!--
+SYNC IMPACT REPORT (v1.38.0 — see below for the v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.37.0 → 1.38.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "Flagship App
+    Showcase (feature 042)" subsection: a new standalone `showcase/`
+    workspace (architecturally separate from the dev-only
+    tests/react-harness/), composing 21 real shipped components into
+    one realistic dashboard, deployed under /showcase/. Documents 4
+    real defects found and fixed: (1) Modal/Slide-over dark-theme text
+    contrast (dialog UA-default color beats CSS inheritance), (2)
+    DarkModeToggle vs. the full theme <select> silently desyncing (two
+    independent writers to data-theme), (3) useCommandPalette's
+    execute() running onExecute() before the dialog closes (inert
+    background blocks synchronous page manipulation), (4) Recharts'
+    async ResizeObserver redraw causing an intermittent WebKit overflow
+    check false-positive (test-timing, not a product bug). Also fixes
+    chart.html's pre-existing dead localhost link and a JS-bundle vs.
+    HTML-only rewrite-base-path.mjs gap that would have 404'd the
+    showcase's own back-link in production.
+Corrected sections: None this bump.
+Rationale: four real, previously-undiscovered defects (one a genuine
+WCAG contrast violation) surfaced only because this feature was the
+first to exercise Modal/DarkModeToggle/CommandPalette/Chart together
+inside a live dark-themed, narrow-viewport composition — each is
+permanently documented here so future features don't rediscover them
+from scratch. MINOR bump: new section added, no principle text changed.
+Templates requiring updates: ✅ none — this is a component-catalog/
+  governance record, not a spec/plan/tasks template concern.
+
 SYNC IMPACT REPORT (v1.37.0 — see below for the v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.36.0 → 1.37.0
 Modified principles: None
@@ -2703,6 +2733,82 @@ set every other button in this catalog declares.
   element regardless of utility applied, a technical constraint rather
   than a state this component is exempt from providing).
 
+### Flagship App Showcase (feature 042)
+
+A new, standalone `showcase/` npm workspace — NOT part of
+`tests/react-harness/` (that directory's own header comment states
+"dev-only harness, never published"; a real, published, marketing-facing
+page sharing that build would blur two concerns with very different
+change-risk profiles). Composes 21 real, already-shipped components
+(Sidebar, Navbar, Avatar, AvatarGroup, Breadcrumbs, Tabs, CommandPalette,
+DropdownMenu, ActionIcon, Button, Card, Badge, RollingNumber, DataTable,
+Pagination, LineChart, Toast, NotificationCenter, Modal, DarkModeToggle,
+ContextSwitcher) into one realistic SaaS dashboard screen, deployed under
+`/showcase/` via `deploy-pages.yml`'s existing `rewrite-base-path.mjs`
+mechanism. Fictional-but-plausible sample data only (`showcase/src/data/
+sample-data.ts`) — never implies a real backend or real user data.
+
+Four real defects found and fixed during implementation, not merely
+assumed:
+
+1. **Modal/Slide-over dark-theme text contrast (WCAG violation)**:
+   `.modal-panel`/`.slide-over-panel` set `bg-neutral-50` but never an
+   explicit `text-neutral-900` — relying on CSS inheritance from the
+   page's own themed ancestor. A native `<dialog>` shown via
+   `showModal()` receives the UA stylesheet's own default `color`
+   (`CanvasText`, ~black) on the `<dialog>` element itself, which wins
+   over the real ancestor's color despite `.modal-panel` remaining a
+   normal DOM descendant — undetected until this feature nested a Modal
+   inside a dark theme for the first time. Consumer content that
+   doesn't set its own explicit text color (e.g. a plain `<dl>/<dd>`)
+   silently rendered black-on-dark-navy. Fixed by adding explicit
+   `text-neutral-900` to both classes (both `src/styles/tailwind.css`
+   and `packages/react/src/styles.css`, which duplicate these classes
+   by design per feature 004's research.md). The `<dialog>` element
+   itself also had no explicit `background-color`, exposing a thin
+   white sliver at the rounded panel's edges in dark themes — fixed
+   with `bg-transparent` on `.modal-dialog`/`.slide-over-dialog`.
+2. **DarkModeToggle vs. the full theme `<select>` — two independent
+   write paths to the same `data-theme` attribute**: this is the first
+   page to pair DarkModeToggle (light/dim only, feature 030's own scope)
+   with the full 119-theme selector (`gallery-theme-selector.js`,
+   reused verbatim via `@import` + dynamic script import for FR-004).
+   The `<select>` only sets its own value once on init; it never
+   observes external `data-theme` changes, so toggling DarkModeToggle
+   silently desynced the dropdown from the theme actually applied.
+   Fixed with a small `MutationObserver` local to the showcase (not a
+   shared-component change, since no other page pairs these two
+   controls).
+3. **`useCommandPalette`'s `execute()` calls `onExecute()` before
+   closing the dialog**: a consumer action that synchronously
+   manipulates the rest of the page (e.g. clicking a Tabs trigger to
+   reveal a section) has no effect, since everything outside an open
+   modal `<dialog>` is inert per spec. Fixed by deferring such
+   `onExecute` bodies to `requestAnimationFrame` after the dialog has
+   actually closed — not a hook-level fix, since most consumers'
+   `onExecute` callbacks don't touch the rest of the page and need no
+   deferral.
+4. **Recharts' `ResizeObserver`-driven redraw is asynchronous**:
+   measuring `document.documentElement.scrollWidth` immediately after
+   `page.goto()` on a narrow viewport can transiently catch the chart's
+   `<svg>` at its pre-resize width, intermittently failing a
+   no-horizontal-overflow check in WebKit specifically. Fixed at the
+   test level (`page.waitForFunction` polling the chart's own rendered
+   width) rather than the component, since the actual rendered chart is
+   always eventually correct — this was a test-timing gap, not a
+   product bug.
+
+Also fixed as part of this feature (research.md R5): `src/components/
+chart/chart.html`'s pre-existing `href="http://localhost:5174/chart.html"`
+— dead on any deployed environment (confirmed directly against the live
+site) — now points at `/showcase/index.html`. And: a link hardcoded as
+`href="/index.html"` inside a React component compiles into the JS
+bundle, which `scripts/rewrite-base-path.mjs` (feature 039) does NOT
+rewrite (it only walks `.html` files) — the showcase's own "back to
+catalog" link would have 404'd under the Pages subpath in production.
+Fixed by deriving the link from Vite's own `import.meta.env.BASE_URL`
+at runtime instead of hardcoding a root-absolute path.
+
 ### Forms, Validation & Inputs
 - **Text inputs/selects/textareas**: `block w-full rounded-md border-0 py-1.5
   text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300
@@ -3611,4 +3717,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.37.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
+**Version**: 1.38.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18

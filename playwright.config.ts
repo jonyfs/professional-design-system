@@ -34,6 +34,16 @@ export default defineConfig({
       url: "http://localhost:5174",
       reuseExistingServer: !process.env.CI,
     },
+    {
+      // Flagship App Showcase (feature 042) — its own standalone,
+      // PUBLISHED workspace (unlike the dev-only react-harness above),
+      // same "separate Vite dev server, absolute URLs" pattern.
+      // flagship-showcase.spec.ts constructs absolute
+      // http://localhost:5175 URLs rather than the shared baseURL.
+      command: "npm run dev --workspace showcase",
+      url: "http://localhost:5175",
+      reuseExistingServer: !process.env.CI,
+    },
   ],
   projects: [
     {

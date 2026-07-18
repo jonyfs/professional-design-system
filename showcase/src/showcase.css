@@ -1,0 +1,11 @@
+/* FR-004: the showcase MUST re-color under all 119 shipped themes via
+ * the existing theme switcher, not just DarkModeToggle's own light/dim
+ * pair — @import the full catalog (same mechanism tests/react-harness
+ * already uses for the same reason). @import MUST precede every other
+ * rule (CSS spec).
+ */
+@import "../../src/styles/themes.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

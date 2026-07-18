@@ -59,6 +59,18 @@ jobs:
       - name: Rewrite root-absolute cross-page links for the Pages subpath
         run: node scripts/rewrite-base-path.mjs dist /${{ github.event.repository.name }}/
 
+      - name: Build packages/react (showcase dependency)
+        run: npm run build --workspace packages/react
+
+      - name: Build showcase app (Pages subpath base)
+        working-directory: showcase
+        run: npm run build
+        env:
+          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/showcase/
+
+      - name: Copy showcase build into the main site's dist/
+        run: cp -r showcase/dist dist/showcase
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
