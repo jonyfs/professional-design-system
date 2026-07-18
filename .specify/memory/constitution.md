@@ -1,4 +1,27 @@
 <!--
+SYNC IMPACT REPORT (v1.37.0 — see below for the v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.36.0 → 1.37.0
+Modified principles: None
+Added sections:
+  - Governance → "Repository" fact updated (private → public, 2026-07-18,
+    explicitly confirmed, required for GitHub Pages on GitHub's Free
+    plan) plus new "Live deployment & semantic versioning" fact:
+    `.github/workflows/deploy-pages.yml` publishes to GitHub Pages
+    (chained after CI success via `workflow_run`, never an independent
+    `push` trigger), `scripts/rewrite-base-path.mjs` fixes a real
+    Vite-doesn't-rewrite-plain-anchor-hrefs subpath bug, and a `version`
+    job auto-bumps PATCH + tags + releases after every successful
+    CI + Pages deploy on main.
+Corrected sections: None this bump.
+Rationale: the repository's public/private status and its live-deployment
+target are standing, project-wide facts every future feature/session
+needs to know before assuming "this is a private, unpublished catalog" —
+the same reasoning already applied to the pre-existing "Repository"
+governance fact. This is a MINOR bump: new governance facts recorded, no
+principle text changed or reversed.
+Templates requiring updates: ✅ none — this is operational/deployment
+  infrastructure, not a spec/plan/tasks template concern.
+
 SYNC IMPACT REPORT (v1.36.0 — see below for the v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.35.0 → 1.36.0
 Modified principles: None
@@ -3538,7 +3561,35 @@ use in this project —
 **Repository**: this project's canonical remote is
 https://github.com/jonyfs/professional-design-system — constitution amendments,
 component contributions, and issue tracking are expected to flow through this
-repository once it is populated.
+repository once it is populated. The repository is PUBLIC (changed from
+private 2026-07-18, a deliberate, explicitly-confirmed decision, to allow
+GitHub Pages to serve this catalog as a live example site — GitHub's Free
+plan does not support Pages on private repositories at all, confirmed
+directly via a real, rejected API call before the visibility change, not
+assumed).
+
+**Live deployment & semantic versioning**: `.github/workflows/deploy-pages.yml`
+publishes the static site (`npm run build`'s `dist/` output) to
+https://jonyfs.github.io/professional-design-system/ via GitHub Pages,
+triggered only via `workflow_run` after `.github/workflows/ci.yml`'s own
+"CI" workflow reports a `success` conclusion on `main` — never an
+independent `on: push` trigger, which would race CI's own result and could
+publish a commit CI was still in the process of failing. `scripts/
+rewrite-base-path.mjs` runs after the build, rewriting every root-absolute
+`href`/`src` the static HTML source uses (verified directly: Vite's own
+build only prefixes `<script>`/`<link>` tags it recognizes as part of its
+module graph with `base`, never arbitrary `<a href="/...">` cross-page
+navigation links, which would otherwise 404 under the Pages project
+subpath) — the 122+ source HTML files themselves stay root-absolute for
+local dev, only the built `dist/` output is rewritten. After a successful
+Pages deploy, a `version` job auto-bumps the PATCH semantic version in
+`package.json`/`packages/react/package.json` (kept in sync), commits with
+`[skip ci]` (preventing the bump commit from re-triggering CI, and by
+extension this same Pages workflow, into a loop), tags it (`vX.Y.Z`), and
+creates a GitHub Release — MINOR/MAJOR bumps remain a manual, deliberate
+commit. This is the project's now-standing policy: every successful
+CI + Pages deploy on `main` corresponds to exactly one new semantic
+version.
 
 **Amendment Procedure**: changes to this constitution require (a) an explicit
 proposal of the principle/section being changed, (b) justification recorded in
@@ -3560,4 +3611,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.36.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
+**Version**: 1.37.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
