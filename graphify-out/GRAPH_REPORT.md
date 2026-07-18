@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-18)
 
 ## Corpus Check
-- 855 files · ~2,418,735 words
+- 857 files · ~2,420,354 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5235 nodes · 5439 edges · 607 communities (489 shown, 118 thin omitted)
+- 5253 nodes · 5456 edges · 608 communities (490 shown, 118 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fa233499`
+- Built from commit: `9bb00db8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -515,6 +515,7 @@
 - Watermark.tsx
 - rewrite-base-path.mjs
 - Specification Quality Checklist: Material Catalog Layout
+- Specification Quality Checklist: Speed Up CI Test Suite
 
 ## God Nodes (most connected - your core abstractions)
 1. `expectNoA11yViolations()` - 100 edges
@@ -547,7 +548,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (607 total, 118 thin omitted)
+## Communities (608 total, 118 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -2077,8 +2078,12 @@ Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
 Cohesion: 0.11
 Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Material Catalog Layout, Assumptions, Edge Cases, Feature Specification: Material Catalog Layout (+9 more)
 
+### Community 607 - "Specification Quality Checklist: Speed Up CI Test Suite"
+Cohesion: 0.11
+Nodes (16): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Speed Up CI Test Suite, Assumptions, Edge Cases, Feature Specification: Speed Up CI Test Suite (+8 more)
+
 ## Knowledge Gaps
-- **3121 isolated node(s):** `Content Quality`, `Requirement Completeness`, `Feature Readiness`, `Notes`, `User Story 1 - Browse every category from a persistent sidebar (Priority: P1)` (+3116 more)
+- **3132 isolated node(s):** `Content Quality`, `Requirement Completeness`, `Feature Readiness`, `Notes`, `User Story 1 - Faster feedback on every push to main (Priority: P1)` (+3127 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **118 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -2087,10 +2092,8 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `expectNoA11yViolations()` connect `a11y-helper.ts` to `react-catalog-expansion-buttons.spec.ts`, `feature-015-csp-sweep.spec.ts`, `color-input.spec.ts`, `button.spec.ts`, `context-menu.spec.ts`, `react-select.spec.ts`, `select.spec.ts`, `react-catalog-expansion-nav-utility.spec.ts`, `NavLink.tsx`, `catalog-expansion-buttons.spec.ts`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **Why does `stripNonDigits()` connect `theme-gallery.js` to `localized-inputs.js`, `feature-016-csp-sweep.spec.ts`?**
-  _High betweenness centrality (0.000) - this node is a cross-community bridge._
 - **What connects `Content Quality`, `Requirement Completeness`, `Feature Readiness` to the rest of the system?**
-  _3121 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _3132 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
@@ -2099,3 +2102,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
   _Cohesion score 0.044444444444444446 - nodes in this community are weakly interconnected._
+- **Should `Constitution & Templates Skill` be split into smaller, more focused modules?**
+  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._

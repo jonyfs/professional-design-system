@@ -180,13 +180,13 @@
     "semantic_hash": ""
   },
   ".remember/tmp/last-ndc.ts": {
-    "mtime": 1784396863.632475,
-    "ast_hash": "fc0b147e5177a6b1f907a655da4d35b9",
+    "mtime": 1784403558.067602,
+    "ast_hash": "eb11971418ebe905fa779ec70c45abfc",
     "semantic_hash": ""
   },
   ".remember/tmp/last-save.json": {
-    "mtime": 1784396863.4628808,
-    "ast_hash": "2bec6ba5f4d975badf77bc0b8434f8a5",
+    "mtime": 1784403557.8551927,
+    "ast_hash": "fbf8c93de3317295d54199a2cbda7d5b",
     "semantic_hash": ""
   },
   ".specify/feature.json": {
@@ -195,7 +195,7 @@
     "semantic_hash": ""
   },
   ".remember/now.md": {
-    "mtime": 1784396887.1457224,
+    "mtime": 1784403576.664543,
     "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "semantic_hash": ""
   },
@@ -10335,8 +10335,8 @@
     "semantic_hash": ""
   },
   "tests/e2e/menubar.spec.ts": {
-    "mtime": 1783872287.8930812,
-    "ast_hash": "e5f0864c0218989ede6ac9a426b9f8a0",
+    "mtime": 1784403800.8130784,
+    "ast_hash": "b87d79c8b6a4c4681096cd79ce5ec388",
     "semantic_hash": ""
   },
   "tests/e2e/rating.spec.ts": {
@@ -14370,8 +14370,8 @@
     "semantic_hash": ""
   },
   ".remember/today-2026-07-18.md": {
-    "mtime": 1784396887.145321,
-    "ast_hash": "39bc8af0a907fe0a244097ca83da09a2",
+    "mtime": 1784403576.6642199,
+    "ast_hash": "ac337a9e7d0094048a52e48b9b541178",
     "semantic_hash": ""
   },
   "specs/036-prism-color-scheme/checklists/requirements.md": {

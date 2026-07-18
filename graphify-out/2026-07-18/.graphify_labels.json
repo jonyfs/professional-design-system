@@ -604,5 +604,6 @@
   "602": "advanced-form-inputs.spec.ts",
   "603": "gallery-showcase.spec.ts",
   "604": "rewrite-base-path.mjs",
-  "605": "Specification Quality Checklist: Material Catalog Layout"
+  "605": "Specification Quality Checklist: Material Catalog Layout",
+  "606": "menubar.spec.ts"
 }

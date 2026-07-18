@@ -36,14 +36,194 @@
   },
   "nodes": [
     {
+      "label": "requirements.md",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_checklists_requirements",
+      "community": 607,
+      "norm_label": "requirements.md"
+    },
+    {
+      "label": "Specification Quality Checklist: Speed Up CI Test Suite",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_checklists_requirements_specification_quality_checklist_speed_up_ci_test_suite",
+      "community": 607,
+      "norm_label": "specification quality checklist: speed up ci test suite"
+    },
+    {
+      "label": "Content Quality",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_checklists_requirements_content_quality",
+      "community": 607,
+      "norm_label": "content quality"
+    },
+    {
+      "label": "Requirement Completeness",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_checklists_requirements_requirement_completeness",
+      "community": 607,
+      "norm_label": "requirement completeness"
+    },
+    {
+      "label": "Feature Readiness",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_checklists_requirements_feature_readiness",
+      "community": 607,
+      "norm_label": "feature readiness"
+    },
+    {
+      "label": "Notes",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_checklists_requirements_notes",
+      "community": 607,
+      "norm_label": "notes"
+    },
+    {
+      "label": "spec.md",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec",
+      "community": 607,
+      "norm_label": "spec.md"
+    },
+    {
+      "label": "Feature Specification: Speed Up CI Test Suite",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_feature_specification_speed_up_ci_test_suite",
+      "community": 607,
+      "norm_label": "feature specification: speed up ci test suite"
+    },
+    {
+      "label": "User Scenarios & Testing *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_user_scenarios_testing_mandatory",
+      "community": 607,
+      "norm_label": "user scenarios & testing *(mandatory)*"
+    },
+    {
+      "label": "User Story 1 - Faster feedback on every push to main (Priority: P1)",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_user_story_1_faster_feedback_on_every_push_to_main_priority_p1",
+      "community": 607,
+      "norm_label": "user story 1 - faster feedback on every push to main (priority: p1)"
+    },
+    {
+      "label": "User Story 2 - Deploy pipeline gate is no longer the long pole (Priority: P2)",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_user_story_2_deploy_pipeline_gate_is_no_longer_the_long_pole_priority_p2",
+      "community": 607,
+      "norm_label": "user story 2 - deploy pipeline gate is no longer the long pole (priority: p2)"
+    },
+    {
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_edge_cases",
+      "community": 607,
+      "norm_label": "edge cases"
+    },
+    {
+      "label": "Requirements *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_requirements_mandatory",
+      "community": 607,
+      "norm_label": "requirements *(mandatory)*"
+    },
+    {
+      "label": "Functional Requirements",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_functional_requirements",
+      "community": 607,
+      "norm_label": "functional requirements"
+    },
+    {
+      "label": "Key Entities",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_key_entities",
+      "community": 607,
+      "norm_label": "key entities"
+    },
+    {
+      "label": "Success Criteria *(mandatory)*",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_success_criteria_mandatory",
+      "community": 607,
+      "norm_label": "success criteria *(mandatory)*"
+    },
+    {
+      "label": "Measurable Outcomes",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_measurable_outcomes",
+      "community": 607,
+      "norm_label": "measurable outcomes"
+    },
+    {
+      "label": "Assumptions",
+      "file_type": "document",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "specs_041_speed_up_ci_suite_spec_assumptions",
+      "community": 607,
+      "norm_label": "assumptions"
+    },
+    {
       "label": "menubar.spec.ts",
       "file_type": "code",
       "source_file": "tests/e2e/menubar.spec.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_e2e_menubar_spec",
       "community": 606,
-      "norm_label": "menubar.spec.ts"
+      "norm_label": "menubar.spec.ts",
+      "id": "tests_e2e_menubar_spec"
     },
     {
       "label": "requirements.md",
@@ -52612,6 +52792,176 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_checklists_requirements",
+      "target": "specs_041_speed_up_ci_suite_checklists_requirements_specification_quality_checklist_speed_up_ci_test_suite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_checklists_requirements",
+      "target": "specs_041_speed_up_ci_suite_spec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_checklists_requirements_specification_quality_checklist_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_checklists_requirements_content_quality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_checklists_requirements_specification_quality_checklist_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_checklists_requirements_feature_readiness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_checklists_requirements_specification_quality_checklist_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_checklists_requirements_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/checklists/requirements.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_checklists_requirements_specification_quality_checklist_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_checklists_requirements_requirement_completeness",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec",
+      "target": "specs_041_speed_up_ci_suite_spec_feature_specification_speed_up_ci_test_suite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_feature_specification_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_spec_assumptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_feature_specification_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_spec_requirements_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_feature_specification_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_spec_success_criteria_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_feature_specification_speed_up_ci_test_suite",
+      "target": "specs_041_speed_up_ci_suite_spec_user_scenarios_testing_mandatory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_user_scenarios_testing_mandatory",
+      "target": "specs_041_speed_up_ci_suite_spec_edge_cases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_user_scenarios_testing_mandatory",
+      "target": "specs_041_speed_up_ci_suite_spec_user_story_1_faster_feedback_on_every_push_to_main_priority_p1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_user_scenarios_testing_mandatory",
+      "target": "specs_041_speed_up_ci_suite_spec_user_story_2_deploy_pipeline_gate_is_no_longer_the_long_pole_priority_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_requirements_mandatory",
+      "target": "specs_041_speed_up_ci_suite_spec_functional_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_requirements_mandatory",
+      "target": "specs_041_speed_up_ci_suite_spec_key_entities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "specs/041-speed-up-ci-suite/spec.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "specs_041_speed_up_ci_suite_spec_success_criteria_mandatory",
+      "target": "specs_041_speed_up_ci_suite_spec_measurable_outcomes",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -108039,5 +108389,5 @@
       "source_file": ".specify/workflows/speckit/workflow.yml"
     }
   ],
-  "built_at_commit": "fa233499a957166226931eeaef3bb901d21fb2c5"
+  "built_at_commit": "9bb00db87ea88de9a4aade84ebdd960c969810d5"
 }
