@@ -4,8 +4,15 @@ import { defineConfig } from "vite";
 // Multi-page static build: the gallery index links out to each component's
 // own standalone HTML page (so a developer can open/copy a single component
 // page in isolation, per each user story's "Independent Test" requirement).
+//
+// `base` defaults to "/" for local dev/preview and the CI production build
+// check; the GitHub Pages deploy workflow overrides it via GITHUB_PAGES_BASE
+// so every asset/link resolves under the project site's subpath
+// (https://<owner>.github.io/professional-design-system/) instead of 404ing
+// at the domain root.
 export default defineConfig({
   root: ".",
+  base: process.env.GITHUB_PAGES_BASE || "/",
   build: {
     rollupOptions: {
       input: {

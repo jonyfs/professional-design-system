@@ -1,0 +1,113 @@
+name: Deploy GitHub Pages
+
+# Chained after CI (.github/workflows/ci.yml) rather than triggering
+# independently on push: Pages only deploys, and the version job only bumps
+# semver, once the CI workflow has ALREADY reported success for that exact
+# commit on main. A plain `on: push` trigger here would race CI's own result
+# and could publish/tag a commit CI was still in the middle of failing.
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    outputs:
+      sha: ${{ steps.sha.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - id: sha
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Token discipline audit (Principle IV, NON-NEGOTIABLE)
+        run: npm run audit:tokens
+
+      - name: Contrast audit (Principle II, AAA, NON-NEGOTIABLE)
+        run: npm run audit:contrast
+
+      - name: Production build (Pages subpath base)
+        run: npm run build
+        env:
+          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
+
+      - name: Rewrite root-absolute cross-page links for the Pages subpath
+        run: node scripts/rewrite-base-path.mjs dist /${{ github.event.repository.name }}/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  version:
+    needs: [build, deploy]
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump patch version (root + React package, kept in sync)
+        id: bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          new_version=$(npm version patch --no-git-tag-version | tr -d 'v')
+          npm --prefix packages/react version "$new_version" --no-git-tag-version --allow-same-version
+          echo "version=$new_version" >> "$GITHUB_OUTPUT"
+
+      - name: Commit, tag, and push (skips re-triggering CI/Pages)
+        run: |
+          git add package.json package-lock.json packages/react/package.json
+          git commit -m "chore: bump version to v${{ steps.bump.outputs.version }} [skip ci]"
+          git tag "v${{ steps.bump.outputs.version }}"
+          git push origin main
+          git push origin "v${{ steps.bump.outputs.version }}"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ steps.bump.outputs.version }}" \
+            --title "v${{ steps.bump.outputs.version }}" \
+            --generate-notes \
+            --target main
