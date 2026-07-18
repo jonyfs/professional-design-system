@@ -107,25 +107,30 @@ test.describe("Menubar", () => {
     await page.keyboard.press("Enter");
     await expect(filePanel).toBeVisible();
 
-    // Fire two ArrowRight keydowns back-to-back with no await between them
-    // (and no waitForTimeout), so the first transition's queued Popover
-    // "toggle" callback has not yet had a chance to run before the second
-    // keydown is dispatched. Traced empirically: dropdown-menu.js's own
-    // unconditional close-time `trigger.focus()` (reused unmodified) fires
-    // as part of the FIRST transition's queued toggle event regardless of
-    // any staleness guard menubar.js applies to its own reaction — so a
-    // 2nd keypress that started its own independent transition before the
-    // 1st's chain fully resolved could still be clobbered afterwards.
-    // menubar.js's fix is to ignore a new arrow-key press outright while
-    // an earlier transition is still resolving (`settledGeneration !==
-    // generation`), rather than trying to race dropdown-menu.js's
-    // unmodifiable close-handler after the fact — so the correct,
-    // deterministic outcome here is that the 2nd press is dropped and the
-    // 1st press's own target (Edit) remains the final, uncorrupted state.
-    await page.keyboard.down("ArrowRight");
-    await page.keyboard.up("ArrowRight");
-    await page.keyboard.down("ArrowRight");
-    await page.keyboard.up("ArrowRight");
+    // Real cross-environment finding (traced with a standalone repro
+    // script, not assumed): Playwright's keyboard.down()/up() each incur
+    // their own separate CDP round-trip. On this catalog's local macOS
+    // dev environment that round-trip is slow enough that both key
+    // events land before the native Popover "toggle" event (observed
+    // resolving in under 1ms) fires — reproducing the intended race. On
+    // Linux (this catalog's CI, and any Docker-based run), the same
+    // round-trip is fast enough relative to the native toggle that the
+    // FIRST transition can fully settle before the SECOND keydown is
+    // even dispatched — at that point menubar.js's guard correctly
+    // treats it as a legitimate, separate keypress (not a race) and
+    // advances a second time, landing on View instead of Edit. That is
+    // NOT a corrupted state (exactly one trigger focused, exactly one
+    // matching panel open) — it just isn't the specific race this test
+    // means to exercise. Dispatching both keydowns synchronously inside
+    // a single page.evaluate() (confirmed via the same repro script to
+    // reliably reproduce the guard engaging, unlike keyboard.down/up)
+    // removes the two separate CDP round-trips entirely, so the race
+    // is deterministic regardless of platform.
+    await page.evaluate(() => {
+      const menubar = document.querySelector("[data-menubar]");
+      menubar?.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+      menubar?.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+    });
 
     await expect(editTrigger).toBeFocused();
     await expect(filePanel).toBeHidden();
