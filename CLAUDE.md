@@ -1,7 +1,7 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan
-at specs/047-professional-showcase-expansion/plan.md
+at specs/048-external-package-consumption/plan.md
 <!-- SPECKIT END -->
 
 ## graphify
