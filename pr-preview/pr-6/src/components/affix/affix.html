@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Affix — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-6/assets/affix-dj7CxAQq.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/theme-switcher-NAOvpRiF.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/gallery-theme-selector-4_iKoj2_.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-6/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Affix</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Pins a wrapped element after a scroll threshold — general-purpose
+    infrastructure, distinct from Back-to-Top's own one-off scroll
+    logic (feature 031).
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <p class="max-w-2xl text-sm text-neutral-600">Scroll down — the box below pins once it reaches the top of the viewport.</p>
+
+  <div class="mt-8" data-testid="affix-spacer-before" aria-hidden="true"></div>
+
+  <div data-affix data-testid="affix-demo" class="rounded-lg border border-neutral-200 bg-neutral-50 p-4 shadow-sm">
+    <p class="text-sm font-medium text-neutral-900">I pin to the top once scrolled past.</p>
+  </div>
+
+  <div class="h-96 mt-8" aria-hidden="true"></div>
+  <div class="h-96" aria-hidden="true"></div>
+  <div class="h-96" aria-hidden="true"></div>
+  <div class="h-96" aria-hidden="true"></div>
+  <div class="h-96" aria-hidden="true"></div>
+  <p class="text-sm text-neutral-600" data-testid="affix-content-end">End of page.</p>
+
+</body>
+</html>

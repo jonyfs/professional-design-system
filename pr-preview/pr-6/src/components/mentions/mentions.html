@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Mentions — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-6/assets/mentions-Bz0wR1HZ.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/theme-switcher-NAOvpRiF.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/gallery-theme-selector-4_iKoj2_.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/multi-select-vkHOIOUS.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-6/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-6/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Mentions</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    <code>@</code>-triggered autocomplete inline inside a longer text
+    field. Typing <code>@</code> followed by characters opens a
+    filtered suggestion popover anchored at the cursor; selecting an
+    entry inserts a formatted mention token in place of the typed
+    characters.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm">
+    <label for="mentions-field" class="mb-1 block text-sm font-medium text-neutral-900">
+      Comment
+    </label>
+    <div
+      data-mentions
+      data-testid="mentions-demo"
+      class="relative"
+      data-users='[{"id":"jane","label":"jane"},{"id":"joao","label":"joao"},{"id":"maria","label":"maria"}]'
+    >
+      <textarea id="mentions-field" data-mentions-field class="mentions-field" aria-label="Comment"></textarea>
+      <div data-mentions-popover role="listbox" class="mentions-popover" hidden></div>
+    </div>
+  </div>
+
+</body>
+</html>
