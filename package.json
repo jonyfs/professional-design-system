@@ -1,6 +1,6 @@
 {
   "name": "professional-design-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "Accessible HTML + Tailwind CSS primitive component library, built on ratified semantic design tokens.",
   "type": "module",
