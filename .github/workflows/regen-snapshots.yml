@@ -40,5 +40,10 @@ jobs:
             echo "No snapshot changes."
           else
             git commit -m "chore: regenerate Linux visual baselines on real ubuntu-latest runner [skip ci]"
+            # main can move forward while this ~40-50min job runs (it did,
+            # once already) — rebase onto the latest main before pushing
+            # instead of racing a plain push against it.
+            git fetch origin main
+            git rebase origin/main
             git push origin main
           fi
