@@ -1,0 +1,1 @@
+import"./theme-switcher-BONmeeIS.js";import"./gallery-theme-selector-AmolPRc9.js";function e(){document.querySelectorAll(`[data-background-image-src]`).forEach(e=>{e.style.backgroundImage=`url(${e.dataset.backgroundImageSrc})`})}e();

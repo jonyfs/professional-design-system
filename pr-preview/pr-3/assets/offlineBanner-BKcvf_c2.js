@@ -1,0 +1,1 @@
+import"./theme-switcher-BONmeeIS.js";import"./gallery-theme-selector-AmolPRc9.js";function e(){let e=document.getElementById(`offline-banner`);if(!e)return;function t(){e.style.display=navigator.onLine?`none`:``}window.addEventListener(`online`,t),window.addEventListener(`offline`,t),t()}e();
