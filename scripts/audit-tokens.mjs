@@ -78,8 +78,32 @@ function parseRadiusAllowlist(configSource) {
   return allowed;
 }
 
+// Feature 046 — same allowlist-derivation pattern as parseRadiusAllowlist,
+// pointed at the two new motion-timing token objects instead of
+// borderRadius. Keys can be quoted ("out-expo") or bare (fast/normal), so
+// the pattern strips optional surrounding quotes from the key itself.
+function parseTailwindKeyAllowlist(configSource, exportName, classPrefix) {
+  const keyIndex = configSource.indexOf(`${exportName} = {`);
+  if (keyIndex === -1) return new Set();
+  const openBraceIndex = configSource.indexOf("{", keyIndex);
+  const block = extractBalancedBlock(configSource, openBraceIndex);
+  const allowed = new Set();
+  const pattern = /"?([\w-]+)"?:\s*"[^"]*"/g;
+  let match;
+  while ((match = pattern.exec(block)) !== null) {
+    allowed.add(match[1] === "DEFAULT" ? classPrefix : `${classPrefix}-${match[1]}`);
+  }
+  return allowed;
+}
+
 const configSource = readFileSync(join(rootDir, "shared", "design-tokens.ts"), "utf8");
 const allowedColorNames = parseColorAllowlist(configSource);
+const allowedDurationClasses = parseTailwindKeyAllowlist(configSource, "transitionDuration", "duration");
+const allowedTimingFunctionClasses = parseTailwindKeyAllowlist(
+  configSource,
+  "transitionTimingFunction",
+  "ease",
+);
 const allowedRadiusClasses = parseRadiusAllowlist(configSource);
 
 // --- Collect markup files to scan ---
@@ -238,6 +262,40 @@ function checkClass(rawClass) {
   // check below never actually stripped the directional infix before this
   // fix, so any directional radius class would have failed regardless of
   // whether its size was ratified).
+  // Feature 046 — motion-timing utilities: duration-*, ease-*. Unlike
+  // colors/radius (where this project fully replaces Tailwind's default
+  // scale with its own ratified set), Tailwind's own built-in numeric
+  // duration scale (75/100/150/200/300/500/700/1000) and default easing
+  // keywords (linear/in/out/in-out) are still accepted as "structural" —
+  // they're mechanical, non-semantic defaults already used catalog-wide
+  // before this feature existed (found while wiring this up: enforcing a
+  // fully closed allowlist immediately flagged ~15 pre-existing
+  // duration-150/200/300/500 and ease-in-out/ease-out occurrences as new
+  // violations, contradicting FR-004's "zero new violations" guarantee).
+  // Only a genuinely arbitrary bracket value (duration-[275ms]) or a
+  // suffix that's neither a Tailwind default nor a ratified token name is
+  // flagged — the new named tokens (fast/moderate/normal/slow, out-expo)
+  // are the RATIFIED, preferred way to reference these values going
+  // forward (FR-005), not the only way to pass this check today.
+  const TAILWIND_DEFAULT_DURATIONS = new Set(["75", "100", "150", "200", "300", "500", "700", "1000"]);
+  const TAILWIND_DEFAULT_EASINGS = new Set(["linear", "in", "out", "in-out"]);
+  if (className.startsWith("duration-")) {
+    const suffix = className.slice("duration-".length);
+    if (TAILWIND_DEFAULT_DURATIONS.has(suffix)) return null;
+    if (!allowedDurationClasses.has(className)) {
+      return `motion-timing utility "${rawClass}" is not a Tailwind default and not in shared/design-tokens.ts's transitionDuration allowlist`;
+    }
+    return null;
+  }
+  if (className.startsWith("ease-")) {
+    const suffix = className.slice("ease-".length);
+    if (TAILWIND_DEFAULT_EASINGS.has(suffix)) return null;
+    if (!allowedTimingFunctionClasses.has(className)) {
+      return `motion-timing utility "${rawClass}" is not a Tailwind default and not in shared/design-tokens.ts's transitionTimingFunction allowlist`;
+    }
+    return null;
+  }
+
   if (className === "rounded" || className.startsWith("rounded-")) {
     const rest = className === "rounded" ? "" : className.slice("rounded-".length);
     const directionalMatch = /^(tl|tr|br|bl|ss|se|es|ee|t|r|b|l|s|e)-(.+)$/.exec(rest);
