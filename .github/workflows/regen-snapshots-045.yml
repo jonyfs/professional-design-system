@@ -1,0 +1,54 @@
+# Re-triggered after merging main's newer Linux baseline regen into this
+# branch — the merge conflict was resolved with a placeholder (--ours),
+# so this run produces the real, definitive combined baseline (both the
+# Inter font change and whatever main's own regen fixed).
+name: Regenerate Linux Snapshots for 045 (temporary, manual)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [045-2026-trend-adoption]
+    paths:
+      - .github/workflows/regen-snapshots-045.yml
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: 045-2026-trend-adoption
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages/react
+        run: npm run build --workspace packages/react
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Update all Linux snapshots (Inter font now renders)
+        run: npx playwright test --update-snapshots || true
+
+      - name: Commit and push updated snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/e2e
+          if git diff --cached --quiet; then
+            echo "No snapshot changes."
+          else
+            git commit -m "chore: regenerate Linux visual baselines for Inter font fix (feature 045) [skip ci]"
+            git fetch origin 045-2026-trend-adoption
+            git rebase origin/045-2026-trend-adoption
+            git push origin HEAD:045-2026-trend-adoption
+          fi
