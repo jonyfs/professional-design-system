@@ -51,6 +51,8 @@ description: "Task list for NPM Release Automation (feature 050)"
 
 **Branch base correction**: this feature was originally branched from `main`, but its own spec/plan directly reference `docs/PUBLISHING.md` and `packages/react/CHANGELOG.md` — both created in feature 048, not yet merged to `main`. Discovered this when T011 had no file to update. Fixed by deleting and recreating the branch from `048-external-package-consumption`'s tip (mirroring the same dependency-chain pattern already used for 044→047→048) before continuing — no work was lost, since nothing had been committed yet at that point.
 
+**This PR tripped its own `changeset-check`**: once opened, CI failed because the PR edits `packages/react/CHANGELOG.md` (this feature's own intro-text fix, T008) with no changeset — `getVersionableChangedPackages` counts any file change under `packages/react/**`, not just source code, so even a changelog-formatting edit counts. Fixed correctly per the tool's own suggested remedy (`npx changeset add --empty`, not by narrowing the path filter, since the broad `packages/react/**` scope is intentional per FR-002). A second, real gotcha surfaced while verifying the fix locally: `changeset status --since=<ref>` compares **committed** git history — an uncommitted, freshly-created changeset file is invisible to it and the check still fails, which cost a round of confused re-testing before realizing the file simply hadn't been committed yet. Documented here since any future contributor hitting the same "I added a changeset but the check still fails" confusion should commit it first before re-checking.
+
 ---
 
 ## Dependencies & Execution Order
