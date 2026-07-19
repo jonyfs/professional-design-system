@@ -1,3 +1,7 @@
+# Re-triggered after merging main's newer Linux baseline regen into this
+# branch — the merge conflict was resolved with a placeholder (--ours),
+# so this run produces the real, definitive combined baseline (both the
+# Inter font change and whatever main's own regen fixed).
 name: Regenerate Linux Snapshots for 045 (temporary, manual)
 
 on:
