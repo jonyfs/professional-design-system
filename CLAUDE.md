@@ -1,7 +1,7 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan
-at specs/042-flagship-app-showcase/plan.md
+at specs/043-ci-reliability-speedup/plan.md
 <!-- SPECKIT END -->
 
 ## graphify

@@ -13,7 +13,10 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  reporter: "html",
+  // Feature 043: in CI, each sharded job reports via "blob" so the
+  // merge-reports job in .github/workflows/ci.yml can combine every
+  // shard into one aggregated HTML report — see research.md R2.
+  reporter: process.env.CI ? "blob" : "html",
   use: {
     baseURL: "http://localhost:5173",
     trace: "on-first-retry",
