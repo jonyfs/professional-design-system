@@ -1,10 +1,14 @@
 {
   "name": "professional-design-system",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "private": true,
   "description": "Accessible HTML + Tailwind CSS primitive component library, built on ratified semantic design tokens.",
   "type": "module",
-  "workspaces": ["packages/*", "tests/react-harness", "showcase"],
+  "workspaces": [
+    "packages/*",
+    "tests/react-harness",
+    "showcase"
+  ],
   "scripts": {
     "dev": "vite",
     "prebuild": "npm run audit:tokens && npm run audit:contrast",

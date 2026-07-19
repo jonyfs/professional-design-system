@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
-import { colors, borderRadius, fontFamily } from "../../shared/design-tokens";
+import {
+  colors,
+  borderRadius,
+  fontFamily,
+  transitionDuration,
+  transitionTimingFunction,
+} from "../../shared/design-tokens";
 
 export default {
   content: ["./src/**/*.{ts,tsx}"],
@@ -51,7 +57,7 @@ export default {
     "tooltip-target-4",
   ],
   theme: {
-    extend: { colors, borderRadius, fontFamily },
+    extend: { colors, borderRadius, fontFamily, transitionDuration, transitionTimingFunction },
   },
   plugins: [],
 } satisfies Config;
