@@ -292,9 +292,16 @@ test.describe("FloatLabel", () => {
   test("a pre-filled field's label starts floated with no focus event needed", async ({ page }) => {
     const wrapper = page.getByTestId("float-label-filled-demo");
     const emptyWrapper = page.getByTestId("float-label-empty-demo");
-    const filledLabelTop = await wrapper.locator("label").evaluate((el) => getComputedStyle(el).top);
     const restTop = await emptyWrapper.locator("label").evaluate((el) => getComputedStyle(el).top);
-    expect(filledLabelTop).not.toBe(restTop);
+    // .toPass(), matching the sibling test above: `data-filled` is now
+    // baked into the static HTML for this demo (not set by JS on load),
+    // so no transition should ever fire — but this still polls rather
+    // than reading getComputedStyle() exactly once, to stay robust to
+    // any future change that reintroduces a real on-load transition.
+    await expect(async () => {
+      const filledLabelTop = await wrapper.locator("label").evaluate((el) => getComputedStyle(el).top);
+      expect(filledLabelTop).not.toBe(restTop);
+    }).toPass();
   });
 });
 
