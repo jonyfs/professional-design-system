@@ -1,1 +1,0 @@
-import{t as e}from"./localized-inputs-BfAiXy9W.js";import"./theme-switcher-NAOvpRiF.js";import"./gallery-theme-selector-4_iKoj2_.js";e();

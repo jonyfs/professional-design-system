@@ -1,0 +1,1 @@
+import"./theme-switcher-D1kspB1h.js";import"./gallery-theme-selector-BXTG8tXj.js";function e(){document.querySelectorAll(`[data-background-image-src]`).forEach(e=>{e.style.backgroundImage=`url(${e.dataset.backgroundImageSrc})`})}e();
