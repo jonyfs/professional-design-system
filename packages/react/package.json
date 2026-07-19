@@ -1,6 +1,6 @@
 {
   "name": "@professional-design-system/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "module": "dist/index.js",
@@ -14,7 +14,9 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
