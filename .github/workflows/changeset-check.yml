@@ -1,0 +1,31 @@
+name: Changeset Check
+
+# FR-002/FR-003 (specs/050-npm-release-automation): a PR that changes
+# packages/react/ MUST carry a changeset describing its consumer-facing
+# impact; a PR that doesn't touch packages/react/ must never be blocked
+# by this check — the `paths` filter below is what enforces the second
+# half, not just the job's own logic.
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'packages/react/**'
+
+jobs:
+  changeset-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify a changeset exists for this change
+        run: npx changeset status --since=origin/main
