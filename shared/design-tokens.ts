@@ -92,6 +92,40 @@ export const fontFamily = {
   mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
 };
 
+// Feature 046 — the one token category color/spacing/typography/radius
+// already had that motion timing didn't: every component that animates
+// picked its own ad-hoc duration/easing utility before this, with no
+// shared source of truth or audit coverage. "fast"/"normal" match
+// rules/web/coding-style.md's own CSS custom-property example
+// (--duration-fast/--duration-normal), plus "moderate"/"slow" — added
+// after discovering `npm run audit:tokens` (extended below to detect
+// raw motion-timing classes) immediately flagged every EXISTING
+// duration-200/duration-500 usage across src/styles/tailwind.css and
+// packages/react/src/styles.css as newly non-compliant. FR-004 requires
+// zero new violations for already-shipped components, so the scale is
+// widened to name every value already genuinely in use, rather than
+// forcing an unrelated retrofit of dozens of existing occurrences to
+// fit an initially-too-narrow 2-value guess.
+export const transitionDuration = {
+  fast: "150ms",
+  moderate: "200ms",
+  normal: "300ms",
+  slow: "500ms",
+};
+
+// Same reasoning as transitionDuration above: Tailwind's own default
+// ease-in/ease-out/ease-in-out keywords are already in use catalog-wide
+// (they compile regardless of theme.extend, since extend only adds to
+// Tailwind's defaults rather than replacing them) — naming them here
+// makes the audit's allowlist match reality instead of flagging
+// Tailwind's own built-in defaults as violations. "out-expo" is the one
+// genuinely new curve this feature adds.
+export const transitionTimingFunction = {
+  out: "cubic-bezier(0, 0, 0.2, 1)",
+  "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+  "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+};
+
 // The complete set of --color-* custom properties every theme block in
 // src/styles/themes.css MUST declare (feature 017 contracts/theme-tokens
 // .contract.md's completeness requirement, enforced by
