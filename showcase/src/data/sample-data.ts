@@ -85,3 +85,61 @@ export const metrics: Metric[] = [
   { label: "Active Accounts", value: "1,204", trend: "up" },
   { label: "Churn Rate", value: "2.1%", trend: "down" },
 ];
+
+// Feature 047 — extended fixtures for the 4 new showcase screens, same
+// "static, bundled, clearly fictional" convention as everything above.
+
+export interface TeamRecord {
+  id: string;
+  name: string;
+  initials: string;
+  role: "Admin" | "Member" | "Viewer";
+  email: string;
+  status: "active" | "invited";
+  joinedDate: string;
+}
+
+export const teamRecords: TeamRecord[] = [
+  { id: "jane", name: "Jane Ito", initials: "JI", role: "Admin", email: "jane@acme.example", status: "active", joinedDate: "2025-02-14" },
+  { id: "marco", name: "Marco Reyes", initials: "MR", role: "Member", email: "marco@acme.example", status: "active", joinedDate: "2025-06-01" },
+  { id: "priya", name: "Priya Nair", initials: "PN", role: "Member", email: "priya@acme.example", status: "active", joinedDate: "2025-09-23" },
+  { id: "sam", name: "Sam Okafor", initials: "SO", role: "Viewer", email: "sam@acme.example", status: "active", joinedDate: "2026-01-10" },
+  { id: "lena", name: "Lena Vogt", initials: "LV", role: "Member", email: "lena@acme.example", status: "invited", joinedDate: "2026-07-15" },
+];
+
+export interface AnalyticsSeriesPoint {
+  [key: string]: string | number;
+  label: string;
+  visits: number;
+  signups: number;
+}
+
+export const analyticsSeries: AnalyticsSeriesPoint[] = [
+  { label: "Jan", visits: 2100, signups: 42 },
+  { label: "Feb", visits: 2400, signups: 48 },
+  { label: "Mar", visits: 2650, signups: 51 },
+  { label: "Apr", visits: 2500, signups: 47 },
+  { label: "May", visits: 3050, signups: 58 },
+  { label: "Jun", visits: 3400, signups: 63 },
+  { label: "Jul", visits: 3900, signups: 71 },
+];
+
+export interface ChannelShare {
+  [key: string]: string | number;
+  channel: string;
+  share: number;
+}
+
+export const acquisitionChannels: ChannelShare[] = [
+  { channel: "Organic search", share: 42 },
+  { channel: "Referral", share: 26 },
+  { channel: "Paid social", share: 18 },
+  { channel: "Direct", share: 14 },
+];
+
+export const onboardingSteps = [
+  { title: "Create your workspace", description: "Name your workspace and pick a plan — you can change both later." },
+  { title: "Invite your team", description: "Add teammates by email; they'll get a magic link to join." },
+  { title: "Connect a data source", description: "Link an existing data source or start with sample data." },
+  { title: "Secure your account", description: "Set up two-factor authentication to protect your workspace." },
+];

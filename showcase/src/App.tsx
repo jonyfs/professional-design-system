@@ -1,66 +1,51 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect } from "react";
+import { HashRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import {
   Sidebar,
   Navbar,
   Avatar,
-  AvatarGroup,
   Breadcrumbs,
-  Tabs,
-  CommandPalette,
   DropdownMenu,
-  ActionIcon,
-  Button,
-  Card,
-  Badge,
-  RollingNumber,
-  DataTable,
-  Pagination,
-  LineChart,
-  Toast,
-  NotificationCenter,
-  Modal,
   DarkModeToggle,
   ContextSwitcher,
+  NotificationCenter,
   type SidebarItemData,
 } from "@professional-design-system/react";
-import {
-  organizations,
-  teamMembers,
-  tableRows,
-  chartSeries,
-  notifications,
-  metrics,
-  type Metric,
-} from "./data/sample-data";
+import { organizations, notifications } from "./data/sample-data";
+import { DashboardScreen } from "./screens/DashboardScreen";
+import { TeamScreen } from "./screens/TeamScreen";
+import { SettingsScreen } from "./screens/SettingsScreen";
+import { AnalyticsScreen } from "./screens/AnalyticsScreen";
+import { OnboardingScreen } from "./screens/OnboardingScreen";
 
-// Feature 042 — the numeric formats in sample-data.ts ("$58,240", "2.1%")
-// don't fit RollingNumber's plain-`value: number` prop (packages/react/src/
-// RollingNumber/RollingNumber.tsx): it Math.rounds and toLocaleStrings the
-// value itself, so a pre-formatted string can't pass through unchanged.
-// This splits the fictional string into an optional prefix/suffix the
-// component renders as static text around the animated numeric core.
-function parseMetric(raw: string): { prefix: string; value: number; suffix: string } {
-  const match = raw.match(/^([^0-9]*)([0-9.,]+)(.*)$/);
-  if (!match) return { prefix: "", value: 0, suffix: raw };
-  const [, prefix, numeric, suffix] = match;
-  return { prefix, value: Number(numeric.replace(/,/g, "")), suffix };
-}
+// Feature 047 — Sidebar/DarkModeToggle both write to document.documentElement's
+// data-theme (feature 042's own precedent), and Sidebar/Navbar's nav items are
+// real <a href="#/..."> anchors (packages/react/src/Sidebar, src/Navbar) with
+// no onClick-preventDefault hook available to intercept for a plain
+// BrowserRouter. HashRouter is adopted specifically so those existing,
+// unmodified components' real anchors "just work" as client-side navigation
+// (a hash-only href change is a same-document navigation, never a full
+// reload) — reusing Sidebar/Navbar exactly as shipped (spec.md FR-004)
+// rather than modifying their prop APIs to add App-Router-aware handlers.
+const NAV_ITEMS = [
+  { id: "overview", label: "Overview", path: "/" },
+  { id: "team", label: "Team", path: "/team" },
+  { id: "settings", label: "Settings", path: "/settings" },
+  { id: "analytics", label: "Analytics", path: "/analytics" },
+  { id: "onboarding", label: "Onboarding", path: "/onboarding" },
+];
 
-const BADGE_VARIANT: Record<Metric["trend"], "success" | "error" | "neutral"> = {
-  up: "success",
-  down: "error",
-  flat: "neutral",
+const BREADCRUMB_LABEL: Record<string, string> = {
+  "/": "Dashboard",
+  "/team": "Team",
+  "/settings": "Settings",
+  "/analytics": "Analytics",
+  "/onboarding": "Onboarding",
 };
 
-const CUSTOMERS_PAGE_SIZE = 5;
-const TEAM_PAGE_SIZE = 2;
-
-export function App() {
-  const [activeSidebarId, setActiveSidebarId] = useState("overview");
-  const [teamPage, setTeamPage] = useState(1);
-  const [toastVisible, setToastVisible] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const modalTriggerRef = useRef<HTMLButtonElement>(null);
+function ShowcaseLayout() {
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // gallery-theme-selector.js targets #gallery-theme-select by id and
   // populates/wires it via plain DOM APIs (research.md/FR-004) — it
@@ -85,23 +70,12 @@ export function App() {
     return () => observer.disconnect();
   }, []);
 
-  const sidebarItems: SidebarItemData[] = [
-    { id: "overview", label: "Overview", href: "#overview", active: activeSidebarId === "overview" },
-    { id: "customers", label: "Customers", href: "#customers", active: activeSidebarId === "customers" },
-    { id: "team", label: "Team", href: "#team", active: activeSidebarId === "team" },
-    { id: "reports", label: "Reports", href: "#reports", active: activeSidebarId === "reports" },
-  ];
-
-  const teamPages = Math.ceil(teamMembers.length / TEAM_PAGE_SIZE);
-  const visibleTeamMembers = teamMembers.slice(
-    (teamPage - 1) * TEAM_PAGE_SIZE,
-    teamPage * TEAM_PAGE_SIZE,
-  );
-
-  const chartData = useMemo(
-    () => chartSeries.map((point) => ({ month: point.label, signups: point.value })),
-    [],
-  );
+  const sidebarItems: SidebarItemData[] = NAV_ITEMS.map((item) => ({
+    id: item.id,
+    label: item.label,
+    href: `#${item.path}`,
+    active: location.pathname === item.path,
+  }));
 
   return (
     <div className="min-h-dvh flex bg-neutral-50 text-neutral-900" data-theme-scope="showcase">
@@ -114,7 +88,10 @@ export function App() {
         <Sidebar
           theme="light"
           items={sidebarItems}
-          onItemClick={setActiveSidebarId}
+          onItemClick={(id) => {
+            const item = NAV_ITEMS.find((n) => n.id === id);
+            if (item) navigate(item.path);
+          }}
           data-testid="showcase-sidebar"
         />
       </div>
@@ -128,12 +105,7 @@ export function App() {
               data-testid="showcase-org-switcher"
             />
           }
-          links={[
-            { label: "Overview", href: "#overview" },
-            { label: "Customers", href: "#customers" },
-            { label: "Team", href: "#team" },
-            { label: "Reports", href: "#reports" },
-          ]}
+          links={NAV_ITEMS.map((item) => ({ label: item.label, href: `#${item.path}` }))}
           data-testid="showcase-navbar"
         />
 
@@ -154,22 +126,11 @@ export function App() {
               ← Component catalog
             </a>
             <Breadcrumbs
-              items={[{ label: "Home", href: "#overview", testId: "showcase-breadcrumb-home" }]}
-              currentLabel="Dashboard"
+              items={[{ label: "Home", href: "#/", testId: "showcase-breadcrumb-home" }]}
+              currentLabel={BREADCRUMB_LABEL[location.pathname] ?? "Dashboard"}
             />
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <ActionIcon
-              variant="secondary"
-              ariaLabel="Export customers as CSV"
-              icon={
-                <svg viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5" aria-hidden="true">
-                  <path d="M10 2a.75.75 0 0 1 .75.75v8.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V2.75A.75.75 0 0 1 10 2Z" />
-                  <path d="M3.5 12.75a.75.75 0 0 1 .75.75v2a1 1 0 0 0 1 1h9.5a1 1 0 0 0 1-1v-2a.75.75 0 0 1 1.5 0v2A2.5 2.5 0 0 1 14.75 18h-9.5A2.5 2.5 0 0 1 2.75 15.5v-2a.75.75 0 0 1 .75-.75Z" />
-                </svg>
-              }
-              onClick={() => setToastVisible(true)}
-            />
             <div>
               <label htmlFor="gallery-theme-select" className="sr-only">
                 Preview theme
@@ -189,8 +150,8 @@ export function App() {
             <DropdownMenu
               trigger={<Avatar initials="JI" alt="Jane Ito" data-testid="showcase-user-avatar" />}
               items={[
-                { id: "profile", label: "Your profile", onSelect: () => setModalOpen(true) },
-                { id: "signout", label: "Sign out", onSelect: () => setToastVisible(true) },
+                { id: "profile", label: "Your profile", onSelect: () => navigate("/settings") },
+                { id: "signout", label: "Sign out", onSelect: () => {} },
               ]}
               triggerTestId="showcase-user-menu-trigger"
               panelTestId="showcase-user-menu-panel"
@@ -198,190 +159,22 @@ export function App() {
           </div>
         </div>
 
-        <main className="flex-1 space-y-8 overflow-y-auto p-6">
-          <section id="overview" className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {metrics.map((metric) => {
-              const { prefix, value, suffix } = parseMetric(metric.value);
-              return (
-                <Card key={metric.label} elevated className="space-y-2 p-5">
-                  <p className="text-sm font-medium text-neutral-600">{metric.label}</p>
-                  <p className="text-2xl font-semibold tabular-nums">
-                    {prefix}
-                    {suffix === "%" ? value : <RollingNumber value={value} />}
-                    {suffix}
-                  </p>
-                  <Badge variant={BADGE_VARIANT[metric.trend]}>{metric.trend}</Badge>
-                </Card>
-              );
-            })}
-          </section>
-
-          <section aria-labelledby="signups-heading">
-            <Card elevated className="p-5">
-              <h2 id="signups-heading" className="mb-4 text-lg font-semibold">
-                Monthly signups
-              </h2>
-              <LineChart
-                data={chartData}
-                series={[{ key: "signups", label: "Signups" }]}
-                xAxisKey="month"
-                ariaLabel="Monthly signups trend"
-                showTooltip
-                showLegend
-              />
-            </Card>
-          </section>
-
-          <section id="customers">
-            <Tabs
-              tabs={[
-                {
-                  id: "customers",
-                  label: "Customers",
-                  content: (
-                    <div className="overflow-x-auto">
-                      <DataTable
-                        columns={[
-                          { id: "name", label: "Company", sortable: true, filterable: true },
-                          { id: "status", label: "Status", sortable: true, filterable: true },
-                          { id: "value", label: "Value", sortable: true, filterable: false },
-                          { id: "updatedAt", label: "Updated", sortable: true, filterable: false },
-                        ]}
-                        rows={tableRows.map((row) => ({ ...row }))}
-                        ariaLabel="Customer accounts"
-                        pageSize={CUSTOMERS_PAGE_SIZE}
-                      />
-                    </div>
-                  ),
-                },
-                {
-                  id: "team",
-                  label: "Team",
-                  content: (
-                    <div id="team" className="space-y-4">
-                      <AvatarGroup
-                        members={teamMembers.map((member) => ({ alt: member.name, initials: member.initials }))}
-                        limit={3}
-                        aria-label="Workspace team members"
-                        data-testid="showcase-team-avatar-group"
-                      />
-                      <ul className="space-y-2">
-                        {visibleTeamMembers.map((member) => (
-                          <li key={member.id} className="flex items-center gap-3">
-                            <Avatar initials={member.initials} alt={member.name} size="sm" />
-                            <span className="font-medium">{member.name}</span>
-                            <span className="text-sm text-neutral-600">{member.role}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex justify-end">
-                        <Pagination
-                          currentPage={teamPage}
-                          totalPages={teamPages}
-                          onPageChange={setTeamPage}
-                          data-testid="showcase-team-pagination"
-                        />
-                      </div>
-                    </div>
-                  ),
-                },
-              ]}
-              defaultSelectedId="customers"
-            />
-          </section>
-
-          <section id="reports" className="flex items-center gap-3">
-            <Button
-              ref={modalTriggerRef}
-              variant="primary"
-              onClick={() => setModalOpen(true)}
-            >
-              View account details
-            </Button>
-            <Button variant="secondary" onClick={() => setToastVisible(true)}>
-              Send weekly report
-            </Button>
-          </section>
-        </main>
+        <Routes>
+          <Route path="/" element={<DashboardScreen />} />
+          <Route path="/team" element={<TeamScreen />} />
+          <Route path="/settings" element={<SettingsScreen />} />
+          <Route path="/analytics" element={<AnalyticsScreen />} />
+          <Route path="/onboarding" element={<OnboardingScreen />} />
+        </Routes>
       </div>
-
-      <CommandPalette
-        actions={[
-          {
-            id: "goto-customers",
-            label: "Go to customers",
-            onExecute: () => document.getElementById("customers")?.scrollIntoView({ behavior: "smooth" }),
-          },
-          {
-            id: "goto-team",
-            label: "Go to team",
-            onExecute: () => {
-              // useCommandPalette's execute() calls onExecute() BEFORE
-              // setOpen(false) (packages/react/src/hooks/useCommandPalette.ts),
-              // and the palette's own dialog is still the native modal
-              // top layer at that point — everything outside it is inert,
-              // so a synchronous click on the Team tab has no effect.
-              // Deferring to the next tick runs this after the dialog has
-              // actually closed.
-              setTimeout(() => {
-                // Tabs (packages/react/src/Tabs) only renders the active
-                // panel's content, so #team stays zero-sized until its
-                // own tab is actually selected — scrollIntoView alone
-                // can't reveal it.
-                const teamTab = [...document.querySelectorAll<HTMLButtonElement>("[role='tab']")].find(
-                  (tab) => tab.textContent === "Team",
-                );
-                teamTab?.click();
-                // click() triggers React's setSelectedId, but that state
-                // update hasn't flushed to the DOM yet in this same tick —
-                // calling scrollIntoView synchronously here measures the
-                // still-zero-sized #team from before the tab switch.
-                // requestAnimationFrame runs after the browser's next
-                // paint, guaranteeing the re-rendered (now-visible) panel
-                // is what gets measured.
-                requestAnimationFrame(() => {
-                  document.getElementById("team")?.scrollIntoView({ behavior: "smooth" });
-                });
-              }, 0);
-            },
-          },
-          { id: "send-report", label: "Send weekly report", onExecute: () => setToastVisible(true) },
-        ]}
-        data-testid="showcase-command-palette"
-      />
-
-      {toastVisible && (
-        <div className="fixed bottom-6 right-6 z-50">
-          <Toast
-            variant="success"
-            message="Report sent to the team"
-            onDismiss={() => setToastVisible(false)}
-          />
-        </div>
-      )}
-
-      <Modal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        title="Northwind Traders — account details"
-        triggerRef={modalTriggerRef}
-        closeButtonTestId="showcase-modal-close"
-      >
-        <dl className="space-y-2 text-sm">
-          <div className="flex justify-between">
-            <dt className="text-neutral-600">Status</dt>
-            <dd className="font-medium">Active</dd>
-          </div>
-          <div className="flex justify-between">
-            <dt className="text-neutral-600">Lifetime value</dt>
-            <dd className="font-medium">$12,400</dd>
-          </div>
-          <div className="flex justify-between">
-            <dt className="text-neutral-600">Last updated</dt>
-            <dd className="font-medium">2026-07-16</dd>
-          </div>
-        </dl>
-      </Modal>
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <HashRouter>
+      <ShowcaseLayout />
+    </HashRouter>
   );
 }
