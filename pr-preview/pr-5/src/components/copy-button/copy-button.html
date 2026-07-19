@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Copy Button — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-5/assets/copyButton-CFvqFBlR.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-5/assets/theme-switcher-NAOvpRiF.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-5/assets/gallery-theme-selector-4_iKoj2_.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-5/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-5/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Copy Button</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Writes a given value to the clipboard (native Clipboard API), then shows
+    a temporary <em>Copied</em> confirmation — or a distinct <em>Copy
+    failed</em> state if the write is rejected. The outcome is announced via
+    <code>aria-live="polite"</code>.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <section class="mt-8 space-y-4">
+    <h2 class="text-lg font-semibold text-neutral-900">Default</h2>
+    <div class="flex flex-wrap items-center gap-4">
+      <button
+        type="button"
+        data-testid="copy-button"
+        data-copy-button
+        data-copy-text="https://example.com/share/abc123"
+        class="btn-secondary"
+      >
+        <svg data-copy-icon="idle" viewBox="0 0 20 20" fill="currentColor" class="mr-2 h-5 w-5" aria-hidden="true">
+          <path d="M7 3.5A1.5 1.5 0 0 1 8.5 2h5A1.5 1.5 0 0 1 15 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 7 12.5v-9Z" />
+          <path d="M4.5 6A1.5 1.5 0 0 0 3 7.5v9A1.5 1.5 0 0 0 4.5 18h5A1.5 1.5 0 0 0 11 16.5V16H8.5A2.5 2.5 0 0 1 6 13.5V6h-1.5Z" />
+        </svg>
+        <svg data-copy-icon="copied" viewBox="0 0 20 20" fill="currentColor" class="mr-2 hidden h-5 w-5 text-success-strong" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.79 6.8-6.79a1 1 0 0 1 1.4 0Z" clip-rule="evenodd" />
+        </svg>
+        <svg data-copy-icon="failed" viewBox="0 0 20 20" fill="currentColor" class="mr-2 hidden h-5 w-5 text-error-strong" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16ZM9 6a1 1 0 1 1 2 0v4a1 1 0 1 1-2 0V6Zm1 9a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z" clip-rule="evenodd" />
+        </svg>
+        <span data-copy-label>Copy link</span>
+      </button>
+    </div>
+    <!-- Polite live region so screen-reader users hear the copy outcome
+         without re-focusing the button (same convention as Toast). -->
+    <p data-testid="copy-status" data-copy-status aria-live="polite" class="text-sm text-neutral-600"></p>
+  </section>
+
+  <section class="mt-8 space-y-4">
+    <h2 class="text-lg font-semibold text-neutral-900">Edge case — forced failure</h2>
+    <p class="max-w-md text-sm text-neutral-600">
+      This button's copy is forced to reject to demonstrate the failure
+      state (it never claims success on failure).
+    </p>
+    <div class="flex flex-wrap items-center gap-4">
+      <button
+        type="button"
+        data-testid="copy-button-failing"
+        data-copy-button
+        data-copy-fail
+        data-copy-text="never-copied"
+        class="btn-secondary"
+      >
+        <svg data-copy-icon="idle" viewBox="0 0 20 20" fill="currentColor" class="mr-2 h-5 w-5" aria-hidden="true">
+          <path d="M7 3.5A1.5 1.5 0 0 1 8.5 2h5A1.5 1.5 0 0 1 15 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 7 12.5v-9Z" />
+          <path d="M4.5 6A1.5 1.5 0 0 0 3 7.5v9A1.5 1.5 0 0 0 4.5 18h5A1.5 1.5 0 0 0 11 16.5V16H8.5A2.5 2.5 0 0 1 6 13.5V6h-1.5Z" />
+        </svg>
+        <svg data-copy-icon="copied" viewBox="0 0 20 20" fill="currentColor" class="mr-2 hidden h-5 w-5 text-success-strong" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.79 6.8-6.79a1 1 0 0 1 1.4 0Z" clip-rule="evenodd" />
+        </svg>
+        <svg data-copy-icon="failed" viewBox="0 0 20 20" fill="currentColor" class="mr-2 hidden h-5 w-5 text-error-strong" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16ZM9 6a1 1 0 1 1 2 0v4a1 1 0 1 1-2 0V6Zm1 9a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z" clip-rule="evenodd" />
+        </svg>
+        <span data-copy-label>Copy link</span>
+      </button>
+    </div>
+    <p data-testid="copy-status-failing" data-copy-status aria-live="polite" class="text-sm text-neutral-600"></p>
+  </section>
+
+</body>
+</html>

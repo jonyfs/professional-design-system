@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Skeleton — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-5/assets/theme-switcher-NAOvpRiF.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-5/assets/gallery-theme-selector-4_iKoj2_.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-5/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-5/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Skeleton</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div data-testid="skeleton-demo-wrapper" class="mt-8 flex max-w-md flex-col gap-6">
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Text line</h2>
+      <div data-testid="skeleton-text" aria-hidden="true" class="skeleton skeleton-text"></div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Avatar (small)</h2>
+      <div
+        data-testid="skeleton-avatar-sm"
+        aria-hidden="true"
+        class="skeleton skeleton-avatar-sm"
+      ></div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Avatar (large)</h2>
+      <div
+        data-testid="skeleton-avatar-lg"
+        aria-hidden="true"
+        class="skeleton skeleton-avatar-lg"
+      ></div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Card block</h2>
+      <div data-testid="skeleton-card" aria-hidden="true" class="skeleton skeleton-card"></div>
+    </section>
+  </div>
+</body>
+</html>

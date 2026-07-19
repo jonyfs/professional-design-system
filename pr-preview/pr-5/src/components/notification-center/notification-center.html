@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Notification Center — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-5/assets/theme-switcher-NAOvpRiF.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-5/assets/gallery-theme-selector-4_iKoj2_.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-5/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-5/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Notification Center</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    A bell icon with an unread-count badge (Indicator) opening a panel
+    of past notifications (Dropdown Menu's native Popover API) —
+    persistent history, distinct from this catalog's ephemeral Toast
+    messages.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 space-y-8">
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">With notifications</h2>
+      <span class="indicator-wrapper">
+        <button
+          type="button"
+          id="notification-trigger"
+          popovertarget="notification-panel"
+          data-testid="notification-trigger"
+          class="notification-center-trigger"
+          aria-label="Notifications"
+        >
+          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 01-3.46 0" />
+          </svg>
+        </button>
+        <span class="indicator indicator-error" data-testid="notification-badge" aria-hidden="true">2</span>
+      </span>
+
+      <div
+        id="notification-panel"
+        popover="auto"
+        role="region"
+        aria-label="Notifications"
+        data-testid="notification-panel"
+        class="notification-center-panel"
+      >
+        <div class="notification-center-item notification-center-item-unread" data-testid="notification-item-1">
+          <p class="font-medium text-neutral-900">New comment on your post</p>
+          <p class="text-xs text-neutral-600">2 minutes ago</p>
+        </div>
+        <div class="notification-center-item notification-center-item-unread" data-testid="notification-item-2">
+          <p class="font-medium text-neutral-900">Your export is ready to download</p>
+          <p class="text-xs text-neutral-600">1 hour ago</p>
+        </div>
+        <div class="notification-center-item" data-testid="notification-item-3">
+          <p class="font-medium text-neutral-900">Weekly report ready</p>
+          <p class="text-xs text-neutral-600">1 day ago</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Empty state</h2>
+      <span class="indicator-wrapper">
+        <button
+          type="button"
+          id="notification-trigger-empty"
+          popovertarget="notification-panel-empty"
+          data-testid="notification-trigger-empty"
+          class="notification-center-trigger"
+          aria-label="Notifications"
+        >
+          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 01-3.46 0" />
+          </svg>
+        </button>
+      </span>
+
+      <div
+        id="notification-panel-empty"
+        popover="auto"
+        role="region"
+        aria-label="Notifications"
+        data-testid="notification-panel-empty"
+        class="notification-center-panel"
+      >
+        <div class="notification-center-empty" data-testid="notification-empty">No notifications yet.</div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
