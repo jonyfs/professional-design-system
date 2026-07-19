@@ -1,1 +1,0 @@
-import"./theme-switcher-NAOvpRiF.js";import"./gallery-theme-selector-4_iKoj2_.js";function e(){document.querySelectorAll(`.float-label-wrapper`).forEach(e=>{let t=e.querySelector(`.float-label-field`);if(!t)return;function n(){e.dataset.filled=t.value===``?`false`:`true`}t.addEventListener(`input`,n),n()})}e();

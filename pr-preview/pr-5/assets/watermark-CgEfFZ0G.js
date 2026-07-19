@@ -1,0 +1,3 @@
+import"./theme-switcher-Ya3DCjic.js";import"./gallery-theme-selector-DD_s0S9t.js";function e(){document.querySelectorAll(`[data-watermark-text]`).forEach(e=>{let t=e.querySelector(`[data-watermark-layer]`);if(!t)return;let n=`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100">
+      <text x="10" y="60" transform="rotate(-30 100 50)" font-size="16" fill="rgb(156 163 175 / 0.35)" font-family="sans-serif">${e.dataset.watermarkText}</text>
+    </svg>`;t.style.backgroundImage=`url("data:image/svg+xml,${encodeURIComponent(n)}")`})}e();
