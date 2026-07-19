@@ -1,1 +1,0 @@
-import"./theme-switcher-BONmeeIS.js";import"./gallery-theme-selector-AmolPRc9.js";function e(){document.querySelectorAll(`[data-alert]`).forEach(e=>{e.querySelector(`button`)?.addEventListener(`click`,()=>e.remove())})}e();
