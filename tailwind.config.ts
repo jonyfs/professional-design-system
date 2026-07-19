@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
-import { colors, borderRadius, fontFamily } from "./shared/design-tokens";
+import {
+  colors,
+  borderRadius,
+  fontFamily,
+  transitionDuration,
+  transitionTimingFunction,
+} from "./shared/design-tokens";
 
 // Semantic token theme, mapped 1:1 to .specify/memory/constitution.md (v1.3.1)
 // "Design Foundations: Tokens, Typography & Grid". Do not add raw palette
@@ -25,7 +31,7 @@ export default {
     "./tests/e2e/fixtures/*.html",
   ],
   theme: {
-    extend: { colors, borderRadius, fontFamily },
+    extend: { colors, borderRadius, fontFamily, transitionDuration, transitionTimingFunction },
   },
   plugins: [],
 } satisfies Config;

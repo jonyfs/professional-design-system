@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
-import { colors, borderRadius, fontFamily } from "../../shared/design-tokens";
+import {
+  colors,
+  borderRadius,
+  fontFamily,
+  transitionDuration,
+  transitionTimingFunction,
+} from "../../shared/design-tokens";
 
 export default {
   content: ["./src/**/*.{ts,tsx}"],
@@ -23,7 +29,7 @@ export default {
   // an unstyled sidebar in production, not just a sync-preview artifact.
   safelist: ["toast-stack", "sidebar-light", "sidebar-dark", "sidebar-item-light", "sidebar-item-dark"],
   theme: {
-    extend: { colors, borderRadius, fontFamily },
+    extend: { colors, borderRadius, fontFamily, transitionDuration, transitionTimingFunction },
   },
   plugins: [],
 } satisfies Config;
