@@ -1,4 +1,30 @@
 <!--
+SYNC IMPACT REPORT (v1.40.0 — see below for the v1.39.1/v1.39.0/v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.39.1 → 1.40.0
+Modified principles: None
+Added sections:
+  - Component Catalog & Tailwind UI Patterns → new "2026 Style Direction
+    Extensions (feature 045)" subsection: two new documented style
+    directions, Organic/Fluid and 3D/Immersive, extending this project's
+    reference to the user's global "Worthwhile Style Directions" list —
+    project-local documentation only, no global rule file was modified.
+    Also documents feature 045's other finding: shared/design-tokens.ts's
+    fontFamily.sans has declared Inter since this project's first
+    component, but no font asset was ever actually loaded anywhere —
+    fixed via a self-hosted Inter variable font — and OS
+    prefers-color-scheme now seeds the initial theme (as "dim", reusing
+    DarkModeToggle's existing dark-default id) only when no manual
+    choice is stored.
+Rationale: two real findings (a silently-broken font promise present
+since the project's inception, and a missing OS dark-mode seed) plus
+two forward-looking style-direction additions, none of which retrofit
+any existing component (scope deliberately excludes that, matching
+feature 044's own audit-driven-only decision). MINOR bump: new section
+added, no principle text changed. Version bumped from 1.39.1 rather than
+this feature branch's original 1.39.0 base — 1.39.1 (a specjedi-govcheck
+tooling-path fix) merged to main first; rebased here on merge.
+-->
+<!--
 SYNC IMPACT REPORT (v1.39.1 — see below for the v1.39.0/v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.39.0 → 1.39.1
 Modified principles: None
@@ -16,7 +42,8 @@ correction with no principle-text or requirement change, hence PATCH,
 not MINOR.
 Templates requiring updates: ✅ none — no spec/plan/tasks/checklist
   template references this path.
-
+-->
+<!--
 SYNC IMPACT REPORT (v1.39.0 — see below for the v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.38.0 → 1.39.0
 Modified principles: None
@@ -3622,6 +3649,53 @@ zero new design tokens.
   Shows no "Show more" control at all when the content doesn't actually
   exceed the clamp threshold.
 
+### 2026 Style Direction Extensions (feature 045)
+
+Sourced from an external 2026 web-design-trend survey, cross-checked
+against this project's actual state before adoption. Of 10 surveyed
+trends, 5 needed no action (micro-interactions, neo-brutalism,
+accessibility-first, and performance-driven design are already met or
+exceeded by Principles II/V and `rules/web/performance.md`; AI-powered
+personalization is out of scope for a static component library). Two
+concrete, previously-undiscovered gaps were found and fixed:
+
+- **Font-loading defect**: `shared/design-tokens.ts`'s `fontFamily.sans`
+  has declared `["Inter", "system-ui", "sans-serif"]` since this
+  project's first component, but no Inter font asset was ever actually
+  loaded anywhere (no `@font-face`, no CDN link, no self-hosted file) —
+  every page silently rendered in the OS fallback font. Fixed by
+  self-hosting the official Inter variable font (`public/fonts/
+  InterVariable.woff2`, SIL Open Font License) via `@font-face` in
+  `src/styles/tailwind.css`.
+- **Missing OS dark-mode seed**: `src/scripts/theme-switcher.js`'s
+  `resolveInitialTheme()` unconditionally defaulted to `"light"` when no
+  theme was stored, ignoring `prefers-color-scheme`. Now seeds `"dim"` —
+  the same id `DarkModeToggle.tsx` already treats as light's binary dark
+  counterpart — only when no manual choice is stored; a stored choice
+  always wins, unchanged.
+
+Two new documented style-direction options extend this project's
+reference to the user's global "Worthwhile Style Directions" list
+(project-local documentation only — no global, cross-project rule file
+was modified):
+
+- **Organic/Fluid**: curved section dividers, soft asymmetry, SVG-mask
+  shape dividers. Start subtle; avoid fully asymmetrical layouts without
+  testing; must not compromise reading order or content structure
+  (Principle I).
+- **3D/Immersive**: interactive 3D models or scroll-triggered depth
+  effects, reserved for product-showcase/portfolio/hero moments only —
+  never a default component treatment. MUST lazy-load and compress any
+  3D asset and MUST stay within the existing bundle budgets
+  (`rules/web/performance.md`); a heavy 3D library is a real risk to the
+  "App page < 300kb JS" budget, so this direction is opt-in and scoped,
+  never baked into a shared/core component.
+
+**Deliberately not done by this feature**: no existing shipped component
+was retrofitted to either new style direction — this is documentation/
+asset-fix scope only, matching feature 044's own audit-driven (not
+proactive) scope decision for visual modernization.
+
 ### Known Catalog Gaps (deliberately deferred, not silently dropped)
 - **Date Picker/Calendar, interactive/sortable Data Table, Carousel,
   Chart, Scroll Area, Resizable panels**: evaluated during feature 014's
@@ -3823,4 +3897,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.39.1 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-19
+**Version**: 1.40.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-19
