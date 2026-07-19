@@ -1,6 +1,6 @@
 <!--
-SYNC IMPACT REPORT (v1.39.0 — see below for the v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
-Version change: 1.38.0 → 1.39.0
+SYNC IMPACT REPORT (v1.40.0 — see below for the v1.39.1/v1.39.0/v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.39.1 → 1.40.0
 Modified principles: None
 Added sections:
   - Component Catalog & Tailwind UI Patterns → new "2026 Style Direction
@@ -20,9 +20,59 @@ since the project's inception, and a missing OS dark-mode seed) plus
 two forward-looking style-direction additions, none of which retrofit
 any existing component (scope deliberately excludes that, matching
 feature 044's own audit-driven-only decision). MINOR bump: new section
-added, no principle text changed.
+added, no principle text changed. Version bumped from 1.39.1 rather than
+this feature branch's original 1.39.0 base — 1.39.1 (a specjedi-govcheck
+tooling-path fix) merged to main first; rebased here on merge.
 -->
 <!--
+SYNC IMPACT REPORT (v1.39.1 — see below for the v1.39.0/v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.39.0 → 1.39.1
+Modified principles: None
+Modified sections:
+  - Governance → Amendment Procedure: the dependent-templates parenthetical
+    referenced `.claude/skills/speckit-*/` for verifying amendment
+    consistency; corrected to `.claude/skills/specjedi-*/` now that this
+    project has migrated its installed skill set from speckit to Spec
+    Jedi (speckit-* skills removed from `.claude/skills/` in the same
+    change set) — a stale reference here would have pointed every future
+    amendment's consistency check at a directory that no longer exists.
+Rationale: caught by specjedi-govcheck while reviewing the migration PR
+that removes the speckit-* skills this clause names — a tooling-path
+correction with no principle-text or requirement change, hence PATCH,
+not MINOR.
+Templates requiring updates: ✅ none — no spec/plan/tasks/checklist
+  template references this path.
+-->
+<!--
+SYNC IMPACT REPORT (v1.39.0 — see below for the v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.38.0 → 1.39.0
+Modified principles: None
+Added sections:
+  - NEW top-level "Distribution & Ecosystem Standards" section (between
+    Component Catalog and Governance): codifies SemVer discipline as
+    NON-NEGOTIABLE for `packages/react/`, mandatory changelog entries in
+    consumer-relevant terms, the published package's own README/CHANGELOG/
+    LICENSE staying current with what's shipped (not the monorepo root's
+    doc drifting stale, which is exactly what feature 048 found), the
+    existing TypeScript-required and human-authorized-publish-only
+    practices made explicit as governance rather than implicit habit, and
+    framework scope (React-only, currently) as a stated, deliberate
+    boundary rather than a silent limitation.
+Rationale: feature 048's real external-consumption verification (a
+throwaway project outside the monorepo, not in-workspace usage) found the
+published package had no LICENSE, no README of its own, no changelog, and
+a stale root-README component count — plus a major functional defect
+(runtime theme switching silently didn't work via npm). None of these were
+caught by any existing automated gate, because every gate tests the main
+site's build output, not the published package's actual compiled
+artifact — the same structural blind spot already named in feature 048's
+own competitive-assessment.md. This section exists so the next feature
+that touches `packages/react/`'s public surface has an explicit rule to
+check against, not just a precedent to rediscover. MINOR bump: new
+section added, no existing principle text changed.
+Templates requiring updates: ✅ none — this is a new governance section,
+  not a spec/plan/tasks template structural change.
+-->
 SYNC IMPACT REPORT (v1.38.0 — see below for the v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.37.0 → 1.38.0
 Modified principles: None
@@ -3703,6 +3753,65 @@ proactive) scope decision for visual modernization.
   024's spec.md Assumptions). **Still deferred as of feature 024**: Date
   Picker/Calendar, Carousel, Scroll Area, Resizable panels, HoverCard.
 
+## Distribution & Ecosystem Standards
+
+Publishing `packages/react/` as a real, externally-installable npm package
+(feature 048 verified this for the first time, using a throwaway project
+genuinely outside this monorepo rather than trusting in-workspace usage)
+introduces a distinct category of non-negotiable rules, separate from the
+Core Principles above: once a version is public, other teams' code depends
+on it, and this section exists so that dependency is never silently broken.
+
+- **Semantic Versioning is NON-NEGOTIABLE.** Any change to an existing
+  component's public prop API, removal of an exported component/type, or a
+  behavior change a consumer could reasonably depend on MUST bump the MAJOR
+  version. New components or additive, backward-compatible props MUST bump
+  MINOR. Everything else (bug fixes, internal refactors with no observable
+  API change) is PATCH. `docs/PUBLISHING.md` (feature 048) documents the
+  mechanical steps; this principle is *why* those steps matter, not just
+  the runbook.
+- **Every published version MUST have a changelog entry** (`packages/react/
+  CHANGELOG.md`, Keep a Changelog format, established in feature 048)
+  written in consumer-relevant terms — what changed and why it matters to
+  someone installing the package, not an internal commit-message dump. An
+  empty or missing entry for a published version is a release-process
+  defect, not a documentation nicety.
+- **The published package's own README/CHANGELOG/LICENSE MUST stay current
+  with what's actually shipped** — feature 048 found the package had none
+  of the three, and the monorepo root's own usage snippet had silently
+  gone stale (citing a component count from an earlier version) for
+  several features running. Any feature that changes the package's public
+  surface MUST update `packages/react/README.md` in the same change, not
+  as a follow-up.
+- **TypeScript is REQUIRED for any published package.** Already true for
+  `packages/react/` (full `.d.ts` generation via `tsup`) — recorded here so
+  it stays true if this catalog ever ships a second published package.
+- **Framework scope is an explicit, accepted boundary, not an oversight.**
+  This catalog currently publishes React only. A consumer on Vue, Angular,
+  or a no-framework stack cannot use `packages/react/` today, and closing
+  that gap (e.g. a Web Components port) is real, substantial work — it
+  MUST be a deliberate future feature with its own spec if there's genuine
+  multi-framework demand, never something silently promised or implied by
+  documentation that doesn't say so.
+- **A real `npm publish` to the public registry is a human-authorized
+  action, never an autonomous one.** It is irreversible (a published
+  version cannot be unpublished after npm's 72-hour window) and public.
+  Feature 048 established the precedent: an AI agent may build, verify
+  (via `npm pack` + install into a project outside the workspace — a
+  faithful stand-in that exercises the same module-resolution and
+  `exports`-map behavior a registry install would), and prepare every
+  step up to publishing, but the actual `npm publish` command is run by a
+  human holding real registry credentials, following `docs/PUBLISHING.md`.
+
+**Rationale**: this project's own Component Catalog Quality & 2026
+Modernization audit (feature 044) and this section's own trigger (feature
+048) both found the same underlying pattern — a hand-maintained artifact
+(a CSS subset, a README, a changelog) silently drifting from its source of
+truth because nothing forced it to stay current. SemVer discipline and
+mandatory changelog entries are the same fix applied one level up: the
+package's *version history*, not just its code, must never silently drift
+from what's actually true.
+
 ## Governance
 
 **Authority**: this constitution supersedes any individual style practice or
@@ -3772,7 +3881,7 @@ version.
 proposal of the principle/section being changed, (b) justification recorded in
 the Sync Impact Report at the top of this file, and (c) verification that
 dependent templates (`plan-template.md`, `spec-template.md`, `tasks-template.md`,
-`checklist-template.md`, and the commands under `.claude/skills/speckit-*/`)
+`checklist-template.md`, and the commands under `.claude/skills/specjedi-*/`)
 remain consistent.
 
 **Versioning Policy** (Semantic Versioning):
@@ -3788,4 +3897,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.39.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-18
+**Version**: 1.40.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-19

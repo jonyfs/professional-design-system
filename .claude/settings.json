@@ -7,6 +7,14 @@
           {
             "type": "command",
             "command": "/Users/jony/.local/bin/graphify hook-guard search"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/dangerous-command-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/secret-scanner.py"
           }
         ]
       },
@@ -18,10 +26,41 @@
             "command": "/Users/jony/.local/bin/graphify hook-guard read"
           }
         ]
+      },
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/plan-gate.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/scope-guard.sh"
+          }
+        ]
       }
     ]
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run audit:tokens)",
+      "Bash(npm run audit:contrast)",
+      "Bash(npm run verify)",
+      "Bash(npm run changeset)",
+      "Bash(npm run test:e2e)"
+    ]
   }
 }
