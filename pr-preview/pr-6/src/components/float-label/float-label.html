@@ -15,10 +15,10 @@
   <a href="/professional-design-system/pr-preview/pr-6/index.html" class="back-link">← Back to gallery</a>
   <h1 class="mt-4 text-2xl font-bold text-neutral-900">FloatLabel</h1>
   <p class="mt-2 max-w-md text-sm text-neutral-600">
-    Floating label pattern — CSS-only, no JavaScript. The label
-    animates to a floated position above the field on focus or when
-    filled, and respects <code>prefers-reduced-motion</code> (an
-    instant position change instead of an animated one).
+    Floating label pattern. The label animates to a floated position
+    above the field on focus or when filled, and respects
+    <code>prefers-reduced-motion</code> (an instant position change
+    instead of an animated one).
   </p>
 
     <div class="mt-4 max-w-xs">
@@ -37,7 +37,7 @@
       <label for="float-label-email" class="float-label-text">Email address</label>
     </div>
 
-    <div class="float-label-wrapper" data-testid="float-label-filled-demo">
+    <div class="float-label-wrapper" data-testid="float-label-filled-demo" data-filled="true">
       <input id="float-label-name" class="float-label-field peer" type="text" placeholder=" " value="Jane Doe" />
       <label for="float-label-name" class="float-label-text">Full name</label>
     </div>
