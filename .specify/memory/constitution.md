@@ -72,7 +72,7 @@ check against, not just a precedent to rediscover. MINOR bump: new
 section added, no existing principle text changed.
 Templates requiring updates: ✅ none — this is a new governance section,
   not a spec/plan/tasks template structural change.
--->
+
 SYNC IMPACT REPORT (v1.38.0 — see below for the v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
 Version change: 1.37.0 → 1.38.0
 Modified principles: None
