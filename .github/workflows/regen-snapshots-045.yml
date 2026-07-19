@@ -2,6 +2,10 @@ name: Regenerate Linux Snapshots for 045 (temporary, manual)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [045-2026-trend-adoption]
+    paths:
+      - .github/workflows/regen-snapshots-045.yml
 
 permissions:
   contents: write
