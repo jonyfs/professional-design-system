@@ -143,6 +143,10 @@ EXCLUDED_FILES = [
     'Cargo.lock',
     'go.sum',
     '.gitignore',
+    # This file's own SECRET_PATTERNS necessarily contain the literal
+    # strings it's looking for (e.g. the OpenSSH private key header) —
+    # scanning itself always self-triggers, so it's excluded by name.
+    'secret-scanner.py',
 ]
 
 # Directories to exclude
@@ -156,6 +160,10 @@ EXCLUDED_DIRS = [
     '.pytest_cache/',
     'venv/',
     'env/',
+    # Machine-generated cache/index content, never a source of real
+    # secrets — content hashes here routinely collide with generic
+    # 37+ char alphanumeric patterns like the "Cloudflare API Token" rule.
+    'graphify-out/',
 ]
 
 def should_skip_file(file_path):
@@ -314,9 +322,21 @@ def main():
     # 1. git commit -a/-am: scans tracked modified files (what -a would stage)
     # 2. git add ... && git commit: scans files from the git add part
     if not staged_files:
-        # Check if commit uses -a flag (auto-stage tracked modified files)
+        # Check if commit uses -a flag (auto-stage tracked modified files).
+        # Tokenized rather than a bare regex search on purpose: `-\w*a` also
+        # matches inside long flags like `--allow-empty` or `--amend` (the
+        # "-a" right after the second dash), wrongly treating any such
+        # commit as `-a` and scanning every modified file in the working
+        # tree instead of just what's actually staged. A short flag is a
+        # token starting with exactly one dash (not two) containing 'a'.
         commit_match = re.search(r'git\s+commit\s+(.+)', command)
-        if commit_match and re.search(r'-\w*a', commit_match.group(1)):
+        has_short_a_flag = False
+        if commit_match:
+            for token in commit_match.group(1).split():
+                if token.startswith('-') and not token.startswith('--') and 'a' in token[1:]:
+                    has_short_a_flag = True
+                    break
+        if has_short_a_flag:
             result = subprocess.run(
                 ['git', 'diff', '--name-only'],
                 capture_output=True, text=True
