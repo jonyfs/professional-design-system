@@ -1,7 +1,6 @@
 import { useId } from "react";
 import { Cell, Pie, PieChart as RechartsPieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { useChartColors } from "../hooks/useChartColors";
-import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import { useSeriesVisibility } from "../hooks/useSeriesVisibility";
 import { ChartDataTable } from "./ChartDataTable";
 import { ChartEmptyState } from "./ChartEmptyState";
@@ -37,7 +36,6 @@ export function PieChart({
 }: PieChartProps) {
   const tableId = useId();
   const { colorForSlot } = useChartColors();
-  const prefersReducedMotion = usePrefersReducedMotion();
   const sliceSeries = data.map((row) => {
     const label = String(row[categoryKey] ?? "");
     return { key: label, label };
@@ -57,18 +55,31 @@ export function PieChart({
         <ResponsiveContainer width="100%" height="100%">
           <RechartsPieChart>
             {showTooltip && <Tooltip content={<ChartTooltip />} />}
-            {/* isAnimationActive sweeps the pie in progressively from 0°
-                to a full circle — a screenshot/assertion taken before that
-                entrance animation settles sees a partial arc, not a bug in
-                the angle math itself. Tests should emulate reduced-motion
-                (isAnimationActive becomes false) for deterministic renders. */}
+            {/* Feature 047 — isAnimationActive was previously
+                `!prefersReducedMotion` (mirroring every other chart type's
+                convention), on the assumption an in-progress entrance sweep
+                just needs a moment to settle to a full circle. Found while
+                actually composing this component into a real screen: with
+                animation active, Recharts' Pie mounts zero <Cell>/sector
+                elements — not "mid-sweep," but permanently empty — verified
+                by waiting 10+ seconds and inspecting the DOM directly, in
+                both a fresh usage and this project's own pre-existing chart
+                test harness (tests/react-harness), in both dev and
+                production builds. Since the existing E2E suite always
+                emulates reduced-motion (tests/e2e/*.spec.ts convention), it
+                never exercised the animated path and never caught this —
+                every real visitor with a default (non-reduced-motion) OS
+                setting has been seeing a blank Pie/Donut chart. Disabled
+                unconditionally rather than re-gating on
+                prefers-reduced-motion until the underlying Recharts
+                animation issue is root-caused. */}
             <Pie
               data={visibleData}
               dataKey={valueKey}
               nameKey={categoryKey}
               innerRadius={donut ? "55%" : 0}
               outerRadius="80%"
-              isAnimationActive={!prefersReducedMotion}
+              isAnimationActive={false}
             >
               {indexedVisibleRows.map(({ row, originalIndex }) => (
                 <Cell key={String(row[categoryKey])} fill={colorForSlot(originalIndex)} />
