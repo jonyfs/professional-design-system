@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Collapse — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-3/assets/theme-switcher-NAOvpRiF.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-3/assets/gallery-theme-selector-4_iKoj2_.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-3/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-3/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Collapse</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    A single, independent collapsible container built on native
+    <code>&lt;details&gt;</code> — zero JavaScript. Unlike Accordion, each
+    Collapse is fully independent: opening one has no effect on any other
+    instance on the page.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-lg space-y-4">
+    <details class="group collapse-item" data-testid="collapse-0">
+      <summary class="collapse-trigger">
+        Shipping details
+        <svg viewBox="0 0 20 20" fill="currentColor" class="collapse-chevron" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+      </summary>
+      <p class="collapse-content">
+        Standard shipping takes 3-5 business days within the continental US.
+        Opening this panel does not close the one below it — the two are
+        completely independent.
+      </p>
+    </details>
+
+    <details class="group collapse-item" data-testid="collapse-1">
+      <summary class="collapse-trigger">
+        Return policy
+        <svg viewBox="0 0 20 20" fill="currentColor" class="collapse-chevron" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+      </summary>
+      <p class="collapse-content">
+        Items can be returned within 30 days of delivery for a full refund.
+      </p>
+    </details>
+  </div>
+</body>
+</html>
