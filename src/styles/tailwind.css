@@ -1,5 +1,23 @@
 @import "./themes.css";
 
+/*
+ * Feature 045 — shared/design-tokens.ts's fontFamily.sans has declared
+ * ["Inter", "system-ui", "sans-serif"] since this project's first
+ * component, but no Inter font asset was ever actually loaded anywhere —
+ * every page has silently rendered in the system-ui fallback. This
+ * self-hosts the official Inter variable font (single file, full
+ * weight range, SIL OFL license — see public/fonts/Inter-LICENSE.txt)
+ * so the token's existing promise is actually kept.
+ */
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/InterVariable.woff2") format("woff2-variations"),
+    url("/fonts/InterVariable.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

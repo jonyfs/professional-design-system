@@ -8,10 +8,31 @@ const DEFAULT_THEME = "light";
 
 const KNOWN_THEME_IDS = THEMES.map((theme) => theme.id);
 
+// Feature 045 — the same "dim" id DarkModeToggle.tsx already treats as
+// light's binary dark counterpart (packages/react/src/DarkModeToggle),
+// reused here rather than inventing a separate default.
+const OS_DARK_PREFERENCE_THEME = "dim";
+
+function prefersDark() {
+  try {
+    return (
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
+  } catch {
+    return false; // matchMedia can throw in some restrictive environments
+  }
+}
+
 // The known-theme allowlist MUST be the real, complete list of shipped
 // theme ids — a corrupted or unrecognized stored value (spec.md Edge
 // Cases, FR-006) MUST fall back to the default, never silently apply an
 // unknown data-theme value that resolves to nothing.
+//
+// Feature 045 — when NO choice is stored yet (first visit), seed from
+// the OS's prefers-color-scheme instead of unconditionally defaulting to
+// light — a previously stored, recognized choice always wins regardless
+// of the current OS preference (spec.md FR-004).
 export function resolveInitialTheme(knownThemeIds) {
   let stored = null;
   try {
@@ -21,7 +42,11 @@ export function resolveInitialTheme(knownThemeIds) {
     // private-browsing configurations) — fall back to the default theme
     // rather than letting an uncaught exception block theme activation.
   }
-  return knownThemeIds.includes(stored) ? stored : DEFAULT_THEME;
+  if (knownThemeIds.includes(stored)) return stored;
+  if (prefersDark() && knownThemeIds.includes(OS_DARK_PREFERENCE_THEME)) {
+    return OS_DARK_PREFERENCE_THEME;
+  }
+  return DEFAULT_THEME;
 }
 
 export function applyTheme(themeId) {
