@@ -40,6 +40,8 @@ For each of the 9 category batches, audit React parametrization (compare each co
 
 **Checkpoint**: All 27 React-parametrization gaps closed catalog-wide. Dimensions 1-3 already confirmed passing in Setup. **Not done in this pass** (Playwright E2E parity tests for the 27 new React components — the implementation matches each state the HTML/CSS E2E spec exercises by construction/mirroring, but no NEW `react-<name>.spec.ts` test files were authored to mechanically verify this per component; flagged as explicit follow-up work, not silently skipped).
 
+- [X] **T012b [US1] Second real defect found and fixed** (discovered while feature 047 composed these new components into real screens — same mechanism feature 042 used to find its own 4 defects): `packages/react/src/styles.css` is a hand-maintained subset of the main site's `src/styles/tailwind.css`, and **11 of the 27 new components' CSS classes were never copied over** — Divider, Skeleton, Tooltip, ButtonGroup, Stepper, FileInput, Timeline, PinInput, TreeView, Menubar, and ColorInput all shipped with zero component styling in the npm package (confirmed by grep: `.stepper`, `.tree-view`, `.menubar`, etc. were entirely absent from the compiled `dist/styles.css`). Fixed by copying the relevant `@apply` blocks verbatim from `tailwind.css`. `npm run audit:tokens` passes clean afterward (558 `@apply` blocks now, up from 520, 0 violations) and `npm run typecheck` is clean. Progress/EmptyState/AspectRatio were checked too and did NOT need this fix (Progress's classes already existed; EmptyState/AspectRatio compose from plain Tailwind utilities with no dedicated class).
+
 ---
 
 ## Phase 4: User Story 2 - Components that look and feel current (P2)
