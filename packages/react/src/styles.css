@@ -975,4 +975,180 @@
   .social-login-btn-monochrome-light {
     @apply border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-50;
   }
+
+  /* Feature 044/047 — real, currently-shipping defect found the same way
+     this file's own Chart color-token gap above was: composing a just-
+     added React component (Stepper) into a real screen and seeing it
+     render completely unstyled. This file is a hand-maintained subset of
+     ../../../src/styles/tailwind.css (not auto-generated), and the CSS
+     for 11 of feature 044's 27 newly-added components was never copied
+     over — every consumer of the npm package using Divider, Skeleton,
+     Tooltip, ButtonGroup, Stepper, FileInput, Timeline, PinInput,
+     TreeView, Menubar, or ColorInput got zero component styling. Blocks
+     below are copied verbatim from tailwind.css, not reinvented.
+     Progress/EmptyState/AspectRatio were checked too: Progress's classes
+     already existed here; EmptyState and AspectRatio compose from plain
+     Tailwind utilities with no dedicated class, so neither needed one. */
+
+  .divider {
+    @apply border-0 border-t border-neutral-200;
+  }
+  .divider-vertical {
+    @apply h-full w-px self-stretch bg-neutral-200;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-md bg-neutral-200 motion-reduce:animate-none;
+  }
+  .skeleton-text {
+    @apply h-4 w-full;
+  }
+  .skeleton-avatar-sm {
+    @apply h-8 w-8 rounded-full;
+  }
+  .skeleton-avatar-lg {
+    @apply h-10 w-10 rounded-full;
+  }
+  .skeleton-card {
+    @apply h-32 w-full rounded-lg;
+  }
+
+  .tooltip-wrapper {
+    @apply relative inline-block;
+  }
+  .tooltip {
+    @apply pointer-events-none absolute z-50 whitespace-nowrap rounded-md
+      bg-neutral-900 px-2 py-1 text-xs text-white opacity-0 shadow-sm
+      transition-opacity delay-300 duration-150;
+  }
+  .tooltip-top {
+    position: fixed;
+    bottom: anchor(top);
+    left: anchor(center);
+    translate: -50% -6px;
+  }
+  .tooltip-wrapper:hover .tooltip,
+  .tooltip-wrapper:focus-within .tooltip {
+    @apply opacity-100;
+  }
+  .tooltip-anchor-1 { anchor-name: --tooltip-anchor-1; }
+  .tooltip-target-1 { position-anchor: --tooltip-anchor-1; }
+  .tooltip-anchor-2 { anchor-name: --tooltip-anchor-2; }
+  .tooltip-target-2 { position-anchor: --tooltip-anchor-2; }
+  .tooltip-anchor-3 { anchor-name: --tooltip-anchor-3; }
+  .tooltip-target-3 { position-anchor: --tooltip-anchor-3; }
+  .tooltip-anchor-4 { anchor-name: --tooltip-anchor-4; }
+  .tooltip-target-4 { position-anchor: --tooltip-anchor-4; }
+
+  .button-group {
+    @apply inline-flex rounded-md shadow-sm;
+  }
+  .button-group-segment {
+    @apply relative -ml-px inline-flex cursor-pointer items-center px-3 py-2
+      text-sm font-semibold text-neutral-700 ring-1 ring-inset ring-neutral-300
+      first:ml-0 first:rounded-l-md last:rounded-r-md hover:bg-neutral-100;
+  }
+  input:checked + .button-group-segment {
+    @apply z-10 bg-brand-dark text-white ring-brand-dark;
+  }
+  input:focus-visible + .button-group-segment {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+  input:disabled + .button-group-segment {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .stepper {
+    @apply flex items-center gap-2;
+  }
+  .stepper-step {
+    @apply flex flex-1 items-center gap-2;
+  }
+  .stepper-step:not(:last-child)::after {
+    content: "";
+    @apply h-0.5 flex-1 bg-neutral-200;
+  }
+  .stepper-step-completed::after {
+    @apply bg-brand-dark;
+  }
+  .stepper-circle {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full
+      bg-neutral-200 text-sm font-semibold text-neutral-600;
+  }
+  .stepper-step-completed .stepper-circle,
+  .stepper-step-current .stepper-circle {
+    @apply bg-brand-dark text-white;
+  }
+
+  .file-drop-zone {
+    @apply relative flex flex-col items-center gap-1 rounded-md border-2
+      border-dashed border-neutral-300 p-6 text-center;
+  }
+  .file-input-native {
+    @apply absolute inset-0 h-full w-full cursor-pointer opacity-0
+      disabled:cursor-not-allowed;
+  }
+  .file-input-native:focus-visible ~ .file-drop-zone-content {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
+  .file-input-native:disabled ~ .file-drop-zone-content {
+    @apply opacity-50;
+  }
+
+  .timeline {
+    @apply relative space-y-6;
+  }
+  .timeline-item {
+    @apply relative flex gap-3;
+  }
+  .timeline-item:not(:last-child)::before {
+    content: "";
+    @apply absolute left-4 top-8 h-full w-px bg-neutral-200;
+  }
+  .timeline-content {
+    @apply flex-1 space-y-0.5;
+  }
+
+  .pin-input-box {
+    @apply h-12 w-10 rounded-md border-0 bg-neutral-50 text-center text-lg font-semibold
+      text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300
+      focus:ring-2 focus:ring-inset focus:ring-brand
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .tree-view {
+    @apply space-y-1 text-sm text-neutral-900;
+  }
+  .tree-view-children {
+    @apply mt-1 space-y-1 border-l border-neutral-200 pl-4;
+  }
+  .tree-view-summary {
+    @apply cursor-pointer select-none rounded-sm px-1 py-0.5
+      marker:text-neutral-500 hover:bg-neutral-100 focus-visible:outline
+      focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand;
+  }
+  .tree-view-leaf {
+    @apply px-1 py-0.5 pl-5 text-neutral-600;
+  }
+
+  .menubar {
+    @apply flex items-center gap-1 rounded-md border border-neutral-200
+      bg-neutral-50 p-1;
+  }
+  .menubar-trigger {
+    @apply rounded-sm px-3 py-1.5 text-sm font-medium text-neutral-700
+      hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .menubar-trigger[aria-expanded="true"] {
+    @apply bg-neutral-200;
+  }
+
+  .color-input {
+    @apply h-10 w-16 cursor-pointer appearance-none rounded-md border-0 p-1
+      shadow-sm ring-1 ring-inset ring-neutral-300 focus:ring-2
+      focus:ring-inset focus:ring-brand disabled:cursor-not-allowed
+      disabled:opacity-50;
+  }
 }
