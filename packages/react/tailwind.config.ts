@@ -21,7 +21,35 @@ export default {
   // by grepping the compiled CSS. This was a real, currently-shipping bug:
   // every consumer passing `theme="dark"` (or explicit `theme="light"`) got
   // an unstyled sidebar in production, not just a sync-preview artifact.
-  safelist: ["toast-stack", "sidebar-light", "sidebar-dark", "sidebar-item-light", "sidebar-item-dark"],
+  // `stepper-step-${status}` (Stepper.tsx) and `tooltip-anchor-${anchor}` /
+  // `tooltip-target-${anchor}` (Tooltip.tsx) hit the exact same
+  // template-literal purge gap as sidebar-${theme} above — found while
+  // feature 047 composed Stepper into a real screen and it rendered as a
+  // plain numbered list (no `.stepper` flex/gap at all). Auditing Tooltip's
+  // identical template-literal pattern turned up a second, more severe
+  // instance: `.tooltip-anchor-2/3/4` and ALL FOUR `.tooltip-target-*` were
+  // silently dropped from dist/styles.css, meaning CSS Anchor Positioning
+  // never worked for any Tooltip instance shipped via the npm package
+  // (only anchor-1 survived, apparently by accident of rule ordering).
+  safelist: [
+    "toast-stack",
+    "sidebar-light",
+    "sidebar-dark",
+    "sidebar-item-light",
+    "sidebar-item-dark",
+    "stepper",
+    "stepper-step-completed",
+    "stepper-step-current",
+    "stepper-step-upcoming",
+    "tooltip-anchor-1",
+    "tooltip-anchor-2",
+    "tooltip-anchor-3",
+    "tooltip-anchor-4",
+    "tooltip-target-1",
+    "tooltip-target-2",
+    "tooltip-target-3",
+    "tooltip-target-4",
+  ],
   theme: {
     extend: { colors, borderRadius, fontFamily },
   },
