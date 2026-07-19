@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>TreeSelect — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-8/assets/treeSelect-CfCn0DQq.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-8/assets/theme-switcher-NAOvpRiF.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-8/assets/gallery-theme-selector-4_iKoj2_.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-8/assets/theme-switcher-uR57PTZh.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-8/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">TreeSelect</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Select a value from a hierarchical tree — reuses TreeView's exact
+    native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code>
+    disclosure mechanism, with a selection layer on top.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm">
+    <span class="mb-1 block text-sm font-medium text-neutral-900">Folder</span>
+    <div data-tree-select data-testid="tree-select-demo" class="relative">
+      <button type="button" data-tree-select-trigger class="tree-select-trigger" aria-haspopup="tree">
+        Select a folder
+      </button>
+      <div data-tree-select-panel class="tree-select-panel" hidden>
+        <ul class="tree-view">
+          <li>
+            <details open class="tree-select-node">
+              <summary class="tree-view-summary">src</summary>
+              <ul class="tree-view-children">
+                <li>
+                  <details open class="tree-select-node">
+                    <summary class="tree-view-summary">components</summary>
+                    <ul class="tree-view-children">
+                      <li>
+                        <span data-node-selectable data-node-id="src-components-form" tabindex="0" role="option" class="tree-select-leaf">form</span>
+                      </li>
+                      <li>
+                        <span data-node-selectable data-node-id="src-components-nav" tabindex="0" role="option" class="tree-select-leaf">nav</span>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <span data-node-selectable data-node-id="src-scripts" tabindex="0" role="option" class="tree-select-leaf">scripts</span>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <span data-node-selectable data-node-id="tests" tabindex="0" role="option" class="tree-select-leaf">tests</span>
+          </li>
+        </ul>
+      </div>
+      <input data-tree-select-value type="hidden" name="folder" />
+    </div>
+  </div>
+
+</body>
+</html>
