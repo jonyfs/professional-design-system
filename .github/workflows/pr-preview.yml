@@ -1,0 +1,69 @@
+name: PR Preview
+
+# Feature 044 (research.md R5) — deploy-pages.yml only ever builds/deploys
+# `main` (workflow_run gated on CI success, or manual workflow_dispatch);
+# there was no way to preview a PR's actual rendered result on GitHub
+# Pages before merging. This is additive: it never touches
+# deploy-pages.yml's production build/deploy/version jobs, and publishes
+# to a PR-scoped subpath of the SAME Pages site rather than a separate
+# service. rossjrw/pr-preview-action (MIT, actively maintained, 428+
+# stars — verified before adoption, see plan.md's Constitution Check)
+# builds the preview and cleans it up automatically when the PR closes.
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        if: github.event.action != 'closed'
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Production build (Pages subpath base, matches deploy-pages.yml)
+        if: github.event.action != 'closed'
+        run: npm run build
+        env:
+          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Rewrite root-absolute cross-page links for the preview subpath
+        if: github.event.action != 'closed'
+        run: node scripts/rewrite-base-path.mjs dist /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Build packages/react (showcase dependency)
+        if: github.event.action != 'closed'
+        run: npm run build --workspace packages/react
+
+      - name: Build showcase app (Pages subpath base)
+        if: github.event.action != 'closed'
+        working-directory: showcase
+        run: npm run build
+        env:
+          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/showcase/
+
+      - name: Copy showcase build into the preview's dist/
+        if: github.event.action != 'closed'
+        run: cp -r showcase/dist dist/showcase
+
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./dist
