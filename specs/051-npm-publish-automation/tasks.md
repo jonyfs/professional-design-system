@@ -23,21 +23,21 @@ feature-PR merge never triggers a publish attempt.
 confirm `npm view professional-design-system version` reflects the new
 version with no command run outside GitHub Actions.
 
-- [ ] T002 [US1] In `.github/workflows/release.yml`, add a step before
+- [x] T002 [US1] In `.github/workflows/release.yml`, add a step before
   the existing `changesets/action@v1` step (L38-43) that runs the same
   build + verify commands `docs/PUBLISHING.md`'s Steps 3-4 document
   (`npm run build --workspace packages/react`, `npm run typecheck
   --workspace packages/react`, `npm run audit:tokens`, `npm run
   audit:contrast`), failing the job if any fail — gates FR-006's
   pre-publish verification before T003 can run.
-- [ ] T003 [US1] Add an `npm pack` + tarball-contents check step
+- [x] T003 [US1] Add an `npm pack` + tarball-contents check step
   immediately after T002 (same commands as `docs/PUBLISHING.md` Step 4:
   `npm pack --workspace packages/react --pack-destination /tmp`, then
   confirm `LICENSE`, `README.md`, `CHANGELOG.md`, and `dist/` including
   `dist/styles.css` are present in the tarball, then delete it) —
   completes FR-006's verification gate; the job fails before reaching
   T004 if this check fails.
-- [ ] T004 [US1] Extend the existing `changesets/action@v1` step
+- [x] T004 [US1] Extend the existing `changesets/action@v1` step
   (`.github/workflows/release.yml` L38-43) with a `publish: npx changeset
   publish` input, and add `NPM_TOKEN: ${{ secrets.NPM_TOKEN }}` to its
   existing `env:` block (alongside `GITHUB_TOKEN`) — this is
@@ -46,7 +46,7 @@ version with no command run outside GitHub Actions.
   the `publish` command when there are none pending and the local version
   differs from the registry (i.e. exactly the run immediately after that
   PR is merged).
-- [ ] T005 [US1] Verify (dry run, no real registry credentials required
+- [x] T005 [US1] Verify (dry run, no real registry credentials required
   per feature 048's established pattern): `npm pack --workspace
   packages/react --pack-destination /tmp` followed by installing the
   tarball into a project outside this workspace, confirming the package
@@ -69,7 +69,7 @@ cleanup.
 `NPM_TOKEN`), confirm the run is marked failed, fix the token, re-run, and
 confirm it successfully publishes.
 
-- [ ] T006 [US2] Confirm (via `changesets/action`'s documented behavior,
+- [x] T006 [US2] Confirm (via `changesets/action`'s documented behavior,
   verified against its own source/README since this project has no
   registry credentials to force a live failure) that a failed `npx
   changeset publish` inside the action's `publish` input causes the
@@ -78,14 +78,14 @@ confirm it successfully publishes.
   If the action does NOT already surface failures this way, this task
   becomes: wrap the publish input in a script that explicitly checks the
   command's exit code and fails the step.
-- [ ] T007 [US2] Confirm `npx changeset publish`'s own behavior satisfies
+- [x] T007 [US2] Confirm `npx changeset publish`'s own behavior satisfies
   FR-003/FR-005: it checks each package's version against what's already
   on the registry before publishing, skipping (not erroring) an
   already-published version — this is the mechanism that makes a re-run
   after a fixed failure safe with zero manual state cleanup, since the
   action naturally re-attempts only what hasn't successfully published
   yet.
-- [ ] T008 [US2] [P] Update `docs/PUBLISHING.md`'s Prerequisites section
+- [x] T008 [US2] [P] Update `docs/PUBLISHING.md`'s Prerequisites section
   (FR-009) to note: the automated path (T001-T005) is now the default;
   `NPM_TOKEN` lives in the repository's Actions secrets, not a
   maintainer's local npm session; manual `npm publish` (the existing
@@ -107,7 +107,7 @@ runbook already performs.
 matching `docs/PUBLISHING.md`'s `professional-design-system@$(version)`
 convention exists on the published commit.
 
-- [ ] T009 [US3] Confirm `npx changeset publish`'s own behavior creates a
+- [x] T009 [US3] Confirm `npx changeset publish`'s own behavior creates a
   git tag per published package (`changesets/action`'s documented
   behavior) matching the `professional-design-system@$(version)` naming
   `docs/PUBLISHING.md`'s existing Step 6 already uses — if the action
@@ -116,7 +116,7 @@ convention exists on the published commit.
   creates local tags but a separate push may still be required depending
   on the action's own tag-push behavior (verify against its README, not
   assumed).
-- [ ] T010 [US3] [P] Update `docs/PUBLISHING.md`'s Steps 5-6 (currently
+- [x] T010 [US3] [P] Update `docs/PUBLISHING.md`'s Steps 5-6 (currently
   the manual publish and manual tag commands) to describe them as what
   the automation now performs on a maintainer's behalf, retaining the
   original manual commands verbatim underneath as the documented
