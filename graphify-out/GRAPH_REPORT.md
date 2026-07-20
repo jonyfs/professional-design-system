@@ -1,16 +1,16 @@
-# Graph Report - professional-design-system  (2026-07-19)
+# Graph Report - professional-design-system  (2026-07-20)
 
 ## Corpus Check
-- 942 files · ~2,446,577 words
+- 997 files · ~2,491,180 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5825 nodes · 6456 edges · 615 communities (539 shown, 76 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
+- 6301 nodes · 6921 edges · 664 communities (584 shown, 80 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 15 edges (avg confidence: 0.61)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1ffe29dd`
+- Built from commit: `1af4f76e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -491,7 +491,6 @@
 - Tasks: NPM Release Automation
 - Checkbox.tsx
 - Breadcrumbs.tsx
-- Publishing `@professional-design-system/react`
 - Table.tsx
 - Checkbox.tsx
 - ColorSwatch.tsx
@@ -515,8 +514,12 @@
 - SystemBanner.tsx
 - Checkbox.tsx
 - README.md
+- Research: 2026 External Design-Trend Adoption
+- aitmpl.com Browsing Playbook
+- today-2026-07-19.done.md
 - rewrite-base-path.mjs
 - Specification Quality Checklist: Material Catalog Layout
+- CI Baseline Metrics (captured 2026-07-18, before feature 043 changes)
 - Specification Quality Checklist: Speed Up CI Test Suite
 - Implementation Plan: Flagship App Showcase
 - devDependencies
@@ -527,13 +530,57 @@
 - Contract: Flagship App Showcase
 - Quickstart: Flagship App Showcase
 - Research: Flagship App Showcase
+- Data Model: CI Reliability & Radical Test Speedup
+- Quickstart: Validating 2026 External Design-Trend Adoption
+- Research: Motion-Timing Design Tokens
+- 🎓 Spec Jedi Skill Review
+- Publishing `@professional-design-system/react`
+- Data Model: 2026 External Design-Trend Adoption
+- Quickstart: Validating Motion-Timing Design Tokens
+- Tasks: Motion-Timing Design Tokens
+- Breadcrumbs.tsx
+- Table.tsx
+- Tabs.tsx
+- dangerous-command-guard.sh
+- secret-file-guard.sh
+- usePrefersColorScheme.ts
+- Data Model: Motion-Timing Design Tokens
+- plan-gate.sh
+- scope-guard.sh
+- prevent-direct-push.py
+- ActionIcon.tsx
+- Affix.tsx
+- Anchor.tsx
+- AppShell.tsx
+- Center.tsx
+- Checkbox.tsx
+- Code.tsx
+- Collapse.tsx
+- ColorSwatch.tsx
+- Compare.tsx
+- Divider.tsx
+- EmptyState.tsx
+- Flex.tsx
+- FloatLabel.tsx
+- Group.tsx
+- LoadingOverlay.tsx
+- NumberInput.tsx
+- Progress.tsx
+- RingProgress.tsx
+- RollingNumber.tsx
+- SemiCircleProgress.tsx
+- Slider.tsx
+- Stack.tsx
+- TagsInput.tsx
+- ThemeIcon.tsx
+- Watermark.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `expectNoA11yViolations()` - 104 edges
 2. `stripNonDigits()` - 33 edges
 3. `useChartColors()` - 24 edges
 4. `expectNoConsoleErrors()` - 24 edges
-5. `Component Catalog & Tailwind UI Patterns` - 20 edges
+5. `Component Catalog & Tailwind UI Patterns` - 21 edges
 6. `usePrefersReducedMotion()` - 20 edges
 7. `useSeriesVisibility()` - 17 edges
 8. `Component candidates (105 total, grouped by category)` - 15 edges
@@ -543,13 +590,13 @@
 ## Surprising Connections (you probably didn't know these)
 - `renderGallery()` --indirect_call--> `moodFamily()`  [INFERRED]
   src/scripts/theme-gallery.js → specs/038-per-source-theme-batch/derived/generate-output.mjs
+- `CodeTypeConfig` --references--> `ValidationResult`  [EXTRACTED]
+  packages/react/src/hooks/useValidatedInput.ts → shared/validators/common.ts
 - `initInputMasks()` --calls--> `applyMask()`  [EXTRACTED]
   src/scripts/input-mask.js → shared/input-mask/index.ts
 - `initAutocompletes()` --calls--> `filterOptions()`  [EXTRACTED]
   src/scripts/autocomplete.js → shared/multi-select/index.ts
 - `AutocompleteProps` --references--> `MultiSelectOption`  [EXTRACTED]
-  packages/react/src/Autocomplete/Autocomplete.tsx → shared/multi-select/index.ts
-- `Autocomplete()` --calls--> `filterOptions()`  [EXTRACTED]
   packages/react/src/Autocomplete/Autocomplete.tsx → shared/multi-select/index.ts
 
 ## Import Cycles
@@ -559,7 +606,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (615 total, 76 thin omitted)
+## Communities (664 total, 80 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -570,12 +617,12 @@ Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Micro-Interaction & Utility Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 2 - "Spec Quality & Convergence"
-Cohesion: 0.08
-Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Disclosure), 3. Build Semantic Models, 4. Detection Passes (Token-Efficient Analysis), 5. Severity Assignment, 6. Produce Compact Analysis Report, 7. Provide Next Actions, 8. Offer Remediation (+17 more)
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: CI Reliability & Radical Test Speedup, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 3 - "Agent Context Extension"
 Cohesion: 0.10
-Nodes (20): Advanced Form Inputs Batch (feature 039), Advanced Forms & Interaction, Component Catalog Expansion (Batch 1, Feature 023), Component Catalog & Tailwind UI Patterns, Configurable Social Login Buttons (feature 035), Consent & System Messaging Primitives (feature 030), Data Display Composables (feature 033), Data Display & Listings (+12 more)
+Nodes (21): 2026 Style Direction Extensions (feature 045), Advanced Form Inputs Batch (feature 039), Advanced Forms & Interaction, Component Catalog Expansion (Batch 1, Feature 023), Component Catalog & Tailwind UI Patterns, Configurable Social Login Buttons (feature 035), Consent & System Messaging Primitives (feature 030), Data Display Composables (feature 033) (+13 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -596,6 +643,10 @@ Nodes (8): Discoverability check (SC-001), Manual validation scenarios (traceabl
 ### Community 10 - "PowerShell Agent Context Updater"
 Cohesion: 0.29
 Nodes (6): Acceptance mapping, Component Contract: Button, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
+
+### Community 16 - "Now"
+Cohesion: 0.40
+Nodes (4): 22:14 | 050-npm-release-automation, 22:27 | 050-npm-release-automation, 22:37 | main, 22:41 | main
 
 ### Community 18 - "Cognitive Ergonomics & Visual Hierarchy"
 Cohesion: 0.29
@@ -622,8 +673,8 @@ Cohesion: 0.07
 Nodes (29): description, devDependencies, autoprefixer, @axe-core/playwright, @changesets/cli, @playwright/test, postcss, tailwindcss (+21 more)
 
 ### Community 26 - "audit-tokens.mjs"
-Cohesion: 0.10
-Nodes (20): allowedColorNames, allowedRadiusClasses, applyBlocks, checkClass(), COLOR_PREFIXES, configSource, extractBalancedBlock(), isStructuralSuffix() (+12 more)
+Cohesion: 0.09
+Nodes (23): allowedColorNames, allowedDurationClasses, allowedRadiusClasses, allowedTimingFunctionClasses, applyBlocks, checkClass(), COLOR_PREFIXES, configSource (+15 more)
 
 ### Community 27 - "compilerOptions"
 Cohesion: 0.14
@@ -634,8 +685,8 @@ Cohesion: 0.09
 Nodes (23): acceptedGaps, applyBlocks, buildTokenMap(), compositeOver(), COVERED_FG_TOKENS, DECORATIVE_ARIA_HIDDEN_TOKENS, failures, htmlFiles (+15 more)
 
 ### Community 32 - "theme-gallery.js"
-Cohesion: 0.18
-Nodes (22): format(), isComplete(), validate(), format(), isComplete(), validate(), format(), isComplete() (+14 more)
+Cohesion: 0.07
+Nodes (56): format(), isComplete(), validate(), format(), isComplete(), validate(), format(), isComplete() (+48 more)
 
 ### Community 34 - "button.spec.ts"
 Cohesion: 0.07
@@ -646,8 +697,8 @@ Cohesion: 0.09
 Nodes (21): Button Group, Dependencies & Execution Order, Divider, Empty State, Format: `[ID] [P?] [Story] Description`, Implementation Strategy, Incremental Delivery, Kbd (depends on T001) (+13 more)
 
 ### Community 36 - "badge.spec.ts"
-Cohesion: 0.12
-Nodes (15): 1. Initialize Convergence Context, 2. Load Artifacts (Progressive Disclosure), 3. Build the Intent Inventory, 4. Assess the Codebase and Classify Findings, 5. Assign Severity, 6. Present the In-Session Findings Summary, 7. Append Convergence Tasks (or report converged), 8. Provide Next Actions (Handoff) (+7 more)
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: 2026 External Design-Trend Adoption, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 37 - "checkbox.spec.ts"
 Cohesion: 0.14
@@ -694,8 +745,8 @@ Cohesion: 0.15
 Nodes (12): Button Group, Context Menu, Data Model: Micro-Interaction & Utility Primitives, Divider, Empty State, Kbd, Popover, Progress (+4 more)
 
 ### Community 48 - "toggle.spec.ts"
-Cohesion: 0.18
-Nodes (10): Completion Report, Done When, Key rules, Mandatory Post-Execution Hooks, Outline, Phase 0: Outline & Research, Phase 1: Design & Contracts, Phases (+2 more)
+Cohesion: 0.08
+Nodes (23): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Motion-Timing Design Tokens, Complexity Tracking, Constitution Check, Documentation (this feature) (+15 more)
 
 ### Community 49 - "Implementation Plan: Advanced Forms Primitives"
 Cohesion: 0.07
@@ -710,8 +761,8 @@ Cohesion: 0.22
 Nodes (8): Acceptance mapping, Behavior wiring (`src/scripts/toast.js`), Component Contract: Toast, Edge case — multiple simultaneous toasts, Markup contract, Required attributes (FR-002), Token allowlist used, Variants (constitution's ratified status tokens, same mapping as Badge)
 
 ### Community 52 - "Implementation Plan: Overlays — Modal, Slide-over, Toast"
-Cohesion: 0.18
-Nodes (10): Completion Report, Done When, For AI Generation, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, Quick Guidelines, Section Requirements (+2 more)
+Cohesion: 0.09
+Nodes (22): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery, MVP First (User Story 1 Only) (+14 more)
 
 ### Community 53 - "Quickstart: Overlays — Modal, Slide-over, Toast"
 Cohesion: 0.22
@@ -790,8 +841,8 @@ Cohesion: 0.07
 Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Recharts Additional Chart Types (Batch 2), Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 75 - "react-button.spec.ts"
-Cohesion: 0.18
-Nodes (10): Checklist Format (REQUIRED), Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Phase Structure, Pre-Execution Checks, Task Generation Rules (+2 more)
+Cohesion: 0.07
+Nodes (26): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery, MVP First (User Story 1 Only) (+18 more)
 
 ### Community 78 - "index.ts"
 Cohesion: 0.07
@@ -814,20 +865,20 @@ Cohesion: 0.22
 Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: [FEATURE], Project Structure, Source Code (repository root), Summary, Technical Context
 
 ### Community 89 - "react-text-input.spec.ts"
-Cohesion: 0.25
-Nodes (7): Anti-Examples: What NOT To Do, Checklist Purpose: "Unit Tests for English", Example Checklist Types & Sample Items, Execution Steps, Post-Execution Checks, Pre-Execution Checks, User Input
+Cohesion: 0.15
+Nodes (13): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Context: two ways this triggers, Examples (input → output), Format, 🔭 Spec Jedi Find Skills, Step-by-step (+5 more)
 
 ### Community 90 - "react-toggle.spec.ts"
 Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Component Catalog Expansion (Batch 1), Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 91 - "Select.tsx"
-Cohesion: 0.29
-Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, User Input
+Cohesion: 0.15
+Nodes (12): Dependencies & Execution Order, Implementation Strategy, Incremental Delivery, MVP First (User Story 1 Only), Parallel Opportunities, Phase 1: Setup, Phase 2: Foundational, Phase 3: User Story 1 - The catalog's own typography actually renders as designed (P1) 🎯 MVP (+4 more)
 
 ### Community 93 - "Checkbox.tsx"
-Cohesion: 0.29
-Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, User Input
+Cohesion: 0.17
+Nodes (11): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 📜 Spec Jedi Constitution, Steps (+3 more)
 
 ### Community 94 - "Radio.tsx"
 Cohesion: 0.52
@@ -994,12 +1045,12 @@ Cohesion: 0.29
 Nodes (6): Acceptance mapping, Component Contract: Tooltip, Markup contract, Required attributes, Required classes (Principle V gate), Token allowlist used
 
 ### Community 140 - "pagination.spec.ts"
-Cohesion: 0.40
-Nodes (4): Outline, Post-Execution Checks, Pre-Execution Checks, User Input
+Cohesion: 0.17
+Nodes (11): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Context: when this runs, Example (input → output), Format, 🧙 Spec Jedi Master, Step-by-step (+3 more)
 
 ### Community 141 - "sidebar.spec.ts"
-Cohesion: 0.40
-Nodes (4): Outline, Post-Execution Checks, Pre-Execution Checks, User Input
+Cohesion: 0.17
+Nodes (11): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Mapping table, 🔄 Spec Jedi Migrate, Step-by-step (+3 more)
 
 ### Community 142 - "Quickstart: Advanced Forms Primitives"
 Cohesion: 0.20
@@ -1074,8 +1125,8 @@ Cohesion: 0.10
 Nodes (19): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation for User Story 4, Implementation Strategy, Parallel Execution Examples (+11 more)
 
 ### Community 161 - "index.ts"
-Cohesion: 0.50
-Nodes (3): Behavior, Execution, Update Coding Agent Context
+Cohesion: 0.17
+Nodes (11): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🎯 Spec Jedi Specify, Steps (+3 more)
 
 ### Community 162 - "accordion-main.tsx"
 Cohesion: 0.40
@@ -1086,8 +1137,8 @@ Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Feedback & Data Display Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 164 - "Modal.tsx"
-Cohesion: 0.10
-Nodes (38): DataTable(), DataTableProps, sortIcon(), DataTableEmptyState(), DataTableEmptyStateProps, DataTableFieldDefinition, DataTableRowActions(), DataTableRowActionsProps (+30 more)
+Cohesion: 0.11
+Nodes (36): DataTable(), DataTableProps, sortIcon(), DataTableFieldDefinition, DataTableRowActions(), DataTableRowActionsProps, DataTableToolbar(), DataTableToolbarProps (+28 more)
 
 ### Community 165 - "SlideOver.tsx"
 Cohesion: 0.50
@@ -1181,9 +1232,13 @@ Nodes (6): Prerequisites, Quickstart: Table Primitive, Run the test suite, Valid
 Cohesion: 0.33
 Nodes (5): Data Model: Table Primitive, Table, Table Cell, Table Header Cell, Table Row
 
+### Community 196 - "table.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🔍 Spec Jedi Analyze, Step-by-step (+2 more)
+
 ### Community 197 - "index.ts"
-Cohesion: 0.11
-Nodes (21): CardNumberInput, CardNumberInputProps, CepInput, CepInputProps, CnpjInput, CnpjInputProps, CpfInput, CpfInputProps (+13 more)
+Cohesion: 0.08
+Nodes (29): CardNumberInput, CardNumberInputProps, CepInput, CepInputProps, CnpjInput, CnpjInputProps, CpfInput, CpfInputProps (+21 more)
 
 ### Community 198 - "Implementation Plan: React Port — Batch 2 (Remaining Static Components)"
 Cohesion: 0.07
@@ -1209,6 +1264,46 @@ Nodes (8): Dependencies & Execution Order, Implementation Strategy, Phase 1: Use
 Cohesion: 0.33
 Nodes (5): Prerequisites, Quickstart: React Port — Batch 2, Run the test suite, Validate a component, Verify no regressions
 
+### Community 214 - "react-alert.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, ☑️ Spec Jedi Checklist, Step-by-step (+2 more)
+
+### Community 215 - "react-avatar.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🌀 Spec Jedi Clarify, Step-by-step (+2 more)
+
+### Community 216 - "react-card.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🔁 Spec Jedi Converge, Step-by-step (+2 more)
+
+### Community 217 - "react-combobox.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🔨 Spec Jedi Implement, Step-by-step (+2 more)
+
+### Community 218 - "react-command-palette.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🛠️ Spec Jedi Plan, Step-by-step (+2 more)
+
+### Community 219 - "react-list.spec.ts"
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, ✅ Spec Jedi Tasks, Step-by-step (+2 more)
+
+### Community 220 - "react-navbar.spec.ts"
+Cohesion: 0.29
+Nodes (9): get_staged_files(), main(), print_findings(), Check if file should be skipped, Get list of staged files, Scan a single file for secrets, Print findings in a formatted way, scan_file() (+1 more)
+
+### Community 221 - "react-pagination.spec.ts"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 📋 Spec Jedi Catalog Audit, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 222 - "react-sidebar.spec.ts"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🛰️ Spec Jedi Chain, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 223 - "react-table.spec.ts"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, ⚖️ Spec Jedi Constitution Coverage Audit, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
 ### Community 224 - "Table.tsx"
 Cohesion: 0.25
 Nodes (4): columns, invoiceColumns, invoiceRows, rows
@@ -1228,6 +1323,54 @@ Nodes (5): actions, Default(), InContext(), projectActions, useAutoOpenViaShortc
 ### Community 229 - "design-sync notes for professional-design-system"
 Cohesion: 0.33
 Nodes (5): design-sync notes for professional-design-system, Fixes applied, Fixes applied (2026-07-13 re-sync — 24 → 61 components), Preview authoring notes, Re-sync risks
+
+### Community 250 - ".specify/feature.json"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 📊 Spec Jedi Diagram, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 251 - "GitHub MCP Server (list_issues / create issue tools)"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 📚 Spec Jedi Docs, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 252 - ".specify/init-options.json"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output, same concept, two audiences), Format, 🎓 Spec Jedi Explain, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 253 - "plan.md (Implementation Plan)"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, ⚖️ Spec Jedi Governance Check, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 254 - ".specify/templates/plan-template.md"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🌟 Spec Jedi New Skill, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 255 - "quickstart.md"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🌱 Spec Jedi Onboard, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 256 - "checklists/requirements.md (Spec Quality Checklist)"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🚦 Spec Jedi Parallel, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 257 - "research.md"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, ⚡ Spec Jedi Quick, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 258 - ".specify/scripts/bash/setup-plan.sh"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🚀 Spec Jedi Release, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 259 - "spec.md (Feature Specification)"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🪞 Spec Jedi Retro, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 260 - "tasks.md (Task List)"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🛡️ Spec Jedi Security, Step-by-step, Validation Coverage (Principle IX) (+1 more)
+
+### Community 261 - ".specify/templates/tasks-template.md"
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🧭 Spec Jedi Status, Step-by-step, Validation Coverage (Principle IX) (+1 more)
 
 ### Community 266 - "button-group.spec.ts"
 Cohesion: 0.10
@@ -1534,8 +1677,8 @@ Cohesion: 0.12
 Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
 
 ### Community 350 - "ColorSwatch.tsx"
-Cohesion: 0.40
-Nodes (6): borderRadius, colors, fontFamily, providerBrand, ThemeDefinition, ThemeTokens
+Cohesion: 0.36
+Nodes (8): borderRadius, colors, fontFamily, providerBrand, ThemeDefinition, ThemeTokens, transitionDuration, transitionTimingFunction
 
 ### Community 351 - "NumberInput.tsx"
 Cohesion: 0.20
@@ -1582,8 +1725,8 @@ Cohesion: 0.33
 Nodes (5): Acceptance mapping, Contract: Spacing Primitives (Stack, Group, Center), React wrapper shape, `src/styles/tailwind.css` additions, Static HTML usage
 
 ### Community 385 - "gallery-theme-selector.js"
-Cohesion: 0.24
-Nodes (12): MOOD_FAMILIES, initDarkModeToggle(), initGalleryThemeSelector(), populateSelect(), buildThemeCard(), renderGallery(), rgbTripletToCss(), slugifyMoodFamily() (+4 more)
+Cohesion: 0.20
+Nodes (16): MOOD_FAMILIES, THEMES, ShowcaseLayout(), initDarkModeToggle(), initGalleryThemeSelector(), populateSelect(), buildThemeCard(), renderGallery() (+8 more)
 
 ### Community 386 - "gallery-theme-selector.spec.ts"
 Cohesion: 0.33
@@ -1602,8 +1745,8 @@ Cohesion: 0.12
 Nodes (16): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Phase 1: Setup, Phase 2: Foundational (Blocking Prerequisites) (+8 more)
 
 ### Community 390 - "chart-main.tsx"
-Cohesion: 0.25
-Nodes (5): THEMES, categorySeries, marketShareData, revenueData, skillData
+Cohesion: 0.29
+Nodes (4): categorySeries, marketShareData, revenueData, skillData
 
 ### Community 391 - "types.ts"
 Cohesion: 0.22
@@ -1870,8 +2013,8 @@ Cohesion: 0.33
 Nodes (5): BackgroundImage, Blockquote, Data Model: Data Display Composables, ThemeIcon, Watermark
 
 ### Community 474 - "Alert.tsx"
-Cohesion: 0.02
-Nodes (150): Accordion(), AccordionItemData, AccordionProps, ActionIcon, ActionIconProps, Affix(), AffixProps, Anchor() (+142 more)
+Cohesion: 0.03
+Nodes (90): Accordion(), AccordionItemData, AccordionProps, BackgroundImage(), BackgroundImageProps, BackToTop(), BackToTopProps, Blockquote() (+82 more)
 
 ### Community 475 - "CopyButton.tsx"
 Cohesion: 0.07
@@ -1970,8 +2113,8 @@ Cohesion: 0.15
 Nodes (12): Autocomplete Option, Cascade Level Option, Cascade Path, Data Model: Advanced Form Inputs Batch, FloatLabel State, JsonInput State, Mask Pattern (InputMask), Mention Token (+4 more)
 
 ### Community 508 - "feature-016-csp-sweep.spec.ts"
-Cohesion: 0.16
-Nodes (16): cardNumber, cep, cnpj, cpf, iban, phoneBr, phoneIntl, pisPasep (+8 more)
+Cohesion: 0.18
+Nodes (10): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, Pre-flight hook check, 🛠️ Spec Jedi Plan, Step-by-step (+2 more)
 
 ### Community 510 - "Breadcrumbs.tsx"
 Cohesion: 0.25
@@ -2066,20 +2209,20 @@ Cohesion: 0.33
 Nodes (4): COUNTRIES, FOLDER_TREE, REGION_TREE, USERS
 
 ### Community 540 - "TreeSelect.tsx"
-Cohesion: 0.33
-Nodes (9): stripNonAlphanumeric(), format(), isComplete(), letterToDigits(), mod97(), validate(), format(), isComplete() (+1 more)
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, ⚖️ Spec Jedi Governance Check, Step-by-step, Validation Coverage (Principle IX) (+1 more)
 
 ### Community 547 - "react-catalog-expansion-buttons.spec.ts"
 Cohesion: 0.15
 Nodes (12): Dependencies & Execution Order, Implementation Strategy, Incremental Delivery, MVP First, Parallel Opportunities, Phase 1: Setup, Phase 2: Foundational, Phase 3: User Story 1 - A trustworthy, current quality baseline (P1) 🎯 MVP (+4 more)
 
 ### Community 548 - "localized-inputs.js"
-Cohesion: 0.29
-Nodes (8): format(), isComplete(), validate(), applyValidity(), CODE_TYPES, initLocalizedInputs(), wireField(), wirePhoneIntlField()
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🚀 Spec Jedi Release, Step-by-step, Validation Coverage (Principle IX) (+1 more)
 
 ### Community 549 - "PhoneIntlInput.tsx"
-Cohesion: 0.33
-Nodes (5): PhoneIntlInput, PhoneIntlInputProps, Select, SelectOption, SelectProps
+Cohesion: 0.22
+Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: [FEATURE], Project Structure, Source Code (repository root), Summary, Technical Context
 
 ### Community 550 - "Alert.tsx"
 Cohesion: 0.40
@@ -2118,8 +2261,8 @@ Cohesion: 0.67
 Nodes (3): computeScrollPercent(), ScrollProgressBar(), ScrollProgressBarProps
 
 ### Community 559 - "Sidebar.tsx"
-Cohesion: 0.50
-Nodes (3): Sidebar(), SidebarItemData, SidebarProps
+Cohesion: 0.40
+Nodes (4): AspectRatio(), AspectRatioPreset, AspectRatioProps, RATIO_CLASSES
 
 ### Community 560 - "SystemBanner.tsx"
 Cohesion: 0.20
@@ -2150,8 +2293,8 @@ Cohesion: 0.33
 Nodes (5): Batch (research R2), Component audit record, Data Model: Component Catalog Quality & 2026 Modernization Audit, Design-quality rubric (FR-004 only), Quality dimension
 
 ### Community 567 - "AppShell.tsx"
-Cohesion: 0.60
-Nodes (4): CodeTypeConfig, useValidatedInput(), UseValidatedInputResult, ValidationResult
+Cohesion: 0.40
+Nodes (4): COLOR_CLASSES, Indicator(), IndicatorColor, IndicatorProps
 
 ### Community 568 - "useDialogTrigger"
 Cohesion: 0.10
@@ -2166,8 +2309,8 @@ Cohesion: 0.29
 Nodes (6): R1. Routing mechanism, R2. Screen selection and component-cluster mapping, R3. Navigation chrome, R4. Component coverage measurement, R5. Competitive/quality assessment (User Story 3), Research: Professional Multi-Screen Showcase Expansion
 
 ### Community 571 - "Button.tsx"
-Cohesion: 0.50
-Nodes (3): Timeline(), TimelineEvent, TimelineProps
+Cohesion: 0.20
+Nodes (9): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🎒 Spec Jedi Token Check, Step-by-step, Validation Coverage (Principle IX) (+1 more)
 
 ### Community 572 - "Card.tsx"
 Cohesion: 0.33
@@ -2177,13 +2320,13 @@ Nodes (5): Competitive assessment, Component usage record, Data Model: Professio
 Cohesion: 0.15
 Nodes (12): Dependencies & Execution Order, Implementation Notes, Implementation Strategy, Incremental Delivery, MVP First, Parallel Opportunities, Phase 1: Setup, Phase 2: User Story 1 - A contributor records what changed at the same time they change it (P1) 🎯 MVP (+4 more)
 
+### Community 574 - "Checkbox.tsx"
+Cohesion: 0.22
+Nodes (8): Always / Never, `--auto` mode, Autonomous vs. confirm-first, Example (input → output), Format, 🌳 Spec Jedi Worktree, Step-by-step, Verifiable success criteria
+
 ### Community 575 - "Breadcrumbs.tsx"
 Cohesion: 0.20
 Nodes (9): access, baseBranch, changelog, commit, fixed, ignore, linked, $schema (+1 more)
-
-### Community 576 - "Publishing `@professional-design-system/react`"
-Cohesion: 0.22
-Nodes (5): Before you get here: every PR needs a changeset, Notes, Prerequisites, Publishing `@professional-design-system/react`, Steps
 
 ### Community 577 - "Table.tsx"
 Cohesion: 0.25
@@ -2241,13 +2384,17 @@ Nodes (3): Tooltip(), TooltipAnchor, TooltipProps
 Cohesion: 0.40
 Nodes (5): [0.1.0], Added, Fixed, @professional-design-system/react, [Unreleased]
 
+### Community 592 - "ColorInput.tsx"
+Cohesion: 0.25
+Nodes (7): 1. Confirm baseline-drift reliability (User Story 1 / SC-001), 2. Confirm wall-clock speedup (User Story 2 / SC-002, SC-005), 3. Confirm unified reporting (User Story 2 / SC-004), 4. Confirm functional/visual separation (User Story 3), 5. Confirm hotfix workflow cleanup (FR-010 / SC-006), 6. Confirm gating semantics unchanged (FR-007), Quickstart: Validating CI Reliability & Radical Test Speedup
+
 ### Community 593 - "FileInput.tsx"
 Cohesion: 0.40
 Nodes (4): Skeleton(), SkeletonProps, SkeletonVariant, VARIANT_CLASSES
 
 ### Community 594 - "MaintenanceBanner.tsx"
-Cohesion: 0.40
-Nodes (3): TreeSelect(), TreeSelectNode, TreeSelectProps
+Cohesion: 0.50
+Nodes (3): Badge(), BadgeProps, VARIANT_CLASSES
 
 ### Community 595 - "Radio.tsx"
 Cohesion: 0.50
@@ -2255,15 +2402,35 @@ Nodes (3): AvatarGroup(), AvatarGroupMember, AvatarGroupProps
 
 ### Community 596 - "Spoiler.tsx"
 Cohesion: 0.50
-Nodes (3): Navbar(), NavbarLinkData, NavbarProps
+Nodes (3): ButtonGroup(), ButtonGroupOption, ButtonGroupProps
 
 ### Community 597 - "SystemBanner.tsx"
-Cohesion: 0.50
-Nodes (3): SystemBanner(), SystemBannerAction, SystemBannerProps
+Cohesion: 0.29
+Nodes (6): Constitution Mechanics (loaded on demand by `specjedi-constitution`), Placeholder collection, Pre-write validation checklist, Propagation checklist, Sync Impact Report format, Version bump decision tree
+
+### Community 598 - "Checkbox.tsx"
+Cohesion: 0.29
+Nodes (6): R1. Root cause of the current baseline-drift failures, R2. Reducing E2E wall-clock time beyond the existing 4-way shard (feature 041), R3. Isolating visual-regression tests from functional/accessibility tests, R4. Removing the temporary hotfix workflow, R5. Preventing recurrence of runner-drift baseline failures, Research: CI Reliability & Radical Test Speedup
+
+### Community 600 - "Research: 2026 External Design-Trend Adoption"
+Cohesion: 0.29
+Nodes (6): R1. Font fix — self-hosted Inter variable font, R2. Font-loading regression safety net, R3. Dark-mode OS-preference detection, R4. Dark-grey-not-pure-black audit (FR-005), R5. New style-direction documentation (Organic/Fluid, 3D/Immersive), Research: 2026 External Design-Trend Adoption
+
+### Community 602 - "aitmpl.com Browsing Playbook"
+Cohesion: 0.33
+Nodes (5): aitmpl.com Browsing Playbook, Category URLs, Domain-fit heuristics learned from this project's own research, Getting a component's exact install content, How to actually read the catalog
+
+### Community 603 - "today-2026-07-19.done.md"
+Cohesion: 0.33
+Nodes (5): 09:13 | main, 10:26-16:05 | 047-050-showcase-completion, 16:45 | 042-flagship-app-showcase, 19:43-20:34 | 050-npm-release-automation, 21:59 | 050-npm-release-automation
 
 ### Community 605 - "Specification Quality Checklist: Material Catalog Layout"
 Cohesion: 0.11
 Nodes (17): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Material Catalog Layout, Assumptions, Edge Cases, Feature Specification: Material Catalog Layout (+9 more)
+
+### Community 606 - "CI Baseline Metrics (captured 2026-07-18, before feature 043 changes)"
+Cohesion: 0.33
+Nodes (5): Baseline for comparison after feature 043 lands, CI Baseline Metrics (captured 2026-07-18, before feature 043 changes), Cold browser-install cost (fixed overhead per shard, every run), Other recent runs (context, not used as the primary reference), Reference run: 29664848475 (2026-07-18, most recent full 4-shard e2e execution)
 
 ### Community 607 - "Specification Quality Checklist: Speed Up CI Test Suite"
 Cohesion: 0.11
@@ -2279,7 +2446,7 @@ Nodes (20): dependencies, @professional-design-system/react, react, react-dom, r
 
 ### Community 610 - "sample-data.ts"
 Cohesion: 0.08
-Nodes (32): App(), BREADCRUMB_LABEL, NAV_ITEMS, ShowcaseLayout(), acquisitionChannels, analyticsSeries, AnalyticsSeriesPoint, ChannelShare (+24 more)
+Nodes (31): App(), BREADCRUMB_LABEL, NAV_ITEMS, acquisitionChannels, analyticsSeries, AnalyticsSeriesPoint, ChannelShare, ChartPoint (+23 more)
 
 ### Community 611 - "compilerOptions"
 Cohesion: 0.14
@@ -2305,25 +2472,77 @@ Nodes (6): Full regression, Prerequisites, Quickstart: Flagship App Showcase, Va
 Cohesion: 0.29
 Nodes (6): R1. Surface decision — new `showcase/` app, not `tests/react-harness/`, R2. Component selection for a realistic SaaS dashboard (>= 15, spec.md SC-001), R3. Sample data shape, R4. Deploy integration, R5. Chart's broken link, found while researching this feature, Research: Flagship App Showcase
 
+### Community 618 - "Data Model: CI Reliability & Radical Test Speedup"
+Cohesion: 0.33
+Nodes (5): Browser binary cache, Data Model: CI Reliability & Radical Test Speedup, Merged test report, Test shard, Visual baseline snapshot
+
+### Community 620 - "Quickstart: Validating 2026 External Design-Trend Adoption"
+Cohesion: 0.33
+Nodes (5): 1. Confirm the font actually loads (User Story 1 / SC-001, SC-002), 2. Confirm OS dark-mode preference seeding (User Story 2 / SC-003), 3. Confirm dark-grey-not-pure-black audit (FR-005), 4. Confirm new style-direction documentation (User Story 3 / SC-004, SC-005), Quickstart: Validating 2026 External Design-Trend Adoption
+
+### Community 621 - "Research: Motion-Timing Design Tokens"
+Cohesion: 0.33
+Nodes (5): R1-addendum. Grandfathering Tailwind's own default duration/easing scale, R1. Token shape and values, R2. Audit-tool detection mechanism, R3. No retrofit of existing components (FR-004), Research: Motion-Timing Design Tokens
+
+### Community 622 - "🎓 Spec Jedi Skill Review"
+Cohesion: 0.40
+Nodes (4): Review: `<skill-name>`, Review: `specjedi-docs` (scratch copy), 🎓 Spec Jedi Skill Review, Step-by-step
+
+### Community 623 - "Publishing `@professional-design-system/react`"
+Cohesion: 0.40
+Nodes (5): Before you get here: every PR needs a changeset, Notes, Prerequisites, Publishing `@professional-design-system/react`, Steps
+
+### Community 624 - "Data Model: 2026 External Design-Trend Adoption"
+Cohesion: 0.40
+Nodes (4): Data Model: 2026 External Design-Trend Adoption, Font asset, Style direction entry (new documentation), Theme preference (extended)
+
+### Community 625 - "Quickstart: Validating Motion-Timing Design Tokens"
+Cohesion: 0.40
+Nodes (4): 1. Confirm the tokens exist and resolve (SC-001), 2. Confirm zero behavior change (SC-002), 3. Confirm the audit can detect a raw motion-timing value (SC-003), Quickstart: Validating Motion-Timing Design Tokens
+
+### Community 626 - "Tasks: Motion-Timing Design Tokens"
+Cohesion: 0.40
+Nodes (4): Phase 1: Setup, Phase 2: User Story 1 - Motion feels consistent because it comes from one shared source (P1), Phase 3: Polish, Tasks: Motion-Timing Design Tokens
+
+### Community 627 - "Breadcrumbs.tsx"
+Cohesion: 0.50
+Nodes (3): ContextMenu(), ContextMenuItemData, ContextMenuProps
+
+### Community 628 - "Table.tsx"
+Cohesion: 0.50
+Nodes (3): DataList(), DataListItem, DataListProps
+
+### Community 629 - "Tabs.tsx"
+Cohesion: 0.50
+Nodes (3): OnboardingTour(), OnboardingTourProps, TourStep
+
+### Community 631 - "secret-file-guard.sh"
+Cohesion: 0.67
+Nodes (3): PinInput(), PinInputProps, toBoxes()
+
+### Community 637 - "prevent-direct-push.py"
+Cohesion: 0.50
+Nodes (3): Timeline(), TimelineEvent, TimelineProps
+
 ## Knowledge Gaps
-- **3337 isolated node(s):** `Changesets`, `$schema`, `changelog`, `commit`, `fixed` (+3332 more)
+- **3668 isolated node(s):** `$schema`, `changelog`, `commit`, `fixed`, `linked` (+3663 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **76 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **80 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `DataTable()` connect `Modal.tsx` to `Alert.tsx`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `expectNoA11yViolations()` connect `a11y-helper.ts` to `feature-015-csp-sweep.spec.ts`, `color-input.spec.ts`, `button.spec.ts`, `context-menu.spec.ts`, `react-select.spec.ts`, `select.spec.ts`, `react-catalog-expansion-nav-utility.spec.ts`, `NavLink.tsx`, `catalog-expansion-buttons.spec.ts`?**
-  _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **What connects `Changesets`, `$schema`, `changelog` to the rest of the system?**
-  _3337 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Combobox()` connect `Radio.tsx` to `Alert.tsx`?**
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+- **What connects `$schema`, `changelog`, `commit` to the rest of the system?**
+  _3672 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
-  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
