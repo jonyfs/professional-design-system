@@ -1,1 +1,0 @@
-import"./theme-switcher-D1kspB1h.js";import"./gallery-theme-selector-BXTG8tXj.js";var e=document.querySelectorAll(`[data-swatch-color]`);for(let t of e){let e=t.getAttribute(`data-swatch-color`);e&&(t.style.backgroundColor=e)}
