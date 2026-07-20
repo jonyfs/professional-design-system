@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Alert / Banner — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/alert-B_fDskqt.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-CBoWYAyy.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/gallery-theme-selector-DlEV3huJ.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-B1LrNHn3.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-16/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Alert / Banner</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Static page-level notice — no <code>role="status"</code>/<code>aria-live</code>
+    announcement semantics, unlike Toast. Optional dismiss control.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-md space-y-4" data-testid="alert-stack">
+    <div data-testid="alert-success" class="alert alert-success">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-success-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        Your changes have been saved successfully.
+      </p>
+    </div>
+
+    <div data-testid="alert-error" class="alert alert-error">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-error-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        Something went wrong while processing your request.
+      </p>
+    </div>
+
+    <div data-testid="alert-warning" class="alert alert-warning">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-warning-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        Your subscription will expire in 3 days.
+      </p>
+    </div>
+
+    <div data-testid="alert-info" class="alert alert-info">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-info-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        A new version of this page is available.
+      </p>
+    </div>
+
+    <div data-testid="alert-dismissible-1" class="alert alert-info" data-alert>
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-info-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.253a.25.25 0 0 1 .244.304l-.459 2.066A1.75 1.75 0 0 0 10.747 15H11a.75.75 0 0 0 0-1.5h-.253a.25.25 0 0 1-.244-.304l.459-2.066A1.75 1.75 0 0 0 9.253 9H9Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        First dismissible notice.
+      </p>
+      <button type="button" data-testid="alert-dismiss-1" aria-label="Dismiss" class="close-icon-btn">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+        </svg>
+      </button>
+    </div>
+
+    <div data-testid="alert-dismissible-2" class="alert alert-success" data-alert>
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-success-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        Second dismissible notice — dismissing one must not affect the other.
+      </p>
+      <button type="button" data-testid="alert-dismiss-2" aria-label="Dismiss" class="close-icon-btn">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+        </svg>
+      </button>
+    </div>
+
+    <div data-testid="alert-long-message" class="alert alert-warning" data-alert>
+      <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-warning-strong" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        This is an intentionally long message meant to wrap onto multiple
+        lines so the icon and dismiss button's top alignment can be
+        verified against a tall, multi-line message block rather than a
+        single short line.
+      </p>
+      <button type="button" data-testid="alert-dismiss-long" aria-label="Dismiss" class="close-icon-btn">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

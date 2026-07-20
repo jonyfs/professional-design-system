@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>FloatLabel — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/floatLabel-B9rXg19T.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-CBoWYAyy.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/gallery-theme-selector-DlEV3huJ.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-B1LrNHn3.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-16/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">FloatLabel</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Floating label pattern. The label animates to a floated position
+    above the field on focus or when filled, and respects
+    <code>prefers-reduced-motion</code> (an instant position change
+    instead of an animated one).
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm space-y-6">
+    <div class="float-label-wrapper" data-testid="float-label-empty-demo">
+      <input id="float-label-email" class="float-label-field peer" type="email" placeholder=" " />
+      <label for="float-label-email" class="float-label-text">Email address</label>
+    </div>
+
+    <div class="float-label-wrapper" data-testid="float-label-filled-demo" data-filled="true">
+      <input id="float-label-name" class="float-label-field peer" type="text" placeholder=" " value="Jane Doe" />
+      <label for="float-label-name" class="float-label-text">Full name</label>
+    </div>
+  </div>
+
+</body>
+</html>

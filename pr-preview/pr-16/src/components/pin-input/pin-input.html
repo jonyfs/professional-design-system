@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>PinInput — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/pinInput-Dj7AG5q_.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-CBoWYAyy.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/gallery-theme-selector-DlEV3huJ.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-B1LrNHn3.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-16/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">PinInput</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Segmented one-character-per-box numeric input for verification codes —
+    real, separate <code>&lt;input&gt;</code> elements, auto-advance,
+    paste-splitting, and Backspace-retreat.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <fieldset class="pin-input mt-8" data-pin-input data-testid="pin-input">
+    <legend class="text-sm font-medium text-neutral-900">Verification code</legend>
+    <div class="mt-2 flex gap-2">
+      <input type="text" inputmode="numeric" maxlength="1" class="pin-input-box" data-pin-box aria-label="Digit 1" data-testid="pin-box-0" />
+      <input type="text" inputmode="numeric" maxlength="1" class="pin-input-box" data-pin-box aria-label="Digit 2" data-testid="pin-box-1" />
+      <input type="text" inputmode="numeric" maxlength="1" class="pin-input-box" data-pin-box aria-label="Digit 3" data-testid="pin-box-2" />
+      <input type="text" inputmode="numeric" maxlength="1" class="pin-input-box" data-pin-box aria-label="Digit 4" data-testid="pin-box-3" />
+      <input type="text" inputmode="numeric" maxlength="1" class="pin-input-box" data-pin-box aria-label="Digit 5" data-testid="pin-box-4" />
+      <input type="text" inputmode="numeric" maxlength="1" class="pin-input-box" data-pin-box aria-label="Digit 6" data-testid="pin-box-5" />
+    </div>
+  </fieldset>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Autocomplete — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/autocomplete-BZPemxoz.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-CBoWYAyy.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/gallery-theme-selector-DlEV3huJ.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/multi-select-vkHOIOUS.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-B1LrNHn3.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-16/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Autocomplete</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Single-select suggestion — a lighter-weight sibling of Combobox.
+    Type to filter, select via mouse or keyboard to commit exactly one
+    value. An empty/no-match filter shows an explicit "No results"
+    state, never a silently empty panel.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm">
+    <label for="autocomplete-field" class="mb-1 block text-sm font-medium text-neutral-900">
+      Country
+    </label>
+    <div
+      data-autocomplete
+      data-testid="autocomplete-demo"
+      class="relative"
+      data-options='[{"id":"br","label":"Brazil"},{"id":"ca","label":"Canada"},{"id":"de","label":"Germany"},{"id":"jp","label":"Japan"},{"id":"pt","label":"Portugal"}]'
+    >
+      <input
+        id="autocomplete-field"
+        data-autocomplete-field
+        class="autocomplete-field"
+        type="text"
+        role="combobox"
+        aria-expanded="false"
+        aria-autocomplete="list"
+        placeholder="Search a country…"
+      />
+      <div data-autocomplete-listbox role="listbox" class="autocomplete-listbox" hidden></div>
+    </div>
+  </div>
+
+</body>
+</html>

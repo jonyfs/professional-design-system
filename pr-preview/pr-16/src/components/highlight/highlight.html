@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Highlight — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-CBoWYAyy.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/gallery-theme-selector-DlEV3huJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-B1LrNHn3.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-16/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Highlight</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Zero-JavaScript highlighted search-match substrings. Matches are wrapped in
+    <code class="code-inline">&lt;mark&gt;</code> and reuse Combobox's exact match
+    treatment — no new highlight color. Matching is case-insensitive.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <!-- Case-insensitive match: query "co" matches "Co" in both words. -->
+  <h2 class="mt-8 text-sm font-semibold text-neutral-700">Matches for “co” (case-insensitive)</h2>
+  <p data-testid="highlight-match" class="highlight mt-3 max-w-md text-sm text-neutral-900">Jane <mark data-testid="highlight-mark">Co</mark>oper from Acme <mark data-testid="highlight-mark">Co</mark>rp</p>
+
+  <!-- No match: text rendered unchanged, zero <mark> elements. -->
+  <h2 class="mt-8 text-sm font-semibold text-neutral-700">No matches for “zz”</h2>
+  <p data-testid="highlight-no-match" class="highlight mt-3 max-w-md text-sm text-neutral-900">Jane Cooper from Acme Corp</p>
+</body>
+</html>

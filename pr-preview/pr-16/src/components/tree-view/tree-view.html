@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>TreeView — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-CBoWYAyy.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-16/assets/gallery-theme-selector-DlEV3huJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-16/assets/theme-switcher-B1LrNHn3.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-16/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">TreeView</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Zero-JavaScript hierarchical disclosure — recursively nested native
+    <code>&lt;details&gt;/&lt;summary&gt;</code>, confirmed via a real
+    Chromium accessibility-tree inspection to expose correct role
+    (<code>DisclosureTriangle</code>), independent expanded state per
+    branch, and nesting depth with no ARIA attributes needed.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <ul class="tree-view mt-8 max-w-md" data-testid="tree-view-demo">
+    <li>
+      <details open data-testid="tree-details-src">
+        <summary class="tree-view-summary" data-testid="tree-summary-src">src</summary>
+        <ul class="tree-view-children">
+          <li>
+            <details data-testid="tree-details-components">
+              <summary class="tree-view-summary" data-testid="tree-summary-components">components</summary>
+              <ul class="tree-view-children">
+                <li>
+                  <details data-testid="tree-details-form">
+                    <summary class="tree-view-summary" data-testid="tree-summary-form">form</summary>
+                    <ul class="tree-view-children">
+                      <li class="tree-view-leaf">text-input.html</li>
+                      <li class="tree-view-leaf">select.html</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="tree-view-leaf">button.html</li>
+                <li class="tree-view-leaf">badge.html</li>
+              </ul>
+            </details>
+          </li>
+          <li class="tree-view-leaf">styles.css</li>
+        </ul>
+      </details>
+    </li>
+    <li class="tree-view-leaf" data-testid="tree-leaf-readme">README.md</li>
+  </ul>
+</body>
+</html>
