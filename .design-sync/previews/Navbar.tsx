@@ -1,4 +1,4 @@
-import { Navbar } from "@professional-design-system/react";
+import { Navbar } from "@jonyfs/react";
 
 const links = [
   { label: "Product", href: "#product" },

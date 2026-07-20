@@ -1,4 +1,4 @@
-import { Radio } from "@professional-design-system/react";
+import { Radio } from "@jonyfs/react";
 
 export function Group() {
   return (

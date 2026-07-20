@@ -1,4 +1,4 @@
-# Publishing `@professional-design-system/react`
+# Publishing `@jonyfs/react`
 
 A documented, repeatable process for releasing a new version of the React package. This is a maintainer runbook — for consumer-facing usage docs, see [`packages/react/README.md`](../packages/react/README.md).
 
@@ -60,7 +60,7 @@ This interactively asks which package changed, the semver impact (patch/minor/ma
 6. **Tag the release** (Changesets doesn't create a git tag on its own — `npm version` used to, this replaces that part of its behavior).
 
    ```bash
-   git tag "@professional-design-system/react@$(node -p "require('./packages/react/package.json').version")"
+   git tag "@jonyfs/react@$(node -p "require('./packages/react/package.json').version")"
    git push origin main --tags
    ```
 

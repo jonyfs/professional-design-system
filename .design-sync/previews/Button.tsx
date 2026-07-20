@@ -1,4 +1,4 @@
-import { Button } from "@professional-design-system/react";
+import { Button } from "@jonyfs/react";
 
 export function Variants() {
   return (

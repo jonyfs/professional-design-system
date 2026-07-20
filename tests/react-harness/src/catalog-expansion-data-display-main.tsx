@@ -5,8 +5,8 @@ import {
   Highlight,
   Code,
   ColorSwatch,
-} from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+} from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 const MEMBERS = [
@@ -64,10 +64,10 @@ function DataDisplayDemo() {
       <h2 className="mt-8 text-sm font-semibold text-neutral-700">Code</h2>
       <p className="mt-3 max-w-md text-sm text-neutral-900">
         Install with{" "}
-        <Code data-testid="code-inline">npm install @professional-design-system/react</Code>.
+        <Code data-testid="code-inline">npm install @jonyfs/react</Code>.
       </p>
       <div className="mt-3 max-w-md">
-        <Code variant="block" data-testid="code-block">{`import { Code } from "@professional-design-system/react";
+        <Code variant="block" data-testid="code-block">{`import { Code } from "@jonyfs/react";
 
 function Example() {
   return <Code variant="block">{source}</Code>;

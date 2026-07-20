@@ -1,4 +1,4 @@
-import { TextInput } from "@professional-design-system/react";
+import { TextInput } from "@jonyfs/react";
 
 export function Default() {
   return (

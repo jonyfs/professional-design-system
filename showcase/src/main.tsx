@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@professional-design-system/react/styles.css";
+import "@jonyfs/react/styles.css";
 import "./showcase.css";
 // FR-004: reuse the site's real theme activation (not a showcase-local
 // reimplementation) — its own top-level side effect applies the

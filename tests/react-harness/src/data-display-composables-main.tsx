@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ThemeIcon, Blockquote, BackgroundImage, Watermark } from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+import { ThemeIcon, Blockquote, BackgroundImage, Watermark } from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 const PLACEHOLDER_IMAGE =

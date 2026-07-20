@@ -12,7 +12,7 @@ import {
   Accordion,
   Divider,
   Button,
-} from "@professional-design-system/react";
+} from "@jonyfs/react";
 
 // Feature 047 — Settings/preferences screen: the "account configuration"
 // surface every real SaaS product has, distinct from Dashboard/Team.

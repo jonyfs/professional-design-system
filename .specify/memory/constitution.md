@@ -889,7 +889,7 @@ Added sections:
     React package's compiled `dist/styles.css` only ever *consumes* the
     `--color-*` custom properties, never *defines* their default values —
     only `src/styles/themes.css` (the static gallery) does. Every real
-    downstream consumer of `@professional-design-system/react` that
+    downstream consumer of `@jonyfs/react` that
     doesn't separately author an equivalent `:root` block currently gets
     unstyled/invalid theme colors. Fixed locally for this project's own
     dev/test harness (`tests/react-harness/src/harness.css` now imports
@@ -1913,7 +1913,7 @@ src/styles.css`'s compiled output only ever *consumed* the `--color-*`
 custom properties (`rgb(var(--color-x) / <alpha-value>)`) — only
 `src/styles/themes.css` (the static gallery) actually *defined* their
 `:root`/`[data-theme]` values. Any real consumer of
-`@professional-design-system/react` who didn't separately author an
+`@jonyfs/react` who didn't separately author an
 equivalent `:root` block got every component (most visibly, every Chart
 type — solid black series) rendered with unset/invalid theme colors.
 This had silently affected every React-harness demo page since feature
@@ -2546,7 +2546,7 @@ the two are independently compiled Tailwind builds — had silently
 stopped receiving that duplication starting with feature 028's Layout
 & Structure primitives and never caught back up through feature 034,
 leaving roughly 40 React components shipping with zero compiled CSS in
-the published `@professional-design-system/react` package. This
+the published `@jonyfs/react` package. This
 feature's own Phase 2 explicitly re-verified its own duplication step
 to avoid repeating that gap, but remediating the historical ~40-
 component backlog is out of this feature's scope.

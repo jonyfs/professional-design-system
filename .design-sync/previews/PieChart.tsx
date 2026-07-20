@@ -1,4 +1,4 @@
-import { PieChart } from "@professional-design-system/react";
+import { PieChart } from "@jonyfs/react";
 
 // PieChart's entrance animation sweeps the pie in over ~1s
 // (isAnimationActive, gated by usePrefersReducedMotion — see

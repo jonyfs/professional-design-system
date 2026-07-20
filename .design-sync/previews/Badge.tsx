@@ -1,4 +1,4 @@
-import { Badge } from "@professional-design-system/react";
+import { Badge } from "@jonyfs/react";
 
 export function AllVariants() {
   return (

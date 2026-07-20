@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@professional-design-system/react";
+import { Breadcrumbs } from "@jonyfs/react";
 
 export function Default() {
   return (

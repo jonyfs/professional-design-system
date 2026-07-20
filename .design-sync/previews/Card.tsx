@@ -1,4 +1,4 @@
-import { Card, Badge } from "@professional-design-system/react";
+import { Card, Badge } from "@jonyfs/react";
 
 export function Simple() {
   return (

@@ -1,11 +1,11 @@
-# @professional-design-system/react
+# @jonyfs/react
 
 React + TypeScript components for [professional-design-system](https://github.com/jonyfs/professional-design-system) — 137 components (buttons, forms, navigation, overlays, data display, and Recharts-based charts), built with `tsup` (ESM + CJS + `.d.ts`) and shipped with a self-contained, pre-compiled stylesheet.
 
 ## Install
 
 ```bash
-npm install @professional-design-system/react
+npm install @jonyfs/react
 ```
 
 Requires React 18 (`^18.0.0` peer dependency — React 19 is not yet declared as supported; if you're on 19, `npm install --legacy-peer-deps` currently works in practice but is not an officially verified combination).
@@ -13,8 +13,8 @@ Requires React 18 (`^18.0.0` peer dependency — React 19 is not yet declared as
 ## Usage
 
 ```tsx
-import { Button, Modal } from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+import { Button, Modal } from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 
 function Example() {
   return <Button variant="primary">Save</Button>;
@@ -25,7 +25,7 @@ Every component's props are typed and exported (`ButtonProps`, `ModalProps`, etc
 
 ## Setup requirements (read this before filing an issue)
 
-- **The stylesheet is a separate import.** `import "@professional-design-system/react/styles.css"` must run once, anywhere in your app's entry point. It is fully self-contained pre-compiled CSS — no Tailwind installation is required in your project, and none of its classes need a build step of yours to resolve.
+- **The stylesheet is a separate import.** `import "@jonyfs/react/styles.css"` must run once, anywhere in your app's entry point. It is fully self-contained pre-compiled CSS — no Tailwind installation is required in your project, and none of its classes need a build step of yours to resolve.
 - **Theming is runtime, via a `data-theme` attribute, not a prop.** Every component reads its colors from CSS custom properties scoped under `[data-theme="..."]` selectors on `<html>`. To switch themes at runtime:
 
   ```js

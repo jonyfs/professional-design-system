@@ -13,8 +13,8 @@ import {
   Rating,
   type CascadeOption,
   type TreeSelectNode,
-} from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+} from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 const COUNTRIES = [

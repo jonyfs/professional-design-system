@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { TextInput } from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+import { TextInput } from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 function TextInputDemo() {
