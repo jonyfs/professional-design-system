@@ -1,1 +1,0 @@
-function e(e,t){let n=new Set(e);return n.add(t),n}function t(e,t){let n=new Set(e);return n.delete(t),n}function n(e,t){let n=t.trim().toLowerCase();return n?e.filter(e=>e.label.toLowerCase().includes(n)):[...e]}export{n,t as r,e as t};
