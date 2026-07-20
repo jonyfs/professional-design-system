@@ -27,7 +27,7 @@ This interactively asks which package changed, the semver impact (patch/minor/ma
    git checkout main && git pull
    ```
 
-   `packages/react/package.json`'s `version` is now whatever the Version Packages PR computed.
+   `packages/react/package.json`'s `version` is now whatever the Version Packages PR computed — safe to trust as-is, since `deploy-pages.yml`'s own auto-bump job only touches the root `package.json`, never `packages/react/`'s (a code-review finding fixed before this feature shipped: it used to force-write its own unrelated patch counter onto `packages/react/package.json` on every merge to `main`, silently overwriting whatever Changesets had just computed).
 
 3. **Build and verify.**
 

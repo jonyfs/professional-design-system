@@ -11,6 +11,9 @@ on:
     paths:
       - 'packages/react/**'
 
+permissions:
+  contents: read
+
 jobs:
   changeset-check:
     runs-on: ubuntu-latest
