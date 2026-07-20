@@ -7,8 +7,8 @@ import {
   type PickListItem,
   Gallery,
   Compare,
-} from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+} from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 const PLACEHOLDER_THUMB =

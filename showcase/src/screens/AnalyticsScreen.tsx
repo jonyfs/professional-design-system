@@ -10,7 +10,7 @@ import {
   Skeleton,
   EmptyState,
   Button,
-} from "@jonyfs/react";
+} from "professional-design-system";
 import { analyticsSeries, acquisitionChannels } from "../data/sample-data";
 
 // Feature 047 — Analytics/reporting screen. Exercises chart types beyond

@@ -1,4 +1,4 @@
-import { Combobox } from "@jonyfs/react";
+import { Combobox } from "professional-design-system";
 
 const countries = [
   { value: "Argentina", label: "Argentina" },

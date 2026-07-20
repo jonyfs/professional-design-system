@@ -1,4 +1,4 @@
-import { Alert } from "@jonyfs/react";
+import { Alert } from "professional-design-system";
 
 export function Default() {
   return (

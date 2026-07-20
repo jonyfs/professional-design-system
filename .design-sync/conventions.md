@@ -1,6 +1,6 @@
 # Professional Design System — conventions
 
-This is the real `@jonyfs/react` package (24 components), governed by a
+This is the real `professional-design-system` package (24 components), governed by a
 ratified constitution (`.specify/memory/constitution.md`) with seven non-negotiable principles:
 ergonomics, WCAG AAA contrast, Tailwind-only styling, design tokens as the single source of
 truth, explicit component states, i18n readiness, and native-elements-over-ARIA. Every component
@@ -55,7 +55,7 @@ those guarantees for free.
 ## Build snippet
 
 ```jsx
-import { Card, Badge, Avatar } from '@jonyfs/react';
+import { Card, Badge, Avatar } from 'professional-design-system';
 
 function ProjectCard({ project }) {
   return (

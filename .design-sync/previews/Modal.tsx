@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Button, Modal, TextInput } from "@jonyfs/react";
+import { Button, Modal, TextInput } from "professional-design-system";
 
 // Modal's `open` is externally controlled, and the capture harness is a
 // static mount with no click simulation — so every cell here initializes

@@ -1,4 +1,4 @@
-import { Sidebar } from "@jonyfs/react";
+import { Sidebar } from "professional-design-system";
 
 const navItems = [
   { id: "dashboard", label: "Dashboard", href: "#dashboard" },

@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Navbar } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { Navbar } from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 const links = [

@@ -1,4 +1,4 @@
-import { Table } from "@jonyfs/react";
+import { Table } from "professional-design-system";
 
 const columns = ["Name", "Role", "Status", "Last Active"];
 

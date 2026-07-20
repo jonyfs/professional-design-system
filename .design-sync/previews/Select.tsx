@@ -1,4 +1,4 @@
-import { Select } from "@jonyfs/react";
+import { Select } from "professional-design-system";
 
 const countries = [
   { value: "us", label: "United States" },

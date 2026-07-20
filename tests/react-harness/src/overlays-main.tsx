@@ -1,7 +1,7 @@
 import { StrictMode, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { Affix, LoadingOverlay, BottomSheet } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { Affix, LoadingOverlay, BottomSheet } from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 function LoadingOverlayDemo() {

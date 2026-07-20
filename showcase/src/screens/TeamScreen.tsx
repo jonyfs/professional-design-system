@@ -10,7 +10,7 @@ import {
   ContextMenu,
   TextInput,
   Select,
-} from "@jonyfs/react";
+} from "professional-design-system";
 import { teamRecords } from "../data/sample-data";
 
 const ROLE_VARIANT: Record<string, "success" | "neutral" | "warning"> = {

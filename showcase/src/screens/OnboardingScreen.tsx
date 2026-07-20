@@ -8,7 +8,7 @@ import {
   OnboardingTour,
   TextInput,
   Button,
-} from "@jonyfs/react";
+} from "professional-design-system";
 import { onboardingSteps } from "../data/sample-data";
 
 const STEP_LABELS = onboardingSteps.map((s) => ({ label: s.title }));

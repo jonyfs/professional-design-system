@@ -6,8 +6,8 @@ import {
   Sankey,
   ScatterChart,
   Treemap,
-} from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+} from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 import { THEMES } from "../../../shared/design-tokens";
 

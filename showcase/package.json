@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@jonyfs/react": "^0.1.0",
+    "professional-design-system": "^0.1.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-router-dom": "^6.28.0"

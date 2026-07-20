@@ -1,10 +1,10 @@
-# Publishing `@jonyfs/react`
+# Publishing `professional-design-system`
 
 A documented, repeatable process for releasing a new version of the React package. This is a maintainer runbook — for consumer-facing usage docs, see [`packages/react/README.md`](../packages/react/README.md).
 
 ## Prerequisites
 
-- npm registry credentials for the personal `jonyfs` account with publish access to `@jonyfs/react` (`npm whoami` must succeed and return `jonyfs` — this repo's own CI/development environment does not hold these credentials, so this final step is always run by a maintainer, not automated).
+- npm registry credentials for the personal `jonyfs` account with publish access to `professional-design-system` (`npm whoami` must succeed and return `jonyfs` — this repo's own CI/development environment does not hold these credentials, so this final step is always run by a maintainer, not automated).
 - A clean working tree on `main`, with all changes for the release already merged.
 
 ## Before you get here: every PR needs a changeset
@@ -60,7 +60,7 @@ This interactively asks which package changed, the semver impact (patch/minor/ma
 6. **Tag the release** (Changesets doesn't create a git tag on its own — `npm version` used to, this replaces that part of its behavior).
 
    ```bash
-   git tag "@jonyfs/react@$(node -p "require('./packages/react/package.json').version")"
+   git tag "professional-design-system@$(node -p "require('./packages/react/package.json').version")"
    git push origin main --tags
    ```
 

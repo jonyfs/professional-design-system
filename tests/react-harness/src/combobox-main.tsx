@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Combobox } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { Combobox } from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 const countries = [

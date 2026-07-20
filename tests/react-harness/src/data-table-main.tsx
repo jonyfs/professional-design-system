@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { DataTable } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { DataTable } from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 const FIRST_NAMES = ["Jane", "Alex", "Sam", "Priya", "Wei", "Carlos", "Fatima", "Liam", "Noor", "Yuki"];
