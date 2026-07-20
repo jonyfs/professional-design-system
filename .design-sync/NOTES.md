@@ -22,7 +22,7 @@
   — the package still ships no theme-switching capability of its own,
   this is strictly the baseline that makes Chart's existing runtime
   color-reading actually work out of the box. Verify: any real project
-  using `@jonyfs/react`'s Chart components should
+  using `professional-design-system`'s Chart components should
   re-check their rendered charts after upgrading past this fix — they
   were silently monochrome before.
 - **Preview-only quirk, not a product bug: PieChart's entrance

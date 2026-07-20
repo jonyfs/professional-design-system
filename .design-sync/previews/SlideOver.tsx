@@ -1,4 +1,4 @@
-import { SlideOver } from "@jonyfs/react";
+import { SlideOver } from "professional-design-system";
 
 export function Default() {
   return (

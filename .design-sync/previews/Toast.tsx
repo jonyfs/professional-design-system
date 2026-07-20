@@ -1,4 +1,4 @@
-import { Toast } from "@jonyfs/react";
+import { Toast } from "professional-design-system";
 
 export function Variants() {
   return (

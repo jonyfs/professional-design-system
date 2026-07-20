@@ -1,4 +1,4 @@
-import { Toggle } from "@jonyfs/react";
+import { Toggle } from "professional-design-system";
 
 export function Default() {
   return <Toggle label="Enable notifications" />;

@@ -1,7 +1,7 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { Pagination } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { Pagination } from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 function PaginationDemo() {

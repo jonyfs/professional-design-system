@@ -13,7 +13,7 @@ import {
   Modal,
   AvatarGroup,
   Avatar,
-} from "@jonyfs/react";
+} from "professional-design-system";
 import { teamMembers, tableRows, chartSeries, metrics, type Metric } from "../data/sample-data";
 
 // Feature 042 — the numeric formats in sample-data.ts ("$58,240", "2.1%")

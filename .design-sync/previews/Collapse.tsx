@@ -1,4 +1,4 @@
-import { Collapse } from "@jonyfs/react";
+import { Collapse } from "professional-design-system";
 
 export function TwoIndependentPanels() {
   return (

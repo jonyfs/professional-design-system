@@ -1,4 +1,4 @@
-# @jonyfs/react
+# professional-design-system
 
 All notable changes to this package are documented here. Versions follow
 [Semantic Versioning](https://semver.org/). Starting with feature 050,

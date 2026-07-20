@@ -1,4 +1,4 @@
-import { DropdownMenu } from "@jonyfs/react";
+import { DropdownMenu } from "professional-design-system";
 
 // A synthetic click on the trigger (via the native invoker mechanism) does
 // force the panel open in the real Playwright capture page, but the popover

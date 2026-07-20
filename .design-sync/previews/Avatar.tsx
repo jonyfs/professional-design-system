@@ -1,4 +1,4 @@
-import { Avatar } from "@jonyfs/react";
+import { Avatar } from "professional-design-system";
 
 // Flat-color placeholder photo as a data: URI — mirrors the static
 // reference (src/components/avatar/avatar.html), which uses the same

@@ -1,4 +1,4 @@
-import { List } from "@jonyfs/react";
+import { List } from "professional-design-system";
 
 const teamMembers = [
   {

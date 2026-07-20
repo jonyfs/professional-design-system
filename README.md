@@ -122,7 +122,7 @@ scripts/
 ├── audit-tokens.mjs           # Principle IV gate (color + border-radius; scans HTML + tailwind.css @apply blocks)
 └── check-contrast.mjs         # Principle II/WCAG 1.4.11 gate (text + ring pairings; same dual-source scan)
 tests/e2e/                     # Playwright specs, one per component (react-*.spec.ts for the React port)
-packages/react/                # @jonyfs/react — React + TypeScript port, 137 components
+packages/react/                # professional-design-system — React + TypeScript port, 137 components
 shared/design-tokens.ts        # Single source of truth for colors/radius/font, imported by every Tailwind config
 tests/react-harness/           # Dev-only Vite app rendering the React package for Playwright (never published)
 specs/001-primitive-components/    # spec/plan/tasks/contracts (Button, Text Input, Badge, Checkbox)
@@ -139,7 +139,7 @@ specs/009-react-port-nav-disclosure/ # spec/plan/tasks/contracts (React port of 
 ## React package
 
 [`packages/react/`](packages/react/) publishes 137 components as
-`@jonyfs/react` — see
+`professional-design-system` — see
 **[`packages/react/README.md`](packages/react/README.md) for the
 authoritative install/usage docs**, including the two non-obvious setup
 requirements (the stylesheet is a separate import; theming is a runtime
@@ -150,12 +150,12 @@ external projects and internal tools like
 `dist/`, extractable prop types, and self-contained CSS.
 
 ```bash
-npm install @jonyfs/react
+npm install professional-design-system
 ```
 
 ```tsx
-import { Button, Modal } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { Button, Modal } from "professional-design-system";
+import "professional-design-system/styles.css";
 
 function Example() {
   return <Button variant="primary">Save</Button>;

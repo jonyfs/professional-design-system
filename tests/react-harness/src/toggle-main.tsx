@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Toggle } from "@jonyfs/react";
-import "@jonyfs/react/styles.css";
+import { Toggle } from "professional-design-system";
+import "professional-design-system/styles.css";
 import "./harness.css";
 
 function ToggleDemo() {
