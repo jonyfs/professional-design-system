@@ -4,7 +4,7 @@ A documented, repeatable process for releasing a new version of the React packag
 
 ## Prerequisites
 
-- npm registry credentials with publish access to the `@professional-design-system` org (`npm whoami` must succeed and return an account with publish rights — this repo's own CI/development environment does not hold these credentials, so this final step is always run by a maintainer, not automated).
+- npm registry credentials for the personal `jonyfs` account with publish access to `@jonyfs/react` (`npm whoami` must succeed and return `jonyfs` — this repo's own CI/development environment does not hold these credentials, so this final step is always run by a maintainer, not automated).
 - A clean working tree on `main`, with all changes for the release already merged.
 
 ## Before you get here: every PR needs a changeset
