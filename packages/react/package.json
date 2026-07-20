@@ -2,6 +2,7 @@
   "name": "@professional-design-system/react",
   "version": "0.1.9",
   "private": false,
+  "license": "MIT",
   "type": "module",
   "module": "dist/index.js",
   "main": "dist/index.cjs",
@@ -14,9 +15,12 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist", "LICENSE", "README.md", "CHANGELOG.md"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonyfs/professional-design-system.git",
+    "directory": "packages/react"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

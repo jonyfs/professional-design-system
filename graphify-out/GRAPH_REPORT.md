@@ -1,16 +1,16 @@
 # Graph Report - professional-design-system  (2026-07-19)
 
 ## Corpus Check
-- 923 files · ~2,433,707 words
+- 933 files · ~2,440,296 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5656 nodes · 6298 edges · 597 communities (521 shown, 76 thin omitted)
+- 5747 nodes · 6385 edges · 607 communities (528 shown, 79 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.62)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5723d6c6`
+- Built from commit: `71e95f28`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -483,20 +483,30 @@
 - Affix.tsx
 - Anchor.tsx
 - AppShell.tsx
-- BackgroundImage.tsx
-- BackToTop.tsx
 - Blockquote.tsx
 - Button.tsx
 - Card.tsx
-- Center.tsx
 - Checkbox.tsx
 - Breadcrumbs.tsx
-- PinInput.tsx
 - Table.tsx
 - Checkbox.tsx
 - ColorSwatch.tsx
 - Flex.tsx
-- SemiCircleProgress.tsx
+- AspectRatio.tsx
+- CopyButton.tsx
+- Badge.tsx
+- ContextMenu.tsx
+- OnboardingTour.tsx
+- Rating.tsx
+- Spinner.tsx
+- Tabs.tsx
+- Tooltip.tsx
+- AppShell.tsx
+- ColorInput.tsx
+- FileInput.tsx
+- MaintenanceBanner.tsx
+- Radio.tsx
+- Spoiler.tsx
 - rewrite-base-path.mjs
 - Specification Quality Checklist: Material Catalog Layout
 - Specification Quality Checklist: Speed Up CI Test Suite
@@ -541,7 +551,7 @@
 - **Agent Context Extension Bundle** — specify_extensions_config, specify_extensions_agent_context_extension_manifest, specify_extensions_agent_context_agent_context_config_config, specify_extensions_agent_context_commands_speckit_agent_context_update_command, specify_extensions_agent_context_readme_doc [EXTRACTED 1.00]
 - **Spec-Driven Development Template Pipeline** — specify_templates_spec_template_document, specify_templates_plan_template_document, specify_templates_tasks_template_document, specify_templates_checklist_template_document [INFERRED 0.85]
 
-## Communities (597 total, 76 thin omitted)
+## Communities (607 total, 79 thin omitted)
 
 ### Community 0 - "Shared Bash Utilities"
 Cohesion: 0.13
@@ -556,8 +566,8 @@ Cohesion: 0.08
 Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Disclosure), 3. Build Semantic Models, 4. Detection Passes (Token-Efficient Analysis), 5. Severity Assignment, 6. Produce Compact Analysis Report, 7. Provide Next Actions, 8. Offer Remediation (+17 more)
 
 ### Community 3 - "Agent Context Extension"
-Cohesion: 0.04
-Nodes (44): Component gallery, Governance, Professional Design System, Project structure, React package, Requirements, Scripts, Setup (+36 more)
+Cohesion: 0.06
+Nodes (35): Advanced Form Inputs Batch (feature 039), Advanced Forms & Interaction, Alignment Grid & Spacing, Base Semantic Palette, Component Catalog Expansion (Batch 1, Feature 023), Component Catalog & Tailwind UI Patterns, Configurable Social Login Buttons (feature 035), Consent & System Messaging Primitives (feature 030) (+27 more)
 
 ### Community 4 - "Feature Specification & Clarification"
 Cohesion: 0.33
@@ -752,8 +762,8 @@ Cohesion: 0.33
 Nodes (5): Component (one row per shipped primitive), Cross-cutting invariants, Package, Phase 1 Data Model: React Component Library, `shared/design-tokens.ts`
 
 ### Community 68 - "package.json"
-Cohesion: 0.07
-Nodes (29): dependencies, recharts, devDependencies, react, react-dom, tailwindcss, tsup, @types/react (+21 more)
+Cohesion: 0.06
+Nodes (34): dependencies, recharts, devDependencies, react, react-dom, tailwindcss, tsup, @types/react (+26 more)
 
 ### Community 69 - "devDependencies"
 Cohesion: 0.10
@@ -1068,8 +1078,8 @@ Cohesion: 0.07
 Nodes (26): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: Feedback & Data Display Primitives, Complexity Tracking, Constitution Check, Documentation (this feature) (+18 more)
 
 ### Community 164 - "Modal.tsx"
-Cohesion: 0.10
-Nodes (38): DataTable(), DataTableProps, sortIcon(), DataTableEmptyState(), DataTableEmptyStateProps, DataTableFieldDefinition, DataTableRowActions(), DataTableRowActionsProps (+30 more)
+Cohesion: 0.05
+Nodes (59): BottomSheet(), BottomSheetProps, CommandPalette(), CommandPaletteProps, highlight(), DataTable(), DataTableProps, sortIcon() (+51 more)
 
 ### Community 165 - "SlideOver.tsx"
 Cohesion: 0.50
@@ -1852,8 +1862,8 @@ Cohesion: 0.33
 Nodes (5): BackgroundImage, Blockquote, Data Model: Data Display Composables, ThemeIcon, Watermark
 
 ### Community 474 - "Alert.tsx"
-Cohesion: 0.01
-Nodes (153): Accordion(), AccordionItemData, AccordionProps, ActionIcon, ActionIconProps, Affix(), AffixProps, Anchor() (+145 more)
+Cohesion: 0.02
+Nodes (141): Accordion(), AccordionItemData, AccordionProps, ActionIcon, ActionIconProps, Affix(), AffixProps, Anchor() (+133 more)
 
 ### Community 475 - "CopyButton.tsx"
 Cohesion: 0.07
@@ -1920,8 +1930,8 @@ Cohesion: 0.33
 Nodes (5): Acceptance mapping, Contract: RollingNumber, React wrapper shape, `src/scripts/rolling-number.js`, Static HTML usage
 
 ### Community 494 - "ValidationResult"
-Cohesion: 0.10
-Nodes (21): BottomSheet(), BottomSheetProps, CommandPalette(), CommandPaletteProps, highlight(), DataTableForm(), DataTableFormProps, Gallery() (+13 more)
+Cohesion: 0.07
+Nodes (25): Content Quality, Feature Readiness, Notes, Requirement Completeness, Specification Quality Checklist: External Package Consumption, Complexity Tracking, Constitution Check, Documentation (this feature) (+17 more)
 
 ### Community 500 - "Component Contract: Social Login Group"
 Cohesion: 0.20
@@ -2076,8 +2086,8 @@ Cohesion: 0.18
 Nodes (10): 01:44 | main, 07:03 | main, 09:12 | main, 11:20 | main, 13:04 | main, 14:47 | main, 16:38 | main, 17:15-18:21 | main (+2 more)
 
 ### Community 553 - "AvatarGroup.tsx"
-Cohesion: 0.50
-Nodes (3): AvatarGroup(), AvatarGroupMember, AvatarGroupProps
+Cohesion: 0.15
+Nodes (12): Dependencies & Execution Order, Implementation Strategy, Incremental Delivery, MVP First, Parallel Opportunities, Phase 1: Setup, Phase 2: Foundational, Phase 3: User Story 1 - Installing and rendering a first component in an external project (P1) 🎯 MVP (+4 more)
 
 ### Community 554 - "Breadcrumbs.tsx"
 Cohesion: 0.50
@@ -2104,8 +2114,8 @@ Cohesion: 0.50
 Nodes (3): Sidebar(), SidebarItemData, SidebarProps
 
 ### Community 560 - "SystemBanner.tsx"
-Cohesion: 0.50
-Nodes (3): SystemBanner(), SystemBannerAction, SystemBannerProps
+Cohesion: 0.20
+Nodes (9): §1: Build and pack the current package state, §2: Create a throwaway external consumer project (outside this repo's workspaces), §3: Import and render a component (FR-001, SC-001), §4: Exercise theming and interactive states (Acceptance Scenario 3), §5: Confirm CSS is genuinely self-contained for non-Tailwind consumers (Edge Case), §6: Confirm documentation matches reality (FR-004, SC-004), §7: Confirm the publish runbook is followable (FR-006, SC-005), Cleanup (+1 more)
 
 ### Community 561 - "Table.tsx"
 Cohesion: 0.29
@@ -2120,8 +2130,8 @@ Cohesion: 0.50
 Nodes (3): Toast(), ToastProps, VARIANT_ICON_CLASSES
 
 ### Community 564 - "ActionIcon.tsx"
-Cohesion: 0.40
-Nodes (5): statusFor(), Stepper(), StepperProps, StepperStep, StepStatus
+Cohesion: 0.07
+Nodes (26): Notes, Prerequisites, Publishing `@professional-design-system/react`, Steps, [0.1.0], Added, Changelog, Fixed (+18 more)
 
 ### Community 565 - "Affix.tsx"
 Cohesion: 0.29
@@ -2135,14 +2145,6 @@ Nodes (5): Batch (research R2), Component audit record, Data Model: Component Ca
 Cohesion: 0.60
 Nodes (4): CodeTypeConfig, useValidatedInput(), UseValidatedInputResult, ValidationResult
 
-### Community 568 - "BackgroundImage.tsx"
-Cohesion: 0.40
-Nodes (4): Skeleton(), SkeletonProps, SkeletonVariant, VARIANT_CLASSES
-
-### Community 569 - "BackToTop.tsx"
-Cohesion: 0.40
-Nodes (3): TreeSelect(), TreeSelectNode, TreeSelectProps
-
 ### Community 570 - "Blockquote.tsx"
 Cohesion: 0.29
 Nodes (6): R1. Routing mechanism, R2. Screen selection and component-cluster mapping, R3. Navigation chrome, R4. Component coverage measurement, R5. Competitive/quality assessment (User Story 3), Research: Professional Multi-Screen Showcase Expansion
@@ -2155,21 +2157,57 @@ Nodes (3): Timeline(), TimelineEvent, TimelineProps
 Cohesion: 0.33
 Nodes (5): Competitive assessment, Component usage record, Data Model: Professional Multi-Screen Showcase Expansion, Sample data set (per screen), Screen (route)
 
-### Community 573 - "Center.tsx"
-Cohesion: 0.40
-Nodes (4): COLOR_CLASSES, Indicator(), IndicatorColor, IndicatorProps
-
 ### Community 575 - "Breadcrumbs.tsx"
 Cohesion: 0.50
 Nodes (3): BreadcrumbItem, Breadcrumbs(), BreadcrumbsProps
 
-### Community 576 - "PinInput.tsx"
-Cohesion: 0.67
-Nodes (3): PinInput(), PinInputProps, toBoxes()
-
 ### Community 577 - "Table.tsx"
+Cohesion: 0.25
+Nodes (7): Phase 0 Research: External Package Consumption, R1: How to verify real external installation without an actual registry publish, R2: Changelog format and versioning, R3: Package README content and structure, R4: License, R5: Publish runbook location and content, R6: `dist/styles.css` self-containment for non-Tailwind consumers (Edge Case verification)
+
+### Community 578 - "Checkbox.tsx"
+Cohesion: 0.29
+Nodes (6): Changelog (`packages/react/CHANGELOG.md`), External consumer project (verification mechanism, not shipped), License (`packages/react/LICENSE` + `package.json`'s `license` field), Package README (`packages/react/README.md`), Phase 1 Data Model: External Package Consumption, Publish runbook (`docs/PUBLISHING.md`)
+
+### Community 579 - "ColorSwatch.tsx"
+Cohesion: 0.33
+Nodes (5): StatCard(), StatCardProps, StatCardTrend, TREND_ARROWS, TREND_CLASSES
+
+### Community 580 - "Flex.tsx"
+Cohesion: 0.33
+Nodes (3): TreeView(), TreeViewNode, TreeViewProps
+
+### Community 582 - "AspectRatio.tsx"
+Cohesion: 0.40
+Nodes (4): AspectRatio(), AspectRatioPreset, AspectRatioProps, RATIO_CLASSES
+
+### Community 583 - "CopyButton.tsx"
+Cohesion: 0.40
+Nodes (4): CopyButton(), CopyButtonProps, CopyStatus, ICONS
+
+### Community 584 - "Badge.tsx"
 Cohesion: 0.50
-Nodes (3): Table(), TableProps, TableRowData
+Nodes (3): Badge(), BadgeProps, VARIANT_CLASSES
+
+### Community 585 - "ContextMenu.tsx"
+Cohesion: 0.50
+Nodes (3): ContextMenu(), ContextMenuItemData, ContextMenuProps
+
+### Community 586 - "OnboardingTour.tsx"
+Cohesion: 0.50
+Nodes (3): OnboardingTour(), OnboardingTourProps, TourStep
+
+### Community 588 - "Spinner.tsx"
+Cohesion: 0.50
+Nodes (3): SIZE_CLASSES, Spinner(), SpinnerProps
+
+### Community 589 - "Tabs.tsx"
+Cohesion: 0.50
+Nodes (3): TabData, Tabs(), TabsProps
+
+### Community 590 - "Tooltip.tsx"
+Cohesion: 0.50
+Nodes (3): Tooltip(), TooltipAnchor, TooltipProps
 
 ### Community 605 - "Specification Quality Checklist: Material Catalog Layout"
 Cohesion: 0.11
@@ -2216,24 +2254,24 @@ Cohesion: 0.29
 Nodes (6): R1. Surface decision — new `showcase/` app, not `tests/react-harness/`, R2. Component selection for a realistic SaaS dashboard (>= 15, spec.md SC-001), R3. Sample data shape, R4. Deploy integration, R5. Chart's broken link, found while researching this feature, Research: Flagship App Showcase
 
 ## Knowledge Gaps
-- **3218 isolated node(s):** `countries`, `actions`, `projectActions`, `teamMembers`, `notifications` (+3213 more)
+- **3281 isolated node(s):** `graphify`, `Requirements`, `Setup`, `Scripts`, `Visual regression baselines (cross-platform)` (+3276 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **76 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **79 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `DataTable()` connect `Modal.tsx` to `Alert.tsx`?**
-  _High betweenness centrality (0.000) - this node is a cross-community bridge._
+- **Why does `ComboboxProps` connect `Radio.tsx` to `Alert.tsx`?**
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **Why does `expectNoA11yViolations()` connect `a11y-helper.ts` to `feature-015-csp-sweep.spec.ts`, `color-input.spec.ts`, `button.spec.ts`, `context-menu.spec.ts`, `react-select.spec.ts`, `select.spec.ts`, `react-catalog-expansion-nav-utility.spec.ts`, `NavLink.tsx`, `catalog-expansion-buttons.spec.ts`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **What connects `countries`, `actions`, `projectActions` to the rest of the system?**
-  _3218 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `DataTable()` connect `Modal.tsx` to `Alert.tsx`?**
+  _High betweenness centrality (0.000) - this node is a cross-community bridge._
+- **What connects `graphify`, `Requirements`, `Setup` to the rest of the system?**
+  _3281 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Shared Bash Utilities` be split into smaller, more focused modules?**
   _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._
 - **Should `Implementation & Planning Artifacts` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
 - **Should `Spec Quality & Convergence` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Should `Agent Context Extension` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._

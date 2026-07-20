@@ -1,47 +1,31 @@
+/*
+ * Full theme token layer — imports the real src/styles/themes.css
+ * (feature 017's 43-theme architecture) directly, rather than
+ * hand-copying values into this file. A prior version of this file DID
+ * hand-copy just the default/light `:root` block, reasoning "this
+ * package ships no theme switcher of its own" — but feature 048's
+ * external-consumption verification found that decision meant
+ * `data-theme` attribute switching silently did nothing for any npm
+ * consumer (confirmed empirically: `--color-brand-dark` was byte-identical
+ * between `data-theme="light"` and `data-theme="dim"` in a real external
+ * project), a real functional gap, not just a documentation one — this
+ * catalog's own signature feature didn't work at all outside the
+ * monorepo. Importing the source file directly (instead of hand-copying
+ * 43 themes' worth of values into a second file) also avoids the exact
+ * "hand-maintained CSS subset silently drifts from its source" defect
+ * class already found three times elsewhere in this project (feature
+ * 044's T012b, and the Stepper/Tooltip safelist fix) — there is now only
+ * one place these color values are ever written. Must precede the
+ * @tailwind directives below: CSS requires @import to appear before any
+ * other rule, or it is silently dropped (found empirically — an earlier
+ * placement of this same @import after @tailwind utilities compiled with
+ * no error but produced zero data-theme rules in the output).
+ */
+@import "../../../src/styles/themes.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/*
- * Default theme token layer — matches src/styles/themes.css's `:root`
- * block (feature 017) verbatim. This package ships no theme switcher of
- * its own, so only the default/light values are included here (not the
- * other 43 curated presets) — this is strictly a baseline so any
- * component reading these custom properties at runtime (currently:
- * Chart's useChartColors hook, which re-derives its palette from
- * `getComputedStyle(document.documentElement)` rather than a static JS
- * color map) renders correctly out of the box, matching themes.css's own
- * stated purpose: "so an unthemed page... still renders correctly."
- * Real bug found via the Claude Design sync's PieChart preview capture:
- * every Chart component rendered every series in solid black (an empty
- * `getPropertyValue()` read producing an invalid `rgb()` value) because
- * this package never defined these custom properties at all — not a
- * sync-preview artifact, a real, currently-shipping defect for every
- * consumer of the npm package's Chart components.
- */
-:root {
-  --color-brand-light: 230 240 255; /* #E6F0FF */
-  --color-brand: 0 102 255; /* #0066FF */
-  --color-brand-dark: 0 75 179; /* #004BB3 */
-  --color-neutral-50: 255 255 255; /* #FFFFFF — surface/page background role */
-  --color-neutral-100: 243 244 246; /* #F3F4F6 */
-  --color-neutral-200: 229 231 235; /* #E5E7EB */
-  --color-neutral-300: 209 213 219; /* #D1D5DB */
-  --color-neutral-400: 156 163 175; /* #9CA3AF */
-  --color-neutral-500: 107 114 128; /* #6B7280 */
-  --color-neutral-600: 75 85 99; /* #4B5563 */
-  --color-neutral-700: 55 65 81; /* #374151 */
-  --color-neutral-800: 31 41 55; /* #1F2937 */
-  --color-neutral-900: 17 24 39; /* #111827 */
-  --color-success: 16 185 129; /* #10B981 */
-  --color-success-strong: 6 95 70; /* #065F46 */
-  --color-warning: 245 158 11; /* #F59E0B */
-  --color-warning-strong: 120 53 15; /* #78350F */
-  --color-error: 239 68 68; /* #EF4444 */
-  --color-error-strong: 153 27 27; /* #991B1B */
-  --color-info: 59 130 246; /* #3B82F6 */
-  --color-info-strong: 30 64 175; /* #1E40AF */
-}
 
 /*
  * Shared component classes — direct port of src/styles/tailwind.css's
