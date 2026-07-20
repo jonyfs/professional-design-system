@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """
 Secret Scanner Hook
-Detects hardcoded secrets before git commits
+Detects hardcoded secrets before git commits.
+
+Vendored from aitmpl.com (github.com/davila7/claude-code-templates,
+cli-tool/components/hooks/security/secret-scanner.py) unmodified --
+installed via specjedi-master after confirming it fills a genuine gap
+this project's own dangerous-command-guard.sh doesn't cover (that hook
+blocks *reading* known secret filenames; this one blocks *committing*
+content that looks like a real credential, regardless of filename).
 """
 
 import json
@@ -143,9 +150,9 @@ EXCLUDED_FILES = [
     'Cargo.lock',
     'go.sum',
     '.gitignore',
-    # This file's own SECRET_PATTERNS necessarily contain the literal
-    # strings it's looking for (e.g. the OpenSSH private key header) —
-    # scanning itself always self-triggers, so it's excluded by name.
+    # This scanner's own source: its SECRET_PATTERNS list contains the
+    # literal private-key marker string as a detection pattern, which
+    # otherwise matches itself (specs/none, adapted post-install).
     'secret-scanner.py',
 ]
 
@@ -160,10 +167,6 @@ EXCLUDED_DIRS = [
     '.pytest_cache/',
     'venv/',
     'env/',
-    # Machine-generated cache/index content, never a source of real
-    # secrets — content hashes here routinely collide with generic
-    # 37+ char alphanumeric patterns like the "Cloudflare API Token" rule.
-    'graphify-out/',
 ]
 
 def should_skip_file(file_path):
@@ -228,12 +231,24 @@ def scan_file(file_path):
                         if 'example' in line_stripped.lower() or 'placeholder' in line_stripped.lower():
                             continue
 
+                    raw_match = match.group(0)
+                    # Redacted, never the raw matched value: the denial
+                    # message this builds is printed to stderr and becomes
+                    # part of the blocked tool call's own visible result --
+                    # echoing the live secret back would leak it into the
+                    # agent's context/session logs at the exact moment this
+                    # hook exists to prevent that (specs/058 FR-012).
+                    if len(raw_match) <= 8:
+                        redacted = '*' * len(raw_match)
+                    else:
+                        redacted = raw_match[:4] + ('*' * (len(raw_match) - 8)) + raw_match[-4:]
+
                     findings.append({
                         'file': file_path,
                         'line': line_num,
                         'description': description,
                         'severity': severity,
-                        'match': match.group(0)[:50] + '...' if len(match.group(0)) > 50 else match.group(0),
+                        'match': redacted,
                         'full_line': line.strip()[:100]
                     })
     except Exception as e:
@@ -322,21 +337,9 @@ def main():
     # 1. git commit -a/-am: scans tracked modified files (what -a would stage)
     # 2. git add ... && git commit: scans files from the git add part
     if not staged_files:
-        # Check if commit uses -a flag (auto-stage tracked modified files).
-        # Tokenized rather than a bare regex search on purpose: `-\w*a` also
-        # matches inside long flags like `--allow-empty` or `--amend` (the
-        # "-a" right after the second dash), wrongly treating any such
-        # commit as `-a` and scanning every modified file in the working
-        # tree instead of just what's actually staged. A short flag is a
-        # token starting with exactly one dash (not two) containing 'a'.
+        # Check if commit uses -a flag (auto-stage tracked modified files)
         commit_match = re.search(r'git\s+commit\s+(.+)', command)
-        has_short_a_flag = False
-        if commit_match:
-            for token in commit_match.group(1).split():
-                if token.startswith('-') and not token.startswith('--') and 'a' in token[1:]:
-                    has_short_a_flag = True
-                    break
-        if has_short_a_flag:
+        if commit_match and re.search(r'-\w*a', commit_match.group(1)):
             result = subprocess.run(
                 ['git', 'diff', '--name-only'],
                 capture_output=True, text=True

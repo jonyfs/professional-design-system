@@ -27,6 +27,7 @@ the skills below, open and follow the full instructions in its
 |---|---|
 | `specjedi-analyze` | Strictly read-only cross-artifact consistency check across spec.md, plan.md, and tasks.md (and the constitution when present). |
 | `specjedi-catalog-audit` | Strictly read-only whole-catalog audit cross-checking the full specjedi-* skill set against references/what-is-sdd.md's 7-phase SDD sequence for coverage... |
+| `specjedi-caveman-mode` | Compress every reply to tight caveman-speak, dropping filler, keeping code/commands/errors exact. |
 | `specjedi-chain` | Orchestrates specjedi-specify -> specjedi-clarify -> specjedi-plan -> specjedi-tasks in --auto mode back-to-back for one feature, reusing each stage's own... |
 | `specjedi-checklist` | Generates a custom checklist for a named focus area (security, accessibility, performance, etc.) grounded entirely in the current feature's spec.md/plan.md... |
 | `specjedi-clarify` | Scans a spec.md for real ambiguity and asks up to 5 targeted, prioritized questions before planning starts, writing accepted answers back into the spec. |
