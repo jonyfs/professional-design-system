@@ -1,4 +1,4 @@
-import { Tabs } from "@professional-design-system/react";
+import { Tabs } from "@jonyfs/react";
 
 export function Default() {
   return (

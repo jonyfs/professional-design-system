@@ -1,4 +1,4 @@
-import { Accordion } from "@professional-design-system/react";
+import { Accordion } from "@jonyfs/react";
 
 export function Default() {
   return (

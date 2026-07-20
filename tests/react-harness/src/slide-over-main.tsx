@@ -1,7 +1,7 @@
 import { StrictMode, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { SlideOver, Button } from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+import { SlideOver, Button } from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 function SlideOverDemo() {

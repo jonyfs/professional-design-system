@@ -1,7 +1,7 @@
 {
   "projectId": "552a5fd8-7f24-4ba5-8aa7-158c6d512d84",
   "shape": "package",
-  "pkg": "@professional-design-system/react",
+  "pkg": "@jonyfs/react",
   "globalName": "ProfessionalDesignSystem",
   "buildCmd": "npm run build --workspace packages/react",
   "cssEntry": "dist/styles.css",

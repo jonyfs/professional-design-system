@@ -1,7 +1,7 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { SocialLoginGroup, type CustomProviderEntry } from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+import { SocialLoginGroup, type CustomProviderEntry } from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 // Example custom-provider glyphs (research.md R3/R7) — plain white/

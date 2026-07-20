@@ -10,7 +10,7 @@ import {
   ContextSwitcher,
   NotificationCenter,
   type SidebarItemData,
-} from "@professional-design-system/react";
+} from "@jonyfs/react";
 import { organizations, notifications } from "./data/sample-data";
 import { DashboardScreen } from "./screens/DashboardScreen";
 import { TeamScreen } from "./screens/TeamScreen";

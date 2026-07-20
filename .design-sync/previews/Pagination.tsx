@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Pagination } from "@professional-design-system/react";
+import { Pagination } from "@jonyfs/react";
 
 export function Default() {
   const [page, setPage] = useState(1);

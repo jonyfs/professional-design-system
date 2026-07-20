@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { CommandPalette } from "@professional-design-system/react";
-import "@professional-design-system/react/styles.css";
+import { CommandPalette } from "@jonyfs/react";
+import "@jonyfs/react/styles.css";
 import "./harness.css";
 
 const actions = [

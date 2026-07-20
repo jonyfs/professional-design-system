@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { CommandPalette } from "@professional-design-system/react";
+import { CommandPalette } from "@jonyfs/react";
 
 // CommandPalette (⌘K-style) has no open/onClose prop — its `open` state
 // is internal (useState), only reachable via a document-level Cmd/Ctrl+K

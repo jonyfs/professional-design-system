@@ -1,4 +1,4 @@
-import { Checkbox } from "@professional-design-system/react";
+import { Checkbox } from "@jonyfs/react";
 
 export function Default() {
   return <Checkbox label="Remember me" />;
