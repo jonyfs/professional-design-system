@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Rating — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-14/assets/theme-switcher-DZc3RMLn.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-14/assets/gallery-theme-selector-bZ5TokGQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-14/assets/theme-switcher-B6TQBdWT.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-14/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Rating</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Read-only quality signal — the real numeric value is always visible
+    text, the star row is decorative reinforcement only
+    (<code>aria-hidden</code>).
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div data-testid="rating-demo-wrapper" class="mt-8 space-y-4">
+    <div class="rating" data-testid="rating-fractional">
+      <span class="rating-stars" aria-hidden="true">
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-empty" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+      </span>
+      <span class="rating-value">4.2 out of 5</span>
+    </div>
+
+    <div class="rating" data-testid="rating-whole">
+      <span class="rating-stars" aria-hidden="true">
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+        <svg class="rating-star-filled" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+      </span>
+      <span class="rating-value">5 out of 5</span>
+    </div>
+  </div>
+
+  <div data-testid="rating-interactive-demo" class="mt-8">
+    <p class="text-sm font-medium text-neutral-900" id="rating-interactive-label">Rate this product</p>
+    <div
+      role="radiogroup"
+      aria-labelledby="rating-interactive-label"
+      class="rating-interactive"
+      data-rating-interactive
+      data-max="5"
+    >
+      <input type="radio" name="rating-interactive" value="5" id="ri-5" class="rating-interactive-input peer" />
+      <label for="ri-5" class="rating-interactive-star" aria-label="5 stars">★</label>
+      <input type="radio" name="rating-interactive" value="4" id="ri-4" class="rating-interactive-input peer" />
+      <label for="ri-4" class="rating-interactive-star" aria-label="4 stars">★</label>
+      <input type="radio" name="rating-interactive" value="3" id="ri-3" class="rating-interactive-input peer" />
+      <label for="ri-3" class="rating-interactive-star" aria-label="3 stars">★</label>
+      <input type="radio" name="rating-interactive" value="2" id="ri-2" class="rating-interactive-input peer" />
+      <label for="ri-2" class="rating-interactive-star" aria-label="2 stars">★</label>
+      <input type="radio" name="rating-interactive" value="1" id="ri-1" class="rating-interactive-input peer" />
+      <label for="ri-1" class="rating-interactive-star" aria-label="1 star">★</label>
+    </div>
+  </div>
+</body>
+</html>

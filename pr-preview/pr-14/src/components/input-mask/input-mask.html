@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>InputMask — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-14/assets/inputMask-ChcwP10s.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-14/assets/theme-switcher-DZc3RMLn.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-14/assets/gallery-theme-selector-bZ5TokGQ.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-14/assets/theme-switcher-B6TQBdWT.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-14/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">InputMask</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Formatted input for phone/date/currency masks. Literal mask
+    characters are inserted automatically; non-matching characters are
+    rejected; a paste longer than the mask allows accepts only the
+    matching prefix.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm space-y-4">
+    <div>
+      <label for="input-mask-phone" class="mb-1 block text-sm font-medium text-neutral-900">Phone</label>
+      <input
+        id="input-mask-phone"
+        data-input-mask="phone"
+        data-testid="input-mask-phone-demo"
+        class="input-mask"
+        type="text"
+        inputmode="numeric"
+        placeholder="(555) 555-5555"
+      />
+    </div>
+    <div>
+      <label for="input-mask-date" class="mb-1 block text-sm font-medium text-neutral-900">Date</label>
+      <input
+        id="input-mask-date"
+        data-input-mask="date"
+        data-testid="input-mask-date-demo"
+        class="input-mask"
+        type="text"
+        inputmode="numeric"
+        placeholder="MM/DD/YYYY"
+      />
+    </div>
+  </div>
+
+</body>
+</html>
