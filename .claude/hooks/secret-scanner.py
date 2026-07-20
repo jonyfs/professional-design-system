@@ -149,6 +149,17 @@ EXCLUDED_FILES = [
     'secret-scanner.py',
 ]
 
+# Individual files (by relative path, not basename) known to contain a
+# UUID-shaped but non-secret value the "API Key (UUID format)" rule
+# otherwise flags every commit -- verified non-sensitive at the time
+# each was added, not a blanket bypass.
+EXCLUDED_PATHS = [
+    # .design-sync/config.json's "projectId" is a design-sync tool
+    # project identifier (akin to a Figma file ID), already public in
+    # git history well before this exclusion was added.
+    '.design-sync/config.json',
+]
+
 # Directories to exclude
 EXCLUDED_DIRS = [
     'node_modules/',
@@ -175,6 +186,13 @@ def should_skip_file(file_path):
     # Skip excluded files
     filename = os.path.basename(file_path)
     if filename in EXCLUDED_FILES:
+        return True
+
+    # Skip individually excluded paths (relative-path match, not basename)
+    normalized = file_path.replace(os.sep, '/')
+    if normalized.startswith('./'):
+        normalized = normalized[2:]
+    if normalized in EXCLUDED_PATHS:
         return True
 
     # Skip excluded directories
