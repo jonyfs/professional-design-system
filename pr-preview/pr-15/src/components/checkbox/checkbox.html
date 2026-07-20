@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Checkbox — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-15/assets/theme-switcher-D053nsZa.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-15/assets/gallery-theme-selector-BBitSZ8M.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-15/assets/theme-switcher-BFsUttcx.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-15/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Checkbox</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 grid max-w-sm gap-6">
+    <div data-testid="checkbox-unchecked-wrapper" class="flex items-center gap-2 p-1">
+      <input
+        id="checkbox-unchecked"
+        data-testid="checkbox-unchecked"
+        type="checkbox"
+        class="h-4 w-4 rounded-sm border-neutral-300 text-brand
+               focus-visible:outline focus-visible:outline-2
+               focus-visible:outline-offset-2 focus-visible:outline-brand
+               disabled:opacity-50 disabled:cursor-not-allowed"
+      />
+      <label for="checkbox-unchecked" class="text-sm text-neutral-900 cursor-pointer">
+        Unchecked
+      </label>
+    </div>
+
+    <div data-testid="checkbox-checked-wrapper" class="flex items-center gap-2 p-1">
+      <input
+        id="checkbox-checked"
+        data-testid="checkbox-checked"
+        type="checkbox"
+        checked
+        class="h-4 w-4 rounded-sm border-neutral-300 text-brand
+               focus-visible:outline focus-visible:outline-2
+               focus-visible:outline-offset-2 focus-visible:outline-brand
+               disabled:opacity-50 disabled:cursor-not-allowed"
+      />
+      <label for="checkbox-checked" class="text-sm text-neutral-900 cursor-pointer">
+        Checked
+      </label>
+    </div>
+
+    <div data-testid="checkbox-disabled-wrapper" class="flex flex-col gap-3 p-1">
+      <div class="flex items-center gap-2">
+        <input
+          id="checkbox-disabled"
+          data-testid="checkbox-disabled"
+          type="checkbox"
+          disabled
+          class="peer h-4 w-4 rounded-sm border-neutral-300 text-brand
+                 focus-visible:outline focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-brand
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+        />
+        <label for="checkbox-disabled" class="text-sm text-neutral-900 peer-disabled:opacity-50">
+          Disabled
+        </label>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <input
+          id="checkbox-disabled-checked"
+          data-testid="checkbox-disabled-checked"
+          type="checkbox"
+          checked
+          disabled
+          class="peer h-4 w-4 rounded-sm border-neutral-300 text-brand
+                 focus-visible:outline focus-visible:outline-2
+                 focus-visible:outline-offset-2 focus-visible:outline-brand
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+        />
+        <label
+          for="checkbox-disabled-checked"
+          class="text-sm text-neutral-900 peer-disabled:opacity-50"
+        >
+          Disabled + checked (Edge Case)
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

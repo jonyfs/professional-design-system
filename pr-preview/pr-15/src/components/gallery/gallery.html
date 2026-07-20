@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self';" />
+  <title>Gallery — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-15/assets/gallery-hfiOPe2B.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-15/assets/theme-switcher-D053nsZa.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-15/assets/gallery-theme-selector-BBitSZ8M.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-15/assets/overlay-TYHDIv5r.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-15/assets/theme-switcher-BFsUttcx.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-15/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Gallery</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Focus-trapped fullscreen image viewer — reuses Modal's exact
+    native &lt;dialog&gt; mechanism, only the full-screen geometry and
+    image-cycling logic are new.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div data-gallery="gallery-dialog" data-testid="gallery-thumbs" class="mt-8 flex gap-3">
+    <!-- Real <button>s, not bare <img>s: found by the a11y/keyboard
+         test suite failing, not assumed correct — an <img> has no
+         native focusability, so neither keyboard activation nor
+         overlay.js's focus-return-to-trigger (dialog._lastTrigger.focus())
+         worked without wrapping it in a real focusable element. -->
+    <button
+      type="button"
+      data-gallery-thumb
+      data-full-src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23374151%22/%3E%3Ctext%20x%3D%22400%22%20y%3D%22300%22%20font-size%3D%2240%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EImage%201%3C/text%3E%3C/svg%3E"
+      data-testid="gallery-thumb-0"
+      aria-label="Open placeholder image 1 fullscreen"
+    >
+      <img
+        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2280%22%20height%3D%2280%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%23374151%22/%3E%3C/svg%3E"
+        alt="Placeholder image 1"
+        class="h-20 w-20 cursor-pointer rounded-md object-cover"
+      />
+    </button>
+    <button
+      type="button"
+      data-gallery-thumb
+      data-full-src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%234B5563%22/%3E%3Ctext%20x%3D%22400%22%20y%3D%22300%22%20font-size%3D%2240%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EImage%202%3C/text%3E%3C/svg%3E"
+      data-testid="gallery-thumb-1"
+      aria-label="Open placeholder image 2 fullscreen"
+    >
+      <img
+        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2280%22%20height%3D%2280%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%234B5563%22/%3E%3C/svg%3E"
+        alt="Placeholder image 2"
+        class="h-20 w-20 cursor-pointer rounded-md object-cover"
+      />
+    </button>
+    <button
+      type="button"
+      data-gallery-thumb
+      data-full-src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%236B7280%22/%3E%3Ctext%20x%3D%22400%22%20y%3D%22300%22%20font-size%3D%2240%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EImage%203%3C/text%3E%3C/svg%3E"
+      data-testid="gallery-thumb-2"
+      aria-label="Open placeholder image 3 fullscreen"
+    >
+      <img
+        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2280%22%20height%3D%2280%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%236B7280%22/%3E%3C/svg%3E"
+        alt="Placeholder image 3"
+        class="h-20 w-20 cursor-pointer rounded-md object-cover"
+      />
+    </button>
+  </div>
+
+  <dialog id="gallery-dialog" data-testid="gallery-dialog" aria-label="Image viewer" class="gallery-dialog">
+    <form method="dialog">
+      <button type="submit" data-testid="gallery-close" aria-label="Close" class="gallery-close close-icon-btn">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-white" aria-hidden="true">
+          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+        </svg>
+      </button>
+    </form>
+    <img data-gallery-display data-testid="gallery-display-image" class="gallery-image" alt="" />
+    <div class="gallery-controls">
+      <button type="button" data-gallery-prev data-testid="gallery-prev" aria-label="Previous image" class="action-icon action-icon-secondary">‹</button>
+      <button type="button" data-gallery-next data-testid="gallery-next" aria-label="Next image" class="action-icon action-icon-secondary">›</button>
+    </div>
+  </dialog>
+
+</body>
+</html>

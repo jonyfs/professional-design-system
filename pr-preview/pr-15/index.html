@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Professional Design System — Component Gallery</title>
+  <!-- Activation MUST run as early as possible to avoid a flash of the
+       wrong theme (contracts/theme-switcher.contract.md) — a bare
+       type="module" src reference, zero inline logic. -->
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-15/assets/theme-switcher-D053nsZa.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-15/assets/gallery-theme-selector-BBitSZ8M.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-15/assets/theme-switcher-BFsUttcx.css">
+</head>
+<body class="page-shell">
+  <header class="border-b border-neutral-200 px-6 py-8">
+    <h1 class="text-2xl font-bold text-neutral-900">Professional Design System</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </header>
+
+  <!-- Hero: a live "proof wall" (specs/037-homepage-component-showcase
+       research.md R3) — real, already-shipped components staged as an
+       overlapping, gently rotated fragment cluster, proving "everything
+       here is real, live UI" before any stat is read. All transforms are
+       compositor-only (transform, never top/left/width/height). -->
+  <section class="border-b border-neutral-200 bg-neutral-100 px-6 py-12 overflow-hidden">
+    <div class="mx-auto max-w-5xl grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="showcase-card-eyebrow">Component catalog</p>
+        <h2 class="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">
+          Every one of these is real, live UI — not a mockup.
+        </h2>
+        <p class="mt-4 max-w-md text-sm text-neutral-700">
+          123 shipped components, two identical surfaces (zero-JS static
+          HTML and React), AAA contrast as a structural requirement, and
+          119 curated themes re-coloring every pixel below live.
+        </p>
+        <dl class="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+          <div>
+            <dt class="font-mono text-2xl font-bold text-brand-dark">123</dt>
+            <dd class="mt-1 text-xs text-neutral-700">components</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-2xl font-bold text-brand-dark">2</dt>
+            <dd class="mt-1 text-xs text-neutral-700">surfaces each</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-2xl font-bold text-brand-dark">AAA</dt>
+            <dd class="mt-1 text-xs text-neutral-700">contrast target</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-2xl font-bold text-brand-dark">119</dt>
+            <dd class="mt-1 text-xs text-neutral-700">curated themes</dd>
+          </div>
+        </dl>
+
+        <a href="/professional-design-system/pr-preview/pr-15/showcase/index.html" class="btn-primary mt-8 inline-flex">
+          See it as a real app →
+        </a>
+      </div>
+
+      <div class="relative h-72 sm:h-80" aria-hidden="true" inert>
+        <div class="absolute left-2 top-4 w-48 rotate-[-6deg] rounded-lg border border-neutral-200 bg-neutral-50 p-4 shadow-lg">
+          <h3 class="text-sm font-semibold text-neutral-900">Card title</h3>
+          <p class="mt-1 text-xs text-neutral-700">Supporting body copy.</p>
+          <span class="alert-success mt-3 inline-block rounded-md px-2 py-1 text-xs">Active</span>
+        </div>
+        <div class="absolute right-4 top-0 z-10 w-44 rotate-[4deg] rounded-lg border border-neutral-200 bg-neutral-50 p-3 shadow-xl">
+          <div class="flex items-center gap-2">
+            <span class="avatar-fallback avatar-sm">JS</span>
+            <span class="avatar-fallback avatar-sm -ml-2">AK</span>
+            <span class="avatar-fallback avatar-sm -ml-2">PR</span>
+          </div>
+          <div class="mt-2 progress-track">
+            <div class="progress-fill" style="width: 66%"></div>
+          </div>
+        </div>
+        <div class="absolute bottom-2 left-10 z-20 w-52 rotate-[3deg] rounded-lg border border-neutral-200 bg-neutral-50 p-3 shadow-xl">
+          <div class="flex items-start gap-3">
+            <span class="theme-icon theme-icon-sm theme-icon-success shrink-0">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg>
+            </span>
+            <p class="text-xs text-neutral-900">Theme applied — zero markup change.</p>
+          </div>
+        </div>
+        <div class="absolute bottom-6 right-2 rotate-[-3deg] rounded-md bg-neutral-900 px-3 py-2 text-xs font-medium text-white shadow-lg">
+          Toast: Changes saved
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav aria-label="Jump to category" class="border-b border-neutral-200 px-6 py-3">
+    <div class="mx-auto flex max-w-5xl flex-wrap gap-1">
+        <a href="#app-nav" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Application & Navigation</a>
+        <a href="#forms" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Forms, Validation & Inputs</a>
+        <a href="#data" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Data Display & Listings</a>
+        <a href="#overlays" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Overlays, Modals & Feedback</a>
+        <a href="#nav-disc" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Navigation & Disclosure</a>
+        <a href="#adv-forms" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Advanced Forms & Interaction</a>
+        <a href="#composed" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Composed Examples</a>
+        <a href="#theming" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Theming</a>
+        <a href="#layout" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Layout & Structure</a>
+        <a href="#consent-messaging" class="rounded-md px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Consent & System Messaging</a>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-5xl space-y-14 px-6 py-10">
+
+    <section id="app-nav" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Application &amp; Navigation</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/breadcrumbs/breadcrumbs.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <nav class="breadcrumb-nav" aria-hidden="true">
+              <span class="breadcrumb-link">Home</span>
+              <span>/</span>
+              <span class="breadcrumb-link">Settings</span>
+              <span>/</span>
+              <span class="breadcrumb-current">Profile</span>
+            </nav>
+          </div>
+          <span class="showcase-card-name">Breadcrumbs</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/pagination/pagination.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <nav class="flex items-center gap-1">
+              <button type="button" class="pagination-control">‹</button>
+              <span class="pagination-link">1</span>
+              <span class="pagination-link" aria-current="page">2</span>
+              <span class="pagination-link">3</span>
+              <span class="pagination-ellipsis">…</span>
+              <button type="button" class="pagination-control">›</button>
+            </nav>
+          </div>
+          <span class="showcase-card-name">Pagination</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/sidebar/sidebar.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex w-full max-w-xs flex-col gap-1 rounded-md bg-neutral-900 p-3">
+              <span class="sidebar-item sidebar-item-dark" aria-current="page">Dashboard</span>
+              <span class="sidebar-item sidebar-item-dark">Projects</span>
+              <span class="sidebar-item sidebar-item-dark">Settings</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Sidebar</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/navbar/navbar.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <nav class="navbar w-full">
+              <div class="navbar-inner">
+                <span class="text-sm font-bold text-neutral-900">Brand</span>
+                <div class="hidden gap-4 sm:flex">
+                  <span class="navbar-link" aria-current="page">Home</span>
+                  <span class="navbar-link">Docs</span>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <span class="showcase-card-name">Navbar</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/stepper/stepper.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <div class="stepper">
+              <div class="stepper-step stepper-step-completed">
+                <span class="stepper-circle">1</span>
+              </div>
+              <div class="stepper-step stepper-step-current">
+                <span class="stepper-circle">2</span>
+              </div>
+              <div class="stepper-step stepper-step-upcoming">
+                <span class="stepper-circle">3</span>
+              </div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Stepper</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/nav-link/nav-link.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex flex-col gap-1">
+              <span class="nav-link nav-link-light" aria-current="page">Overview</span>
+              <span class="nav-link nav-link-light">Billing</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">NavLink</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/anchor/anchor.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">App &amp; Nav</span>
+          <div class="showcase-card-preview" inert>
+            <p class="text-sm text-neutral-900">
+              Read the <span class="anchor">component guidelines</span> first.
+            </p>
+          </div>
+          <span class="showcase-card-name">Anchor</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="forms" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Forms, Validation &amp; Inputs</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/button/button.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="btn-primary">Primary</span>
+              <span class="btn-secondary">Secondary</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Button</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/text-input/text-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="w-full max-w-xs">
+              <label class="text-sm font-medium text-neutral-900">Email address</label>
+              <input type="text" class="mt-1 block w-full rounded-md border-0 bg-neutral-50 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-600 sm:text-sm" placeholder="you@example.com" />
+            </div>
+          </div>
+          <span class="showcase-card-name">Text Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/checkbox/checkbox.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" checked class="h-4 w-4 rounded-sm border-neutral-300 text-brand" />
+              <span class="text-sm text-neutral-900">Remember me</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Checkbox</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/radio/radio.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex flex-col gap-2">
+              <label class="flex items-center gap-2 text-sm text-neutral-900">
+                <input type="radio" checked class="radio-input" name="hp-radio-1" /> Monthly
+              </label>
+              <label class="flex items-center gap-2 text-sm text-neutral-900">
+                <input type="radio" class="radio-input" name="hp-radio-1" /> Yearly
+              </label>
+            </div>
+          </div>
+          <span class="showcase-card-name">Radio</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/select/select.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <select class="form-select max-w-[10rem]"><option>United States</option></select>
+          </div>
+          <span class="showcase-card-name">Select</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/toggle/toggle.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <span class="relative inline-flex h-6 w-11 items-center">
+              <span class="toggle-track"></span>
+              <span class="toggle-dot translate-x-5"></span>
+            </span>
+          </div>
+          <span class="showcase-card-name">Toggle</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/textarea/textarea.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <textarea rows="2" class="block w-full max-w-[12rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" placeholder="Leave a comment…"></textarea>
+          </div>
+          <span class="showcase-card-name">Textarea</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/button-group/button-group.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="button-group">
+              <span class="button-group-segment" aria-current="true">Day</span>
+              <span class="button-group-segment">Week</span>
+              <span class="button-group-segment">Month</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Button Group</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/slider/slider.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <input type="range" class="slider w-full max-w-[10rem]" value="60" />
+          </div>
+          <span class="showcase-card-name">Slider</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/file-input/file-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="file-drop-zone-content rounded-md border border-dashed border-neutral-300 p-4 text-center text-xs text-neutral-700">
+              Drop files here
+            </div>
+          </div>
+          <span class="showcase-card-name">File Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/color-input/color-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex items-center gap-2">
+              <input type="color" value="#0066ff" class="h-8 w-8 rounded-md border border-neutral-300" />
+              <span class="text-sm text-neutral-900">#0066FF</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">ColorPicker/ColorInput</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/cpf-input/cpf-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="123.456.789-09" readonly class="block w-full max-w-[10rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">CPF Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/cnpj-input/cnpj-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="12.345.678/0001-95" readonly class="block w-full max-w-[10rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">CNPJ Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/cep-input/cep-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="01310-100" readonly class="block w-full max-w-[8rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">CEP Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/phone-br-input/phone-br-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="(11) 91234-5678" readonly class="block w-full max-w-[10rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">Brazilian Phone Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/titulo-eleitor-input/titulo-eleitor-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="1234 5678 9012" readonly class="block w-full max-w-[10rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">Título de Eleitor Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/pis-pasep-input/pis-pasep-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="123.4567.890-1" readonly class="block w-full max-w-[10rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">PIS/PASEP Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/vehicle-plate-input/vehicle-plate-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · BR</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="ABC1D23" readonly class="block w-full max-w-[8rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 uppercase" />
+          </div>
+          <span class="showcase-card-name">Vehicle Plate Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/iban-input/iban-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · Intl</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="DE89 3704 0044 0532 0130 00" readonly class="block w-full max-w-[12rem] rounded-md border-0 bg-neutral-50 py-1.5 text-xs text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">IBAN Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/card-number-input/card-number-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · Intl</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="4242 4242 4242 4242" readonly class="block w-full max-w-[11rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">Card Number Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/phone-intl-input/phone-intl-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms · Intl</span>
+          <div class="showcase-card-preview" inert>
+            <input type="text" value="+1 415 555 0132" readonly class="block w-full max-w-[10rem] rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+          </div>
+          <span class="showcase-card-name">International Phone Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/number-input/number-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="relative flex max-w-[8rem] items-center rounded-md ring-1 ring-inset ring-neutral-300 bg-neutral-50">
+              <button type="button" class="px-2 text-neutral-600">−</button>
+              <input type="text" value="4" readonly class="w-8 border-0 bg-transparent text-center text-sm text-neutral-900" />
+              <button type="button" class="px-2 text-neutral-600">+</button>
+            </div>
+          </div>
+          <span class="showcase-card-name">Number Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/password-input/password-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="relative max-w-[10rem]">
+              <input type="password" value="hunter2" readonly class="block w-full rounded-md border-0 bg-neutral-50 py-1.5 text-sm text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300" />
+            </div>
+          </div>
+          <span class="showcase-card-name">Password Input</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/multi-select/multi-select.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="combobox-input flex flex-wrap gap-1 max-w-[11rem]">
+              <span class="bg-neutral-200 rounded-md px-1.5 py-0.5 text-xs text-neutral-900">Design</span>
+              <span class="bg-neutral-200 rounded-md px-1.5 py-0.5 text-xs text-neutral-900">Eng</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Multi Select</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/action-icon/action-icon.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex gap-2">
+              <span class="action-icon action-icon-primary">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"/></svg>
+              </span>
+              <span class="action-icon action-icon-secondary">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/></svg>
+              </span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Action Icon</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/copy-button/copy-button.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <span class="btn-secondary">Copy</span>
+          </div>
+          <span class="showcase-card-name">Copy Button</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/split-button/split-button.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex">
+              <span class="split-button-primary">Deploy</span>
+              <span class="split-button-toggle">▾</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Split Button</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/social-login/social-login.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="social-login-group social-login-group-compact">
+              <span class="social-login-btn social-login-btn-compact" aria-label="Google"><svg class="social-login-btn-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#4285F4"/></svg></span>
+              <span class="social-login-btn social-login-btn-compact social-login-btn-monochrome-dark" aria-label="GitHub"><svg class="social-login-btn-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="9"/></svg></span>
+              <span class="social-login-btn social-login-btn-compact" aria-label="Apple"><svg class="social-login-btn-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#111"/></svg></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Social Login Buttons</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="data" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Data Display &amp; Listings</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/chart/chart.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data · React-only</span>
+          <div class="showcase-card-preview" inert>
+            <!-- Chart ships React-only (specs/020-recharts-chart-primitives —
+                 no zero-JS static rendering path exists for Recharts, per
+                 that component's own demo page); a static bar approximation
+                 using real semantic tokens stands in for a live render here,
+                 a documented, pre-existing exception (research.md/tasks.md). -->
+            <div class="flex h-24 w-full max-w-xs items-end gap-2" role="img" aria-label="Bar chart preview">
+              <div class="w-6 rounded-t-sm bg-brand" style="height: 40%"></div>
+              <div class="w-6 rounded-t-sm bg-brand" style="height: 70%"></div>
+              <div class="w-6 rounded-t-sm bg-brand-dark" style="height: 100%"></div>
+              <div class="w-6 rounded-t-sm bg-brand" style="height: 55%"></div>
+              <div class="w-6 rounded-t-sm bg-brand" style="height: 80%"></div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Chart</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/data-table/data-table.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="data-table-wrapper w-full max-w-sm">
+              <table class="data-table w-full">
+                <thead><tr><th class="data-table-header-cell">Name</th><th class="data-table-header-cell">Role</th></tr></thead>
+                <tbody class="divide-y divide-neutral-200">
+                  <tr class="data-table-row-zebra"><td class="data-table-cell">Jane Cooper</td><td class="data-table-cell">Admin</td></tr>
+                  <tr><td class="data-table-cell">Alex Morgan</td><td class="data-table-cell">Editor</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <span class="showcase-card-name">Data Table</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/badge/badge.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex gap-2">
+              <span class="alert-success rounded-full px-2 py-0.5 text-xs">Active</span>
+              <span class="alert-warning rounded-full px-2 py-0.5 text-xs">Pending</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Badge</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/avatar/avatar.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex gap-2">
+              <span class="avatar-fallback avatar-lg">JS</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Avatar</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/card/card.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="card card-elevated w-full max-w-[10rem] p-3">
+              <h3 class="text-sm font-semibold text-neutral-900">Plan</h3>
+              <p class="mt-1 text-xs text-neutral-700">Pro tier</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Card</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/alert/alert.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="alert-info flex w-full items-start gap-2 rounded-md p-3 text-sm">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 shrink-0" aria-hidden="true"><path fill-rule="evenodd" d="M18 10A8 8 0 11 2 10a8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+              An informational alert message.
+            </div>
+          </div>
+          <span class="showcase-card-name">Alert / Banner</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/list/list.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <ul class="w-full max-w-[10rem]">
+              <li class="list-row"><span class="avatar-fallback">JS</span><span class="list-row-title ml-2">Jane Cooper</span></li>
+            </ul>
+          </div>
+          <span class="showcase-card-name">Lists</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/table/table.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <table class="data-table w-full max-w-sm">
+              <thead><tr><th class="data-table-header-cell">Email</th><th class="data-table-header-cell">Role</th></tr></thead>
+              <tbody class="divide-y divide-neutral-200">
+                <tr><td class="data-table-cell">jane@acme.io</td><td class="data-table-cell">Admin</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="showcase-card-name">Table</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/divider/divider.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="w-full max-w-[8rem]">
+              <p class="text-xs text-neutral-700">Section A</p>
+              <hr class="my-2 border-neutral-200" />
+              <p class="text-xs text-neutral-700">Section B</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Divider</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/kbd/kbd.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <p class="text-sm text-neutral-900">
+              Press <kbd class="code-inline">⌘</kbd> + <kbd class="code-inline">K</kbd>
+            </p>
+          </div>
+          <span class="showcase-card-name">Kbd</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/skeleton/skeleton.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex items-center gap-3">
+              <span class="skeleton-avatar-sm"></span>
+              <span class="skeleton-text w-24"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Skeleton</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/empty-state/empty-state.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="text-center">
+              <p class="text-sm font-medium text-neutral-900">No results</p>
+              <span class="btn-primary mt-2 inline-block text-xs">New item</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Empty State</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/aspect-ratio/aspect-ratio.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="aspect-square w-20 rounded-md bg-neutral-300"></div>
+          </div>
+          <span class="showcase-card-name">AspectRatio</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/indicator/indicator.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <span class="indicator-wrapper">
+              <span class="avatar-fallback avatar-lg">JS</span>
+              <span class="indicator indicator-error">3</span>
+            </span>
+          </div>
+          <span class="showcase-card-name">Indicator</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/data-list/data-list.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <dl class="w-full max-w-[10rem] space-y-1 text-sm">
+              <div class="flex justify-between"><dt class="text-neutral-700">Plan</dt><dd class="text-neutral-900">Pro</dd></div>
+              <div class="flex justify-between"><dt class="text-neutral-700">Seats</dt><dd class="text-neutral-900">12</dd></div>
+            </dl>
+          </div>
+          <span class="showcase-card-name">DataList</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/timeline/timeline.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="avatar-fallback avatar-sm">JS</span>
+                <div class="timeline-content"><p class="text-xs text-neutral-900">Opened the ticket</p></div>
+              </div>
+              <div class="timeline-item">
+                <span class="avatar-fallback avatar-sm">AK</span>
+                <div class="timeline-content"><p class="text-xs text-neutral-900">Replied</p></div>
+              </div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Timeline</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/stat-card/stat-card.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="card card-elevated p-3">
+              <p class="text-xs text-neutral-600">Revenue</p>
+              <p class="text-xl font-bold text-neutral-900">$48.2k</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Stat/Metric Card</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/tree-view/tree-view.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="tree-view">
+              <details open>
+                <summary class="tree-view-summary">src/</summary>
+                <div class="tree-view-children">
+                  <p class="tree-view-leaf">index.html</p>
+                  <p class="tree-view-leaf">app.ts</p>
+                </div>
+              </details>
+            </div>
+          </div>
+          <span class="showcase-card-name">TreeView</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/rating/rating.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="rating-stars">
+              <span class="rating-star-filled">★</span><span class="rating-star-filled">★</span><span class="rating-star-filled">★</span><span class="rating-star-empty">★</span><span class="rating-star-empty">★</span>
+              <span class="rating-value">3.0</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Rating</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/avatar-group/avatar-group.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="avatar-group">
+              <span class="avatar-fallback avatar-lg">JS</span>
+              <span class="avatar-fallback avatar-lg">AK</span>
+              <span class="avatar-fallback avatar-lg">+4</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Avatar Group</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/highlight/highlight.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <p class="text-sm text-neutral-900">Search matched <mark class="code-inline">design tokens</mark> here.</p>
+          </div>
+          <span class="showcase-card-name">Highlight</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/code/code.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <pre class="code-block text-xs"><code>const x = 1;</code></pre>
+          </div>
+          <span class="showcase-card-name">Code</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/color-swatch/color-swatch.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex gap-2">
+              <span class="h-8 w-8 rounded-md bg-brand"></span>
+              <span class="h-8 w-8 rounded-md bg-success"></span>
+              <span class="h-8 w-8 rounded-md bg-error"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Color Swatch</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/theme-icon/theme-icon.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <span class="theme-icon theme-icon-lg theme-icon-brand">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M10 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+            </span>
+          </div>
+          <span class="showcase-card-name">ThemeIcon</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/blockquote/blockquote.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <blockquote class="blockquote text-sm">Design is how it works.</blockquote>
+          </div>
+          <span class="showcase-card-name">Blockquote</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/background-image/background-image.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="background-image-container h-20 w-full max-w-[10rem]" style="background-color: rgb(var(--color-neutral-300))">
+              <div class="background-image-scrim"></div>
+              <div class="background-image-content text-xs">Featured</div>
+            </div>
+          </div>
+          <span class="showcase-card-name">BackgroundImage</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/watermark/watermark.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="watermark-container h-16 w-full max-w-[10rem] rounded-md border border-neutral-200">
+              <div class="watermark-layer"></div>
+              <div class="watermark-content p-2 text-xs">Confidential</div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Watermark</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/overflow-list/overflow-list.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="overflow-list w-full max-w-[10rem]">
+              <span class="overflow-list-chip">Design</span>
+              <span class="overflow-list-chip">Eng</span>
+              <span class="overflow-list-more">+3</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">OverflowList</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/rolling-number/rolling-number.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <span class="font-mono text-2xl font-bold text-neutral-900">1,204</span>
+          </div>
+          <span class="showcase-card-name">RollingNumber</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/pick-list/pick-list.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex w-full max-w-sm gap-2">
+              <ul class="list-row-metadata w-1/2 rounded-md border border-neutral-200 p-2 text-xs">
+                <li class="list-row-title">Sam</li>
+              </ul>
+              <div class="action-icon action-icon-secondary self-center">→</div>
+              <ul class="list-row-metadata w-1/2 rounded-md border border-neutral-200 p-2 text-xs">
+                <li class="list-row-title">Priya</li>
+              </ul>
+            </div>
+          </div>
+          <span class="showcase-card-name">PickList / Transfer</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/gallery/gallery.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="grid grid-cols-3 gap-1">
+              <span class="h-12 w-12 rounded-md bg-neutral-300"></span>
+              <span class="h-12 w-12 rounded-md bg-neutral-400"></span>
+              <span class="h-12 w-12 rounded-md bg-neutral-300"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Gallery</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/compare/compare.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Data</span>
+          <div class="showcase-card-preview" inert>
+            <div class="compare-container h-20 w-full max-w-[10rem]">
+              <span class="absolute inset-0 bg-neutral-300"></span>
+              <div class="compare-after-wrapper" style="clip-path: inset(0 0 0 50%)">
+                <span class="compare-image bg-neutral-600"></span>
+              </div>
+              <div class="compare-divider-line" style="left: 50%"></div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Compare</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="overlays" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Overlays, Modals &amp; Feedback</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/modal/modal.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Overlays · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="modal-panel w-full max-w-xs">
+              <h3 class="text-sm font-semibold text-neutral-900">Delete item?</h3>
+              <p class="mt-1 text-xs text-neutral-700">This cannot be undone.</p>
+              <div class="mt-3 flex justify-end gap-2">
+                <span class="btn-secondary text-xs">Cancel</span>
+                <span class="btn-primary text-xs">Delete</span>
+              </div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Modal</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/toast/toast.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex items-center gap-2 rounded-md bg-neutral-900 px-3 py-2 text-xs text-white">
+              <span class="shrink-0">✓</span> Changes saved
+            </div>
+          </div>
+          <span class="showcase-card-name">Toast</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/slide-over/slide-over.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Overlays · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="slide-over-panel w-full max-w-[12rem] p-3">
+              <h3 class="text-sm font-semibold text-neutral-900">Edit profile</h3>
+              <p class="mt-1 text-xs text-neutral-700">Panel slides in from the edge.</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Slide-over</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/tooltip/tooltip.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="relative inline-block">
+              <span class="btn-secondary text-xs">Hover me</span>
+              <span class="tooltip tooltip-top">Helpful hint</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Tooltip</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/progress/progress.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <div class="progress-track w-full max-w-[8rem]">
+              <div class="progress-fill" style="width: 60%"></div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Progress</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/spinner/spinner.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <svg class="spinner spinner-lg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+            </svg>
+          </div>
+          <span class="showcase-card-name">Spinner</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/ring-progress/ring-progress.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <svg width="56" height="56" viewBox="0 0 56 56">
+              <circle class="circular-progress-track" cx="28" cy="28" r="24" stroke-width="6" />
+              <circle class="circular-progress-fill circular-progress-fill-success" cx="28" cy="28" r="24" stroke-width="6" stroke-dasharray="150.8" stroke-dashoffset="40"/>
+            </svg>
+          </div>
+          <span class="showcase-card-name">RingProgress</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/semi-circle-progress/semi-circle-progress.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <svg width="72" height="40" viewBox="0 0 72 40" class="semi-circle-progress">
+              <path class="circular-progress-track" d="M4 36 A32 32 0 0 1 68 36" stroke-width="6" fill="none"/>
+              <path class="circular-progress-fill circular-progress-fill-warning" d="M4 36 A32 32 0 0 1 50 8" stroke-width="6" fill="none"/>
+            </svg>
+          </div>
+          <span class="showcase-card-name">SemiCircleProgress</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/notification-center/notification-center.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Overlays · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="notification-center-panel w-full max-w-xs">
+              <div class="notification-center-item notification-center-item-unread">
+                <p class="text-xs text-neutral-900">New comment on your PR</p>
+              </div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Notification Center</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/password-strength-meter/password-strength-meter.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <div class="progress-track w-full max-w-[8rem]">
+              <div class="progress-fill password-strength-meter-fill" data-level="strong" style="width: 90%"></div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Password Strength Meter</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/affix/affix.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <div class="rounded-md bg-neutral-900 px-3 py-2 text-xs text-white">Pinned after scroll</div>
+          </div>
+          <span class="showcase-card-name">Affix</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/loading-overlay/loading-overlay.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Overlays</span>
+          <div class="showcase-card-preview" inert>
+            <div class="loading-overlay-container h-16 w-full max-w-[8rem] rounded-md border border-neutral-200">
+              <div class="loading-overlay">
+                <svg class="spinner motion-reduce:animate-none h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="showcase-card-name">LoadingOverlay</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/bottom-sheet/bottom-sheet.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Overlays · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="rounded-t-lg border border-neutral-200 bg-neutral-50 p-3 shadow-lg w-full max-w-[12rem]">
+              <h3 class="text-sm font-semibold text-neutral-900">Share</h3>
+              <p class="mt-1 text-xs text-neutral-700">Anchored to the bottom edge.</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Bottom Sheet</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="nav-disc" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Navigation &amp; Disclosure</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/accordion/accordion.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <div class="w-full max-w-[10rem] divide-y divide-neutral-200 border border-neutral-200 rounded-md">
+              <div class="accordion-item"><span class="accordion-trigger text-xs">Shipping<span class="accordion-chevron">⌄</span></span></div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Accordion</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/tabs/tabs.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <div class="tabs-list">
+              <span class="tab-trigger" aria-selected="true">Overview</span>
+              <span class="tab-trigger">Activity</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Tabs</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/dropdown-menu/dropdown-menu.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="dropdown-menu-panel w-full max-w-[10rem]">
+              <span class="dropdown-menu-item">Edit</span>
+              <span class="dropdown-menu-item">Duplicate</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Dropdown Menu</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/popover/popover.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="popover-panel w-full max-w-[10rem]">
+              <p class="text-xs text-neutral-900">Popover content anchored to its trigger.</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Popover</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/context-menu/context-menu.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="dropdown-menu-panel w-full max-w-[9rem]">
+              <span class="dropdown-menu-item">Rename</span>
+              <span class="dropdown-menu-item">Delete</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Context Menu</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/menubar/menubar.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex gap-1">
+              <span class="menubar-trigger">File</span>
+              <span class="menubar-trigger">Edit</span>
+              <span class="menubar-trigger">View</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Menubar</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/collapse/collapse.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <div class="text-xs text-neutral-900">
+              <p>Show more details ⌄</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Collapse</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/spoiler/spoiler.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <p class="spoiler-content text-xs">Long text truncated after three lines with a reveal toggle beneath it for the reader.</p>
+          </div>
+          <span class="showcase-card-name">Spoiler</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/team-switcher/team-switcher.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <span class="btn-secondary flex items-center gap-2 text-xs">
+              <span class="avatar-fallback avatar-sm">AC</span> Acme Inc ▾
+            </span>
+          </div>
+          <span class="showcase-card-name">Team/Workspace Switcher</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/language-switcher/language-switcher.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <span class="btn-secondary text-xs">🌐 English ▾</span>
+          </div>
+          <span class="showcase-card-name">Language Switcher</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/scroll-feedback/scroll-feedback.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <div class="progress-track w-full max-w-[8rem]">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Scroll Progress Bar</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/scroll-feedback/scroll-feedback.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc</span>
+          <div class="showcase-card-preview" inert>
+            <span class="btn-primary rounded-full p-2">↑</span>
+          </div>
+          <span class="showcase-card-name">Back-to-Top Button</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/onboarding-tour/onboarding-tour.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Nav &amp; Disc · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="popover-panel w-full max-w-[11rem]">
+              <p class="text-xs text-neutral-600">Step 1 of 3</p>
+              <h3 class="mt-1 text-sm font-semibold text-neutral-900">Welcome!</h3>
+            </div>
+          </div>
+          <span class="showcase-card-name">Onboarding Tour / Coachmark</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="adv-forms" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Advanced Forms &amp; Interaction</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/command-palette/command-palette.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Adv. Forms · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="command-palette-dialog w-full max-w-xs p-0">
+              <input class="command-palette-input" value="deploy" readonly />
+              <ul class="command-palette-list">
+                <li class="p-2 text-xs">Deploy to production</li>
+                <li class="p-2 text-xs">Deploy preview</li>
+              </ul>
+            </div>
+          </div>
+          <span class="showcase-card-name">Command Palette</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/combobox/combobox.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="combobox-input w-full max-w-[9rem] text-xs">Brazil</div>
+          </div>
+          <span class="showcase-card-name">Combobox</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/pin-input/pin-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="pin-input">
+              <span class="pin-input-box">4</span><span class="pin-input-box">2</span><span class="pin-input-box">0</span><span class="pin-input-box">1</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">PinInput</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/tags-input/tags-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="tags-input w-full max-w-[10rem]">
+              <span class="tags-input-tag">React<button type="button" class="tags-input-tag-remove" aria-label="Remove React">×</button></span>
+              <input class="tags-input-field" placeholder="Add a tag…" />
+            </div>
+          </div>
+          <span class="showcase-card-name">TagsInput</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/autocomplete/autocomplete.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="autocomplete-field w-full max-w-[9rem] text-xs">Brazil</div>
+          </div>
+          <span class="showcase-card-name">Autocomplete</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/mentions/mentions.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="mentions-field w-full max-w-[10rem] text-xs">Hi <span class="mentions-token">@jane</span></div>
+          </div>
+          <span class="showcase-card-name">Mentions</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/cascader/cascader.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="cascader-trigger w-full max-w-[10rem] text-xs">Europe / Portugal</div>
+          </div>
+          <span class="showcase-card-name">Cascader</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/tree-select/tree-select.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="tree-select-trigger w-full max-w-[10rem] text-xs">src / components</div>
+          </div>
+          <span class="showcase-card-name">TreeSelect</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/input-mask/input-mask.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="input-mask w-full max-w-[10rem] text-xs">(555) 555-5555</div>
+          </div>
+          <span class="showcase-card-name">InputMask</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/json-input/json-input.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="json-input w-full max-w-[10rem] text-xs">{"ok": true}</div>
+          </div>
+          <span class="showcase-card-name">JsonInput</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/range-slider/range-slider.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="range-slider-rows w-full max-w-[8rem]">
+              <input class="slider w-full" type="range" min="0" max="100" value="20" />
+              <input class="slider w-full" type="range" min="0" max="100" value="80" />
+            </div>
+          </div>
+          <span class="showcase-card-name">RangeSlider</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/float-label/float-label.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Adv. Forms</span>
+          <div class="showcase-card-preview" inert>
+            <div class="float-label-wrapper w-full max-w-[9rem]">
+              <input class="float-label-field peer" placeholder=" " value="jane@site.com" />
+              <label class="float-label-text">Email address</label>
+            </div>
+          </div>
+          <span class="showcase-card-name">FloatLabel</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="composed" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Composed Examples</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/composed-example/composed-example.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Composed</span>
+          <div class="showcase-card-preview" inert>
+            <div class="button-group">
+              <span class="button-group-segment" aria-current="true">Grid</span>
+              <span class="button-group-segment">List</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Composed Example</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/dashboard-example/dashboard-example.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Composed</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex items-center gap-3">
+              <span class="indicator-wrapper"><span class="avatar-fallback avatar-lg">JS</span><span class="indicator indicator-error">2</span></span>
+              <div class="card card-elevated p-2 text-xs">Revenue $48.2k</div>
+            </div>
+          </div>
+          <span class="showcase-card-name">Dashboard Example</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/settings-example/settings-example.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Composed</span>
+          <div class="showcase-card-preview" inert>
+            <div class="rating-stars">
+              <span class="rating-star-filled">★</span><span class="rating-star-filled">★</span><span class="rating-star-empty">★</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Settings Example</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="theming" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Theming</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/theme-gallery/theme-gallery.html" class="group showcase-card showcase-card-large">
+          <span class="showcase-card-eyebrow">Theming</span>
+          <div class="showcase-card-preview" inert>
+            <div class="grid grid-cols-4 gap-1">
+              <span class="h-8 w-8 rounded-md bg-brand"></span>
+              <span class="h-8 w-8 rounded-md bg-neutral-900"></span>
+              <span class="h-8 w-8 rounded-md bg-success"></span>
+              <span class="h-8 w-8 rounded-md bg-error"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Theme Gallery</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="layout" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Layout &amp; Structure</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/stack/stack.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="stack stack-sm">
+              <span class="h-4 w-16 rounded-md bg-neutral-300"></span>
+              <span class="h-4 w-16 rounded-md bg-neutral-300"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Stack</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/group/group.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex gap-2">
+              <span class="btn-primary text-xs">Save</span>
+              <span class="btn-secondary text-xs">Cancel</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Group</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/center/center.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex h-full w-full items-center justify-center">
+              <span class="h-6 w-6 rounded-md bg-brand"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Center</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/container/container.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="container-page rounded-md border border-dashed border-neutral-300 py-2 text-center text-xs text-neutral-700">
+              max-width container
+            </div>
+          </div>
+          <span class="showcase-card-name">Container</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/paper/paper.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="paper w-full p-3 text-xs">Flat surface, no shadow</div>
+          </div>
+          <span class="showcase-card-name">Paper</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/grid/grid.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="grid-responsive grid-cols-3-lg gap-1">
+              <span class="h-6 rounded-md bg-neutral-300"></span>
+              <span class="h-6 rounded-md bg-neutral-300"></span>
+              <span class="h-6 rounded-md bg-neutral-300"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Grid</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/simple-grid/simple-grid.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="simple-grid grid-cols-2-lg gap-1">
+              <span class="h-6 rounded-md bg-neutral-300"></span>
+              <span class="h-6 rounded-md bg-neutral-300"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">SimpleGrid</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/flex/flex.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="flex-row-primitive">
+              <span class="h-6 w-6 rounded-md bg-neutral-300"></span>
+              <span class="h-6 w-6 rounded-md bg-neutral-300"></span>
+            </div>
+          </div>
+          <span class="showcase-card-name">Flex</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/app-shell/app-shell.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Layout</span>
+          <div class="showcase-card-preview" inert>
+            <div class="app-shell w-full max-w-[12rem] rounded-md border border-neutral-200">
+              <div class="app-shell-body">
+                <span class="w-10 shrink-0 bg-neutral-900"></span>
+                <div class="app-shell-main text-xs">Content area</div>
+              </div>
+            </div>
+          </div>
+          <span class="showcase-card-name">AppShell</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="consent-messaging" class="scroll-mt-6">
+      <h2 class="font-mono text-xl font-bold text-neutral-900">Consent &amp; System Messaging</h2>
+      <div class="showcase-grid mt-4">
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/session-timeout-modal/session-timeout-modal.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Consent · frozen</span>
+          <div class="showcase-card-preview" inert>
+            <div class="modal-panel w-full max-w-xs">
+              <h3 class="text-sm font-semibold text-neutral-900">Still there?</h3>
+              <p class="mt-1 text-xs text-neutral-700">Signing out in 60s.</p>
+            </div>
+          </div>
+          <span class="showcase-card-name">Session Timeout Modal</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/offline-banner/offline-banner.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Consent</span>
+          <div class="showcase-card-preview" inert>
+            <div class="alert-warning flex w-full items-center gap-2 rounded-md p-2 text-xs">
+              <span class="shrink-0">⚠</span> You're offline — changes will sync later.
+            </div>
+          </div>
+          <span class="showcase-card-name">Offline Banner</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/two-factor-reminder-banner/two-factor-reminder-banner.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Consent</span>
+          <div class="showcase-card-preview" inert>
+            <div class="alert-warning flex w-full items-center justify-between gap-2 rounded-md p-2 text-xs">
+              <span>Add two-factor authentication</span>
+              <span class="btn-secondary text-xs">Enable</span>
+            </div>
+          </div>
+          <span class="showcase-card-name">2FA Reminder Banner</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/maintenance-banner/maintenance-banner.html" class="group showcase-card showcase-card-wide">
+          <span class="showcase-card-eyebrow">Consent</span>
+          <div class="showcase-card-preview" inert>
+            <div class="alert-info flex w-full items-center gap-2 rounded-md p-2 text-xs">
+              <span class="shrink-0">ⓘ</span> Scheduled maintenance tonight at 10pm.
+            </div>
+          </div>
+          <span class="showcase-card-name">Maintenance / Announcement Bar</span>
+        </a>
+
+        <a href="/professional-design-system/pr-preview/pr-15/src/components/dark-mode-toggle/dark-mode-toggle.html" class="group showcase-card showcase-card-standard">
+          <span class="showcase-card-eyebrow">Consent</span>
+          <div class="showcase-card-preview" inert>
+            <span class="relative inline-flex h-6 w-11 items-center">
+              <span class="toggle-track"></span>
+              <span class="toggle-dot"></span>
+            </span>
+          </div>
+          <span class="showcase-card-name">Dark Mode Toggle</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
