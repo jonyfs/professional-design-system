@@ -4,7 +4,7 @@
 
 **Created**: 2026-07-12
 
-**Status**: Draft
+**Status**: Superseded. The 100+ additional component target this spec proposed was delivered incrementally across features 019-039 (localized inputs, Recharts, tables, layout/feedback/navigation/overlay/data-display primitives, social login, theming, form inputs) rather than as one inventory-driven implementation; this spec never advanced past research.md/plan.md.
 
 **Input**: User description: "busque na internet por outros componentes
 visuais que podem ser agradados a este Design System, trazendo o máximo

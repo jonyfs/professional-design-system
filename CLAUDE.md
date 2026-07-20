@@ -1,8 +1,8 @@
-<!-- SPECKIT START -->
+<!-- SPEC-JEDI:PLAN:START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan
-at specs/050-npm-release-automation/plan.md
-<!-- SPECKIT END -->
+at specs/040-material-catalog-layout/plan.md
+<!-- SPEC-JEDI:PLAN:END -->
 
 ## graphify
 

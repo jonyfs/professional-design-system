@@ -4,7 +4,7 @@
 
 **Created**: 2026-07-18
 
-**Status**: Draft
+**Status**: Superseded by 043-ci-reliability-speedup. This spec's core work (E2E suite sharded across 4 parallel CI jobs) was implemented directly (2026-07-18, no formal plan.md/tasks.md ever written for it); 043's spec explicitly references that shipped sharding as its own starting context and carries the speed/reliability problem forward.
 
 **Input**: User description: "o que pode ser realizado para deixar os testes mais [rápidos]. Está demorando muito" (what can be done to make the tests faster — it's taking too long)
 
