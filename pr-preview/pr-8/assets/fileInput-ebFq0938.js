@@ -1,1 +1,0 @@
-import"./theme-switcher-Dz2I4cAh.js";import"./gallery-theme-selector-C0XjAsP1.js";function e(){document.querySelectorAll(`[data-file-input]`).forEach(e=>{let t=document.querySelector(`[data-file-input-filename="${CSS.escape(e.id)}"]`);e.addEventListener(`change`,()=>{let n=e.files?.[0];n&&t?(t.textContent=n.name,t.hidden=!1):t&&(t.hidden=!0)})})}e();
