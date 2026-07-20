@@ -87,6 +87,12 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
+  # Root package.json only, tracking this monorepo's own site/tooling
+  # version — packages/react is versioned exclusively by Changesets
+  # (release.yml) since feature 050. This job used to also force-bump
+  # packages/react's version here, which silently clobbered whatever
+  # Changesets had just computed for a real release on the very next
+  # merge to main (caught by code review before feature 050 shipped).
   version:
     needs: [build, deploy]
     if: github.event_name != 'workflow_dispatch'
@@ -98,18 +104,17 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Bump patch version (root + React package, kept in sync)
+      - name: Bump patch version (root only)
         id: bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           new_version=$(npm version patch --no-git-tag-version | tr -d 'v')
-          npm --prefix packages/react version "$new_version" --no-git-tag-version --allow-same-version
           echo "version=$new_version" >> "$GITHUB_OUTPUT"
 
       - name: Commit, tag, and push (skips re-triggering CI/Pages)
         run: |
-          git add package.json package-lock.json packages/react/package.json
+          git add package.json package-lock.json
           git commit -m "chore: bump version to v${{ steps.bump.outputs.version }} [skip ci]"
           git tag "v${{ steps.bump.outputs.version }}"
           git push origin main

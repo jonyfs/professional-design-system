@@ -1,0 +1,43 @@
+name: Release
+
+# specs/050-npm-release-automation: opens/updates a "Version Packages" PR
+# whenever changesets are pending on main. Deliberately has NO `publish`
+# command configured — per this project's constitution (Distribution &
+# Ecosystem Standards, v1.39.0), a real `npm publish` is a human-authorized
+# action, never an autonomous one. This workflow only ever *prepares* a
+# release (version bump + changelog); a maintainer reviews and merges the
+# resulting PR, then follows docs/PUBLISHING.md's existing manual publish
+# step themselves.
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create or update the Version Packages PR
+        uses: changesets/action@v1
+        with:
+          title: 'chore: version packages'
+          commit: 'chore: version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

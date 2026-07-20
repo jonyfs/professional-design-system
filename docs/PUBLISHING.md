@@ -7,17 +7,27 @@ A documented, repeatable process for releasing a new version of the React packag
 - npm registry credentials with publish access to the `@professional-design-system` org (`npm whoami` must succeed and return an account with publish rights — this repo's own CI/development environment does not hold these credentials, so this final step is always run by a maintainer, not automated).
 - A clean working tree on `main`, with all changes for the release already merged.
 
+## Before you get here: every PR needs a changeset
+
+As of feature 050, version bumps and changelog entries are no longer hand-written at release time — they're assembled automatically from **changesets**, small Markdown files contributors add to their own PRs. If you're making a change to `packages/react/`:
+
+```bash
+npx changeset
+```
+
+This interactively asks which package changed, the semver impact (patch/minor/major), and a one-line consumer-facing summary, then writes a file to `.changeset/`. Commit it alongside the rest of your PR. CI (`changeset-check.yml`) fails the PR if this is missing for any change under `packages/react/`; it never runs for PRs that don't touch that path.
+
 ## Steps
 
-1. **Update the changelog first.** Move every entry under `packages/react/CHANGELOG.md`'s `## [Unreleased]` heading into a new `## [x.y.z] - YYYY-MM-DD` section, in consumer-relevant terms (what changed and why it matters to someone installing the package — not an internal commit-message dump). Leave `## [Unreleased]` in place, empty, for the next round of changes.
+1. **Review and merge the automated "Version Packages" PR.** Once changesets exist on `main`, `.github/workflows/release.yml` (via `changesets/action`) opens or updates a PR that has already computed the correct version bump (taking the highest-impact pending changeset) and assembled the `packages/react/CHANGELOG.md` entry from every accumulated changeset's summary. Review it like any other PR, then merge it — this replaces the old manual "hand-write the changelog, hand-pick the version" step entirely. **This workflow never publishes anything itself** — merging it only updates `package.json`'s version and the changelog in the repo, per this project's constitution (`Distribution & Ecosystem Standards`, v1.39.0: a real `npm publish` is human-authorized, never autonomous).
 
-2. **Bump the version.**
+2. **Pull the merged version bump locally.**
 
    ```bash
-   npm version patch --workspace packages/react   # or: minor / major
+   git checkout main && git pull
    ```
 
-   This updates `packages/react/package.json`'s `version` field and creates a git tag. Use [semantic versioning](https://semver.org/): `patch` for bug fixes (like the theme-switching fix in this package's own changelog), `minor` for new components/props that don't break existing usage, `major` for anything that changes an existing component's public API.
+   `packages/react/package.json`'s `version` is now whatever the Version Packages PR computed — safe to trust as-is, since `deploy-pages.yml`'s own auto-bump job only touches the root `package.json`, never `packages/react/`'s (a code-review finding fixed before this feature shipped: it used to force-write its own unrelated patch counter onto `packages/react/package.json` on every merge to `main`, silently overwriting whatever Changesets had just computed).
 
 3. **Build and verify.**
 
@@ -47,12 +57,14 @@ A documented, repeatable process for releasing a new version of the React packag
 
    Requires the credentials from Prerequisites. This is the only step in this runbook that is irreversible and public (a published version cannot be unpublished after 72 hours per npm's own policy) — it is deliberately a manual, human-run command, not part of an automated CI workflow, since provisioning registry credentials into CI is itself a decision requiring explicit setup by whoever administers this repository's secrets.
 
-6. **Push the version tag.**
+6. **Tag the release** (Changesets doesn't create a git tag on its own — `npm version` used to, this replaces that part of its behavior).
 
    ```bash
+   git tag "@professional-design-system/react@$(node -p "require('./packages/react/package.json').version")"
    git push origin main --tags
    ```
 
 ## Notes
 
-- This runbook was written and verified (steps 1-4) during feature 048's external-consumption work, using `npm pack` + install-into-a-separate-project as a stand-in for a real publish, since that session had no registry credentials. Step 5 itself has not been executed by an automated agent, and should not be — see the note in step 5.
+- Steps 3-4 (build/verify, tarball sanity-check) were written and verified during feature 048's external-consumption work, using `npm pack` + install-into-a-separate-project as a stand-in for a real publish, since that session had no registry credentials. Step 5 (the actual `npm publish`) has not been executed by an automated agent, and should not be — see the note in step 5.
+- Steps 1-2 and the changeset-authoring step above were added and verified (`npx changeset`, `changeset version` run locally then reverted) during feature 050, which introduced the automated version/changelog tooling. See `packages/react/CHANGELOG.md`'s own header for why its intro text is deliberately short (Changesets always inserts new entries directly below the title).

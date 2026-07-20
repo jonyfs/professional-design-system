@@ -19,10 +19,12 @@
     "audit:tokens": "node scripts/audit-tokens.mjs",
     "audit:contrast": "node scripts/check-contrast.mjs",
     "typecheck": "tsc --noEmit && npm run typecheck --workspace packages/react",
-    "verify": "npm run typecheck && npm run audit:tokens && npm run audit:contrast && npm run build && npm run test:e2e"
+    "verify": "npm run typecheck && npm run audit:tokens && npm run audit:contrast && npm run build && npm run test:e2e",
+    "changeset": "changeset"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
+    "@changesets/cli": "^2.31.1",
     "@playwright/test": "^1.48.0",
     "@types/node": "^22.9.0",
     "autoprefixer": "^10.4.20",
