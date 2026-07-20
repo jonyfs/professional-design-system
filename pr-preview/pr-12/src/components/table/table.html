@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Table — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-12/assets/theme-switcher-CK1zq0J9.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-12/assets/gallery-theme-selector-fnUSXzMm.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-12/assets/theme-switcher-CTsoR3_f.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-12/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Table</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Zero-JavaScript semantic table — baseline, zebra-striped, and with
+    a trailing action column.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Baseline</h2>
+  <div
+    class="mt-4 data-table-wrapper"
+    data-testid="table-baseline-wrapper"
+    tabindex="0"
+    role="region"
+    aria-label="Baseline table, scrollable horizontally"
+  >
+    <table class="data-table" data-testid="table-baseline">
+      <thead>
+        <tr>
+          <th scope="col" class="data-table-header-cell">Name</th>
+          <th scope="col" class="data-table-header-cell">Email</th>
+          <th scope="col" class="data-table-header-cell">Role</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-neutral-200 bg-neutral-50">
+        <tr>
+          <td class="data-table-cell">Jane Cooper</td>
+          <td class="data-table-cell">jane.cooper@example.com</td>
+          <td class="data-table-cell">Admin</td>
+        </tr>
+        <tr>
+          <td class="data-table-cell">Alex Morgan</td>
+          <td class="data-table-cell">alex.morgan@example.com</td>
+          <td class="data-table-cell">Engineering Manager</td>
+        </tr>
+        <tr data-testid="table-row-empty-cell">
+          <td class="data-table-cell">Priya Singh</td>
+          <td class="data-table-cell"></td>
+          <td class="data-table-cell">Frontend Developer</td>
+        </tr>
+        <tr>
+          <td class="data-table-cell">Sam Rivera</td>
+          <td class="data-table-cell" data-testid="table-cell-long-content">
+            sam.rivera.a-very-long-email-address-that-should-truncate@example-corporation.com
+          </td>
+          <td class="data-table-cell">Product Designer</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Zebra-striped</h2>
+  <div
+    class="mt-4 data-table-wrapper"
+    tabindex="0"
+    role="region"
+    aria-label="Zebra-striped table, scrollable horizontally"
+  >
+    <table class="data-table" data-testid="table-zebra">
+      <thead>
+        <tr>
+          <th scope="col" class="data-table-header-cell">Name</th>
+          <th scope="col" class="data-table-header-cell">Email</th>
+          <th scope="col" class="data-table-header-cell">Role</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-neutral-200 bg-neutral-50">
+        <tr class="data-table-row-zebra">
+          <td class="data-table-cell">Jane Cooper</td>
+          <td class="data-table-cell">jane.cooper@example.com</td>
+          <td class="data-table-cell">Admin</td>
+        </tr>
+        <tr class="data-table-row-zebra">
+          <td class="data-table-cell">Alex Morgan</td>
+          <td class="data-table-cell">alex.morgan@example.com</td>
+          <td class="data-table-cell">Engineering Manager</td>
+        </tr>
+        <tr class="data-table-row-zebra">
+          <td class="data-table-cell">Priya Singh</td>
+          <td class="data-table-cell">priya.singh@example.com</td>
+          <td class="data-table-cell">Frontend Developer</td>
+        </tr>
+        <tr class="data-table-row-zebra">
+          <td class="data-table-cell">Sam Rivera</td>
+          <td class="data-table-cell">sam.rivera@example.com</td>
+          <td class="data-table-cell">Product Designer</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Trailing action</h2>
+  <div
+    class="mt-4 data-table-wrapper"
+    tabindex="0"
+    role="region"
+    aria-label="Table with trailing actions, scrollable horizontally"
+  >
+    <table class="data-table" data-testid="table-trailing">
+      <thead>
+        <tr>
+          <th scope="col" class="data-table-header-cell">Name</th>
+          <th scope="col" class="data-table-header-cell">Email</th>
+          <th scope="col" class="data-table-header-cell">Status</th>
+          <th scope="col" class="data-table-header-cell">
+            <span class="sr-only">Actions</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-neutral-200 bg-neutral-50">
+        <tr data-testid="table-row-badge">
+          <td class="data-table-cell">Jane Cooper</td>
+          <td class="data-table-cell">jane.cooper@example.com</td>
+          <td class="data-table-cell">
+            <span class="inline-flex items-center rounded-md bg-success/5 px-2 py-1 text-xs font-medium text-success-strong ring-1 ring-inset ring-success/20">
+              Active
+            </span>
+          </td>
+          <td class="data-table-cell text-right" data-testid="table-cell-edit-link">
+            <a href="#" class="demo-link">Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="data-table-cell">Alex Morgan</td>
+          <td class="data-table-cell">alex.morgan@example.com</td>
+          <td class="data-table-cell">
+            <span class="inline-flex items-center rounded-md bg-neutral-50 px-2 py-1 text-xs font-medium text-neutral-600 ring-1 ring-inset ring-neutral-500/10">
+              Inactive
+            </span>
+          </td>
+          <td class="data-table-cell text-right">
+            <a href="#" class="demo-link">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
