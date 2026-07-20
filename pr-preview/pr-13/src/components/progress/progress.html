@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Progress — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-13/assets/progress-BTiEq9cv.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-13/assets/theme-switcher-DXyD5w_x.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-13/assets/gallery-theme-selector-PIzGrpvN.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-13/assets/theme-switcher-D9iqhu9C.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-13/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Progress</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div data-testid="progress-demo-wrapper" class="mt-8 max-w-md space-y-8">
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Determinate (60%)</h2>
+      <span class="sr-only" id="progress-determinate-label">Upload progress</span>
+      <div
+        data-testid="progress-determinate"
+        role="progressbar"
+        aria-labelledby="progress-determinate-label"
+        aria-valuenow="60"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        class="progress-track"
+      >
+        <div data-progress-fill data-value="60" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-sm font-semibold text-neutral-600">Indeterminate</h2>
+      <span class="sr-only" id="progress-indeterminate-label">Processing</span>
+      <div
+        data-testid="progress-indeterminate"
+        role="progressbar"
+        aria-labelledby="progress-indeterminate-label"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        class="progress-track"
+      >
+        <div class="progress-fill-indeterminate"></div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

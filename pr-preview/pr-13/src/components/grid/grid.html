@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Grid — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-13/assets/theme-switcher-DXyD5w_x.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-13/assets/gallery-theme-selector-PIzGrpvN.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-13/assets/theme-switcher-D9iqhu9C.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-13/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Grid</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Responsive CSS Grid layout — 1 column below 768px, 2 at 768-1023px,
+    the configured count at 1024px and above.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-3xl">
+    <div data-testid="grid-demo" class="grid-responsive grid-cols-3-lg">
+      <div class="card" data-testid="grid-item-1">Item 1</div>
+      <div class="card" data-testid="grid-item-2">Item 2</div>
+      <div class="card" data-testid="grid-item-3">Item 3</div>
+      <div class="card" data-testid="grid-item-4">Item 4</div>
+      <div class="card" data-testid="grid-item-5">Item 5</div>
+      <div class="card" data-testid="grid-item-6">Item 6</div>
+    </div>
+  </div>
+</body>
+</html>
