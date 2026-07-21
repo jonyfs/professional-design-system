@@ -5,11 +5,15 @@ export interface AlertProps {
   "data-testid"?: string;
 }
 
+// Feature 044 visual pass: each severity icon seats in a tinted circular
+// chip (bg-*/10 + rounded-full + padding on the svg itself, box-content so
+// the 20px glyph keeps its size) — a small depth layer that matches the
+// static alert.html markup exactly.
 const VARIANT_ICON_CLASSES: Record<AlertProps["variant"], string> = {
-  success: "text-success-strong",
-  error: "text-error-strong",
-  warning: "text-warning-strong",
-  info: "text-info-strong",
+  success: "rounded-full bg-success/10 p-1.5 box-content text-success-strong",
+  error: "rounded-full bg-error/10 p-1.5 box-content text-error-strong",
+  warning: "rounded-full bg-warning/10 p-1.5 box-content text-warning-strong",
+  info: "rounded-full bg-info/10 p-1.5 box-content text-info-strong",
 };
 
 const VARIANT_ICON_PATHS: Record<AlertProps["variant"], string> = {
