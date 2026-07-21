@@ -57,6 +57,10 @@
         data-testid="notification-panel"
         class="notification-center-panel"
       >
+        <div class="notification-center-header">
+          <span class="notification-center-header-title">Notifications</span>
+          <span class="notification-center-header-count">2 new</span>
+        </div>
         <div class="notification-center-item notification-center-item-unread" data-testid="notification-item-1">
           <p class="font-medium text-neutral-900">New comment on your post</p>
           <p class="text-xs text-neutral-600">2 minutes ago</p>
@@ -98,7 +102,16 @@
         data-testid="notification-panel-empty"
         class="notification-center-panel"
       >
-        <div class="notification-center-empty" data-testid="notification-empty">No notifications yet.</div>
+        <div class="notification-center-header">
+          <span class="notification-center-header-title">Notifications</span>
+        </div>
+        <div class="notification-center-empty" data-testid="notification-empty">
+          <svg aria-hidden="true" class="notification-center-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 01-3.46 0" />
+          </svg>
+          No notifications yet.
+        </div>
       </div>
     </section>
   </div>

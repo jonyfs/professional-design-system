@@ -64,8 +64,29 @@ export function NotificationCenter({
         data-testid={panelTestId}
         className="notification-center-panel"
       >
+        <div className="notification-center-header">
+          <span className="notification-center-header-title">Notifications</span>
+          {unreadCount > 0 && (
+            <span className="notification-center-header-count">
+              {unreadCount} new
+            </span>
+          )}
+        </div>
         {items.length === 0 ? (
-          <div className="notification-center-empty">No notifications yet.</div>
+          <div className="notification-center-empty">
+            <svg
+              aria-hidden="true"
+              className="notification-center-empty-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.5}
+            >
+              <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 01-3.46 0" />
+            </svg>
+            No notifications yet.
+          </div>
         ) : (
           items.map((item, i) => (
             <div
