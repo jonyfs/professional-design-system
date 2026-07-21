@@ -91,20 +91,39 @@
   }
 
   /* Button primitive (contracts/button.contract.md) */
+  /* Interactive states designed as a lift-then-press motion (feature 044
+     modernization): rest → hover raises the surface (shadow-md + a 1px
+     upward translate), active presses it back down (shadow-sm + settle +
+     scale). Motion lives entirely on compositor-friendly properties
+     (box-shadow/transform), never geometry, so the .btn box model is
+     unchanged catalog-wide. No hover recolor of the text-bearing surface —
+     that would move white/neutral-900 onto a lighter token and risk the
+     AAA-contrast audit across all 119 themes. */
   .btn-primary {
     @apply inline-flex items-center justify-center rounded-md bg-brand-dark px-4 py-2
-      text-sm font-semibold text-white shadow-sm hover:shadow-md active:scale-[0.98]
+      text-sm font-semibold text-white shadow-sm hover:shadow-md hover:-translate-y-px
+      active:translate-y-0 active:scale-[0.98] active:shadow-sm
       focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
       focus-visible:outline-brand disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:shadow-sm disabled:hover:translate-y-0
       transition-[box-shadow,transform] duration-150;
   }
 
+  /* Secondary variant carries its own considered treatment beyond the
+     single accent: at rest it is a neutral outline, but hover reveals a
+     brand-colored border (accent used semantically to signal
+     interactivity) alongside the same lift, and active presses back. This
+     is the second visual dimension distinguishing it from primary without
+     changing any text/background contrast pair. */
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-md border border-neutral-300
       bg-neutral-50 px-4 py-2 text-sm font-semibold text-neutral-900 shadow-sm
-      hover:bg-neutral-100 active:scale-[0.98] focus-visible:outline focus-visible:outline-2
-      focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50
-      disabled:cursor-not-allowed transition-[background-color,transform] duration-150;
+      hover:bg-neutral-100 hover:border-brand hover:shadow-md hover:-translate-y-px
+      active:translate-y-0 active:scale-[0.98] active:shadow-sm
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:shadow-sm disabled:hover:translate-y-0 disabled:hover:border-neutral-300
+      transition-[background-color,border-color,box-shadow,transform] duration-150;
   }
 
   /* Select primitive (contracts/select.contract.md) — same treatment as
@@ -113,8 +132,10 @@
      utilities always sit in a later cascade layer than @layer components. */
   .form-select {
     @apply block w-full rounded-md border-0 bg-neutral-50 py-1.5 text-neutral-900 shadow-sm
-      ring-1 ring-inset ring-neutral-300 focus:ring-2 focus:ring-inset focus:ring-brand
-      disabled:opacity-50 disabled:cursor-not-allowed sm:text-sm sm:leading-6;
+      ring-1 ring-inset ring-neutral-300 hover:ring-neutral-500
+      focus:ring-2 focus:ring-inset focus:ring-brand
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:ring-neutral-300
+      transition-shadow duration-150 sm:text-sm sm:leading-6;
   }
 
   /* Feature 039 — extracted from Text Input's/Textarea's own existing
@@ -355,8 +376,22 @@
   .card {
     @apply rounded-lg border border-neutral-200 bg-neutral-50 p-6 shadow-sm;
   }
+  /* Interactive card: designed hover + keyboard-focus affordance — the
+     surface lifts (compositor-friendly transform) and its shadow deepens,
+     not a flat color darken. focus-within mirrors hover for keyboard users. */
   .card-elevated {
-    @apply transition-shadow duration-150 hover:shadow-md;
+    @apply transition duration-200 ease-out hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-lg focus-within:-translate-y-0.5 focus-within:shadow-lg focus-within:ring-2 focus-within:ring-inset focus-within:ring-brand;
+  }
+  /* Featured/primary card: the visual anchor of a card group. Carries more
+     weight than siblings via a brand accent rail (border-top), deeper resting
+     elevation, and a looser top-padding rhythm so its heading breathes. */
+  .card-featured {
+    @apply border-brand border-t-4 pt-7 shadow-md;
+  }
+  /* Heading of a featured card — slightly stronger optical link to the
+     accent rail via a tighter gap to the body copy below. */
+  .card-featured-title {
+    @apply text-lg font-semibold text-neutral-900;
   }
 
   /* Alert/Banner primitive (contracts/alert.contract.md) — no live-region
@@ -432,11 +467,29 @@
      (7.23:1) and cell text-neutral-900 (16.98-17.74:1) both verified
      AAA via the WCAG relative-luminance formula (research.md R1) —
      unlike Lists, this pattern was already contrast-correct. */
+  /* Depth (feature 044 audit): the wrapper is a card-like surface —
+     bg-neutral-50 (this catalog's elevated surface tone, per feature
+     017's theme-invertible scale) + shadow-sm lifts the whole table off
+     the page background instead of leaving it floating flat, matching
+     the ratified .card container treatment. */
   .data-table-wrapper {
-    @apply overflow-x-auto rounded-md border border-neutral-200;
+    @apply overflow-x-auto rounded-lg border border-neutral-200
+      bg-neutral-50 shadow-sm;
   }
   .data-table {
     @apply min-w-full divide-y divide-neutral-200;
+  }
+  /* Hover-row emphasis (feature 044 audit): a compositor-cheap
+     background swap on the row under the pointer. bg-neutral-200 sits one
+     step above the zebra even-row tone (neutral-100) so hover stays
+     legible over both striped and plain rows; text stays neutral-900,
+     which clears AAA against neutral-200. Specificity of this
+     descendant+:hover selector intentionally overrides the zebra rule. */
+  .data-table tbody tr {
+    @apply transition-colors duration-150 ease-out;
+  }
+  .data-table tbody tr:hover {
+    @apply bg-neutral-200;
   }
   .data-table-header-cell {
     /* text-neutral-700, not -600: feature 020's harness contrast fix
@@ -958,25 +1011,115 @@
      (contracts/theme-gallery.contract.md). Cards are generated by
      src/scripts/theme-gallery.js from shared/design-tokens.ts's THEMES
      map; swatch colors are set via CSSOM, never inline style="...". */
+  /* Feature 044: Theme Gallery modernization — the catalog's own
+     showcase surface, redesigned for real hierarchy (audit-findings.md).
+     Cards are left-aligned mini-previews with a hero swatch, a
+     hover/active-revealed full-width color band, and clearly distinct
+     active + featured treatments. All chrome uses ratified semantic
+     tokens; only the swatch/band colors (the whole point of a theme
+     gallery) are the theme's own values, set via CSSOM. */
   .theme-card {
-    @apply flex flex-col items-center gap-2 rounded-md border border-neutral-200
-      p-4 text-sm font-medium text-neutral-700 hover:bg-neutral-100
+    @apply relative flex flex-col items-stretch gap-3 overflow-hidden rounded-lg
+      border border-neutral-200 bg-neutral-50 p-4 text-left text-sm font-medium
+      text-neutral-700 shadow-sm transition duration-200 ease-out
+      hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg
       focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
       focus-visible:outline-brand;
   }
+  /* Active theme: unmistakably the current selection — not a lone check.
+     A brand-dark ring + accent rail, raised elevation, and a tinted
+     surface lift it clear of its siblings. */
   .theme-card[aria-pressed="true"] {
-    @apply border-brand-dark ring-2 ring-brand-dark;
+    @apply border-brand-dark bg-neutral-100 shadow-lg ring-2 ring-brand-dark;
+  }
+  .theme-card[aria-pressed="true"]::before {
+    @apply absolute inset-x-0 top-0 h-1 bg-brand-dark content-[''];
+  }
+  /* Featured card: the visual anchor of each mood family — spans two
+     columns on wider grids and carries a brand accent rail, breaking the
+     119-item grid's monotony (audit-findings.md: no hierarchy). */
+  .theme-card-featured {
+    @apply gap-4 border-brand p-5 shadow-md sm:col-span-2;
+  }
+  .theme-card-featured::after {
+    @apply absolute inset-y-0 left-0 w-1 bg-brand content-[''];
+  }
+
+  .theme-card-header {
+    @apply flex items-center justify-between gap-2;
   }
   .theme-card-swatches {
-    @apply flex gap-1;
+    @apply flex items-center gap-1.5;
   }
   .theme-card-swatch {
-    /* inline-block (not the contract's bare h-6 w-6): a <span> is
-       display: inline by default, which ignores explicit width/height
-       entirely — found by visually inspecting a rendered card, the
-       swatches were invisible despite CSSOM correctly setting each
-       one's background-color. */
-    @apply inline-block h-6 w-6 rounded-full;
+    /* inline-block (not a bare h-6 w-6): a <span> is display: inline by
+       default, which ignores explicit width/height entirely — the
+       swatches were otherwise invisible despite CSSOM correctly setting
+       each background-color. A hairline inset ring keeps light swatches
+       legible on the light surface. */
+    @apply inline-block h-6 w-6 rounded-full ring-1 ring-inset ring-neutral-900/10
+      transition-transform duration-200 ease-out;
+  }
+  /* Hero swatch (the theme's brand color) is enlarged so each card has
+     internal hierarchy rather than five equal dots. */
+  .theme-card-swatch-primary {
+    @apply h-9 w-9;
+  }
+  .theme-card:hover .theme-card-swatch,
+  .theme-card:focus-visible .theme-card-swatch {
+    @apply scale-110;
+  }
+
+  .theme-card-name {
+    @apply text-sm font-semibold text-neutral-900;
+  }
+  .theme-card-featured .theme-card-name {
+    @apply text-base;
+  }
+
+  /* Badges sit in the header row. "Active" only shows for the current
+     theme; "Featured" only for the family anchor. */
+  .theme-card-badges {
+    @apply flex shrink-0 items-center gap-1.5;
+  }
+  .theme-card-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs
+      font-semibold uppercase tracking-wide;
+  }
+  .theme-card-badge-active {
+    @apply hidden bg-brand/10 text-brand-dark;
+  }
+  .theme-card[aria-pressed="true"] .theme-card-badge-active {
+    @apply inline-flex;
+  }
+  .theme-card-badge-featured {
+    @apply bg-neutral-200 text-neutral-700;
+  }
+
+  /* Fuller preview: a full-width band of the theme's colors that expands
+     on hover / focus / when active — a designed reveal, not a static
+     grid. Uses the grid-rows 0fr→1fr height-animation trick so it
+     collapses cleanly without a hardcoded max-height. */
+  .theme-card-preview {
+    @apply grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out;
+  }
+  .theme-card:hover .theme-card-preview,
+  .theme-card:focus-visible .theme-card-preview,
+  .theme-card[aria-pressed="true"] .theme-card-preview,
+  .theme-card-featured .theme-card-preview {
+    @apply grid-rows-[1fr] opacity-100;
+  }
+  .theme-card-preview-inner {
+    @apply overflow-hidden;
+  }
+  .theme-card-preview-band {
+    @apply mt-1 flex h-9 overflow-hidden rounded-md ring-1 ring-inset ring-neutral-900/10;
+  }
+  .theme-card-preview-bar {
+    @apply flex-1;
+  }
+  .theme-card-preview-hint {
+    @apply mt-2 block text-xs font-normal text-neutral-600;
   }
 
   /* Data-display micro-components (feature 023 US3) — Avatar Group,
