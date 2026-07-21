@@ -1704,7 +1704,7 @@
      image scales behind a fading "expand" overlay on hover/focus — a
      designed, compositor-friendly (transform/opacity only) reveal. */
   .gallery-thumb {
-    @apply group relative block h-20 w-20 shrink-0 cursor-pointer overflow-hidden
+    @apply relative block h-20 w-20 shrink-0 cursor-pointer overflow-hidden
       rounded-md ring-1 ring-inset ring-neutral-300 transition duration-200 ease-out
       hover:-translate-y-0.5 hover:shadow-lg hover:ring-brand
       focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2

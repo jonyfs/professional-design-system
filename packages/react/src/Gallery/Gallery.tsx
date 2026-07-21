@@ -32,7 +32,7 @@ export function Gallery({ images, "data-testid": testId }: GalleryProps) {
             key={image.src}
             ref={(el) => (triggerRefs.current[index] = el)}
             type="button"
-            className="gallery-thumb"
+            className="gallery-thumb group"
             onClick={() => {
               activeTriggerRef.current = triggerRefs.current[index];
               setCurrentIndex(index);
