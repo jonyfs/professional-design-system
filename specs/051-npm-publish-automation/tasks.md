@@ -5,12 +5,24 @@
 
 ## Phase 1: Setup
 
-- [ ] T001 [Manual, non-code] A repository administrator creates an npm
+- [x] T001 [Manual, non-code] A repository administrator creates an npm
   "Automation" access token scoped to `professional-design-system` publish
   access, and adds it as the `NPM_TOKEN` repository secret in GitHub
   Settings → Secrets and variables → Actions. Blocks every task below —
   the workflow change can be written and merged without it, but cannot
   actually publish until this exists.
+  **Done 2026-07-20**: since the package has never been published, npm's
+  "Trusted Publisher" page (the more secure OIDC alternative — no
+  long-lived token) can't be pre-configured for it; that page only
+  exists once a package has published at least once. Generated a
+  granular access token instead (name `github-actions-initial-publish`,
+  read/write, all packages since none can be pre-selected, bypass-2FA
+  enabled since GitHub Actions can't complete an interactive 2FA
+  challenge, 7-day expiry) and added it as the `NPM_TOKEN` repository
+  secret. **Follow-up once the first publish succeeds**: configure
+  Trusted Publishing/OIDC on the now-existing package's settings page,
+  switch `release.yml` to OIDC (drop `NPM_TOKEN`), then revoke this
+  token — tracked as new work, not yet a task here.
 
 ## Phase 2: User Story 1 — Merging the Version Packages PR ships the release (P1)
 
