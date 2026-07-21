@@ -267,7 +267,7 @@
   /* Shared status-icon chip — a tinted circle that seats the severity icon
      on its own surface, adding a layer of depth over the flat notice and a
      consistent rhythm between Alert and Toast (feature 044 visual pass). The
-     per-severity tint (bg-*/10) is set inline in markup alongside the icon's
+     per-severity tint (bg-[severity]/10) is set inline in markup alongside the icon's
      own text-*-strong fill. */
   .status-icon {
     @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full;
