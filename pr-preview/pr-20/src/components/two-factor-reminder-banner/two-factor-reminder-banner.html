@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>2FA Reminder Banner — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-20/assets/theme-switcher-Bw9K5fNi.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-20/assets/gallery-theme-selector--qsFfMOI.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-20/assets/theme-switcher-CNSCDKmQ.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-20/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">2FA Reminder Banner</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Persistent, non-dismissible notice with an action — a content
+    variant of Alert, not a new component.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-md">
+    <div data-testid="two-factor-reminder-banner" class="alert alert-warning">
+      <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 shrink-0 text-warning-strong">
+        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+      </svg>
+      <p class="flex-1 text-sm font-medium text-neutral-900">
+        Add two-factor authentication to secure your account.
+      </p>
+      <a href="#" data-testid="two-factor-reminder-action" class="btn-secondary shrink-0">Complete setup</a>
+    </div>
+  </div>
+
+</body>
+</html>

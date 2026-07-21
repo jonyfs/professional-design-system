@@ -1,0 +1,1 @@
+import"./theme-switcher-Bw9K5fNi.js";import"./gallery-theme-selector--qsFfMOI.js";function e(){let e=document.getElementById(`offline-banner`);if(!e)return;function t(){e.style.display=navigator.onLine?`none`:``}window.addEventListener(`online`,t),window.addEventListener(`offline`,t),t()}e();

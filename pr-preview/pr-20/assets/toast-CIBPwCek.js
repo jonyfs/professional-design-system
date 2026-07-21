@@ -1,0 +1,1 @@
+import"./theme-switcher-Bw9K5fNi.js";import"./gallery-theme-selector--qsFfMOI.js";function e(){document.querySelectorAll(`[data-testid="toast-close"]`).forEach(e=>{e.addEventListener(`click`,()=>{e.closest(`[role="status"]`)?.remove()})})}e();

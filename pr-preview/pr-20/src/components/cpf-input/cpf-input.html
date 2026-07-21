@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>CPF Input — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-20/assets/cpfInput-DeTk4cxr.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-20/assets/localized-inputs-BfAiXy9W.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-20/assets/theme-switcher-Bw9K5fNi.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-20/assets/gallery-theme-selector--qsFfMOI.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-20/assets/theme-switcher-CNSCDKmQ.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-20/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">CPF Input</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Brazilian individual taxpayer number — auto-formatted as you type, validated against the official modulo-11 check-digit algorithm.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm space-y-1">
+    <label for="cpf-input" class="text-sm font-medium text-neutral-900">CPF</label>
+    <input
+      id="cpf-input"
+      data-testid="cpf-input"
+      data-code-type="cpf"
+      type="text"
+      inputmode="numeric"
+      aria-describedby="cpf-input-error"
+      placeholder="000.000.000-00"
+      class="block w-full rounded-md border-0 bg-neutral-50 py-1.5 text-neutral-900 shadow-sm
+               ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-600
+               focus:ring-2 focus:ring-inset focus:ring-brand
+               sm:text-sm sm:leading-6"
+    />
+    <p id="cpf-input-error" data-testid="cpf-input-error" class="hidden text-xs text-error-strong mt-1 font-medium" aria-live="polite"></p>
+  </div>
+
+</body>
+</html>

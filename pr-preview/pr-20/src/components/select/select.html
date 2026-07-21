@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Select — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-20/assets/theme-switcher-Bw9K5fNi.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-20/assets/gallery-theme-selector--qsFfMOI.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-20/assets/theme-switcher-CNSCDKmQ.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-20/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Select</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 grid max-w-sm gap-8">
+    <section data-testid="select-default-wrapper" class="space-y-1">
+      <h2 class="text-sm font-semibold text-neutral-600">Default / focus</h2>
+      <label for="select-default" class="text-sm font-medium text-neutral-900">
+        Country
+      </label>
+      <select id="select-default" data-testid="select-default" class="form-select">
+        <option value="">Select a country…</option>
+        <option value="br">Brazil</option>
+        <option value="us">United States</option>
+        <option value="pt">Portugal</option>
+      </select>
+    </section>
+
+    <section data-testid="select-error-wrapper" class="space-y-1">
+      <h2 class="text-sm font-semibold text-neutral-600">Error</h2>
+      <label for="select-error" class="text-sm font-medium text-neutral-900">
+        Country
+      </label>
+      <select
+        id="select-error"
+        data-testid="select-error"
+        aria-invalid="true"
+        aria-describedby="select-error-message"
+        class="form-select ring-error focus:ring-error"
+      >
+        <option value="" selected>Select a country…</option>
+        <option value="br">Brazil</option>
+        <option value="us">United States</option>
+        <option value="pt">Portugal</option>
+      </select>
+      <p id="select-error-message" class="text-xs text-error-strong mt-1 font-medium">
+        Please select a country.
+      </p>
+    </section>
+
+    <section data-testid="select-disabled-wrapper" class="space-y-1">
+      <h2 class="text-sm font-semibold text-neutral-600">Disabled</h2>
+      <label for="select-disabled" class="text-sm font-medium text-neutral-900">
+        Country
+      </label>
+      <select id="select-disabled" data-testid="select-disabled" disabled class="form-select">
+        <option value="br" selected>Brazil</option>
+        <option value="us">United States</option>
+      </select>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+import"./theme-switcher-Bw9K5fNi.js";import"./gallery-theme-selector--qsFfMOI.js";function e(){document.querySelectorAll(`[data-progress-fill]`).forEach(e=>{let t=e.getAttribute(`data-value`);t!==null&&(e.style.width=`${t}%`)})}e();
