@@ -1,6 +1,6 @@
 {
   "name": "professional-design-system",
-  "version": "0.1.9",
+  "version": "1.0.0",
   "private": false,
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,12 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist", "LICENSE", "README.md", "CHANGELOG.md"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jonyfs/professional-design-system.git",
