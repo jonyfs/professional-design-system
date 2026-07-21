@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Button — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-17/assets/theme-switcher-C9xufxBd.js"></script>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-17/assets/gallery-theme-selector-CqNjUKs-.js"></script>
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/theme-switcher-C3Rib2Ti.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-17/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Button</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <section class="mt-8 space-y-4">
+    <h2 class="text-lg font-semibold text-neutral-900">Primary</h2>
+    <div class="flex flex-wrap items-center gap-4">
+      <button type="button" data-testid="button-primary" class="btn-primary">
+        Primary action
+      </button>
+
+      <button type="button" data-testid="button-primary-disabled" disabled class="btn-primary">
+        Disabled
+      </button>
+    </div>
+  </section>
+
+  <section class="mt-8 space-y-4">
+    <h2 class="text-lg font-semibold text-neutral-900">Secondary</h2>
+    <div class="flex flex-wrap items-center gap-4">
+      <button type="button" data-testid="button-secondary" class="btn-secondary">
+        Secondary action
+      </button>
+
+      <button
+        type="button"
+        data-testid="button-secondary-disabled"
+        disabled
+        class="btn-secondary"
+      >
+        Disabled
+      </button>
+    </div>
+  </section>
+
+  <section class="mt-8 space-y-4">
+    <h2 class="text-lg font-semibold text-neutral-900">Edge case — long label</h2>
+    <div data-testid="button-long-label-wrapper" class="max-w-xs">
+      <button type="button" data-testid="button-long-label" class="btn-primary w-full">
+        This is a significantly longer status label than usual
+      </button>
+    </div>
+  </section>
+</body>
+</html>

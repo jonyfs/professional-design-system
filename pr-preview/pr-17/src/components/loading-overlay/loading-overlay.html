@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>LoadingOverlay — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-17/assets/loadingOverlay-Djld0-ev.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/theme-switcher-C9xufxBd.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/gallery-theme-selector-CqNjUKs-.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/theme-switcher-C3Rib2Ti.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-17/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">LoadingOverlay</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    A blocking spinner overlay scoped to a specific region, not the
+    whole page — reuses Spinner's existing markup verbatim.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <button type="button" data-loading-toggle="loading-overlay-demo" data-testid="loading-overlay-toggle" class="btn-secondary">
+    Toggle loading
+  </button>
+
+  <div id="loading-overlay-demo" data-testid="loading-overlay-container" aria-busy="false" class="loading-overlay-container mt-4 max-w-md rounded-lg border border-neutral-200 p-6">
+    <p class="text-sm text-neutral-900">Table content goes here.</p>
+    <button type="button" data-testid="loading-overlay-inner-button" class="btn-primary mt-3">Save</button>
+    <div data-loading-overlay data-testid="loading-overlay" role="status" class="loading-overlay">
+      <span class="sr-only">Loading</span>
+      <svg class="spinner spinner-lg motion-reduce:animate-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+      </svg>
+    </div>
+  </div>
+
+</body>
+</html>

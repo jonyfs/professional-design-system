@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Data Table — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-17/assets/dataTable-DI-JmHdq.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/theme-switcher-C9xufxBd.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/gallery-theme-selector-CqNjUKs-.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/overlay-TYHDIv5r.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-17/assets/theme-switcher-C3Rib2Ti.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-17/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Data Table</h1>
+  <p class="mt-2 max-w-2xl text-sm text-neutral-600">
+    Sort, filter, paginate, multi-select with bulk actions, and opt-in
+    CRUD — a distinct, more capable sibling of the zero-JavaScript
+    <a href="/professional-design-system/pr-preview/pr-17/src/components/table/table.html" class="demo-link">Table</a>
+    component.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Read-only</h2>
+  <div class="mt-4" data-testid="data-table-readonly" id="data-table-readonly"></div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Selectable + bulk actions</h2>
+  <div class="mt-4" data-testid="data-table-selectable" id="data-table-selectable"></div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Full CRUD</h2>
+  <div class="mt-4" data-testid="data-table-crud" id="data-table-crud"></div>
+
+  <h2 class="mt-8 text-lg font-semibold text-neutral-900">Empty (no data yet)</h2>
+  <div class="mt-4" data-testid="data-table-empty" id="data-table-empty"></div>
+
+</body>
+</html>

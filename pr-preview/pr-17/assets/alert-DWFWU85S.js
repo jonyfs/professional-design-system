@@ -1,0 +1,1 @@
+import"./theme-switcher-C9xufxBd.js";import"./gallery-theme-selector-CqNjUKs-.js";function e(){document.querySelectorAll(`[data-alert]`).forEach(e=>{e.querySelector(`button`)?.addEventListener(`click`,()=>e.remove())})}e();
