@@ -1,13 +1,18 @@
 name: Release
 
 # specs/050-npm-release-automation: opens/updates a "Version Packages" PR
-# whenever changesets are pending on main. Deliberately has NO `publish`
-# command configured — per this project's constitution (Distribution &
-# Ecosystem Standards, v1.39.0), a real `npm publish` is a human-authorized
-# action, never an autonomous one. This workflow only ever *prepares* a
-# release (version bump + changelog); a maintainer reviews and merges the
-# resulting PR, then follows docs/PUBLISHING.md's existing manual publish
-# step themselves.
+# whenever changesets are pending on main.
+#
+# specs/051-npm-publish-automation: the same changesets/action step below
+# also carries a `publish` command now. changesets/action's own built-in
+# behavior is what makes this compliant with the constitution's amended
+# (v2.0.0) publish-authorization principle: when changesets are pending,
+# this step opens/updates the Version Packages PR exactly as before; when
+# there are NONE pending and a package's local version differs from the
+# registry -- i.e. only on the run immediately after a maintainer merges
+# that PR -- it runs the publish command instead. The PR merge itself is
+# the human authorization; no agent or unattended trigger invokes `npm
+# publish` directly.
 on:
   push:
     branches: [main]
@@ -34,10 +39,60 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Create or update the Version Packages PR
+      # T002 (specs/051): the same build + verify commands
+      # docs/PUBLISHING.md's manual Steps 3-4 document, run here so a
+      # broken build/typecheck/audit can never reach the publish step
+      # below -- whether this run ends up opening a PR (changesets
+      # pending) or publishing (none pending), the package must build
+      # clean either way.
+      - name: Build packages/react
+        run: npm run build --workspace packages/react
+
+      - name: Typecheck packages/react
+        run: npm run typecheck --workspace packages/react
+
+      - name: Token discipline audit (Principle IV, NON-NEGOTIABLE)
+        run: npm run audit:tokens
+
+      - name: Contrast audit (Principle II, AAA, NON-NEGOTIABLE)
+        run: npm run audit:contrast
+
+      # T003 (specs/051): same tarball-contents sanity check
+      # docs/PUBLISHING.md's manual Step 4 already documents -- confirms
+      # LICENSE/README/CHANGELOG/dist (incl. dist/styles.css) all ship
+      # before this run is trusted to publish.
+      - name: Sanity-check the published tarball's contents
+        run: |
+          npm pack --workspace packages/react --pack-destination /tmp
+          tarball=$(ls /tmp/professional-design-system-*.tgz)
+          contents=$(tar -tzf "$tarball")
+          for required in LICENSE README.md CHANGELOG.md dist/styles.css; do
+            if ! grep -q "package/${required}$" <<< "$contents"; then
+              echo "::error::Tarball is missing required file: ${required}"
+              exit 1
+            fi
+          done
+          rm "$tarball"
+
+      - name: Create or update the Version Packages PR / publish
+        id: changesets
         uses: changesets/action@v1
         with:
           title: 'chore: version packages'
           commit: 'chore: version packages'
+          publish: npx changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # T009 (specs/051): `changeset publish` (run above) creates git tags
+      # locally by default -- confirmed in node_modules/@changesets/cli's
+      # own source ("Skipping tag (already exists)" logic implies tag
+      # creation on the non-skip path). Whether changesets/action@v1
+      # itself pushes those tags to the remote could not be confirmed
+      # from its bundled/minified dist/index.js, so this step pushes
+      # explicitly and unconditionally when a publish happened -- a no-op
+      # (nothing new to push) on every run that only opened/updated the PR.
+      - name: Push published tags
+        if: steps.changesets.outputs.published == 'true'
+        run: git push origin --tags

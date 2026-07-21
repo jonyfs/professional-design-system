@@ -1,6 +1,29 @@
 <!--
-SYNC IMPACT REPORT (v1.40.0 — see below for the v1.39.1/v1.39.0/v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
-Version change: 1.39.1 → 1.40.0
+SYNC IMPACT REPORT (v2.0.0 — see below for the v1.40.0/v1.39.1/v1.39.0/v1.38.0/v1.37.0/v1.36.0/v1.35.0/v1.34.0/v1.33.0/v1.32.0/v1.31.0/v1.30.0/v1.29.0/v1.28.0/v1.27.0/v1.26.0/v1.25.0/v1.24.0/v1.23.0/v1.22.0/v1.21.0/v1.20.0/v1.19.0/v1.18.0/v1.17.0/v1.16.0/v1.15.0/v1.14.0/v1.13.0/v1.12.0/v1.11.0/v1.10.0/v1.9.0/v1.8.0/v1.7.0/v1.6.0/v1.5.0/v1.4.0/v1.3.4/v1.3.3/v1.3.2/v1.3.1/v1.3.0 reports this extends)
+Version change: 1.40.0 → 2.0.0
+Modified principles:
+  - Distribution & Ecosystem Standards → the "npm publish is a
+    human-authorized action, never an autonomous one" bullet: previously
+    read as forbidding ANY automated `npm publish` path, requiring a
+    human to run the command locally with their own credentials every
+    time. Redefined to recognize two compliant authorization forms —
+    the original manual path, and a new CI-gated path (feature 051)
+    where GitHub Actions runs `npm publish` itself immediately after a
+    human merges the changesets "Version Packages" PR, that merge being
+    the human authorization. An AI agent still MUST NEVER invoke `npm
+    publish` directly under either form. This is a first-ever MAJOR
+    bump for this constitution: it's a genuine redefinition of what
+    counts as compliant (previously non-compliant CI automation is now
+    compliant under the stated gate), not an additive clarification.
+Rationale: the user requested real npm publish automation gated on
+merging the release PR rather than requiring a maintainer's local
+`npm publish` every release. The prior wording's "never an autonomous
+one" read as an absolute ban on any machine-run publish step, which
+would have made the requested feature non-compliant by definition
+without this amendment — so the principle is amended first
+(specjedi-constitution), before specifying the feature itself
+(specjedi-specify), per this project's own governance-before-build
+discipline.
 Modified principles: None
 Added sections:
   - Component Catalog & Tailwind UI Patterns → new "2026 Style Direction
@@ -3793,15 +3816,31 @@ on it, and this section exists so that dependency is never silently broken.
   MUST be a deliberate future feature with its own spec if there's genuine
   multi-framework demand, never something silently promised or implied by
   documentation that doesn't say so.
-- **A real `npm publish` to the public registry is a human-authorized
-  action, never an autonomous one.** It is irreversible (a published
-  version cannot be unpublished after npm's 72-hour window) and public.
-  Feature 048 established the precedent: an AI agent may build, verify
-  (via `npm pack` + install into a project outside the workspace — a
+- **A real `npm publish` to the public registry MUST be gated by an
+  explicit human authorization action — an AI agent MUST NEVER invoke
+  `npm publish` itself, directly or via a command it triggers outside
+  that gate.** It is irreversible (a published version cannot be
+  unpublished after npm's 72-hour window) and public. Feature 048
+  established the precedent that an AI agent may build, verify (via
+  `npm pack` + install into a project outside the workspace — a
   faithful stand-in that exercises the same module-resolution and
   `exports`-map behavior a registry install would), and prepare every
-  step up to publishing, but the actual `npm publish` command is run by a
-  human holding real registry credentials, following `docs/PUBLISHING.md`.
+  step up to publishing. Two forms of human authorization satisfy this
+  principle:
+  - **Manual** (`docs/PUBLISHING.md`'s original path): a human runs
+    `npm publish` themselves, holding real registry credentials.
+  - **CI-gated** (feature 051): GitHub Actions runs the actual `npm
+    publish` command, but only as a step that fires after a human
+    merges the changesets "Version Packages" PR into `main` — that
+    merge action is itself the human authorization; nothing publishes
+    from an agent-authored commit or an unreviewed push. The workflow
+    holds registry credentials via a scoped `NPM_TOKEN` repository
+    secret, never a human's local session.
+  Either path is compliant; a project may support one or both. What
+  remains non-negotiable is that no publish happens without a human
+  having taken a real, attributable action — running the command
+  themselves, or merging the PR that triggers it — immediately
+  beforehand.
 
 **Rationale**: this project's own Component Catalog Quality & 2026
 Modernization audit (feature 044) and this section's own trigger (feature
@@ -3897,4 +3936,4 @@ English-only artifact requirement in Principle VI. Complexity that violates a
 principle requires explicit justification documented in the corresponding
 feature plan (`Complexity Tracking` in `plan-template.md`).
 
-**Version**: 1.40.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-19
+**Version**: 2.0.0 | **Ratified**: 2026-07-07 | **Last Amended**: 2026-07-20
