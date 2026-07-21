@@ -14,7 +14,11 @@ test.describe("Dashboard Example (SC-003 composed page)", () => {
     page,
   }) => {
     const wrapper = page.getByTestId("dashboard-example-wrapper");
-    await expect(wrapper.locator(".card")).toHaveCount(2);
+    // 4, not 2: feature 044's visual-hierarchy refinement added two satellite
+    // KPI cards (Active Users, Open Tickets) alongside the original hero +
+    // churn-rate cards -- still composed entirely from the existing .card
+    // primitive, no new class invented.
+    await expect(wrapper.locator(".card")).toHaveCount(4);
     await expect(wrapper.locator(".indicator-wrapper")).toHaveCount(1);
     await expect(wrapper.locator(".avatar-fallback")).toHaveCount(1);
     await expect(wrapper.locator(".divider")).toHaveCount(1);
