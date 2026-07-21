@@ -8,8 +8,8 @@ Merging the "Version Packages" PR (see Step 1 below) is now the *only* step a ma
 
 ## Prerequisites
 
-- **Automated path (default)**: an `NPM_TOKEN` repository secret (GitHub Settings → Secrets and variables → Actions), holding an npm "Automation" access token scoped to `professional-design-system` publish access under the `jonyfs` account. Provisioned once by whoever administers this repository; not something CI or an agent can create.
-- **Manual fallback only**: npm registry credentials for the personal `jonyfs` account with publish access to `professional-design-system` (`npm whoami` must succeed and return `jonyfs` — this repo's own CI/development environment does not hold personal credentials, so the manual path is always run by a maintainer).
+- **Automated path (default)**: an `NPM_TOKEN` repository secret (GitHub Settings → Secrets and variables → Actions), holding an npm "Automation" access token scoped to `professional-design-system` publish access under the `jonfys` account. Provisioned once by whoever administers this repository; not something CI or an agent can create.
+- **Manual fallback only**: npm registry credentials for the personal `jonfys` account with publish access to `professional-design-system` (`npm whoami` must succeed and return `jonfys` — this repo's own CI/development environment does not hold personal credentials, so the manual path is always run by a maintainer).
 - A clean working tree on `main`, with all changes for the release already merged.
 
 ## Before you get here: every PR needs a changeset
