@@ -13,6 +13,15 @@ name: Release
 # that PR -- it runs the publish command instead. The PR merge itself is
 # the human authorization; no agent or unattended trigger invokes `npm
 # publish` directly.
+#
+# Post-first-publish migration: authenticates to npm via Trusted
+# Publishing (OIDC) instead of a long-lived NPM_TOKEN secret, now that
+# professional-design-system@1.0.0 exists and a Trusted Publisher
+# connection (jonyfs/professional-design-system, this workflow, "npm
+# publish" allowed) is configured on npmjs.com. The npm CLI auto-detects
+# the OIDC environment from the `id-token: write` permission below --
+# npm docs: "requires npm CLI version 11.5.1 or later," hence the
+# explicit npm upgrade step.
 on:
   push:
     branches: [main]
@@ -24,6 +33,7 @@ concurrency:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 jobs:
   release:
@@ -35,9 +45,15 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: npm
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm ci
+
+      # Trusted Publishing (OIDC) requires npm CLI 11.5.1+; 'lts/*' isn't
+      # guaranteed to bundle a recent-enough npm.
+      - name: Ensure npm supports OIDC trusted publishing
+        run: npm install -g npm@latest
 
       # T002 (specs/051): the same build + verify commands
       # docs/PUBLISHING.md's manual Steps 3-4 document, run here so a
@@ -83,7 +99,6 @@ jobs:
           publish: npx changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # T009 (specs/051): `changeset publish` (run above) creates git tags
       # locally by default -- confirmed in node_modules/@changesets/cli's
