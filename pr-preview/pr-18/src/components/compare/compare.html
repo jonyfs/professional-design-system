@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self';" />
+  <title>Compare — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-18/assets/compare-B8NivobQ.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-DzYYuIjM.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/gallery-theme-selector-CUstixbQ.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-BZ-ku4dm.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-18/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Compare</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Draggable before/after image comparison slider — the divider
+    reuses Slider's exact native &lt;input type="range"&gt;, giving
+    keyboard operability and 0-100% clamping for free.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div data-compare data-testid="compare-demo" class="compare-container mt-8 h-64 w-full max-w-md">
+    <img
+      src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%236B7280%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22150%22%20font-size%3D%2230%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EBefore%3C/text%3E%3C/svg%3E"
+      alt="Before"
+      class="compare-image"
+    />
+    <div data-compare-after-wrapper data-testid="compare-after-wrapper" class="compare-after-wrapper">
+      <img
+        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23374151%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22150%22%20font-size%3D%2230%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EAfter%3C/text%3E%3C/svg%3E"
+        alt="After"
+        class="compare-image"
+      />
+    </div>
+    <div data-compare-divider-line data-testid="compare-divider-line" class="compare-divider-line" aria-hidden="true"></div>
+    <input
+      type="range"
+      data-compare-slider
+      data-testid="compare-slider"
+      min="0"
+      max="100"
+      value="50"
+      aria-label="Comparison position"
+      class="compare-slider slider"
+    />
+  </div>
+
+</body>
+</html>

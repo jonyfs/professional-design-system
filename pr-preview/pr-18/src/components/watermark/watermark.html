@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self';" />
+  <title>Watermark — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-18/assets/watermark-Sa3Ds4IA.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-DzYYuIjM.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/gallery-theme-selector-CUstixbQ.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-BZ-ku4dm.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-18/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Watermark</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Repeated background text layered behind content — a pure CSS
+    technique, no new dependency.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div data-watermark-text="CONFIDENTIAL" data-testid="watermark-demo" class="watermark-container mt-8 max-w-md rounded-lg border border-neutral-200 p-6">
+    <div data-watermark-layer data-testid="watermark-layer" aria-hidden="true" class="watermark-layer"></div>
+    <div class="watermark-content">
+      <p class="text-sm text-neutral-900" data-testid="watermark-content-text">
+        This document contains sensitive information. The text remains
+        fully legible over the repeating watermark behind it.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

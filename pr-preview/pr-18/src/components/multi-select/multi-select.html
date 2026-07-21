@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Multi Select — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-18/assets/multiSelect-BhMhlTIw.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-DzYYuIjM.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/gallery-theme-selector-CUstixbQ.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/multi-select-vkHOIOUS.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-BZ-ku4dm.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-18/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Multi Select</h1>
+  <p class="mt-2 max-w-md text-sm text-neutral-600">
+    Combobox's filter-as-you-type listbox, extended for multiple concurrent
+    selections. Each pick becomes a removable chip; the options panel stays
+    open after a selection. Zero selections show the placeholder, matching
+    Select and Combobox.
+  </p>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 max-w-sm">
+    <div class="relative">
+      <label for="multi-select-input" class="mb-1 block text-sm font-medium text-neutral-900">
+        Frameworks
+      </label>
+      <div
+        data-testid="multi-select-chips"
+        class="mb-1 flex flex-wrap gap-1 empty:mb-0"
+      ></div>
+      <input
+        type="text"
+        id="multi-select-input"
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="multi-select-listbox"
+        aria-activedescendant=""
+        aria-autocomplete="list"
+        autocomplete="off"
+        data-testid="multi-select-input"
+        class="combobox-input"
+        placeholder="Select…"
+      />
+      <ul
+        id="multi-select-listbox"
+        role="listbox"
+        aria-multiselectable="true"
+        popover="manual"
+        data-testid="multi-select-listbox"
+        class="combobox-listbox"
+      ></ul>
+    </div>
+  </div>
+
+</body>
+</html>

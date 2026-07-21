@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" />
+  <title>Slide-over — Professional Design System</title>
+  <script type="module" crossorigin src="/professional-design-system/pr-preview/pr-18/assets/slideOver-Dy70_kLg.js"></script>
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-DzYYuIjM.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/gallery-theme-selector-CUstixbQ.js">
+  <link rel="modulepreload" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/overlay-TYHDIv5r.js">
+  <link rel="stylesheet" crossorigin href="/professional-design-system/pr-preview/pr-18/assets/theme-switcher-BZ-ku4dm.css">
+</head>
+<body class="page-shell">
+  <div class="demo-page-header border-b border-neutral-200 pb-6 mb-6">
+  <a href="/professional-design-system/pr-preview/pr-18/index.html" class="back-link">← Back to gallery</a>
+  <h1 class="mt-4 text-2xl font-bold text-neutral-900">Slide-over</h1>
+
+    <div class="mt-4 max-w-xs">
+      <label for="gallery-theme-select" class="text-sm font-medium text-neutral-900">
+        Preview theme
+      </label>
+      <select id="gallery-theme-select" data-testid="gallery-theme-select" class="form-select">
+        <!-- <optgroup>/<option>s populated by gallery-theme-selector.js -->
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <button
+      type="button"
+      data-testid="slide-over-trigger"
+      data-dialog-trigger="slide-over-example"
+      class="btn-primary"
+    >
+      View details
+    </button>
+    <button
+      type="button"
+      data-testid="slide-over-info-trigger"
+      data-dialog-trigger="slide-over-info"
+      class="btn-secondary"
+    >
+      Show informational panel (no buttons, Edge Case)
+    </button>
+  </div>
+
+  <dialog
+    id="slide-over-example"
+    data-testid="slide-over"
+    aria-labelledby="slide-over-title"
+    class="slide-over-dialog"
+  >
+    <div class="slide-over-panel">
+      <div class="flex items-start justify-between gap-4">
+        <h2 id="slide-over-title" class="text-lg font-semibold text-neutral-900">
+          Order details
+        </h2>
+        <form method="dialog">
+          <button
+            type="submit"
+            data-testid="slide-over-close"
+            aria-label="Close"
+            class="close-icon-btn"
+          >
+            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+              <path
+                d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+      <p class="mt-4 text-sm text-neutral-600">
+        Order #1042 — placed 2026-07-08, currently in transit.
+      </p>
+    </div>
+  </dialog>
+
+  <dialog
+    id="slide-over-info"
+    data-testid="slide-over-info"
+    tabindex="-1"
+    aria-labelledby="slide-over-info-title"
+    class="slide-over-dialog"
+  >
+    <div class="slide-over-panel">
+      <h2 id="slide-over-info-title" class="text-lg font-semibold text-neutral-900">
+        Syncing…
+      </h2>
+      <p class="mt-2 text-sm text-neutral-600">This will only take a moment.</p>
+    </div>
+  </dialog>
+
+</body>
+</html>
