@@ -28,7 +28,9 @@
   </div>
 
   <div data-pick-list data-testid="pick-list-demo" class="mt-8 grid max-w-2xl grid-cols-[1fr_auto_1fr] gap-4">
-    <div data-pick-list-source data-testid="pick-list-source" class="pick-list-panel">
+    <div class="pick-list-column">
+      <div class="pick-list-header">Available</div>
+      <div data-pick-list-source data-testid="pick-list-source" class="pick-list-panel">
       <label class="list-row" data-pick-list-row data-testid="pick-list-row-alice">
         <input type="checkbox" class="h-4 w-4 rounded-sm border-neutral-300 text-brand
                focus-visible:outline focus-visible:outline-2
@@ -48,6 +50,7 @@
         <span class="list-row-title">Carla Diaz</span>
       </label>
       <p data-pick-list-empty class="list-row-metadata p-4" hidden>No available users.</p>
+      </div>
     </div>
 
     <div class="pick-list-controls">
@@ -57,8 +60,13 @@
       <button type="button" data-pick-list-move-left data-testid="pick-list-move-left" aria-label="Move selected left" class="action-icon action-icon-secondary">‹</button>
     </div>
 
-    <div data-pick-list-destination data-testid="pick-list-destination" class="pick-list-panel">
-      <p data-pick-list-empty class="list-row-metadata p-4">No members yet.</p>
+    <div class="pick-list-column">
+      <div class="pick-list-header">
+        <span class="pick-list-dot" aria-hidden="true"></span>Selected
+      </div>
+      <div data-pick-list-destination data-testid="pick-list-destination" class="pick-list-panel">
+        <p data-pick-list-empty class="list-row-metadata p-4">No members yet.</p>
+      </div>
     </div>
   </div>
 

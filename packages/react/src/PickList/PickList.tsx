@@ -41,7 +41,12 @@ export function PickList({ source, destination, onChange, "data-testid": testId 
 
   return (
     <div data-testid={testId} className="mt-8 grid max-w-2xl grid-cols-[1fr_auto_1fr] gap-4">
-      <div className="pick-list-panel">
+      <div className="pick-list-column">
+        <div className="pick-list-header">
+          Available
+          <span className="pick-list-count">{source.length}</span>
+        </div>
+        <div className="pick-list-panel">
         {source.map((item) => (
           <label key={item.id} className="list-row">
             <input
@@ -59,6 +64,7 @@ export function PickList({ source, destination, onChange, "data-testid": testId 
           </label>
         ))}
         {source.length === 0 && <p className="list-row-metadata p-4">No available users.</p>}
+        </div>
       </div>
       <div className="pick-list-controls">
         <button
@@ -94,7 +100,13 @@ export function PickList({ source, destination, onChange, "data-testid": testId 
           ‹
         </button>
       </div>
-      <div className="pick-list-panel">
+      <div className="pick-list-column">
+        <div className="pick-list-header">
+          <span className="pick-list-dot" aria-hidden="true" />
+          Selected
+          <span className="pick-list-count">{destination.length}</span>
+        </div>
+        <div className="pick-list-panel">
         {destination.map((item) => (
           <label key={item.id} className="list-row">
             <input
@@ -112,6 +124,7 @@ export function PickList({ source, destination, onChange, "data-testid": testId 
           </label>
         ))}
         {destination.length === 0 && <p className="list-row-metadata p-4">No members yet.</p>}
+        </div>
       </div>
     </div>
   );
