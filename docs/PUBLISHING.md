@@ -4,11 +4,11 @@ A documented, repeatable process for releasing a new version of the React packag
 
 ## As of feature 051: publishing is automated
 
-Merging the "Version Packages" PR (see Step 1 below) is now the *only* step a maintainer performs — `.github/workflows/release.yml` runs the build/verify/tarball checks and the actual `npm publish` itself immediately afterward, authenticating with a repository `NPM_TOKEN` secret. The PR merge is the human authorization the constitution's `Distribution & Ecosystem Standards` (v2.0.0) requires; no further manual command is needed. The rest of this document's "Manual fallback" section describes the steps the automation now performs, kept as the documented path for when the automation can't run (e.g. `NPM_TOKEN` unavailable or invalid, an emergency out-of-band release).
+Merging the "Version Packages" PR (see Step 1 below) is now the *only* step a maintainer performs — `.github/workflows/release.yml` runs the build/verify/tarball checks and the actual `npm publish` itself immediately afterward, authenticating via **Trusted Publishing (OIDC)** — no stored token at all. The PR merge is the human authorization the constitution's `Distribution & Ecosystem Standards` (v2.0.0) requires; no further manual command is needed. The rest of this document's "Manual fallback" section describes the steps the automation now performs, kept as the documented path for when the automation can't run (e.g. an emergency out-of-band release, or if the Trusted Publisher connection is ever removed).
 
 ## Prerequisites
 
-- **Automated path (default)**: an `NPM_TOKEN` repository secret (GitHub Settings → Secrets and variables → Actions), holding an npm "Automation" access token scoped to `professional-design-system` publish access under the `jonfys` account. Provisioned once by whoever administers this repository; not something CI or an agent can create.
+- **Automated path (default)**: a Trusted Publisher connection configured on `professional-design-system`'s npm Settings page (`jonyfs/professional-design-system`, workflow `release.yml`, "npm publish" allowed) — set up once via npmjs.com, requires no repository secret. `release.yml` requests `id-token: write`; the npm CLI (11.5.1+, `release.yml` force-upgrades it) auto-detects the OIDC environment and exchanges it for a short-lived publish token, no `NPM_TOKEN` involved. **Migration note**: this package's first-ever release (v1.0.0) necessarily used a temporary granular access token instead, since Trusted Publishing can't be configured for a package that has never published (the npm Settings page for it doesn't exist until then) — that token has since been revoked.
 - **Manual fallback only**: npm registry credentials for the personal `jonfys` account with publish access to `professional-design-system` (`npm whoami` must succeed and return `jonfys` — this repo's own CI/development environment does not hold personal credentials, so the manual path is always run by a maintainer).
 - A clean working tree on `main`, with all changes for the release already merged.
 
@@ -30,7 +30,7 @@ This interactively asks which package changed, the semver impact (patch/minor/ma
 
 ## Manual fallback
 
-Use this path only if the automated workflow can't run (e.g. `NPM_TOKEN` missing/invalid, or an emergency release outside the normal PR-merge flow).
+Use this path only if the automated workflow can't run (e.g. the Trusted Publisher connection is misconfigured or removed, or an emergency release outside the normal PR-merge flow).
 
 1. **Pull the merged version bump locally.**
 
