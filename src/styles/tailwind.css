@@ -22,6 +22,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Feature 044 visual refinement — motion keyframes for transient surfaces
+   (Toast entrance, LoadingOverlay fade-in). Compositor-friendly properties
+   only (opacity/transform). Kept unlayered and referenced by raw `animation:`
+   declarations so Tailwind's content tree-shaking never drops them. The
+   prefers-reduced-motion guard below is intentionally unlayered too, so it
+   outranks the layered `.toast`/`.loading-overlay` animation per the cascade. */
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateX(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast,
+  .loading-overlay {
+    animation: none !important;
+  }
+}
+
 /*
  * Shared component classes (Principle III: @apply is the sanctioned escape
  * hatch for reuse, not a parallel CSS system — every value below is still a
@@ -233,9 +264,25 @@
 
   /* Toast primitive (contracts/toast.contract.md) — plain positioned
      element, deliberately not a <dialog> (non-modal, no focus trap). */
+  /* Shared status-icon chip — a tinted circle that seats the severity icon
+     on its own surface, adding a layer of depth over the flat notice and a
+     consistent rhythm between Alert and Toast (feature 044 visual pass). The
+     per-severity tint (bg-[severity]/10) is set inline in markup alongside the icon's
+     own text-*-strong fill. */
+  .status-icon {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full;
+  }
+
+  /* Toast primitive (contracts/toast.contract.md) — plain positioned
+     element, deliberately not a <dialog> (non-modal, no focus trap).
+     Feature 044: a per-severity left accent rail (border-color set inline in
+     markup), a designed hover lift on the shadow, and a compositor-friendly
+     slide-in entrance (keyframes above) that suits its transient nature. */
   .toast {
-    @apply flex items-start gap-3 rounded-md bg-neutral-50 p-4 shadow-lg
-      ring-1 ring-neutral-900/5;
+    @apply flex items-start gap-3 rounded-md border-l-4 border-transparent
+      bg-neutral-50 p-4 shadow-lg ring-1 ring-neutral-900/5
+      transition-shadow duration-200 hover:shadow-xl;
+    animation: toast-enter 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   .toast-stack {
     @apply fixed top-4 right-4 z-50 flex flex-col gap-3;
@@ -293,17 +340,33 @@
   .tabs-list {
     @apply flex gap-6 overflow-x-auto border-b border-neutral-200;
   }
+  /* Selected state is a genuine sliding indicator (2026 refinement): a
+     compositor-friendly scaleX transform on an ::after rail, not a static
+     border swap. Hover grows a faint neutral rail; selecting grows a brand
+     rail — both animate from the same origin so the underline reads as one
+     moving object. */
   .tab-trigger {
-    @apply border-b-2 border-transparent px-1 py-3 text-sm font-medium
-      text-neutral-600 hover:text-neutral-700 hover:border-neutral-300
-      active:text-neutral-800
+    @apply relative px-1 py-3 text-sm font-medium text-neutral-600
+      transition-colors duration-200 ease-out
+      hover:text-neutral-800 active:text-neutral-900
+      after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-px
+      after:h-0.5 after:rounded-full after:bg-neutral-300
+      after:origin-left after:scale-x-0
+      after:transition-transform after:duration-200 after:ease-out
+      hover:after:scale-x-100
       focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-brand
       disabled:opacity-50 disabled:cursor-not-allowed
-      disabled:hover:border-transparent;
+      disabled:hover:after:scale-x-0;
   }
   .tab-trigger[aria-selected="true"] {
-    @apply border-brand text-neutral-900;
+    @apply text-neutral-900;
+  }
+  /* The indicator rail is targeted directly on ::after with plain utilities;
+     @apply-ing after:* variants onto an attribute selector is unsupported in
+     Tailwind v3 and breaks selector parsing. */
+  .tab-trigger[aria-selected="true"]::after {
+    @apply scale-x-100 bg-brand;
   }
   .tab-panel {
     @apply pt-4 text-sm text-neutral-600;
@@ -395,21 +458,25 @@
   }
 
   /* Alert/Banner primitive (contracts/alert.contract.md) — no live-region
-     semantics (unlike Toast); optional dismiss via src/scripts/alert.js. */
+     semantics (unlike Toast); optional dismiss via src/scripts/alert.js.
+     Feature 044 visual pass: a solid per-severity left accent rail
+     (border-l-4, color per variant) plus a resting shadow-sm lift the notice
+     off the flat page and turn a same-weight severity list into a scannable,
+     color-coded stack. Icons seat in a `.status-icon` tinted chip (markup). */
   .alert {
-    @apply flex items-start gap-3 rounded-md p-4;
+    @apply flex items-start gap-3 rounded-md border-l-4 p-4 shadow-sm;
   }
   .alert-success {
-    @apply bg-success/5 ring-1 ring-inset ring-success/20;
+    @apply border-success bg-success/5 ring-1 ring-inset ring-success/20;
   }
   .alert-error {
-    @apply bg-error/5 ring-1 ring-inset ring-error/10;
+    @apply border-error bg-error/5 ring-1 ring-inset ring-error/10;
   }
   .alert-warning {
-    @apply bg-warning/5 ring-1 ring-inset ring-warning/10;
+    @apply border-warning bg-warning/5 ring-1 ring-inset ring-warning/10;
   }
   .alert-info {
-    @apply bg-info/5 ring-1 ring-inset ring-info/20;
+    @apply border-info bg-info/5 ring-1 ring-inset ring-info/20;
   }
 
   /* List primitive (contracts/011-lists-primitive/list.contract.md) —
@@ -429,8 +496,11 @@
        on the first/last row paints a rectangular patch that pokes out
        past rounded-md's corners (code review finding; same pairing
        already used by .modal-panel and .command-palette-panel). */
+    /* shadow-sm (feature 044 audit): lifts the whole list off the page
+       background as a real surface, matching the ratified .card and
+       .data-table-wrapper container treatment instead of sitting flat. */
     @apply divide-y divide-neutral-200 overflow-hidden rounded-md
-      border border-neutral-200 bg-neutral-50;
+      border border-neutral-200 bg-neutral-50 shadow-sm;
   }
   .list-row {
     @apply flex items-center gap-3 px-4 py-3;
@@ -443,8 +513,15 @@
        directly adjacent inside .list's divide-y container, so a
        positive offset would clip against the neighboring row's divider
        — same rationale as Dropdown Menu's item-level focus ring. */
-    @apply flex items-center gap-3 px-4 py-3
-      hover:bg-neutral-100 active:bg-neutral-200
+    /* Hover/focus (feature 044 audit): besides the background swap, an
+       inset brand accent rail slides in on the leading edge — a designed,
+       semantic-color affordance that reads as "this row is actionable",
+       not just a flat tint. transition keeps the rail + tint compositor-
+       cheap. focus-within-style rail mirrors hover for keyboard users. */
+    @apply flex items-center gap-3 border-l-2 border-transparent px-4 py-3
+      transition duration-150 ease-out
+      hover:border-brand hover:bg-neutral-100
+      active:bg-neutral-200
       focus-visible:outline focus-visible:outline-2
       focus-visible:-outline-offset-2 focus-visible:outline-brand;
   }
@@ -543,18 +620,22 @@
      implements + corrects the ratified pattern (two real AAA gaps found
      by research.md R3: bg-brand -> bg-brand-dark; text-neutral-400 ->
      text-neutral-300 on the dark theme). */
+  /* 2026 refinement: the panel is a real elevated surface (rounded + shadow),
+     not a flat bordered column. Items gain compositor-friendly motion and
+     the active item carries an inset accent rail + its own shadow so the
+     selection reads with depth and hierarchy, not just a fill swap. */
   .sidebar {
-    @apply flex h-full w-64 flex-col gap-1 p-4;
+    @apply flex h-full w-64 flex-col gap-1 rounded-lg p-4;
   }
   .sidebar-light {
-    @apply bg-neutral-50 border-r border-neutral-200;
+    @apply bg-neutral-50 border border-neutral-200 shadow-sm;
   }
   .sidebar-dark {
-    @apply bg-neutral-900;
+    @apply bg-neutral-900 shadow-md;
   }
   .sidebar-item {
-    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium
-      transition-colors duration-150 focus-visible:outline
+    @apply relative flex items-center gap-3 rounded-md px-3 py-2 text-sm
+      font-medium transition duration-150 ease-out focus-visible:outline
       focus-visible:outline-2 focus-visible:outline-offset-2
       focus-visible:outline-brand;
   }
@@ -565,22 +646,40 @@
     @apply text-neutral-300 hover:bg-neutral-800 active:bg-neutral-700;
   }
   .sidebar-item[aria-current="page"] {
-    @apply bg-brand-dark text-white hover:bg-brand-dark active:bg-brand-dark;
+    @apply bg-brand-dark text-white shadow-sm hover:bg-brand-dark
+      active:bg-brand-dark;
+  }
+  /* Inset accent rail on the active item, targeted directly on ::before with
+     plain utilities (@apply-ing before:* variants onto an attribute selector
+     is unsupported in Tailwind v3 and breaks selector parsing). */
+  .sidebar-item[aria-current="page"]::before {
+    @apply absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-full bg-white/80;
+    content: "";
   }
 
   /* Navbar/Header primitive (contracts/navbar.contract.md) — zero
      JavaScript; mobile menu reuses Accordion's native <details>/<summary>
      mechanism (research.md R1); backdrop-filter fallback per Edge Case. */
+  /* 2026 refinement: the header sits above the page with a real drop shadow
+     (depth), not just a hairline border. Links grow a compositor-friendly
+     brand underline on hover so navigation affordances feel designed and
+     stay visually consistent with the Tabs indicator. */
   .navbar {
-    @apply sticky top-0 z-40 border-b border-neutral-200 bg-neutral-50
+    @apply sticky top-0 z-40 border-b border-neutral-200 bg-neutral-50 shadow-sm
       supports-[backdrop-filter]:bg-neutral-50/80 supports-[backdrop-filter]:backdrop-blur-md;
   }
   .navbar-inner {
     @apply mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4;
   }
   .navbar-link {
-    @apply text-sm font-medium text-neutral-600 hover:text-neutral-900
-      active:text-neutral-700 focus-visible:outline focus-visible:outline-2
+    @apply relative text-sm font-medium text-neutral-600 transition-colors
+      duration-200 ease-out hover:text-neutral-900 active:text-neutral-700
+      after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-1
+      after:h-0.5 after:rounded-full after:bg-brand
+      after:origin-left after:scale-x-0
+      after:transition-transform after:duration-200 after:ease-out
+      hover:after:scale-x-100
+      focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
   .navbar-menu-trigger {
@@ -1373,23 +1472,54 @@
      contracts/notification-center.contract.md). Reuses Indicator's
      .indicator-wrapper/.indicator and Dropdown Menu's native Popover
      API mechanics verbatim — no new interaction pattern. */
+  /* Designed trigger: resting is quiet, but hover/active/focus each read
+     as intentional — a subtle inset ring appears on hover, the bell dips
+     on press (compositor-friendly transform), keyboard focus is explicit. */
   .notification-center-trigger {
     @apply relative inline-flex h-10 w-10 items-center justify-center
-      rounded-md text-neutral-600 hover:bg-neutral-100
+      rounded-lg text-neutral-600 ring-1 ring-inset ring-transparent
+      transition-[background-color,box-shadow,transform,color] duration-200 ease-out
+      hover:bg-neutral-100 hover:text-neutral-900 hover:ring-neutral-200
+      active:scale-95
       focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
+  /* Panel gains real depth (layered shadow + inset hairline ring) and a
+     full-bleed header band, so the surface reads as a distinct floating
+     sheet rather than a flat bordered box. */
   .notification-center-panel {
-    @apply w-80 rounded-lg border border-neutral-200 bg-neutral-50 p-2 shadow-lg;
+    @apply w-80 overflow-hidden rounded-lg border border-neutral-200
+      bg-neutral-50 p-2 shadow-xl ring-1 ring-inset ring-neutral-200/60;
+  }
+  .notification-center-header {
+    @apply -mx-2 -mt-2 mb-1 flex items-center justify-between gap-3
+      border-b border-neutral-200 bg-neutral-100 px-4 py-3;
+  }
+  .notification-center-header-title {
+    @apply text-sm font-semibold tracking-tight text-neutral-900;
+  }
+  .notification-center-header-count {
+    @apply inline-flex items-center rounded-full bg-neutral-50 px-2 py-0.5
+      text-xs font-semibold text-neutral-700 ring-1 ring-inset ring-neutral-200;
   }
   .notification-center-item {
-    @apply flex flex-col gap-1 rounded-md p-3 text-sm;
+    @apply relative flex flex-col gap-0.5 rounded-lg px-3 py-2.5 text-sm
+      transition-colors duration-150 hover:bg-neutral-100;
   }
+  /* Unread carries clear semantic weight: a brand tint plus a brand dot
+     rail on the leading edge — hierarchy through color, not just bolder text. */
   .notification-center-item-unread {
-    @apply bg-brand-light/20;
+    @apply bg-brand-light/20 pl-5 hover:bg-brand-light/30;
+  }
+  .notification-center-item-unread::before {
+    content: "";
+    @apply absolute left-2 top-3.5 h-2 w-2 rounded-full bg-brand;
   }
   .notification-center-empty {
-    @apply p-6 text-center text-sm text-neutral-600;
+    @apply flex flex-col items-center gap-2 px-6 py-8 text-center text-sm text-neutral-600;
+  }
+  .notification-center-empty-icon {
+    @apply h-8 w-8 text-neutral-400;
   }
 
   /* Feature 029: Feedback Primitives — Password Strength Meter (US3,
@@ -1413,8 +1543,21 @@
   .loading-overlay-container {
     @apply relative;
   }
+  /* Feature 044 visual pass: a backdrop-blur frosts the content behind so the
+     busy state reads as a real depth layer, and the spinner sits inside a
+     floating pill with a label — hierarchy and typography instead of a lone
+     glyph on a wash. A short fade-in (keyframes above) softens its arrival. */
   .loading-overlay {
-    @apply absolute inset-0 z-10 flex items-center justify-center bg-neutral-50/75;
+    @apply absolute inset-0 z-10 flex items-center justify-center
+      bg-neutral-50/75 backdrop-blur-sm;
+    animation: overlay-fade-in 200ms ease-out both;
+  }
+  .loading-overlay-chip {
+    @apply flex items-center gap-3 rounded-full bg-neutral-50 px-5 py-3
+      shadow-lg ring-1 ring-neutral-900/5;
+  }
+  .loading-overlay-label {
+    @apply text-sm font-medium text-neutral-700;
   }
 
   /* Bottom Sheet (US3, contracts/bottom-sheet.contract.md) — reuses
@@ -1521,10 +1664,33 @@
       text-xs font-medium text-neutral-700 ring-1 ring-inset ring-neutral-500/10;
   }
 
-  /* PickList/Transfer (US2, contracts/pick-list.contract.md) —
-     reuses List's exact .list class verbatim. */
+  /* PickList/Transfer (US2, contracts/pick-list.contract.md).
+     Depth + hierarchy (feature 044 audit): the two panels used to be
+     identical borderless boxes with no way to tell source from target.
+     Each panel is now a labelled card surface — a titled header bar
+     (data-table-header vocabulary) over a scrollable body — and the
+     destination header carries a brand dot so the "where selections land"
+     column reads as semantically distinct, not a mirror image. */
+  .pick-list-column {
+    @apply flex min-w-0 flex-col overflow-hidden rounded-md border
+      border-neutral-200 bg-neutral-50 shadow-sm;
+  }
+  .pick-list-header {
+    @apply flex items-center gap-2 border-b border-neutral-200 bg-neutral-100
+      px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neutral-700;
+  }
+  /* Decorative brand marker (no text, so no contrast floor) that tags the
+     destination column as the selection target. */
+  .pick-list-dot {
+    @apply h-2 w-2 flex-none rounded-full bg-brand;
+  }
+  .pick-list-count {
+    @apply ml-auto font-normal text-neutral-600;
+  }
+  /* Body: the scroll region only — border/rounded/surface now live on the
+     column wrapper, so this is a plain divide-y row stack. */
   .pick-list-panel {
-    @apply list max-h-64 min-h-[4rem] overflow-y-auto;
+    @apply max-h-64 min-h-[4rem] divide-y divide-neutral-200 overflow-y-auto;
   }
   .pick-list-controls {
     @apply flex flex-col justify-center gap-2;
@@ -1532,6 +1698,27 @@
 
   /* Gallery (US3, contracts/gallery.contract.md) — reuses Modal's
      exact native <dialog> mechanism, only full-screen geometry is new. */
+  /* Thumbnail hover-reveal (feature 044 audit): thumbnails used to be
+     bare 80px squares with no affordance that they open a viewer. Each is
+     now a framed, clipping tile that lifts (ring→brand + shadow) and whose
+     image scales behind a fading "expand" overlay on hover/focus — a
+     designed, compositor-friendly (transform/opacity only) reveal. */
+  .gallery-thumb {
+    @apply relative block h-20 w-20 shrink-0 cursor-pointer overflow-hidden
+      rounded-md ring-1 ring-inset ring-neutral-300 transition duration-200 ease-out
+      hover:-translate-y-0.5 hover:shadow-lg hover:ring-brand
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand;
+  }
+  .gallery-thumb-img {
+    @apply h-full w-full object-cover transition-transform duration-300 ease-out
+      group-hover:scale-110 group-focus-visible:scale-110;
+  }
+  .gallery-thumb-overlay {
+    @apply pointer-events-none absolute inset-0 flex items-center justify-center
+      bg-neutral-900/40 text-white opacity-0 transition-opacity duration-200 ease-out
+      group-hover:opacity-100 group-focus-visible:opacity-100;
+  }
   .gallery-dialog {
     @apply h-screen w-screen max-h-none max-w-none border-0 bg-neutral-900 p-0;
   }
@@ -1551,8 +1738,14 @@
   /* Compare (US3, contracts/compare.contract.md) — the divider
      reuses Slider's exact native <input type="range"> + .slider
      class verbatim. */
+  /* Depth + differentiation (feature 044 audit): the container is now a
+     framed, elevated surface; the two images are told apart by corner
+     badges ("Before" on the base image, "After" clipped inside the reveal
+     wrapper so it appears only over the after region); and the divider
+     carries a real grab handle instead of a bare hairline. */
   .compare-container {
-    @apply relative overflow-hidden rounded-lg select-none;
+    @apply relative overflow-hidden rounded-lg border border-neutral-200
+      shadow-md select-none;
   }
   .compare-image {
     @apply block h-full w-full object-cover;
@@ -1560,8 +1753,25 @@
   .compare-after-wrapper {
     @apply absolute inset-0 overflow-hidden;
   }
+  /* Solid neutral-900 fill under white text = max contrast, AAA over any
+     underlying image. */
+  .compare-label {
+    @apply pointer-events-none absolute top-3 z-10 rounded-md bg-neutral-900
+      px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-sm;
+  }
+  .compare-label-before {
+    @apply left-3;
+  }
+  .compare-label-after {
+    @apply right-3;
+  }
   .compare-divider-line {
-    @apply pointer-events-none absolute inset-y-0 w-0.5 bg-white shadow-md;
+    @apply pointer-events-none absolute inset-y-0 flex w-0.5 items-center
+      justify-center bg-white shadow-md;
+  }
+  .compare-handle {
+    @apply flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full
+      bg-white text-neutral-700 shadow-lg ring-1 ring-neutral-300;
   }
   .compare-slider {
     @apply absolute inset-0 h-full w-full cursor-ew-resize appearance-none bg-transparent opacity-0;
@@ -1578,17 +1788,44 @@
   .social-login-group-compact {
     @apply flex-row flex-wrap gap-2;
   }
+  /* Each button leans into its provider's own brand color for identity and
+     hierarchy — a 3px brand rail on the leading edge plus an 8% brand wash
+     on hover — while the surface/text stay neutral-50/neutral-900 so the
+     AAA-verified pairing is never compromised (research.md R1). The brand
+     hue is delivered as a per-provider CSS custom property (below), keyed
+     off the button's data-provider-id, present on both the static and React
+     surfaces. */
   .social-login-btn {
-    @apply inline-flex w-full items-center justify-center gap-3 rounded-md
-      border border-neutral-300 bg-neutral-50 px-4 py-2.5
-      text-sm font-semibold text-neutral-900
-      hover:bg-neutral-100
-      active:scale-[0.98]
+    @apply relative inline-flex w-full items-center justify-center gap-3
+      rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5
+      text-sm font-semibold text-neutral-900 shadow-sm
+      hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md
+      active:translate-y-0 active:scale-[0.99]
       focus-visible:outline focus-visible:outline-2
       focus-visible:outline-offset-2 focus-visible:outline-brand
-      disabled:opacity-50 disabled:cursor-not-allowed
-      transition-[background-color,transform] duration-150;
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none
+      disabled:hover:translate-y-0 disabled:hover:shadow-none
+      transition-[background-color,transform,box-shadow,border-color] duration-200 ease-out;
+    border-left-width: 3px;
+    border-left-color: var(--provider-color, theme(colors.neutral.200));
   }
+  .social-login-btn:hover {
+    border-left-color: var(--provider-color, theme(colors.neutral.300));
+    background-color: color-mix(
+      in srgb,
+      var(--provider-color, transparent) 8%,
+      theme(colors.neutral.50)
+    );
+  }
+  /* Per-provider brand hue — confined to the leading rail + hover wash;
+     never the text or the resting surface. Apple/GitHub deliberately have
+     no entry: their identity is the monochrome-dark surface itself. */
+  [data-provider-id="google"] { --provider-color: #4285f4; }
+  [data-provider-id="facebook"] { --provider-color: #1877f2; }
+  [data-provider-id="microsoft"] { --provider-color: #00a4ef; }
+  [data-provider-id="instagram"] { --provider-color: #e1306c; }
+  [data-provider-id="discord"] { --provider-color: #5865f2; }
+  [data-provider-id="tiktok"] { --provider-color: #ee1d52; }
   .social-login-btn-compact {
     @apply w-auto px-3;
   }
@@ -1606,10 +1843,10 @@
      AAA on their own (~17-21:1). No other preset and no custom entry
      may use this class. */
   .social-login-btn-monochrome-dark {
-    @apply border-transparent bg-neutral-900 text-white hover:bg-neutral-800;
+    @apply border-transparent bg-neutral-900 text-white shadow-sm hover:bg-neutral-800;
   }
   .social-login-btn-monochrome-light {
-    @apply border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-50;
+    @apply border border-neutral-900 bg-white text-neutral-900 shadow-sm hover:bg-neutral-50;
   }
 
   /* Feature 039 (Advanced Form Inputs batch) — TagsInput */

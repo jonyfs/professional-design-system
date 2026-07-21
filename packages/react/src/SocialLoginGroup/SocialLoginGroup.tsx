@@ -71,6 +71,7 @@ export function SocialLoginGroup({
             key={`${id}-${index}`}
             type="button"
             data-testid={`social-login-${id}`}
+            data-provider-id={id}
             className={
               (mode === "compact" ? "social-login-btn social-login-btn-compact" : "social-login-btn") +
               appearanceClass

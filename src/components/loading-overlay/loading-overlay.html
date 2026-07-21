@@ -35,11 +35,14 @@
     <p class="text-sm text-neutral-900">Table content goes here.</p>
     <button type="button" data-testid="loading-overlay-inner-button" class="btn-primary mt-3">Save</button>
     <div data-loading-overlay data-testid="loading-overlay" role="status" class="loading-overlay">
-      <span class="sr-only">Loading</span>
-      <svg class="spinner spinner-lg motion-reduce:animate-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-      </svg>
+      <div class="loading-overlay-chip">
+        <span class="sr-only">Loading</span>
+        <svg class="spinner spinner-sm motion-reduce:animate-none" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+        </svg>
+        <span aria-hidden="true" class="loading-overlay-label">Loading…</span>
+      </div>
     </div>
   </div>
 

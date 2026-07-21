@@ -32,6 +32,7 @@ export function Gallery({ images, "data-testid": testId }: GalleryProps) {
             key={image.src}
             ref={(el) => (triggerRefs.current[index] = el)}
             type="button"
+            className="gallery-thumb group"
             onClick={() => {
               activeTriggerRef.current = triggerRefs.current[index];
               setCurrentIndex(index);
@@ -41,8 +42,13 @@ export function Gallery({ images, "data-testid": testId }: GalleryProps) {
             <img
               src={image.thumbnailSrc ?? image.src}
               alt={image.alt}
-              className="h-20 w-20 cursor-pointer rounded-md object-cover"
+              className="gallery-thumb-img"
             />
+            <span className="gallery-thumb-overlay" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                <path d="M3 3h5v2H5v3H3V3zm9 0h5v5h-2V5h-3V3zM5 12v3h3v2H3v-5h2zm10 0h2v5h-5v-2h3v-3z" />
+              </svg>
+            </span>
           </button>
         ))}
       </div>

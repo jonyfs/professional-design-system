@@ -6,10 +6,21 @@ export interface ToastProps extends Omit<HTMLAttributes<HTMLDivElement>, "role">
   onDismiss: () => void;
 }
 
+// Feature 044 visual pass: severity icon in a tinted circular chip (bg-*/10 +
+// rounded-full + padding on the svg, box-content to preserve the 20px glyph),
+// matching the static toast.html markup.
 const VARIANT_ICON_CLASSES: Record<ToastProps["variant"], string> = {
-  success: "text-success-strong",
-  error: "text-error-strong",
-  info: "text-brand-dark",
+  success: "rounded-full bg-success/10 p-1.5 box-content text-success-strong",
+  error: "rounded-full bg-error/10 p-1.5 box-content text-error-strong",
+  info: "rounded-full bg-brand/10 p-1.5 box-content text-brand-dark",
+};
+
+// Per-severity left accent rail, applied to the toast container so the stack
+// reads as a color-coded set at a glance (matches toast.html).
+const VARIANT_BORDER_CLASSES: Record<ToastProps["variant"], string> = {
+  success: "border-success",
+  error: "border-error",
+  info: "border-brand",
 };
 
 // Deliberately NOT a <dialog> — Toast is non-modal (research.md/data-model.md:
@@ -20,7 +31,7 @@ const VARIANT_ICON_CLASSES: Record<ToastProps["variant"], string> = {
 // version's `toast.js`, which called `.remove()` on the DOM node directly
 // since there was no framework-level list to own the removal.
 export function Toast({ variant, message, onDismiss, className, ...rest }: ToastProps) {
-  const classes = ["toast", className].filter(Boolean).join(" ");
+  const classes = ["toast", VARIANT_BORDER_CLASSES[variant], className].filter(Boolean).join(" ");
   return (
     <div role="status" aria-live="polite" className={classes} {...rest}>
       <svg
