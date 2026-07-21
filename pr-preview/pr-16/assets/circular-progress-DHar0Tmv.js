@@ -1,1 +1,0 @@
-function e(){document.querySelectorAll(`[data-circular-progress-fill]`).forEach(e=>{let t=Number(e.getAttribute(`data-value`)??0),n=Math.max(0,Math.min(100,t)),r=Number(e.getAttribute(`data-circumference`));e.style.strokeDashoffset=`${r*(1-n/100)}`})}export{e as t};
